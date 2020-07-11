@@ -43,21 +43,23 @@ But to be able to set up the node IP address, you first need to get it registere
 
 ### 2 - Send BOND
 
-From the previous status command, you got the current Vault BNB address from the chain running:
+From the previous status command, you got the current Vault BNB address from the chain:
 
 ```text
 Vault BNB Bond Address tbnb14z64mhgsnlayj28llzyehq7uh9e9u2ec2jzysu
 ```
 
-You need to send your BOND on the BNB chain to this address using the memo `BOND:<node-address>`, which gives with the example before: 
+You need to send your BOND on the chain to this address using the memo `BOND:<node-address>`, which gives with the example before: 
 
 `BOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
-Notes For Mainnet
+{% hint style="danger" %}
+**This is a significant quantity of funds!**
 
 1. You should practice this first on Testnet
 2. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1m RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
 3. You can then send in at least 1,000,000 RUNE
+{% endhint %}
 
 Give the network a minute or two to pick up your bond.
 
