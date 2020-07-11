@@ -381,7 +381,7 @@ This should be the only chart used to run THORNode stack unless you know what yo
 * **elastic**: ELK stack, deperecated. Use elastic-operator chart
 * **elastic-operator**: ELK stack using operator for logs management
 * **prometheus**: Prometheus stack for metrics
-* kubernetes-dashboard: Kubernetes dashboard
+* **kubernetes-dashboard**: Kubernetes dashboard
 
 
 
