@@ -62,7 +62,7 @@ Deciding to run a node should be carefully considered and thought through. While
 
 ### Risks
 
-To run a node, you must obtain a significant amount of Rune, currently 1 million Rune. This Rune is sent into the network as “bond” and held as leverage of each node to ensure they behave in the best interest of the network. Running a malicious or unreliable node does result in a slashing of this bond.
+To run a node, you must obtain a significant amount of Rune, currently 1 million Rune. This Rune is sent into the network as “bond” and held as leverage on each node to ensure they behave in the best interest of the network. Running a malicious or unreliable node results in a slashing of this bond.
 
 Here are the ways in which a validator’s bond can get slashed
 
@@ -102,7 +102,7 @@ Income for one node can be estimated based on a few inputs:
 These inputs should be plugged into the following formula—
 
 $$
-{{RewardAllocation * EmissionRate} \over {NumberOfNodes}} * RUNEPrice
+{{RewardAllocation * EmissionRate} \over {NumberOfNodes}}
 $$
 
 An example with mainnet day 1 inputs:

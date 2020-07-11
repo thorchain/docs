@@ -111,6 +111,10 @@ choco install kubernetes-cli
 
 Use the command below to install Kubernetes Terraform provider, if the command is outdated or failing, please refer to the [documentation here](https://gavinbunney.github.io/terraform-provider-kubectl/docs/provider.html).
 
+{% tabs %}
+{% tab title="MacOS" %}
+Run the following:
+
 ```text
 mkdir -p ~/.terraform.d/plugins && \
     curl -Ls https://api.github.com/repos/gavinbunney/terraform-provider-kubectl/releases/latest \
@@ -118,6 +122,12 @@ mkdir -p ~/.terraform.d/plugins && \
     | xargs -n 1 curl -Lo ~/.terraform.d/plugins/terraform-provider-kubectl && \
     chmod +x ~/.terraform.d/plugins/terraform-provider-kubectl
 ```
+{% endtab %}
+
+{% tab title="WINDOWS" %}
+Not supported, seek wider advice
+{% endtab %}
+{% endtabs %}
 
 #### **Deploy Kubernetes Cluster**
 
