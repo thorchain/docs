@@ -51,7 +51,7 @@ On every churn, the network may select one or more nodes to be churned into the 
 
 {% hint style="info" %}
 There is a endpoint on Midgard that has deep analytics in mean and median active & standby bond sizes to drive efficient discovery of the best "bond" size.   
-Whilst 1,000,000 is the minimum competition to get in will drive it up, and in the long term it is likely to stabilise between 2m and 2.5m RUNE.
+Whilst 1,000,000 is the minimum, competition to get in will drive it up, and in the long term it is likely to stabilise between 2m and 2.5m RUNE.
 
 The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and stake part of it instead to maximise yield. 
 {% endhint %}
@@ -72,7 +72,7 @@ Here are the ways in which a validator’s bond can get slashed
 * **Unauthorized transaction** \(1.5x transaction value\) - if a node sends funds without authorization, the bond is slashed 1.5x the value of the stolen funds. The slashed bond is dumped into the pool\(s\) where the funds were stolen and added to the reserve.
 * **Fail to keygen** \(1 hr of revenue\) - When the network attempts to churn, and attempts to create a new Asgard pubkey for the network, and fails to do so due to a specific node\(s\), they will lose 1 hr of revenue from their bond. 
 
-Slash point undoes profits made on the network. For every 1 slash point a node account receives, they lose 1 block of profits. If a node account has more slash points than blocks they have been active, they will lose the equivalent in bond.
+Slash points undo profits made on the network. For every 1 slash point a node receives, they lose 1 block of profits. If a node account has more slash points than blocks they have been active, they will lose the equivalent in bond.
 
 ## Compensation
 
@@ -99,7 +99,7 @@ Income for one node can be estimated based on a few inputs:
 * % of rewards allocated to notes, set by the Incentive Pendulum
 * Price of RUNE\*
 
-These inputs should be plugged into the following formula—
+These inputs should be plugged into the following formula:
 
 $$
 {{RewardAllocation * EmissionRate} \over {NumberOfNodes}}
@@ -168,6 +168,8 @@ When you run a THORNode, each THORNode will have its own node account. An exampl
 ```
 
 Most importantly, this will tell you how many slash points the node account has accrued, their status, and the size of their bond \(which is in 1e8 notation, 1 Rune == 100000000\).
+
+
 
 ### **Node Statuses**
 
