@@ -61,7 +61,7 @@ You need to send your BOND on the chain to this address using the memo `BOND:<no
 3. You can then send in at least 1,000,000 RUNE
 {% endhint %}
 
-Give the network a minute or two to pick up your bond.
+Give the network at least a minute to pick up your bond.
 
 ### 3 - Setup Node IP Address
 
