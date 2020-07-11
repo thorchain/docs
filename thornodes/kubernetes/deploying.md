@@ -333,6 +333,7 @@ This should be the only chart used to run THORNode stack unless you know what yo
 
 * **thor-daemon**: THORNode daemon
 * **thor-api**: THORNode API
+* **thor-gateway**: THORNode gateway proxy to get a single IP address for multiple deployments
 * **bepswap**: BEPSwap UI frontend
 * **bifrost**: Bifrost service
 * **midgard**: Midgard service
@@ -348,4 +349,7 @@ This should be the only chart used to run THORNode stack unless you know what yo
 * **elastic**: ELK stack, deperecated. Use elastic-operator chart
 * **elastic-operator**: ELK stack using operator for logs management
 * **prometheus**: Prometheus stack for metrics
+* kubernetes-dashboard: Kubernetes dashboard
+
+
 
