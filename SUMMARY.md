@@ -43,7 +43,3 @@
 
 ## Contributing
 
-* [Development Process](contributing/development-process.md)
-* [Heimdall](contributing/heimdall.md)
-* [Adding a New Bifrost Module](contributing/adding-a-new-bifrost-module.md)
-
