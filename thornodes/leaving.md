@@ -13,13 +13,23 @@ Every 50,000 Blocks \(3 days\) the system will churn its nodes:
 
 Alternatively, any node can simply leave the system voluntarily, in which case they are typically churned out 6 hours later. 
 
+## Unbonding
+
+If a Node Operator does not want to leave, but just wants to retrieve part of their bond & rewards \(such as deciding to take profits and contribute as a liquidity provider in order to maximise yield\), they can simply Unbond. This keeps their Node active. 
+
+To unbond from the system, simply send the following transaction to the Vault Address: `UNBOND:AMOUNT` with at least 1 satoshi in funds. The amount and type of asset you use to send to THORChain is actually irrelevant, you are simply passing transaction intent to THORChain. 
+
+Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond. 
+
+`UNBOND:1000000000`
+
 ## Leaving
 
-To leave the system, simply send the following transaction to the Vault Address: `LEAVE:<node-address>` with at least 1 satoshi in funds. The amount and type of asset you use to send to THORChain is actually irrelevant, you are simply passing transaction intent to THORChain. 
+To leave the system, simply send the following transaction to the Vault Address: `LEAVE` with at least 1 satoshi in funds. 
 
 Example:
 
-`LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
+`LEAVE`
 
 {% hint style="info" %}
 You can get your node address, as well as the current vault address by running `make status`

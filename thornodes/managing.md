@@ -55,3 +55,33 @@ make dashboard
 
 ![Kubernetes Dashboard](../.gitbook/assets/image%20%2814%29.png)
 
+## Backing up a THORNode
+
+You should backup your THORNode in case of failures. By default, if you are using the Kubernetes deployments solution, all the the deployments are automatically backed up by persistent volume disks.   
+Depending on your provider, the volumes are usually available in the provider administration UI, for example in AWS, you can find those volumes in your regular console, in the region you chose to deploy your Kubernetes cluster.
+
+Again by default, with Kubernetes, by using persistent volumes used in the default configuration, you are already protected again restart failures at container level, or node failures. As long as you don’t specifically use the destroy commands from the Makefile or manually delete your Kubernetes deployments, your volumes will NOT be deleted at any time. 
+
+It is still recommended, as any project, to have different backups on top of those volumes to make sure you can recover in admin error deleting those volumes or other Kubernetes resources that would imply deleting those volumes. 
+
+For AWS, you can easily setup in your console to have snapshots of your cluster volumes be taken every day. For other provider there can be different ways to achieve this as well either manually or automatically. 
+
+It is up to the node operator to setup those extra backups of the core volumes to be able to recover in any kind of failures or human errors.
+
+Some volumes would be more critical than others, for example Midgard deployment are also by default backed up by persistent volumes, so it can recover in case of container restarts, failures or node failures and the deployment being automatically scheduled to a different node, but if you were to delete the Midgard volume, it would reconstruct its data from your THORNode API and events from scratch. For that specific service having extra backups might not be critical, at the time of the writing of that document, Midgard implementation might change in the future.  
+  
+
+
+## Banning a THORNode
+
+Occasionally a THORNode may go rogue. During testing it was found to be necessary to add a feature to force the protocol to specifically target a single node to be churned out. Thus node operators have the ability to ban another THORNode by voting and getting a ⅔ consensus. Caution, the command costs 0.1% of minimum bond.
+
+You can use the command below to do so:
+
+```text
+thorcli tx thorchain ban <node-address>
+
+```
+
+Once 67% of Nodes ban
+
