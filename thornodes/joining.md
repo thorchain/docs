@@ -12,7 +12,7 @@ There are a couple of steps to follow to do so.
 
 ### 1. Check your current node status
 
-The first step would be to make sure your deployment was successful and your node is running correctly. ****To check the current status of your node, you can run the command status from the \`helm-charts\` repository on your terminal:
+The first step would be to make sure your deployment was successful and your node is running correctly. ****To check the current status of your node, you can run the command status from the `helm-charts`repository on your terminal:
 
 ```text
 make status
@@ -24,7 +24,7 @@ You will get an output along those lines, the example below is for a testnet nod
 ```text
 THORNode Status
 Address   thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz
-IP
+IP        12.234.34.156
 Version   0.1.0
 API       http://:1317
 RPC       http://:26657
