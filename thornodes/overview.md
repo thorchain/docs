@@ -56,7 +56,7 @@ Whilst 1,000,000 is the minimum, competition to get in will drive it up, and in 
 The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and stake part of it instead to maximise yield. 
 {% endhint %}
 
-## Risk/Benefits of Running a Node
+## Risk of Running a Node
 
 Deciding to run a node should be carefully considered and thought through. While the payoffs/rewards can be significant, there can also be an equally significant costs.
 
@@ -116,6 +116,10 @@ $$
 $$
 
 In this example, an individual operator would receive 62,127 RUNE over the month. 
+
+## Costs
+
+Depending on how the node was set up, it will likely cost between $1000 and $2000 per month, potentially more as the blockchain scales. The main driver of costs is resource allocation to hosting each THORNode service. 
 
 ## Skillsets
 
