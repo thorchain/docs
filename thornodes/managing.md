@@ -74,13 +74,12 @@ Some volumes would be more critical than others, for example Midgard deployment 
 
 ## Banning a THORNode
 
-Occasionally a THORNode may go rogue. During testing it was found to be necessary to add a feature to force the protocol to specifically target a single node to be churned out. Thus node operators have the ability to ban another THORNode by voting and getting a ⅔ consensus. Caution, the command costs 0.1% of minimum bond, so there is a non-zero cost to banning a node. 
+Occasionally a THORNode may go rogue, which affects a system that requires extremely high uptime. During testing it was found to be necessary to add a feature to force the protocol to specifically target a single node to be churned out. Thus node operators have the ability to ban another THORNode by voting and getting a ⅔ consensus. 
 
-You can use the command below to do so:
+Caution, the command costs 0.1% of minimum bond, so there is a non-zero cost to banning a node. The funds are collected and paid back into the Reserve. You can use the command below to do so:
 
 ```text
 thorcli tx thorchain ban <node-address>
-
 ```
 
 Once 67% of Nodes ban the node, it is scheduled to be churned out, but it is not penalised as a result of this. This is another reason for staying anonymous as a Node Operator. 
