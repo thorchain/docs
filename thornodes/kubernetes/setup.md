@@ -125,11 +125,13 @@ mkdir -p ~/.terraform.d/plugins && \
 {% endtab %}
 
 {% tab title="WINDOWS" %}
-Not supported, seek wider advice
+In progress
 {% endtab %}
 {% endtabs %}
 
 #### **Deploy Kubernetes Cluster**
+
+Deploy and configure your cluster here:
 
 {% tabs %}
 {% tab title="DEPLOY" %}
