@@ -25,8 +25,9 @@ Each THORNode is comprised of 5 major components.
 1. **`thord`** - this is a daemon that runs the THORChain chain itself
 2. **`thor-api`** - this daemon runs an HTTP server, that gives a RESTful API to the chain
 3. **`bifrost`** - this daemon creates connections to remote chains \(like Bitcoin, Ethereum, Binance, etc\) to both observe activity on those chains \(incoming/outgoing transactions\), and also sign/broadcast outgoing transactions \(moving funds on remote chains\).
-4. **`midgard`** - this daemon is a layer 2 REST API that provides front-end consumers with semi real-time rolled up data and analytics of the THORChain network. Most requests to the network will come through Midgard. This daemon is here to keep the chain itself from fielding large quantities of requests. You can think of it as a “read-only slave” to the chain. This keeps the resources of the network focused on processing transactions.
-5. **Remote full nodes** - for every chain that is supported by the network, each THORNode operator will run their own full node of each chain \(Bitcoin, Ethereum, Binance, etc\).
+4. **`thor-gateway`**: THORNode gateway proxy to get a single IP address for multiple deployments
+5. **`midgard`** - this daemon is a layer 2 REST API that provides front-end consumers with semi real-time rolled up data and analytics of the THORChain network. Most requests to the network will come through Midgard. This daemon is here to keep the chain itself from fielding large quantities of requests. You can think of it as a “read-only slave” to the chain. This keeps the resources of the network focused on processing transactions.
+6. **Full nodes** - for every chain that is supported by the network, each THORNode operator will run their own full node of each chain \(Bitcoin, Ethereum, Binance, etc\).
 
 ### Churning
 
