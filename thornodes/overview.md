@@ -6,7 +6,7 @@ description: Overview of THORNodes
 
 ## Overview
 
-THORNodes service the THORCHain network, of which there is intended to be initially 99. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
+THORNodes service the THORChain network, of which there is intended to be initially 99. Each THORNode is comprised of several independent servers in a cluster. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
 To set up a node, you have three choices:
 
@@ -38,16 +38,23 @@ Normally, a churning event happens every 3 days \(50,000 blocks\), although it i
 
 #### Churning Out
 
-On every churn, the network selects a node\(s\) to be churned out of the network \(which can be typically churned back in later\). In a given churning event, multiple nodes may be selected to be churned out, but never more than 1/3rd of the current validator set. The criterion the network will take into account is the following:
+On every churn, the network selects one or more nodes to be churned out of the network \(which can be typically churned back in later\). In a given churning event, multiple nodes may be selected to be churned out, but never more than 1/3rd of the current validator set. The criterion the network will take into account is the following:
 
 1. Requests to leave the network \(self-removal\)
-2. Banned by other validators \(network-removal\)
-3. How long an active validator has been committing blocks \(oldest gets removed\)
+2. Banned by other nodes \(network-removal\)
+3. How long an active nodes has been committing blocks \(oldest gets removed\)
 4. Bad behavior \(accrued slash points for poor node operation\)
 
 #### Churning In
 
 On every churn, the network may select one or more nodes to be churned into the network but never adds more than one to the total. Which nodes that are selected are purely by validator bond size. Larger bond nodes are selected over lower bond nodes.
+
+{% hint style="info" %}
+There is a endpoint on Midgard that has deep analytics in mean and median active & standby bond sizes to drive efficient discovery of the best "bond" size.   
+Whilst 1,000,000 is the minimum competition to get in will drive it up, and in the long term it is likely to stabilise between 2m and 2.5m RUNE.
+
+The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and stake part of it instead to maximise yield. 
+{% endhint %}
 
 ## Risk/Benefits of Running a Node
 
