@@ -1,0 +1,16 @@
+---
+description: Describes the Emission Schedule from the Reserve to Nodes and Stakers.
+---
+
+# Emission Schedule
+
+Block rewards are calculated as such:
+
+$$
+blockReward =  \frac{ \frac{reserve}{emissionCurve}}{blocksPerYear} = \frac{ \frac{220,000,000}{6}}{6311390}  = 5.8096
+$$
+
+So if the reserve has 220m rune, a single block will emit ~5.8 Rune from the reserve, which means 2/3rds to that is awarded to the node operators \(~3.8\) and is divided up between each operator. The rest is paid to Stakers.   
+  
+
+
