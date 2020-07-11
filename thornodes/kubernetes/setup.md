@@ -131,6 +131,8 @@ Not supported, seek wider advice
 
 #### **Deploy Kubernetes Cluster**
 
+{% tabs %}
+{% tab title="DEPLOY" %}
 Use the commands below to deploy an AWS EKS cluster. You can run the make command that automates those command for you like this:
 
 ```text
@@ -145,7 +147,9 @@ terraform init
 terraform plan # to see the plan
 terraform apply
 ```
+{% endtab %}
 
+{% tab title="CONFIGURE" %}
 **Configure kubectl**
 
 Now that you've provisioned your EKS cluster, you need to configure kubectl. Customize the following command with your cluster name and region. It will get the access credentials for your cluster and automatically configure kubectl.
@@ -154,7 +158,9 @@ Now that you've provisioned your EKS cluster, you need to configure kubectl. Cus
 aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
 kubectl version
 ```
+{% endtab %}
 
+{% tab title="DESTROY" %}
 **Clean up your workspace**
 
 To destroy and remove previously created resources, you can run the command below.
@@ -169,4 +175,6 @@ Or manually run each commands:
 cd aws/
 terraform destroy
 ```
+{% endtab %}
+{% endtabs %}
 
