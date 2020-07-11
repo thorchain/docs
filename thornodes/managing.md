@@ -68,13 +68,11 @@ For AWS, you can easily setup in your console to have snapshots of your cluster 
 
 It is up to the node operator to setup those extra backups of the core volumes to be able to recover in any kind of failures or human errors.
 
-Some volumes would be more critical than others, for example Midgard deployment are also by default backed up by persistent volumes, so it can recover in case of container restarts, failures or node failures and the deployment being automatically scheduled to a different node, but if you were to delete the Midgard volume, it would reconstruct its data from your THORNode API and events from scratch. For that specific service having extra backups might not be critical, at the time of the writing of that document, Midgard implementation might change in the future.  
-  
-
+Some volumes would be more critical than others, for example Midgard deployment are also by default backed up by persistent volumes, so it can recover in case of container restarts, failures or node failures and the deployment being automatically scheduled to a different node, but if you were to delete the Midgard volume, it would reconstruct its data from your THORNode API and events from scratch. For that specific service having extra backups might not be critical, at the time of the writing of that document, Midgard implementation might change in the future.
 
 ## Banning a THORNode
 
-Occasionally a THORNode may go rogue, which affects a system that requires extremely high uptime. During testing it was found to be necessary to add a feature to force the protocol to specifically target a single node to be churned out. Thus node operators have the ability to ban another THORNode by voting and getting a ⅔ consensus. 
+Occasionally a THORNode may go rogue, which affects a system that requires extremely high uptime. During testing it was found to be necessary to add a feature to force the protocol to specifically target a single node to be churned out. Thus node operators have the ability to ban another THORNode by voting and getting 67% consensus. 
 
 Caution, the command costs 0.1% of minimum bond, so there is a non-zero cost to banning a node. The funds are collected and paid back into the Reserve. You can use the command below to do so:
 
