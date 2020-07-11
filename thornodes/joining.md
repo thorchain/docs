@@ -24,7 +24,7 @@ You will get an output along those lines, the example below is for a testnet nod
 ```text
 THORNode Status
 Address   thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz
-IP        12.234.34.156
+IP         
 Version   0.1.0
 API       http://:1317
 RPC       http://:26657
