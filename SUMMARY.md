@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Overview](overview.md)
 * [Technology](technology.md)
 * [RUNE](rune.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
