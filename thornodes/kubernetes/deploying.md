@@ -202,7 +202,7 @@ This command will deploy the elastic-operator chart. It can take a while to depl
 You can check the services being deployed in your kubernetes namespace `elastic-system`.
 {% endtab %}
 
-{% tab title="KIBANA LOGS" %}
+{% tab title="ACCESS" %}
 We have created a make command to automate this task to access Kibana from your local workstation:
 
 ```text
@@ -258,7 +258,7 @@ This command will deploy the prometheus chart. It can take a while to deploy all
 You can check the services being deployed in your kubernetes namespace `prometheus-system`.
 {% endtab %}
 
-{% tab title="GRAFANA" %}
+{% tab title="ACCESS" %}
 We have created a make command to automate this task to access Grafana from your local workstation:
 
 ```text
