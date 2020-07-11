@@ -64,8 +64,7 @@ Here are the ways in which a validator’s bond can get slashed
 * **Unauthorized transaction** \(1.5x transaction value\) - if a node sends funds without authorization, the bond is slashed 1.5x the value of the stolen funds. The slashed bond is dumped into the pool\(s\) where the funds were stolen and added to the reserve.
 * **Fail to keygen** \(1 hr of revenue\) - When the network attempts to churn, and attempts to create a new Asgard pubkey for the network, and fails to do so due to a specific node\(s\), they will lose 1 hr of revenue from their bond. 
 
-Slash point undoes profits made on the network. For every 1 slash point a node account receives, they lose 1 block of profits. If a node account has more slash points than blocks they have been active, they will lose the equivalent in bond.  
-
+Slash point undoes profits made on the network. For every 1 slash point a node account receives, they lose 1 block of profits. If a node account has more slash points than blocks they have been active, they will lose the equivalent in bond.
 
 ## Compensation
 
