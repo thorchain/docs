@@ -8,12 +8,11 @@ description: Deploying a THORNode and its associated services.
 
 Now you have a Kubernetes cluster ready to use, you can install the THORNode services.
 
+{% hint style="info" %}
 Helm charts are the defacto and currently easiest and simple way to package and deploy Kubernetes application. The team created different Helm charts to help to deploy all the necessary services. Please retrieve the source files from the Git repository here to follow the instructions below:
 
- ****[**https://gitlab.com/thorchain/devops/helm-charts**](https://gitlab.com/thorchain/devops/helm-charts/-/blob/master/README.md)  
-****
-
-Charts to deploy THORNode stack and tools. It is recommended to use the Makefile commands available in this repo to start the charts with predefined configuration for most environments. 
+ ****[**https://gitlab.com/thorchain/devops/helm-charts**](https://gitlab.com/thorchain/devops/helm-charts/-/blob/master/README.md)
+{% endhint %}
 
 ### Requirements
 
@@ -176,6 +175,39 @@ make set-ip-address
 ```
 {% endtab %}
 
+{% tab title="VERSION" %}
+In order to update your THORNode to a new version, you will need to update the docker tag image used in your deployments. Depending on your choice of deployment this can be done differently.
+
+For Kubernetes deployments, you can edit the deployments of the different services you want to update using the commands below:  
+****
+
+**To update your \`thor-daemon\`, \`thor-ap\` and \`bifrost\` deployment images to version 0.2.0:**
+
+```text
+kubectl set image deployment/thor-daemon thor-daemon=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
+kubectl set image deployment/thor-api thor-api=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
+kubectl set image deployment/bifrost bifrost=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
+```
+
+**To update your \`midgard\` deployment image to version 0.2.0**
+
+```text
+kubectl set image deployment/midgard midgard=registry.gitlab.com/thorchain/midgard:mainnet-0.2.0
+```
+
+You can then follow the deployments restarting status either by checking your Kubernetes dashboard or using the CLI command below:
+
+```text
+kubectl get deployment/thor-daemon
+```
+
+Once the deployments are all in the ready state again, you need to broadcast to the network that you are running a new version using the command below:
+
+```text
+make set-version
+```
+{% endtab %}
+
 {% tab title="DESTROY" %}
 To fully destroy the running node and all services, run that command:
 
@@ -321,7 +353,7 @@ make destroy-dashboard
 {% endtab %}
 {% endtabs %}
 
-### Charts available:
+## CHART SUMMARY
 
 #### THORNode full stack umbrella chart
 
