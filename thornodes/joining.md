@@ -23,18 +23,14 @@ You will get an output along those lines, the example below is for a testnet nod
 
 ```text
 THORNode Status
-Address   thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz
-IP         
-Version   0.1.0
+Address   thor1t5jq5dk9d7fj5xfmkrwjn482m0drc7v6fjsmjr
+IP
+Version   0.0.0
 API       http://:1317
 RPC       http://:26657
 Midgard   http://:8080
-Vault BNB Bond Address tbnb14z64mhgsnlayj28llzyehq7uh9e9u2ec2jzysu
-Preflight { 
-    "status": "standby", 
-    "reason": "node account has invalid registered IP address", 
-    "code": "1" 
-}
+Vault BNB Bond Address tbnb1028va9y3ay4a0fpg983gxaen8w5fhr0080fwvn
+Preflight {"error":"internal error"}
 ```
 
 Your node is running but as you can see in the \`Preflight\` section, your node is not yet ready to be churned in and currently is in standby status, since your node has no IP address setup yet.
