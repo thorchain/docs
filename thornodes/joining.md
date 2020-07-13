@@ -1,5 +1,5 @@
 ---
-description: How to join the system.
+description: How to join THORChain as an Node.
 ---
 
 # Joining
@@ -52,9 +52,10 @@ You need to send your BOND on the chain to this address using the memo `BOND:<no
 {% hint style="danger" %}
 **This is a significant quantity of funds!**
 
-1. You should practice this first on Testnet
+1. You should practice this first on Testnet.
 2. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1,000,000 RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
-3. You can then send in at least 1,000,000 RUNE
+3. You can then send in at least 1,000,000 RUNE.
+4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device. 
 {% endhint %}
 
 Give the network at least a minute to pick up your bond.
@@ -96,13 +97,41 @@ To set up your node keys automatically, just run the command:
 make set-node-keys
 ```
 
-If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected, since someone else can have posted a higher bond than you. 
+If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Example of a valid preflight:
 
-To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them:
+```text
+Preflight { "status": "ready", "reason": "OK", "code": "0" }
+```
+
+## Bonding The Right Amount
+
+Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them:
 
 ```text
 http://<IP-ADDRESS>:8080/v1/network
+
+resp:
+ "bondMetrics": {
+        "averageActiveBond": "150000000000000",
+        "averageStandbyBond": "150000000000000",
+        "maximumActiveBond": "200000000000000",
+        "maximumStandbyBond": "200000000000000",
+        "medianActiveBond": "175000000000000",
+        "medianStandbyBond": "175000000000000",
+        "minimumActiveBond": "120000000000000",
+        "minimumStandbyBond": "120000000000000",
+        "totalActiveBond": "1500000000000000",
+        "totalStandbyBond": "450000000000000"
+    },
 ```
 
+The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum. 
 
+### Bonding More
+
+At any time during standby, you can bond more by making an additional BOND transaction with memo:
+
+`BOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
+
+You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo. 
 
