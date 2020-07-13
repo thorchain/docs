@@ -42,7 +42,7 @@ But to be able to set up the node IP address, you first need to get it registere
 From the previous status command, you got the current Vault BNB address from the chain:
 
 ```text
-Vault BNB Bond Address tbnb14z64mhgsnlayj28llzyehq7uh9e9u2ec2jzysu
+Vault BNB Bond Address tbnb1028va9y3ay4a0fpg983gxaen8w5fhr0080fwvn
 ```
 
 You need to send your BOND on the chain to this address using the memo `BOND:<node-address>`, which gives with the example before: 
@@ -53,11 +53,30 @@ You need to send your BOND on the chain to this address using the memo `BOND:<no
 **This is a significant quantity of funds!**
 
 1. You should practice this first on Testnet
-2. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1m RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
+2. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1,000,000 RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
 3. You can then send in at least 1,000,000 RUNE
 {% endhint %}
 
 Give the network at least a minute to pick up your bond.
+
+If you run `make status` again, you should see this:
+
+```text
+Address   thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz
+IP
+Version   0.1.0
+API       http://:1317
+RPC       http://:26657
+Midgard   http://:8080
+Vault BNB Bond Address tbnb14z64mhgsnlayj28llzyehq7uh9e9u2ec2jzysu
+Preflight { 
+    "status": "standby", 
+    "reason": "node account has invalid registered IP address", 
+    "code": "1" 
+}
+```
+
+As you can see, it is in standby but does not have an IP registered yet. This is needed for peer discovery. 
 
 ### 3 - Setup Node IP Address
 
@@ -77,5 +96,13 @@ To set up your node keys automatically, just run the command:
 make set-node-keys
 ```
 
-If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected.
+If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected, since someone else can have posted a higher bond than you. 
+
+To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them:
+
+```text
+http://<IP-ADDRESS>:8080/v1/network
+```
+
+
 
