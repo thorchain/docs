@@ -81,7 +81,7 @@ $$
 The state machine then takes the inverse of this to determine how much to send to Stakers:
 
 $$
-Split of the Rewards to Stakers = \frac{1}{shareFactor}= ⅓ = 0.33%
+\frac{1}{shareFactor}= \frac{1}{3} = 0.33%
 $$
 
 Thus, 33% of the rewards will be sent to Stakers in the stable scenario. 
