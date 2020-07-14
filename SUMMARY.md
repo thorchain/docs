@@ -37,9 +37,9 @@
 * [Emission Schedule](how-it-works/emission-schedule.md)
 * [Incentive Pendulum](how-it-works/incentive-pendulum.md)
 * [Fees](how-it-works/fees.md)
-* [Governance](how-it-works/governance.md)
 * [Continuous Liquidity Pools](how-it-works/continuous-liquidity-pools.md)
 * [Prices](how-it-works/prices.md)
+* [Governance](how-it-works/governance.md)
 
 ## Contributing
 
