@@ -12,11 +12,35 @@ THORChain creates an opportunity for holders of non-productive assets like BTC a
 
 Holders stake their assets in liquidity pools and earn yield in return. They earn tokens in Rune and the pool's connected asset. For example, someone who has staked in the BTC/RUNE pool will receive rewards in BTC and RUNE.
 
-Yield is calculated for stakers every block. Yield is paid out to stakers when they remove assets from the pool.
+Yield is calculated for stakers every block. Yield is paid out to stakers when they remove assets from the pool. 
 
-Rewards are calculated according to whether or not the block contains any swap transactions. If the block contains swap transactions then the amount of slip-based fees sets the amount of rewards. If the block doesn't contain trades then the amount of assets in the pool determines the rewards.
+Rewards are calculated according to whether or not the block contains any swap transactions. If the block contains swap transactions then the amount of fees collected per pool sets the amount of rewards. If the block doesn't contain trades then the amount of assets in the pool determines the rewards.
 
-Staking rewards make up 1/3 of all system income. System income is the total value of fees in each block. If the total value from slip-based fees makes up more than 1/3 of system income, the extra capital goes to nodes as a reward. This means that if few assets are being removed, nodes can still get paid.
+{% tabs %}
+{% tab title="BLOCK WITH SWAPS" %}
+How a block with fees splits the rewards:
+
+| **Pool Depth \(RUNE\)** | **Fees**  | **Share of Fees \(and rewards\)** |
+| :--- | :--- | :--- |
+| 1,000,000 | 1000 | 33% |
+| 2,000,000 | 0 | 0% |
+| 3,000,000 | 2000 | 67% |
+| **6,000,000** | **3000** | **100%** |
+{% endtab %}
+
+{% tab title="BLOCK WITH NO SWAPS" %}
+How a block with no fees splits the rewards:
+
+| **Pool Depth \(RUNE\)** | **Fees**  | **Share of Rewards** |
+| :--- | :--- | :--- |
+| 1,000,000 | 0 | 17% |
+| 2,000,000 | 0 | 33% |
+| 3,000,000 | 0 | 50% |
+| **6,000,000** | **0** | **100%** |
+{% endtab %}
+{% endtabs %}
+
+This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity.
 
 ### Factors Affecting Yield
 
@@ -30,7 +54,7 @@ Staking rewards make up 1/3 of all system income. System income is the total val
 
 ### Calculating Yield
 
- Each block, ownership % of the pool is calculated—
+ Each block, ownership % of the pool is calculated:
 
 $$
 (R + A) * (r * A + R * a) \over 4 * R * A
@@ -55,9 +79,7 @@ The ability to use and withdraw assets is completely non-custodial. Only the ori
 
 #### Process
 
-Stakers make special transactions to deposit assets into THORChain vaults.
-
-The network tracks how much stakers deposit. It also tracks staker ownership % of the pool. This is used to [calculate their yield](staking.md#calculating-yield).
+Stakers make special transactions to deposit assets into THORChain vaults. The network tracks how much stakers deposit. It also tracks staker ownership % of the pool. This is used to [calculate their yield](staking.md#calculating-yield).
 
 Liquidity can be added to existing pools to increase depth and attract swappers. The deeper the liquidity, the lower the fee. However, deep pools generally have higher swap volume which generates more fee revenue.
 
@@ -84,7 +106,7 @@ Stakers earn a yield on the assets they deposit. This yield is made up of fees a
 **Fees** are paid by swappers and traders. Most swaps cause the ratio of assets in the liquidity pool to diverge from the market rate.
 
 {% hint style="info" %}
-️The ratio of assets in a liquidity pool is comparable to an exchange rate.
+The ratio of assets in a liquidity pool is comparable to an exchange rate.
 {% endhint %}
 
 This change to the ratio of assets is called a 'slip'. A proportion of each slip is kept in the pool. This is allocated to stakers and forms part of their staking yield. Learn more about [swapping](swapping.md).
@@ -105,11 +127,11 @@ See here for an [interactive example](https://rebase.foundation/network/thorchai
 
 **Active** stakers can maximise returns by seeking out pools with shallow liquidity but high demand. This demand will cause greater slips and higher fees for stakers.
 
-## Requirements, Costs & Penalties
+## Requirements, Costs
 
 Stakers must have assets to deposit and their assets must be native to a supported chain. There is no minimum amount to stake in existing pools. However new assets must win a competition to be listed – larger value deposits will be listed over smaller value deposits.
 
-The only direct cost to stakers is the [network fee](../how-it-works/fees.md#network-fee), charged for depositing and withdrawing assets. An indirect cost to stakers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of staker purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's novel [slip-based fee](../how-it-works/fees.md#slip-based-fee).
+The only direct cost to stakers is the [network fee](../how-it-works/fees.md#network-fee), charged for depositing and withdrawing assets. An indirect cost to stakers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of staker purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's  [slip-based fee](../how-it-works/fees.md#slip-based-fee).
 
 Stakers are not subject to any direct penalties for misconduct.
 

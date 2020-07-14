@@ -14,29 +14,31 @@ On THORChain, users can swap their digital assets for other digital assets. The 
 
 ### Available Assets
 
-Users can swap any assets which are on connected chains and which have been added to the network\*. Users can swap from any connected asset to any other connected asset. They can also swap from any connected asset to [RUNE](../rune.md).
+Users can swap any assets which are on connected chains and which have been added to the network. Users can swap from any connected asset to any other connected asset. They can also swap from any connected asset to [RUNE](../rune.md).
 
 {% hint style="info" %}
-\*Learn more about how chains and assets get added to the network in [the Governance section](../how-it-works/governance.md).
+Learn more about how chains and assets get added to the network in [the Governance section](../how-it-works/governance.md).
 
 To add an asset to THORChain, users simply stake a new asset to put it in the queue for listing. Swaps can only be made on pools when they have been added to the network and have moved out of the bootstrap phase.
 {% endhint %}
 
 ### Decentralisation
 
-With THORChain, swaps are made in a decentralised way. Unlike large centralised exchanges, there is no central body in the middle makes discretionary choices about which swaps can and can't take place. The network manages the swap in accordance with the rules of the state machine - which is completely autonomous. 
+THORChain manages the swaps in accordance with the rules of the state machine - which is completely autonomous. Every swap that it observes is finalised, ordered and processed. Invalid swaps are refunded, valid swaps ordered in a transparent way that is resistant to front-running. Validators can not influence the order of trades, and are punished if they fail to observe a valid swap. 
 
-Swaps are completed as fast as they can be confirmed on-chain, which is around 5-10 seconds. 
+Swaps are completed as fast as they can be confirmed, which is around 5-10 seconds. 
 
 ### Continuous Liquidity Pools
 
-Swaps on THORChain are made possible by liquidity pools. These are pools of assets deposited by Stakers. Each pool consists of 1 connected asset, for example Bitcoin, and THORChain's own asset, RUNE. They're called Continuous Liquidity Pools because RUNE, being in each pool, links all pools together in a single, continuous liquidity network.
+Swaps on THORChain are made possible by liquidity pools. These are pools of assets deposited by Stakers, where each pool consists of 1 connected asset, for example Bitcoin, and THORChain's own asset, RUNE. They're called Continuous Liquidity Pools because RUNE, being in each pool, links all pools together in a single, continuous liquidity network.
 
-When a user swaps 2 connected assets on THORChain, in technical terms they do not make a direct swap. In reality, users:
+When a user swaps 2 connected assets on THORChain, they swap between two pools:
 
-* swap into RUNE in the first pool
-* that RUNE is added to the second pool
-* the desired asset is retrieved from the second pool
+1. Swap to RUNE in the first pool,
+2. Move that RUNE into the second pool,
+3. Swap to the desired asset in the second pool with the RUNE from \(2\)
+
+The THORChain state machine handles this swap in one go, so the user is never handles RUNE. 
 
 See [this example](swapping.md#example-connected-asset-binance-coin-to-connected-asset-bitcoin) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 
@@ -75,10 +77,10 @@ Run through an [interactive tutorial of an asset swap](https://app.bepswap.com/s
 
 The cost of a swap is made up of two parts:
 
-1. network fee
-2. price slippage
+1. Network Fee
+2. Price Slippage
 
-All swaps are charged a network fee. The network fee is fixed – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../how-it-works/fees.md#network-fee).
+All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../how-it-works/fees.md#network-fee).
 
 Note that users who force their swaps through quickly cause large slips and pay larger fees to stakers.
 
