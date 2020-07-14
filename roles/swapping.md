@@ -1,10 +1,14 @@
+---
+description: THORChain's value proposition for Swappers.
+---
+
 # Swappers
 
 On THORChain, users can swap their digital assets for other digital assets. The network aims to give users access to:
 
-* a large variety of assets through cross-chain compatibility and simple asset listing
-* low-cost swaps through liquidity incentives
-* superior user experience through open finance protocols and permissionless access
+* A large variety of assets through cross-chain compatibility and simple asset listing
+* Superior user experience through open finance protocols and permissionless access
+* 1-transaction access to fast chains \(Binance Chain\), smart chains \(Ethereum\), censorship-resistant chains \(Bitcoin\) and private chains \(Monero\).
 
 ## How Swaps Work
 
@@ -15,22 +19,20 @@ Users can swap any assets which are on connected chains and which have been adde
 {% hint style="info" %}
 \*Learn more about how chains and assets get added to the network in [the Governance section](../how-it-works/governance.md).
 
-To add an asset to THORChain, users deposit it into a 'bootstrap pool'. Swapping is disabled on bootstrap pools. Swaps can only be made on pools when they have been added to the network and have moved out of the bootstrap phase.
+To add an asset to THORChain, users simply stake a new asset to put it in the queue for listing. Swaps can only be made on pools when they have been added to the network and have moved out of the bootstrap phase.
 {% endhint %}
 
 ### Decentralisation
 
-With THORChain, swaps are made in a decentralised way. Unlike large centralised exchanges, there is no central body in the middle makes discretionary choices about which swaps can and can't take place.
+With THORChain, swaps are made in a decentralised way. Unlike large centralised exchanges, there is no central body in the middle makes discretionary choices about which swaps can and can't take place. The network manages the swap in accordance with the rules of the state machine - which is completely autonomous. 
 
-For example, centralised exchanges can decide which assets to add to a network without little transparency and changing criteria. THORChain has simple rules about which assets get listed.
-
-Additionally, centralised exchanges have the power to say which users are able to swap on their platforms. THORChain does not have this power. Anybody can make a swap on THORChain.
+Swaps are completed as fast as they can be confirmed on-chain, which is around 5-10 seconds. 
 
 ### Continuous Liquidity Pools
 
 Swaps on THORChain are made possible by liquidity pools. These are pools of assets deposited by Stakers. Each pool consists of 1 connected asset, for example Bitcoin, and THORChain's own asset, RUNE. They're called Continuous Liquidity Pools because RUNE, being in each pool, links all pools together in a single, continuous liquidity network.
 
-When a user swaps 2 connected assets on THORChain, in technical terms they do not make a direct swap. In reality, users—
+When a user swaps 2 connected assets on THORChain, in technical terms they do not make a direct swap. In reality, users:
 
 * swap into RUNE in the first pool
 * that RUNE is added to the second pool
