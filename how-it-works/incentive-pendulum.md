@@ -60,3 +60,29 @@ The THORChain team does not expect the unsafe or inefficient states to come up o
 Try this [interactive model](https://rebase.foundation/network/thorchain/system-component/balancer) of the Incentive Pendulum.
 {% endhint %}
 
+## Algorithm
+
+The algorithm that controls the Incentive Pendulum is as follows:
+
+$$
+shareFactor = \frac{b + s}{b - s}
+$$
+
+$$
+b = totalBonded, s = totalStaked
+$$
+
+The returns an integer from, where in the stable situation 67m RUNE bonded and 33m RUNE staked is as follows:
+
+$$
+shareFactor = \frac{67 + 33}{67 - 33} = 3
+$$
+
+The state machine then takes the inverse of this to determine how much to send to Stakers:
+
+$$
+Split of the Rewards to Stakers = \frac{1}{shareFactor}= ⅓ = 0.33%
+$$
+
+Thus, 33% of the rewards will be sent to Stakers. 
+
