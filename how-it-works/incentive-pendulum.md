@@ -72,7 +72,7 @@ $$
 b = totalBonded, s = totalStaked
 $$
 
-The returns an integer from, where in the stable situation 67m RUNE bonded and 33m RUNE staked is as follows:
+In the stable situation of 67m RUNE bonded and 33m RUNE staked:
 
 $$
 shareFactor = \frac{67 + 33}{67 - 33} = 3
@@ -84,5 +84,5 @@ $$
 Split of the Rewards to Stakers = \frac{1}{shareFactor}= ⅓ = 0.33%
 $$
 
-Thus, 33% of the rewards will be sent to Stakers. 
+Thus, 33% of the rewards will be sent to Stakers in the stable scenario. 
 
