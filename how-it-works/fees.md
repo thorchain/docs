@@ -1,5 +1,5 @@
 ---
-description: How THORChain handles fees.
+description: THORChain charges a fixed Network Fee and a dynamic Liquidity Fee.
 ---
 
 # Fees
