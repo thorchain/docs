@@ -86,3 +86,9 @@ $$
 
 Thus, 33% of the rewards will be sent to Stakers in the stable scenario. 
 
+## Driving Capital Allocation
+
+As a by-product of the Incentive Pendulum's aggressive re-targeting of 67:33 split of BONDED:STAKED RUNE, it means that in an equilibrium, the value of BONDED RUNE will always be double the value of STAKED RUNE. Since STAKED RUNE is 1:1 bonded with STAKED Capital \(due to liquidity pools\), then the total market value of RUNE is targeted to be 3 times the value of staked assets. 
+
+If there is any disruption to this, then it means capital will be re-allocated by Nodes and Stakers to pursue maximum yield, and thus correct the inbalance. 
+
