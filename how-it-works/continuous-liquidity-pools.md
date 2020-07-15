@@ -11,7 +11,7 @@ Instead of limit-order books, THORChain uses continuous liquidity pools \(CLP\).
 * Functions as source of trustless on-chain price feeds for internal and external use.
 * Democratises arbitrage opportunities.
 * Allows pools prices to converge to true market prices, since the fee asymptotes to zero. 
-* Collects fee revenue for liquidity providers in a fair way
+* Collects fee revenue for liquidity providers in a fair way.
 * Responds to fluctuating demands of liquidity. 
 
 ## CLP Derivation
