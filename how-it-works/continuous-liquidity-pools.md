@@ -140,5 +140,5 @@ Assuming a working Swap Queue, the CLP Model has the following benefits:
 * Arbitrage opportunities are democratised as there is a diminishing return to arbitrage as the price approaches parity with reference
 * Traders are forced to consider the "time domain" \(how impatient they want to be\) for each trade. 
 
-The salient point is the last one - that a liquidity-sensitive fee penalises traders for being traders. This is an important quality in markets, since it allows time for information about markets to be propagated to all market participants, rather than a narrow few having an edge. 
+The salient point is the last one - that a liquidity-sensitive fee penalises traders for being impatient. This is an important quality in markets, since it allows time for market-changing information to be propagated to all market participants, rather than a narrow few having an edge. 
 
