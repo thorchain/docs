@@ -131,7 +131,12 @@ THORChain is able to order trades based on fee & slip size, known as the Swap Qu
 
 Assuming a working Swap Queue, the CLP Model has the following benefits:
 
-#### Maximises Fee Revenue
+* The fee paid asymptotes to zero as demand subsides, so price delta between the pool price and reference market price can also go to zero. 
+* Traders will compete for trade opportunities and pay maximally to liquidity providers.
+* The fee paid for any trade is responsive to the demand for liquidity by market-takers.
+* Prices inherit an "inertia" since large fast changes cause high fee revenue
+* Arbitrage opportunities are democratised as there is a diminishing return to arbitrage as the price approaches parity with reference
+* Traders are forced to consider the "time domain" \(how impatient they want to be\) for each trade. 
 
-Traders will compete for trade opportunities and pay maximally
+The salient point is the last one - that a liquidity-sensitive fee penalises traders for being traders. This is an important quality in markets, since it allows time for information about markets to be propagated to all market participants, rather than a narrow few having an edge. 
 
