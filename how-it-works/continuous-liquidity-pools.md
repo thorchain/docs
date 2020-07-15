@@ -4,13 +4,15 @@ description: 'How THORChain facilitates continuous, incentivised liquidity.'
 
 # Continuous Liquidity Pools
 
-Instead of limit-order books, THORChain uses continuous liquidity pools \(CLP\). The CLP is arguably one of the most important features of THORChain. By building in on-chain liquidity the ecosystem receives the following benefits:
+Instead of limit-order books, THORChain uses continuous liquidity pools \(CLP\). The CLP is arguably one of the most important features of THORChain, with the following benefits:
 
 * Provides “always-on” liquidity to all assets in its system.
+* Allows users to trade assets at transparent, fair prices, without relying on centralised third-parties.
 * Functions as source of trustless on-chain price feeds for internal and external use.
 * Democratises arbitrage opportunities.
-* Allows users to trade assets at trustless prices, without relying on centralised third-parties.
 * Allows pools prices to converge to true market prices, since the fee asymptotes to zero. 
+* Collects fee revenue for liquidity providers in a fair way
+* Responds to fluctuating demands of liquidity. 
 
 ## CLP Derivation
 
