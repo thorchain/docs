@@ -18,7 +18,8 @@ Helm charts are the defacto and currently easiest and simple way to package and 
 
 * Running Kubernetes cluster
 * Kubectl configured, ready and connected to running cluster
-* Helm 3 \(version &gt;=3.2, can be installed using make command below\)
+
+## Steps
 
 Clone the Helm Charts repo. All commands in this section are to be run inside of this repo. 
 
@@ -55,22 +56,20 @@ make destroy-tools
 {% endtab %}
 {% endtabs %}
 
-You can install those tools separately using the sections below.
+You can install those tools separately using the sections below. If you are successful, you will see the following message:
 
-### Deploy THORNode
+![](../../.gitbook/assets/image%20%2820%29.png)
+
+If there are any errors, they are typically fixed by running the command again. 
+
+## Deploy THORNode
 
 It is important to deploy the tools first before deploying the THORNode services as some services will have metrics configuration that would fail and stop the THORNode deployment.
 
-You have multiple commands available to deploy different configurations of THORNode. You can deploy mainnet / testnet / mocknet. The commands deploy the umbrella chart `thornode` in the background in the Kubernetes namespace `thornode` by default. Unless you specify the name of your deployment using the environment variable `NAME`, all the commands are run against the default Kubernetes namespace `thornode` set up in the Makefile.
+You have multiple commands available to deploy different configurations of THORNode. You can deploy mainnet  or testnet. The commands deploy the umbrella chart `thornode` in the background in the Kubernetes namespace `thornode` by default. Unless you specify the name of your deployment using the environment variable `NAME`, all the commands are run against the default Kubernetes namespace `thornode` set up in the Makefile.
 
 {% tabs %}
 {% tab title="MAINNET" %}
-#### Deploy Mainnet Genesis
-
-```text
-make mainnet-genesis
-```
-
 #### Deploy Mainnet Validator
 
 ```text
@@ -79,12 +78,6 @@ make mainnet-validator
 {% endtab %}
 
 {% tab title="TESTNET" %}
-#### Deploy Testnet Genesis
-
-```text
-make testnet-genesis
-```
-
 #### Deploy Testnet Validator
 
 To automatically select the current testnet chain, run that command:
@@ -99,243 +92,41 @@ Or to manually specify the seed genesis IP, run that command:
 SEED_TESTNET=1.2.3.4 make testnet-validator
 ```
 {% endtab %}
-
-{% tab title="MOCKNET" %}
-#### Deploy Mocknet Genesis
-
-```text
-make mocknet
-```
-
-#### Deploy Mocknet Validator
-
-```text
-make mocknet-validator
-```
-{% endtab %}
 {% endtabs %}
 
-### THORNode commands
+{% hint style="info" %}
+Deploying a THORNode takes ~10 minutes
+{% endhint %}
 
-The Makefile provide different commands to help you operate your THORNode.
+If successful, you will see the following:
 
-{% tabs %}
-{% tab title="STATUS" %}
-To get information about your node on how to connect to services or its IP, run the command below. You will also get your node address and the vault address where you will need to send your bond.
+![](../../.gitbook/assets/image%20%2817%29.png)
 
-```text
-make status
-```
-{% endtab %}
+You are now ready to join the network:
 
-{% tab title="SHELL" %}
-Opens a shell into your `thor-daemon` deployment: From within that shell you have access to the `thorcli` command.
+{% page-ref page="../joining.md" %}
 
-```text
-make shell
-```
-{% endtab %}
+### Debugging
 
-{% tab title="LOGS" %}
-Display stream of logs of `thor-daemon` deployment:
+Use the following useful commands to view and debug accordingly. You should see everything running and active. Logs can be retrieved to find errors:
 
 ```text
-make logs
+kubectl get pods -n thornode
+kubectl get pods --all-namespaces
+kubectl logs -f <pod> -n thornode
 ```
-{% endtab %}
 
-{% tab title="NODE-KEYS" %}
-Send a `set-node-keys` to your node, which will set your node keys automatically for you by retrieving them directly from the `thor-daemon` deployment.
+Kubernetes should automatically restart any service, but you can force a restart by running:
 
 ```text
-make set-node-keys
-```
-{% endtab %}
-
-{% tab title="IP ADDDRESS" %}
-Send a `set-ip-address` to your node, which will set your node ip address automatically for you by retrieving the load balancer deployed directly.
-
-```text
-make set-ip-address
-```
-{% endtab %}
-
-{% tab title="VERSION" %}
-In order to update your THORNode to a new version, you will need to update the docker tag image used in your deployments. Depending on your choice of deployment this can be done differently.
-
-For Kubernetes deployments, you can edit the deployments of the different services you want to update using the commands below.
-
-To update your `thor-daemon`, `thor-api` and `bifrost` deployment images to version 0.2.0:
-
-```text
-kubectl set image deployment/thor-daemon thor-daemon=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
-kubectl set image deployment/thor-api thor-api=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
-kubectl set image deployment/bifrost bifrost=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
+kubectl delete pod <pod> -n thornode
 ```
 
-To update your \`midgard\` deployment image to version 0.2.0
+{% hint style="info" %}
+Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon \(eg, binance-daemon-xxx\). 
 
-```text
-kubectl set image deployment/midgard midgard=registry.gitlab.com/thorchain/midgard:mainnet-0.2.0
-```
-
-You can then follow the deployments restarting status either by checking your Kubernetes dashboard or using the CLI command below:
-
-```text
-kubectl get deployment/thor-daemon
-```
-
-Once the deployments are all in the ready state again, you need to broadcast to the network that you are running a new version using the command below:
-
-```text
-make set-version
-```
-{% endtab %}
-
-{% tab title="DESTROY" %}
-To fully destroy the running node and all services, run that command:
-
-```text
-make destroy
-```
-{% endtab %}
-{% endtabs %}
-
-### LOGS MANAGEMENT \(KIBANA\)
-
-It is recommended to deploy an Elastic Search / Logstash / Filebeat / Kibana to redirect all logs within an elasticsearch database and available through the UI Kibana.
-
-{% tabs %}
-{% tab title="DEPLOY" %}
-You can deploy the log management automatically using the command below:
-
-```text
-make install-logs
-```
-
-This command will deploy the elastic-operator chart. It can take a while to deploy all the services, usually up to 5 minutes depending on resources running your kubernetes cluster.
-
-You can check the services being deployed in your kubernetes namespace `elastic-system`.
-{% endtab %}
-
-{% tab title="ACCESS" %}
-We have created a make command to automate this task to access Kibana from your local workstation:
-
-```text
-make kibana
-```
-
-Open [https://localhost:5601](https://localhost:5601/) in your browser. Your browser will show a warning because the self-signed certificate configured by default is not verified by a third party certificate authority and not trusted by your browser. You can temporarily acknowledge the warning for the purposes of this quick start but it is highly recommended that you configure valid certificates for any production deployments.
-
-Login as the elastic user. The password should have been displayed in the previous command \(`make kibana`\).
-
-To manually access Kibana follow these instructions: A ClusterIP Service is automatically created for Kibana:
-
-```text
-kubectl -n elastic-system get service elasticsearch-kb-http
-```
-
-Use kubectl port-forward to access Kibana from your local workstation:
-
-```text
-kubectl -n elastic-system port-forward service/elasticsearch-kb-http 5601
-```
-
-Login as the `elastic` user. The password can be obtained with the following command:
-
-```text
-kubectl -n elastic-system get secret elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
-```
-{% endtab %}
-
-{% tab title="DESTROY" %}
-#### Destroy logs management stack
-
-```text
-make destroy-logs
-```
-{% endtab %}
-{% endtabs %}
-
-### METRICS MANAGEMENT \(Prometheus\)
-
-It is also recommended to deploy a Prometheus stack to monitor your cluster and your running services.
-
-{% tabs %}
-{% tab title="DEPLOY" %}
-You can deploy the metrics management automatically using the command below:
-
-```text
-make install-metrics
-```
-
-This command will deploy the prometheus chart. It can take a while to deploy all the services, usually up to 5 minutes depending on resources running your kubernetes cluster.
-
-You can check the services being deployed in your kubernetes namespace `prometheus-system`.
-{% endtab %}
-
-{% tab title="ACCESS" %}
-We have created a make command to automate this task to access Grafana from your local workstation:
-
-```text
-make grafana
-```
-
-Open [http://localhost:3000](http://localhost:3000/) in your browser.
-
-Login as the `admin` user. The default password should have been displayed in the previous command \(`make grafana`\).
-
-#### Access Prometheus admin UI
-
-We have created a make command to automate this task to access Prometheus from your local workstation:
-
-```text
-make prometheus
-```
-
-Open [http://localhost:9090](http://localhost:9090/) in your browser.
-{% endtab %}
-
-{% tab title="DESTROY" %}
-#### Destroy metrics management stack
-
-```text
-make destroy-metrics
-```
-{% endtab %}
-{% endtabs %}
-
-### Kubernetes Dashboard
-
-You can also deploy the Kubernetes dashboard to monitor your cluster resources.
-
-{% tabs %}
-{% tab title="DEPLOY" %}
-```text
-make install-dashboard
-```
-
-This command will deploy the Kubernetes dashboard chart. It can take a while to deploy all the services, usually up to 5 minutes depending on resources running your kubernetes cluster.
-{% endtab %}
-
-{% tab title="ACCESS" %}
-We have created a make command to automate this task to access the Dashboard from your local workstation:
-
-```text
-make dashboard
-```
-
-Open [http://localhost:8000](http://localhost:8000/) in your browser.
-{% endtab %}
-
-{% tab title="DESTROY" %}
-#### Destroy Kubernetes dashboard
-
-```text
-make destroy-dashboard
-```
-{% endtab %}
-{% endtabs %}
+Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight. 
+{% endhint %}
 
 ## CHART SUMMARY
 
@@ -366,6 +157,4 @@ This should be the only chart used to run THORNode stack unless you know what yo
 * **elastic-operator**: ELK stack using operator for logs management
 * **prometheus**: Prometheus stack for metrics
 * **kubernetes-dashboard**: Kubernetes dashboard
-
-
 

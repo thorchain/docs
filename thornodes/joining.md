@@ -37,6 +37,18 @@ Your node is running but as you can see in the \`Preflight\` section, your node 
 
 But to be able to set up the node IP address, you first need to get it registered in the chain by sending your BOND.
 
+{% hint style="warning" %}
+Before sending the BOND, verify that your THORNode is fully synced with connected chains. Connected chains such as Bitcoin, may take a day to sync. If you join THORChain without fully syncing a connected chain, you will immediately get slashed for missing observations, and lose money. 
+{% endhint %}
+
+You can verify the sync status by loading the Grafana Dashboard, and navigating to view sync status of connected chains. 
+
+```text
+make grafana
+```
+
+More info is at the [Metrics Section](https://docs.thorchain.org/thornodes/managing#access-metrics).
+
 ### 2 - Send BOND
 
 From the previous status command, you got the current Vault BNB address from the chain:

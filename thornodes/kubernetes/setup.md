@@ -15,7 +15,7 @@ description: Setting up a Kubernetes Cluster
 5. `wget` \(required for EKS module\)
 6. Kubernetes Terraform provider
 
-### **Requirements**
+## **Steps**
 
 Firstly, clone and enter the [terraform-script repository](https://gitlab.com/thorchain/devops/terraform-scripts)**.** All commands in this section are to be run inside this repo. 
 
@@ -67,6 +67,12 @@ aws configure
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+You will be asked for you AWS access credentials \(retrieve from AWS IAM from the AWS web console.\)
+{% endhint %}
+
+#### \*\*\*\*
 
 #### **AWS IAM Authenticator**
 
@@ -158,12 +164,8 @@ In progress
 {% endtab %}
 {% endtabs %}
 
-#### **Deploy Kubernetes Cluster**
+## **Deploy Kubernetes Cluster**
 
-Deploy and configure your cluster here:
-
-{% tabs %}
-{% tab title="DEPLOY" %}
 Use the commands below to deploy an AWS EKS cluster. You can run the make command that automates those command for you like this:
 
 ```text
@@ -173,25 +175,15 @@ make aws
 Or manually run each commands:
 
 ```text
-cd aws/
-terraform init
-terraform plan # to see the plan
+cd aws/ 
+terraform init 
+terraform plan
 terraform apply
 ```
-{% endtab %}
-
-{% tab title="CONFIGURE" %}
-\*\*\*\*
-{% endtab %}
-
-{% tab title="DESTROY" %}
-\*\*\*\*
-{% endtab %}
-{% endtabs %}
 
 During the deploy, you will be asked to enter information about your cluster:
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2818%29.png)
 
 * Name
 * AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
@@ -199,7 +191,11 @@ During the deploy, you will be asked to enter information about your cluster:
 
 Final success message: `Apply complete! Resources: 50 added, 0 changed, 0 destroyed.`
 
-### CONFIGURE
+{% hint style="info" %}
+Deploying a cluster takes ~10 minutes
+{% endhint %}
+
+## CONFIGURE
 
 Now that you've provisioned your EKS cluster, you need to configure kubectl. Customize the following command with your cluster name and region. It will get the access credentials for your cluster and automatically configure kubectl.
 
@@ -208,7 +204,9 @@ aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
 kubectl version
 ```
 
-If successful: `Added new context ..... <details>`
+If successful, you will see:
+
+ `Added new context ..... <details>`
 
 To verify, run this, and check the status is "Ready":
 
@@ -218,6 +216,4 @@ kubectl get nodes
 NAME                          STATUS   ROLES    AGE     VERSION
 ip-10-0-49-192.ec2.internal   Ready    <none>   4m16s   v1.16.12-eks-904af05
 ```
-
-### 
 
