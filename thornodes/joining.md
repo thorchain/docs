@@ -57,20 +57,20 @@ From the previous status command, you got the current Vault BNB address from the
 Vault BNB Bond Address tbnb1028va9y3ay4a0fpg983gxaen8w5fhr0080fwvn
 ```
 
-You need to send your BOND on the chain to this address using the memo `BOND:<node-address>`.
+You need to send your BOND on the chain to this vault address using the memo `BOND:<thor-nodeaddress>`.
 
 {% hint style="danger" %}
 **This is a significant quantity of funds!**
 
 1. You should practice this first on Testnet.
-2. **THE ADDRESS ABOVE MAY BE FAKE** - you could be spoofed from a compromised binary. Verify the Bond Address yourself - it is the primary Asgard Vault on THORChain. 
+2. **THE ADDRESS RETURNED MAY BE FAKE** - you could be spoofed from a compromised binary. Verify the Bond Address yourself - it is the primary Asgard Vault on THORChain. `http://host:8080/v1/thorchain/pool_addresses`
 3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1,000,000 RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
 4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device. 
 {% endhint %}
 
 ![Bonding 10k RUNE](../.gitbook/assets/image%20%2824%29.png)
 
-Give the network at least a minute to pick up your bond. To verify it has received your bond, run the following:
+Give the network 10-15 seconds to pick up your bond. To verify it has received your bond, run the following:
 
 ```text
 curl https://testnet-seed.thorchain.info --> returns active nodes
@@ -110,6 +110,10 @@ If you run the status command again, you should now see a different message for 
 
 ![](../.gitbook/assets/image%20%2817%29.png)
 
+{% hint style="info" %}
+Once your IP address has been registered for discovery, you can use your own host for queries. 
+{% endhint %}
+
 ### 4 - Setup Node keys
 
 To set up your node keys automatically, just run the command:
@@ -121,10 +125,6 @@ make set-node-keys
 If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Example of a valid preflight:
 
 ![](../.gitbook/assets/image%20%2821%29.png)
-
-{% hint style="info" %}
-You will also notice your IP address has been registered for discovery. You can now use your own host for queries. 
-{% endhint %}
 
 ## Bonding The Right Amount
 
@@ -150,11 +150,15 @@ resp:
 
 The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum. 
 
+{% hint style="info" %}
+RUNE is always displayed in 1e8 format, 100000000 = 1 RUNE
+{% endhint %}
+
 ### Bonding More
 
 At any time during standby, you can bond more by making an additional BOND transaction with memo:
 
-`BOND:<node-address>`
+`BOND:<thor-nodeaddress>`
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo. 
 
