@@ -73,13 +73,19 @@ You need to send your BOND on the chain to this vault address using the memo `BO
 {% hint style="danger" %}
 **TRIPLE CHECK YOU ARE SENDING TO THE RIGHT ADDRESS**
 
+**The vault frequently churns so you may send to a stale vault.**
+
 If your node is still syncing, the `make status` command may give you a stale vault address and your funds will be forever lost. 
 
-  
-Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.   
+Confirm the VAULT address from \*multiple\* sources. Do not get this wrong. 
+
+1. Did you test with a small amount first and get a refund?
+2. Did you check this address manually by querying a THORNode? 
+
+   `http://host:1317/thorchain/pool_addresses`
+
+3. Did you check this address in a Binance Chain explorer and see the presence of all the current Asgard Funds?
 {% endhint %}
-
-
 
 Give the network 10-15 seconds to pick up your bond. To verify it has received your bond, run the following:
 
