@@ -13,9 +13,36 @@ description: Setting up a Kubernetes Cluster
 3. AWS IAM Authenticator
 4. `kubectl`
 5. `wget` \(required for EKS module\)
-6. Kubernetes Terraform provider 
+6. Kubernetes Terraform provider
 
-### **Install requirements**
+### **Requirements**
+
+Firstly, clone and enter the [terraform-script repository](https://gitlab.com/thorchain/devops/terraform-scripts)**.** All commands in this section are to be run inside this repo. 
+
+```text
+git clone https://gitlab.com/thorchain/devops/terraform-scripts
+cd terraform-scripts
+```
+
+Then install the [terraform CLI](https://www.terraform.io):
+
+{% tabs %}
+{% tab title="LINUX/MAC" %}
+Install Terraform:
+
+```text
+brew install terraform
+```
+{% endtab %}
+
+{% tab title="WINDOWS" %}
+Install terraform:
+
+```text
+choco install terraform
+```
+{% endtab %}
+{% endtabs %}
 
 #### **AWS CLI**
 
@@ -181,4 +208,14 @@ terraform destroy
 ```
 {% endtab %}
 {% endtabs %}
+
+During the deploy, you will be asked to enter information about your cluster:
+
+![](../../.gitbook/assets/image%20%2817%29.png)
+
+* Name
+* AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
+* Confirm `yes`
+
+
 

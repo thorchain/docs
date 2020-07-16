@@ -18,17 +18,25 @@ Currently, the team only provide an AWS provider \(more will be added soon\). Th
 
 All the default configurations used in these instructions are for a production environment with enough resources to run your THORNode in good conditions.
 
-### **Requirements**
-
-Install the terraform CLI, go to[ https://www.terraform.io](https://www.terraform.io/).
-
-The Git repository used in these instructions here can be found here:   
-****[**https://gitlab.com/thorchain/devops/terraform-scripts**](https://gitlab.com/thorchain/devops/terraform-scripts/-/blob/master/docs/aws.md)
-
 ## Steps
 
 There are two important steps to getting your Kubernetes Cluster ready.
 
 1. Setting up Cluster
 2. Deploying THORNode Services
+
+
+
+### Repository Management
+
+Your repository should be organised as follows:
+
+```text
+- /thornode
+       |
+       |- /terraform-scripts
+       |- /helm-charts
+```
+
+
 

@@ -20,6 +20,13 @@ Helm charts are the defacto and currently easiest and simple way to package and 
 * Kubectl configured, ready and connected to running cluster
 * Helm 3 \(version &gt;=3.2, can be installed using make command below\)
 
+Clone the Helm Charts repo. All commands in this section are to be run inside of this repo. 
+
+```text
+git clone https://gitlab.com/thorchain/devops/helm-charts
+cd helm-charts
+```
+
 ### Install Helm 3
 
 Install Helm 3 if not already available on your current machine:
