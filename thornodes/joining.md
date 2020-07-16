@@ -70,6 +70,17 @@ You need to send your BOND on the chain to this vault address using the memo `BO
 
 ![Bonding 10k RUNE](../.gitbook/assets/image%20%2824%29.png)
 
+{% hint style="danger" %}
+**TRIPLE CHECK YOU ARE SENDING TO THE RIGHT ADDRESS**
+
+If your node is still syncing, the `make status` command may give you a stale vault address and your funds will be forever lost. 
+
+  
+Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.   
+{% endhint %}
+
+
+
 Give the network 10-15 seconds to pick up your bond. To verify it has received your bond, run the following:
 
 ```text
