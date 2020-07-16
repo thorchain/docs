@@ -68,7 +68,7 @@ You have multiple commands available to deploy different configurations of THORN
 #### Deploy Mainnet Genesis
 
 ```text
-make mainnet
+make mainnet-genesis
 ```
 
 #### Deploy Mainnet Validator
@@ -81,44 +81,22 @@ make mainnet-validator
 {% tab title="TESTNET" %}
 #### Deploy Testnet Genesis
 
-If you want to run your own Binance Node included in your stack, run:
-
 ```text
-make testnet
-```
-
-Or to connect to Binance Testnet available at [http://testnet-binance.thorchain.info:26657](http://testnet-binance.thorchain.info:26657/), run:
-
-```text
-make testnet-slim
+make testnet-genesis
 ```
 
 #### Deploy Testnet Validator
 
-To retrieve the PEER IP of your genesis node run the status command against the cluster running the genesis node, then export the node IP in the environment variable `PEER`:
-
-```text
-make status
-export PEER=<node-ip>
-echo $PEER
-```
-
-Then in the same terminal where you previously exported the PEER env variable, you can run:
+To automatically select the current testnet chain, run that command:
 
 ```text
 make testnet-validator
 ```
 
-Or to manually specify the PEER IP, run that command:
+Or to manually specify the seed genesis IP, run that command:
 
 ```text
-PEER=1.2.3.4 make testnet-validator
-```
-
-Slim version validator:
-
-```text
-PEER=1.2.3.4 make testnet-slim-validator
+SEED_TESTNET=1.2.3.4 make testnet-validator
 ```
 {% endtab %}
 
@@ -185,10 +163,9 @@ make set-ip-address
 {% tab title="VERSION" %}
 In order to update your THORNode to a new version, you will need to update the docker tag image used in your deployments. Depending on your choice of deployment this can be done differently.
 
-For Kubernetes deployments, you can edit the deployments of the different services you want to update using the commands below:  
-****
+For Kubernetes deployments, you can edit the deployments of the different services you want to update using the commands below.
 
-**To update your \`thor-daemon\`, \`thor-ap\` and \`bifrost\` deployment images to version 0.2.0:**
+To update your `thor-daemon`, `thor-api` and `bifrost` deployment images to version 0.2.0:
 
 ```text
 kubectl set image deployment/thor-daemon thor-daemon=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
@@ -196,7 +173,7 @@ kubectl set image deployment/thor-api thor-api=registry.gitlab.com/thorchain/tho
 kubectl set image deployment/bifrost bifrost=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
 ```
 
-**To update your \`midgard\` deployment image to version 0.2.0**
+To update your \`midgard\` deployment image to version 0.2.0
 
 ```text
 kubectl set image deployment/midgard midgard=registry.gitlab.com/thorchain/midgard:mainnet-0.2.0

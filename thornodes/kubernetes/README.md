@@ -34,8 +34,8 @@ Your repository should be organised as follows:
 ```text
 - /thornode
        |
-       |- /terraform-scripts
-       |- /helm-charts
+       |-/terraform-scripts
+       |-/helm-charts
 ```
 
 

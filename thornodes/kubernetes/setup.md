@@ -181,6 +181,26 @@ terraform apply
 {% endtab %}
 
 {% tab title="CONFIGURE" %}
+\*\*\*\*
+{% endtab %}
+
+{% tab title="DESTROY" %}
+\*\*\*\*
+{% endtab %}
+{% endtabs %}
+
+During the deploy, you will be asked to enter information about your cluster:
+
+![](../../.gitbook/assets/image%20%2817%29.png)
+
+* Name
+* AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
+* Confirm `yes`
+
+Final success message: `Apply complete! Resources: 50 added, 0 changed, 0 destroyed.`
+
+{% tabs %}
+{% tab title="CONFIGURE" %}
 **Configure kubectl**
 
 Now that you've provisioned your EKS cluster, you need to configure kubectl. Customize the following command with your cluster name and region. It will get the access credentials for your cluster and automatically configure kubectl.
@@ -190,7 +210,11 @@ aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
 kubectl version
 ```
 {% endtab %}
+{% endtabs %}
 
+
+
+{% tabs %}
 {% tab title="DESTROY" %}
 **Clean up your workspace**
 
@@ -208,14 +232,4 @@ terraform destroy
 ```
 {% endtab %}
 {% endtabs %}
-
-During the deploy, you will be asked to enter information about your cluster:
-
-![](../../.gitbook/assets/image%20%2817%29.png)
-
-* Name
-* AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
-* Confirm `yes`
-
-
 
