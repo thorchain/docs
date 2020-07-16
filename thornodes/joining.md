@@ -84,7 +84,8 @@ Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.
 
    `http://host:1317/thorchain/pool_addresses`
 
-3. Did you check this address in a Binance Chain explorer and see the presence of all the current Asgard Funds?
+3. `http://host:8080/v1/thorchain/pool_addresses`
+4. Did you check this address in a Binance Chain explorer and see the presence of all the current Asgard Funds?
 {% endhint %}
 
 Give the network 10-15 seconds to pick up your bond. To verify it has received your bond, run the following:
