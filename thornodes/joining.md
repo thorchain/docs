@@ -128,24 +128,24 @@ You will also notice your IP address has been registered for discovery. You can 
 
 ## Bonding The Right Amount
 
-Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them:
+Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them. Keep an eye on `maximumStandbyBond` and make sure you are bonding that amount.
 
 ```text
-curl http://<IP-ADDRESS>:8080/v1/network
+curl http://52.221.153.64:8080/v1/network | json_pp 
 
 resp:
- "bondMetrics": {
-        "averageActiveBond": "150000000000000",
-        "averageStandbyBond": "150000000000000",
-        "maximumActiveBond": "200000000000000",
-        "maximumStandbyBond": "200000000000000",
-        "medianActiveBond": "175000000000000",
-        "medianStandbyBond": "175000000000000",
-        "minimumActiveBond": "120000000000000",
-        "minimumStandbyBond": "120000000000000",
-        "totalActiveBond": "1500000000000000",
-        "totalStandbyBond": "450000000000000"
-    },
+ "bondMetrics" : {
+      "minimumActiveBond" : "10001000000000",
+      "medianStandbyBond" : "1010000000000",
+      "medianActiveBond" : "15001000000000",
+      "averageStandbyBond" : "1010000000000",
+      "maximumActiveBond" : "15001000000000",
+      "averageActiveBond" : "12006800000000",
+      "maximumStandbyBond" : "1010000000000",
+      "totalStandbyBond" : "1010000000000",
+      "totalActiveBond" : "60034000000000",
+      "minimumStandbyBond" : "1010000000000"
+   }
 ```
 
 The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum. 
