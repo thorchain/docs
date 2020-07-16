@@ -183,7 +183,7 @@ terraform apply
 
 During the deploy, you will be asked to enter information about your cluster:
 
-![](../../.gitbook/assets/image%20%2819%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 * Name
 * AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)

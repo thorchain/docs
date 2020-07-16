@@ -190,7 +190,7 @@ Open [http://localhost:3000](http://localhost:3000/) in your browser.
 
 Login as the `admin` user. The default password should have been displayed in the previous command \(`make grafana`\).
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
 #### Access Prometheus admin UI
 

@@ -68,16 +68,16 @@ You need to send your BOND on the chain to this address using the memo `BOND:<no
 4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device. 
 {% endhint %}
 
-![Bonding 10k RUNE](../.gitbook/assets/image%20%2822%29.png)
+![Bonding 10k RUNE](../.gitbook/assets/image%20%2824%29.png)
 
-Give the network at least a minute to pick up your bond.
+Give the network at least a minute to pick up your bond. To verify it has received your bond, run the following:
 
 ```text
 curl https://testnet-seed.thorchain.info --> returns active nodes
 curl http://<IP>:1317/thorchain/nodeaccount/<node-address>
 ```
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
 If you run `make status` again, you should see this:
 
@@ -108,6 +108,8 @@ make set-ip-address
 
 If you run the status command again, you should now see a different message for the Preflight section saying you need to set your node keys.
 
+![](../.gitbook/assets/image%20%2817%29.png)
+
 ### 4 - Setup Node keys
 
 To set up your node keys automatically, just run the command:
@@ -118,16 +120,18 @@ make set-node-keys
 
 If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Example of a valid preflight:
 
-```text
-Preflight { "status": "ready", "reason": "OK", "code": "0" }
-```
+![](../.gitbook/assets/image%20%2821%29.png)
+
+{% hint style="info" %}
+You will also notice your IP address has been registered for discovery. You can now use your own host for queries. 
+{% endhint %}
 
 ## Bonding The Right Amount
 
 Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them:
 
 ```text
-http://<IP-ADDRESS>:8080/v1/network
+curl http://<IP-ADDRESS>:8080/v1/network
 
 resp:
  "bondMetrics": {
@@ -150,7 +154,7 @@ The endpoint will show data on average, median, total, minimum and maximum bond 
 
 At any time during standby, you can bond more by making an additional BOND transaction with memo:
 
-`BOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
+`BOND:<node-address>`
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo. 
 
