@@ -263,15 +263,21 @@ It is up to the node operator to setup those extra backups of the core volumes t
 
 Some volumes would be more critical than others, for example Midgard deployment are also by default backed up by persistent volumes, so it can recover in case of container restarts, failures or node failures and the deployment being automatically scheduled to a different node, but if you were to delete the Midgard volume, it would reconstruct its data from your THORNode API and events from scratch. For that specific service having extra backups might not be critical, at the time of the writing of that document, Midgard implementation might change in the future.
 
-## Banning a THORNode
+## Node Security
 
-Occasionally a THORNode may go rogue, which affects a system that requires extremely high uptime. During testing it was found to be necessary to add a feature to force the protocol to specifically target a single node to be churned out. Thus node operators have the ability to ban another THORNode by voting and getting 67% consensus. 
+The following are attack vectors:
 
-Caution, the command costs 0.1% of minimum bond, so there is a non-zero cost to banning a node. The funds are collected and paid back into the Reserve. You can use the command below to do so:
+1. If anyone accesses your AWS credentials, they can log in and steal your funds
+2. If anyone accesses the device you used to log into kubernetes, they can log in and steal your funds
+3. If anyone accesses your hardware device used to bond, they can sign a LEAVE transaction and steal your bond once it is returned
 
-```text
-thorcli tx thorchain ban <node-address>
-```
+{% hint style="danger" %}
+RUNNING A NODE IS SERIOUS BUSINESS
 
-Once 67% of Nodes ban the node, it is scheduled to be churned out, but it is not penalised as a result of this. This is another reason for staying anonymous as a Node Operator. 
+DO SO AT YOUR OWN RISK, YOU CAN LOSE A SIGNIFICANT QUANTITY OF FUNDS IF AN ERROR IS MADE
+
+THORNODE SOFTWARE IS PROVIDED AS IS - YOU ARE SOLELY RESPONSIBLE FOR USING IT
+{% endhint %}
+
+
 
