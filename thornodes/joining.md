@@ -57,20 +57,27 @@ From the previous status command, you got the current Vault BNB address from the
 Vault BNB Bond Address tbnb1028va9y3ay4a0fpg983gxaen8w5fhr0080fwvn
 ```
 
-You need to send your BOND on the chain to this address using the memo `BOND:<node-address>`, which gives with the example before: 
-
-`BOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
+You need to send your BOND on the chain to this address using the memo `BOND:<node-address>`.
 
 {% hint style="danger" %}
 **This is a significant quantity of funds!**
 
 1. You should practice this first on Testnet.
-2. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1,000,000 RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
-3. You can then send in at least 1,000,000 RUNE.
+2. **THE ADDRESS ABOVE MAY BE FAKE** - you could be spoofed from a compromised binary. Verify the Bond Address yourself - it is the primary Asgard Vault on THORChain. 
+3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1,000,000 RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
 4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device. 
 {% endhint %}
 
+![Bonding 10k RUNE](../.gitbook/assets/image%20%2822%29.png)
+
 Give the network at least a minute to pick up your bond.
+
+```text
+curl https://testnet-seed.thorchain.info --> returns active nodes
+curl http://<IP>:1317/thorchain/nodeaccount/<node-address>
+```
+
+![](../.gitbook/assets/image%20%2817%29.png)
 
 If you run `make status` again, you should see this:
 

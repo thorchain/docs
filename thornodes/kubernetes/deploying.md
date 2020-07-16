@@ -58,7 +58,7 @@ make destroy-tools
 
 You can install those tools separately using the sections below. If you are successful, you will see the following message:
 
-![](../../.gitbook/assets/image%20%2820%29.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
 If there are any errors, they are typically fixed by running the command again. 
 
@@ -100,7 +100,7 @@ Deploying a THORNode takes ~10 minutes
 
 If successful, you will see the following:
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2818%29.png)
 
 You are now ready to join the network:
 
@@ -122,7 +122,7 @@ Kubernetes should automatically restart any service, but you can force a restart
 kubectl delete pod <pod> -n thornode
 ```
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon \(eg, binance-daemon-xxx\). 
 
 Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight. 
