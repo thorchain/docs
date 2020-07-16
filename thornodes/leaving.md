@@ -50,5 +50,26 @@ If your node is both offline and inaccessible, then it will be unable to return 
 Example: If your node has a $500k bond \(in RUNE\), but has $100k in assets in its vaults it can't return, it will lose $150k in RUNE from its bond. The Node will get back $350k in its bond. 
 {% endhint %}
 
+### DESTROY
 
+To destroy and remove previously created resources, you can run the command below.
+
+{% hint style="danger" %}
+Destroying your cluster will completely destroy your node, including purging all keys on it. 
+
+**DO NOT DO THIS UNTIL YOUR NODE HAS CHURNED OUT AND YOU HAVE VERIFIED YOUR BOND IS COMPLETELY RETURNED**
+
+IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
+{% endhint %}
+
+```text
+make aws-destroy
+```
+
+Or manually run each commands:
+
+```text
+cd aws/ 
+terraform destroy
+```
 

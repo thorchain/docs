@@ -199,9 +199,7 @@ During the deploy, you will be asked to enter information about your cluster:
 
 Final success message: `Apply complete! Resources: 50 added, 0 changed, 0 destroyed.`
 
-{% tabs %}
-{% tab title="CONFIGURE" %}
-**Configure kubectl**
+### CONFIGURE
 
 Now that you've provisioned your EKS cluster, you need to configure kubectl. Customize the following command with your cluster name and region. It will get the access credentials for your cluster and automatically configure kubectl.
 
@@ -209,27 +207,17 @@ Now that you've provisioned your EKS cluster, you need to configure kubectl. Cus
 aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
 kubectl version
 ```
-{% endtab %}
-{% endtabs %}
 
+If successful: `Added new context ..... <details>`
 
-
-{% tabs %}
-{% tab title="DESTROY" %}
-**Clean up your workspace**
-
-To destroy and remove previously created resources, you can run the command below.
+To verify, run this, and check the status is "Ready":
 
 ```text
-make aws-destroy
+kubectl get nodes
+
+NAME                          STATUS   ROLES    AGE     VERSION
+ip-10-0-49-192.ec2.internal   Ready    <none>   4m16s   v1.16.12-eks-904af05
 ```
 
-Or manually run each commands:
-
-```text
-cd aws/
-terraform destroy
-```
-{% endtab %}
-{% endtabs %}
+### 
 
