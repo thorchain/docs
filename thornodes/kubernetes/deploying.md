@@ -19,6 +19,10 @@ Helm charts are the defacto and currently easiest and simple way to package and 
 * Running Kubernetes cluster
 * Kubectl configured, ready and connected to running cluster
 
+{% hint style="info" %}
+If you came here from the Setup page, you are already good to go. 
+{% endhint %}
+
 ## Steps
 
 Clone the Helm Charts repo. All commands in this section are to be run inside of this repo. 
@@ -56,11 +60,13 @@ make destroy-tools
 {% endtab %}
 {% endtabs %}
 
-You can install those tools separately using the sections below. If you are successful, you will see the following message:
+If you are successful, you will see the following message:
 
 ![](../../.gitbook/assets/image%20%2823%29.png)
 
 If there are any errors, they are typically fixed by running the command again. 
+
+
 
 ## Deploy THORNode
 

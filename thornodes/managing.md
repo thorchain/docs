@@ -92,11 +92,15 @@ make destroy
 
 ## Tools
 
-Note, these should already be installed from `make tools` above. 
+Note, all of these should already be installed from `make tools`. However you can install them separately useing the DEPLOY tabs below. 
+
+To access the tools, navigate to the ACCESS tabs below. 
 
 ### LOGS MANAGEMENT \(KIBANA\)
 
 It is recommended to deploy an Elastic Search / Logstash / Filebeat / Kibana to redirect all logs within an elasticsearch database and available through the UI Kibana.
+
+For a reminder on Kubernetes commands, please[ visit this page](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)**.** 
 
 {% tabs %}
 {% tab title="DEPLOY" %}
@@ -112,7 +116,7 @@ You can check the services being deployed in your kubernetes namespace `elastic-
 {% endtab %}
 
 {% tab title="ACCESS" %}
-We have created a make command to automate this task to access Kibana from your local workstation:
+You can automate this task to access Kibana from your local workstation:
 
 ```text
 make kibana
@@ -139,22 +143,14 @@ Login as the `elastic` user. The password can be obtained with the following com
 ```text
 kubectl -n elastic-system get secret elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
 ```
-{% endtab %}
-{% endtabs %}
 
 To access the logs of the THORNode services running, you can either use directly Kubernetes commands to get logs from different deployments, for example, to get the logs of the service `thor-daemon`:
 
 ```text
 kubectl logs -f deploy/thor-daemon -n thornode
 ```
-
-For a reminder on Kubernetes commands, please[ visit this page](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)**.** 
-
-Or you can use the Elasticsearch stack installed with the tools command, and access the Kibana dashboard using the command:
-
-```text
-make kibana
-```
+{% endtab %}
+{% endtabs %}
 
 From there, you will need to create a new index to get the logs coming from Filebeat. You can search using the regular “Discover” app in Kibana to go through your logs using a filter to get only specific services or keywords, etc.
 
@@ -272,7 +268,7 @@ The following are attack vectors:
 3. If anyone accesses your hardware device used to bond, they can sign a LEAVE transaction and steal your bond once it is returned
 
 {% hint style="danger" %}
-RUNNING A NODE IS SERIOUS BUSINESS
+**RUNNING A NODE IS SERIOUS BUSINESS**
 
 DO SO AT YOUR OWN RISK, YOU CAN LOSE A SIGNIFICANT QUANTITY OF FUNDS IF AN ERROR IS MADE
 

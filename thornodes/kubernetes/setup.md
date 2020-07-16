@@ -15,6 +15,11 @@ description: Setting up a Kubernetes Cluster
 5. `wget` \(required for EKS module\)
 6. Kubernetes Terraform provider
 
+{% hint style="warning" %}
+**LINUX/MAC is the preferred method of setup - Windows users may experience difficulty.   
+A solution for Windows users is to use a simple Linux VPS to deploy a THORNode from.** 
+{% endhint %}
+
 ## **Steps**
 
 Firstly, clone and enter the [terraform-script repository](https://gitlab.com/thorchain/devops/terraform-scripts)**.** All commands in this section are to be run inside this repo. 
@@ -72,11 +77,9 @@ aws configure
 You will be asked for you AWS access credentials \(retrieve from AWS IAM from the AWS web console.\)
 {% endhint %}
 
-#### \*\*\*\*
-
 #### **AWS IAM Authenticator**
 
-In order for Terraform to run operations on your behalf, you must install and configure the **AWS IAM Authenticator** tool. ****To install, follow [these instructions](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html), or choose a package manager based on your operating system.
+You also must install and configure the **AWS IAM Authenticator** tool. ****To install, follow [these instructions](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html), or choose a package manager based on your operating system.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
@@ -96,9 +99,9 @@ choco install aws-iam-authenticator
 {% endtab %}
 {% endtabs %}
 
-#### **kubectl**
+#### Kubernetes Control Tool
 
-In order for Terraform to run operations on your behalf, you must install and configure the AWS CLI tool. ****To install the AWS CLI, follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
+You must install and configure the Kubernetes CLI tool \(**kubectl**\). ****To install **kubectl** , follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
@@ -118,9 +121,9 @@ choco install kubernetes-cli
 {% endtab %}
 {% endtabs %}
 
-#### **wget**
+#### **wget && jq**
 
-In order for Terraform to run operations on your behalf, you must install and configure the AWS CLI tool. ****To install the AWS CLI, follow [these instructions](https://www.gnu.org/software/wget/), or choose a package manager based on your operating system.
+You also need **wget** and **jq**, follow [these instructions](https://www.gnu.org/software/wget/), or choose a package manager based on your operating system.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
@@ -160,7 +163,7 @@ mkdir -p ~/.terraform.d/plugins && \
 {% endtab %}
 
 {% tab title="WINDOWS" %}
-In progress
+You may need to seek alternative options. This guide is incomplete for Windows. 
 {% endtab %}
 {% endtabs %}
 
@@ -197,7 +200,7 @@ Deploying a cluster takes ~10 minutes
 
 ## CONFIGURE
 
-Now that you've provisioned your EKS cluster, you need to configure kubectl. Customize the following command with your cluster name and region. It will get the access credentials for your cluster and automatically configure kubectl.
+Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region. 
 
 ```text
 aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
@@ -216,4 +219,6 @@ kubectl get nodes
 NAME                          STATUS   ROLES    AGE     VERSION
 ip-10-0-49-192.ec2.internal   Ready    <none>   4m16s   v1.16.12-eks-904af05
 ```
+
+You are now ready to deploy a THORNode. 
 
