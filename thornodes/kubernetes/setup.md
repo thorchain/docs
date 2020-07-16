@@ -22,7 +22,7 @@ description: Setting up a Kubernetes Cluster
 In order for Terraform to run operations on your behalf, you must install and configure the AWS CLI tool. ****To install the AWS CLI, follow [these instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html), or choose a package manager based on your operating system.
 
 {% tabs %}
-{% tab title="MacOs" %}
+{% tab title="LINUX/MAC" %}
 Use the package manager [homebrew](https://formulae.brew.sh/) to install the AWS CLI.
 
 ```text
@@ -46,7 +46,7 @@ aws configure
 In order for Terraform to run operations on your behalf, you must install and configure the **AWS IAM Authenticator** tool. ****To install, follow [these instructions](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html), or choose a package manager based on your operating system.
 
 {% tabs %}
-{% tab title="MacOs" %}
+{% tab title="LINUX/MAC" %}
 Use the package manager [homebrew](https://formulae.brew.sh/) to install the **AWS IAM Authenticator**.
 
 ```bash
@@ -68,7 +68,7 @@ choco install aws-iam-authenticator
 In order for Terraform to run operations on your behalf, you must install and configure the AWS CLI tool. ****To install the AWS CLI, follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
 
 {% tabs %}
-{% tab title="MacOs" %}
+{% tab title="LINUX/MAC" %}
 Use the package manager [homebrew](https://formulae.brew.sh/) to install **kubectl**.
 
 ```text
@@ -90,11 +90,13 @@ choco install kubernetes-cli
 In order for Terraform to run operations on your behalf, you must install and configure the AWS CLI tool. ****To install the AWS CLI, follow [these instructions](https://www.gnu.org/software/wget/), or choose a package manager based on your operating system.
 
 {% tabs %}
-{% tab title="MacOs" %}
-Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget**.
+{% tab title="LINUX/MAC" %}
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**   
+_Note: You most likely have these installed already._ 
 
 ```text
-brew install wget
+brew install wget 
+brew install jq
 ```
 {% endtab %}
 
@@ -112,7 +114,7 @@ choco install kubernetes-cli
 Use the command below to install Kubernetes Terraform provider, if the command is outdated or failing, please refer to the [documentation here](https://gavinbunney.github.io/terraform-provider-kubectl/docs/provider.html).
 
 {% tabs %}
-{% tab title="MacOS" %}
+{% tab title="LINUX/MAC" %}
 Run the following:
 
 ```text
