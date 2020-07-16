@@ -20,12 +20,11 @@ All the default configurations used in these instructions are for a production e
 
 ## Steps
 
-There are two important steps to getting your Kubernetes Cluster ready.
+There are three important steps to getting your node set up, deployed and churned in. 
 
-1. Setting up Cluster
-2. Deploying THORNode Services
-
-
+1. [Setting up Cluster](setup.md)
+2. [Deploying THORNode Services](deploying.md)
+3. [Joining \("Churning In"\)](../joining.md)
 
 ### Repository Management
 
@@ -38,5 +37,5 @@ Your repository should be organised as follows:
        |-/helm-charts
 ```
 
-
+All of your set up commands are run in `terraform-scripts` and all of your deploying/joining/managing/leaving commands are run from `helm-charts`
 
