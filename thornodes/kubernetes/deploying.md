@@ -75,14 +75,6 @@ It is important to deploy the tools first before deploying the THORNode services
 You have multiple commands available to deploy different configurations of THORNode. You can deploy mainnet  or testnet. The commands deploy the umbrella chart `thornode` in the background in the Kubernetes namespace `thornode` by default. Unless you specify the name of your deployment using the environment variable `NAME`, all the commands are run against the default Kubernetes namespace `thornode` set up in the Makefile.
 
 {% tabs %}
-{% tab title="MAINNET" %}
-#### Deploy Mainnet Validator
-
-```text
-make mainnet-validator
-```
-{% endtab %}
-
 {% tab title="TESTNET" %}
 #### Deploy Testnet Validator
 
@@ -96,6 +88,14 @@ Or to manually specify the seed genesis IP, run that command:
 
 ```text
 SEED_TESTNET=1.2.3.4 make testnet-validator
+```
+{% endtab %}
+
+{% tab title="MAINNET" %}
+#### Deploy Mainnet Validator
+
+```text
+make mainnet-validator
 ```
 {% endtab %}
 {% endtabs %}
@@ -131,7 +131,18 @@ kubectl delete pod <pod> -n thornode
 {% hint style="warning" %}
 Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon \(eg, binance-daemon-xxx\). 
 
-Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight. 
+Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight, \("xxx" is your unique ID\):
+
+```text
+kubectl logs -f binance-daemon-xxx -n thornode
+```
+{% endhint %}
+
+{% hint style="info" %}
+Get real-world blockheights on the external blockchain explorers, eg:  
+[https://testnet-explorer.binance.org/](https://testnet-explorer.binance.org/)
+
+[https://explorer.binance.org/](https://explorer.binance.org/)
 {% endhint %}
 
 ## CHART SUMMARY
