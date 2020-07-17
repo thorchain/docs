@@ -65,3 +65,9 @@ Emergency changes are difficult to coordinate because nodes cannot communicate. 
 
 There are only so many nodes who can participate on the network. This is because there's a minimum bond amount and a fixed supply of Rune. If the system is ever found to be always under-bonded or over-bonded, the minimum bond limit can be changed. 
 
+## Mimir
+
+Mimir is a feature to allow admins to change constants in the chain, such as MinimumBond, ChurnSpeed and more during Chaosnet. When Mimir is destroyed, the chain will be uncapped and in Mainnet. 
+
+
+
