@@ -192,6 +192,8 @@ During the deploy, you will be asked to enter information about your cluster:
 * AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
 * Confirm `yes`
 
+![Note: AWS EKS is not available in some regions](../../.gitbook/assets/image%20%2825%29.png)
+
 Final success message: `Apply complete! Resources: 50 added, 0 changed, 0 destroyed.`
 
 {% hint style="info" %}
