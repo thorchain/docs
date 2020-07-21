@@ -50,7 +50,14 @@ If your node is both offline and inaccessible, then it will be unable to return 
 Example: If your node has a $500k bond \(in RUNE\), but has $100k in assets in its vaults it can't return, it will lose $150k in RUNE from its bond. The Node will get back $350k in its bond. 
 {% endhint %}
 
+#### Confirming you have left
 
+You should complete this checklest before you do the next step:
+
+1. Have I sent a final LEAVE transaction and is my node status showing `requested_to_leave:true`
+2. Have I received my BOND back - ie 1,000,000 RUNE, and I can account for any slash points or rewards that may change this?
+
+If yes, then proceed:
 
 ### DESTROY
 
@@ -72,7 +79,7 @@ First, destroy the tools, this will delete all your tooling 1-by-1. Do this from
 make destroy destroy-tools
 ```
 
-![Destroying the Tooling](../.gitbook/assets/image%20%2827%29.png)
+![Destroying the Tooling](../.gitbook/assets/image%20%2828%29.png)
 
 #### 2\) Destroy the cluster
 
@@ -93,4 +100,6 @@ You will be asked to confirm:
 
 **IF YOU DESTROY YOUR NODE WITH FUNDS LOCKED UP - THEY COULD BE FOREVER LOST AND YOU WILL LOSE A SIGNIFICANT QUANTITY OF FUNDS**
 {% endhint %}
+
+![Final destroy complete](../.gitbook/assets/image%20%2827%29.png)
 
