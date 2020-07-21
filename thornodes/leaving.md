@@ -71,9 +71,9 @@ Destroying your cluster will completely destroy your node, including purging all
 IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
 {% endhint %}
 
-#### 1\) Destroying Tools
+#### 1\) Destroying the Node and Tools
 
-First, destroy the tools, this will delete all your tooling 1-by-1. Do this from the `node-launcher` repo:
+First, destroy the node and tools, this will delete your node then your tooling 1-by-1. Do this from the `node-launcher` repo:
 
 ```text
 make destroy destroy-tools
