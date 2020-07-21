@@ -96,6 +96,8 @@ Note, all of these should already be installed from `make tools`. However you ca
 
 To access the tools, navigate to the ACCESS tabs below. 
 
+All of these commands are to be run from `node-launcher`
+
 ### LOGS MANAGEMENT \(KIBANA\)
 
 It is recommended to deploy an Elastic Search / Logstash / Filebeat / Kibana to redirect all logs within an elasticsearch database and available through the UI Kibana.

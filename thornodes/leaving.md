@@ -73,7 +73,7 @@ IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
 
 #### 1\) Destroying Tools
 
-First, destroy the tools, this will delete all your tooling 1-by-1. Do this from the `helm-charts` repo:
+First, destroy the tools, this will delete all your tooling 1-by-1. Do this from the `node-launcher` repo:
 
 ```text
 make destroy destroy-tools
@@ -83,7 +83,7 @@ make destroy destroy-tools
 
 #### 2\) Destroy the cluster
 
-Then destroy the cluster from the `terraform-scripts` repo:
+Then destroy the cluster from the `cluster-launcher` repo:
 
 ```text
 make destroy-aws

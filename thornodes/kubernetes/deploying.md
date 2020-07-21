@@ -11,7 +11,7 @@ Now you have a Kubernetes cluster ready to use, you can install the THORNode ser
 {% hint style="info" %}
 Helm charts are the defacto and currently easiest and simple way to package and deploy Kubernetes application. The team created different Helm charts to help to deploy all the necessary services. Please retrieve the source files from the Git repository here to follow the instructions below:
 
- ****[**https://gitlab.com/thorchain/devops/helm-charts**](https://gitlab.com/thorchain/devops/helm-charts/-/blob/master/README.md)
+\*\*\*\*[ **https://gitlab.com/thorchain/devops/node-launcher**](https://gitlab.com/thorchain/devops/node-launcher)\*\*\*\*
 {% endhint %}
 
 ### Requirements
@@ -25,11 +25,11 @@ If you came here from the Setup page, you are already good to go.
 
 ## Steps
 
-Clone the Helm Charts repo. All commands in this section are to be run inside of this repo. 
+Clone the `node-launcher` repo. All commands in this section are to be run inside of this repo. 
 
 ```text
-git clone https://gitlab.com/thorchain/devops/helm-charts
-cd helm-charts
+git clone https://gitlab.com/thorchain/devops/node-launcher
+cd node-launcher
 ```
 
 ### Install Helm 3
@@ -65,8 +65,6 @@ If you are successful, you will see the following message:
 ![](../../.gitbook/assets/image%20%2823%29.png)
 
 If there are any errors, they are typically fixed by running the command again. 
-
-
 
 ## Deploy THORNode
 

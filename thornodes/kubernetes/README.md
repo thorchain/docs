@@ -30,9 +30,9 @@ Your repository should be organised as follows:
 
 ```text
 -/thornode
-       |-/terraform-scripts
-       |-/helm-charts
+       |-/cluster-launcher
+       |-/node-launcher
 ```
 
-All of your set up commands are run in `terraform-scripts` and all of your deploying/joining/managing/leaving commands are run from `helm-charts`
+All of your set up commands are run in `cluster-launcher` and all of your deploying/joining/managing/leaving commands are run from `node-launcher`
 

@@ -22,11 +22,11 @@ A solution for Windows users is to use a simple Linux VPS to deploy a THORNode f
 
 ## **Steps**
 
-Firstly, clone and enter the [terraform-script repository](https://gitlab.com/thorchain/devops/terraform-scripts)**.** All commands in this section are to be run inside this repo. 
+Firstly, clone and enter the [cluster-launcher repository](https://gitlab.com/thorchain/devops/cluster-launcher)**.** All commands in this section are to be run inside this repo. 
 
 ```text
-git clone https://gitlab.com/thorchain/devops/terraform-scripts
-cd terraform-scripts
+git clone https://gitlab.com/thorchain/devops/cluster-launcher
+cd cluster-launcher
 ```
 
 Then install the [terraform CLI](https://www.terraform.io):
