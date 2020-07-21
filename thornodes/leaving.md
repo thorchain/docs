@@ -50,6 +50,8 @@ If your node is both offline and inaccessible, then it will be unable to return 
 Example: If your node has a $500k bond \(in RUNE\), but has $100k in assets in its vaults it can't return, it will lose $150k in RUNE from its bond. The Node will get back $350k in its bond. 
 {% endhint %}
 
+
+
 ### DESTROY
 
 To destroy and remove previously created resources, you can run the command below.
@@ -62,14 +64,33 @@ Destroying your cluster will completely destroy your node, including purging all
 IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
 {% endhint %}
 
-```text
-make aws-destroy
-```
+#### 1\) Destroying Tools
 
-Or manually run each commands:
+First, destroy the tools, this will delete all your tooling 1-by-1. Do this from the `helm-charts` repo:
 
 ```text
-cd aws/ 
-terraform destroy
+make destroy destroy-tools
 ```
+
+![Destroying the Tooling](../.gitbook/assets/image%20%2827%29.png)
+
+#### 2\) Destroy the cluster
+
+Then destroy the cluster from the `terraform-scripts` repo:
+
+```text
+make destroy-aws
+```
+
+You will be asked to enter your cluster name and region \(the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)\).
+
+You will be asked to confirm:
+
+![](../.gitbook/assets/image%20%2826%29.png)
+
+{% hint style="danger" %}
+**DO NOT DESTROY YOUR NODE UNTIL YOU HAVE CHURNED OUT AND HAVE RECEIVED YOUR FULL BOND BACK IN YOUR CUSTODY**
+
+**IF YOU DESTROY YOUR NODE WITH FUNDS LOCKED UP - THEY COULD BE FOREVER LOST AND YOU WILL LOSE A SIGNIFICANT QUANTITY OF FUNDS**
+{% endhint %}
 
