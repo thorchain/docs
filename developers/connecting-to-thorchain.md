@@ -66,7 +66,7 @@ Example:
 
 P2P is the network layer between nodes, useful for network debugging. 
 
-TESTNET Port: `26657` 
+TESTNET Port: `26656` 
 
 MAINNET Port: `27146` 
 
