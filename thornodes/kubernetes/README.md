@@ -29,9 +29,9 @@ There are three important steps to getting your node set up, deployed and churne
 Your repository should be organised as follows:
 
 ```text
--/thornode
-       |-/cluster-launcher
-       |-/node-launcher
+./thornode
+  |./cluster-launcher
+  |./node-launcher
 ```
 
 All of your set up commands are run in `cluster-launcher` and all of your deploying/joining/managing/leaving commands are run from `node-launcher`
