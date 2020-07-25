@@ -12,7 +12,7 @@ There are a couple of steps to follow to do so.
 
 ### 1. Check your current node status
 
-The first step would be to make sure your deployment was successful and your node is running correctly. ****To check the current status of your node, you can run the command status from the `helm-charts`repository on your terminal:
+The first step would be to make sure your deployment was successful and your node is running correctly. ****To check the current status of your node, you can run the command status from the `node-launcher`repository on your terminal:
 
 ```text
 make status
