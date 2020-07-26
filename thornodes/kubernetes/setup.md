@@ -73,8 +73,12 @@ aws configure
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-You will be asked for you AWS access credentials \(retrieve from AWS IAM from the AWS web console.\)
+{% hint style="warning" %}
+You will be asked for you AWS access credentials \(retrieve from AWS IAM from the AWS web console.\)  
+  
+**IAM -&gt; User -&gt; Security Credentials -&gt; Create Access Key.**  
+  
+Make sure you handle your secrets securely!
 {% endhint %}
 
 #### **AWS IAM Authenticator**
@@ -175,15 +179,6 @@ Use the commands below to deploy an AWS EKS cluster. You can run the make comman
 make aws
 ```
 
-Or manually run each commands:
-
-```text
-cd aws/ 
-terraform init 
-terraform plan
-terraform apply
-```
-
 During the deploy, you will be asked to enter information about your cluster:
 
 ![](../../.gitbook/assets/image%20%2820%29.png)
@@ -192,9 +187,19 @@ During the deploy, you will be asked to enter information about your cluster:
 * AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
 * Confirm `yes`
 
+![Regions](../../.gitbook/assets/image%20%2829%29.png)
+
 ![Note: AWS EKS is not available in some regions](../../.gitbook/assets/image%20%2825%29.png)
 
-Final success message: `Apply complete! Resources: 50 added, 0 changed, 0 destroyed.`
+
+
+Final success message: `Apply complete! Resources: 30 added, 0 changed, 0 destroyed.`
+
+{% hint style="info" %}
+If you are a **returning** node operator and you wish to use the same node name, the Cloudwatch log files from your previous session will block this step. You need to manually delete the logs from your console:  
+  
+**Cloudwatch / Cloudwatch Logs / Log Groups -&gt; "delete"**
+{% endhint %}
 
 {% hint style="info" %}
 Deploying a cluster takes ~10 minutes
