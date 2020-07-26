@@ -41,23 +41,11 @@ But to be able to set up the node IP address, you first need to get it registere
 Before sending the BOND, verify that your THORNode is fully synced with connected chains. Connected chains such as Bitcoin, may take a day to sync. If you join THORChain without fully syncing a connected chain, you will immediately get slashed for missing observations, and lose money. 
 {% endhint %}
 
-You can verify the sync status by loading the Grafana Dashboard, and navigating to view sync status of connected chains. 
-
-```text
-make grafana
-```
-
-More info is at the [Metrics Section](https://docs.thorchain.org/thornodes/managing#access-metrics).
-
 ### 2 - Send BOND
 
-From the previous status command, you got the current Vault BNB address from the chain:
+1\) Get the Vault BNB address from the `make status` comman
 
-```text
-Vault BNB Bond Address tbnb1028va9y3ay4a0fpg983gxaen8w5fhr0080fwvn
-```
-
-You need to send your BOND on the chain to this vault address using the memo `BOND:<thor-nodeaddress>`.
+2\) Send your BOND to this vault address using the memo `BOND:<thornode-address>`.
 
 {% hint style="danger" %}
 **This is a significant quantity of funds!**
@@ -176,7 +164,7 @@ RUNE is always displayed in 1e8 format, 100000000 = 1 RUNE
 
 At any time during standby, you can bond more by making an additional BOND transaction with memo:
 
-`BOND:<thor-nodeaddress>`
+`BOND:<thornode-address>`
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo. 
 
