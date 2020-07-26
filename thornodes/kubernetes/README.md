@@ -29,7 +29,7 @@ There are three important steps to getting your node set up, deployed and churne
 Your repository should be organised as follows:
 
 ```text
-./thornode
+./thornode-ops
   |./cluster-launcher
   |./node-launcher
 ```
