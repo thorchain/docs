@@ -36,3 +36,24 @@ Your repository should be organised as follows:
 
 All of your set up commands are run in `cluster-launcher` and all of your deploying/joining/managing/leaving commands are run from `node-launcher`
 
+### Running Two or More Nodes
+
+{% hint style="danger" %}
+To prevent a catastrophic mistake in handling multiple nodes, set them up on different machines, or use different user profiles on your machine, or in the least, use different repos:
+{% endhint %}
+
+```text
+./thornode-ops
+  |./cluster-launcher
+  |./node-launcher
+./thornode-ops2
+  |./cluster-launcher
+  |./node-launcher
+```
+
+All of your commands can now be run separately. 
+
+{% hint style="info" %}
+It is heavily advised to not set up nodes on the same provider. Deploy 1 node on AWS, 1 node on Digital Ocean etc. 
+{% endhint %}
+

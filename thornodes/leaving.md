@@ -85,11 +85,23 @@ make destroy destroy-tools
 
 Then destroy the cluster from the `cluster-launcher` repo:
 
+{% tabs %}
+{% tab title="AWS" %}
+You will be asked to enter your cluster name and region \(the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)\).
+
 ```text
 make destroy-aws
 ```
+{% endtab %}
 
-You will be asked to enter your cluster name and region \(the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)\).
+{% tab title="DO" %}
+You will be asked to enter your cluster name and region, as well as your Personal Token \(the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)\).
+
+```text
+make destroy-do
+```
+{% endtab %}
+{% endtabs %}
 
 You will be asked to confirm:
 
