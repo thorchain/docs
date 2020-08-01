@@ -52,7 +52,7 @@ Before sending the BOND, verify that your THORNode is fully synced with connecte
 
 1. You should practice this first on Testnet.
 2. **THE ADDRESS RETURNED MAY BE FAKE** - you could be spoofed from a compromised binary. Verify the Bond Address yourself - it is the primary Asgard Vault on THORChain. `http://host:8080/v1/thorchain/pool_addresses`
-3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum of 1,000,000 RUNE. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
+3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
 4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device. 
 {% endhint %}
 
@@ -72,15 +72,19 @@ Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.
 
    `http://host:1317/thorchain/pool_addresses`
 
-3. `http://host:8080/v1/thorchain/pool_addresses`
-4. Did you check this address in a Binance Chain explorer and see the presence of all the current Asgard Funds?
+3. Did you check this address in a Binance Chain explorer and see the presence of all the current Asgard Funds?
+{% endhint %}
+
+{% hint style="warning" %}
+Don't forget to add the BONDING MEMO!!!  
+`BOND:<thornode-address>`
 {% endhint %}
 
 Give the network 10-15 seconds to pick up your bond. To verify it has received your bond, run the following:
 
 ```text
 curl https://testnet-seed.thorchain.info --> returns active nodes
-curl http://<IP>:1317/thorchain/nodeaccount/<node-address>
+curl http://<host>:1317/thorchain/nodeaccount/<node-address>
 ```
 
 ![](../.gitbook/assets/image%20%2818%29.png)
