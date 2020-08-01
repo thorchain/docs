@@ -44,9 +44,9 @@ brew install terraform
 {% endtab %}
 {% endtabs %}
 
-#### **DO CLI**
+#### **DOCLI**
 
-The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services. You should install it. 
+The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services. This step is optional. 
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
@@ -119,7 +119,7 @@ mkdir -p ~/.terraform.d/plugins && \
 
 ## **Deploy Kubernetes Cluster**
 
-Use the commands below to deploy an DO EKS cluster:
+Use the commands below to deploy a DO EKS cluster:
 
 ```text
 make do
@@ -130,7 +130,7 @@ During the deploy, you will be asked to enter information about your cluster:
 ![](../../.gitbook/assets/image%20%2820%29.png)
 
 * Name
-* DO Region -- see valid [List of Regions](https://www.digitalocean.com/docs/platform/availability-matrix/#other-product-availability)
+* DO Region -- see valid [List of Regions](https://www.digitalocean.com/docs/platform/availability-matrix/#other-product-availability) \(use lower-case\)
 * Confirm `yes`
 
 ![Kubernetes Availability \(note, use lower-case in the terminal\)](../../.gitbook/assets/image%20%2830%29.png)
