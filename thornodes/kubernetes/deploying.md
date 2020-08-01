@@ -112,6 +112,12 @@ You are now ready to join the network:
 
 ### Debugging
 
+{% hint style="info" %}
+Set `thornode` to be your default namespace so you don't need to type `-n thornode` each time:
+
+`kubectl config set-context --current --namespace=thornode`
+{% endhint %}
+
 Use the following useful commands to view and debug accordingly. You should see everything running and active. Logs can be retrieved to find errors:
 
 ```text

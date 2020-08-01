@@ -2,7 +2,7 @@
 description: Deploying a THORNode with Kubernetes
 ---
 
-# Deploy - Kubernetes
+# Deploy - K8 Cluster
 
 ## **Deploy a Kubernetes cluster**
 
@@ -12,7 +12,7 @@ In order to deploy all the different services and provide a high availability en
 Terraform is a type of domain-specific language \(DSL\) used to describe through code infrastructure. It designed to make it easier to create/destroy infrastructure hosted locally or by a provider such as AWS or others.
 {% endhint %}
 
-Currently, only an AWS provider is available \(more will be added soon\). This Terraform deployment will deploy a Kubernetes cluster using your AWS credentials and EKS service. The cluster will have autoscaling capabilities, which means you don’t have to deal with how many nodes you need to deploy to run your THORNode services.
+This Terraform deployment will deploy a Kubernetes cluster using your VPS provider credentials and EKS service. The cluster will have autoscaling capabilities, which means you don’t have to deal with how many nodes you need to deploy to run your THORNode services.
 
 All the default configurations used in these instructions are for a production environment with enough resources to run your THORNode in good conditions.
 

@@ -1,19 +1,18 @@
 ---
-description: Setting up a Kubernetes Cluster with AWS
+description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 ---
 
-# Setup - AWS
+# Setup - Digital Ocean
 
-## **Deploy a Kubernetes cluster in AWS using EKS service.**
+## **Deploy a Kubernetes cluster in DO using EKS service.**
 
 ### **Requirements**
 
-1. AWS account
-2. CLI and AWS credentials configured
-3. AWS IAM Authenticator
-4. `kubectl`
-5. `wget` \(required for EKS module\)
-6. Kubernetes Terraform provider
+1. DO account
+2. `doctl` and DO credentials configured
+3. `kubectl`
+4. `wget` \(required for EKS module\)
+5. Kubernetes Terraform provider
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
@@ -22,8 +21,6 @@ description: Setting up a Kubernetes Cluster with AWS
 
 1. **Deploy a THORNode from a Linux VPS.**
 2. **Use Windows Subsystem for Linux -** [**https://docs.microsoft.com/en-us/windows/wsl/about**](https://docs.microsoft.com/en-us/windows/wsl/about)\*\*\*\*
-
- ****
 {% endhint %}
 
 ## **Steps**
@@ -47,42 +44,30 @@ brew install terraform
 {% endtab %}
 {% endtabs %}
 
-#### **AWS CLI**
+#### **DO CLI**
 
-In order for Terraform to run operations on your behalf, you must install and configure the AWS CLI tool. ****To install the AWS CLI, follow [these instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html), or choose a package manager based on your operating system.
+The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services. You should install it. 
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh/) to install the AWS CLI.
+Use the package manager [homebrew](https://formulae.brew.sh/) to install the DO CTL.
 
 ```text
-brew install awscli
-aws configure
+brew install dotcli
+doctl auth init --context <NAME>
+doctl auth switch --context <NAME>
+doctl account get
 ```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="warning" %}
-You will be asked for you AWS access credentials \(retrieve from AWS IAM from the AWS web console.\)  
+You will be asked for you Personal Access Token with read/write priveleges \(retrieve from API Panel from the Digital Ocean web console.\)  
   
-**IAM -&gt; User -&gt; Security Credentials -&gt; Create Access Key.**  
+**API -&gt; Tokens/Keys -&gt; Create Token.**  
   
 Make sure you handle your secrets securely!
 {% endhint %}
-
-#### **AWS IAM Authenticator**
-
-You also must install and configure the **AWS IAM Authenticator** tool. ****To install, follow [these instructions](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html), or choose a package manager based on your operating system.
-
-{% tabs %}
-{% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh/) to install the **AWS IAM Authenticator**.
-
-```bash
-brew install aws-iam-authenticator
-```
-{% endtab %}
-{% endtabs %}
 
 #### Kubernetes Control Tool
 
@@ -134,10 +119,10 @@ mkdir -p ~/.terraform.d/plugins && \
 
 ## **Deploy Kubernetes Cluster**
 
-Use the commands below to deploy an AWS EKS cluster. You can run the make command that automates those command for you like this:
+Use the commands below to deploy an DO EKS cluster:
 
 ```text
-make aws
+make do
 ```
 
 During the deploy, you will be asked to enter information about your cluster:
@@ -145,22 +130,12 @@ During the deploy, you will be asked to enter information about your cluster:
 ![](../../.gitbook/assets/image%20%2820%29.png)
 
 * Name
-* AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
+* DO Region -- see valid [List of Regions](https://www.digitalocean.com/docs/platform/availability-matrix/#other-product-availability)
 * Confirm `yes`
 
-![Regions](../../.gitbook/assets/image%20%2829%29.png)
-
-![Note: AWS EKS is not available in some regions](../../.gitbook/assets/image%20%2825%29.png)
-
-
+![Kubernetes Availability \(note, use lower-case in the terminal\)](../../.gitbook/assets/image%20%2830%29.png)
 
 Final success message: `Apply complete! Resources: 30 added, 0 changed, 0 destroyed.`
-
-{% hint style="info" %}
-If you are a **returning** node operator and you wish to use the same node name, the Cloudwatch log files from your previous session will block this step. You need to manually delete the logs from your console:  
-  
-**Cloudwatch / Cloudwatch Logs / Log Groups -&gt; "delete"**
-{% endhint %}
 
 {% hint style="info" %}
 Deploying a cluster takes ~10 minutes

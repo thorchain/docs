@@ -16,8 +16,9 @@
 
 * [THORNode Overview](thornodes/overview.md)
 * [Deploy - Manual](thornodes/manual.md)
-* [Deploy - Kubernetes](thornodes/kubernetes/README.md)
-  * [Setup](thornodes/kubernetes/setup.md)
+* [Deploy - K8 Cluster](thornodes/kubernetes/README.md)
+  * [Setup - AWS](thornodes/kubernetes/setup.md)
+  * [Setup - Digital Ocean](thornodes/kubernetes/setup-digital-ocean.md)
   * [Deploying](thornodes/kubernetes/deploying.md)
 * [Joining](thornodes/joining.md)
 * [Managing](thornodes/managing.md)
