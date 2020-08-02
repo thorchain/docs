@@ -149,7 +149,7 @@ Now that you've provisioned your EKS cluster, you need to configure **kubectl**.
 doctl kubernetes cluster kubeconfig save <cluster_name>
 ```
 
-If you receive a permission denied error with a warning from snap, do what it says in the error:
+If you receive a permission denied error with a warning from snap, do what it says in the warning:
 ```text
 sudo snap connect doctl:kube-config
 doctl kubernetes cluster kubeconfig save <cluster_name>
