@@ -135,7 +135,7 @@ During the deploy, you will be asked to enter information about your cluster:
 
 ![Kubernetes Availability \(note, use lower-case in the terminal\)](../../.gitbook/assets/image%20%2830%29.png)
 
-Final success message: `Apply complete! Resources: 30 added, 0 changed, 0 destroyed.`
+Final success message: `Apply complete! Resources: 2 added, 0 changed, 0 destroyed.`
 
 {% hint style="info" %}
 Deploying a cluster takes ~10 minutes
@@ -143,16 +143,31 @@ Deploying a cluster takes ~10 minutes
 
 ## CONFIGURE
 
-Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region. 
+Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name. 
 
 ```text
-aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
-kubectl version
+doctl kubernetes cluster kubeconfig save <cluster_name>
+```
+
+If you receive a permission denied error with a warning from snap, do what it says in the error:
+```text
+sudo snap connect doctl:kube-config
+doctl kubernetes cluster kubeconfig save <cluster_name>
 ```
 
 If successful, you will see:
+```text
+$ doctl kubernetes cluster kubeconfig save <cluster_name>
+Notice: Adding cluster credentials to kubeconfig file found in "/home/user/.kube/config"
+Notice: Setting current-context to do-<region_name>-<cluster_name>
+```
 
- `Added new context ..... <details>`
+Test this configuration,
+```text
+$ kubectl version
+Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.6", GitCommit:"dff82dc0de47299ab66c83c626e08b245ab19037", GitTreeState:"clean", BuildDate:"2020-07-16T06:30:04Z", GoVersion:"go1.14.5", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.6", GitCommit:"dff82dc0de47299ab66c83c626e08b245ab19037", GitTreeState:"clean", BuildDate:"2020-07-15T16:51:04Z", GoVersion:"go1.13.9", Compiler:"gc", Platform:"linux/amd64"}
+```
 
 To verify, run this, and check the status is "Ready":
 
@@ -160,7 +175,7 @@ To verify, run this, and check the status is "Ready":
 kubectl get nodes
 
 NAME                          STATUS   ROLES    AGE     VERSION
-ip-10-0-49-192.ec2.internal   Ready    <none>   4m16s   v1.16.12-eks-904af05
+<cluster_name>-pool-5xhc1     READY    <none>   6m      v1.18.6
 ```
 
 You are now ready to deploy a THORNode. 
