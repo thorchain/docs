@@ -51,7 +51,7 @@ Leaving is considered permanent. There are two steps.
 
 To leave the system, send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 satoshi in funds. 
 
-Example:
+**Example**:
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
