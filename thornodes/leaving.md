@@ -11,38 +11,59 @@ Every 50,000 Blocks \(3 days\) the system will churn its nodes:
 1. The oldest node, or
 2. The most unreliable node
 
-Alternatively, any node can simply leave the system voluntarily, in which case they are typically churned out 6 hours later. 
+Churned nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing, but keep their cluster online, they will be eventually churned back in. 
+
+Alternatively, a node can leave the system voluntarily, in which case they are typically churned out 6 hours later. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive to the system. 
+
+{% hint style="warning" %}
+It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address, it forces them to completely destroy and re-build before re-entering. This ensures they are running the latest software. 
+{% endhint %}
 
 ## Unbonding
 
-If a Node Operator does not want to leave, but just wants to retrieve part of their bond & rewards \(such as deciding to take profits and contribute as a liquidity provider in order to maximise yield\), they can simply Unbond. This keeps their Node on standby, ready to be churned back in. 
+{% hint style="info" %}
+You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out. 
+{% endhint %}
 
-To unbond from the system, simply send the following transaction to the Vault Address: `UNBOND:<ADDRESS>:AMOUNT` with at least 1 satoshi in funds. The amount and type of asset you use to send to THORChain is actually irrelevant, you are simply passing transaction intent to THORChain. 
+If a Node Operator wants to retrieve part of their bond & rewards \(such as deciding to take profits and contribute as a liquidity provider in order to maximise yield\), they can simply Unbond. This keeps their Node on standby, ready to be churned back in. 
+
+To unbond from the system, simply send an **UNBOND** transaction to the Vault Address with at least 1 satoshi in funds. The amount and type of asset you use to send to THORChain is actually irrelevant, you are simply passing transaction intent to THORChain and proving you own your bond address. 
 
 Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond. 
 
 `UNBOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz:1000000000`
 
 {% hint style="info" %}
-You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out. 
+You can get your node address, as well as the current vault address by running `make status`
+{% endhint %}
+
+{% hint style="warning" %}
+Only the address that originally bonded the funds can **UNBOND** or **LEAVE**.   
+This ensures you can safely leave this system if you no longer have access to your node \(but it is still running\). 
 {% endhint %}
 
 ## Leaving
 
-To leave the system, simply send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 satoshi in funds. 
+Leaving is considered permanent. There are two steps.
+
+1.  If you are **active**, send a LEAVE transaction to start a churn-out process. This could take several hours.
+2. If you are **standby,** send a LEAVE transaction to get your bond back and be permanently jailed. 
+
+To leave the system, send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 satoshi in funds. 
 
 Example:
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
-{% hint style="info" %}
-You can get your node address, as well as the current vault address by running `make status`
-{% endhint %}
+⏱_Wait a few hours, verify you are now in **`standby`**👀_
 
-{% hint style="warning" %}
-Only the address that originally bonded the funds can UNBOND or LEAVE.   
-This ensures you can safely leave this system if you no longer have access to your node \(but it is still running\). 
-{% endhint %}
+`LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
+
+⏱_Wait a few minutes, verify you have received your bond back 👀_
+
+_🔥 Commence destroying your node 🔥_
+
+
 
 {% hint style="danger" %}
 If your node is both offline and inaccessible, then it will be unable to return any assets in its yggdrasil vaults and it will be slashed 1.5x the value of those assets. 
@@ -54,8 +75,7 @@ Example: If your node has a $500k bond \(in RUNE\), but has $100k in assets in i
 
 You should complete this checklest before you do the next step:
 
-1. Have I sent a final LEAVE transaction and is my node status showing `requested_to_leave:true`
-2. Have I received my BOND back - ie 1,000,000 RUNE, and I can account for any slash points or rewards that may change this?
+1. Have I sent a final LEAVE transaction and have I received my BOND back - ie 1,000,000 RUNE, and I can account for any slash points or rewards that may change this?
 
 If yes, then proceed:
 
