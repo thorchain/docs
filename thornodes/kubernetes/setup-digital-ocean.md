@@ -25,7 +25,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 
 ## **Steps**
 
-Firstly, clone and enter the [cluster-launcher repository](https://gitlab.com/thorchain/devops/cluster-launcher)**.** All commands in this section are to be run inside this repo. 
+Firstly, clone and enter the [cluster-launcher repository](https://gitlab.com/thorchain/devops/cluster-launcher)**.** All commands in this section are to be run inside this repo.
 
 ```text
 git clone https://gitlab.com/thorchain/devops/cluster-launcher
@@ -62,10 +62,10 @@ doctl account get
 {% endtabs %}
 
 {% hint style="warning" %}
-You will be asked for you Personal Access Token with read/write priveleges \(retrieve from API Panel from the Digital Ocean web console.\)  
-  
-**API -&gt; Tokens/Keys -&gt; Create Token.**  
-  
+You will be asked for you Personal Access Token with read/write priveleges \(retrieve from API Panel from the Digital Ocean web console.\)
+
+**API -&gt; Tokens/Keys -&gt; Create Token.**
+
 Make sure you handle your secrets securely!
 {% endhint %}
 
@@ -89,11 +89,11 @@ You also need **wget** and **jq**, follow [these instructions](https://www.gnu.o
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**   
-_Note: You most likely have these installed already._ 
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**
+_Note: You most likely have these installed already._
 
 ```text
-brew install wget 
+brew install wget
 brew install jq
 ```
 {% endtab %}
@@ -125,7 +125,7 @@ Deploying a cluster takes ~10 minutes
 
 ## CONFIGURE
 
-Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region. 
+Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region.
 
 ```text
 doctl kubernetes cluster kubeconfig save <use_your_cluster_name>
@@ -145,5 +145,5 @@ NAME                          STATUS   ROLES    AGE     VERSION
 ip-10-0-49-192.ec2.internal   Ready    <none>   4m16s   v1.16.12-eks-904af05
 ```
 
-You are now ready to deploy a THORNode. 
+You are now ready to deploy a THORNode.
 
