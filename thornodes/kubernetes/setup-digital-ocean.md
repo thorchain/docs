@@ -12,7 +12,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 2. `doctl` and DO credentials configured
 3. `kubectl`
 4. `wget` \(required for EKS module\)
-5. Kubernetes Terraform provider
+5. Kubernetes Terraform provider 
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
@@ -53,7 +53,7 @@ The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doc
 Use the package manager [homebrew](https://formulae.brew.sh/) to install the DO CTL.
 
 ```text
-brew install docli
+brew install doctl
 doctl auth init --context <NAME>
 doctl auth switch --context <NAME>
 doctl account get
