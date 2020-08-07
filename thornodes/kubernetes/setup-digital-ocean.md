@@ -12,7 +12,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 2. `doctl` and DO credentials configured
 3. `kubectl`
 4. `wget` \(required for EKS module\)
-5. Kubernetes Terraform provider
+5. Kubernetes Terraform provider 
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
@@ -25,7 +25,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 
 ## **Steps**
 
-Firstly, clone and enter the [cluster-launcher repository](https://gitlab.com/thorchain/devops/cluster-launcher)**.** All commands in this section are to be run inside this repo. 
+Firstly, clone and enter the [cluster-launcher repository](https://gitlab.com/thorchain/devops/cluster-launcher)**.** All commands in this section are to be run inside this repo.
 
 ```text
 git clone https://gitlab.com/thorchain/devops/cluster-launcher
@@ -46,14 +46,14 @@ brew install terraform
 
 #### **DOCLI**
 
-The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services. This step is optional. 
+The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
 Use the package manager [homebrew](https://formulae.brew.sh/) to install the DO CTL.
 
 ```text
-brew install dotcli
+brew install doctl
 doctl auth init --context <NAME>
 doctl auth switch --context <NAME>
 doctl account get
@@ -62,10 +62,10 @@ doctl account get
 {% endtabs %}
 
 {% hint style="warning" %}
-You will be asked for you Personal Access Token with read/write priveleges \(retrieve from API Panel from the Digital Ocean web console.\)  
-  
-**API -&gt; Tokens/Keys -&gt; Create Token.**  
-  
+You will be asked for you Personal Access Token with read/write priveleges \(retrieve from API Panel from the Digital Ocean web console.\)
+
+**API -&gt; Tokens/Keys -&gt; Create Token.**
+
 Make sure you handle your secrets securely!
 {% endhint %}
 
@@ -89,30 +89,12 @@ You also need **wget** and **jq**, follow [these instructions](https://www.gnu.o
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**   
-_Note: You most likely have these installed already._ 
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**
+_Note: You most likely have these installed already._
 
 ```text
-brew install wget 
+brew install wget
 brew install jq
-```
-{% endtab %}
-{% endtabs %}
-
-####  **Kubernetes Terraform provider**
-
-Use the command below to install Kubernetes Terraform provider, if the command is outdated or failing, please refer to the [documentation here](https://gavinbunney.github.io/terraform-provider-kubectl/docs/provider.html).
-
-{% tabs %}
-{% tab title="LINUX/MAC" %}
-Run the following:
-
-```text
-mkdir -p ~/.terraform.d/plugins && \
-    curl -Ls https://api.github.com/repos/gavinbunney/terraform-provider-kubectl/releases/latest \
-    | jq -r ".assets[] | select(.browser_download_url | contains(\"$(uname -s | tr A-Z a-z)\")) | select(.browser_download_url | contains(\"amd64\")) | .browser_download_url" \
-    | xargs -n 1 curl -Lo ~/.terraform.d/plugins/terraform-provider-kubectl && \
-    chmod +x ~/.terraform.d/plugins/terraform-provider-kubectl
 ```
 {% endtab %}
 {% endtabs %}
@@ -143,10 +125,11 @@ Deploying a cluster takes ~10 minutes
 
 ## CONFIGURE
 
-Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name. 
+Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region.
 
 ```text
-doctl kubernetes cluster kubeconfig save <cluster_name>
+doctl kubernetes cluster kubeconfig save <use_your_cluster_name>
+kubectl version
 ```
 
 If successful, you will see:
@@ -171,5 +154,5 @@ NAME                          STATUS   ROLES    AGE     VERSION
 <cluster_name>-pool-5xhc1     READY    <none>   6m      v1.18.6
 ```
 
-You are now ready to deploy a THORNode. 
+You are now ready to deploy a THORNode.
 

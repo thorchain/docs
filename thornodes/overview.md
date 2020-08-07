@@ -177,14 +177,14 @@ Most importantly, this will tell you how many slash points the node account has 
 
 ### **Node Statuses**
 
-There are a few different node statuses. Here are a list of them and their meaning
+Types of node status:
 
-1. **Unknown** - an unknown status. This should never be possible for a valid node account
-2. **Whitelisted** - node has been bonded, but hasn’t set their pubkey set yet
+1. **Unknown** - this should never be possible for a valid node account
+2. **Whitelisted** - node has been bonded, but hasn’t set their keys yet
 3. **Standby** - waiting to have minimum requirements verified to become “ready” status. This check happens on each churn event \(3 days on average\).
-4. **Ready** - node has met minimum requirements to be churn and is ready to do so. Could be selected to churn into the network. Cannot unbond while in this status.
+4. **Ready** - node has met minimum requirements to be churned and is ready to do so. Could be selected to churn into the network. Cannot unbond while in this status.
 5. **Active** - node is an active participant of the network, by securing funds and committing new blocks to the THORChain blockchain. Cannot unbond while in this status.
-6. **Disabled** - node has been disabled. This status will never be changed in the future.
+6. **Disabled** - node has been disabled. 
 
 To get node account information, make an HTTP call to your `thor-api` port which will look like the following:
 
