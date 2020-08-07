@@ -12,7 +12,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 2. `doctl` and DO credentials configured
 3. `kubectl`
 4. `wget` \(required for EKS module\)
-5. Kubernetes Terraform provider
+5. Kubernetes Terraform provider 
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
@@ -46,7 +46,7 @@ brew install terraform
 
 #### **DOCLI**
 
-The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services. This step is optional.
+The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
@@ -99,24 +99,6 @@ brew install jq
 {% endtab %}
 {% endtabs %}
 
-####  **Kubernetes Terraform provider**
-
-Use the command below to install Kubernetes Terraform provider, if the command is outdated or failing, please refer to the [documentation here](https://gavinbunney.github.io/terraform-provider-kubectl/docs/provider.html).
-
-{% tabs %}
-{% tab title="LINUX/MAC" %}
-Run the following:
-
-```text
-mkdir -p ~/.terraform.d/plugins && \
-    curl -Ls https://api.github.com/repos/gavinbunney/terraform-provider-kubectl/releases/latest \
-    | jq -r ".assets[] | select(.browser_download_url | contains(\"$(uname -s | tr A-Z a-z)\")) | select(.browser_download_url | contains(\"amd64\")) | .browser_download_url" \
-    | xargs -n 1 curl -Lo ~/.terraform.d/plugins/terraform-provider-kubectl && \
-    chmod +x ~/.terraform.d/plugins/terraform-provider-kubectl
-```
-{% endtab %}
-{% endtabs %}
-
 ## **Deploy Kubernetes Cluster**
 
 Use the commands below to deploy a DO EKS cluster:
@@ -146,7 +128,7 @@ Deploying a cluster takes ~10 minutes
 Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region.
 
 ```text
-aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
+doctl kubernetes cluster kubeconfig save <use_your_cluster_name>
 kubectl version
 ```
 
