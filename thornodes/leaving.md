@@ -11,12 +11,12 @@ Every 50,000 Blocks \(3 days\) the system will churn its nodes:
 1. The oldest node, or
 2. The most unreliable node
 
-Churned nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing, but keep their cluster online, they will be eventually churned back in. 
+Churned nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing but keep their cluster online, they will be eventually churned back in. 
 
-Alternatively, a node can leave the system voluntarily, in which case they are typically churned out 6 hours later. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive to the system. 
+Alternatively, a node can leave the system voluntarily, in which case they are typically churned out 6 hours later. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive. 
 
 {% hint style="warning" %}
-It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address, it forces them to completely destroy and re-build before re-entering. This ensures they are running the latest software. 
+It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address, it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software. 
 {% endhint %}
 
 ## Unbonding
@@ -63,8 +63,6 @@ To leave the system, send the following transaction from your original bond addr
 
 _🔥 Commence destroying your node 🔥_
 
-
-
 {% hint style="danger" %}
 If your node is both offline and inaccessible, then it will be unable to return any assets in its yggdrasil vaults and it will be slashed 1.5x the value of those assets. 
 
@@ -73,9 +71,9 @@ Example: If your node has a $500k bond \(in RUNE\), but has $100k in assets in i
 
 #### Confirming you have left
 
-You should complete this checklest before you do the next step:
+You should complete this checklist before you do the next step:
 
-1. Have I sent a final LEAVE transaction and have I received my BOND back - ie 1,000,000 RUNE, and I can account for any slash points or rewards that may change this?
+1. Have you sent a final **LEAVE** transaction and have you received your BOND back - ie 1,000,000 RUNE, and can your account for any slash points or rewards?
 
 If yes, then proceed:
 

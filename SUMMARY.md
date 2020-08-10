@@ -42,5 +42,3 @@
 * [Prices](how-it-works/prices.md)
 * [Governance](how-it-works/governance.md)
 
-## Contributing
-

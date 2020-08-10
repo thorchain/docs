@@ -17,7 +17,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
 
- **Windows should choose either:**
+**Windows should choose either:**
 
 1. **Deploy a THORNode from a Linux VPS.**
 2. **Use Windows Subsystem for Linux -** [**https://docs.microsoft.com/en-us/windows/wsl/about**](https://docs.microsoft.com/en-us/windows/wsl/about)\*\*\*\*
@@ -71,7 +71,7 @@ Make sure you handle your secrets securely!
 
 #### Kubernetes Control Tool
 
-You must install and configure the Kubernetes CLI tool \(**kubectl**\). ****To install **kubectl** , follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
+You must install and configure the Kubernetes CLI tool \(**kubectl**\). **\*\*To install** kubectl\*\* , follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
@@ -89,8 +89,7 @@ You also need **wget** and **jq**, follow [these instructions](https://www.gnu.o
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**
-_Note: You most likely have these installed already._
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq** _Note: You most likely have these installed already._
 
 ```text
 brew install wget
@@ -133,12 +132,14 @@ kubectl version
 ```
 
 If successful, you will see:
+
 ```text
 Notice: Adding cluster credentials to kubeconfig file found in "/home/user/.kube/config"
 Notice: Setting current-context to do-<region_name>-<cluster_name>
 ```
 
 Test this configuration,
+
 ```text
 $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.6", GitCommit:"dff82dc0de47299ab66c83c626e08b245ab19037", GitTreeState:"clean", BuildDate:"2020-07-16T06:30:04Z", GoVersion:"go1.14.5", Compiler:"gc", Platform:"linux/amd64"}

@@ -4,7 +4,7 @@ description: How to join THORChain as an Node.
 
 # Joining
 
-## **Joining THORChain** 
+## **Joining THORChain**
 
 Now that you have a THORNode deployed in your Kubernetes cluster, you need to start operating your node to join the network.
 
@@ -12,13 +12,12 @@ There are a couple of steps to follow to do so.
 
 ### 1. Check your current node status
 
-The first step would be to make sure your deployment was successful and your node is running correctly. ****To check the current status of your node, you can run the command status from the `node-launcher`repository on your terminal:
+The first step would be to make sure your deployment was successful and your node is running correctly. _\*\*_To check the current status of your node, you can run the command status from the `node-launcher`repository on your terminal:
 
 ```text
 make status
 ```
 
-  
 You will get an output along those lines, the example below is for a testnet node:
 
 ```text
@@ -38,7 +37,7 @@ Your node is running but as you can see in the \`Preflight\` section, your node 
 But to be able to set up the node IP address, you first need to get it registered in the chain by sending your BOND.
 
 {% hint style="warning" %}
-Before sending the BOND, verify that your THORNode is fully synced with connected chains. Connected chains such as Bitcoin, may take a day to sync. If you join THORChain without fully syncing a connected chain, you will immediately get slashed for missing observations, and lose money. 
+Before sending the BOND, verify that your THORNode is fully synced with connected chains. Connected chains such as Bitcoin, may take a day to sync. If you join THORChain without fully syncing a connected chain, you will immediately get slashed for missing observations, and lose money.
 {% endhint %}
 
 ### 2 - Send BOND
@@ -63,12 +62,12 @@ Before sending the BOND, verify that your THORNode is fully synced with connecte
 
 **The vault frequently churns so you may send to a stale vault.**
 
-If your node is still syncing, the `make status` command may give you a stale vault address and your funds will be forever lost. 
+If your node is still syncing, the `make status` command may give you a stale vault address and your funds will be forever lost.
 
-Confirm the VAULT address from \*multiple\* sources. Do not get this wrong. 
+Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.
 
 1. Did you test with a small amount first and get a refund?
-2. Did you check this address manually by querying a THORNode? 
+2. Did you check this address manually by querying a THORNode?
 
    `http://host:1317/thorchain/pool_addresses`
 
@@ -106,7 +105,7 @@ Preflight {
 }
 ```
 
-As you can see, it is in standby but does not have an IP registered yet. This is needed for peer discovery. 
+As you can see, it is in standby but does not have an IP registered yet. This is needed for peer discovery.
 
 ### 3 - Setup Node IP Address
 
@@ -121,7 +120,7 @@ If you run the status command again, you should now see a different message for 
 ![](../.gitbook/assets/image%20%2817%29.png)
 
 {% hint style="info" %}
-Once your IP address has been registered for discovery, you can use your own host for queries. 
+Once your IP address has been registered for discovery, you can use your own host for queries.
 {% endhint %}
 
 ### 4 - Setup Node keys
@@ -158,7 +157,7 @@ resp:
    }
 ```
 
-The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum. 
+The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum.
 
 {% hint style="info" %}
 RUNE is always displayed in 1e8 format, 100000000 = 1 RUNE
@@ -170,5 +169,5 @@ At any time during standby, you can bond more by making an additional BOND trans
 
 `BOND:<thornode-address>`
 
-You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo. 
+You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.
 
