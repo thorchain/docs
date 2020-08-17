@@ -62,7 +62,7 @@ make destroy-tools
 
 If you are successful, you will see the following message:
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 If there are any errors, they are typically fixed by running the command again. 
 
@@ -104,11 +104,11 @@ Deploying a THORNode takes ~10 minutes
 
 If successful, you will see the following:
 
-![](../../.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 
 You are now ready to join the network:
 
-{% page-ref page="../joining.md" %}
+{% page-ref page="joining.md" %}
 
 ### Debugging
 

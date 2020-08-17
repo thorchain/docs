@@ -55,7 +55,7 @@ To leave the system, send the following transaction from your original bond addr
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
-⏱_Wait a few hours, verify you are now in **`standby`**👀_
+⏱_Wait a few hours, verify on the /nodeaccount endpoint that you are now  **`disabled`**👀_
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
