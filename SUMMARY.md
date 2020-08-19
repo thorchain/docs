@@ -19,6 +19,7 @@
 * [Deploy - K8 Cluster](thornodes/kubernetes/README.md)
   * [Setup - AWS](thornodes/kubernetes/setup.md)
   * [Setup - Digital Ocean](thornodes/kubernetes/setup-digital-ocean.md)
+  * [Setup - Hetzner Bare Metal](thornodes/kubernetes/setup-hetzner-bare-metal.md)
 * [Deploying](thornodes/deploying.md)
 * [Joining](thornodes/joining.md)
 * [Managing](thornodes/managing.md)
