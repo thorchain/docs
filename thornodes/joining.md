@@ -109,7 +109,7 @@ As you can see, it is in standby but does not have an IP registered yet. This is
 
 ### 3 - Setup Node IP Address
 
-To set up your node IP address automatically using the load balancer that was created just run the command:
+You must tell THORChain your IP-Address for it's address book and seed-service to run properly:
 
 ```text
 make set-ip-address
@@ -123,9 +123,9 @@ If you run the status command again, you should now see a different message for 
 Once your IP address has been registered for discovery, you can use your own host for queries.
 {% endhint %}
 
-### 4 - Setup Node keys
+### 5 - Setup Node keys
 
-To set up your node keys automatically, just run the command:
+Tell THORChain about your public keys for signing sessions:
 
 ```text
 make set-node-keys
@@ -134,6 +134,16 @@ make set-node-keys
 If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Example of a valid preflight:
 
 ![](../.gitbook/assets/image%20%2821%29.png)
+
+### 4 - Set Version
+
+Make sure your node broadcasts its latest version, else you won't churn in since THORChain enforces a version requirement. This version will appear in your `make status`. If you are on `0.0.0` then you haven't set your version:
+
+```text
+make set-version
+```
+
+
 
 ## Bonding The Right Amount
 
