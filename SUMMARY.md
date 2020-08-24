@@ -28,6 +28,7 @@
 
 ## Developers
 
+* [THORCLI](developers/thorcli.md)
 * [Connecting to THORChain](developers/connecting-to-thorchain.md)
 * [Transaction Memos](developers/transaction-memos.md)
 * [ASGARDEX Modules](developers/asgardex-modules.md)

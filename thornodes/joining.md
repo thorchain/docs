@@ -51,7 +51,7 @@ Before sending the BOND, verify that your THORNode is fully synced with connecte
 
 1. You should practice this first on Testnet.
 2. **THE ADDRESS RETURNED MAY BE FAKE** - you could be spoofed from a compromised binary. Verify the Bond Address yourself - it is the primary Asgard Vault on THORChain. `http://host:8080/v1/thorchain/pool_addresses`
-3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and refund you, since it is less than the minimum. \(Anything less than 1 RUNE won't result in a refund, since it will consume it all in fees\). 
+3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and record your bond in `make status` 
 4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device. 
 {% endhint %}
 

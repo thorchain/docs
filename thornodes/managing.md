@@ -80,14 +80,6 @@ Once the deployments are all in the ready state again, you need to broadcast to 
 make set-version
 ```
 {% endtab %}
-
-{% tab title="DESTROY" %}
-To fully destroy the running node and all services, run that command:
-
-```text
-make destroy
-```
-{% endtab %}
 {% endtabs %}
 
 ## Tools
