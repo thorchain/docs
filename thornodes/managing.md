@@ -9,7 +9,6 @@ description: 'Accessing Logs, Metrics and more'
 The Makefile provide different commands to help you operate your THORNode.  
   
 There are two types of make commands, READ and WRITE.   
-  
 
 
 #### READ COMMANDS
@@ -41,6 +40,30 @@ make logs
 ```
 {% endtab %}
 
+{% tab title="MNEMONIC" %}
+This will print your node mnemonic \(phrase\). Use this to ever rescue your node funds if something goes wrong.   
+  
+_Note: This phrase should only be used "in anger". This is your node "hot vault", also referred to as its yggdrasil vault, which allows the network to delegate swaps for faster execution. You will be slashed significantly if any funds are moved from this vault, since it is monitored by the THORChain network._ 
+
+```text
+make mnemonic
+```
+{% endtab %}
+
+{% tab title="PASSWORD" %}
+A keystore file that secures your private keys is also stored on the THORNode. The password that is used to decrypt it can be printed by the following command
+
+```text
+make password
+```
+{% endtab %}
+{% endtabs %}
+
+#### WRITE COMMANDS
+
+Write commands actually build and write transactions into the underlying statechain. They cost RUNE from your bond, currently 1 RUNE, but you can check this on the `/constants` endpoint "CLICOSTINRUNE". This will post state in the chain which will be now updated globally. The RUNE fee is to prevent DOS attacks. 
+
+{% tabs %}
 {% tab title="NODE-KEYS" %}
 Send a `set-node-keys` to your node, which will set your node keys automatically for you by retrieving them directly from the `thor-daemon` deployment.
 
@@ -89,6 +112,8 @@ make set-version
 ```
 {% endtab %}
 {% endtabs %}
+
+## 
 
 ## Tools
 
