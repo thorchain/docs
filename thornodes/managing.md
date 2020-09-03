@@ -6,7 +6,15 @@ description: 'Accessing Logs, Metrics and more'
 
 ## THORNode commands
 
-The Makefile provide different commands to help you operate your THORNode.
+The Makefile provide different commands to help you operate your THORNode.  
+  
+There are two types of make commands, READ and WRITE.   
+  
+
+
+#### READ COMMANDS
+
+Read commands simply read your node state and doesn't commit any transactions. 
 
 {% tabs %}
 {% tab title="STATUS" %}

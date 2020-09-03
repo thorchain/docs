@@ -6,11 +6,17 @@ description: Providing liquidity to THORChain liquidity pools.
 
 Stakers provide assets to the THORChain liquidity pools. They are compensated with swap fees and system rewards. Compensation is affected by a number of factors related to the pool and the state of the network. 
 
+{% hint style="warning" %}
+Liquidity providers commit capital to pools which have exposure to underlying assets, thus liquidity providers gain exposure to those assets, which have free-floating market prices.   
+  
+While they are paid block rewards and liquidity fees, these are dynamic and may not be enough to cover "Impermanent Losses", which occur when price changes happen.   
+  
+Liquidity providers should not consider they are entitled to receive a specific quantity of their assets back when they stake, rather that they will receive their fair share of the pool's earnings and final asset balances. 
+{% endhint %}
+
 ## Compensation
 
-THORChain creates an opportunity for holders of non-productive assets like BTC and BNB to earn yield.
-
-Holders stake their assets in liquidity pools and earn yield in return. They earn tokens in Rune and the pool's connected asset. For example, someone who has staked in the BTC/RUNE pool will receive rewards in BTC and RUNE.
+Liquidity providers stake their assets in liquidity pools and earn yield in return. They earn tokens in Rune and the pool's connected asset. For example, someone who has staked in the BTC/RUNE pool will receive rewards in BTC and RUNE.
 
 Yield is calculated for stakers every block. Yield is paid out to stakers when they remove assets from the pool. 
 
@@ -18,25 +24,25 @@ Rewards are calculated according to whether or not the block contains any swap t
 
 {% tabs %}
 {% tab title="BLOCK WITH SWAPS" %}
-How a block with fees splits the rewards:
+How a block with fees splits the reward. In this example, 1000 RUNE is being divided as rewards:
 
-| **Pool Depth \(RUNE\)** | **Fees**  | **Share of Fees \(and rewards\)** |
-| :--- | :--- | :--- |
-| 1,000,000 | 1000 | 33% |
-| 2,000,000 | 0 | 0% |
-| 3,000,000 | 2000 | 67% |
-| **6,000,000** | **3000** | **100%** |
+| **Pool Depth \(RUNE\)** | **Fees**  | **Share \(of Fees\)** | Rewards |
+| :--- | :--- | :--- | :--- |
+| 1,000,000 | 1000 | 33% | 333 |
+| 2,000,000 | 0 | 0% | 0 |
+| 3,000,000 | 2000 | 67% | 667 |
+| **6,000,000** | **3000** | **100%** | **1000** |
 {% endtab %}
 
 {% tab title="BLOCK WITH NO SWAPS" %}
-How a block with no fees splits the rewards:
+How a block with no fees splits the rewards. In this example, 1000 RUNE is being divided:
 
-| **Pool Depth \(RUNE\)** | **Fees**  | **Share of Rewards** |
-| :--- | :--- | :--- |
-| 1,000,000 | 0 | 17% |
-| 2,000,000 | 0 | 33% |
-| 3,000,000 | 0 | 50% |
-| **6,000,000** | **0** | **100%** |
+| **Pool Depth \(RUNE\)** | **Fees**  | **Share \(of Depth\)** | Rewards |
+| :--- | :--- | :--- | :--- |
+| 1,000,000 | 0 | 17% | 167 |
+| 2,000,000 | 0 | 33% | 333 |
+| 3,000,000 | 0 | 50% | 500 |
+| **6,000,000** | **0** | **100%** | **1000** |
 {% endtab %}
 {% endtabs %}
 
@@ -52,9 +58,11 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 **Incentive Pendulum** – The Incentive Pendulum balances the amount of capital bonded in the network versus pooled. It does this by changing the amount of rewards given to node operators versus stakers. Sometimes rewards will be higher for stakers to encourage them to stake assets; sometimes the opposite. [Learn more](../how-it-works/incentive-pendulum.md).
 
-### Calculating Yield
+**Change in Asset Prices --** If the price of the assets change, then stakers will receive more of one and less of the other. This may change yield if yield is being priced in a third asset, ie, USD. 
 
- Each block, ownership % of the pool is calculated:
+### Calculating Pool Ownership
+
+When a liquidity provider commmit capital, the ownership % of the pool is calculated:
 
 $$
 (R + A) * (r * A + R * a) \over 4 * R * A
@@ -79,8 +87,6 @@ The ability to use and withdraw assets is completely non-custodial. Only the ori
 
 #### Process
 
-Stakers make special transactions to deposit assets into THORChain vaults. The network tracks how much stakers deposit. It also tracks staker ownership % of the pool. This is used to [calculate their yield](staking.md#calculating-yield).
-
 Liquidity can be added to existing pools to increase depth and attract swappers. The deeper the liquidity, the lower the fee. However, deep pools generally have higher swap volume which generates more fee revenue.
 
 Stakers are incentivised to stake symmetrically but should stake asymmetrically if the pool is already imbalanced.‌
@@ -90,10 +96,10 @@ Stakers are incentivised to stake symmetrically but should stake asymmetrically 
 
 **Symmetrical staking** is where users deposit an _equal_ value of 2 assets to a pool. For example, a user deposits $1000 of BTC and $1000 of RUNE to the BTC/RUNE pool.
 
-**Asymmetrical staking** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $1000 of BTC and $500 of RUNE to the BTC/RUNE pool.
+**Asymmetrical staking** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $2000 of BTC and $0 of RUNE to the BTC/RUNE pool.Under the hood, this causes an arbitrage agent to swap $1000 of their BTC into RUNE, so the liquidity provider will end up with &lt;$1000 in BTC and &lt;$1000 in RUNE.   
+  
+_Note: there is no difference between swapping into symmetrical shares, then staking that, or staking asymmetrically and being arb'd to be symmetrical. You will still experience the same net slip._ 
 {% endhint %}
-
-New pools require symmetrical staking of an external asset and RUNE based on the staker's subjective opinion of the current fair market value. This avoids someone from coming in and arbitraging the asset price asymmetry.
 
 ### Withdrawing Assets
 
