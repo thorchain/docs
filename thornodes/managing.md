@@ -43,7 +43,7 @@ make logs
 {% tab title="MNEMONIC" %}
 This will print your node mnemonic \(phrase\). Use this to ever rescue your node funds if something goes wrong.   
   
-_Note: This phrase should only be used "in anger". This is your node "hot vault", also referred to as its yggdrasil vault, which allows the network to delegate swaps for faster execution. You will be slashed significantly if any funds are moved from this vault, since it is monitored by the THORChain network._ 
+_Note: This phrase should only be used "in anger". This is your node "hot vault", also referred to as its yggdrasil vault, which allows the network to delegate swaps for faster execution. You will be slashed significantly if any funds are moved from this vault, since it is monitored by the THORChain network. Your bond is held at ransom in order to prevent you from stealing funds from this vault. Your bond will always be more valuable than funds on this vault, so you have no economic reason to touch these funds._ 
 
 ```text
 make mnemonic
