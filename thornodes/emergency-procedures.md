@@ -20,7 +20,7 @@ If you have discovered a bug, you should immediately DM the team or any other ad
 
 ## Admin Procedures
 
-Once the bug has been verified, admin should make a decision on the level of response, including any mimir over-rides an announcement:
+Once the bug has been verified, admin should make a decision on the level of response, including any mimir over-rides and announcements:
 
 ### Critical - Funds At Risk
 
@@ -48,7 +48,7 @@ Once the bug has been verified, admin should make a decision on the level of res
 * [ ] **Determine what type of announcement is required**:
 
 1. Does the network need coordination from nodes? If yes, announce, with directions.
-2. Can the team immediately apply a bug patch with no coordination? If yes, consider delaying announcement until bug fix ready 
+2. Can the team immediately apply a bug patch with no coordination? If yes, consider delaying announcement until bug fix ready.
 
 * [ ] **Generate a bug fix**
 
@@ -77,4 +77,10 @@ The network cannot upgrade until 100% of active nodes are on the updated version
 3. Forced, by hard-forking out old nodes.
 
 During a nutural upgrade cycle, it may take several days to churn out old nodes. If the upgrade is time-critical, the network may elect to ban old nodes. Banning a node will cycle them to be churned, kick them from TSS and eject them from the consensus set. That node will never be able to churn in again, they will need to fully leave, destroy their node, and set up a new one. Hard-forking out old nodes is also a possibility, but comes with significant risk of consensus failures. 
+
+## Network Recovery
+
+The network will not be able to recover until the upgrade is complete, any mimir over-rides are removed, and TSS is re-synced. Additionally, there may be a backlog of transactions that will need to be processed. This may take some time. If external chain daemons were stopped, re-syncing times may also be a factor. 
+
+All wallets and frontends should monitor for any of the halts and automatically go into maintenance mode when invoked. 
 
