@@ -15,6 +15,7 @@
 ## THORNodes
 
 * [THORNode Overview](thornodes/overview.md)
+* [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [Deploy - Manual](thornodes/manual.md)
 * [Deploy - K8 Cluster](thornodes/kubernetes/README.md)
   * [Setup - AWS](thornodes/kubernetes/setup.md)

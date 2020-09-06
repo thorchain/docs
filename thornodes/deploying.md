@@ -93,7 +93,7 @@ SEED_TESTNET=1.2.3.4 make testnet-validator
 Rune the following to join Chaosnet:
 
 ```text
-SEED_CHAOSNET=18.159.173.48 make chaosnet-validator
+make chaosnet-validator
 ```
 
 You will be prompted for a password to encrypt your node private key. Do not forget this key. 
