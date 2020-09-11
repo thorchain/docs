@@ -11,8 +11,8 @@ The active node IP addresses can be queried from this endpoint:
 [https://testnet-seed.thorchain.info](https://testnet-seed.thorchain.info)
 {% endtab %}
 
-{% tab title="MAINNET" %}
-[https://seed.thorchain.info](https://seed.thorchain.info)
+{% tab title="CHAOSNET" %}
+[https://chaosnet-seed.thorchain.info](https://chaosnet-seed.thorchain.info)
 {% endtab %}
 {% endtabs %}
 
@@ -29,10 +29,10 @@ Midgard returns time-series information regarding the THORChain network, such as
 Port: `8080`  
   
 RPC Guide:   
-[http://54.90.0.151:8080/v1/doc](http://54.90.0.151:8080/v1/doc)  
+http://&lt;host&gt;:8080/v1/doc  
   
 Example:  
-[http://54.90.0.151:8080/v1/stats](http://54.90.0.151:8080/v1/stats)
+http://&lt;host&gt;:8080/v1/stats
 {% endtab %}
 
 {% tab title="THORNODE" %}
@@ -44,7 +44,7 @@ RPC Guide:
 [https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go](https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go)  
   
 Example:  
-[http://54.90.0.151:1317/thorchain/constants](http://54.90.0.151:1317/thorchain/constants)
+http://&lt;host&gt;:1317/thorchain/constants
 {% endtab %}
 
 {% tab title="TENDERMINT" %}
@@ -60,7 +60,7 @@ RPC Guide:
 [https://docs.tendermint.com/master/rpc/](https://docs.tendermint.com/master/rpc/)  
   
 Example:  
-[http://54.90.0.151:26657/genesis](http://54.90.0.151:26657/genesis)
+http://&lt;host&gt;:26657/genesis
 
 ### **P2P**
 
