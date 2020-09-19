@@ -66,11 +66,11 @@ When a liquidity provider commmit capital, the ownership % of the pool is calcul
 
 
 $$
-\text{slipAdjustment} = 1 - \left | R a - r A\over(2 r + R)*(a + A) \right |
+\text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{(2 r + R)*(a + A)}\mid
 $$
 
 $$
-\text{units} =\left P (a R + A r)\over2 RA \right * slipAdjustment
+\text{units} = \frac {P(R a + r A)}{2 RA}*slipAdjustment
 $$
 
 * r = rune staked 
