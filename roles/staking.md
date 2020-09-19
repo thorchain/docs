@@ -64,14 +64,20 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 When a liquidity provider commmit capital, the ownership % of the pool is calculated:
 
+
 $$
-(R + A) * (r * A + R * a) \over 4 * R * A
+\text{slipAdjustment} = 1 - \left | R a - r A\over(2 r + R)*(a + A) \right |
 $$
 
-* r = staked Rune
-* R = balance of Rune
-* a = staked connected asset
-* A = balance of connected asset
+$$
+\text{units} =\left P (a R + A r)\over2 RA \right * slipAdjustment
+$$
+
+* r = rune staked 
+* a = asset staked
+* R = Rune Balance (before)
+* A = Asset Balance (before)
+* P = Existing Pool Units
 
 The staker is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
 
