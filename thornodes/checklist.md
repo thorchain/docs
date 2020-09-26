@@ -35,6 +35,14 @@ description: Checklist of items for Node Operators
 
 
 
+## Upgrading
+
+* [ ] I have run `make status` to verify the current state of my node
+* [ ] I have run `kubectl get pods -n thornode` to verify all my node's services are running properly, resetting any that are faulty
+* [ ] I have run the upgrade command
+* [ ] I have run `make set-version` to set my new Node version
+* [ ] I have run `make status` to verify the final state of my node
+
 ## Unbonding
 
 * [ ] I have waited until my node is churned out and is in `standby`
