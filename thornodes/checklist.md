@@ -34,7 +34,9 @@ description: Checklist of items for Node Operators
 
 {% page-ref page="joining.md" %}
 
-
+{% hint style="info" %}
+The BOND memo is `BOND:<node-address>`
+{% endhint %}
 
 ## Upgrading
 
@@ -54,6 +56,10 @@ description: Checklist of items for Node Operators
 
 
 
+{% hint style="info" %}
+The UNBOND memo is `UNBOND:<node-address>:<amount>`
+{% endhint %}
+
 ## Leaving Whilst Active
 
 * [ ] I have confirmed my node is active and I wish to leave before waiting to churn naturally
@@ -65,6 +71,10 @@ description: Checklist of items for Node Operators
 {% page-ref page="leaving.md" %}
 
 
+
+{% hint style="info" %}
+The LEAVE memo is `LEAVE:<node-address>`
+{% endhint %}
 
 ## Leaving Whilst Standby
 
