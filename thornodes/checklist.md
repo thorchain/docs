@@ -18,8 +18,6 @@ description: Checklist of items for Node Operators
 
 {% page-ref page="deploying.md" %}
 
-
-
 ## Joining
 
 * [ ] I have retrieved the latest VAULT address and sent a small test bond
@@ -54,8 +52,6 @@ The BOND memo is `BOND:<node-address>`
 
 {% page-ref page="leaving.md" %}
 
-
-
 {% hint style="info" %}
 The UNBOND memo is `UNBOND:<node-address>:<amount>`
 {% endhint %}
@@ -70,8 +66,6 @@ The UNBOND memo is `UNBOND:<node-address>:<amount>`
 
 {% page-ref page="leaving.md" %}
 
-
-
 {% hint style="info" %}
 The LEAVE memo is `LEAVE:<node-address>`
 {% endhint %}
@@ -83,8 +77,6 @@ The LEAVE memo is `LEAVE:<node-address>`
 * [ ] I have sent the final LEAVE transaction and received my bond back
 
 {% page-ref page="leaving.md" %}
-
-
 
 ## Destroying a Node
 
