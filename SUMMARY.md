@@ -26,6 +26,7 @@
 * [Managing](thornodes/managing.md)
 * [Alerting](thornodes/alerting.md)
 * [Leaving](thornodes/leaving.md)
+* [✔️ CHECKLIST](thornodes/checklist.md)
 
 ## Developers
 
