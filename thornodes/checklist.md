@@ -14,6 +14,12 @@ description: Checklist of items for Node Operators
 * [ ] I have deployed a node by running `make chaosnet-validator`
 * [ ] I have securely saved my THORNode Password and THORNode Mnemonic
 
+{% page-ref page="kubernetes/" %}
+
+{% page-ref page="deploying.md" %}
+
+
+
 ## Joining
 
 * [ ] I have retrieved the latest VAULT address and sent a small test bond
@@ -25,11 +31,17 @@ description: Checklist of items for Node Operators
 * [ ] I have run `make set-version` to set my Node's version
 * [ ] \(Optional\) I have added my node key to the Telegram Bot for notifications
 
+{% page-ref page="joining.md" %}
+
+
+
 ## Unbonding
 
 * [ ] I have waited until my node is churned out and is in `standby`
 * [ ] I have sent an UNBOND transaction from the same wallet registered to my node
 * [ ] I have verified that I have received my BOND back
+
+{% page-ref page="leaving.md" %}
 
 
 
@@ -41,11 +53,19 @@ description: Checklist of items for Node Operators
 * [ ] I have verified that my node has returned all hot funds by checking my node's yggdrasil vault on the explorer
 * [ ] I have sent the final LEAVE transaction and received my bond back
 
+{% page-ref page="leaving.md" %}
+
+
+
 ## Leaving Whilst Standby
 
 * [ ] I have verified that a churn has taken place and my node is in STANDBY
 * [ ] I have verified that my node has returned all hot funds by checking my node's yggdrasil vault on the explorer
 * [ ] I have sent the final LEAVE transaction and received my bond back
+
+{% page-ref page="leaving.md" %}
+
+
 
 ## Destroying a Node
 
@@ -53,9 +73,7 @@ description: Checklist of items for Node Operators
 * [ ] I have run `make destroy destroy-tools` to destroy my node from `node-launcher`
 * [ ] I have run `make destroy-aws` to destroy my cluster from `cluster-launcher`
 
-
-
-
+{% page-ref page="leaving.md" %}
 
 
 
