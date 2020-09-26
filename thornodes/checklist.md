@@ -29,6 +29,7 @@ description: Checklist of items for Node Operators
 * [ ] I have run `make set-ip-address` to set my Node's IP address
 * [ ] I have run `make set-node-keys` to set my Node's public keys
 * [ ] I have run `make set-version` to set my Node's version
+* [ ] I have verfied in `make status` that my node is ready to churn in
 * [ ] \(Optional\) I have added my node key to the Telegram Bot for notifications
 
 {% page-ref page="joining.md" %}
