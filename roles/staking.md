@@ -4,21 +4,21 @@ description: Providing liquidity to THORChain liquidity pools.
 
 # Stakers
 
-Stakers provide assets to the THORChain liquidity pools. They are compensated with swap fees and system rewards. Compensation is affected by a number of factors related to the pool and the state of the network. 
+Stakers provide assets to the THORChain liquidity pools. They are compensated with swap fees and system rewards. Compensation is affected by a number of factors related to the pool and the state of the network.
 
 {% hint style="warning" %}
-Liquidity providers commit capital to pools which have exposure to underlying assets, thus liquidity providers gain exposure to those assets, which have free-floating market prices.   
-  
-While they are paid block rewards and liquidity fees, these are dynamic and may not be enough to cover "Impermanent Losses", which occur when price changes happen.   
-  
-Liquidity providers should not consider they are entitled to receive a specific quantity of their assets back when they stake, rather that they will receive their fair share of the pool's earnings and final asset balances. 
+Liquidity providers commit capital to pools which have exposure to underlying assets, thus liquidity providers gain exposure to those assets, which have free-floating market prices.
+
+While they are paid block rewards and liquidity fees, these are dynamic and may not be enough to cover "Impermanent Losses", which occur when price changes happen.
+
+Liquidity providers should not consider they are entitled to receive a specific quantity of their assets back when they stake, rather that they will receive their fair share of the pool's earnings and final asset balances.
 {% endhint %}
 
 ## Compensation
 
 Liquidity providers stake their assets in liquidity pools and earn yield in return. They earn tokens in Rune and the pool's connected asset. For example, someone who has staked in the BTC/RUNE pool will receive rewards in BTC and RUNE.
 
-Yield is calculated for stakers every block. Yield is paid out to stakers when they remove assets from the pool. 
+Yield is calculated for stakers every block. Yield is paid out to stakers when they remove assets from the pool.
 
 Rewards are calculated according to whether or not the block contains any swap transactions. If the block contains swap transactions then the amount of fees collected per pool sets the amount of rewards. If the block doesn't contain trades then the amount of assets in the pool determines the rewards.
 
@@ -26,7 +26,7 @@ Rewards are calculated according to whether or not the block contains any swap t
 {% tab title="BLOCK WITH SWAPS" %}
 How a block with fees splits the reward. In this example, 1000 RUNE is being divided as rewards:
 
-| **Pool Depth \(RUNE\)** | **Fees**  | **Share \(of Fees\)** | Rewards |
+| **Pool Depth \(RUNE\)** | **Fees** | **Share \(of Fees\)** | Rewards |
 | :--- | :--- | :--- | :--- |
 | 1,000,000 | 1000 | 33% | 333 |
 | 2,000,000 | 0 | 0% | 0 |
@@ -37,7 +37,7 @@ How a block with fees splits the reward. In this example, 1000 RUNE is being div
 {% tab title="BLOCK WITH NO SWAPS" %}
 How a block with no fees splits the rewards. In this example, 1000 RUNE is being divided:
 
-| **Pool Depth \(RUNE\)** | **Fees**  | **Share \(of Depth\)** | Rewards |
+| **Pool Depth \(RUNE\)** | **Fees** | **Share \(of Depth\)** | Rewards |
 | :--- | :--- | :--- | :--- |
 | 1,000,000 | 0 | 17% | 167 |
 | 2,000,000 | 0 | 33% | 333 |
@@ -56,14 +56,13 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 **Size of Swaps** – Swappers who are in a hurry to exchange assets will tend to make larger swaps. Larger swaps lead to greater price slips and therefore higher fees.
 
-**Incentive Pendulum** – The Incentive Pendulum balances the amount of capital bonded in the network versus pooled. It does this by changing the amount of rewards given to node operators versus stakers. Sometimes rewards will be higher for stakers to encourage them to stake assets; sometimes the opposite. [Learn more](../how-it-works/incentive-pendulum.md).
+**Incentive Pendulum** – The Incentive Pendulum balances the amount of capital bonded in the network versus pooled. It does this by changing the amount of rewards given to node operators versus stakers. Sometimes rewards will be higher for stakers to encourage them to stake assets; sometimes the opposite. [Learn more](../how-it-works/incentive-pendulum.md).
 
-**Change in Asset Prices --** If the price of the assets change, then stakers will receive more of one and less of the other. This may change yield if yield is being priced in a third asset, ie, USD. 
+**Change in Asset Prices --** If the price of the assets change, then stakers will receive more of one and less of the other. This may change yield if yield is being priced in a third asset, ie, USD.
 
 ### Calculating Pool Ownership
 
 When a liquidity provider commmit capital, the ownership % of the pool is calculated:
-
 
 $$
 \text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{(2 r + R)*(a + A)}\mid
@@ -75,8 +74,8 @@ $$
 
 * r = rune staked 
 * a = asset staked
-* R = Rune Balance (before)
-* A = Asset Balance (before)
+* R = Rune Balance \(before\)
+* A = Asset Balance \(before\)
 * P = Existing Pool Units
 
 The staker is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
@@ -102,9 +101,9 @@ Stakers are incentivised to stake symmetrically but should stake asymmetrically 
 
 **Symmetrical staking** is where users deposit an _equal_ value of 2 assets to a pool. For example, a user deposits $1000 of BTC and $1000 of RUNE to the BTC/RUNE pool.
 
-**Asymmetrical staking** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $2000 of BTC and $0 of RUNE to the BTC/RUNE pool.Under the hood, this causes an arbitrage agent to swap $1000 of their BTC into RUNE, so the liquidity provider will end up with &lt;$1000 in BTC and &lt;$1000 in RUNE.   
-  
-_Note: there is no difference between swapping into symmetrical shares, then staking that, or staking asymmetrically and being arb'd to be symmetrical. You will still experience the same net slip._ 
+**Asymmetrical staking** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $2000 of BTC and $0 of RUNE to the BTC/RUNE pool.Under the hood, this causes an arbitrage agent to swap $1000 of their BTC into RUNE, so the liquidity provider will end up with &lt;$1000 in BTC and &lt;$1000 in RUNE.
+
+_Note: there is no difference between swapping into symmetrical shares, then staking that, or staking asymmetrically and being arb'd to be symmetrical. You will still experience the same net slip._
 {% endhint %}
 
 ### Withdrawing Assets
@@ -143,7 +142,7 @@ See here for an [interactive example](https://rebase.foundation/network/thorchai
 
 Stakers must have assets to deposit and their assets must be native to a supported chain. There is no minimum amount to stake in existing pools. However new assets must win a competition to be listed – larger value deposits will be listed over smaller value deposits.
 
-The only direct cost to stakers is the [network fee](../how-it-works/fees.md#network-fee), charged for depositing and withdrawing assets. An indirect cost to stakers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of staker purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's  [slip-based fee](../how-it-works/fees.md#slip-based-fee).
+The only direct cost to stakers is the [network fee](../how-it-works/fees.md#network-fee), charged for depositing and withdrawing assets. An indirect cost to stakers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of staker purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's [slip-based fee](../how-it-works/fees.md#slip-based-fee).
 
 Stakers are not subject to any direct penalties for misconduct.
 

@@ -31,7 +31,11 @@ To unbond from the system, simply send an **UNBOND** transaction to the Vault Ad
 
 Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond. 
 
-`UNBOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz:1000000000`
+`UNBOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz:1000000000000`
+
+{% hint style="info" %}
+THORChain always treats assets in 1e8 "base format" ie, 1.0 RUNE = 100,000,000 units. To get from one to the other, simply multiply by 100m. 
+{% endhint %}
 
 {% hint style="info" %}
 You can get your node address, as well as the current vault address by running `make status`
