@@ -19,7 +19,7 @@ Users can swap any assets which are on connected chains and which have been adde
 {% hint style="info" %}
 Learn more about how chains and assets get added to the network in [the Governance section](../how-it-works/governance.md).
 
-To add an asset to THORChain, users simply stake a new asset to put it in the queue for listing. Swaps can only be made on pools when they have been added to the network and have moved out of the bootstrap phase.
+To add an asset to THORChain, users simply deposit a new asset to put it in the queue for listing. Swaps can only be made on pools when they have been added to the network and have moved out of the bootstrap phase.
 {% endhint %}
 
 ### Decentralisation
@@ -30,7 +30,7 @@ Swaps are completed as fast as they can be confirmed, which is around 5-10 secon
 
 ### Continuous Liquidity Pools
 
-Swaps on THORChain are made possible by liquidity pools. These are pools of assets deposited by Stakers, where each pool consists of 1 connected asset, for example Bitcoin, and THORChain's own asset, RUNE. They're called Continuous Liquidity Pools because RUNE, being in each pool, links all pools together in a single, continuous liquidity network.
+Swaps on THORChain are made possible by liquidity pools. These are pools of assets deposited by Liquidity providers, where each pool consists of 1 connected asset, for example Bitcoin, and THORChain's own asset, RUNE. They're called Continuous Liquidity Pools because RUNE, being in each pool, links all pools together in a single, continuous liquidity network.
 
 When a user swaps 2 connected assets on THORChain, they swap between two pools:
 
@@ -82,5 +82,5 @@ The cost of a swap is made up of two parts:
 
 All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../how-it-works/fees.md#network-fee).
 
-Note that users who force their swaps through quickly cause large slips and pay larger fees to stakers.
+Note that users who force their swaps through quickly cause large slips and pay larger fees to liquidity providers.
 
