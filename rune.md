@@ -17,7 +17,7 @@ $RUNE is the asset which powers the THORChain ecosystem and provides the economi
 
 **Solving O\(n^2\) Problem**
 
-$RUNE is the base currency and is required to be staked along side every asset in pools. Without a native settlement currency, each asset would need to be pooled with every other asset, which would eventually result in hundreds of new pools to be created for just one new asset, diluting liquidity. Using the formula below we can calculate the network requirements for various scenarios.
+$RUNE is the base currency and is required to be provided along side every asset in pools. Without a native settlement currency, each asset would need to be pooled with every other asset, which would eventually result in hundreds of new pools to be created for just one new asset, diluting liquidity. Using the formula below we can calculate the network requirements for various scenarios.
 
 <table>
   <thead>
@@ -77,7 +77,7 @@ $RUNE is the base currency and is required to be staked along side every asset i
 
 Since $RUNE is bonded to assets in its pools, then as the value of those assets increase, then the $RUNE value will also increase. This means the system can become "aware" of the value of the assets it is trying to secure. Once it is aware of the value of the assets it is securing, it can use incentives to ensure security of those assets. 
 
-A rule of thumb is for every $1m in main-chain assets staked in liquidity pools, $1m of $RUNE is required to be staked along side. Due to a mechanism called the Incentive Pendulum, $2m in RUNE will be driven to be bonded. Thus, $1m in main-chain assets will cause the total value of RUNE to be $3m in an equilibrium. Thus liquidity pools have a positive effect on the monetary base of RUNE.
+A rule of thumb is for every $1m in main-chain assets pooled in liquidity pools, $1m of $RUNE is required to be pooled along side. Due to a mechanism called the Incentive Pendulum, $2m in RUNE will be driven to be bonded. Thus, $1m in main-chain assets will cause the total value of RUNE to be $3m in an equilibrium. Thus liquidity pools have a positive effect on the monetary base of RUNE.
 
 ## 2. Security
 
@@ -89,7 +89,7 @@ THORChain could be called Proof of Stake \(PoS\) network, but there are some dif
 
 **Underwriting Assets**
 
-The Incentive Pendulum ensures that Nodes are incentivised to continually buy and bond enough Rune each time to maximise their gains - which is a maximum when there is 67% of RUNE bonded and 33% staked in pools. If the pools are holding $1m in capital, then the value of RUNE in the aggregrate bond is $2m. Thus all assets can be underwritten. 
+The Incentive Pendulum ensures that Nodes are incentivised to continually buy and bond enough Rune each time to maximise their gains - which is a maximum when there is 67% of RUNE bonded and 33% pooled in pools. If the pools are holding $1m in capital, then the value of RUNE in the aggregrate bond is $2m. Thus all assets can be underwritten. 
 
 The bond is extremely liquid - any RUNE holder can immediately enter or exit their position since RUNE is the settlement asset in all pools. Thus, when a node churns in, the cost basis of their bond is known to them and not an arbitrary "paper" figure.  This means a node bonding $1m in RUNE will never contemplate making a decision to steal &lt;$1m in capital from the network, else they will lose overall. 
 
@@ -115,7 +115,7 @@ The network continually consumes gas as it makes outgoing transactions \(as well
 
 **Paying out Emissions**
 
-After fees are charged and gas is subsidised, then THORChain computes the block reward, divides it based on the Incentive Pendulum algorithm, and then pays out to Bonders and Stakers. 
+After fees are charged and gas is subsidised, then THORChain computes the block reward, divides it based on the Incentive Pendulum algorithm, and then pays out to Bonders and Liquidity providers. 
 
-This drives Nodes to bond the optimal amount, and pays Stakers for their contribution of liquidity. 
+This drives Nodes to bond the optimal amount, and pays Liquidity providers for their contribution of liquidity. 
 

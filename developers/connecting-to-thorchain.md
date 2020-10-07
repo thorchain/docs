@@ -18,13 +18,13 @@ The active node IP addresses can be queried from this endpoint:
 
 The Network Information comes from three sources:
 
-1. MIDGARD: Consumer information relating to swaps, stakes, volume. DeFi dashboards, Wallets, Exchanges will primarily interact with Midgard. 
+1. MIDGARD: Consumer information relating to swaps, pools, volume. DeFi dashboards, Wallets, Exchanges will primarily interact with Midgard. 
 2. THORNODE: Raw blockchain data relating to the THORChain state machine. THORChain block explorers will query THORChain-specific information here. 
 3. TENDERMINT: Tendermint standard data, used by all block explorers to query for base information. 
 
 {% tabs %}
 {% tab title="MIDGARD" %}
-Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, stakers and more. 
+Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more. 
 
 Port: `8080`  
   

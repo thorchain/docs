@@ -27,7 +27,7 @@ To goal is to have a fixed supply at all times.
 Instead of constantly emitting \(infinite supply like Cosmos or Ethereum\) or reducing the emission down to zero \(Bitcoin\) the team elect to match emissions to the difference between current circulating supply and the max supply, as well as burning fees. This means there is 500million progressively emitted to nodes for security and liquidity over time.   
   
 **Is the team profit oriented?**  
-No - not profit orientated. All fees go back to users. There is no revenue model for the team via the protocol. All swap fees go to stakers, all protocol fees are burned, emissions/block rewards go to validators. The team are incentivised through holding the same RUNE as everyone else.  
+No - not profit orientated. All fees go back to users. There is no revenue model for the team via the protocol. All swap fees go to liquidity providers, all protocol fees are burned, emissions/block rewards go to validators. The team are incentivised through holding the same RUNE as everyone else.  
   
 **What is the average rate of return that users can expect when staking in pools?**  
 In the high risk pools, upwards of 10% and in the low risk, deep liquidity pools like BNB & BTC expect 3%-8%.

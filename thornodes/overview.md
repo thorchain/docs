@@ -53,7 +53,7 @@ On every churn, the network may select one or more nodes to be churned into the 
 There is a endpoint on Midgard that has deep analytics in mean and median active & standby bond sizes to drive efficient discovery of the best "bond" size.   
 Whilst 1,000,000 is the minimum, competition to get in will drive it up, and in the long term it is likely to stabilise between 2m and 2.5m RUNE.
 
-The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and stake part of it instead to maximise yield. 
+The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and pool part of it instead to maximise yield. 
 {% endhint %}
 
 ## Risk of Running a Node

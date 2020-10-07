@@ -8,13 +8,13 @@ description: 'Introduction of THORChain, BEPSwap, ASGARDEX and the rest of the e
 
 THORChain is a liquidity protocol based on [Tendermint](https://tendermint.com/) & [Cosmos-SDK](https://cosmos.network/) and utilising [Threshold Signature Schemes](https://eprint.iacr.org/2019/114.pdf) \(TSS\) to create a marketplace of liquidity for digital assets to be traded in a trustless, permissionless & non-custodial manner. THORChain's liquidity marketplace design obviates the need for order book exchanges when simply swapping one asset for another and provides ancillary benefits including manipulation resistance & on-chain price feeds. THORChain is able to remain chain-agnostic, favoring no specific asset or blockchain and able to scale without sacrificing security.
 
-THORChain enables users to swap between digital assets on almost any blockchain in a trustless & permissionless setting. Liquidity is provided by stakers who earn fees on swaps, turning their unproductive assets into productive assets in a non-custodial manner. Market prices are maintained through the ratio of assets in pools which can be arbitraged by traders to restore correct market prices.
+THORChain enables users to swap between digital assets on almost any blockchain in a trustless & permissionless setting. Liquidity is provided by liquidity providers who earn fees on swaps, turning their unproductive assets into productive assets in a non-custodial manner. Market prices are maintained through the ratio of assets in pools which can be arbitraged by traders to restore correct market prices.
 
 ## ROLES
 
 There are four key roles in the system:
 
-1. **Stakers** who are paid to provide liquidity
+1. **Liquidity providers** who are paid to provide liquidity
 2. **Swappers** who use the liquidity to swap assets ad-hoc, paying fees
 3. **Traders** who monitor pools and rebalance continually, paying fees but with the intent to earn a profit. 
 4. **Node Operators** who provide a bond and are paid to secure the system
@@ -83,7 +83,7 @@ _For more info on how THORChain utilises Tendermint & Cosmos_, refer _to the_ [_
 
 ### **Cross Chain State Pegs**
 
-Cross-chain state pegs are what connects main chains to THORChain and enables assets to be pooled together and transferred in & out to stakers, swappers & traders. The mechanism is called a **1-way state peg**, because the assets are not pegged \(such as in Keep Network, Wrapped Bitcoin etc\), instead the chain state is pegged instead - and it is only 1-way.  Another way to think about it, is that THORNodes observe transactions on other blockchains and the truth about what was observed is ascertained through group consensus _"we all saw the same thing"_, instead of through proof _"_[_I can prove what I saw happened_](https://github.com/summa-tx/relays/tree/golang/golang)_"_. This is a far more flexible approach and can be abstracted much better. 
+Cross-chain state pegs are what connects main chains to THORChain and enables assets to be pooled together and transferred in & out to liquidity providers, swappers & traders. The mechanism is called a **1-way state peg**, because the assets are not pegged \(such as in Keep Network, Wrapped Bitcoin etc\), instead the chain state is pegged instead - and it is only 1-way.  Another way to think about it, is that THORNodes observe transactions on other blockchains and the truth about what was observed is ascertained through group consensus _"we all saw the same thing"_, instead of through proof _"_[_I can prove what I saw happened_](https://github.com/summa-tx/relays/tree/golang/golang)_"_. This is a far more flexible approach and can be abstracted much better. 
 
 Nodes run clients for connected blockchains in order to reach consensus about what occurs on the main chain eg. block height, transactions etc. They make witness transactions into THORChain when they see a relevant transaction.
 
