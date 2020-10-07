@@ -72,8 +72,8 @@ $$
 \text{units} = \frac {P(R a + r A)}{2 RA}*slipAdjustment
 $$
 
-* r = rune pooled 
-* a = asset pooled
+* r = rune deposited 
+* a = asset deposited
 * R = Rune Balance \(before\)
 * A = Asset Balance \(before\)
 * P = Existing Pool Units
@@ -97,18 +97,18 @@ Liquidity can be added to existing pools to increase depth and attract swappers.
 Liquidity providers are incentivised to deposit symmetrically but should deposit asymmetrically if the pool is already imbalanced.‌
 
 {% hint style="info" %}
-**Symmetrical vs Asymmetrical Staking**
+**Symmetrical vs Asymmetrical Deposits**
 
-**Symmetrical staking** is where users deposit an _equal_ value of 2 assets to a pool. For example, a user deposits $1000 of BTC and $1000 of RUNE to the BTC/RUNE pool.
+**Symmetrical deposits** is where users deposit an _equal_ value of 2 assets to a pool. For example, a user deposits $1000 of BTC and $1000 of RUNE to the BTC/RUNE pool.
 
-**Asymmetrical staking** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $2000 of BTC and $0 of RUNE to the BTC/RUNE pool.Under the hood, this causes an arbitrage agent to swap $1000 of their BTC into RUNE, so the liquidity provider will end up with &lt;$1000 in BTC and &lt;$1000 in RUNE.
+**Asymmetrical deposits** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $2000 of BTC and $0 of RUNE to the BTC/RUNE pool. Under the hood, the member is given an ownership of the pool that takes into account the slip created in the price. The liquidity provider will end up with &lt;$1000 in BTC and &lt;$1000 in RUNE. The deeper the pool, the closer to a total of $2000 the member will own.
 
-_Note: there is no difference between swapping into symmetrical shares, then staking that, or staking asymmetrically and being arb'd to be symmetrical. You will still experience the same net slip._
+_Note: there is no difference between swapping into symmetrical shares, then depositing that, or depositing asymmetrically and being arb'd to be symmetrical. You will still experience the same net slip._
 {% endhint %}
 
 ### Withdrawing Assets
 
-Liquidity providers can withdraw their assets at any time. To do so, they send in another special transaction. The network processes their request and the liquidity provider receives their ownership % of the pool along with the assets they've earned. A network fee is taken whenever assets are taken out of the network. These are placed into [the network reserve](../how-it-works/emission-schedule.md).
+Liquidity providers can withdraw their assets at any time. The network processes their request and the liquidity provider receives their ownership % of the pool along with the assets they've earned. A network fee is taken whenever assets are taken out of the network. These are placed into [the network reserve](../how-it-works/emission-schedule.md).
 
 ### **Yield Comes from Fees & Rewards**
 
@@ -126,7 +126,7 @@ This change to the ratio of assets is called a 'slip'. A proportion of each slip
 
 Rewards also come from a large token reserve. This token reserve is continuously filled up from[ network fees](../how-it-works/fees.md#network-fee). Part of the token reserve is paid out to liquidity providers over the long-term. This provides continuous income even during times of low exchange volume.
 
-Learn about how [factors affecting yield and how yield is calculated](staking.md#compensation).
+Learn about how [factors affecting yield and how yield is calculated](https://github.com/thorchain/docs/tree/14ece484bcf892fa893159b79c0d469113061c53/roles/staking.md#compensation).
 
 {% hint style="info" %}
 See here for an [interactive example](https://rebase.foundation/network/thorchain/system-component/providing-liquidity) of the staking process.
@@ -141,6 +141,8 @@ See here for an [interactive example](https://rebase.foundation/network/thorchai
 ## Requirements, Costs
 
 Liquidity providers must have assets to deposit and their assets must be native to a supported chain. There is no minimum amount to deposit in existing pools. However new assets must win a competition to be listed – larger value deposits will be listed over smaller value deposits.
+
+Liquidity providers must pay for security of their assets, since security is not free. This "payment" is the requirement for liquidity providers to hold RUNE, which acts as a redeemable insurance policy whilst they are in the pool. Holding RUNE allows liquidity providers to retain an ability to economically leverage nodes to ensure security of assets. When the liquidity provider withdraws, they can sell their RUNE back to the asset they desire. H
 
 The only direct cost to liquidity providers is the [network fee](../how-it-works/fees.md#network-fee), charged for depositing and withdrawing assets. An indirect cost to liquidity providers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of liquidity provider purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's [slip-based fee](../how-it-works/fees.md#slip-based-fee).
 

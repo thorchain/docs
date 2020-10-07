@@ -24,9 +24,9 @@ To add an asset to THORChain, users simply deposit a new asset to put it in the 
 
 ### Decentralisation
 
-THORChain manages the swaps in accordance with the rules of the state machine - which is completely autonomous. Every swap that it observes is finalised, ordered and processed. Invalid swaps are refunded, valid swaps ordered in a transparent way that is resistant to front-running. Validators can not influence the order of trades, and are punished if they fail to observe a valid swap. 
+THORChain manages the swaps in accordance with the rules of the state machine - which is completely autonomous. Every swap that it observes is finalised, ordered and processed. Invalid swaps are refunded, valid swaps ordered in a transparent way that is resistant to front-running. Validators can not influence the order of trades, and are punished if they fail to observe a valid swap.
 
-Swaps are completed as fast as they can be confirmed, which is around 5-10 seconds. 
+Swaps are completed as fast as they can be confirmed, which is around 5-10 seconds.
 
 ### Continuous Liquidity Pools
 
@@ -38,7 +38,7 @@ When a user swaps 2 connected assets on THORChain, they swap between two pools:
 2. Move that RUNE into the second pool,
 3. Swap to the desired asset in the second pool with the RUNE from \(2\)
 
-The THORChain state machine handles this swap in one go, so the user is never handles RUNE. 
+The THORChain state machine handles this swap in one go, so the user is never handles RUNE.
 
 See [this example](swapping.md#example-connected-asset-binance-coin-to-connected-asset-bitcoin) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 

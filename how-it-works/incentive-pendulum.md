@@ -2,7 +2,7 @@
 description: >-
   THORChain's Incentive Pendulum keeps the network in a balanced state. It stops
   the network from becoming unsafe or inefficient by changing the distribution
-  of rewards to node operators and liquidity providers.
+  of rewards to node operators and liquidity p
 ---
 
 # Incentive Pendulum
@@ -84,11 +84,11 @@ $$
 \frac{1}{shareFactor}= \frac{1}{3} = 0.33%
 $$
 
-Thus, 33% of the rewards will be sent to Liquidity providers in the stable scenario. 
+Thus, 33% of the rewards will be sent to Liquidity providers in the stable scenario.
 
 ## Driving Capital Allocation
 
-As a by-product of the Incentive Pendulum's aggressive re-targeting of 67:33 split of BONDED:POOLED RUNE, it means that in an equilibrium, the value of BONDED RUNE will always be double the value of POOLED RUNE. Since POOLED RUNE is 1:1 bonded with POOLED Capital \(due to liquidity pools\), then the total market value of RUNE is targeted to be 3 times the value of pooled assets. 
+As a by-product of the Incentive Pendulum's aggressive re-targeting of 67:33 split of BONDED:POOLED RUNE, it means that in an equilibrium, the value of BONDED RUNE will always be double the value of POOLED RUNE. Since POOLED RUNE is 1:1 bonded with POOLED Capital \(due to liquidity pools\), then the total market value of RUNE is targeted to be 3 times the value of pooled assets.
 
-If there is any disruption to this, then it means capital will be re-allocated by Nodes and Liquidity providers to pursue maximum yield, and thus correct the inbalance. 
+If there is any disruption to this, then it means capital will be re-allocated by Nodes and Liquidity providers to pursue maximum yield, and thus correct the inbalance.
 

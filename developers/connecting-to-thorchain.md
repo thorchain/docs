@@ -24,56 +24,54 @@ The Network Information comes from three sources:
 
 {% tabs %}
 {% tab title="MIDGARD" %}
-Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more. 
+Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more.
 
-Port: `8080`  
-  
-RPC Guide:   
-http://&lt;host&gt;:8080/v1/doc  
-  
+Port: `8080`
+
+RPC Guide:  
+[http://&lt;host&gt;:8080/v1/doc](http://<host>:8080/v1/doc)
+
 Example:  
-http://&lt;host&gt;:8080/v1/stats
+[http://&lt;host&gt;:8080/v1/stats](http://<host>:8080/v1/stats)
 {% endtab %}
 
 {% tab title="THORNODE" %}
 THORNode returns application-specific information regarding the THORChain state machine, such as balances, transactions and more.
 
-Port: `1317`  
-  
-RPC Guide:   
-[https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go](https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go)  
-  
+Port: `1317`
+
+RPC Guide:  
+[https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go](https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go)
+
 Example:  
-http://&lt;host&gt;:1317/thorchain/constants
+[http://&lt;host&gt;:1317/thorchain/constants](http://<host>:1317/thorchain/constants)
 {% endtab %}
 
 {% tab title="TENDERMINT" %}
-### **RPC**
+## **RPC**
 
-RPC allows base blockchain information to be returned.   
-  
+RPC allows base blockchain information to be returned.
+
 TESTNET Port: `26657`
 
 MAINNET Port: `27147`
 
-RPC Guide:   
-[https://docs.tendermint.com/master/rpc/](https://docs.tendermint.com/master/rpc/)  
-  
+RPC Guide:  
+[https://docs.tendermint.com/master/rpc/](https://docs.tendermint.com/master/rpc/)
+
 Example:  
-http://&lt;host&gt;:26657/genesis
+[http://&lt;host&gt;:26657/genesis](http://<host>:26657/genesis)
 
-### **P2P**
+## **P2P**
 
-P2P is the network layer between nodes, useful for network debugging. 
+P2P is the network layer between nodes, useful for network debugging.
 
-TESTNET Port: `26656` 
+TESTNET Port: `26656`
 
-MAINNET Port: `27146` 
+MAINNET Port: `27146`
 
 P2P Guide  
 [https://docs.tendermint.com/master/spec/p2p/](https://docs.tendermint.com/master/spec/p2p/)
 {% endtab %}
 {% endtabs %}
-
-
 
