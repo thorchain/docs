@@ -31,10 +31,9 @@ Each THORNode is comprised of 5 major components.
 
 ### Churning
 
-As new nodes join/leave the network, this triggers a “churning event”. Which means the list of validators that can commit blocks to the chain changes, and also creates a new Asgard vault, while retiring an old one. All funds in this retiring vault are moved to the new Asgard vault.  
-  
-Normally, a churning event happens every 3 days \(50,000 blocks\), although it is possible for it to happen more frequently \(such as when a node optionally requests to leave the network using the `LEAVE` memo\).  
+As new nodes join/leave the network, this triggers a “churning event”. Which means the list of validators that can commit blocks to the chain changes, and also creates a new Asgard vault, while retiring an old one. All funds in this retiring vault are moved to the new Asgard vault.
 
+Normally, a churning event happens every 3 days \(50,000 blocks\), although it is possible for it to happen more frequently \(such as when a node optionally requests to leave the network using the `LEAVE` memo\).
 
 #### Churning Out
 
@@ -50,10 +49,10 @@ On every churn, the network selects one or more nodes to be churned out of the n
 On every churn, the network may select one or more nodes to be churned into the network but never adds more than one to the total. Which nodes that are selected are purely by validator bond size. Larger bond nodes are selected over lower bond nodes.
 
 {% hint style="info" %}
-There is a endpoint on Midgard that has deep analytics in mean and median active & standby bond sizes to drive efficient discovery of the best "bond" size.   
+There is a endpoint on Midgard that has deep analytics in mean and median active & standby bond sizes to drive efficient discovery of the best "bond" size.  
 Whilst 1,000,000 is the minimum, competition to get in will drive it up, and in the long term it is likely to stabilise between 2m and 2.5m RUNE.
 
-The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and stake part of it instead to maximise yield. 
+The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and pool part of it instead to maximise yield.
 {% endhint %}
 
 ## Risk of Running a Node
@@ -115,11 +114,11 @@ $$
 {{{0.67 * 3060000} \over {33}}} = 62,127
 $$
 
-In this example, an individual operator would receive 62,127 RUNE over the month. 
+In this example, an individual operator would receive 62,127 RUNE over the month.
 
 ## Costs
 
-Depending on how the node was set up, it will likely cost between $1000 and $2000 per month, potentially more as the blockchain scales. The main driver of costs is resource allocation to hosting each THORNode service. 
+Depending on how the node was set up, it will likely cost between $1000 and $2000 per month, potentially more as the blockchain scales. The main driver of costs is resource allocation to hosting each THORNode service.
 
 ## Skillsets
 
@@ -172,8 +171,6 @@ When you run a THORNode, each THORNode will have its own node account. An exampl
 ```
 
 Most importantly, this will tell you how many slash points the node account has accrued, their status, and the size of their bond \(which is in 1e8 notation, 1 Rune == 100000000\).
-
-
 
 ### **Node Statuses**
 

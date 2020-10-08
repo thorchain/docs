@@ -7,7 +7,7 @@
 
 ## Roles
 
-* [Stakers](roles/staking.md)
+* [Liquidity Providers](roles/liquidity-providers.md)
 * [Swappers](roles/swapping.md)
 * [Traders](roles/trading.md)
 * [Node Operators](roles/node-operators.md)
@@ -26,6 +26,7 @@
 * [Managing](thornodes/managing.md)
 * [Alerting](thornodes/alerting.md)
 * [Leaving](thornodes/leaving.md)
+* [✔️ CHECKLIST](thornodes/checklist.md)
 
 ## Developers
 
