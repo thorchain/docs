@@ -40,7 +40,7 @@ Delegation is not permitted on the THORChain protocol because delegation undermi
 
 ### Decentralisation and Neutrality
 
-If delegation was permitted, then Node Operators would begin running initiatives that would try and attract delegated funds, such as marketing campaigns, or reducing commissions to low or negative amounts. This type of behaviour is wide-spread on existing DPoS networks such as CosmosHub, EOS and Tron. This social signalling behaviour begins to erode the centralisation of the network since funds would accumulate with large branded nodes that can pay for large campaigns. 
+If delegation was permitted, then Node Operators would begin running initiatives that would try and attract delegated funds, such as marketing campaigns, or reducing commissions to low or negative amounts. This type of behaviour is wide-spread on existing DPoS networks such as CosmosHub, EOS and Tron. This begins to erode the centralisation of the network since funds would accumulate with large branded nodes that can pay for large campaigns. 
 
 As a follow-on, if nodes began social signalling, they would naturally try and build brands to gain public trust. They would buy domain names, and try and promote on-chain identification of their nodes "monikors" to allow users to easily find and delegate them. Over time, this brand will become more and more associated with the protocol and the protocol would start to lose its nuetrality. The branded node would try and asset themselves more and more on the network, and this bias would make its way into the source code and eventually affect how the protocol would operate. 
 
