@@ -12,7 +12,6 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 2. `doctl` and DO credentials configured
 3. `kubectl`
 4. `wget` \(required for EKS module\)
-5. Kubernetes Terraform provider 
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
