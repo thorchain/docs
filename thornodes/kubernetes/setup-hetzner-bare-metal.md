@@ -4,11 +4,11 @@ description: Setting up a Kubernetes Cluster with Hetzner Dedicated Servers
 
 # Setup - Hetzner Bare Metal
 
-> Checkout this [repository](https://github.com/delphidigital/bare-metal-cluster-manager) to manage a cluster of dedicated servers on Hetzner.
+> Checkout the repository [source](https://github.com/delphidigital/bare-metal-cluster-manager) to manage a cluster of dedicated servers on Hetzner.
 
 The scripts in this repository will setup and maintain one or more [kubernetes](https://kubernetes.io) clusters consisting of dedicated [Hetzner](https://www.hetzner.com) servers. Each cluster will also be provisioned to operate as a node in the [THORCHain](https://thorchain.org) network.
 
-Executing the scripts in combination with some manual procedures will get you clusters with the following features on bare metal.
+Executing the scripts in combination with some manual procedures will get you highly available, secure clusters with the following features on bare metal.
 
 * [Kubespray](https://kubespray.io/) \(based\)
 * Internal NVMe storage \([Ceph](https://ceph.io)/[Rook](https://rook.io)\)
@@ -69,7 +69,7 @@ ansible-galaxy install -r requirements.ansible.yml
 
 ### Provisioning
 
-Create a deplyment environment inventory file for each cluster you want to manage.
+Create a deployment environment inventory file for each cluster you want to manage.
 
 ```bash
 cp hosts.example inventory/production.yml
@@ -89,10 +89,9 @@ Edit the inventory file with your server ip's and network information and custom
 
 ```bash
 # Manage a cluster
-ansible-playbook cluster.yml -i inventory/environment.yml
-
-# If you want to run kubespray separately
-ansible-playbook kubespray/cluster.yml -i inventory/environment.yml
+ansible-playbook cluster.init.yml -i inventory/environment.yml
+ansible-playbook --become --become-user=root kubespray/cluster.yml -i inventory/environment.yml
+ansible-playbook cluster.finish.yml -i inventory/environment.yml
 
 # Run custom playbooks
 ansible-playbook private-cluster.yml -i inventory/environment.yml
@@ -108,24 +107,29 @@ In order for the cluster to operate as a node in the THORCHain network deploy as
 
 ## Resetting the bare metal servers
 
-This will install and use Ubuntu on only one of the two internal NVMe drives. The unused ones will be used for persistent storage with ceph/rook. You can check the internal drive setup with `lsblk`. Change it accordingly in the command shown above when necessary.
-
-> Ubuntu 18.04 is used because kubespray does not support 20.04 \(yet\)
+This will install and use Ubuntu 20.04 on only one of the two internal NVMe drives. The unused ones will be used for persistent storage with ceph/rook. You can check the internal drive setup with `lsblk`. Change it accordingly in the command shown above when necessary.
 
 ### Manually
 
 Visit the [console](https://robot.your-server.de/server) and put each server of the cluster into rescue mode. Then execute the following script.
 
 ```bash
-installimage -a -r no -i images/Ubuntu-1804-bionic-64-minimal.tar.gz -p /:ext4:all -d nvme0n1 -f yes -t yes -n hostname
+installimage -a -r no -i images/Ubuntu-2004-focal-64-minimal.tar.gz -p /:ext4:all -d nvme0n1 -f yes -t yes -n hostname
 ```
 
 ### Automatically
 
-Copy the example, add the variables and form a pristine cluster by running the playbook.
+Create a pristine state by running the playbooks in sequence.
 
 ```bash
-cp reset.yml.example reset.yml
-ansible-playbook reset.yml
+ansible-playbook server.rescue.yml -i inventory/environment.yml
+ansible-playbook server.bootstrap.yml -i inventory/environment.yml
 ```
 
+### Instantiation
+
+Instantiate the servers.
+
+```bash
+ansible-playbook server.instantiate.yml -i inventory/environment.yml
+```
