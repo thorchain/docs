@@ -13,7 +13,6 @@ description: Setting up a Kubernetes Cluster with AWS
 3. AWS IAM Authenticator
 4. `kubectl`
 5. `wget` \(required for EKS module\)
-6. Kubernetes Terraform provider
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
