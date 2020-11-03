@@ -51,8 +51,8 @@ Before sending the BOND, verify that your THORNode is fully synced with connecte
 
 1. You should practice this first on Testnet.
 2. **THE ADDRESS RETURNED MAY BE FAKE** - you could be spoofed from a compromised binary. Verify the Bond Address yourself - it is the primary Asgard Vault on THORChain. `http://host:8080/v1/thorchain/pool_addresses`
-3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and record your bond in `make status` 
-4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device. 
+3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and record your bond in `make status`
+4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device.
 {% endhint %}
 
 ![Bonding 10k RUNE](../.gitbook/assets/image%20%2824%29.png)
@@ -75,7 +75,7 @@ Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.
 {% endhint %}
 
 {% hint style="warning" %}
-Don't forget to add the BONDING MEMO!!!  
+Don't forget to add the BONDING MEMO!!!
 `BOND:<thornode-address>`
 {% endhint %}
 
@@ -98,10 +98,10 @@ API       http://:1317
 RPC       http://:26657
 Midgard   http://:8080
 Vault BNB Bond Address tbnb14z64mhgsnlayj28llzyehq7uh9e9u2ec2jzysu
-Preflight { 
-    "status": "standby", 
-    "reason": "node account has invalid registered IP address", 
-    "code": "1" 
+Preflight {
+    "status": "standby",
+    "reason": "node account has invalid registered IP address",
+    "code": "1"
 }
 ```
 
@@ -123,7 +123,7 @@ If you run the status command again, you should now see a different message for 
 Once your IP address has been registered for discovery, you can use your own host for queries.
 {% endhint %}
 
-### 5 - Setup Node keys
+### 4 - Setup Node keys
 
 Tell THORChain about your public keys for signing sessions:
 
@@ -135,7 +135,7 @@ If you run the status command again, you should now see that your node is in sta
 
 ![](../.gitbook/assets/image%20%2821%29.png)
 
-### 4 - Set Version
+### 5 - Set Version
 
 Make sure your node broadcasts its latest version, else you won't churn in since THORChain enforces a version requirement. This version will appear in your `make status`. If you are on `0.0.0` then you haven't set your version:
 
@@ -143,14 +143,12 @@ Make sure your node broadcasts its latest version, else you won't churn in since
 make set-version
 ```
 
-
-
 ## Bonding The Right Amount
 
 Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them. Keep an eye on `maximumStandbyBond` and make sure you are bonding that amount.
 
 ```text
-curl http://52.221.153.64:8080/v1/network | json_pp 
+curl http://52.221.153.64:8080/v1/network | json_pp
 
 resp:
  "bondMetrics" : {
@@ -180,4 +178,3 @@ At any time during standby, you can bond more by making an additional BOND trans
 `BOND:<thornode-address>`
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.
-
