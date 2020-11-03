@@ -76,7 +76,7 @@ The network cannot upgrade until 100% of active nodes are on the updated version
 2. Assertive, by waiting until a super-majority has upgraded \(demonstrating acceptance of the upgrade\) then banning old nodes 
 3. Forced, by hard-forking out old nodes.
 
-During a nutural upgrade cycle, it may take several days to churn out old nodes. If the upgrade is time-critical, the network may elect to ban old nodes. Banning a node will cycle them to be churned, kick them from TSS and eject them from the consensus set. That node will never be able to churn in again, they will need to fully leave, destroy their node, and set up a new one. Hard-forking out old nodes is also a possibility, but comes with significant risk of consensus failures. 
+During a natural upgrade cycle, it may take several days to churn out old nodes. If the upgrade is time-critical, the network may elect to ban old nodes. Banning a node will cycle them to be churned, kick them from TSS and eject them from the consensus set. That node will never be able to churn in again, they will need to fully leave, destroy their node, and set up a new one. Hard-forking out old nodes is also a possibility, but comes with significant risk of consensus failures. 
 
 ## Network Recovery
 
