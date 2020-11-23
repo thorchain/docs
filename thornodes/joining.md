@@ -12,7 +12,7 @@ There are a couple of steps to follow to do so.
 
 ### 1. Check your current node status
 
-The first step would be to make sure your deployment was successful and your node is running correctly. _\*\*_To check the current status of your node, you can run the command status from the `node-launcher`repository on your terminal:
+The first step would be to make sure your deployment was successful and your node is running correctly. \_\*\*\_To check the current status of your node, you can run the command status from the `node-launcher`repository on your terminal:
 
 ```text
 make status
@@ -75,8 +75,7 @@ Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.
 {% endhint %}
 
 {% hint style="warning" %}
-Don't forget to add the BONDING MEMO!!!
-`BOND:<thornode-address>`
+Don't forget to add the BONDING MEMO!!! `BOND:<thornode-address>`
 {% endhint %}
 
 Give the network 10-15 seconds to pick up your bond. To verify it has received your bond, run the following:
@@ -178,3 +177,4 @@ At any time during standby, you can bond more by making an additional BOND trans
 `BOND:<thornode-address>`
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.
+

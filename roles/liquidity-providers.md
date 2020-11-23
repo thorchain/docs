@@ -65,7 +65,7 @@ This ensures that yield is being sent to where demand is being experienced - wit
 When a liquidity provider commmit capital, the ownership % of the pool is calculated:
 
 $$
-\text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{(2 r + R)*(a + A)}\mid
+\text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{( r + R)*(a + A)}\mid
 $$
 
 $$
