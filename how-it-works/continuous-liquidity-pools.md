@@ -93,10 +93,14 @@ $$
 
 ### Slip-based Fee Model \(CLP\)
 
-The Slip-based Fee Model adds liquidity-sensitive fee to the model. This ensures the fee paid is commensurate to the demand of the pool's liquidity, and is the one THORChain uses. 
+The Slip-based Fee Model adds liquidity-sensitive fee to the model. This ensures the fee paid is commensurate to the demand of the pool's liquidity, and is the one THORChain uses. The fee equation is shown separate \(12b\), but it is actually embedded in 12a, so is not computed separately. 
 
 $$
-Eqn 12: y= \frac{ xYX} {(x+X)^2 }
+Eqn 12a: y= \frac{ xYX} {(x+X)^2 }
+$$
+
+$$
+Eqn 12b: fee = \frac{x^2Y}{(x+X)^2}
 $$
 
 {% hint style="warning" %}
