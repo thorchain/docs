@@ -4,14 +4,13 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 
 # Setup - Digital Ocean
 
-## **Deploy a Kubernetes cluster in DO using EKS service.**
+## **Deploy a Kubernetes cluster in DO using DOKS service.**
 
 ### **Requirements**
 
 1. DO account
 2. `doctl` and DO credentials configured
 3. `kubectl`
-4. `wget` \(required for EKS module\)
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
@@ -99,7 +98,7 @@ brew install jq
 
 ## **Deploy Kubernetes Cluster**
 
-Use the commands below to deploy a DO EKS cluster:
+Use the commands below to deploy a DOKS cluster:
 
 ```text
 make do
@@ -123,7 +122,7 @@ Deploying a cluster takes ~10 minutes
 
 ## CONFIGURE
 
-Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region.
+Now that you've provisioned your DOKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region.
 
 ```text
 doctl kubernetes cluster kubeconfig save <use_your_cluster_name>
