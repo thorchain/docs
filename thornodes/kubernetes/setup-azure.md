@@ -2,7 +2,7 @@
 description: Setting up a Kubernetes Cluster with Azure (AKS)
 ---
 
-# Setup - Azure
+# Setup-Azure
 
 ## **Deploy a Kubernetes cluster in Azure using AKS service.**
 
