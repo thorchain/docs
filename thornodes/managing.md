@@ -235,7 +235,7 @@ You should have available different dashboards to see the metrics across your cl
 Click the  🔍 SEARCH ICON to find the list of dashboards
 {% endhint %}
 
-![Example of Grafana Dashboard](../.gitbook/assets/image.png)
+![Example of Grafana Dashboard](../.gitbook/assets/image%20%289%29.png)
 
 For a more in-depth introduction of Grafana, please[ follow the documentation here](https://grafana.com/docs/grafana/latest/getting-started/what-is-grafana/)**.**
 
