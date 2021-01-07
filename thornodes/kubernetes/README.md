@@ -20,7 +20,7 @@ All the default configurations used in these instructions are for a production e
 
 There are three important steps to getting your node set up, deployed and churned in. 
 
-1. [Setting up Cluster](setup.md)
+1. [Setting up Cluster](setup-aws.md)
 2. [Deploying THORNode Services](../deploying.md)
 3. [Joining \("Churning In"\)](../joining.md)
 

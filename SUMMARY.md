@@ -18,7 +18,7 @@
 * [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [Deploy - Manual](thornodes/manual.md)
 * [Deploy - K8 Cluster](thornodes/kubernetes/README.md)
-  * [Setup - AWS](thornodes/kubernetes/setup.md)
+  * [Setup - AWS](thornodes/kubernetes/setup-aws.md)
   * [Setup - Digital Ocean](thornodes/kubernetes/setup-digital-ocean.md)
   * [Setup - Hetzner Bare Metal](thornodes/kubernetes/setup-hetzner-bare-metal.md)
   * [Setup - GoogleCloud](thornodes/kubernetes/setup-google-cloud.md)
