@@ -2,7 +2,7 @@
 description: Setting up a Kubernetes Cluster with GCP (GKE)
 ---
 
-# Setup - GCP
+# Setup - Google Cloud
 
 ## **Deploy a Kubernetes cluster in GCP using GKE service.**
 
@@ -56,7 +56,7 @@ brew install google-cloud-sdk
 {% endtab %}
 {% endtabs %}
 
-After the installation perform the steps outlined below. This will authorize the SDK to access GCP using your user account credentials and add the SDK to your PATH. It requires you to login and select the project you want to work in. Then add your account to the Application Default Credentials (ADC). This will allow Terraform to access these credentials to provision resources on GCP. Finally, you need to enable the Compute Engine and Kubernetes Engine API services for your GCP project.
+After the installation perform the steps outlined below. This will authorize the SDK to access GCP using your user account credentials and add the SDK to your PATH. It requires you to login and select the project you want to work in. Then add your account to the Application Default Credentials \(ADC\). This will allow Terraform to access these credentials to provision resources on GCP. Finally, you need to enable the Compute Engine and Kubernetes Engine API services for your GCP project.
 
 ```bash
 gcloud init
@@ -150,3 +150,4 @@ kubectl get nodes
 ```
 
 You are now ready to deploy a THORNode.
+
