@@ -21,7 +21,7 @@
   * [Setup - AWS](thornodes/kubernetes/setup-aws.md)
   * [Setup - Digital Ocean](thornodes/kubernetes/setup-digital-ocean.md)
   * [Setup - Hetzner Bare Metal](thornodes/kubernetes/setup-hetzner-bare-metal.md)
-  * [Setup - GoogleCloud](thornodes/kubernetes/setup-google-cloud.md)
+  * [Setup - Google Cloud](thornodes/kubernetes/setup-google-cloud.md)
 * [Deploying](thornodes/deploying.md)
 * [Joining](thornodes/joining.md)
 * [Managing](thornodes/managing.md)

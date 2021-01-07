@@ -1,2 +1,2 @@
-# Setup - GoogleCloud
+# Setup - Google Cloud
 
