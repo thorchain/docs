@@ -6,10 +6,10 @@ description: Deploying a THORNode with Kubernetes
 
 ## **Deploy a Kubernetes cluster**
 
-In order to deploy all the different services and provide a high availability environment to operate your node, Kubernetes is the preferred scheduling platform. Any production-grade Kubernetes cluster can be used to run and deploy a THORNode. You need your Kubernetes provider to offer external load balancers services type features. AWS, Azure, Digital Ocean, GCE, OpenStack are compatible with external load balancers.
+In order to deploy all the different services and provide a high availability environment to operate your node, Kubernetes is the preferred scheduling platform. Any production-grade Kubernetes cluster can be used to run and deploy a THORNode. You need your Kubernetes provider to offer external load balancers services type features. Azure, Digital Ocean, GCE, OpenStack are compatible with external load balancers.
 
 {% hint style="info" %}
-Terraform is a type of domain-specific language \(DSL\) used to describe through code infrastructure. It designed to make it easier to create/destroy infrastructure hosted locally or by a provider such as AWS or others.
+Terraform is a type of domain-specific language \(DSL\) used to describe code infrastructure. It is designed to make it easier to create/destroy infrastructure hosted locally or by a provider.
 {% endhint %}
 
 This Terraform deployment will deploy a Kubernetes cluster using your VPS provider credentials and EKS service. The cluster will have autoscaling capabilities, which means you don’t have to deal with how many nodes you need to deploy to run your THORNode services.
@@ -54,6 +54,6 @@ To prevent a catastrophic mistake in handling multiple nodes, set them up on dif
 All of your commands can now be run separately. 
 
 {% hint style="info" %}
-It is heavily advised to not set up nodes on the same provider. Deploy 1 node on AWS, 1 node on Digital Ocean etc. 
+It is heavily advised to not set up nodes on the same provider. Deploy 1 node on Azure, 1 node on Digital Ocean etc. 
 {% endhint %}
 
