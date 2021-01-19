@@ -38,7 +38,7 @@ When a user swaps 2 connected assets on THORChain, they swap between two pools:
 2. Move that RUNE into the second pool,
 3. Swap to the desired asset in the second pool with the RUNE from \(2\)
 
-The THORChain state machine handles this swap in one go, so the user is never handles RUNE.
+The THORChain state machine handles this swap in one go, so the user never handles RUNE.
 
 See [this example](swapping.md#example-connected-asset-binance-coin-to-connected-asset-bitcoin) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 
