@@ -25,6 +25,8 @@ Each chain will have a unique way of adding state to a transaction:
 
 The following transactions are permitted:
 
+{% tabs %}
+{% tab title="SINGLECHAIN" %}
 <table>
   <thead>
     <tr>
@@ -101,6 +103,102 @@ The following transactions are permitted:
     </tr>
   </tbody>
 </table>
+{% endtab %}
+
+{% tab title="MULTICHAIN" %}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Payload</th>
+      <th style="text-align:left">MEMO</th>
+      <th style="text-align:left">Expected Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>ADD LIQUIDITY</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>AssetChain:<br /></b><code>ASSET</code>
+        </p>
+        <p><b>THORChain:</b>
+        </p>
+        <p><code>RUNE</code>
+        </p>
+      </td>
+      <td style="text-align:left">
+        <p><b>AssetChain:</b>
+        </p>
+        <p><code>ADD:ASSET:THOR-ADDRESS</code><b>THORChain:</b><code>ADD:ASSET:ASSET-ADDRESS</code>
+        </p>
+      </td>
+      <td style="text-align:left">Adds into the specified pool.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>WITHDRAW</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>AssetChain:<br /></b><code>lowest possible</code>
+        </p>
+        <p><b>THORChain:</b>
+        </p>
+        <p><code>0</code>
+        </p>
+        <p></p>
+      </td>
+      <td style="text-align:left">
+        <p><code>WITHDRAW:ASSET:PERCENT</code>
+        </p>
+        <p>Percent is in basis points (0-10000, where 10000=100%)</p>
+      </td>
+      <td style="text-align:left">Withdraws from a pool</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>SWAP</b>
+      </td>
+      <td style="text-align:left"><code>Amout to swap</code>
+      </td>
+      <td style="text-align:left">
+        <p><code>SWAP:ASSET:DESTADDR:LIM</code>
+        </p>
+        <p>Set a destination address to swap and send to someone. If <code>DESTADDR</code>is
+          blank, then it sends back to self:</p>
+        <p><code>SWAP:ASSET::LIM</code>
+          <br />
+        </p>
+        <p>Set trade protection. If the value isn&apos;t achieved then it is refunded.
+          ie, set 10000000 to be garuanteed a minimum of 1 full asset.</p>
+        <p></p>
+        <p>If <code>LIM</code> is ommitted, then there is no price protection:</p>
+        <p> <code>SWAP:ASSET:DESTADDR:</code>
+        </p>
+        <p></p>
+        <p>If both are ommitted then the format is:</p>
+        <p> <code>SWAP:ASSET</code>
+        </p>
+      </td>
+      <td style="text-align:left">Swaps to token.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">DONATE Assets</td>
+      <td style="text-align:left">
+        <p><code>RUNE &amp;| Token</code>
+        </p>
+        <p>Can be either.</p>
+      </td>
+      <td style="text-align:left"><code>DONATE:ASSET</code>
+      </td>
+      <td style="text-align:left">Adds to the pool balances without being credited.</td>
+    </tr>
+  </tbody>
+</table>
+{% endtab %}
+{% endtabs %}
+
+|  |
+| :--- |
+
 
 ### Refunds
 
