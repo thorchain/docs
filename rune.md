@@ -85,13 +85,13 @@ THORChain could be called Proof of Stake \(PoS\) network, but there are some dif
 
 The Incentive Pendulum ensures that Nodes are incentivised to continually buy and bond enough Rune each time to maximise their gains - which is a maximum when there is 67% of RUNE bonded and 33% pooled in pools. If the pools are holding $1m in capital, then the value of RUNE in the aggregrate bond is $2m. Thus all assets can be underwritten.
 
-The bond is extremely liquid - any RUNE holder can immediately enter or exit their position since RUNE is the settlement asset in all pools. Thus, when a node churns in, the cost basis of their bond is known to them and not an arbitrary "paper" figure. This means a node bonding $1m in RUNE will never contemplate making a decision to steal &lt;$1m in capital from the network, else they will lose overall.
+The bond is extremely liquid - any RUNE holder can immediately enter or exit their position since RUNE is the settlement asset in all pools. Thus, when a node churns in, the cost basis of their bond is known to them and not an arbitrary figure. This means a node bonding $1m in RUNE will never contemplate making a decision to steal &lt;$1m in capital from the network, else they will lose overall.
 
 ## 3. Governance
 
 **Signalling Priority for Assets**
 
-While THORChain strives to be governance-minimal, there are some parts of the protocol that use committed capital to signal priority. This is the case for the asset listing process, where every three days a new asset can be listed as a pool. In a queue of standby assets, the one with the deepest commitment of RUNE is the one that is listed first.
+While THORChain strives to be governance-minimal, there are some parts of the protocol that use committed capital to signal priority. This is the case for the asset listing process, where every few days a new asset can be listed as a pool. In a queue of standby assets, the one with the deepest commitment of RUNE is the one that is listed first.
 
 **Signalling Priority for Chains**
 
