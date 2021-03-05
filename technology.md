@@ -6,20 +6,20 @@ description: 'An overview of THORChain''s 1-way State Pegs, State Machine and TS
 
 ## Overview
 
-THORChain combines several existing technologies together to achieve the vision. 
+THORChain is a leaderless vault manager: 
 
-1. 1-way State Pegs allow a chain-agnostic bridging protocol
-2. A State Machine to coordinate asset exchange logic and delegate redemption transactions
-3. Bifröst Signer Module to convert redemption transactions into chain-specific transactions
+1. 1-way State Pegs allow syncing state from external chains
+2. A State Machine to coordinate asset exchange logic and delegate redemptions
+3. Bifröst Chain Client to convert redemptions into chain-specific transactions
 4. A TSS protocol to enable distributed threshold key-signing
 
 ![How THORChain works](.gitbook/assets/image%20%284%29.png)
 
 ## The Bifröst Protocol: 1-way State Pegs
 
-The Bifröst Protocol is the name for its 1-way State Pegs. Each connected chain has a "Bifröst" module that deals with the nuances of connecting to that chain, such as chain configurations and transaction details. 
+Each connected chain has a "Bifröst" module that deals with the nuances of connecting to that chain. 
 
-Once nodes are done syncing, they begin watching vault addresses on each chain. If they ever see an inbound transaction concerning a vault address they watch, they deserialise it and convert it into a THORChain witness transaction. 
+Once nodes are synced, they watch vault addresses on each chain. If they ever see an inbound transaction, they read it and convert it into a THORChain witness transaction. 
 
 The witness transaction has the following parameters that are essentially the same for each chain, no matter the type:
 
@@ -35,7 +35,7 @@ type Tx struct {
 }
 ```
 
-THORChain processes each observed transaction and collects `signers` - essentially the keys of each node that reports a transaction that is 100% identical. Once a a super-majority of nodes agree on a particular transaction, it moves from a `pending` state to a finalised state. 
+THORChain processes each observed transaction and collects `signers` - essentially the keys of each node that reports a transaction that is 100% identical. Once a super-majority of nodes agree on a particular transaction, it moves from a `pending` state to a finalised state. 
 
 ```text
 type ObservedTx struct {
@@ -48,7 +48,7 @@ type ObservedTx struct {
 }
 ```
 
-The overview of this is as below. Each chain client is quite light-weight, containing only as much logic as is necessary to connect to that particular chain. Most of the logic is in the observer itself. 
+Each chain client is quite light-weight, containing only as much logic as is necessary to connect to that particular chain. Most of the logic is in the observer itself. 
 
 ![](.gitbook/assets/image%20%286%29.png)
 
@@ -80,6 +80,4 @@ The Transaction Out item details which chain it should be sent on, the destinati
 Once the finalised transaction is created, the Signer downloads it from their local copy and serialises it into a correct transaction for the destination chain using the respetive chain client. This is then sent to the TSS module which coordinates key-signing. The final signed transaction is then broadcast to the respective chain. 
 
 ![](.gitbook/assets/image%20%2810%29.png)
-
-
 

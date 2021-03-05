@@ -15,9 +15,19 @@ $RUNE is the asset which powers the THORChain ecosystem and provides the economi
 
 ## 1. Liquidity
 
+**Transmitting Purchasing Power**
+
+Since $RUNE is bonded to assets in its pools, then as the value of those assets increase, then the $RUNE value will also increase. This means the system can become "aware" of the value of the assets it is trying to secure. Once it is aware of the value of the assets it is securing, it can use incentives to ensure security of those assets.
+
+_A rule of thumb is for every $1m in main-chain assets pooled in liquidity pools, $1m of $RUNE is required to be pooled along side. Due to a mechanism called the Incentive Pendulum, $2m in RUNE will be driven to be bonded. Thus, $1m in main-chain assets will cause the total value of RUNE to be $3m in an equilibrium. Thus liquidity pools have a positive effect on the monetary base of RUNE._
+
+**Providing Liquidity Incentives**
+
+Since RUNE is the pooled asset, incentives can be paid directly into each pool. This extra capital is owned by the liquidity providers, and over time, slowly "purchases" the paired asset via arbitrage. Thus RUNE liquidity incentives can drive real yield to LPs. 
+
 **Solving O\(n^2\) Problem**
 
-$RUNE is the base currency and is required to be provided along side every asset in pools. Without a native settlement currency, each asset would need to be pooled with every other asset, which would eventually result in hundreds of new pools to be created for just one new asset, diluting liquidity. Using the formula below we can calculate the network requirements for various scenarios.
+Without a native settlement currency, each asset would need to be pooled with every other asset, which would eventually result in hundreds of new pools to be created for just one new asset, diluting liquidity. Having RUNE as the base pair allows any asset to be guaranteed to swap between any other asset. 
 
 <table>
   <thead>
@@ -28,11 +38,11 @@ $RUNE is the base currency and is required to be provided along side every asset
       </th>
       <th style="text-align:left">
         <p>No. of Pools</p>
-        <p>(Others)</p>
+        <p>(Arbitrary Pairs)</p>
       </th>
       <th style="text-align:left">
         <p>No. of Pools</p>
-        <p>(THORChain)</p>
+        <p>(RUNE Pairs)</p>
       </th>
     </tr>
   </thead>
@@ -60,24 +70,8 @@ $RUNE is the base currency and is required to be provided along side every asset
       <td style="text-align:left">4950</td>
       <td style="text-align:left">100</td>
     </tr>
-    <tr>
-      <td style="text-align:left">1000</td>
-      <td style="text-align:left">499,500</td>
-      <td style="text-align:left">1000</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
   </tbody>
 </table>
-
-**Transmitting Purchasing Power**
-
-Since $RUNE is bonded to assets in its pools, then as the value of those assets increase, then the $RUNE value will also increase. This means the system can become "aware" of the value of the assets it is trying to secure. Once it is aware of the value of the assets it is securing, it can use incentives to ensure security of those assets.
-
-A rule of thumb is for every $1m in main-chain assets pooled in liquidity pools, $1m of $RUNE is required to be pooled along side. Due to a mechanism called the Incentive Pendulum, $2m in RUNE will be driven to be bonded. Thus, $1m in main-chain assets will cause the total value of RUNE to be $3m in an equilibrium. Thus liquidity pools have a positive effect on the monetary base of RUNE.
 
 ## 2. Security
 
@@ -85,7 +79,7 @@ A rule of thumb is for every $1m in main-chain assets pooled in liquidity pools,
 
 Sybil-resistance refers to the ability to prevent someone masquarading as many identies in order to overcome a network. Bitcoin uses Proof-of-Work \(one-cpu-one-vote\) to prevent a network take-over. Ethereum 2.0 will use Proof-of-Stake \(32-eth-one-vote\) to prevent a network take-over.
 
-THORChain could be called Proof of Stake \(PoS\) network, but there are some differences to warrant it being called a **Proof of Bond** network instead. In THORChain the nodes commit a bond \(minimum of 1,000,000 RUNE\) in order to be churned in. However, this bond isn't just used to identify a node \(give them a voting slot\), it is used to underwrite the assets in the pools. If the node attempts to steal assets, then their bond is deducted to the amount of the assets they stole \(1.5x\), and the pools are made whole. Additionally, nodes have to perform a lot of mandatory services, else their bond is deducted.
+THORChain could be called Proof of Stake \(PoS\) network, but there are some differences to warrant it being called a **Proof of Bond** network instead. In THORChain the nodes commit a bond \(around 1,000,000 RUNE\) in order to be churned in. However, this bond isn't just used to identify a node \(give them a voting slot\), it is used to underwrite the assets in the pools. If the node attempts to steal assets, then their bond is deducted to the amount of the assets they stole \(1.5x\), and the pools are made whole. Additionally, if nodes misbehave their bond is slashed, ensuring reliable service. 
 
 **Underwriting Assets**
 
