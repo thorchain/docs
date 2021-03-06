@@ -10,6 +10,8 @@ THORChain is a decentralised cross-chain liquidity protocol based on [Tendermint
 
 THORChain observes incoming user deposits to vaults, executes business logic \(swap, add/remove liquidity\), and processes outbound transactions. THORChain is primarily a leaderless vault manager, ensuring that every stage of the process is byzantine-fault-tolerant. 
 
+THORChain's primary objective is to be resistant to centralisation and capture whilst facilitating cross-chain liquidity. THORChain only secures the assets in its vaults, and has economic guarantees that those assets are safe. 
+
 ## ROLES
 
 There are four key roles in the system:
@@ -21,10 +23,8 @@ There are four key roles in the system:
 
 ## COMPONENTS
 
-There are several components to the system to ensure that it is decentralised and secure.
-
 {% hint style="info" %}
-Users simply make signed transactions with a "memo" conveying transaction intent into vaults, which is then picked up by THORChain and executed.   
+Users make signed transactions with a "memo" conveying intent into vaults, which is then picked up by THORChain and executed.   
 They do not need to hold RUNE, or even care that RUNE was used, or even connect directly with THORChain. This makes THORChain suitable to be integrated into almost any wallet/service/exchange-provider as the "backend" liquidity protocol.
 {% endhint %}
 
@@ -38,7 +38,7 @@ ASGARDEX is an interface that allows users to connect to wallets, read balances,
 
 ### MIDGARD \(API\)
 
-Midgard is run by every THORNode and provides a restful API that any client can consume to display data. To connect to Midgard, the client \(eg wallet\) must first challenge a number of nodes to prevent being attacked or phished, since the security model of THORChain is strictly by-consensus.
+Midgard is run by every THORNode and provides a restful API & graphQL & websockets that any client can consume to display data. To connect to Midgard, the client \(eg wallet\) must first challenge a number of nodes to prevent being attacked or phished, since the security model of THORChain is strictly by-consensus.
 
 ### THORChain \(Ledger\)
 
