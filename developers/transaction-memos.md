@@ -224,10 +224,10 @@ Alternative MEMO types are available to clients:
 
 | Transaction | Long-form MEMO | Short-form MEMO | Symbol MEMO |
 | :--- | :--- | :--- | :--- |
-| STAKE | `STAKE` | `st` | `+` |
+| ADD | `ADD` | `a` | `+` |
 | WITHDRAW | `WITHDRAW` | `wd` | `-` |
 | SWAP | `SWAP` | `s` | `=` |
-| ADD | `ADD` | `a` | `%` |
+| DONATE | `DONATE` | `d` | `%` |
 
 ### Asset Notation
 
