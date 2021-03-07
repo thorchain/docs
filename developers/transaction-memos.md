@@ -157,7 +157,7 @@ The following transactions are permitted:
     <tr>
       <td style="text-align:left"><b>SWAP</b>
       </td>
-      <td style="text-align:left"><code>Amout to swap</code>
+      <td style="text-align:left"><code>Amount to swap</code>
       </td>
       <td style="text-align:left">
         <p><code>SWAP:ASSET:DESTADDR:LIM</code>
@@ -168,7 +168,7 @@ The following transactions are permitted:
           <br />
         </p>
         <p>Set trade protection. If the value isn&apos;t achieved then it is refunded.
-          ie, set 10000000 to be garuanteed a minimum of 1 full asset.</p>
+          ie, set 10000000 to be gauranteed a minimum of 1 full asset.</p>
         <p></p>
         <p>If <code>LIM</code> is ommitted, then there is no price protection:</p>
         <p> <code>SWAP:ASSET:DESTADDR:</code>
@@ -207,7 +207,7 @@ The following are the conditions for refunds:
 | Condition | Notes |
 | :--- | :--- |
 | Invalid `MEMO` | If the `MEMO` is incorrect the user will be refunded. |
-| Invalid Assets | If the asset for the transaction is incorrect \(staking an asset into a wrong pool\) the user will be refunded. |
+| Invalid Assets | If the asset for the transaction is incorrect \(adding an asset into a wrong pool\) the user will be refunded. |
 | Invalid Transaction Type | If the user is performing a multi-send vs a send for a particular transaction, they are refunded. |
 | Exceeding Price Limit | If the final value achieved in a trade differs to expected, they are refunded.  |
 
