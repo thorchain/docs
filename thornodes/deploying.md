@@ -77,7 +77,7 @@ make install
 ```
 
 {% hint style="info" %}
-Deploying a THORNode will take 1 day for every 3 months of ledger history, since it will validate every block. THORNodes are "full nodes", not light clients, so there is no shortcuts. 
+Deploying a THORNode will take 1 day for every 3 months of ledger history, since it will validate every block. THORNodes are "full nodes", not light clients.
 {% endhint %}
 
 If successful, you will see the following:
