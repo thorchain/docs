@@ -33,7 +33,7 @@ make shell
 {% endtab %}
 
 {% tab title="LOGS" %}
-Display stream of logs of `thor-daemon` deployment:
+Display stream of logs of THORNode deployment:
 
 ```text
 make logs
@@ -55,6 +55,14 @@ A keystore file that secures your private keys is also stored on the THORNode. T
 
 ```text
 make password
+```
+{% endtab %}
+
+{% tab title="RESTART" %}
+Restart a THORNode deployment service selected:
+
+```text
+make restart
 ```
 {% endtab %}
 {% endtabs %}

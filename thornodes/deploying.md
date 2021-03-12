@@ -70,38 +70,14 @@ If there are any errors, they are typically fixed by running the command again.
 
 It is important to deploy the tools first before deploying the THORNode services as some services will have metrics configuration that would fail and stop the THORNode deployment.
 
-You have multiple commands available to deploy different configurations of THORNode. You can deploy mainnet  or testnet. The commands deploy the umbrella chart `thornode` in the background in the Kubernetes namespace `thornode` by default. Unless you specify the name of your deployment using the environment variable `NAME`, all the commands are run against the default Kubernetes namespace `thornode` set up in the Makefile.
-
-{% tabs %}
-{% tab title="TESTNET" %}
-#### Deploy Testnet Validator
-
-To automatically select the current testnet chain, run that command:
+You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet, chaosnet and mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` \(or `thornode-testnet` for testnet\) by default.
 
 ```text
-make testnet-validator
+make install
 ```
-
-Or to manually specify the seed genesis IP, run that command:
-
-```text
-SEED_TESTNET=1.2.3.4 make testnet-validator
-```
-{% endtab %}
-
-{% tab title="CHAOSNET" %}
-Rune the following to join Chaosnet:
-
-```text
-make chaosnet-validator
-```
-
-You will be prompted for a password to encrypt your node private key. Do not forget this key. 
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
-Deploying a THORNode takes ~10 minutes
+Deploying a THORNode will take 1 day for every 3 months of ledger history, since it will validate every block. THORNodes are "full nodes", not light clients, so there is no shortcuts. 
 {% endhint %}
 
 If successful, you will see the following:
@@ -164,20 +140,21 @@ This should be the only chart used to run THORNode stack unless you know what yo
 * **thor-daemon**: THORNode daemon
 * **thor-api**: THORNode API
 * **thor-gateway**: THORNode gateway proxy to get a single IP address for multiple deployments
-* **bepswap**: BEPSwap UI frontend
 * **bifrost**: Bifrost service
-* **midgard**: Midgard service
+* **midgard**: Midgard API service
 
 #### External services:
 
 * **binance-daemon**: Binance fullnode daemon
 * **bitcoin-daemon**: Bitcoin fullnode daemon
 * **ethereum-daemon**: Ethereum fullnode daemon
+* **chain-daemon**: as required for supported chains
 
 #### Tools
 
 * **elastic**: ELK stack, deperecated. Use elastic-operator chart
 * **elastic-operator**: ELK stack using operator for logs management
 * **prometheus**: Prometheus stack for metrics
+* **loki**: Loki stack for logs
 * **kubernetes-dashboard**: Kubernetes dashboard
 
