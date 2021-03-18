@@ -2,7 +2,7 @@
 description: Setting up a Kubernetes Cluster with Hetzner Cloud (hcloud)
 ---
 
-# Setup - Hetzner Cloud
+# Setup - HCloud
 
 ## **Deploy an umnanaged Kubernetes cluster in hcloud**
 
@@ -19,7 +19,6 @@ This approach is only recommended for experienced operators because the kubernet
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
-
 
 **Windows should choose either:**
 
