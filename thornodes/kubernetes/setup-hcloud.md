@@ -20,6 +20,7 @@ This approach is only recommended for experienced operators because the kubernet
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
 
+
 **Windows should choose either:**
 
 1. **Deploy a THORNode from a Linux VPS.**
