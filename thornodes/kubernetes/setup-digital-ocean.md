@@ -4,7 +4,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 
 # Setup - Digital Ocean
 
-## **Deploy a Kubernetes cluster in DO using DOKS service.**
+## **Deploy a Kubernetes cluster in DO using EKS service.**
 
 ### **Requirements**
 
