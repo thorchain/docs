@@ -75,7 +75,7 @@ The Transaction Out item details which chain it should be sent on, the destinati
 
 ## Signer \(Bifröst\)
 
-Once the finalised transaction is created, the Signer downloads it from their local copy and serialises it into a correct transaction for the destination chain using the respetive chain client. This is then sent to the TSS module which coordinates key-signing. The final signed transaction is then broadcast to the respective chain. 
+Once the finalised transaction is created, the Signer loads it from their local copy and serialises it into a correct transaction for the destination chain using the respective chain client. This is then sent to the TSS module which coordinates key-signing. The final signed transaction is then broadcast to the respective chain. 
 
 ![](.gitbook/assets/image%20%2810%29.png)
 
