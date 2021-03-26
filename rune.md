@@ -4,9 +4,9 @@ description: An overview of the asset and its four key roles.
 
 # RUNE
 
-## What is $RUNE
+## Overview
 
-$RUNE is the asset which powers the THORChain ecosystem and provides the economic incentives required to secure the network. $RUNE has four key roles which are described below.
+RUNE is the asset which powers the THORChain ecosystem and provides the economic incentives required to secure the network. RUNE has four key roles which are described below.
 
 1. Liquidity \(As a settlement asset\)
 2. Security \(As a sybil-resistant mechanism, and a means for driving economic behaviour\)
@@ -17,9 +17,11 @@ $RUNE is the asset which powers the THORChain ecosystem and provides the economi
 
 **Transmitting Purchasing Power**
 
-Since $RUNE is bonded to assets in its pools, then as the value of those assets increase, then the $RUNE value will also increase. This means the system can become "aware" of the value of the assets it is trying to secure. Once it is aware of the value of the assets it is securing, it can use incentives to ensure security of those assets.
+Since RUNE is bonded to assets in its pools, then as the value of those assets increase, then the RUNE value will also increase. This means the system can become "aware" of the value of the assets it is trying to secure. Once it is aware of the value of the assets it is securing, it can use incentives to ensure security of those assets.
 
-_A rule of thumb is for every $1m in main-chain assets pooled in liquidity pools, $1m of $RUNE is required to be pooled along side. Due to a mechanism called the Incentive Pendulum, $2m in RUNE will be driven to be bonded. Thus, $1m in main-chain assets will cause the total value of RUNE to be $3m in an equilibrium. Thus liquidity pools have a positive effect on the monetary base of RUNE._
+{% hint style="info" %}
+_A rule of thumb is for every $1m in main-chain assets pooled in liquidity pools, $1m of RUNE is required to be pooled along side. Due to a mechanism called the Incentive Pendulum, $2m in RUNE will be driven to be bonded. Thus, $1m in main-chain assets will cause the total value of RUNE to be $3m in an equilibrium. Thus liquidity pools have a positive effect on the monetary base of RUNE._
+{% endhint %}
 
 **Providing Liquidity Incentives**
 
@@ -101,7 +103,7 @@ Additionally, if a connected chain is no longer economically valuable, then all 
 
 **Fees**
 
-$RUNE is the native currency of THORChain and is consumed as transaction fees on the network. All swaps are charged both a fixed network fee, as well as a dynamic slip-based fee. This prevents various attack paths such as denial-of-service attacks, as well as sandwich attacks on a pool.
+RUNE is the native currency of THORChain and is consumed as transaction fees on the network. All swaps are charged both a fixed network fee, as well as a dynamic slip-based fee. This prevents various attack paths such as denial-of-service attacks, as well as sandwich attacks on a pool.
 
 **Subsidising Gas**
 
