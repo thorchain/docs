@@ -21,15 +21,28 @@ make status
 You will get an output along those lines, the example below is for a testnet node:
 
 ```text
-THORNode Status
-Address   thor1t5jq5dk9d7fj5xfmkrwjn482m0drc7v6fjsmjr
+ ________ ______  ___  _  __        __
+/_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
+ / / / _  / /_/ / , _/    / _ \/ _  / -_)
+/_/ /_//_/\____/_/|_/_/|_/\___/\_,_/\__/
+ADDRESS     thor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
 IP
-Version   0.0.0
-API       http://:1317
-RPC       http://:26657
-Midgard   http://:8080
-Vault BNB Bond Address tbnb1028va9y3ay4a0fpg983gxaen8w5fhr0080fwvn
-Preflight {"error":"internal error"}
+VERSION     0.0.0
+STATUS      Unknown
+BOND        0.00
+REWARDS     0.00
+SLASH       0
+PREFLIGHT   { "status": "Standby", "reason": "node account has invalid registered IP address", "code": 1 }
+API         http://:1317/thorchain/doc/
+RPC         http://:27147
+MIDGARD     http://:8080/v2/doc
+CHAIN       SYNC       BLOCKS
+THOR        55.250%    37,097/67,144
+BNB         99.915%    155,426,471/155,559,013
+BTC         2.399%     227,986/678,340
+ETH         7.764%     947,182/12,199,994
+LTC         0.012%     6,526/1,818,000
+BCH         2.293%     197,340/682,404
 ```
 
 Your node is running but as you can see in the \`Preflight\` section, your node is not yet ready to be churned in and currently is in standby status, since your node has no IP address setup yet.
@@ -40,83 +53,58 @@ But to be able to set up the node IP address, you first need to get it registere
 Before sending the BOND, verify that your THORNode is fully synced with connected chains. Connected chains such as Bitcoin, may take a day to sync. If you join THORChain without fully syncing a connected chain, you will immediately get slashed for missing observations, and lose money.
 {% endhint %}
 
-### 2 - Send BOND
+### 2 - Send a small BOND \(recommend 100-1000\)
 
-1\) Get the Vault BNB address from the `make status` comman
+1\) You will do a "Deposit" transaction. There is no destination address -- use an appropriate wallet. The Bond is locked in a module controlled by the state machine. 
 
-2\) Send your BOND to this vault address using the memo `BOND:<thornode-address>`.
+2\) Deposit your BOND using the memo `BOND:<thornode-address>` \(or use an appropriate GUI that does this memo for you\). Start small, the bond will be picked up. 
 
-{% hint style="danger" %}
-**This is a significant quantity of funds!**
+![Bonding using BOND option in ASGARDEX](../.gitbook/assets/image%20%288%29.png)
 
-1. You should practice this first on Testnet.
-2. **THE ADDRESS RETURNED MAY BE FAKE** - you could be spoofed from a compromised binary. Verify the Bond Address yourself - it is the primary Asgard Vault on THORChain. `http://host:8080/v1/thorchain/pool_addresses`
-3. You should send a test transaction of 10 RUNE and wait for the system to pick it up and record your bond in `make status`
-4. You should have your bond on a secure hardware device and send from that. This ensures your bond is administrated by an offline, secure device.
-{% endhint %}
-
-![Bonding 10k RUNE](../.gitbook/assets/image%20%2824%29.png)
-
-{% hint style="danger" %}
-**TRIPLE CHECK YOU ARE SENDING TO THE RIGHT ADDRESS**
-
-**The vault frequently churns so you may send to a stale vault.**
-
-If your node is still syncing, the `make status` command may give you a stale vault address and your funds will be forever lost.
-
-Confirm the VAULT address from \*multiple\* sources. Do not get this wrong.
-
-1. Did you test with a small amount first and get a refund?
-2. Did you check this address manually by querying a THORNode?
-
-   `http://host:1317/thorchain/pool_addresses`
-
-3. Did you check this address in a Binance Chain explorer and see the presence of all the current Asgard Funds?
-{% endhint %}
-
-{% hint style="warning" %}
-Don't forget to add the BONDING MEMO!!! `BOND:<thornode-address>`
-{% endhint %}
-
-Give the network 10-15 seconds to pick up your bond. To verify it has received your bond, run the following:
+Give the network 3-5 seconds to pick up your bond. To verify it has received your bond, run the following:
 
 ```text
-curl https://testnet-seed.thorchain.info --> returns active nodes
-curl http://<host>:1317/thorchain/nodeaccount/<node-address>
+curl http://thornode.thorchain.info/thorchain/node/<node-address>
 ```
-
-![](../.gitbook/assets/image%20%2818%29.png)
 
 If you run `make status` again, you should see this:
 
 ```text
-Address   thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz
+ ________ ______  ___  _  __        __
+/_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
+ / / / _  / /_/ / , _/    / _ \/ _  / -_)
+/_/ /_//_/\____/_/|_/_/|_/\___/\_,_/\__/
+ADDRESS     thor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
 IP
-Version   0.1.0
-API       http://:1317
-RPC       http://:26657
-Midgard   http://:8080
-Vault BNB Bond Address tbnb14z64mhgsnlayj28llzyehq7uh9e9u2ec2jzysu
-Preflight {
-    "status": "standby",
-    "reason": "node account has invalid registered IP address",
-    "code": "1"
-}
+VERSION     0.0.0
+STATUS      Whitelisted
+BOND        1000.00
+REWARDS     0.00
+SLASH       0
+PREFLIGHT   { "status": "Standby", "reason": "node account has invalid registered IP address", "code": 1 }
+API         http://:1317/thorchain/doc/
+RPC         http://:27147
+MIDGARD     http://:8080/v2/doc
+CHAIN       SYNC       BLOCKS
+THOR        55.250%    37,097/67,144
+BNB         99.915%    155,426,471/155,559,013
+BTC         2.399%     227,986/678,340
+ETH         7.764%     947,182/12,199,994
+LTC         0.012%     6,526/1,818,000
+BCH         2.293%     197,340/682,404
 ```
 
 As you can see, it is in standby but does not have an IP registered yet. This is needed for peer discovery.
 
 ### 3 - Setup Node IP Address
 
-You must tell THORChain your IP-Address for it's address book and seed-service to run properly:
+You must tell THORChain your IP-Address for its address book and seed-service to run properly:
 
 ```text
 make set-ip-address
 ```
 
 If you run the status command again, you should now see a different message for the Preflight section saying you need to set your node keys.
-
-![](../.gitbook/assets/image%20%2817%29.png)
 
 {% hint style="info" %}
 Once your IP address has been registered for discovery, you can use your own host for queries.
@@ -130,9 +118,7 @@ Tell THORChain about your public keys for signing sessions:
 make set-node-keys
 ```
 
-If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. Example of a valid preflight:
-
-![](../.gitbook/assets/image%20%2821%29.png)
+If you run the status command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. 
 
 ### 5 - Set Version
 
@@ -142,9 +128,44 @@ Make sure your node broadcasts its latest version, else you won't churn in since
 make set-version
 ```
 
+### 6 - Send Final Bond
+
+If you followed steps 1-5 above, your preflight will be saying:
+
+```text
+PREFLIGHT   { "status": "Standby", "reason": "node account does not have minimum bond requirement: 1000000000/100000000000000, "code": 1 }
+```
+
+To address this, send the remaining bond, that is higher than the minimum bond. You can find that quantity on [https://thornode.thorchain.info/thorchain/constants](https://thornode.thorchain.info/thorchain/constants) and look for `MinimumBondInRune` If you finally run `make status` you should see this, with keyword **"Ready":**
+
+```text
+ ________ ______  ___  _  __        __
+/_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
+ / / / _  / /_/ / , _/    / _ \/ _  / -_)
+/_/ /_//_/\____/_/|_/_/|_/\___/\_,_/\__/
+ADDRESS     thor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
+IP          1.2.3.4
+VERSION     0.38.0
+STATUS      Standby
+BOND        1,000,001.00
+REWARDS     0.00
+SLASH       0
+PREFLIGHT   { "status": "Ready", "reason": "OK", "code": 0 }
+API         http://1.2.3.4:1317/thorchain/doc/
+RPC         http://1.2.3.4:27147
+MIDGARD     http://1.2.3.4:8080/v2/doc
+CHAIN       SYNC       BLOCKS
+THOR        100.000%   67,144/67,144
+BNB         100.000%   155,559,013/155,559,013
+BTC         100.000%   678,340/678,340
+ETH         100.000%   12,199,994/12,199,994
+LTC         100.000%   1,818,000/1,818,000
+BCH         100.000%   682,404/682,404
+```
+
 ## Bonding The Right Amount
 
-Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise changes of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them. Keep an eye on `maximumStandbyBond` and make sure you are bonding that amount.
+Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise chances of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them. Keep an eye on `maximumStandbyBond` and make sure you are bonding that amount.
 
 ```text
 curl http://52.221.153.64:8080/v1/network | json_pp
