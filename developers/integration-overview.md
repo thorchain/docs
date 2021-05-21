@@ -1,14 +1,18 @@
 # Integration Overview
 
-## General Principles
+## Overview
 
 ### Read Only Applications
+
+Dashboards, explorers etc
 
 1. Connect to Midgard to get rich data about the system, included time-series graphs and aggregated values like TotalVolume etc. 
 2. Connect to THORNode \(or proxied via Midgard\) to drill into the state-machine and access the current state \(or historical just by adding a `?height=1234` to specify a certain height. 
 3. Connect to RPC to get information about the Ledger, which is not specific to THORChain, such as `/genesis` or account/transaction information
 
 ### Write Applications
+
+Wallets, interfaces etc. 
 
 These applications require first-principle thinking and excellent understanding of how the system works. 
 
