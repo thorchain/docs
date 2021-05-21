@@ -38,6 +38,7 @@
 
 ## Developers
 
+* [Integration Overview](developers/integration-overview.md)
 * [Connecting to THORChain](developers/connecting-to-thorchain.md)
 * [Transaction Memos](developers/transaction-memos.md)
 * [ASGARDEX Modules](developers/asgardex-modules.md)
