@@ -6,3 +6,6 @@ description: >-
 
 # Composite Model
 
+Work in Progress:  
+[https://gitlab.com/thorchain/thornode/-/issues/796](https://gitlab.com/thorchain/thornode/-/issues/796)
+
