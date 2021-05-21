@@ -6,8 +6,6 @@ description: Decentralised exchanges need accurate prices for users to swap betw
 
 THORChain keeps exchange rates accurate using its pool design and external arbitrageurs. It does this without fragile external sources like oracles and weighted averages.
 
-This document first explains how THORChain maintains the prices for a single pool. Then it explains how THORChain sets the exchange rate of 2 external assets.
-
 ## Converging to Reference Prices
 
 This pool has 16,000 MATIC in it and 1,000 RUNE. The price of MATIC on external exchanges is $0.02. The price of RUNE on external exchanges is $0.32. The ratio of MATIC to RUNE in the pool is 16:1, and accurately reflects how the world values the two assets.
