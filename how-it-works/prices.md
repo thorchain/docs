@@ -4,7 +4,7 @@ description: Decentralised exchanges need accurate prices for users to swap betw
 
 # Prices
 
-THORChain keeps exchange rates accurate using its CLP design and external arbitrageurs. It does this without fragile external sources like oracles and weighted averages.
+THORChain keeps exchange rates accurate using its pool design and external arbitrageurs. It does this without fragile external sources like oracles and weighted averages.
 
 This document first explains how THORChain maintains the prices for a single pool. Then it explains how THORChain sets the exchange rate of 2 external assets.
 

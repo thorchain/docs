@@ -42,7 +42,7 @@ The THORChain state machine handles this swap in one go, so the user is never ha
 
 See [this example](swapping.md#example-connected-asset-binance-coin-to-connected-asset-bitcoin) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 
-{% page-ref page="../how-it-works/continuous-liquidity-pools.md" %}
+{% page-ref page="../thorchain-finance/continuous-liquidity-pools.md" %}
 
 ### Calculating Swap Output
 

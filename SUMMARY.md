@@ -9,12 +9,12 @@
   * [Traders](roles-1/trading.md)
   * [Node Operators](roles-1/node-operators.md)
 * [How It Works](how-it-works/README.md)
-  * [Liquidity Model](how-it-works/continuous-liquidity-pools.md)
   * [Prices](how-it-works/prices.md)
   * [Emission Schedule](how-it-works/emission-schedule.md)
   * [Incentive Pendulum](how-it-works/incentive-pendulum.md)
   * [Fees](how-it-works/fees.md)
   * [Governance](how-it-works/governance.md)
+  * [THORChain Name Service](how-it-works/thorchain-name-service.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
 
 ## THORNodes
@@ -38,10 +38,16 @@
 
 ## Developers
 
-* [THORCLI](developers/thorcli.md)
 * [Connecting to THORChain](developers/connecting-to-thorchain.md)
 * [Transaction Memos](developers/transaction-memos.md)
 * [ASGARDEX Modules](developers/asgardex-modules.md)
 * [Midgard API](developers/midgard-api.md)
 * [Seed Service](developers/seed-service.md)
+
+## THORChain Finance
+
+* [Liquidity Model](thorchain-finance/continuous-liquidity-pools.md)
+* [Synthetic Asset Model](thorchain-finance/synthetic-asset-model.md)
+* [Lending Model](thorchain-finance/lending-model.md)
+* [Composite Model](thorchain-finance/composite-model.md)
 
