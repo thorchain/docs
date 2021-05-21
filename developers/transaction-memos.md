@@ -255,6 +255,5 @@ Assets can be abbreviated using fuzzy logic. The following will all be matched a
 | ETH.USDT-0xdac17f958d2ee523a220 |
 | ETH.USDT-0xdac17f958d2ee523a2206206994597c13d831ec7 |
 
-  
 
 
