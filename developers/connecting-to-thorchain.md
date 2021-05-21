@@ -58,19 +58,23 @@ http://&lt;host&gt;:1317/thorchain/doc/
 {% endtab %}
 
 {% tab title="TENDERMINT" %}
-## **RPC**
-
 RPC allows base blockchain information to be returned.
+
+**Any Node**
 
 TESTNET Port: `26657`
 
 MAINNET Port: `27147`
 
 RPC Guide:  
-[https://docs.tendermint.com/master/rpc/](https://docs.tendermint.com/master/rpc/)
+[https://v1.cosmos.network/rpc/v0.41.4](https://v1.cosmos.network/rpc/v0.41.4)
 
-Example:  
-[http://:26657/genesis](http://<NODE_IP>:26657/genesis)
+  
+**Official**
+
+[https://rpc.thorchain.info/genesis](https://rpc.thorchain.info/genesis)
+
+[https://testnet.rpc.thorchain.info/genesis](https://testnet.rpc.thorchain.info/genesis)
 
 ## **P2P**
 
@@ -83,5 +87,22 @@ MAINNET Port: `27146`
 P2P Guide  
 [https://docs.tendermint.com/master/spec/p2p/](https://docs.tendermint.com/master/spec/p2p/)
 {% endtab %}
+
+{% tab title="CHAIN CLIENTS" %}
+Each node allows connecting to its Chain Clients.   
+  
+**Official**  
+https://btc.thorchain.info
+
+https://bch.thorchain.info
+
+https://ltc.thorchain.info
+
+https://bnb.thorchain.info
+
+https://eth.thorchain.info
+{% endtab %}
 {% endtabs %}
+
+
 
