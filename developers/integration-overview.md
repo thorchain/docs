@@ -1,3 +1,7 @@
+---
+description: Learn the general principles of integrating with THORChain
+---
+
 # Integration Overview
 
 ## Overview
