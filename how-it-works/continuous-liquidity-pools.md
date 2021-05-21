@@ -2,7 +2,7 @@
 description: 'How THORChain facilitates continuous, incentivised liquidity.'
 ---
 
-# Continuous Liquidity Pools
+# Liquidity Model
 
 Instead of limit-order books, THORChain uses continuous liquidity pools \(CLP\). The CLP is arguably one of the most important features of THORChain, with the following benefits:
 

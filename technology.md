@@ -83,18 +83,18 @@ Once the finalised transaction is created, the Signer loads it from their local 
 
 There are two types of vaults in THORChain's system - "inbound vaults" and "outbound vaults":
 
-1. **Asgard** TSS Vaults - inbound vaults with large committees \(_24of36\)_
+1. **Asgard** TSS Vaults - inbound vaults with large committees \(_27-of-40\)_
 2. **Yggdrasil** Vaults - outbound vaults with _1of1_ single-signer
 
 This allows the system to use the security of the large vaults to hold the bulk of assets, but delegate to the small, fast outbound vaults the outgoing assets. Every THORNode runs an outbound vault. 
 
 {% hint style="info" %}
-It takes 10-20 seconds to sign 24of36 TSS, so the system would be extremely limited if this vault did all the outbounds. But with each node \(36\) running an outbound vault, the system can do roughly 2-3 transactions per vault per second, so around 500-1000 times the output. 
+It takes 10-20 seconds to sign 27-of-40 TSS, so the system would be extremely limited if this vault did all the outbounds. But with each node \(100\) running an outbound vault, the system can do roughly 1 transaction per vault per second, so around 1500 times the output. 
 {% endhint %}
 
 ### Multi-realm Asgard Vaults
 
-In order to further increase the node count to beyond 100 nodes, the system shards Asgard vaults into two when it approaches the `MaxNodesForAsgard` constant \(and merges them if two ever drop below half of this\). As such, with 100 nodes, there would be 3 Asgard vaults, with 100 yggdrasil vaults. The system constantly checks which vault has the highest excess security, and instructs users to send funds there. 
+In order to further increase the node count to beyond 40 nodes, the system shards Asgard vaults into two when it approaches the `MaxNodesForAsgard` constant \(and merges them if two ever drop below half of this\). As such, with 100 nodes, there would be 3 Asgard vaults, with 100 yggdrasil vaults. The system constantly checks which vault has the highest excess security, and instructs users to send funds there. 
 
 ### Managing Yggdrasil Funding
 
@@ -111,8 +111,6 @@ The previous vault cannot be monitored forever since it can not be guaranteed th
 {% endhint %}
 
 {% hint style="danger" %}
-If you send funds to a retired vault \(likely by caching the address\) your funds will be forever lost and is \(almost\) impossible to be recovered. 
-
-Recovery involves significant coordination and is rarely attempted. 
+If you send funds to a retired vault \(likely by caching the address\) your funds will be forever lost and is impossible to be recovered. 
 {% endhint %}
 

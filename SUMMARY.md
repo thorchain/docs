@@ -3,21 +3,24 @@
 * [Introduction](README.md)
 * [Technology](technology.md)
 * [RUNE](rune.md)
+* [Roles](roles-1/README.md)
+  * [Liquidity Providers](roles-1/liquidity-providers.md)
+  * [Swappers](roles-1/swapping.md)
+  * [Traders](roles-1/trading.md)
+  * [Node Operators](roles-1/node-operators.md)
+* [How It Works](how-it-works/README.md)
+  * [Liquidity Model](how-it-works/continuous-liquidity-pools.md)
+  * [Prices](how-it-works/prices.md)
+  * [Emission Schedule](how-it-works/emission-schedule.md)
+  * [Incentive Pendulum](how-it-works/incentive-pendulum.md)
+  * [Fees](how-it-works/fees.md)
+  * [Governance](how-it-works/governance.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
-
-## Roles
-
-* [Liquidity Providers](roles/liquidity-providers.md)
-* [Swappers](roles/swapping.md)
-* [Traders](roles/trading.md)
-* [Node Operators](roles/node-operators.md)
 
 ## THORNodes
 
 * [THORNode Overview](thornodes/overview.md)
-* [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
-* [Deploy - Manual](thornodes/manual.md)
-* [Deploy - K8 Cluster](thornodes/kubernetes/README.md)
+* [Cluster Launcher](thornodes/kubernetes/README.md)
   * [Setup - Linode](thornodes/kubernetes/setup-linode.md)
   * [Setup - Azure](thornodes/kubernetes/setup-azure.md)
   * [Setup - Hetzner Bare Metal](thornodes/kubernetes/setup-hetzner-bare-metal.md)
@@ -30,6 +33,7 @@
 * [Managing](thornodes/managing.md)
 * [Alerting](thornodes/alerting.md)
 * [Leaving](thornodes/leaving.md)
+* [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [✔️ CHECKLIST](thornodes/checklist.md)
 
 ## Developers
@@ -40,13 +44,4 @@
 * [ASGARDEX Modules](developers/asgardex-modules.md)
 * [Midgard API](developers/midgard-api.md)
 * [Seed Service](developers/seed-service.md)
-
-## How it Works
-
-* [Emission Schedule](how-it-works/emission-schedule.md)
-* [Incentive Pendulum](how-it-works/incentive-pendulum.md)
-* [Fees](how-it-works/fees.md)
-* [Continuous Liquidity Pools](how-it-works/continuous-liquidity-pools.md)
-* [Prices](how-it-works/prices.md)
-* [Governance](how-it-works/governance.md)
 
