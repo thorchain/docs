@@ -17,6 +17,14 @@
   * [THORChain Name Service](how-it-works/thorchain-name-service.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
 
+## THORChain Finance
+
+* [Liquidity Model](thorchain-finance/continuous-liquidity-pools.md)
+* [Untitled](thorchain-finance/untitled.md)
+* [Synthetic Asset Model](thorchain-finance/synthetic-asset-model.md)
+* [Lending Model](thorchain-finance/lending-model.md)
+* [Composite Model](thorchain-finance/composite-model.md)
+
 ## THORNodes
 
 * [THORNode Overview](thornodes/overview.md)
@@ -43,11 +51,4 @@
 * [Transaction Memos](developers/transaction-memos.md)
 * [Libraries](developers/asgardex-modules.md)
 * [Seed Service](developers/seed-service.md)
-
-## THORChain Finance
-
-* [Liquidity Model](thorchain-finance/continuous-liquidity-pools.md)
-* [Synthetic Asset Model](thorchain-finance/synthetic-asset-model.md)
-* [Lending Model](thorchain-finance/lending-model.md)
-* [Composite Model](thorchain-finance/composite-model.md)
 

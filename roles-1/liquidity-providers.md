@@ -60,26 +60,6 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 **Change in Asset Prices --** If the price of the assets change, then liquidity providers will receive more of one and less of the other. This may change yield if yield is being priced in a third asset, ie, USD.
 
-### Calculating Pool Ownership
-
-When a liquidity provider commmit capital, the ownership % of the pool is calculated:
-
-$$
-\text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{( r + R)*(a + A)}\mid
-$$
-
-$$
-\text{units} = \frac {P(R a + r A)}{2 RA}*slipAdjustment
-$$
-
-* r = rune deposited 
-* a = asset deposited
-* R = Rune Balance \(before\)
-* A = Asset Balance \(before\)
-* P = Existing Pool Units
-
-The liquidity provider is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
-
 ## How it Works
 
 ### **Depositing Assets**
