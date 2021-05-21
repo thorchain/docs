@@ -42,7 +42,6 @@
 * [Connecting to THORChain](developers/connecting-to-thorchain.md)
 * [Transaction Memos](developers/transaction-memos.md)
 * [Libraries](developers/asgardex-modules.md)
-* [Midgard API](developers/midgard-api.md)
 * [Seed Service](developers/seed-service.md)
 
 ## THORChain Finance

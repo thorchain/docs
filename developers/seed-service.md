@@ -4,7 +4,7 @@ description: The seed services proliferates Node IP addresses
 
 # Seed Service
 
-The team maintain a simple Seed Service that crawls for active node accounts and their IP addresses. This is then hosted on an endpoint and can be queried. 
+A simple Seed Service is maintained that crawls for active node accounts and their IP addresses. This is then hosted on an endpoint and can be queried. 
 
 {% hint style="warning" %}
 The Seed Service only shows active nodes, but it does not proof them. Clients should proof THORNodes by using the `asgardex-midgard` module. 
