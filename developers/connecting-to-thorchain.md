@@ -8,52 +8,53 @@ The active node IP addresses can be queried from this endpoint:
 
 {% tabs %}
 {% tab title="TESTNET" %}
-[https://testnet-seed.thorchain.info](https://testnet-seed.thorchain.info)
+[https://testnet.seed.thorchain.info](https://testnet.seed.thorchain.info)
 {% endtab %}
 
 {% tab title="CHAOSNET" %}
-[https://chaosnet-seed.thorchain.info](https://chaosnet-seed.thorchain.info)
-{% endtab %}
-
-{% tab title="MAINNET" %}
-[https://seed.thorchain.info](https://seed.thorchain.info)
+[https://seed.thorchain.info](https://testnet-seed.thorchain.info)
 {% endtab %}
 {% endtabs %}
 
 The Network Information comes from three sources:
 
-1. MIDGARD: Consumer information relating to swaps, pools, volume. DeFi dashboards, Wallets, Exchanges will primarily interact with Midgard. 
-2. THORNODE: Raw blockchain data relating to the THORChain state machine. THORChain block explorers will query THORChain-specific information here. 
-3. TENDERMINT: Tendermint standard data, used by all block explorers to query for base information. 
+1. **MIDGARD**: Consumer information relating to swaps, pools, volume. DeFi dashboards, Wallets, Exchanges will primarily interact with Midgard. 
+2. **THORNODE**: Raw blockchain data relating to the THORChain state machine. THORChain block explorers will query THORChain-specific information here. 
+3. **TENDERMINT**: Tendermint standard data, used by all block explorers to query for base information. 
 
 {% tabs %}
 {% tab title="MIDGARD" %}
-Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more.
+Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more.  
+  
+**Any Node**
 
 Port: `8080`
 
 RPC Guide:  
-[http://&lt;host&gt;:8080/v1/doc](http://<host>:8080/v1/doc)
+http://&lt;host&gt;:8080/v2/doc  
+  
+**Official**
 
-Port: `8080`
+[https://midgard.thorchain.info/v1/doc](https://midgard.thorchain.info/v1/doc)
 
-RPC Guide:  
-[http://:8080/v1/doc](http://<NODE_IP>:8080/v1/doc)
-
-Example:  
-[http://:8080/v1/stats](http://<NODE_IP>:8080/v1/stats)
+[https://testnet.midgard.thorchain.info/v1/doc](https://testnet.midgard.thorchain.info/v1/doc)
 {% endtab %}
 
 {% tab title="THORNODE" %}
 THORNode returns application-specific information regarding the THORChain state machine, such as balances, transactions and more.
 
+**Any Node**
+
 Port: `1317`
 
 RPC Guide:  
-[https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go](https://gitlab.com/thorchain/thornode/-/blob/master/x/thorchain/query/query.go)
+http://&lt;host&gt;:1317/thorchain/doc/  
+  
+**Official**
 
-Example:  
-[http://:1317/thorchain/constants](http://<NODE_IP>:1317/thorchain/constants)
+[https://thornode.thorchain.info/thorchain/doc/](https://thornode.thorchain.info/thorchain/doc/)
+
+[https://testnet.thornode.thorchain.info/thorchain/doc/](https://testnet.thornode.thorchain.info/thorchain/doc/)
 {% endtab %}
 
 {% tab title="TENDERMINT" %}
