@@ -126,7 +126,7 @@ The following transactions are permitted:
           <br />
         </p>
         <p>Set trade protection. If the value isn&apos;t achieved then it is refunded.
-          ie, set 10000000 to be guaranteed a minimum of 1 full asset.</p>
+          ie, set 100000000 to be guaranteed a minimum of 1 full asset.</p>
         <p></p>
         <p>If <code>LIM</code> is ommitted, then there is no price protection:</p>
         <p> <code>SWAP:ASSET:DESTADDR:</code>
