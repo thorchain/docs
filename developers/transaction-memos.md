@@ -12,12 +12,12 @@ Transactions to THORChain pass user-intent with the `MEMO` field on their respec
 
 ### Mechanism for Transaction Intent
 
-Each chain will have a unique way of adding state to a transaction:
+Each chain will have a unique way of adding state to a transaction. Long assets can be shortened using Asset abbreviations \(below\) as well as THORNames to reduce the size of destination/affiliate addresses.
 
 | Chain | Mechanism | Notes |
 | :--- | :--- | :--- |
-| Bitcoin | OP\_RETURN | Limited to 80 bytes, long memos need to use two OP\_RETURN outputs. |
-| Ethereum | Smart Contract Input | The user can pass in the memo in the `deposit(asset, value, memo)` function, where `memo` is bytes32. This is emitted as an event.  |
+| Bitcoin | OP\_RETURN | Limited to 80 bytes.  |
+| Ethereum | Smart Contract Input | Use  `deposit(vault, asset, amount, memo)` function, where `memo` is string |
 | Binance Chain | MEMO | Each transaction has an optional memo, limited to 128 bytes.  |
 | Monero | Extra Data | Each transaction can have attached `extra data` field, that has no limits.  |
 
@@ -126,7 +126,7 @@ The following transactions are permitted:
           <br />
         </p>
         <p>Set trade protection. If the value isn&apos;t achieved then it is refunded.
-          ie, set 10000000 to be guaranteed a minimum of 1 full asset.</p>
+          ie, set 100000000 to be guaranteed a minimum of 1 full asset.</p>
         <p></p>
         <p>If <code>LIM</code> is ommitted, then there is no price protection:</p>
         <p> <code>SWAP:ASSET:DESTADDR:</code>
