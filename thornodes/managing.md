@@ -8,8 +8,11 @@ description: 'Accessing Logs, Metrics and more'
 
 The Makefile provide different commands to help you operate your THORNode.  
   
-There are two types of make commands, READ and WRITE.   
+There are two types of make commands, READ and WRITE. 
 
+{% hint style="info" %}
+Run `make help` at any stage to get an exhaustive list of help options and how to interact with the system. 
+{% endhint %}
 
 #### READ COMMANDS
 
@@ -121,8 +124,6 @@ make set-version
 {% endtab %}
 {% endtabs %}
 
-## 
-
 ## Tools
 
 Note, all of these should already be installed from `make tools`. However you can install them separately useing the DEPLOY tabs below. 
@@ -131,9 +132,9 @@ To access the tools, navigate to the ACCESS tabs below.
 
 All of these commands are to be run from `node-launcher`
 
-### LOGS MANAGEMENT \(KIBANA\)
+### LOGS MANAGEMENT \(LOKI\)
 
-It is recommended to deploy an Elastic Search / Logstash / Filebeat / Kibana to redirect all logs within an elasticsearch database and available through the UI Kibana.
+It is recommended to deploy an Elastic Search / Logstash / Filebeat / Kibana to redirect all logs within an elasticsearch database and available through the UI.
 
 For a reminder on Kubernetes commands, please[ visit this page](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)**.** 
 
@@ -142,7 +143,7 @@ For a reminder on Kubernetes commands, please[ visit this page](https://kubernet
 You can deploy the log management automatically using the command below:
 
 ```text
-make install-logs
+make install-loki
 ```
 
 This command will deploy the elastic-operator chart. It can take a while to deploy all the services, usually up to 5 minutes depending on resources running your kubernetes cluster.
@@ -186,12 +187,6 @@ kubectl logs -f deploy/thor-daemon -n thornode
 ```
 {% endtab %}
 {% endtabs %}
-
-From there, you will need to create a new index to get the logs coming from Filebeat. You can search using the regular “Discover” app in Kibana to go through your logs using a filter to get only specific services or keywords, etc.
-
-You can follow a more in-depth [introduction to Kibana here](https://www.elastic.co/guide/en/kibana/current/introduction.html)**.**
-
-![Overview of Kibana Logs](../.gitbook/assets/image%20%2812%29.png)
 
 ### METRICS MANAGEMENT \(Prometheus\)
 
