@@ -4,6 +4,12 @@ description: Telegram Notification Service
 
 # Alerting
 
+## Community alert channels
+
+To listen for update announcements, join the following channels: 
+* Telegram **THORNode Announcements** [https://t.me/thornode_ann](https://t.me/thornode_ann)
+* Discord **THORChain Community Devs** [https://discord.gg/kvZhpEtHAw](https://discord.gg/kvZhpEtHAw)
+
 ## thornode-telegram-bot ⚡🤖
 
 A telegram bot to monitor the status of THORNodes. 
