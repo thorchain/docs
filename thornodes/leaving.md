@@ -6,14 +6,18 @@ description: How to leave THORChain
 
 ## Overview
 
-Every 50,000 Blocks \(3 days\) the system will churn its nodes:
+Every 50,000 Blocks \(3 days\) the system will churn its nodes. Outgoing:
 
-1. The oldest node, or
-2. The most unreliable node
+1. The most unreliable node(s), and/or
+2. The oldest node
 
-Churned nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing but keep their cluster online, they will be eventually churned back in. 
+Incoming:
 
-Alternatively, a node can leave the system voluntarily, in which case they are typically churned out 6 hours later. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive. 
+1. The node(s) with the highest bond (typically 3). 
+
+Churned out nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing but keep their cluster online, they will be eventually churned back in. 
+
+Alternatively, an ACTIVE node can leave the system voluntarily, in which case they are typically churned out 6 hours later. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive and expensive. 
 
 {% hint style="warning" %}
 It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address, it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software. 
@@ -27,18 +31,22 @@ You can only unbond when your Node is on "standby", ie, just before it is select
 
 If a Node Operator wants to retrieve part of their bond & rewards \(such as deciding to take profits and contribute as a liquidity provider in order to maximise yield\), they can simply Unbond. This keeps their Node on standby, ready to be churned back in. 
 
-To unbond from the system, simply send an **UNBOND** transaction to the Vault Address with at least 1 satoshi in funds. The amount and type of asset you use to send to THORChain is actually irrelevant, you are simply passing transaction intent to THORChain and proving you own your bond address. 
+To unbond from the system, simply send an **UNBOND** transaction to the Vault Address with at least 1 tor (0.00000001 RUNE) in funds. The amount and type of asset you use to send to THORChain is actually irrelevant, you are simply passing transaction intent to THORChain and proving you own your bond address. 
 
 Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond. 
 
 `UNBOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz:1000000000000`
 
 {% hint style="info" %}
-THORChain always treats assets in 1e8 "base format" ie, 1.0 RUNE = 100,000,000 units. To get from one to the other, simply multiply by 100m. 
+THORChain always treats assets in 1e8 "base format" ie, 1.0 RUNE = 100,000,000 units (tor). To get from one to the other, simply multiply by 100m. 
 {% endhint %}
 
 {% hint style="info" %}
-You can get your node address, as well as the current vault address by running `make status`
+If using ASGARDEX to BOND or UNBOND, simply put the RUNE amount, e.g. "100" for 100 RUNE. It does the memo in 1e8 for you. 
+{% endhint %}
+
+{% hint style="info" %}
+You can get your node address by running `make status`
 {% endhint %}
 
 {% hint style="warning" %}
@@ -50,28 +58,83 @@ This ensures you can safely leave this system if you no longer have access to yo
 
 Leaving is considered permanent. There are two steps.
 
-1.  If you are **active**, send a LEAVE transaction to start a churn-out process. This could take several hours.
-2. If you are **standby,** send a LEAVE transaction to get your bond back and be permanently jailed. 
+1. If you are **Active**, send a LEAVE transaction to start a churn-out process. This will take several hours even after changing your status to 'Standby'. 
+2. If you are **Standby,** send a LEAVE transaction to get your bond back and be permanently jailed. 
 
-To leave the system, send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 satoshi in funds. 
+{% hint style="info" %}
+Prior to running a mainnet validator, you should practice a full sequence of deploy, BOND in and LEAVE on a testnet cluster to ensure you know what you are doing and what to expect.  
+{% endhint %}
+
+To leave the system, send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 tor in funds. Or use ASGARDEX. 
 
 **Example**:
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
 ⏱_Wait a few hours, verify on the /nodeaccount endpoint that you are now  **`disabled`**👀_
+Then send another LEAVE:
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
-⏱_Wait a few minutes, verify you have received your bond back 👀_
+⏱_Wait a few minutes, verify you have received your bond back 👀_ - `make status` should show `BOND 0.00` and your wallet should get the full Bond back. 
+
+{% hint style="info" %}
+Sometimes your Yggdrasil ETH vault may be slightly insolvent due to out-of-gas transactions consuming gas whilst Active. If the network will not let you LEAVE, you may need to manually send your Yggdrasil ETH vault 0.01 - 0.05 ETH from your own personal funds as a top-up, then try LEAVE again. Note: any funds you send to top-up ETH vault you cannot send back to yourself until *AFTER* your node has left and you have received your bond back, otherwise it will be fined 1.5x what you transfer out. *Coming Soon*: Check using the `make solvency` command.  
+{% endhint %}
 
 _🔥 Commence destroying your node 🔥_
 
 {% hint style="danger" %}
-If your node is both offline and inaccessible, then it will be unable to return any assets in its yggdrasil vaults and it will be slashed 1.5x the value of those assets. 
+If your node is both offline and inaccessible, then it will be unable to automatically return any assets in its yggdrasil vaults and it will be slashed 1.5x the value of those assets. 
 
-Example: If your node has a $500k bond \(in RUNE\), but has $100k in assets in its vaults it can't return, it will lose $150k in RUNE from its bond. The Node will get back $350k in its bond. 
+Example: If your node has a $5m bond \(in RUNE\), but has $1m in assets in its vaults it can't return, it will lose $1.5m in RUNE from its bond. The Node will only get back $3.5m of its bond. 
 {% endhint %}
+
+## Contingency: Manual Leave Procedure
+
+If your node is completely offline or destroyed, you will have to perform a manual return of Yggdrasil funds in order to prevent 1.5x bond fine. Ensure you have reviewed this procedure and have all tools ready to go in case you need to do it in *anger*.  This is a time-critical event - you have a few hours to return all funds before the network assumes you have stolen them.  
+
+{% hint style="info" %}
+If you do not perform all of these steps in time, your bond will be fined 1.5x stolen funds. The remaining funds belonging to Yggdrasil `make mnemonic` are now yours; but you just paid a 50% premium for them, losing a lot of money. You can use the following procedure in a similar way to recover these funds. 
+{% endhint %}
+
+**Requirement**: You have your `make mnemonic` Yggdrasil mnemonic available. If you do not have this, you cannot manually return funds. 
+
+Options: 
+1. *Coming Soon*: Use ASGARDEX for Manual Return.   
+2. *Coming Soon*: Check Discord Dev channels for manual return cli tool.  
+3. Extract Private Key + Manual return each asset using wallets:  
+
+Your Yggdrasil `make mnemonic` phrase is used to generate the `m/44'/931'/0'/0/0` private key which is used for *all* chains. Pasting the mnemonic into common wallets will not work as they will be looking under a different "standard" HD Path. Instead, go to [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/) and paste in your mnemonic, select *RUNE* from the Dropdown list and in the bottom table, copy the `m/44'/931'/0'/0/0` private key string. Use this to import into wallets.  
+
+The next step is to find the latest inbound addresses. Use [https://thornode.thorchain.info/thorchain/inbound_addresses](https://thornode.thorchain.info/thorchain/inbound_addresses)
+
+{% hint style="warning" %}
+**Do not cache** inbound_addresses. These are only valid for a short period of time. Always refresh to get the latest before sending funds.  
+{% endhint %}
+
+{% hint style="warning" %}
+Use the **address** field. Chains with a **router** present such as ETH need to send funds via the router smart-contract. Paste the router address into etherscan, click "Contract" and "Write Contract" and use a Web3 wallet to connect. 
+{% endhint %}
+
+The **memo** required is `YGGDRASIL-:<BlockHeight>`. For example `YGGDRASIL-:782412`. The block height can be found from the `status_since` field here: 
+```text
+https://thornode.thorchain.info/thorchain/node/<your node address> 
+```
+
+{% hint style="info" %}
+If your node is `standby` or `disabled` status, any integer block height will work for return. e.g. `YGGDRASIL-:1`. The most important thing is to ensure you send to the correct active vault address or router. 
+{% endhint %}
+
+{% hint style="info" %}
+For BTC wallets (BTC, Litecoin) use `importprivkey` in cli. 
+{% endhint %}
+
+{% hint style="info" %}
+For ETH router manual returns, use the `deposit()` function for individual assets. For ETH use contract `0x0`. Use the `returnVaultAssets()` for multiple assets. 
+{% endhint %}
+
+## Destroying
 
 #### Confirming you have left
 
@@ -81,7 +144,7 @@ You should complete this checklist before you do the next step:
 
 If yes, then proceed:
 
-### DESTROY
+#### DESTROY
 
 To destroy and remove previously created resources, you can run the command below.
 
