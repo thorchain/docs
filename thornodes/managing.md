@@ -68,11 +68,19 @@ Restart a THORNode deployment service selected:
 make restart
 ```
 {% endtab %}
+
+{% tab title="RESET" %}
+Reset a THORNode deployment service selected, including deleting the persistent volume. This command is **destructive** and will reset the chain back to 0%. You would use this for unrecoverable issues that `make restart` did not solve. 
+
+```text
+make reset
+```
+{% endtab %}
 {% endtabs %}
 
 #### WRITE COMMANDS
 
-Write commands actually build and write transactions into the underlying statechain. They cost RUNE from your bond, currently 1 RUNE, but you can check this on the `/constants` endpoint "CLICOSTINRUNE". This will post state in the chain which will be now updated globally. The RUNE fee is to prevent DOS attacks. 
+Write commands actually build and write transactions into the underlying statechain. They cost RUNE from your bond, currently 0.02, but you can check this on the `/constants` endpoint "CLICOSTINRUNE". This will post state in the chain which will be now updated globally. The RUNE fee is to prevent DDoS attacks. 
 
 {% tabs %}
 {% tab title="NODE-KEYS" %}
@@ -289,13 +297,30 @@ It is up to the node operator to setup those extra backups of the core volumes t
 
 Some volumes would be more critical than others, for example Midgard deployment are also by default backed up by persistent volumes, so it can recover in case of container restarts, failures or node failures and the deployment being automatically scheduled to a different node, but if you were to delete the Midgard volume, it would reconstruct its data from your THORNode API and events from scratch. For that specific service having extra backups might not be critical, at the time of the writing of that document, Midgard implementation might change in the future.
 
+For full disaster recovery (complete loss of cluster), it is possible to issue LEAVE command from the original BOND wallet and manual return of funds from your Yggdrasil. In this case you need a secure backup of `make mnemonic` (Yggdrasil mnemonic) and a working wallet that did the original BOND. See [Leaving](https://docs.thorchain.org/thornodes/leaving). 
+
 ## Node Security
 
 The following are attack vectors:
 
-1. If anyone accesses your AWS credentials, they can log in and steal your funds
+1. If anyone accesses your cloud credentials, they can log in and steal your funds
 2. If anyone accesses the device you used to log into kubernetes, they can log in and steal your funds
 3. If anyone accesses your hardware device used to bond, they can sign a LEAVE transaction and steal your bond once it is returned
+4. If anyone has your Yggdrasil `make mnemonic` phrase, including in logs, they can steal your funds
+5. If any GitLab repo is compromised and you `git pull` any nefarius code into your node and run `make <any command>`, you can lose all your funds. 
+
+#### Checking diffs
+
+Prior to `git pull` or `make pull` updates, review node-launcher repo diffs:  
+
+```text
+git fetch
+git diff multichain..origin/multichain
+```
+
+Regularly review patches in GitLab: [https://gitlab.com/thorchain/devops/node-launcher/-/commits/multichain](https://gitlab.com/thorchain/devops/node-launcher/-/commits/multichain)
+
+When chain clients have updated tags (version number or sha256), inspect the GitLab diffs for the relevant image in [https://gitlab.com/thorchain/devops](https://gitlab.com/thorchain/devops) and ensure the CI build checksum matches the expected. This ensures you are executing code on your node that you are satisfied is free from exploits. Some images such as Ethereum use the 'official' docker image, e.g. [https://hub.docker.com/r/ethereum/client-go/tags](https://hub.docker.com/r/ethereum/client-go/tags).
 
 {% hint style="danger" %}
 **RUNNING A NODE IS SERIOUS BUSINESS**
@@ -303,6 +328,8 @@ The following are attack vectors:
 DO SO AT YOUR OWN RISK, YOU CAN LOSE A SIGNIFICANT QUANTITY OF FUNDS IF AN ERROR IS MADE
 
 THORNODE SOFTWARE IS PROVIDED AS IS - YOU ARE SOLELY RESPONSIBLE FOR USING IT
+
+YOU ARE RESPONSIBLE FOR THE CODE RUNNING ON YOUR NODE. **YOU ARE** THE NETWORK. INSPECT ALL CODE YOU EXECUTE.
 {% endhint %}
 
 
