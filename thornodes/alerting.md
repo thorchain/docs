@@ -8,7 +8,7 @@ description: Telegram Notification Service
 
 To listen for update announcements, join the following channels: 
 * Telegram **THORNode Announcements** [https://t.me/thornode_ann](https://t.me/thornode_ann)
-* Discord **THORChain Community Devs** [https://discord.gg/kvZhpEtHAw](https://discord.gg/kvZhpEtHAw)
+* Discord **THORChain Community Devs** [https://discord.gg/kvZhpEtHAw](https://discord.gg/kvZhpEtHAw) especially #thornode-mccn
 
 {% hint style="info" %}
 Be sure to use a pseudonym in order to prevent doxxing yourself. Node operators should remain anonymous for the health of the network and your personal/node security. 
