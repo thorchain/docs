@@ -30,6 +30,7 @@ Clone the `node-launcher` repo. All commands in this section are to be run insid
 ```text
 git clone https://gitlab.com/thorchain/devops/node-launcher
 cd node-launcher
+git checkout multichain
 ```
 
 ### Install Helm 3
@@ -70,11 +71,15 @@ If there are any errors, they are typically fixed by running the command again.
 
 It is important to deploy the tools first before deploying the THORNode services as some services will have metrics configuration that would fail and stop the THORNode deployment.
 
-You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet, chaosnet and mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` \(or `thornode-testnet` for testnet\) by default.
+You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet or chaosnet/mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` \(or `thornode-testnet` for testnet\) by default.
 
 ```text
 make install
 ```
+
+{% hint style="info" %}
+If you are intending to run all chain clients, bond in & earn rewards, you want to choose "Validator".
+{% endhint %}
 
 {% hint style="info" %}
 Deploying a THORNode will take 1 day for every 3 months of ledger history, since it will validate every block. THORNodes are "full nodes", not light clients.
