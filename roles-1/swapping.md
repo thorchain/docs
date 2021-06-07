@@ -69,15 +69,11 @@ $$
 
 This user swaps 1 BTC for 24,507.40 RUNE.
 
-{% hint style="info" %}
-Run through an [interactive tutorial of an asset swap](https://app.bepswap.com/swap).
-{% endhint %}
-
 ### Costs
 
 The cost of a swap is made up of two parts:
 
-1. Network Fee
+1. Outbound Fee
 2. Price Slippage
 
 All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../how-it-works/fees.md#network-fee).

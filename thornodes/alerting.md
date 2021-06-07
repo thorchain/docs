@@ -6,20 +6,21 @@ description: Telegram Notification Service
 
 ## Community alert channels
 
-To listen for update announcements, join the following channels: 
-* Telegram **THORNode Announcements** [https://t.me/thornode_ann](https://t.me/thornode_ann)
-* Discord **THORChain Community Devs** [https://discord.gg/kvZhpEtHAw](https://discord.gg/kvZhpEtHAw) especially #thornode-mccn
+To listen for update announcements, join the following channels:
+
+* Telegram **THORNode Announcements** [https://t.me/thornode\_ann](https://t.me/thornode_ann)
+* Discord **THORChain Community Devs** [https://discord.gg/kvZhpEtHAw](https://discord.gg/kvZhpEtHAw) especially \#thornode-mccn
 
 {% hint style="info" %}
-Be sure to use a pseudonym in order to prevent doxxing yourself. Node operators should remain anonymous for the health of the network and your personal/node security. 
+Be sure to use a pseudonym in order to prevent doxxing yourself. Node operators should remain anonymous for the health of the network and your personal/node security.
 {% endhint %}
 
 ## thornode-telegram-bot ⚡🤖
 
-A telegram bot to monitor the status of THORNodes. 
+A telegram bot to monitor the status of THORNodes.
 
 {% hint style="info" %}
-This bot can be run in a self-sovereign manner \(a personal bot that you run that does not collect any information about you\) or by using the block42 bot: [https://t.me/thornode\_bot](https://t.me/thornode_bot) on telegram. 
+This bot can be run in a self-sovereign manner \(a personal bot that you run that does not collect any information about you\) or by using the block42 bot: [https://t.me/thornode\_bot](https://t.me/thornode_bot) on telegram.
 
 If you have questions feel free to open a github issue or contact Block42 in their Telegram Channel [https://t.me/block42\_crypto](https://t.me/block42_crypto)
 

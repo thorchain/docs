@@ -50,17 +50,17 @@ Your node is running but as you can see in the \`Preflight\` section, your node 
 But to be able to set up the node IP address, you first need to get it registered in the chain by sending your BOND.
 
 {% hint style="warning" %}
-Before sending the BOND, verify that your THORNode is **fully synced** with connected chains. Connected chains such as Ethereum & Bitcoin may take a day to sync. If your node is fully bonded and is selected to churn in to THORChain as ACTIVE without fully syncing all connected chains, you will immediately get slashed for missing observations, and lose money. It is normal to see Ethereum sit on 99.999% for many hours - be patient. 
+Before sending the BOND, verify that your THORNode is **fully synced** with connected chains. Connected chains such as Ethereum & Bitcoin may take a day to sync. If your node is fully bonded and is selected to churn in to THORChain as ACTIVE without fully syncing all connected chains, you will immediately get slashed for missing observations, and lose money. It is normal to see Ethereum sit on 99.999% for many hours - be patient.
 {% endhint %}
 
 ### 2 - Send a small BOND \(recommend 100-1000\)
 
-1\) You will do a "Deposit" transaction using native THORChain RUNE (*not* ERC20 or BEP2 RUNE). This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX Electron](https://github.com/thorchain/asgardex-electron/releases). The Bond is locked in a module controlled by the state machine. 
+1\) You will do a "Deposit" transaction using native THORChain RUNE \(_not_ ERC20 or BEP2 RUNE\). This is an internal MsgDeposit transaction \(different from a MsgSend to another wallet\). There is no destination address -- use an appropriate wallet such as [ASGARDEX Electron](https://github.com/thorchain/asgardex-electron/releases). The Bond is locked in a module controlled by the state machine.
 
-2\) Deposit your BOND using the memo `BOND:<thornode-address>` \(or use an appropriate GUI that does this memo for you\). Start small, the bond will be picked up. 
+2\) Deposit your BOND using the memo `BOND:<thornode-address>` \(or use an appropriate GUI that does this memo for you\). Start small, the bond will be picked up.
 
 {% hint style="info" %}
-Some `make` commands during setup require RUNE (0.02 to 1.0) to execute into the state machine to prevent DDoS. If your bond is too small (e.g. 1 RUNE) you may run out and not be able to complete the setup until adding more. 
+Some `make` commands during setup require RUNE \(0.02 to 1.0\) to execute into the state machine to prevent DDoS. If your bond is too small \(e.g. 1 RUNE\) you may run out and not be able to complete the setup until adding more.
 {% endhint %}
 
 ![Bonding using BOND option in ASGARDEX](../.gitbook/assets/image%20%288%29.png)
@@ -122,7 +122,7 @@ Tell THORChain about your public keys for signing sessions:
 make set-node-keys
 ```
 
-If you run the `make status` command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation. 
+If you run the `make status` command again, you should now see that your node is in status “ready” and is now ready to be churned in the next rotation.
 
 ### 5 - Set Version
 
@@ -190,7 +190,7 @@ resp:
 ```
 
 {% hint style="info" %}
-Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes) and [https://thorchain.delphidigital.io](https://thorchain.delphidigital.io/thorchain/chaosnet/nodes). You should use your API endpoint as authorative reference. 
+Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes) and [https://thorchain.delphidigital.io](https://thorchain.delphidigital.io/thorchain/chaosnet/nodes). You should use your API endpoint as authorative reference.
 {% endhint %}
 
 The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum.
@@ -206,7 +206,7 @@ At any time during standby, you can bond more by making an additional BOND trans
 `BOND:<thornode-address>`
 
 {% hint style="info" %}
-Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. You can top up BOND using a different wallet but make sure you keep the private key to the original BOND wallet secure and accessible. 
+Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. You can top up BOND using a different wallet but make sure you keep the private key to the original BOND wallet secure and accessible.
 {% endhint %}
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.

@@ -20,12 +20,12 @@ Helm charts are the defacto and currently easiest and simple way to package and 
 * Kubectl configured, ready and connected to running cluster
 
 {% hint style="info" %}
-If you came here from the Setup page, you are already good to go. 
+If you came here from the Setup page, you are already good to go.
 {% endhint %}
 
 ## Steps
 
-Clone the `node-launcher` repo. All commands in this section are to be run inside of this repo. 
+Clone the `node-launcher` repo. All commands in this section are to be run inside of this repo.
 
 ```text
 git clone https://gitlab.com/thorchain/devops/node-launcher
@@ -65,7 +65,7 @@ If you are successful, you will see the following message:
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
-If there are any errors, they are typically fixed by running the command again. 
+If there are any errors, they are typically fixed by running the command again.
 
 ## Deploy THORNode
 
@@ -116,7 +116,7 @@ kubectl delete pod <pod> -n thornode
 ```
 
 {% hint style="warning" %}
-Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon \(eg, binance-daemon-xxx\). 
+Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon \(eg, binance-daemon-xxx\).
 
 Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight, \("xxx" is your unique ID\):
 

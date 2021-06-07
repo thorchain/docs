@@ -3,15 +3,18 @@ description: How THORNames work
 ---
 
 # THORChain Name Service
-Website: https://thorname.com/
 
-### Overview
-THORNames allow anyone to register cross-chain wallet addresses to a 1-30 long string of hexadecimal characters which include special characters `-_+` This makes them compatible to represent emojis ⚡️  
-  
-Users use a special memo and a THORChain `MsgDeposit` transaction to register their addresses. This then allows the system to lookup the name and retrieve the correct corresponding address for the specified chain. 
+Website: [https://thorname.com/](https://thorname.com/)
 
-A THORChain address can be assigned one (1) THORName to manage the other addresses associated. For example: the THORName chris can receive $BTC to the chris.btc address, chris.eth to receive $ETH and so forth. Wallet providers will easily be able to integrate to resolve cross-chain addresses for a user.
-```
+## Overview
+
+THORNames allow anyone to register cross-chain wallet addresses to a 1-30 long string of hexadecimal characters which include special characters `-_+` This makes them compatible to represent emojis ⚡️
+
+Users use a special memo and a THORChain `MsgDeposit` transaction to register their addresses. This then allows the system to lookup the name and retrieve the correct corresponding address for the specified chain.
+
+A THORChain address can be assigned one \(1\) THORName to manage the other addresses associated. For example: the THORName chris can receive $BTC to the chris.btc address, chris.eth to receive $ETH and so forth. Wallet providers will easily be able to integrate to resolve cross-chain addresses for a user.
+
+```text
 { "chris" :
    {"thor: "thor1egxvam70a86jafa3s0m2g3m7548gcg3kqfmfax",
     "btc" : "bc1qq2z2f4gs4nd7t0a9zzjtegu4nczhajjp90y9l9", 
@@ -21,19 +24,18 @@ A THORChain address can be assigned one (1) THORName to manage the other address
     "bnb" : "bnb1pa6hpjs7qv0vkd55n08yw7v7fks5tqa2xtt2gk"}
 }
 ```
-Currently, there are five (5) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, and Bitcoin Cash.
 
-### Fees
-There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fee, which works out to be around 1 RUNE annually. A user who pays 2 RUNE will then keep their name registered for 2 years. 
+Currently, there are five \(5\) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, and Bitcoin Cash.
 
-### FAQ
-Q1. Is it possible to update my address that is linked to my THORName?
-A1.
+## Fees
 
-Q2. Is it possible to change my name linked to my addresses?
-A2.
+There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fee, which works out to be around 1 RUNE annually. A user who pays 2 RUNE will then keep their name registered for 2 years.
 
-Additional reading: 
-THORChain Launches THORName Service: https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8
+## FAQ
 
+Q1. Is it possible to update my address that is linked to my THORName? A1.
+
+Q2. Is it possible to change my name linked to my addresses? A2.
+
+Additional reading: THORChain Launches THORName Service: [https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8](https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8)
 

@@ -24,15 +24,15 @@ The Network Information comes from three sources:
 
 {% tabs %}
 {% tab title="MIDGARD" %}
-Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more.  
-  
+Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more.
+
 **Any Node**
 
 Port: `8080`
 
 RPC Guide:  
-http://&lt;host&gt;:8080/v2/doc  
-  
+[http://&lt;host&gt;:8080/v2/doc](http://<host>:8080/v2/doc)
+
 **Official**
 
 [https://midgard.thorchain.info/v2/doc](https://midgard.thorchain.info/v1/doc)
@@ -48,8 +48,8 @@ THORNode returns application-specific information regarding the THORChain state 
 Port: `1317`
 
 RPC Guide:  
-http://&lt;host&gt;:1317/thorchain/doc/  
-  
+[http://&lt;host&gt;:1317/thorchain/doc/](http://<host>:1317/thorchain/doc/)
+
 **Official**
 
 [https://thornode.thorchain.info/thorchain/doc/](https://thornode.thorchain.info/thorchain/doc/)
@@ -69,7 +69,6 @@ MAINNET Port: `27147`
 RPC Guide:  
 [https://v1.cosmos.network/rpc/v0.41.4](https://v1.cosmos.network/rpc/v0.41.4)
 
-  
 **Official**
 
 [https://rpc.thorchain.info/genesis](https://rpc.thorchain.info/genesis)
@@ -89,20 +88,18 @@ P2P Guide
 {% endtab %}
 
 {% tab title="CHAIN CLIENTS" %}
-Each node allows connecting to its Chain Clients.   
-  
+Each node allows connecting to its Chain Clients.
+
 **Official**  
-https://btc.thorchain.info
+[https://btc.thorchain.info](https://btc.thorchain.info)
 
-https://bch.thorchain.info
+[https://bch.thorchain.info](https://bch.thorchain.info)
 
-https://ltc.thorchain.info
+[https://ltc.thorchain.info](https://ltc.thorchain.info)
 
-https://bnb.thorchain.info
+[https://bnb.thorchain.info](https://bnb.thorchain.info)
 
-https://eth.thorchain.info
+[https://eth.thorchain.info](https://eth.thorchain.info)
 {% endtab %}
 {% endtabs %}
-
-
 
