@@ -10,8 +10,8 @@ THORNodes service the THORChain network, of which there is intended to be initia
 
 To set up a node, you have three choices:
 
-1. Set up manually
-2. Set up via Kubernetes
+1. Set up manually \(not recommended unless you are an expert\)
+2. Set up via Kubernetes \(recommended\)
 3. Set up via Provider \(coming soon\)
 
 {% page-ref page="kubernetes/" %}
