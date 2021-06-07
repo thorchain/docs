@@ -1,8 +1,10 @@
 ---
-description: 'How THORChain facilitates continuous, incentivised liquidity.'
+description: >-
+  How THORChain facilitates continuous, incentivised liquidity, with IL
+  Protection.
 ---
 
-# Continuous Liquidity Pools
+# Liquidity Model
 
 Instead of limit-order books, THORChain uses continuous liquidity pools \(CLP\). The CLP is arguably one of the most important features of THORChain, with the following benefits:
 
@@ -141,8 +143,58 @@ If `a = b = 2` then the pool behaves as if the depth is twice as deep, the slip 
 If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep as the `X` asset, or, that the pool is no longer 1:1 bonded. Instead the pool can be said to have 67:33 balance, where the liquidity providers are twice as exposed to one asset over the other. 
 
 {% hint style="info" %}
-Virtual Depths and Dissimilar Weighting have not been added to THORChain, because their impact on the  [Incentive Pendulum](incentive-pendulum.md) as well as the loss of revenue to Liquidity Providers has not yet been investigated. 
+Virtual Depths and Dissimilar Weighting have not been added to THORChain, because their impact on the  [Incentive Pendulum](../how-it-works/incentive-pendulum.md) as well as the loss of revenue to Liquidity Providers has not yet been investigated. 
 
 THORChain ruthlessly maximises revenue for itself, taking the perspective that liquidity pools are an incentive **race-to-the-top** as opposed to a fee **race-to-the-bottom**. In typical markets, market-takers are value-extractive from market-makers, whilst in THORChain, market-takers pay handsomely for the privilege of access to liquidity. 
+{% endhint %}
+
+## Calculating Pool Ownership
+
+When a liquidity provider commmit capital, the ownership % of the pool is calculated:
+
+$$
+\text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{( r + R)*(a + A)}\mid
+$$
+
+$$
+\text{units} = \frac {P(R a + r A)}{2 RA}*slipAdjustment
+$$
+
+* r = rune deposited 
+* a = asset deposited
+* R = Rune Balance \(before\)
+* A = Asset Balance \(before\)
+* P = Existing Pool Units
+
+The liquidity provider is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
+
+## Impermanent Loss Protection
+
+Impermanent Loss Protection ensures LPs always either make a profit, or leave with at break even after a minimum period of time \(set at 100 days\), and partially covered before that point. This should alleviate most of the concerns regarding become an LP.
+
+THORChain tracks a member's deposit values. When the member goes to redeem, their loss \(against their original deposit value\) is calculated, and is subsidised with RUNE from the reserve.
+
+There is a 100 day linear increase in the amount of coverage receives, such that at 50 days, the member receives 50%, 90 days is 90% etc.
+
+
+
+| Element | Description | Element | Description |
+| :--- | :--- | :--- | :--- |
+| R0 | RUNE Deposited | R1 | RUNE to redeem |
+| A0 | Asset Deposited | A1 | Asset to redeem |
+
+$$
+\text{P1} = \frac{R1}{A1}
+$$
+
+$$
+\text{coverage} = (R0 - R1) + (A0 - A1) * P1
+$$
+
+The coverage is then adjusted for the 100 day rule, then the extra RUNE added into the member's liquidity position to issue them extra liquidity units. The member then redeems all their units, and they will realise extra RUNE and extra ASSET.   
+
+
+{% hint style="info" %}
+Since the protection amount is added assymetrically, the protection will experience a small slip. This helps to prevent attack vectors.
 {% endhint %}
 

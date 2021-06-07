@@ -14,8 +14,6 @@ To set up a node, you have three choices:
 2. Set up via Kubernetes
 3. Set up via Provider \(coming soon\)
 
-{% page-ref page="manual.md" %}
-
 {% page-ref page="kubernetes/" %}
 
 ## THORNode Stack

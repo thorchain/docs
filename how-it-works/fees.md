@@ -1,5 +1,5 @@
 ---
-description: THORChain charges a fixed Network Fee and a dynamic Liquidity Fee.
+description: THORChain charges a fixed Outbound Fee and a dynamic Liquidity Fee.
 ---
 
 # Fees
@@ -36,17 +36,17 @@ The gas is consumed from each chain's base asset pool - the BTC pool pays for Bi
 
 The network then observes an outgoing transaction and records how much it cost in gas in the external asset. The final gas cost is then subsidised back into each pool by paying RUNE from the reserve. 
 
-## **Network Fee**
+## **Outbound Fee**
 
-The user is charged an amount that is **three times** the stored gas cost for each chain. The Node can then pay a gas price that is **1.5 times** the gas price, and the pool is subsidised a value that is **twice** what was observed. 
+The user is charged an amount that is **three times** the stored gas cost for each chain. The Node can then pay a gas price that is **1 times** the gas price, and the pool is subsidised a value that is **twice** what was observed. This means the LPs earn a margin of 1x, and the Reserve earns a margin of 1x.
 
 Example:
 
-| Chain | Typical | Fee | Max Gas | Pool Subsidisation |
-| :--- | :--- | :--- | :--- | :--- |
-| Bitcoin | $1 | $3 | $1.50 | $3 |
-| Ethereum | $0.20 | $0.60 | $0.30 | $0.60 |
-| Binance Chain | $0.03 | $0.09 | $0.045 | $0.09 |
+| Chain | Typical | Fee | Node Pays | LP Gets | Reserve Earns |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Bitcoin | $1 | $3 | $1 | $2 | $3 |
+| Ethereum | $10 | $30 | $10 | $20 | $30 |
+| Binance Chain | $0.03 | $0.09 | $0.03 | $0.06 | $0.09 |
 
 The Network Fee is collected in RUNE and sent to the Protocol Reserve. If the transaction involves an asset which is not RUNE the user pays the Network Fee in the external asset. Then the equivalent is taken from that pool's RUNE supply and added to the Protocol Reserve.
 
@@ -75,4 +75,8 @@ This fee is retained on the output side of the pool, ensuring it counters the tr
 {% hint style="info" %}
 In an Asset-Asset swap, the fee is applied twice since two pools are involved, however the user only sees it as a single fee and a single slip value. 
 {% endhint %}
+
+## Network Fee
+
+The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Currently this is fixed and available on the `/constants` endpoint, but it is intended to be dynamic and set to be a fixed $ qty of assets. Additionally THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves. 
 

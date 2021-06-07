@@ -2,7 +2,7 @@
 description: Deploying a THORNode with Kubernetes
 ---
 
-# Deploy - K8 Cluster
+# Cluster Launcher
 
 ## **Deploy a Kubernetes cluster**
 

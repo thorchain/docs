@@ -18,7 +18,7 @@ A swap takes place in the MATIC/RUNE pool, as described in [Prices](../how-it-wo
 
 Traders can now buy cheap RUNE on THORChain and sell it for a profit on external markets. To do so, they swap MATIC into the pool and get RUNE out. They sell this RUNE on external markets and make a profit.
 
-The economics of the [swap formula](../roles/swapping.md#calculating-swap-output) mean that traders should not aim to restore balance to the pool in a single trade. Rebalancing should be done incrementally. If larger rebalancing trades are attempted, arbitrage may not be profitable for traders.
+The economics of the [swap formula](https://) mean that traders should aim to restore balance to the pool in a single trade. Rebalancing should be done incrementally. If larger rebalancing trades are attempted, arbitrage may not be profitable for traders.
 
 Specifically, each rebalancing trade should be 40–50% the imbalance size. So if the imbalance starts at $100 in value, the first rebalancing trade should be between $40–50. This will leave the imbalance at $50–60. The next rebalance should be $25–30. This process repeats until a satisfactory balance is restored.
 
