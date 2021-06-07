@@ -6,7 +6,9 @@ description: How to leave THORChain
 
 ## Overview
 
-Every 50,000 Blocks \(3 days\) the system will churn its nodes. Outgoing:
+Every 42,400 BLOCKS \(3 days\) the system will churn its nodes. 
+
+Outgoing:
 
 1. The most unreliable node\(s\), and/or
 2. The oldest node
@@ -20,7 +22,7 @@ Churned out nodes will be put in standby, but their bond will not automatically 
 Alternatively, an ACTIVE node can leave the system voluntarily, in which case they are typically churned out 6 hours later. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive and expensive.
 
 {% hint style="warning" %}
-It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address, it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software.
+It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software.
 {% endhint %}
 
 ## Unbonding
@@ -29,9 +31,9 @@ It is assumed nodes that wish to **LEAVE** will be away for a significant period
 You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out.
 {% endhint %}
 
-If a Node Operator wants to retrieve part of their bond & rewards \(such as deciding to take profits and contribute as a liquidity provider in order to maximise yield\), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
+If a Node Operator wants to retrieve part of their bond & rewards \(such as deciding to take profits\), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
 
-To unbond from the system, simply send an **UNBOND** transaction to the Vault Address with at least 1 tor \(0.00000001 RUNE\) in funds. The amount and type of asset you use to send to THORChain is actually irrelevant, you are simply passing transaction intent to THORChain and proving you own your bond address.
+To unbond from the system, simply send an **UNBOND** transaction. 
 
 Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond.
 
@@ -42,7 +44,7 @@ THORChain always treats assets in 1e8 "base format" ie, 1.0 RUNE = 100,000,000 u
 {% endhint %}
 
 {% hint style="info" %}
-If using ASGARDEX to BOND or UNBOND, simply put the RUNE amount, e.g. "100" for 100 RUNE. It does the memo in 1e8 for you.
+If using ASGARDEX to **BOND** or **UNBOND**, simply put the RUNE amount, e.g. "100" for 100 RUNE. It does the memo in 1e8 for you.
 {% endhint %}
 
 {% hint style="info" %}
@@ -53,6 +55,10 @@ You can get your node address by running `make status`
 Only the address that originally bonded the funds can **UNBOND** or **LEAVE**.  
 This ensures you can safely leave this system if you no longer have access to your node \(but it is still running\).
 {% endhint %}
+
+## Issues with Unbonding/Leaving
+
+If you can't UNBOND, it means your ygg-vault still has funds on it. This means your node spent more gas than it was supposed to during the cycle \(various reasons\) and is partially insolvent. To fix this you need to rectify your node's insolvency first before doing anything. 
 
 ## Leaving
 
