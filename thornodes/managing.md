@@ -142,9 +142,7 @@ All of these commands are to be run from `node-launcher`
 
 ### LOGS MANAGEMENT \(LOKI\)
 
-It is recommended to deploy an Elastic Search / Logstash / Filebeat / Kibana to redirect all logs within an elasticsearch database and available through the UI.
-
-For a reminder on Kubernetes commands, please[ visit this page](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)**.**
+It is recommended to deploy a logs management ingestor stack within Kubernetes to redirect all logs within a database to keep history over time as Kubernetes automatically rotates logs after a while to avoid filling the disks. The default stack used within this repository is Loki, created by Grafana and open source. To access the logs you can then use the Grafana admin interface that was deployed through the Prometheus command.
 
 {% tabs %}
 {% tab title="DEPLOY" %}
@@ -154,44 +152,34 @@ You can deploy the log management automatically using the command below:
 make install-loki
 ```
 
-This command will deploy the elastic-operator chart. It can take a while to deploy all the services, usually up to 5 minutes depending on resources running your kubernetes cluster.
+This command will deploy the Loki chart. It can take a while to deploy all the services, usually up to 5 minutes depending on resources running your kubernetes cluster.
 
-You can check the services being deployed in your kubernetes namespace `elastic-system`.
+You can check the services being deployed in your kubernetes namespace `loki-system`.
 {% endtab %}
 
 {% tab title="ACCESS" %}
-You can automate this task to access Kibana from your local workstation:
+#### Access Grafana
+
+See previous section to access the Grafana admin interface through the command `make grafana`.
+
+#### Browse Logs
+
+Within the Grafana admin interface, to access the logs, find the `Explore` view from the left menu sidebar. Once in the `Explore` view, select Loki as the source, then select the service you want to show the logs by creating a query. The easiest way is to open the "Log browser" menu, then select the "job" label and then as value, select the service you want. For example you can select `thornode/bifrost` to show the logs of the Bifrost service within the default `thornode` namespace when deploying a mainnet validator THORNode.
+
+![](../.gitbook/assets/image%20%2811%29.png)
+
+![](../.gitbook/assets/image%20%2837%29.png)
+
+![](../.gitbook/assets/image%20%2836%29.png)
+
+![](../.gitbook/assets/image%20%2833%29.png)
+{% endtab %}
+
+{% tab title="DESTROY" %}
+Destroy Loki logs management stack
 
 ```text
-make kibana
-```
-
-Open [https://localhost:5601](https://localhost:5601/) in your browser. Your browser will show a warning because the self-signed certificate configured by default is not verified by a third party certificate authority and not trusted by your browser. You can temporarily acknowledge the warning for the purposes of this quick start but it is highly recommended that you configure valid certificates for any production deployments.
-
-Login as the elastic user. The password should have been displayed in the previous command \(`make kibana`\).
-
-To manually access Kibana follow these instructions: A ClusterIP Service is automatically created for Kibana:
-
-```text
-kubectl -n elastic-system get service elasticsearch-kb-http
-```
-
-Use kubectl port-forward to access Kibana from your local workstation:
-
-```text
-kubectl -n elastic-system port-forward service/elasticsearch-kb-http 5601
-```
-
-Login as the `elastic` user. The password can be obtained with the following command:
-
-```text
-kubectl -n elastic-system get secret elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
-```
-
-To access the logs of the THORNode services running, you can either use directly Kubernetes commands to get logs from different deployments, for example, to get the logs of the service `thor-daemon`:
-
-```text
-kubectl logs -f deploy/thor-daemon -n thornode
+make destroy-loki
 ```
 {% endtab %}
 {% endtabs %}
