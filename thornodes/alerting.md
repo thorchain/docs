@@ -20,8 +20,13 @@ Be sure to use a pseudonym in order to prevent doxxing yourself. Node operators 
 A telegram bot to monitor the status of THORNodes.
 
 {% hint style="info" %}
-This bot can be run in a self-sovereign manner \(a personal bot that you run that does not collect any information about you\) or by using the block42 bot: [https://t.me/thornode\_bot](https://t.me/thornode_bot) on telegram.
+This bot can be run in a self-sovereign manner \(a personal bot that you run that does not collect any information about you\) or by using the block42 bot.  
 
+
+The current public bots are [https://t.me/thornode\_chaosnet\_bot](https://t.me/thornode_chaosnet_bot) and [https://t.me/thornode\_testnet\_bot](https://t.me/thornode_testnet_bot).
+{% endhint %}
+
+{% hint style="info" %}
 If you have questions feel free to open a github issue or contact Block42 in their Telegram Channel [https://t.me/block42\_crypto](https://t.me/block42_crypto)
 
 [https://github.com/block42-blockchain-company/thornode-telegram-bot](https://github.com/block42-blockchain-company/thornode-telegram-bot)
