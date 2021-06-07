@@ -370,7 +370,7 @@ And look for `addresses` array at the bottom.
 
 #### Finding Yggdrasil Private Key
 
-1. Rune `make mnemonic` and securely store this.  
+1. Run `make mnemonic` and securely store this.  
 2. Visit [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/) - or for more safety, clone the [GitHub repo](https://github.com/iancoleman/bip39) and open `src/index.html` offline.  
 3. Paste in your mnemonic and choose **RUNE - THORChain** from the drop-down list.  
 4. Your private key string is the first one: `m/44'/931'/0'/0/0`  
@@ -402,7 +402,7 @@ When a node is slashed 600 points, it is typically because the yggdrasil vault f
 
 **Cause:** External unexpected Gas price hike. The network uses a 1.5x the previous N blocks as the gas rate to use. If there is a sudden increase in Gas price required due to unforseen external events, the transaction may not be mined. In order to make sure customer is paid in a reasonable time, there is a auto cancel transaction process build in bifrost. The network will keep monitoring the outbound transactions and if any of the outbound transaction signed out by yggdrasil vault didn't commit after 15 minutes, it will automatically cancel it and assign to another node to send.
 
-You should be able to see a transaction like the following:
+You should be able to see a transaction like the following, which is sending `0` ETH back to itself which cancels anything pending:
 
 ![](../.gitbook/assets/eth_cancel_nonce.png)
 
@@ -471,5 +471,9 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 
 #### Constantly accumulating slash points
 
-**Problem:** Sometimes bifrost fails to forward observations to thornode,due to an account number / sequence number mismatch. Here is what you need to check: 1. run `make logs` , and choose `bifrost` 2. Search your bifrost logs for `{"level":"error","service":"bifrost","module":"observer","error":"fail to send the tx to thorchain: fail to broadcast to THORChain,code:32, log:account sequence mismatch, expected 26806, got 26807: incorrect account sequence","time":"2021-05-30T07:28:18Z","message":"fail to send to THORChain"}` 3. **Solution:** `make restart` and choose `bifrost`
+**Problem:** Sometimes bifrost fails to forward observations to thornode, due to an account number / sequence number mismatch. Here is what you need to check: 
+
+1. run `make logs` , and choose `bifrost` 
+
+2. Search your bifrost logs for `{"level":"error","service":"bifrost","module":"observer","error":"fail to send the tx to thorchain: fail to broadcast to THORChain,code:32, log:account sequence mismatch, expected 26806, got 26807: incorrect account sequence","time":"2021-05-30T07:28:18Z","message":"fail to send to THORChain"}` 3. **Solution:** `make restart` and choose `bifrost`
 

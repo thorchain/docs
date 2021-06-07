@@ -24,6 +24,14 @@
 * [Lending Model](thorchain-finance/lending-model.md)
 * [Composite Model](thorchain-finance/composite-model.md)
 
+## Developers
+
+* [Integration Overview](developers/integration-overview.md)
+* [Connecting to THORChain](developers/connecting-to-thorchain.md)
+* [Transaction Memos](developers/transaction-memos.md)
+* [Libraries](developers/asgardex-modules.md)
+* [Seed Service](developers/seed-service.md)
+
 ## THORNodes
 
 * [THORNode Overview](thornodes/overview.md)
@@ -42,12 +50,4 @@
 * [Leaving](thornodes/leaving.md)
 * [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [✔️ CHECKLIST](thornodes/checklist.md)
-
-## Developers
-
-* [Integration Overview](developers/integration-overview.md)
-* [Connecting to THORChain](developers/connecting-to-thorchain.md)
-* [Transaction Memos](developers/transaction-memos.md)
-* [Libraries](developers/asgardex-modules.md)
-* [Seed Service](developers/seed-service.md)
 
