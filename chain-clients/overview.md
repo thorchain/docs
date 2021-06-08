@@ -1,3 +1,7 @@
+---
+description: An overview of how Chain Clients are implemented for different chain types.
+---
+
 # Overview
 
 ## Chain Client
@@ -55,6 +59,4 @@ To do this:
 ### Handling Gas
 
 Every transaction in and out from THORChain vaults need to have gas amount reported, as well as the gas asset used. This is needed by THORChain to accurately deduct this gas from the pools in order to keep the system solvent. 
-
-### Other Considerations
 

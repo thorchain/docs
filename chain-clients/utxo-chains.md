@@ -4,10 +4,6 @@ description: How the Bifrost works for UTXO chains like Bitcoin and its forks
 
 # UTXO Chains
 
-## Overview
-
-This will describe how the Chain Client and Wallet Client handles UTXO chains. 
-
 ## Chain Client
 
 [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go)
