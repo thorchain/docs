@@ -32,15 +32,11 @@ Bifrost tracks the `BlockCacheSize = 144` blocks of transactions reported in a l
 
 ### Network Fees
 
-Reported as `sats/byte` where
-
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L605](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L605)
+Reported as `sats/byte` where the fee rate is computed over the last block. Reports the highest seen in the last 20 blocks. [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L605](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L605)
 
 ### Handling Gas
 
-The gas amount for a transaction is just the difference between outputs and inputs
-
-  
+The gas amount for a transaction is just the difference between outputs and inputs.  
 [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L832](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L832)
 
 ### Other Considerations
@@ -69,5 +65,13 @@ UTXO clients implemented in XChainJS have the following nuances:
 
 ### Fees
 
-The wallet client should consume a fee equal to 
+The wallet client should spend with a fee rate at least equal to what is reported on `inbound_addresses` - if not it risks not being confirmed by the time the vault migrates. 
+
+### Pending UTXOS
+
+Do not consume pending transactions when spending to Asgard \(with a memo\) since it may consume a low-fee tx and get stuck. 
+
+### MEMO
+
+The memo is inserted as an OP\_RETURN in an output. It can be any output. The MEMO is limited to 80bytes, so it should be trimmed and use abbreviated memos or Asset identifiers where possible.
 
