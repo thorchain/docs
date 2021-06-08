@@ -32,6 +32,13 @@
 * [Libraries](developers/asgardex-modules.md)
 * [Seed Service](developers/seed-service.md)
 
+## Chain Clients
+
+* [Overview](chain-clients/overview.md)
+* [UTXO Chains](chain-clients/utxo-chains.md)
+* [EVM Chains](chain-clients/evm-chains.md)
+* [BFT Chains](chain-clients/bft-chains.md)
+
 ## THORNodes
 
 * [THORNode Overview](thornodes/overview.md)
