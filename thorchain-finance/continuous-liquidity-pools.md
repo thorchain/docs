@@ -143,10 +143,14 @@ If `a = b = 2` then the pool behaves as if the depth is twice as deep, the slip 
 If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep as the `X` asset, or, that the pool is no longer 1:1 bonded. Instead the pool can be said to have 67:33 balance, where the liquidity providers are twice as exposed to one asset over the other. 
 
 {% hint style="info" %}
-Virtual Depths and Dissimilar Weighting have not been added to THORChain, because their impact on the  [Incentive Pendulum](../how-it-works/incentive-pendulum.md) as well as the loss of revenue to Liquidity Providers has not yet been investigated. 
+Virtual Depths have been added to all Synth Swaps - using a multiplier of 2. This means that Synth Swaps create 50% less  slip and users pay 50% less fees. The multiplier is specified on `/constants` as:
 
-THORChain ruthlessly maximises revenue for itself, taking the perspective that liquidity pools are an incentive **race-to-the-top** as opposed to a fee **race-to-the-bottom**. In typical markets, market-takers are value-extractive from market-makers, whilst in THORChain, market-takers pay handsomely for the privilege of access to liquidity. 
+```text
+"VirtualMultSynths": 2,
+```
 {% endhint %}
+
+
 
 ## Calculating Pool Ownership
 
