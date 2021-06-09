@@ -6,17 +6,18 @@ description: An overview of how Chain Clients are implemented for different chai
 
 ## Chain Client
 
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go)
+The chain client sits in the `/bifrost` package which is outside of the core THORChain consensus engine. This is because its purpose is simply to witness events to THORChain. THORChain itself comes to consensus on witnessed events and acts from there.
 
-* Confirmation Counting
-* Re-orgs
-* Network Fee Reporting
-* Handling Gas
-* Handling UTXOs
+There are two main parts to each Chain Client:
+
+1. **Observer** \(Scans blocks and packages up events to be witnessed to THORChain\)
+2. **Signer** \(receives `txOut` data from THORChain and converts into chain-specific signing data, to be signed by either the YGG node or TSS routine\)
+
+In addition there are some supporting routines, such as that to store cached witness transactions in local storage. This is used for tracking confs and handling re-orgs. 
 
 ### Scanning Blocks
 
-The block scanner monitors the Asgard Addresses and looks for incoming UTXOs spending to those addresses. When it sees one performs validation on it and witnesses to THORChain. 
+The block scanner monitors the Asgard Addresses and looks for incoming UTXOs spending to those addresses. When it sees one performs validation on it and witnesses to THORChain. It will also store it in local storage. 
 
 ### Confirmation Counting
 
@@ -37,12 +38,12 @@ Although THORChain will not act on an inbound transaction that is undergoing con
 {% endhint %}
 
 {% hint style="info" %}
-PoW chains are typically probablistically final. Which means they are never deemed final, until economically certain no one would re-org them. Rational actors are expected, so a malicous re-org would never happen unless the value to gain from re-org exceeds the cost to re-org. The value to gain is the sum of the transactions sent to Asgard, whilst the cost to re-org is taken to be the economic value of each block -- the sum of fees and subsidies. 
+A malicous re-org would never happen unless the value to gain from re-org exceeds the cost to re-org. The value to gain is the sum of the transactions sent to Asgard, whilst the cost to re-org is taken to be the value of each block -- the sum of fees and subsidies. 
 {% endhint %}
 
 ### Re-orgs
 
-Each Chain Client needs to have re-org logic, since re-orgs will always happen \(natural or malicious, is irrelevant\). To do this, the Bifrost tracks the last 24 hours of transactions reported in a local KV store. Every time it detects a new block at a previous height it has seen, it checks for the presence of every transaction it has reported in the last 24 hours in the chain state. If the transaction is missing then it has been re-orged out. 
+Each Chain Client needs to have re-org logic, since re-orgs will always happen \(natural or malicious, is irrelevant\). To do this, the Bifrost tracks the last 24 hours of transactions reported in a local KV store. Every time it detects a new block at a previous height it has seen, it checks for the presence of every transaction it has reported. If the transaction is missing then it has been re-orged out. 
 
 If so, the Bifrost will prepare an `ErrataTx` which instructs the state machine to undo all the state associated with that missing transaction. Any losses to the pools are thus socialised to all LPs. 
 

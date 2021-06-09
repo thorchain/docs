@@ -6,7 +6,17 @@ description: How the Bifrost works for UTXO chains like Bitcoin and its forks
 
 ## Chain Client
 
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go)
+Example for Bitcoin.
+
+#### Observer
+
+{% embed url="https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go" %}
+
+#### Signer
+
+{% embed url="https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/signer.go" %}
+
+
 
 ### Scanning Blocks
 
@@ -16,13 +26,13 @@ The block scanner monitors the Asgard Addresses and looks for incoming UTXOs spe
 
 ### Confirmation Counting
 
-The `txValue` is the sum of all transactions received in a block to Asgard vaults. The `blockValue` is the coinbase value, which includes fees and subsidity. If a miner forgets to add a coinbase value \(it has happened\) a default is used. 
+The `txValue` is the sum of all transactions received in a block to Asgard vaults. The `blockValue` is the coinbase value, which includes fees and subsidity. If a miner forgets to add a coinbase value \(it has happened\) a default of 6.25 is used. \(This should be updated every 4 years, or use logic to auto-update\). 
 
 [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L929](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L929)
 
 ### Re-orgs
 
-Bifrost tracks the `BlockCacheSize = 144` blocks of transactions reported in a local KV store. Every time it detects a new block at a previous height it has seen, it checks for the presence of every transaction it has reported. If the transaction is missing then it has been re-orged out. 
+Bifrost tracks the `BlockCacheSize = 144` blocks of transactions reported in a local KV store. Every time it detects a new block at a previous height it has seen, it checks for the presence of every transaction it has reported. If the transaction is missing then it has been re-orged out. The missing txID is reported to THORChain as an `ErrataTx`
 
 [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L377](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L377)
 
@@ -39,13 +49,13 @@ The gas amount for a transaction is just the difference between outputs and inpu
 
 #### UTXO consolidation
 
-UTXOs consume inputs, and these inputs need to be signed independently. Thus consuming 15 inputs requires 15 times the TSS bandwidth than a single input. To prevent runaway liabilities the client will automatically enter a TSS signing ceremony every 15 inputs to consolidate them back to one. This transaction uses the `consolidate` memo and can be seen regularly on THORChain vaults. 
+UTXOs consume inputs, and these inputs need to be signed independently. Thus consuming 15 inputs requires 15 times the TSS bandwidth than a single input. To prevent runaway liabilities the client will automatically enter a TSS signing ceremony for Asgard every 15 inputs to consolidate them back to one. This transaction uses the `consolidate` memo and can be seen regularly on THORChain vaults. 
 
 [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L988](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L988)
 
 #### ChildPaysForParent
 
-Asgard cannot consume a pending transaction spent to it, since THORChain requires at least 1 confirmation. However, Ygg Vaults will spend pending transactions, since they continually spend back to themselves and are only funded by Asgard. To do this, outbound transactions from Ygg Vaults are actually witnessed when in the mempool, instead of being confirmed. This allows Ygg vaults to have high swap throughput, even if the swaps are still pending in the mempool.
+Asgard cannot consume a pending transaction spent to it, since THORChain requires at least 1 confirmation. However, Ygg Vaults will consume pending transactions, since they continually spend back to themselves and are only funded by Asgard. To do this, outbound transactions from Ygg Vaults are actually witnessed when in the mempool, instead of being confirmed. This allows Ygg vaults to have high swap throughput, even if the swaps are still pending in the mempool.
 
 {% hint style="warning" %}
 Ygg vaults have historically been subject to dust attacks which spend large-size transactions with low fees, causing vaults to lock up. To prevent this, Ygg vaults only consume pending transactions spent to itself. 
