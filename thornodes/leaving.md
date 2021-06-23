@@ -67,7 +67,7 @@ If you can't UNBOND, it means your ygg-vault still has funds on it. This means y
 
 Leaving is considered permanent. There are two steps.
 
-1. If you are **Active**, send a LEAVE transaction to start a churn-out process. This will take several hours even after changing your status to 'Standby'. 
+1. If you are **Active**, send a LEAVE transaction to be ear-marked to churn out. This will take several hours even after changing your status to 'Standby'. 
 2. If you are **Standby,** send a LEAVE transaction to get your bond back and be permanently jailed. 
 
 {% hint style="info" %}
@@ -87,7 +87,11 @@ To leave the system, send the following transaction from your original bond addr
 ⏱_Wait a few minutes, verify you have received your bond back 👀_ - `make status` should show `BOND 0.00` and your wallet should get the full Bond back.
 
 {% hint style="info" %}
-Sometimes your Yggdrasil ETH vault may be slightly insolvent due to out-of-gas transactions consuming gas whilst Active. If the network will not let you LEAVE, you may need to manually send your Yggdrasil ETH vault 0.01 - 0.05 ETH from your own personal funds as a top-up, then try LEAVE again. Note: any funds you send to top-up ETH vault you cannot send back to yourself until _AFTER_ your node has left and you have received your bond back, otherwise it will be fined 1.5x what you transfer out. _Coming Soon_: Check using the `make solvency` command.
+Sometimes your Yggdrasil ETH vault may be slightly insolvent due to out-of-gas transactions consuming gas whilst Active. If the network will not let you LEAVE, you may need to manually send your Yggdrasil ETH vault 0.01 - 0.05 ETH from your own personal funds as a top-up, then try LEAVE again. Note: any funds you send to top-up ETH vault you cannot send back to yourself until _AFTER_ your node has left and you have received your bond back, otherwise it will be fined 1.5x what you transfer out.   
+  
+View your node's vault to find insolvencies:   
+https://viewblock.io/thorchain/address/&lt;nodeAddress&gt;  
+https://thornode.thorchain.info/thorchain/vault/&lt;vaultPubKey&gt;
 {% endhint %}
 
 _🔥 Commence destroying your node 🔥_
