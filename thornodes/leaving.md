@@ -10,16 +10,18 @@ Every 42,400 BLOCKS \(3 days\) the system will churn its nodes.
 
 Outgoing:
 
-1. The most unreliable node\(s\), and/or
-2. The oldest node
+1. Nodes wishing to leave, and/or
+2. The most unreliable node\(s\), and/or
+3. The oldest node
+4. But a maximum of 1/3rd the network
 
 Incoming:
 
-1. The node\(s\) with the highest bond \(typically 3\). 
+1. The node\(s\) with the highest bond \(typically 4\). 
 
 Churned out nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing but keep their cluster online, they will be eventually churned back in.
 
-Alternatively, an ACTIVE node can leave the system voluntarily, in which case they are typically churned out 6 hours later. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive and expensive.
+Alternatively, an ACTIVE node can leave the system voluntarily, in which case they are marked to churn out first. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive and expensive.
 
 {% hint style="warning" %}
 It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software.
@@ -28,7 +30,8 @@ It is assumed nodes that wish to **LEAVE** will be away for a significant period
 ## Unbonding
 
 {% hint style="info" %}
-You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out.
+You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out.   
+You cannot unbond if you are "ready" or "active" or have any amount of funds on your Yggdrasil address
 {% endhint %}
 
 If a Node Operator wants to retrieve part of their bond & rewards \(such as deciding to take profits\), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
@@ -58,7 +61,7 @@ This ensures you can safely leave this system if you no longer have access to yo
 
 ## Issues with Unbonding/Leaving
 
-If you can't UNBOND, it means your ygg-vault still has funds on it. This means your node spent more gas than it was supposed to during the cycle \(various reasons\) and is partially insolvent. To fix this you need to rectify your node's insolvency first before doing anything. 
+If you can't UNBOND, it means your ygg-vault still has funds on it. This means your node spent more gas than it was supposed to during the cycle \(various reasons\) and is partially insolvent. To fix this you need to rectify your node's insolvency first \(send it the missing funds direclty\) before doing anything. 
 
 ## Leaving
 
