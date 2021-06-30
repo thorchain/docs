@@ -35,9 +35,9 @@ RPC Guide:
 
 **Official**
 
-[https://midgard.thorchain.info/v2/doc](https://midgard.thorchain.info/v1/doc)
+[https://midgard.thorchain.info/v2/doc](https://midgard.thorchain.info/v2/doc)
 
-[https://testnet.midgard.thorchain.info/v2/doc](https://testnet.midgard.thorchain.info/v1/doc)
+[https://testnet.midgard.thorchain.info/v2/doc](https://testnet.midgard.thorchain.info/v2/doc)
 {% endtab %}
 
 {% tab title="THORNODE" %}
