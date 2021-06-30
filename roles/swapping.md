@@ -38,11 +38,11 @@ When a user swaps 2 connected assets on THORChain, they swap between two pools:
 2. Move that RUNE into the second pool,
 3. Swap to the desired asset in the second pool with the RUNE from \(2\)
 
-The THORChain state machine handles this swap in one go, so the user never handles RUNE.
+The THORChain state machine handles this swap in one go, so the user is never handles RUNE.
 
 See [this example](swapping.md#example-connected-asset-binance-coin-to-connected-asset-bitcoin) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 
-{% page-ref page="../how-it-works/continuous-liquidity-pools.md" %}
+{% page-ref page="../thorchain-finance/continuous-liquidity-pools.md" %}
 
 ### Calculating Swap Output
 
@@ -69,15 +69,11 @@ $$
 
 This user swaps 1 BTC for 24,507.40 RUNE.
 
-{% hint style="info" %}
-Run through an [interactive tutorial of an asset swap](https://app.bepswap.com/swap).
-{% endhint %}
-
 ### Costs
 
 The cost of a swap is made up of two parts:
 
-1. Network Fee
+1. Outbound Fee
 2. Price Slippage
 
 All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../how-it-works/fees.md#network-fee).

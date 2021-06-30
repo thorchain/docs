@@ -38,7 +38,7 @@ There are four key roles in the system:
 3. **Traders** who monitor pools and rebalance continually, paying fees but with the intent to earn a profit. 
 4. **Node Operators** who provide a bond and are paid to secure the system 
 
-{% page-ref page="roles-1/" %}
+{% page-ref page="roles/" %}
 
 ## THORNodes
 

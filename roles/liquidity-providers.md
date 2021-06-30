@@ -60,26 +60,6 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 **Change in Asset Prices --** If the price of the assets change, then liquidity providers will receive more of one and less of the other. This may change yield if yield is being priced in a third asset, ie, USD.
 
-### Calculating Pool Ownership
-
-When a liquidity provider commmit capital, the ownership % of the pool is calculated:
-
-$$
-\text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{( r + R)*(a + A)}\mid
-$$
-
-$$
-\text{units} = \frac {P(R a + r A)}{2 RA}*slipAdjustment
-$$
-
-* r = rune deposited 
-* a = asset deposited
-* R = Rune Balance \(before\)
-* A = Asset Balance \(before\)
-* P = Existing Pool Units
-
-The liquidity provider is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
-
 ## How it Works
 
 ### **Depositing Assets**
@@ -142,7 +122,7 @@ See here for an [interactive example](https://rebase.foundation/network/thorchai
 
 Liquidity providers must have assets to deposit and their assets must be native to a supported chain. There is no minimum amount to deposit in existing pools. However new assets must win a competition to be listed – larger value deposits will be listed over smaller value deposits.
 
-Liquidity providers must pay for security of their assets, since security is not free. This "payment" is the requirement for liquidity providers to hold RUNE, which acts as a redeemable insurance policy whilst they are in the pool. Holding RUNE allows liquidity providers to retain an ability to economically leverage nodes to ensure security of assets. When the liquidity provider withdraws, they can sell their RUNE back to the asset they desire.
+Liquidity providers must pay for security of their assets, since security is not free. This "payment" is the requirement for liquidity providers to hold RUNE, which acts as a redeemable insurance policy whilst they are in the pool. Holding RUNE allows liquidity providers to retain an ability to economically leverage nodes to ensure security of assets. When the liquidity provider withdraws, they can sell their RUNE back to the asset they desire. H
 
 The only direct cost to liquidity providers is the [network fee](../how-it-works/fees.md#network-fee), charged for withdrawing assets \(pays for the compute resources and gas costs in order to process outbound transactions\). An indirect cost to liquidity providers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of liquidity provider purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's [slip-based fee](../how-it-works/fees.md#slip-based-fee).
 

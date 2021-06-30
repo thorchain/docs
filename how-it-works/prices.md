@@ -21,7 +21,7 @@ This swapper takes 98.76 RUNE out of the pool. Now the pool has 18,000 MATIC and
 Arbitrage bots fix the situation by swapping RUNE for MATIC. When they do this they get MATIC at a lower cost, and can sell it on external markets for a profit. As the amount of RUNE in the pool increases and MATIC decreases, restoring the ratio to 16:1. This reflects the externally-accepted price for the 2 assets.
 
 {% hint style="info" %}
-In reality, arbitrageurs don't fix the imbalance in one single transaction. This wouldn't be economical. They split the arbitrage swaps into smaller and smaller transactions. This keeps their activity profitable. See [Trading](../roles-1/trading.md) for more.
+In reality, arbitrageurs don't fix the imbalance in one single transaction. This wouldn't be economical. They split the arbitrage swaps into smaller and smaller transactions. This keeps their activity profitable. See [Trading](../roles/trading.md) for more.
 {% endhint %}
 
 ## Getting the Prices for Any Asset
