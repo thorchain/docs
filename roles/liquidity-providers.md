@@ -66,7 +66,7 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 Depositing assets on THORChain is permissionless and non-custodial.
 
-Liquidity providers can propose new asset pools or add liquidity to existing pools. Anybody can propose a new asset by depositing it. See [asset listing/delisting](https://) for details. Once a new asset pool is listed, anybody can add liquidity to it. In this sense, THORChain is permissionless.
+Liquidity providers can propose new asset pools or add liquidity to existing pools. Anybody can propose a new asset by depositing it. See [asset listing/delisting](../how-it-works/governance.md#chain-listing-delisting) for details. Once a new asset pool is listed, anybody can add liquidity to it. In this sense, THORChain is permissionless.
 
 The ability to use and withdraw assets is completely non-custodial. Only the original depositor has the ability to withdraw them. Nodes are bound by rules of the network and cannot take control of user-deposited assets.
 
