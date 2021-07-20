@@ -192,7 +192,7 @@ $$
 $$
 
 $$
-\text{coverage} = (R0 - R1) + (A0 - A1) * P1
+\text{coverage} = ((A0 * P1) + R0) - ((A1 * P1) + R1)
 $$
 
 The coverage is then adjusted for the 100 day rule, then the extra RUNE added into the member's liquidity position to issue them extra liquidity units. The member then redeems all their units, and they will realise extra RUNE and extra ASSET.   
