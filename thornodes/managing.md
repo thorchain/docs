@@ -285,6 +285,17 @@ It is up to the node operator to setup those extra backups of the core volumes t
 
 Some volumes would be more critical than others, for example Midgard deployment are also by default backed up by persistent volumes, so it can recover in case of container restarts, failures or node failures and the deployment being automatically scheduled to a different node, but if you were to delete the Midgard volume, it would reconstruct its data from your THORNode API and events from scratch. For that specific service having extra backups might not be critical, at the time of the writing of that document, Midgard implementation might change in the future.
 
+At minimum you should also securely backup your node keys: `node_key.json` and `priv_validator_key.json`. Do this as follows:
+```bash
+kubectl get pods -n thornode
+```
+Copy the thornode pod name, e.g. `thornode-abcdefg-hijkl` and replace with `{thornode pod name}` below: 
+```bash
+kubectl cp thornode/{thornode pod name}:root/.thornode/config/node_key.json node_key.json
+
+kubectl cp thornode/{thornode pod name}:root/.thornode/config/priv_validator_key.json priv_validator_key.json
+```
+
 For full disaster recovery \(complete loss of cluster\), it is possible to issue LEAVE command from the original BOND wallet and manual return of funds from your Yggdrasil. In this case you need a secure backup of `make mnemonic` \(Yggdrasil mnemonic\) and a working wallet that did the original BOND. See [Leaving](https://docs.thorchain.org/thornodes/leaving).
 
 ## Node Security
