@@ -286,10 +286,13 @@ It is up to the node operator to setup those extra backups of the core volumes t
 Some volumes would be more critical than others, for example Midgard deployment are also by default backed up by persistent volumes, so it can recover in case of container restarts, failures or node failures and the deployment being automatically scheduled to a different node, but if you were to delete the Midgard volume, it would reconstruct its data from your THORNode API and events from scratch. For that specific service having extra backups might not be critical, at the time of the writing of that document, Midgard implementation might change in the future.
 
 At minimum you should also securely backup your node keys: `node_key.json` and `priv_validator_key.json`. Do this as follows:
+
 ```bash
 kubectl get pods -n thornode
 ```
-Copy the thornode pod name, e.g. `thornode-abcdefg-hijkl` and replace with `{thornode pod name}` below: 
+
+Copy the thornode pod name, e.g. `thornode-abcdefg-hijkl` and replace with `{thornode pod name}` below:
+
 ```bash
 kubectl cp thornode/{thornode pod name}:root/.thornode/config/node_key.json node_key.json
 
@@ -438,7 +441,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 7. Make a fork of [https://replit.com/@thorchain/YggCancelETH](https://replit.com/@thorchain/YggCancelETH)
 8. Update `index.js` `lastPendingNonce` and `firstStuckNonce`. Also put in your hex encoded private key to KEY variable. Remember to add the `0x` prefix which bip39 calculator above will not have. 
 9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.thorchain.info/thorchain/inbound\_addresses](https://thornode.thorchain.info/thorchain/inbound_addresses) \(which ever is higher\).
-10. Run the script using `node index.js`. Note: you may need to install some dependecies first with `npm install ethers`. The output should look like:  
+10. Run the script using `node index.js`. Note: you may need to install some dependecies first with `npm install ethers`. The output should look like:
 
     ```bash
     0x2aefdf705d1b28dfdf6b524ec697082326b23a2e62b7f25a60c1d2a1a9108243
@@ -470,9 +473,8 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 
 #### Constantly accumulating slash points
 
-**Problem:** Sometimes bifrost fails to forward observations to thornode, due to an account number / sequence number mismatch. Here is what you need to check: 
+**Problem:** Sometimes bifrost fails to forward observations to thornode, due to an account number / sequence number mismatch. Here is what you need to check:
 
-1. run `make logs` , and choose `bifrost` 
-
+1. run `make logs` , and choose `bifrost`
 2. Search your bifrost logs for `{"level":"error","service":"bifrost","module":"observer","error":"fail to send the tx to thorchain: fail to broadcast to THORChain,code:32, log:account sequence mismatch, expected 26806, got 26807: incorrect account sequence","time":"2021-05-30T07:28:18Z","message":"fail to send to THORChain"}` 3. **Solution:** `make restart` and choose `bifrost`
 
