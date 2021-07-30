@@ -20,7 +20,7 @@ To set up a node, you have three choices:
 
 Each THORNode is comprised of 5 major components.
 
-1. **`thord`** - this is a daemon that runs the THORChain chain itself and a HTTP server, that gives a RESTful API to the chain.
+1. **`thornode`** - this is a daemon that runs the THORChain chain itself and a HTTP server, that gives a RESTful API to the chain.
 2. **`bifrost`** - this daemon creates connections to remote chains \(like Bitcoin, Ethereum, Binance, etc\) to both observe activity on those chains \(incoming/outgoing transactions\), and also sign/broadcast outgoing transactions \(moving funds on remote chains\).
 3. **`gateway`**: THORNode gateway proxy to get a single IP address for multiple deployments
 4. **`midgard`** - this daemon is a layer 2 REST API that provides front-end consumers with semi real-time rolled up data and analytics of the THORChain network. Most requests to the network will come through Midgard. This daemon is here to keep the chain itself from fielding large quantities of requests. You can think of it as a “read-only slave” to the chain. This keeps the resources of the network focused on processing transactions.
