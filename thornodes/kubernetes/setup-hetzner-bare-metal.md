@@ -4,6 +4,10 @@ description: Setting up a Kubernetes Cluster with Hetzner Dedicated Servers
 
 # Setup - Hetzner Bare Metal
 
+{% hint style="danger" %}
+This guide for Hetzner Bare Metal is WIP and not currently recommended. Proceed with caution. 
+{% endhint %}
+
 > Checkout the repository [source](https://github.com/delphidigital/bare-metal-cluster-manager) to manage a cluster of dedicated servers on Hetzner.
 
 The scripts in this repository will setup and maintain one or more [kubernetes](https://kubernetes.io) clusters consisting of dedicated [Hetzner](https://www.hetzner.com) servers. Each cluster will also be provisioned to operate as a node in the [THORCHain](https://thorchain.org) network.
