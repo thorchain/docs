@@ -57,13 +57,13 @@ They do not need to hold RUNE, or even care that RUNE was used, or even connect 
 THORChain churns vaults regularly to resist capture. Do not send transactions directly to THORChain vaults without first doing important safety checks. 
 {% endhint %}
 
-### INTERFACES - \(ASGARDEX/THORSwap/ASGARD/VANAHEIM\)
+### INTERFACES - \(ASGARDEX/THORSwap/ASGARD/SKIP\)
 
 Interfaces allow users to connect to wallets, read balances, query Midgard and broadcast transactions in both the web and desktop environment. Anyone can build their own interface, and several wallet libraries have been built to help developers with this.
 
 ### API - MIDGARD
 
-Midgard is run by every THORNode and provides a restful API & graphQL & websockets that any client can consume to display data. To connect to Midgard, the client \(eg wallet\) must first challenge a number of nodes to prevent being attacked or phished, since the security model of THORChain is strictly by-consensus. Or the interface team can run their own Midgard. 
+Midgard is run by every THORNode and provides a restful API & graphQL & websockets that any client can consume to display data. To connect to [Midgard](developers/connecting-to-thorchain.md), the client \(eg wallet\) must first challenge a number of nodes to prevent being attacked or phished, since the security model of THORChain is strictly by-consensus. Or the interface team can run their own Midgard. 
 
 ### STATE MACHINE - THORChain
 
