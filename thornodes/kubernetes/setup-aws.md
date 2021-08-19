@@ -178,3 +178,21 @@ kubectl get nodes
 
 You are now ready to deploy a THORNode. 
 
+### BACKUPS \(OPTIONAL\)
+
+Once your node is running, use the following command to automatically backup the Persistent Volumes for your Kubernetes cluster. This may help in recovering your node in the event of a disaster.
+
+Enable backups:
+
+```text
+make aws-backups
+```
+
+Disable backups:
+
+```text
+make aws-destroy-backups
+```
+
+
+
