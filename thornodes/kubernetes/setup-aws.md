@@ -133,7 +133,14 @@ During the deploy, you will be asked to enter information about your cluster:
 
 ![Note: AWS EKS is not available in some regions](../../.gitbook/assets/image%20%2825%29.png)
 
+Or manually:
 
+```text
+cd aws/
+terraform init
+terraform plan # to see the plan
+terraform apply
+```
 
 Final success message: `Apply complete! Resources: 30 added, 0 changed, 0 destroyed.`
 
@@ -147,26 +154,26 @@ If you are a **returning** node operator and you wish to use the same node name,
 Deploying a cluster takes ~10 minutes
 {% endhint %}
 
-## CONFIGURE
+## CONFIGURE kubectl
 
-Now that you've provisioned your EKS cluster, you need to configure **kubectl**. Customize the following command with your cluster name and region. 
+This is done automatically during provisioning. To configure authentication from the command line, use the following command. It will get the access credentials for your cluster and automatically configure kubectl in case you need to to manually reconfigure kubectl. 
 
 ```text
-aws eks --region <cluster_region> update-kubeconfig --name <cluster_name>
-kubectl version
+make kubeconfig-aws
 ```
 
-If successful, you will see:
+Or get your kubeconfig file manually:
 
- `Added new context ..... <details>`
+```text
+(cd aws && aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name))
+```
 
 To verify, run this, and check the status is "Ready":
 
 ```text
+kubectl version
+kubectl cluster-info
 kubectl get nodes
-
-NAME                          STATUS   ROLES    AGE     VERSION
-ip-10-0-49-192.ec2.internal   Ready    <none>   4m16s   v1.16.12-eks-904af05
 ```
 
 You are now ready to deploy a THORNode. 
