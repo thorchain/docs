@@ -154,7 +154,7 @@ Virtual Depths have been added to all Synth Swaps - using a multiplier of 2. Thi
 
 ## Calculating Pool Ownership
 
-When a liquidity provider commmit capital, the ownership % of the pool is calculated:
+When a liquidity provider commit capital, the ownership % of the pool is calculated:
 
 $$
 \text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{( r + R)*(a + A)}\mid
