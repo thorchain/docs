@@ -172,7 +172,7 @@ BCH         100.000%   682,404/682,404
 Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise chances of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them. Keep an eye on `maximumStandbyBond` and make sure you are bonding higher than that amount.
 
 ```text
-curl http://52.221.153.64:8080/v1/network | json_pp
+curl http://52.221.153.64:8080/v2/network | json_pp
 
 resp:
  "bondMetrics" : {
@@ -190,7 +190,7 @@ resp:
 ```
 
 {% hint style="info" %}
-Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes) and [https://thorchain.delphidigital.io](https://thorchain.delphidigital.io/thorchain/chaosnet/nodes). You should use your API endpoint as authorative reference.
+Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes) and [https://thorchain.delphidigital.io](https://thorchain.delphidigital.io/thorchain/chaosnet/nodes). You should use your API endpoint as an authoritative reference.
 {% endhint %}
 
 The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum.
