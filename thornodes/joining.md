@@ -190,7 +190,7 @@ resp:
 ```
 
 {% hint style="info" %}
-Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes) and [https://thorchain.delphidigital.io](https://thorchain.delphidigital.io/thorchain/chaosnet/nodes). You should use your API endpoint as an authoritative reference.
+Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes) and [https://thorchain.live](http://thorchain.live/thorchain/chaosnet). You should use your API endpoint as an authoritative reference.
 {% endhint %}
 
 The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum.
