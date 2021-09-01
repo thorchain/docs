@@ -35,7 +35,7 @@ There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fe
 
 Q1. Is it possible to update my address that is linked to my THORName? A1.
 
-Q2. Is it possible to change my name linked to my addresses? A2.
+Q2. Is it possible to change my name linked to my address? A2.
 
 Additional reading: THORChain Launches THORName Service: [https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8](https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8)
 

@@ -56,5 +56,5 @@ THORChain's reference price model differs to other decentralised exchanges. Othe
 
 These external sources are problematic because people can manipulate them. Technical and ecosystem factors can also affect them. For example, the network underlying oracles can become congested and affect their performance. Weighted averages are better than taking direct price references, but large actors can still manipulate them.‌
 
-THORChain is able to sense both the instantaneous price of an asset, as well as its purchasing power \(how much would the asset purchase of another asset if it was instantly sold\). The latter is important when it comes to collaterising debt, because the spot price is irrelevent - the purchasing power is needed. 
+THORChain is able to sense both the instantaneous price of an asset, as well as its purchasing power \(how much would the asset purchase of another asset if it was instantly sold\). The latter is important when it comes to collaterising debt, because the spot price is irrelevant - the purchasing power is needed. 
 

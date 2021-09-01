@@ -31,7 +31,6 @@
 * [Transaction Memos](developers/transaction-memos.md)
 * [Libraries](developers/asgardex-modules.md)
 * [Seed Service](developers/seed-service.md)
-* [THORChain Code Base](developers/thorchain-code-base.md)
 
 ## Chain Clients
 

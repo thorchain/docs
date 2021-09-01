@@ -78,5 +78,5 @@ In an Asset-Asset swap, the fee is applied twice since two pools are involved, h
 
 ## Network Fee
 
-The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Currently this is fixed and available on the `/constants` endpoint, but it is intended to be dynamic and set to be a fixed $ qty of assets. Additionally THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves. 
+The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Currently this is fixed and available on the `/constants` endpoint, but it is intended to be dynamic and set to be a fixed $ qty of assets. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves. 
 

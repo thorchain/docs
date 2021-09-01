@@ -24,7 +24,7 @@ The block scanner monitors the Asgard Addresses and looks for incoming UTXOs spe
 
 ### Confirmation Counting
 
-The `txValue` is the sum of all transactions received in a block to Asgard vaults. The `blockValue` is the coinbase value, which includes fees and subsidity. If a miner forgets to add a coinbase value \(it has happened\) a default of 6.25 is used. \(This should be updated every 4 years, or use logic to auto-update\). 
+The `txValue` is the sum of all transactions received in a block to Asgard vaults. The `blockValue` is the coinbase value, which includes fees and subsidy. If a miner forgets to add a coinbase value \(it has happened\) a default of 6.25 is used. \(This should be updated every 4 years, or use logic to auto-update\). 
 
 [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L929](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L929)
 

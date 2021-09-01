@@ -75,7 +75,7 @@ The following transactions are permitted:
         <p><code>ADD:ASSET</code>
         </p>
       </td>
-      <td style="text-align:left">Adds into the specified pool assymetrically.</td>
+      <td style="text-align:left">Adds into the specified pool asymmetrically.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>WITHDRAW</b>
@@ -112,7 +112,7 @@ The following transactions are permitted:
         </p>
         <p>Withdraw to the corresponding asset (RUNE or ASSET).</p>
       </td>
-      <td style="text-align:left">Withdraws assymetrically from a pool</td>
+      <td style="text-align:left">Withdraws asymmetrically from a pool</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>SWAP</b>
@@ -128,7 +128,7 @@ The following transactions are permitted:
         <p>Set trade protection. If the value isn&apos;t achieved then it is refunded.
           ie, set 100000000 to be guaranteed a minimum of 1 full asset.</p>
         <p></p>
-        <p>If <code>LIM</code> is ommitted, then there is no price protection:</p>
+        <p>If <code>LIM</code> is omitted, then there is no price protection:</p>
         <p> <code>SWAP:ASSET:DESTADDR:</code>
         </p>
       </td>
@@ -163,7 +163,7 @@ The following transactions are permitted:
       <td style="text-align:left">None</td>
       <td style="text-align:left"><code>LEAVE:thornode</code>
       </td>
-      <td style="text-align:left">Force a THORNode to be kicked out, never to return. The bond will be retuned.</td>
+      <td style="text-align:left">Force a THORNode to be kicked out, never to return. The bond will be returned.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>RESERVE</b>
@@ -195,7 +195,7 @@ The following transactions are permitted:
 
 Affiliate fees can be taken for either Swaps or Add Liquidity. If it is a swap, it is converted to RUNE and sent to the address. If it is Add Liquidity, the affiliate is added as a LP in the pool alongside their user.
 
-The fee is set in basispoints from 0 to 1000 \(10%\).   
+The fee is set in basis points from 0 to 1000 \(10%\).   
 The address for the affiliate MUST be a THORChain address.   
   
 **Adjusted Memo**  

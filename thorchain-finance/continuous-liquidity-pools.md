@@ -154,7 +154,7 @@ Virtual Depths have been added to all Synth Swaps - using a multiplier of 2. Thi
 
 ## Calculating Pool Ownership
 
-When a liquidity provider commmit capital, the ownership % of the pool is calculated:
+When a liquidity provider commits capital, the ownership % of the pool is calculated:
 
 $$
 \text{slipAdjustment} = 1 -  \mid\frac {R a - r A}{( r + R)*(a + A)}\mid
@@ -199,6 +199,6 @@ The coverage is then adjusted for the 100 day rule, then the extra RUNE added in
 
 
 {% hint style="info" %}
-Since the protection amount is added assymetrically, the protection will experience a small slip. This helps to prevent attack vectors.
+Since the protection amount is added asymetrically, the protection will experience a small slip. This helps to prevent attack vectors.
 {% endhint %}
 
