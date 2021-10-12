@@ -30,7 +30,7 @@ Clone the `node-launcher` repo. All commands in this section are to be run insid
 ```text
 git clone https://gitlab.com/thorchain/devops/node-launcher
 cd node-launcher
-git checkout multichain
+git checkout master
 ```
 
 ### Install Helm 3
