@@ -79,13 +79,13 @@ Without a native settlement currency, each asset would need to be pooled with ev
 
 **Sybil-resistance**
 
-Sybil-resistance refers to the ability to prevent someone masquarading as many identies in order to overcome a network. Bitcoin uses Proof-of-Work \(one-cpu-one-vote\) to prevent a network take-over. Ethereum 2.0 will use Proof-of-Stake \(32-eth-one-vote\) to prevent a network take-over.
+Sybil-resistance refers to the ability to prevent someone masquerading as many identities in order to overcome a network. Bitcoin uses Proof-of-Work \(one-cpu-one-vote\) to prevent a network take-over. Ethereum 2.0 will use Proof-of-Stake \(32-eth-one-vote\) to prevent a network take-over.
 
 THORChain could be called Proof of Stake \(PoS\) network, but there are some differences to warrant it being called a **Proof of Bond** network instead. In THORChain the nodes commit a bond \(likely around 1,000,000 RUNE\) in order to be churned in. However, this bond isn't just used to identify a node \(give them a voting slot\), it is used to underwrite the assets in the pools. If the node attempts to steal assets, then their bond is deducted to the amount of the assets they stole \(1.5x\), and the pools are made whole. Additionally, if nodes misbehave their bond is slashed, ensuring reliable service. 
 
 **Underwriting Assets**
 
-The Incentive Pendulum ensures that Nodes are incentivised to continually buy and bond enough Rune each time to maximise their gains - which is a maximum when there is 67% of RUNE bonded and 33% pooled in pools. If the pools are holding $100m in capital, then the value of RUNE in the aggregrate bond is $200m. Thus all assets can be underwritten.
+The Incentive Pendulum ensures that Nodes are incentivised to continually buy and bond enough Rune each time to maximise their gains - which is a maximum when there is 67% of RUNE bonded and 33% pooled in pools. If the pools are holding $100m in capital, then the value of RUNE in the aggregate bond is $200m. Thus all assets can be underwritten.
 
 The bond is extremely liquid - any RUNE holder can immediately enter or exit their position since RUNE is the settlement asset in all pools. Thus, when a node churns in, the cost basis of their bond is known to them and not an arbitrary figure. This means a node bonding $1m in RUNE will never contemplate making a decision to steal &lt;$1m in capital from the network, else they will lose overall.
 

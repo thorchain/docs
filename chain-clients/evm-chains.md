@@ -18,7 +18,7 @@ The EVM Bifrost is different to others in that it uses a `router` to handle depo
 
 The Router holds all ERC20s, but forwards ETH to the TSS vault. This allows the TSS Vault to call into the Router and pay gas to move token allowances to vaults. 
 
-Instead paying ERC20s to vault addresses, instead an `allowance` to spend is given on the Router. The depositing user gives this allowance to the Asgard vault, which itself moves the allowance to each Ygg vault. Thus each Ygg vault can call into the Router to transfer out inside their allowances. This is a very gas-efficient way of achieving vault funding. 
+Instead of paying ERC20s to vault addresses, an `allowance` to spend is given on the Router. The depositing user gives this allowance to the Asgard vault, which itself moves the allowance to each Ygg vault. Thus each Ygg vault can call into the Router to transfer out inside their allowances. This is a very gas-efficient way of achieving vault funding. 
 
 Additionally because of this, the Router is a permissionless contract with no special privileges \(there is no `owner`\). 
 
