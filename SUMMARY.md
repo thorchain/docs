@@ -15,6 +15,7 @@
   * [Prices](how-it-works/prices.md)
   * [Governance](how-it-works/governance.md)
   * [THORChain Name Service](how-it-works/thorchain-name-service.md)
+* [Ecosystem](ecosystem.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
 
 ## THORChain Finance
@@ -57,4 +58,3 @@
 * [Leaving](thornodes/leaving.md)
 * [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [✔️ CHECKLIST](thornodes/checklist.md)
-

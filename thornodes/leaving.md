@@ -6,18 +6,18 @@ description: How to leave THORChain
 
 ## Overview
 
-Every 42,400 BLOCKS \(3 days\) the system will churn its nodes. 
+Every 42,400 BLOCKS (3 days) the system will churn its nodes.
 
 Outgoing:
 
 1. Nodes wishing to leave, and/or
-2. The most unreliable node\(s\), and/or
+2. The most unreliable node(s), and/or
 3. The oldest node
 4. But a maximum of 1/3rd the network
 
 Incoming:
 
-1. The node\(s\) with the highest bond \(typically 4\). 
+1. The node(s) with the highest bond (typically 4).
 
 Churned out nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing but keep their cluster online, they will be eventually churned back in.
 
@@ -30,20 +30,20 @@ It is assumed nodes that wish to **LEAVE** will be away for a significant period
 ## Unbonding
 
 {% hint style="info" %}
-You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out.   
+You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out.\
 You cannot unbond if you are "ready" or "active" or have any amount of funds on your Yggdrasil address
 {% endhint %}
 
-If a Node Operator wants to retrieve part of their bond & rewards \(such as deciding to take profits\), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
+If a Node Operator wants to retrieve part of their bond & rewards (such as deciding to take profits), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
 
-To unbond from the system, simply send an **UNBOND** transaction. 
+To unbond from the system, simply send an **UNBOND** transaction.
 
 Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond.
 
 `UNBOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz:1000000000000`
 
 {% hint style="info" %}
-THORChain always treats assets in 1e8 "base format" ie, 1.0 RUNE = 100,000,000 units \(tor\). To get from one to the other, simply multiply by 100m.
+THORChain always treats assets in 1e8 "base format" ie, 1.0 RUNE = 100,000,000 units (tor). To get from one to the other, simply multiply by 100m.
 {% endhint %}
 
 {% hint style="info" %}
@@ -55,20 +55,20 @@ You can get your node address by running `make status`
 {% endhint %}
 
 {% hint style="warning" %}
-Only the address that originally bonded the funds can **UNBOND** or **LEAVE**.  
-This ensures you can safely leave this system if you no longer have access to your node \(but it is still running\).
+Only the address that originally bonded the funds can **UNBOND** or **LEAVE**.\
+This ensures you can safely leave this system if you no longer have access to your node (but it is still running).
 {% endhint %}
 
 ## Issues with Unbonding/Leaving
 
-If you can't UNBOND, it means your ygg-vault still has funds on it. This means your node spent more gas than it was supposed to during the cycle \(various reasons\) and is partially insolvent. To fix this you need to rectify your node's insolvency first \(send it the missing funds direclty\) before doing anything. 
+If you can't UNBOND, it means your ygg-vault still has funds on it. This means your node spent more gas than it was supposed to during the cycle (various reasons) and is partially insolvent. To fix this you need to rectify your node's insolvency first (send it the missing funds direclty) before doing anything.
 
 ## Leaving
 
 Leaving is considered permanent. There are two steps.
 
-1. If you are **Active**, send a LEAVE transaction to be ear-marked to churn out. This will take several hours even after changing your status to 'Standby'. 
-2. If you are **Standby,** send a LEAVE transaction to get your bond back and be permanently jailed. 
+1. If you are **Active**, send a LEAVE transaction to be ear-marked to churn out. This will take several hours even after changing your status to 'Standby'.
+2. If you are **Standby,** send a LEAVE transaction to get your bond back and be permanently jailed.
 
 {% hint style="info" %}
 Prior to running a mainnet validator, you should practice a full sequence of deploy, BOND in and LEAVE on a testnet cluster to ensure you know what you are doing and what to expect.
@@ -80,18 +80,18 @@ To leave the system, send the following transaction from your original bond addr
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
-⏱_Wait a few hours, verify on the /nodeaccount endpoint that you are now **`disabled`**👀_ Then send another LEAVE:
+⏱\_Wait a few hours, verify on the /nodeaccount endpoint that you are now \*\*`disabled`\*\*👀\_ Then send another LEAVE:
 
 `LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
 
-⏱_Wait a few minutes, verify you have received your bond back 👀_ - `make status` should show `BOND 0.00` and your wallet should get the full Bond back.
+⏱\_Wait a few minutes, verify you have received your bond back 👀\_ - `make status` should show `BOND 0.00` and your wallet should get the full Bond back.
 
 {% hint style="info" %}
-Sometimes your Yggdrasil ETH vault may be slightly insolvent due to out-of-gas transactions consuming gas whilst Active. If the network will not let you LEAVE, you may need to manually send your Yggdrasil ETH vault 0.01 - 0.05 ETH from your own personal funds as a top-up, then try LEAVE again. Note: any funds you send to top-up ETH vault you cannot send back to yourself until _AFTER_ your node has left and you have received your bond back, otherwise it will be fined 1.5x what you transfer out.   
-  
-View your node's vault to find insolvencies:   
-https://viewblock.io/thorchain/address/&lt;nodeAddress&gt;  
-https://thornode.thorchain.info/thorchain/vault/&lt;vaultPubKey&gt;
+Sometimes your Yggdrasil ETH vault may be slightly insolvent due to out-of-gas transactions consuming gas whilst Active. If the network will not let you LEAVE, you may need to manually send your Yggdrasil ETH vault 0.01 - 0.05 ETH from your own personal funds as a top-up, then try LEAVE again. Note: any funds you send to top-up ETH vault you cannot send back to yourself until _AFTER_ your node has left and you have received your bond back, otherwise it will be fined 1.5x what you transfer out.
+
+View your node's vault to find insolvencies:\
+https://viewblock.io/thorchain/address/\<nodeAddress>\
+https://thornode.thorchain.info/thorchain/vault/\<vaultPubKey>
 {% endhint %}
 
 _🔥 Commence destroying your node 🔥_
@@ -99,7 +99,7 @@ _🔥 Commence destroying your node 🔥_
 {% hint style="danger" %}
 If your node is both offline and inaccessible, then it will be unable to automatically return any assets in its yggdrasil vaults and it will be slashed 1.5x the value of those assets.
 
-Example: If your node has a $5m bond \(in RUNE\), but has $1m in assets in its vaults it can't return, it will lose $1.5m in RUNE from its bond. The Node will only get back $3.5m of its bond.
+Example: If your node has a $5m bond (in RUNE), but has $1m in assets in its vaults it can't return, it will lose $1.5m in RUNE from its bond. The Node will only get back $3.5m of its bond.
 {% endhint %}
 
 ## Contingency: Manual Leave Procedure
@@ -112,13 +112,13 @@ If you do not perform all of these steps in time, your bond will be fined 1.5x s
 
 **Requirement**: You have your `make mnemonic` Yggdrasil mnemonic available. If you do not have this, you cannot manually return funds.
 
-Options: 1. _Coming Soon_: Use ASGARDEX for Manual Return.  
-2. _Coming Soon_: Check Discord Dev channels for manual return cli tool.  
-3. Extract Private Key + Manual return each asset using wallets:
+Options: 1. _Coming Soon_: Use ASGARDEX for Manual Return.\
+2\. _Coming Soon_: Check Discord Dev channels for manual return cli tool.\
+3\. Extract Private Key + Manual return each asset using wallets:
 
 Your Yggdrasil `make mnemonic` phrase is used to generate the `m/44'/931'/0'/0/0` private key which is used for _all_ chains. Pasting the mnemonic into common wallets will not work as they will be looking under a different "standard" HD Path. Instead, go to [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/) and paste in your mnemonic, select _RUNE_ from the Dropdown list and in the bottom table, copy the `m/44'/931'/0'/0/0` private key string. Use this to import into wallets.
 
-The next step is to find the latest inbound addresses. Use [https://thornode.thorchain.info/thorchain/inbound\_addresses](https://thornode.thorchain.info/thorchain/inbound_addresses)
+The next step is to find the latest inbound addresses. Use [https://thornode.thorchain.info/thorchain/inbound\_addresses](https://thornode.thorchain.info/thorchain/inbound\_addresses)
 
 {% hint style="warning" %}
 **Do not cache** inbound\_addresses. These are only valid for a short period of time. Always refresh to get the latest before sending funds.
@@ -130,7 +130,7 @@ Use the **address** field. Chains with a **router** present such as ETH need to 
 
 The **memo** required is `YGGDRASIL-:<BlockHeight>`. For example `YGGDRASIL-:782412`. The block height can be found from the `status_since` field here:
 
-```text
+```
 https://thornode.thorchain.info/thorchain/node/<your node address>
 ```
 
@@ -139,7 +139,7 @@ If your node is `standby` or `disabled` status, any integer block height will wo
 {% endhint %}
 
 {% hint style="info" %}
-For BTC wallets \(BTC, Litecoin\) use `importprivkey` in cli.
+For BTC wallets (BTC, Litecoin) use `importprivkey` in cli.
 {% endhint %}
 
 {% hint style="info" %}
@@ -168,33 +168,33 @@ Destroying your cluster will completely destroy your node, including purging all
 IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
 {% endhint %}
 
-### 1\) Destroying the Node and Tools
+### 1) Destroying the Node and Tools
 
 First, destroy the node and tools, this will delete your node then your tooling 1-by-1. Do this from the `node-launcher` repo:
 
-```text
+```
 make destroy destroy-tools
 ```
 
-![Destroying the Tooling](../.gitbook/assets/image%20%2828%29.png)
+![Destroying the Tooling](<../.gitbook/assets/image (28) (1).png>)
 
-### 2\) Destroy the cluster
+### 2) Destroy the cluster
 
 Then destroy the cluster from the `cluster-launcher` repo:
 
 {% tabs %}
 {% tab title="AWS" %}
-You will be asked to enter your cluster name and region \(the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)\).
+You will be asked to enter your cluster name and region (the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)).
 
-```text
+```
 make destroy-aws
 ```
 {% endtab %}
 
 {% tab title="DO" %}
-You will be asked to enter your cluster name and region, as well as your Personal Token \(the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)\).
+You will be asked to enter your cluster name and region, as well as your Personal Token (the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)).
 
-```text
+```
 make destroy-do
 ```
 {% endtab %}
@@ -202,7 +202,7 @@ make destroy-do
 
 You will be asked to confirm:
 
-![](../.gitbook/assets/image%20%2826%29.png)
+![](<../.gitbook/assets/image (26) (1).png>)
 
 {% hint style="danger" %}
 **DO NOT DESTROY YOUR NODE UNTIL YOU HAVE CHURNED OUT AND HAVE RECEIVED YOUR FULL BOND BACK IN YOUR CUSTODY**
@@ -210,5 +210,4 @@ You will be asked to confirm:
 **IF YOU DESTROY YOUR NODE WITH FUNDS LOCKED UP - YOU WILL LOSE A SIGNIFICANT QUANTITY OF FUNDS**
 {% endhint %}
 
-![Final destroy complete](../.gitbook/assets/image%20%2827%29.png)
-
+![Final destroy complete](<../.gitbook/assets/image (27) (1).png>)

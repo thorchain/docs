@@ -27,7 +27,7 @@ If you came here from the Setup page, you are already good to go.
 
 Clone the `node-launcher` repo. All commands in this section are to be run inside of this repo.
 
-```text
+```
 git clone https://gitlab.com/thorchain/devops/node-launcher
 cd node-launcher
 git checkout master
@@ -37,7 +37,7 @@ git checkout master
 
 Install Helm 3 if not already available on your current machine:
 
-```text
+```
 make helm
 ```
 
@@ -47,7 +47,7 @@ make helm
 {% tab title="Deploy" %}
 To deploy all tools, metrics, logs management, Kubernetes Dashboard, run the command below.
 
-```text
+```
 make tools
 ```
 {% endtab %}
@@ -55,7 +55,7 @@ make tools
 {% tab title="Destroy" %}
 To destroy all those resources run the command below.
 
-```text
+```
 make destroy-tools
 ```
 {% endtab %}
@@ -63,7 +63,7 @@ make destroy-tools
 
 If you are successful, you will see the following message:
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](<../.gitbook/assets/image (23) (1).png>)
 
 If there are any errors, they are typically fixed by running the command again.
 
@@ -71,9 +71,9 @@ If there are any errors, they are typically fixed by running the command again.
 
 It is important to deploy the tools first before deploying the THORNode services as some services will have metrics configuration that would fail and stop the THORNode deployment.
 
-You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet or chaosnet/mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` \(or `thornode-testnet` for testnet\) by default.
+You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet or chaosnet/mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` (or `thornode-testnet` for testnet) by default.
 
-```text
+```
 make install
 ```
 
@@ -87,11 +87,13 @@ Deploying a THORNode will take 1 day for every 3 months of ledger history, since
 
 If successful, you will see the following:
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](<../.gitbook/assets/image (19) (1).png>)
 
 You are now ready to join the network:
 
-{% page-ref page="joining.md" %}
+{% content-ref url="joining.md" %}
+[joining.md](joining.md)
+{% endcontent-ref %}
 
 ### Debugging
 
@@ -103,7 +105,7 @@ Set `thornode` to be your default namespace so you don't need to type `-n thorno
 
 Use the following useful commands to view and debug accordingly. You should see everything running and active. Logs can be retrieved to find errors:
 
-```text
+```
 kubectl get pods -n thornode
 kubectl get pods --all-namespaces
 kubectl logs -f <pod> -n thornode
@@ -111,25 +113,25 @@ kubectl logs -f <pod> -n thornode
 
 Kubernetes should automatically restart any service, but you can force a restart by running:
 
-```text
+```
 kubectl delete pod <pod> -n thornode
 ```
 
 {% hint style="warning" %}
-Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon \(eg, binance-daemon-xxx\).
+Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon (eg, binance-daemon-xxx).
 
-Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight, \("xxx" is your unique ID\):
+Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight, ("xxx" is your unique ID):
 
-```text
+```
 kubectl logs -f binance-daemon-xxx -n thornode
 ```
 {% endhint %}
 
 {% hint style="info" %}
-Get real-world blockheights on the external blockchain explorers, eg:  
-[https://testnet-explorer.binance.org/](https://testnet-explorer.binance.org/)
+Get real-world blockheights on the external blockchain explorers, eg:\
+[https://testnet-explorer.binance.org/](https://testnet-explorer.binance.org)
 
-[https://explorer.binance.org/](https://explorer.binance.org/)
+[https://explorer.binance.org/](https://explorer.binance.org)
 {% endhint %}
 
 ## CHART SUMMARY
@@ -138,7 +140,7 @@ Get real-world blockheights on the external blockchain explorers, eg:
 
 * **thornode**: Umbrella chart packaging all services needed to run a fullnode or validator THORNode.
 
-This should be the only chart used to run THORNode stack unless you know what you are doing and want to run each chart separately \(not recommended\).
+This should be the only chart used to run THORNode stack unless you know what you are doing and want to run each chart separately (not recommended).
 
 #### THORNode services:
 
@@ -162,4 +164,3 @@ This should be the only chart used to run THORNode stack unless you know what yo
 * **prometheus**: Prometheus stack for metrics
 * **loki**: Loki stack for logs
 * **kubernetes-dashboard**: Kubernetes dashboard
-

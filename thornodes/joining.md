@@ -14,13 +14,13 @@ There are a couple of steps to follow to do so.
 
 The first step would be to make sure your deployment was successful and your node is running correctly. \_\*\*\_To check the current status of your node, you can run the command status from the `node-launcher`repository on your terminal:
 
-```text
+```
 make status
 ```
 
 You will get an output along those lines, the example below is for a testnet node:
 
-```text
+```
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
@@ -53,27 +53,27 @@ But to be able to set up the node IP address, you first need to get it registere
 Before sending the BOND, verify that your THORNode is **fully synced** with connected chains. Connected chains such as Ethereum & Bitcoin may take a day to sync. If your node is fully bonded and is selected to churn in to THORChain as ACTIVE without fully syncing all connected chains, you will immediately get slashed for missing observations, and lose money. It is normal to see Ethereum sit on 99.999% for many hours - be patient.
 {% endhint %}
 
-### 2 - Send a small BOND \(recommend 100-1000\)
+### 2 - Send a small BOND (recommend 100-1000)
 
-1\) You will do a "Deposit" transaction using native THORChain RUNE \(_not_ ERC20 or BEP2 RUNE\). This is an internal MsgDeposit transaction \(different from a MsgSend to another wallet\). There is no destination address -- use an appropriate wallet such as [ASGARDEX Electron](https://github.com/thorchain/asgardex-electron/releases). The Bond is locked in a module controlled by the state machine.
+1\) You will do a "Deposit" transaction using native THORChain RUNE (_not_ ERC20 or BEP2 RUNE). This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX Electron](https://github.com/thorchain/asgardex-electron/releases). The Bond is locked in a module controlled by the state machine.
 
-2\) Deposit your BOND using the memo `BOND:<thornode-address>` \(or use an appropriate GUI that does this memo for you\). Start small, the bond will be picked up.
+2\) Deposit your BOND using the memo `BOND:<thornode-address>` (or use an appropriate GUI that does this memo for you). Start small, the bond will be picked up.
 
 {% hint style="info" %}
-Some `make` commands during setup require RUNE \(0.02 to 1.0\) to execute into the state machine to prevent DDoS. If your bond is too small \(e.g. 1 RUNE\) you may run out and not be able to complete the setup until adding more.
+Some `make` commands during setup require RUNE (0.02 to 1.0) to execute into the state machine to prevent DDoS. If your bond is too small (e.g. 1 RUNE) you may run out and not be able to complete the setup until adding more.
 {% endhint %}
 
-![Bonding using BOND option in ASGARDEX](../.gitbook/assets/image%20%288%29%20%281%29%20%281%29.png)
+![Bonding using BOND option in ASGARDEX](<../.gitbook/assets/image (8) (1) (1) (1).png>)
 
 Give the network 3-5 seconds to pick up your bond. To verify it has received your bond, run the following:
 
-```text
+```
 curl https://thornode.thorchain.info/thorchain/node/<node-address>
 ```
 
 If you run `make status` again, you should see this:
 
-```text
+```
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
@@ -104,7 +104,7 @@ As you can see, it is in standby but does not have an IP registered yet. This is
 
 You must tell THORChain your IP-Address for its address book and seed-service to run properly:
 
-```text
+```
 make set-ip-address
 ```
 
@@ -118,7 +118,7 @@ Once your IP address has been registered for discovery, you can use your own hos
 
 Tell THORChain about your public keys for signing sessions:
 
-```text
+```
 make set-node-keys
 ```
 
@@ -128,7 +128,7 @@ If you run the `make status` command again, you should now see that your node is
 
 Make sure your node broadcasts its latest version, else you won't churn in since THORChain enforces a version requirement. This version will appear in your `make status`. If you are on `0.0.0` then you haven't set your version:
 
-```text
+```
 make set-version
 ```
 
@@ -136,13 +136,13 @@ make set-version
 
 If you followed steps 1-5 above, your preflight will be saying:
 
-```text
+```
 PREFLIGHT   { "status": "Standby", "reason": "node account does not have minimum bond requirement: 100000000000/30000000000000, "code": 1 }
 ```
 
 To address this, send the remaining bond, that is higher than the minimum bond. You can find that quantity on [https://thornode.thorchain.info/thorchain/constants](https://thornode.thorchain.info/thorchain/constants) and look for `MinimumBondInRune`. During Chaosnet some values may be override with [MIMIR](https://thornode.thorchain.info/thorchain/mimir). If you finally run `make status` you should see this, with keyword **"Ready":**
 
-```text
+```
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
@@ -171,7 +171,7 @@ BCH         100.000%   682,404/682,404
 
 Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise chances of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them. Keep an eye on `maximumStandbyBond` and make sure you are bonding higher than that amount.
 
-```text
+```
 curl http://52.221.153.64:8080/v2/network | json_pp
 
 resp:
@@ -210,4 +210,3 @@ Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. Y
 {% endhint %}
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.
-

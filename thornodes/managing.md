@@ -1,5 +1,5 @@
 ---
-description: 'Accessing Logs, Metrics and more'
+description: Accessing Logs, Metrics and more
 ---
 
 # Managing
@@ -22,7 +22,7 @@ Read commands simply read your node state and doesn't commit any transactions.
 {% tab title="STATUS" %}
 To get information about your node on how to connect to services or its IP, run the command below. You will also get your node address and the vault address where you will need to send your bond.
 
-```text
+```
 make status
 ```
 {% endtab %}
@@ -30,7 +30,7 @@ make status
 {% tab title="SHELL" %}
 Opens a shell into your `thor-daemon` deployment: From within that shell you have access to the `thorcli` command.
 
-```text
+```
 make shell
 ```
 {% endtab %}
@@ -38,17 +38,17 @@ make shell
 {% tab title="LOGS" %}
 Display stream of logs of THORNode deployment:
 
-```text
+```
 make logs
 ```
 {% endtab %}
 
 {% tab title="MNEMONIC" %}
-This will print your node mnemonic \(phrase\). Use this to ever rescue your node funds if something goes wrong.
+This will print your node mnemonic (phrase). Use this to ever rescue your node funds if something goes wrong.
 
 _Note: This phrase should only be used "in anger". This is your node "hot vault", also referred to as its yggdrasil vault, which allows the network to delegate swaps for faster execution. You will be slashed significantly if any funds are moved from this vault, since it is monitored by the THORChain network. Your bond is held at ransom in order to prevent you from stealing funds from this vault. Your bond will always be more valuable than funds on this vault, so you have no economic reason to touch these funds._
 
-```text
+```
 make mnemonic
 ```
 {% endtab %}
@@ -56,7 +56,7 @@ make mnemonic
 {% tab title="PASSWORD" %}
 A keystore file that secures your private keys is also stored on the THORNode. The password that is used to decrypt it can be printed by the following command
 
-```text
+```
 make password
 ```
 {% endtab %}
@@ -64,7 +64,7 @@ make password
 {% tab title="RESTART" %}
 Restart a THORNode deployment service selected:
 
-```text
+```
 make restart
 ```
 {% endtab %}
@@ -72,7 +72,7 @@ make restart
 {% tab title="RESET" %}
 Reset a THORNode deployment service selected, including deleting the persistent volume. This command is **destructive** and will reset the chain back to 0%. You would use this for unrecoverable issues that `make restart` did not solve.
 
-```text
+```
 make reset
 ```
 {% endtab %}
@@ -86,7 +86,7 @@ Write commands actually build and write transactions into the underlying statech
 {% tab title="NODE-KEYS" %}
 Send a `set-node-keys` to your node, which will set your node keys automatically for you by retrieving them directly from the `thor-daemon` deployment.
 
-```text
+```
 make set-node-keys
 ```
 {% endtab %}
@@ -94,7 +94,7 @@ make set-node-keys
 {% tab title="IP ADDDRESS" %}
 Send a `set-ip-address` to your node, which will set your node ip address automatically for you by retrieving the load balancer deployed directly.
 
-```text
+```
 make set-ip-address
 ```
 {% endtab %}
@@ -106,7 +106,7 @@ For Kubernetes deployments, you can edit the deployments of the different servic
 
 To update your `thor-daemon`, `thor-api` and `bifrost` deployment images to version 0.2.0:
 
-```text
+```
 kubectl set image deployment/thor-daemon thor-daemon=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
 kubectl set image deployment/thor-api thor-api=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
 kubectl set image deployment/bifrost bifrost=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
@@ -114,19 +114,19 @@ kubectl set image deployment/bifrost bifrost=registry.gitlab.com/thorchain/thorn
 
 To update your \`midgard\` deployment image to version 0.2.0
 
-```text
+```
 kubectl set image deployment/midgard midgard=registry.gitlab.com/thorchain/midgard:mainnet-0.2.0
 ```
 
 You can then follow the deployments restarting status either by checking your Kubernetes dashboard or using the CLI command below:
 
-```text
+```
 kubectl get deployment/thor-daemon
 ```
 
 Once the deployments are all in the ready state again, you need to broadcast to the network that you are running a new version using the command below:
 
-```text
+```
 make set-version
 ```
 {% endtab %}
@@ -140,7 +140,7 @@ To access the tools, navigate to the ACCESS tabs below.
 
 All of these commands are to be run from `node-launcher`
 
-### LOGS MANAGEMENT \(LOKI\)
+### LOGS MANAGEMENT (LOKI)
 
 It is recommended to deploy a logs management ingestor stack within Kubernetes to redirect all logs within a database to keep history over time as Kubernetes automatically rotates logs after a while to avoid filling the disks. The default stack used within this repository is Loki, created by Grafana and open source. To access the logs you can then use the Grafana admin interface that was deployed through the Prometheus command.
 
@@ -148,7 +148,7 @@ It is recommended to deploy a logs management ingestor stack within Kubernetes t
 {% tab title="DEPLOY" %}
 You can deploy the log management automatically using the command below:
 
-```text
+```
 make install-loki
 ```
 
@@ -158,33 +158,33 @@ You can check the services being deployed in your kubernetes namespace `loki-sys
 {% endtab %}
 
 {% tab title="ACCESS" %}
-#### Access Grafana
+**Access Grafana**
 
 See previous section to access the Grafana admin interface through the command `make grafana`.
 
-#### Browse Logs
+**Browse Logs**
 
 Within the Grafana admin interface, to access the logs, find the `Explore` view from the left menu sidebar. Once in the `Explore` view, select Loki as the source, then select the service you want to show the logs by creating a query. The easiest way is to open the "Log browser" menu, then select the "job" label and then as value, select the service you want. For example you can select `thornode/bifrost` to show the logs of the Bifrost service within the default `thornode` namespace when deploying a mainnet validator THORNode.
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](<../.gitbook/assets/image (11) (1).png>)
 
-![](../.gitbook/assets/image%20%2837%29.png)
+![](<../.gitbook/assets/image (37) (1).png>)
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](<../.gitbook/assets/image (36) (1).png>)
 
-![](../.gitbook/assets/image%20%2833%29.png)
+![](<../.gitbook/assets/image (33) (1).png>)
 {% endtab %}
 
 {% tab title="DESTROY" %}
 Destroy Loki logs management stack
 
-```text
+```
 make destroy-loki
 ```
 {% endtab %}
 {% endtabs %}
 
-### METRICS MANAGEMENT \(Prometheus\)
+### METRICS MANAGEMENT (Prometheus)
 
 It is also recommended to deploy a Prometheus stack to monitor your cluster and your running services.
 
@@ -192,7 +192,7 @@ It is also recommended to deploy a Prometheus stack to monitor your cluster and 
 {% tab title="DEPLOY" %}
 You can deploy the metrics management automatically using the command below:
 
-```text
+```
 make install-metrics
 ```
 
@@ -204,25 +204,25 @@ You can check the services being deployed in your kubernetes namespace `promethe
 {% tab title="ACCESS" %}
 We have created a make command to automate this task to access Grafana from your local workstation:
 
-```text
+```
 make grafana
 ```
 
-Open [http://localhost:3000](http://localhost:3000/) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Login as the `admin` user. The default password should have been displayed in the previous command \(`make grafana`\).
+Login as the `admin` user. The default password should have been displayed in the previous command (`make grafana`).
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](<../.gitbook/assets/image (22) (1).png>)
 
-#### Access Prometheus admin UI
+**Access Prometheus admin UI**
 
 We have created a make command to automate this task to access Prometheus from your local workstation:
 
-```text
+```
 make prometheus
 ```
 
-Open [http://localhost:9090](http://localhost:9090/) in your browser.
+Open [http://localhost:9090](http://localhost:9090) in your browser.
 {% endtab %}
 {% endtabs %}
 
@@ -234,7 +234,7 @@ You should have available different dashboards to see the metrics across your cl
 Click the 🔍 SEARCH ICON to find the list of dashboards
 {% endhint %}
 
-![Example of Grafana Dashboard](../.gitbook/assets/image%20%289%29.png)
+![Example of Grafana Dashboard](<../.gitbook/assets/image (9) (3).png>)
 
 For a more in-depth introduction of Grafana, please[ follow the documentation here](https://grafana.com/docs/grafana/latest/getting-started/what-is-grafana/)**.**
 
@@ -244,7 +244,7 @@ You can also deploy the Kubernetes dashboard to monitor your cluster resources.
 
 {% tabs %}
 {% tab title="DEPLOY" %}
-```text
+```
 make install-dashboard
 ```
 
@@ -254,25 +254,25 @@ This command will deploy the Kubernetes dashboard chart. It can take a while to 
 {% tab title="ACCESS" %}
 We have created a make command to automate this task to access the Dashboard from your local workstation:
 
-```text
+```
 make dashboard
 ```
 
-Open [http://localhost:8000](http://localhost:8000/) in your browser.
+Open [http://localhost:8000](http://localhost:8000) in your browser.
 {% endtab %}
 {% endtabs %}
 
 View your kubernetes dashboard by running the following:
 
-```text
+```
 make dashboard
 ```
 
-![Kubernetes Dashboard](../.gitbook/assets/image%20%2814%29.png)
+![Kubernetes Dashboard](<../.gitbook/assets/image (14) (1).png>)
 
 ## Backing up a THORNode
 
-You should backup your THORNode in case of failures. By default, if you are using the Kubernetes deployments solution, all the the deployments are automatically backed up by persistent volume disks.  
+You should backup your THORNode in case of failures. By default, if you are using the Kubernetes deployments solution, all the the deployments are automatically backed up by persistent volume disks.\
 Depending on your provider, the volumes are usually available in the provider administration UI, for example in AWS, you can find those volumes in your regular console, in the region you chose to deploy your Kubernetes cluster.
 
 Again by default, with Kubernetes, by using persistent volumes used in the default configuration, you are already protected again restart failures at container level, or node failures. As long as you don’t specifically use the destroy commands from the Makefile or manually delete your Kubernetes deployments, your volumes will NOT be deleted at any time.
@@ -299,7 +299,7 @@ kubectl cp thornode/{thornode pod name}:root/.thornode/config/node_key.json node
 kubectl cp thornode/{thornode pod name}:root/.thornode/config/priv_validator_key.json priv_validator_key.json
 ```
 
-For full disaster recovery \(complete loss of cluster\), it is possible to issue LEAVE command from the original BOND wallet and manual return of funds from your Yggdrasil. In this case you need a secure backup of `make mnemonic` \(Yggdrasil mnemonic\) and a working wallet that did the original BOND. See [Leaving](https://docs.thorchain.org/thornodes/leaving).
+For full disaster recovery (complete loss of cluster), it is possible to issue LEAVE command from the original BOND wallet and manual return of funds from your Yggdrasil. In this case you need a secure backup of `make mnemonic` (Yggdrasil mnemonic) and a working wallet that did the original BOND. See [Leaving](https://docs.thorchain.org/thornodes/leaving).
 
 ## Node Security
 
@@ -309,20 +309,20 @@ The following are attack vectors:
 2. If anyone accesses the device you used to log into kubernetes, they can log in and steal your funds
 3. If anyone accesses your hardware device used to bond, they can sign a LEAVE transaction and steal your bond once it is returned
 4. If anyone has your Yggdrasil `make mnemonic` phrase, including in logs, they can steal your funds
-5. If any GitLab repo is compromised and you `git pull` any nefarius code into your node and run `make <any command>`, you can lose all your funds. 
+5. If any GitLab repo is compromised and you `git pull` any nefarius code into your node and run `make <any command>`, you can lose all your funds.
 
 #### Checking diffs
 
 Prior to `git pull` or `make pull` updates, review node-launcher repo diffs:
 
-```text
+```
 git fetch
 git diff multichain..origin/multichain
 ```
 
 Regularly review patches in GitLab: [https://gitlab.com/thorchain/devops/node-launcher/-/commits/multichain](https://gitlab.com/thorchain/devops/node-launcher/-/commits/multichain)
 
-When chain clients have updated tags \(version number or sha256\), inspect the GitLab diffs for the relevant image in [https://gitlab.com/thorchain/devops](https://gitlab.com/thorchain/devops) and ensure the CI build checksum matches the expected. This ensures you are executing code on your node that you are satisfied is free from exploits. Some images such as Ethereum use the 'official' docker image, e.g. [https://hub.docker.com/r/ethereum/client-go/tags](https://hub.docker.com/r/ethereum/client-go/tags).
+When chain clients have updated tags (version number or sha256), inspect the GitLab diffs for the relevant image in [https://gitlab.com/thorchain/devops](https://gitlab.com/thorchain/devops) and ensure the CI build checksum matches the expected. This ensures you are executing code on your node that you are satisfied is free from exploits. Some images such as Ethereum use the 'official' docker image, e.g. [https://hub.docker.com/r/ethereum/client-go/tags](https://hub.docker.com/r/ethereum/client-go/tags).
 
 {% hint style="danger" %}
 **RUNNING A NODE IS SERIOUS BUSINESS**
@@ -350,21 +350,21 @@ Each node has a unique address on each supported chain. This is their Yggdrasil 
 
 To find your Yggdrasil addresses, firstly navigate to [https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)
 
-![](../.gitbook/assets/yggdrasil_vaults.png)
+![](<../.gitbook/assets/yggdrasil\_vaults (1).png>)
 
-1. Find your node address and click on the link.  
+1. Find your node address and click on the link.
 
-![](../.gitbook/assets/yggdrasil_vault.png)
+![](<../.gitbook/assets/yggdrasil\_vault (1).png>)
 
 Alternatively, visit any thorchain endpoint using your node address from `make status`:
 
-```text
+```
 http://thornode.thorchain.info/thorchain/node/<Node Address>
 ```
 
 Copy your `secp256k1` public key and put it here:
 
-```text
+```
 http://thornode.thorchain.info/thorchain/vault/<Public Key>
 ```
 
@@ -372,33 +372,33 @@ And look for `addresses` array at the bottom.
 
 #### Finding Yggdrasil Private Key
 
-1. Run `make mnemonic` and securely store this.  
-2. Visit [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/) - or for more safety, clone the [GitHub repo](https://github.com/iancoleman/bip39) and open `src/index.html` offline.  
-3. Paste in your mnemonic and choose **RUNE - THORChain** from the drop-down list.  
-4. Your private key string is the first one: `m/44'/931'/0'/0/0`  
+1. Run `make mnemonic` and securely store this.
+2. Visit [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/) - or for more safety, clone the [GitHub repo](https://github.com/iancoleman/bip39) and open `src/index.html` offline.
+3. Paste in your mnemonic and choose **RUNE - THORChain** from the drop-down list.
+4. Your private key string is the first one: `m/44'/931'/0'/0/0`
 
-![](../.gitbook/assets/bip39.png)
+![](<../.gitbook/assets/bip39 (1).png>)
 
 ## Dealing with slash
 
 When running a node, it is quite common to get slashed. The network relies on slash points to rate node quality. When your node is slashed, the first thing you need to do is run `make status`, and make sure all your chains are 100% in sync. If any of the external chains are not 100% in sync, then it will cause node to be slashed due to missing observations.
 
-The best prevention is to have a cluster with lots of fast resources \(cpu, memory, IO, network\) and good backups/redundancy to prevent downtime.
+The best prevention is to have a cluster with lots of fast resources (cpu, memory, IO, network) and good backups/redundancy to prevent downtime.
 
 Unfortunately even when your node is fully in-sync, it is still possible to be slashed due to external chain events. Here are some of the scenarios:
 
-#### 600 point slash \(isolated\)
+#### 600 point slash (isolated)
 
-When a node is slashed 600 points, it is typically because the yggdrasil vault failed to send an outbound transaction \(more accurately: the transaction it was tasked to perform wasn't mined within a specified time limit\). This most likely to happen on ETH chain. Here is what you need to check:
+When a node is slashed 600 points, it is typically because the yggdrasil vault failed to send an outbound transaction (more accurately: the transaction it was tasked to perform wasn't mined within a specified time limit). This most likely to happen on ETH chain. Here is what you need to check:
 
-1. Find your Yggdrasil ETH address. Use the previous instructions.  
-2. Visit [https://etherscan.io/](https://etherscan.io/) and paste in your Yggdrasil ETH address.  
+1. Find your Yggdrasil ETH address. Use the previous instructions.
+2. Visit [https://etherscan.io/](https://etherscan.io) and paste in your Yggdrasil ETH address.
 
-**Potential problem 1:** Transaction ran out of Gas \(wrong estimate\):
+**Potential problem 1:** Transaction ran out of Gas (wrong estimate):
 
 **Cause:** The network uses `geth` inbuilt `eth_estimateGas` function to estimate how much gas to set as limit for a transaction. On rare occasions this can return a number too low causing the transaction to fail. In this case there is nothing you can do - just wait it out. Note: your Yggdrasil ETH vault is now insolvent by a small amount of gas burned in the failed transaction that you will need to personally top-up prior to LEAVE. See section on LEAVE for more details.
 
-![](../.gitbook/assets/eth_out_of_gas.png)
+![](<../.gitbook/assets/eth\_out\_of\_gas (1).png>)
 
 **Potential problem 2:** Transaction didn't mine after 15mins
 
@@ -406,41 +406,41 @@ When a node is slashed 600 points, it is typically because the yggdrasil vault f
 
 You should be able to see a transaction like the following, which is sending `0` ETH back to itself which cancels anything pending:
 
-![](../.gitbook/assets/eth_cancel_nonce.png)
+![](<../.gitbook/assets/eth\_cancel\_nonce (1).png>)
 
-#### 600 point slash \(repeated\)
+#### 600 point slash (repeated)
 
 If your node is slashed 600 points continuously, it is likely your ETH vault is stuck or transactions sent to your local geth aren't propagated fully into mempools used by miners. This might happen if your local ethereum-daemon doesn't sync well with the network, even though it reports 100% in sync.
 
 1. Run `make logs` and choose `bifrost`
-2. Search your logs for `cancel` and look for transactions such as:  
+2. Search your logs for `cancel` and look for transactions such as:
 
 ```bash
 {"level":"info","service":"bifrost","module":"ethereum","time":"2021-05-28T14:43:58Z","message":"broadcast cancel transaction , tx hash: 0xec396286e54f9a95081e60424c73fcc0e580c47d2ffacb216ad9ef2d9c787082, nonce: 25 , new tx hash:0x5823abbee421f4c2ce230f5e7808b4dc6728ebeb5e21b62d95b812144d522672"}
 ```
 
-1. Find the last cancel tx in the logs \(with the highest nonce\).  
-2. Search etherscan for the `new tx hash` transaction ID.  
+1. Find the last cancel tx in the logs (with the highest nonce).
+2. Search etherscan for the `new tx hash` transaction ID.
 3. Your geth is stuck and out of sync if etherscan does **NOT** find the `new tx hash` cancelled transaction. If you do _not_ find your tx in etherscan - proceed as follows:
 4. Find the **lowest** nonce from Etherscan:
 5. Go to [https://etherscan.io](https://etherscan.io) and paste your yggdrasil ETH address in the search box
 6. Find the last successful transaction send out from your yggdrasil ETH address. It is the top transaction in the list:
 
-![](../.gitbook/assets/etherscan_tx_list.png)
+![](<../.gitbook/assets/etherscan\_tx\_list (1).png>)
 
-* Click the transaction. Note the nonce used in the last good transaction \(e.g. `39`\), and then plus 1 \(e.g. `40`\). This is the **lowest stuck tx nonce**.  
+* Click the transaction. Note the nonce used in the last good transaction (e.g. `39`), and then plus 1 (e.g. `40`). This is the **lowest stuck tx nonce**.
 
-![](../.gitbook/assets/etherscan_tx_nonce.png)
+![](<../.gitbook/assets/etherscan\_tx\_nonce (1).png>)
 
-1. Find the **highest** stuck nonce from your local geth:  
+1. Find the **highest** stuck nonce from your local geth:
 2. `make shell` then choose `ethereum-daemon`
-3. `geth attach` 
+3. `geth attach`
 4. `eth.getTransactionCount('{YOUR YGGDRASIL ETH ADDRESS}','pending')` -- this is the **highest stuck tx nonce**
 5. `exit` and `exit` again.
 6. If the highest nonce is larger than your lowest nonce, it means there are a few transactions sent and stuck in the mempool of your local ETH daemon. You need to unstuck these from highest to lowest.
 7. Make a fork of [https://replit.com/@thorchain/YggCancelETH](https://replit.com/@thorchain/YggCancelETH)
-8. Update `index.js` `lastPendingNonce` and `firstStuckNonce`. Also put in your hex encoded private key to KEY variable. Remember to add the `0x` prefix which bip39 calculator above will not have. 
-9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.thorchain.info/thorchain/inbound\_addresses](https://thornode.thorchain.info/thorchain/inbound_addresses) \(which ever is higher\).
+8. Update `index.js` `lastPendingNonce` and `firstStuckNonce`. Also put in your hex encoded private key to KEY variable. Remember to add the `0x` prefix which bip39 calculator above will not have.
+9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.thorchain.info/thorchain/inbound\_addresses](https://thornode.thorchain.info/thorchain/inbound\_addresses) (which ever is higher).
 10. Run the script using `node index.js`. Note: you may need to install some dependecies first with `npm install ethers`. The output should look like:
 
     ```bash
@@ -468,7 +468,6 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
     CANCELLING 29 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
     0x43bad098782f7bac68e401390ef300dc97d9d1d1b322eb566de1ff06b2cf9b21
     ```
-
 11. `make restart` and choose `ethereum-daemon`
 
 #### Constantly accumulating slash points
@@ -477,4 +476,3 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 
 1. run `make logs` , and choose `bifrost`
 2. Search your bifrost logs for `{"level":"error","service":"bifrost","module":"observer","error":"fail to send the tx to thorchain: fail to broadcast to THORChain,code:32, log:account sequence mismatch, expected 26806, got 26807: incorrect account sequence","time":"2021-05-30T07:28:18Z","message":"fail to send to THORChain"}` 3. **Solution:** `make restart` and choose `bifrost`
-
