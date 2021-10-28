@@ -10,11 +10,11 @@ description: >-
 
 **Websites: **[**thorchain.org**](http://thorchain.org)** | **[**thorchain.com**](https://www.thorchain.com)****
 
-**Socials**: [**Community Telegram**](https://t.me/thorchain\_org)** | **[**Twitter**](https://twitter.com/THORchain)** | **[**Medium**](https://medium.com/thorchain)****
+**Socials**: [**Telegram**](https://t.me/thorchain\_org)** | **[**Twitter**](https://twitter.com/THORchain)** | **[**Medium**](https://medium.com/thorchain)
 
-**Documentation: **[**Docs**](https://docs.thorchain.org)** | **[**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf)****
+**Documentation: **[**Docs**](https://docs.thorchain.org)** | **[**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf)
 
-[**Dev Discord**](https://discord.gg/u6wMSKHpD4)** **- Development Discussions
+**Development**: [**GitLab **](https://gitlab.com/thorchain)**| **[**GitHub **](https://github.com/thorchain)**| **[**Bounty Program**](https://immunefi.com/bounty/thorchain/)** | **[**Dev Discord**](https://discord.gg/u6wMSKHpD4)** **
 
 ****[**THORBoard **](https://thorchain.live)- THORChain Dashboard
 
@@ -34,13 +34,11 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**SKIPexchange**](https://app.skip.exchange/swap)
 
-****[**Asgard Web**](https://www.asgard.exchange)
-
 ****[**Dragon’s DEX**](https://dragonsdex.com)
 
-****[**Rango Exchange**](https://t.me/rangoexchange) - Telegram Bot
+****[**Rango Exchange**](https://rango.exchange)&#x20;
 
-****[**THORGram**](https://t.me/thorgram\_public)** **- Telegram Bot
+****[**THORGram**](https://t.me/thorgram\_public)
 
 ### **Wallets**
 
@@ -116,6 +114,6 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**Vanir Threads**](https://discord.gg/4DnN5j4nnw)** **- Discord Server
 
-****[**PixelTHOR**](https://t.me/runenft)** **- Discord Server
+****[**PixelTHOR**](https://t.me/runenft)** **- Telegram Channel
 
 [**SKIPswap Feedback**](https://t.me/SKIPexchangeFeedback)** **- Telegram Channel
