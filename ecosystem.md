@@ -76,13 +76,25 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**THORChain Twitter Bot**](https://twitter.com/thor\_bot) - Posts network stats
 
+****[**RuneData**](https://runedata.info)** **- LP Prediction Tool
+
+[**LP Calculator**](https://science.flipsidecrypto.com/thorchain/) - THORChain LP Calculator
+
 ### **Infrastructure**
 
-****[**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview)** | **[**THORNode Official Announcements**](https://t.me/thornode\_ann)****
+****[**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview)** | **[**THORNode Official Announcements**](https://t.me/thornode\_ann)
 
 ****[**THORChain Network Explorer**](https://thorchain.net) - THORChain Network Explorer
 
 ****[**THORmon **](https://thorchain.network)- Detailed THORNode Dashboard
+
+[**Constants**](https://thornode.thorchain.info/thorchain/constants) - Current THORChain Constants
+
+****[**Mimir**](https://thornode.thorchain.info/thorchain/mimir)** **- Overrides for Constants
+
+[**Midgard Docs **](https://midgard.thorchain.info/v2/doc)- Documentation for Midgard API to query THORChain.&#x20;
+
+[**Tx Queue**](https://thornode.thorchain.info/thorchain/queue) - THORChain Transaction Queue
 
 ****[**Viewblock Dashboard**](https://dash.viewblock.io/d/thorchain) - THORChain Block Dashboard
 
