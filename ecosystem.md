@@ -102,9 +102,13 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### Community Dev Projects
 
-****[**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger
+****[**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
 
-****[**XChainJS **](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more.
+****[**XChainJS **](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS.
+
+[**xchainpy-lib**](https://github.com/xchainjs/xchainpy-lib) - A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in PY.
+
+[**thorchain-arb**](https://github.com/hoodieonwho/thorchain-arb) - THORChain MCCN Arb Bot.
 
 ### Community Socials
 
