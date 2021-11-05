@@ -4,18 +4,6 @@ description: How to connect to Midgard, THORNode and the base Tendermint layer.
 
 # Connecting to THORChain
 
-The active node IP addresses can be queried from this endpoint:
-
-{% tabs %}
-{% tab title="TESTNET" %}
-[https://testnet.seed.thorchain.info](https://testnet.seed.thorchain.info)
-{% endtab %}
-
-{% tab title="CHAOSNET" %}
-[https://seed.thorchain.info](https://testnet-seed.thorchain.info)
-{% endtab %}
-{% endtabs %}
-
 The Network Information comes from three sources:
 
 1. **MIDGARD**: Consumer information relating to swaps, pools, volume. DeFi dashboards, Wallets, Exchanges will primarily interact with Midgard.
@@ -31,7 +19,7 @@ Midgard returns time-series information regarding the THORChain network, such as
 Port: `8080`
 
 RPC Guide:\
-[http://\<host>:8080/v2/doc](http://\<host>:8080/v2/doc)
+http://\<host>:8080/v2/doc
 
 **Official**
 
@@ -48,7 +36,7 @@ THORNode returns application-specific information regarding the THORChain state 
 Port: `1317`
 
 RPC Guide:\
-[http://\<host>:1317/thorchain/doc/](http://\<host>:1317/thorchain/doc/)
+http://\<host>:1317/thorchain/doc/
 
 **Official**
 
@@ -102,3 +90,9 @@ Each node allows connecting to its Chain Clients.
 [https://eth.thorchain.info](https://eth.thorchain.info)
 {% endtab %}
 {% endtabs %}
+
+Other Public Endpoints:
+
+[https://midgard.thorswap.net/v2/doc](https://midgard.thorswap.net/v2/doc)
+
+[https://thornode.thorswap.net/thorchain/doc/](https://thornode.thorswap.net/thorchain/doc/)
