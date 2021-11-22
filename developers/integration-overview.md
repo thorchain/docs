@@ -40,7 +40,7 @@ Vaults are fetched from the `/inbound_addresses` endpoint.
 ![https://thornode.thorchain.info/thorchain/inbound\_addresses](<../.gitbook/assets/image (32) (1).png>)
 
 {% hint style="warning" %}
-If you connect to public THORNodes, you must be conscious of the fact that you can be phished and could send money to the WRONG vault. You should do safety checks, ie, comparing with other nodes, or even inspecting the vault itself for presence of funds.
+If you connect to public THORNodes, you must be conscious of the fact that you can be phished and could send money to the WRONG vault. You should do safety checks, ie, comparing with other nodes, or even inspecting the vault itself for presence of funds. You should also consider running your own 'fullnode' instance to query for trusted data.
 {% endhint %}
 
 {% hint style="danger" %}
