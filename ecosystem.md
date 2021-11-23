@@ -80,6 +80,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**LP Calculator**](https://science.flipsidecrypto.com/thorchain/) - THORChain LP Calculator
 
+[https://swapalyzer.ofthor.com/](https://swapalyzer.ofthor.com)&#x20;
+
 ### **Infrastructure**
 
 ****[**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview)** | **[**THORNode Official Announcements**](https://t.me/thornode\_ann)
