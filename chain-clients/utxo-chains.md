@@ -10,7 +10,7 @@ Example for Bitcoin.
 
 #### Observer
 
-{% embed url="https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go" %}
+{% embed url="https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/client.go" %}
 
 #### Signer
 
@@ -20,28 +20,28 @@ Example for Bitcoin.
 
 The block scanner monitors the Asgard Addresses and looks for incoming UTXOs spending to those addresses. When it sees one performs validation on it and witnesses to THORChain. For Bitcoin, it looks that at least 1 output is spent to Asgard, and searchs for another output to have an `OP_RETURN`. These two outputs form the `amount` and `memo` witness to THORChain.  
 
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L683](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L683)
+[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/blockscanner/blockscanner.go](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/blockscanner/blockscanner.go)
 
 ### Confirmation Counting
 
 The `txValue` is the sum of all transactions received in a block to Asgard vaults. The `blockValue` is the coinbase value, which includes fees and subsidy. If a miner forgets to add a coinbase value \(it has happened\) a default of 6.25 is used. \(This should be updated every 4 years, or use logic to auto-update\). 
 
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L929](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L929)
+[https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go\#L1084](https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go#L1084)
 
 ### Re-orgs
 
 Bifrost tracks the `BlockCacheSize = 144` blocks of transactions reported in a local KV store. Every time it detects a new block at a previous height it has seen, it checks for the presence of every transaction it has reported. If the transaction is missing then it has been re-orged out. The missing txID is reported to THORChain as an `ErrataTx`
 
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L377](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L377)
+[https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go\#L337](https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go#L337)
 
 ### Network Fees
 
-Reported as `sats/byte` where the fee rate is computed over the last block. Reports the highest seen in the last 20 blocks. [https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L605](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L605)
+Reported as `sats/byte` where the fee rate is computed over the last block. Reports the highest seen in the last 20 blocks. [https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go\#L668](https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go#L668)
 
 ### Handling Gas
 
 The gas amount for a transaction is just the difference between outputs and inputs.  
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L832](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L832)
+[https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go\#L988](https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go#L988)
 
 ### Other Considerations
 
@@ -49,7 +49,7 @@ The gas amount for a transaction is just the difference between outputs and inpu
 
 UTXOs consume inputs, and these inputs need to be signed independently. Thus consuming 15 inputs requires 15 times the TSS bandwidth than a single input. To prevent runaway liabilities the client will automatically enter a TSS signing ceremony for Asgard every 15 inputs to consolidate them back to one. This transaction uses the `consolidate` memo and can be seen regularly on THORChain vaults. 
 
-[https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go\#L988](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/bitcoin/bitcoin.go#L988)
+[https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go\#L915](https://gitlab.com/thorchain/thornode/-/blob/4bcaf4f80787d0aaee711388578ed453959ef673/bifrost/pkg/chainclients/bitcoin/client.go#L915)
 
 #### ChildPaysForParent
 
