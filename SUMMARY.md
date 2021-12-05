@@ -58,3 +58,12 @@
 * [Leaving](thornodes/leaving.md)
 * [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [✔️ CHECKLIST](thornodes/checklist.md)
+
+## Get Involved
+
+* [Contribute](get-involved/contribute.md)
+
+***
+
+* [Community Telegram](https://t.me/thorchain\_org)
+* [Dev Discord](https://discord.gg/kvZhpEtHAw)
