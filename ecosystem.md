@@ -8,19 +8,19 @@ description: >-
 
 ## **THORChain Official Website and Socials**
 
-**Websites: **[**thorchain.org**](http://thorchain.org)** | **[**thorchain.com**](https://www.thorchain.com)****
+**Websites:** [**thorchain.org**](http://thorchain.org) **|** [**thorchain.com**](https://www.thorchain.com)****
 
-**Socials**: [**Telegram**](https://t.me/thorchain\_org)** | **[**Twitter**](https://twitter.com/THORchain)** | **[**Medium**](https://medium.com/thorchain)
+**Socials**: [**Telegram**](https://t.me/thorchain\_org) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Medium**](https://medium.com/thorchain)
 
-**Documentation: **[**Docs**](https://docs.thorchain.org)** | **[**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf)
+**Documentation:** [**Docs**](https://docs.thorchain.org) **|** [**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf) **|** [**Audits**](https://github.com/thorchain/Resources/tree/master/Audits)****
 
-**Development**: [**GitLab **](https://gitlab.com/thorchain)**| **[**GitHub **](https://github.com/thorchain)**| **[**Bounty Program**](https://immunefi.com/bounty/thorchain/)** | **[**Dev Discord**](https://discord.gg/u6wMSKHpD4)** **
+**Development**: [**GitLab** ](https://gitlab.com/thorchain)**|** [**GitHub** ](https://github.com/thorchain)**|** [**Bounty Program**](https://immunefi.com/bounty/thorchain/) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4)
 
-****[**THORBoard **](https://thorchain.live)- THORChain Dashboard
+****[**THORBoard** ](https://thorchain.live)- THORChain Dashboard
 
-****[**Viewblock Explorer **](https://viewblock.io/thorchain)** **- THORChain Block Explorer
+****[**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [THORChain.net](https://thorchain.net/#/txs)- THORChain Block Explorer
 
-[**Nine Realms**](https://twitter.com/ninerealms\_cap)** **- Brings institutional liquidity to THORChain, THORSec, and pen-tests protocol)
+[**Nine Realms**](https://twitter.com/ninerealms\_cap) **** - Brings institutional liquidity to THORChain, THORSec, and pen-tests protocol)
 
 ## **Community Projects**
 
@@ -42,25 +42,25 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### **Wallets**
 
-****[**XDeFi **](https://www.xdefi.io)**-** Cross Chain Wallet
+****[**XDeFi** ](https://www.xdefi.io)**-** Cross Chain Wallet
 
-****[**THORWallet**](https://thorwallet.org)** -** Cross Chain Wallet
+****[**THORWallet**](https://thorwallet.org) **-** Cross Chain Wallet
 
 ### **Education**
 
-****[**GrassRoots Crypto **](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos.&#x20;
+****[**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos.&#x20;
 
-****[**LP University**](https://discord.gg/jVWS4EAYhh)**  **-** **Educational, Liquidity Pooling Strategy Discussions
+****[**LP University**](https://discord.gg/jVWS4EAYhh)  ****  - **** Educational, Liquidity Pooling Strategy Discussions
 
-[**RuneBase **](https://www.runebase.org)-** **News and Updates on THORChain
+[**RuneBase** ](https://www.runebase.org)- **** News and Updates on THORChain
 
-****[**THORNoob**](https://medium.com/@THORNoob)** **- Weekly Community Updates and Educational Articles
+****[**THORNoob**](https://medium.com/@THORNoob) **** - Weekly Community Updates and Educational Articles
 
-****[**SKALDCamp **](https://twitter.com/SKALDcamp)**- **Community-operated THORChain marketing
+****[**SKALDCamp** ](https://twitter.com/SKALDcamp)**-** Community-operated THORChain marketing
 
 ### **Analytics**
 
-****[**THORYield **](https://thoryield.com)**-** View your added liquidity on THORChain
+****[**THORYield** ](https://thoryield.com)**-** View your added liquidity on THORChain
 
 ****[**RUNEBalance** ](https://www.runebalance.com/#/pools)-[ ](https://www.runebalance.com/#/pools)View current arbitrage opportunities in the pools.&#x20;
 
@@ -68,15 +68,15 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**DecentralFi**](https://decentralfi.io) - Track MCCN positions  - https://decentralfi.io/liquidity?wallet={thor address}
 
-****[**THORBelt **](https://www.thorbelt.com)-** **View your liquidity, assist with trading.
+****[**THORBelt** ](https://www.thorbelt.com)- **** View your liquidity, assist with trading.
 
 ****[**THORChain Information Bot**](https://t.me/thor\_infobot) - Useful commands to fetch network info
 
-[**THORChain Monitoring Bot**](https://t.me/thorchain\_alert)** -** Telegram Monitoring Bot
+[**THORChain Monitoring Bot**](https://t.me/thorchain\_alert) **-** Telegram Monitoring Bot
 
 ****[**THORChain Twitter Bot**](https://twitter.com/thor\_bot) - Posts network stats
 
-****[**RuneData**](https://runedata.info)** **- LP Prediction Tool
+****[**RuneData**](https://runedata.info) **** - LP Prediction Tool
 
 [**LP Calculator**](https://science.flipsidecrypto.com/thorchain/) - THORChain LP Calculator
 
@@ -84,29 +84,29 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### **Infrastructure**
 
-****[**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview)** | **[**THORNode Official Announcements**](https://t.me/thornode\_ann)
+****[**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview) **|** [**THORNode Official Announcements**](https://t.me/thornode\_ann)
 
 ****[**THORChain Network Explorer**](https://thorchain.net) - THORChain Network Explorer
 
-****[**THORmon **](https://thorchain.network)- Detailed THORNode Dashboard
+****[**THORmon** ](https://thorchain.network)- Detailed THORNode Dashboard
 
 [**Constants**](https://thornode.thorchain.info/thorchain/constants) - Current THORChain Constants
 
-****[**Mimir**](https://thornode.thorchain.info/thorchain/mimir)** **- Overrides for Constants
+****[**Mimir**](https://thornode.thorchain.info/thorchain/mimir) **** - Overrides for Constants
 
-[**Midgard Docs **](https://midgard.thorchain.info/v2/doc)- Documentation for Midgard API to query THORChain.&#x20;
+[**Midgard Docs** ](https://midgard.thorchain.info/v2/doc)- Documentation for Midgard API to query THORChain.&#x20;
 
 [**Tx Queue**](https://thornode.thorchain.info/thorchain/queue) - THORChain Transaction Queue
 
 ****[**Viewblock Dashboard**](https://dash.viewblock.io/d/thorchain) - THORChain Block Dashboard
 
-[**Viewblock Explorer **](https://viewblock.io/thorchain)** **- THORChain Block Explorer
+[**Viewblock Explorer** ](https://viewblock.io/thorchain) **** - THORChain Block Explorer
 
 ### Community Dev Projects
 
 ****[**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
 
-****[**XChainJS **](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS.
+****[**XChainJS** ](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS.
 
 [**xchainpy-lib**](https://github.com/xchainjs/xchainpy-lib) - A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in PY.
 
@@ -114,24 +114,24 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### Community Socials
 
-****[**THORChain Dev Discord **](https://discord.gg/u6wMSKHpD4)(for only dev discussions):&#x20;
+****[**THORChain Dev Discord** ](https://discord.gg/u6wMSKHpD4)(for only dev discussions):&#x20;
 
-****[**LP University**](https://discord.gg/jVWS4EAYhh)** **- Discord Server
+****[**LP University**](https://discord.gg/jVWS4EAYhh) **** - Discord Server
 
-****[**THORSwap**](https://discord.gg/thorswap)** **- Discord Server
+****[**THORSwap**](https://discord.gg/thorswap) **** - Discord Server
 
-****[**xDefi**](https://discord.com/invite/xdefiwallet)** **- Discord Server
+****[**xDefi**](https://discord.com/invite/xdefiwallet) **** - Discord Server
 
-****[**THORChadDAO**](https://discord.gg/CWypyjbZjW)** **- Discord Server
+****[**THORChadDAO**](https://discord.gg/CWypyjbZjW) **** - Discord Server
 
-****[**THORStarter**](https://t.me/thorstarter)** **- Telegram Chanel
+****[**THORStarter**](https://t.me/thorstarter) **** - Telegram Chanel
 
-****[**DefiSpot**](https://discord.gg/7Zuypgv6Qf)** **- Discord Server
+****[**DefiSpot**](https://discord.gg/7Zuypgv6Qf) **** - Discord Server
 
-****[**THORGuards**](https://discord.gg/KQEhr3jtAd)** **- Discord Server
+****[**THORGuards**](https://discord.gg/KQEhr3jtAd) **** - Discord Server
 
-****[**Vanir Threads**](https://discord.gg/4DnN5j4nnw)** **- Discord Server
+****[**Vanir Threads**](https://discord.gg/4DnN5j4nnw) **** - Discord Server
 
-****[**PixelTHOR**](https://t.me/runenft)** **- Telegram Channel
+****[**PixelTHOR**](https://t.me/runenft) **** - Telegram Channel
 
-[**SKIPswap Feedback**](https://t.me/SKIPexchangeFeedback)** **- Telegram Channel
+[**SKIPswap Feedback**](https://t.me/SKIPexchangeFeedback) **** - Telegram Channel
