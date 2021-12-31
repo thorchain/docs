@@ -39,6 +39,7 @@ Install Helm 3 if not already available on your current machine:
 
 ```
 make helm
+make helm-plugins
 ```
 
 ### Tools
