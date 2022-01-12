@@ -21,11 +21,21 @@ Port: `8080`
 RPC Guide:\
 http://\<host>:8080/v2/doc
 
-**Official**
+**Official Mainnet**
 
 [https://midgard.thorchain.info/v2/doc](https://midgard.thorchain.info/v2/doc)
 
 [https://testnet.midgard.thorchain.info/v2/doc](https://testnet.midgard.thorchain.info/v2/doc)
+
+**Other Mainnet Public Endpoints**
+
+[https://midgard.thorswap.net/v2/doc](https://midgard.thorswap.net/v2/doc)
+
+[https://thornode.thorswap.net/thorchain/doc/](https://thornode.thorswap.net/thorchain/doc/)
+
+**Official Stagenet**
+
+[https://stagenet-midgard.ninerealms.com/v2/doc](https://stagenet-midgard.ninerealms.com/v2/doc)
 {% endtab %}
 
 {% tab title="THORNODE" %}
@@ -38,11 +48,15 @@ Port: `1317`
 RPC Guide:\
 http://\<host>:1317/thorchain/doc/
 
-**Official**
+**Official Mainnet**
 
 [https://thornode.thorchain.info/thorchain/doc/](https://thornode.thorchain.info/thorchain/doc/)
 
 [https://testnet.thornode.thorchain.info/thorchain/doc/](https://testnet.thornode.thorchain.info/thorchain/doc/)
+
+**Official Stagenet**
+
+[https://stagenet-thornode.ninerealms.com/](https://stagenet-thornode.ninerealms.com)
 {% endtab %}
 
 {% tab title="TENDERMINT" %}
@@ -51,6 +65,8 @@ RPC allows base blockchain information to be returned.
 **Any Node**
 
 TESTNET Port: `26657`
+
+STAGENET Port: `26657`
 
 MAINNET Port: `27147`
 
@@ -61,6 +77,8 @@ RPC Guide:\
 
 [https://rpc.thorchain.info/genesis](https://rpc.thorchain.info/genesis)
 
+[https://stagenet-rpc.ninerealms.com/](https://stagenet-rpc.ninerealms.com)[genesis](https://rpc.thorchain.info/genesis)
+
 [https://testnet.rpc.thorchain.info/genesis](https://testnet.rpc.thorchain.info/genesis)
 
 ### **P2P**
@@ -68,6 +86,8 @@ RPC Guide:\
 P2P is the network layer between nodes, useful for network debugging.
 
 TESTNET Port: `26656`
+
+STAGENET Port: `26656`
 
 MAINNET Port: `27146`
 
@@ -91,8 +111,6 @@ Each node allows connecting to its Chain Clients.
 {% endtab %}
 {% endtabs %}
 
-Other Public Endpoints:
 
-[https://midgard.thorswap.net/v2/doc](https://midgard.thorswap.net/v2/doc)
 
-[https://thornode.thorswap.net/thorchain/doc/](https://thornode.thorswap.net/thorchain/doc/)
+##
