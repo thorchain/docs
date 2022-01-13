@@ -259,7 +259,7 @@ There is NO direct bridge from native RUNE back to bep2/Erc20 RUNE.
 
 This is not a concern, in the long term, BEP2/ERC20 RUNE will be upgraded to native Rune then only Native RUNE will have significant volume/liquidity.
 
-**How to manually construct a Memo**
+#### **How to manually construct a Memo**
 
 Thorchain responds to memo data posted to its vaults or using MsgDeposit. [https://docs.thorchain.org/developers/transaction-memos](https://docs.thorchain.org/developers/transaction-memos)
 
