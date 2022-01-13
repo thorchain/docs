@@ -12,7 +12,7 @@ Providing liquidity on THORChain creates an opportunity for holders of stagnant 
 
 #### **Does THORChain need external sources for price feeds, like oracles or weighted averages?**
 
-THORChain depends on its continuous liquidity pool design and arbitrageurs to set prices. When pools become imbalanced, arbitrage bots trade to rebalance them. THORChain knows the exchange rates between external asset pairs because RUNE binds all pools together. See [Prices](how-it-works/prices.md#getting-the-prices-for-any-asset). https://docs.thorchain.org/how-it-works/prices
+THORChain depends on its continuous liquidity pool design and arbitrageurs to set prices. When pools become imbalanced, arbitrage bots trade to rebalance them. THORChain knows the exchange rates between external asset pairs because RUNE binds all pools together. See [Prices](how-it-works/prices.md#getting-the-prices-for-any-asset).
 
 Unbalanced pools represent a profit opportunity for arbitrage traders -- if a trader can purchase a token at a lower price on THORChain and sell it for a profit elsewhere, they will. These trades re-balance the pool and ensure that prices accurately reflect the market value. These pool balancing trades happen 24/7 via arbitrage bots interacting with the protocol's API directly. It's even possible to run an arbitrage bot of your own!
 
