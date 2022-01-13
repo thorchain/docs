@@ -26,7 +26,7 @@ ERC-20 RUNE&#x20;
 
 ➜ [UniSwap ](https://app.uniswap.org/#/swap)
 
-➜ List of other exchanges: https://www.coingecko.com/en/coins/thorchain#markets
+➜ [List of other exchanges](https://www.coingecko.com/en/coins/thorchain#markets)
 
 For Native RUNE**,** see interfaces below.&#x20;
 
@@ -40,8 +40,8 @@ Note:
 
 Many Wallets work with THORChain. Two community created ones are:&#x20;
 
-* THORWallet - https://thorwallet.org/&#x20;
-* XDEFI - https://www.xdefi.io/
+* [THORWallet](https://thorwallet.org) - https://thorwallet.org/&#x20;
+* [XDEFI ](https://www.xdefi.io)- https://www.xdefi.io/
 
 Other Wallets include:&#x20;
 
@@ -104,7 +104,7 @@ Outbound Throttling will delay large outbound transactions. The following are ro
 * $5000/block– 2.3 minutes&#x20;
 * $10k/block— 5 minutes
 
-➜ You can watch it at https://thorchain-scheduled-tx.web.app/
+➜ You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app)
 
 #### **Will I have Impermanent Loss Protection if I provide liquidity in THORChain?**&#x20;
 
@@ -258,4 +258,16 @@ This is due to inefficient arb opportunities, since there is only one way bridge
 There is NO direct bridge from native RUNE back to bep2/Erc20 RUNE.
 
 This is not a concern, in the long term, BEP2/ERC20 RUNE will be upgraded to native Rune then only Native RUNE will have significant volume/liquidity.
+
+**How to manually construct a Memo**
+
+Thorchain responds to memo data posted to its vaults or using MsgDeposit. [https://docs.thorchain.org/developers/transaction-memos](https://docs.thorchain.org/developers/transaction-memos)
+
+Using an example to withdraw (e.g. in a pending pool).
+
+1. What is the memo you want? `-:CHAIN.ASSET:10000:THOR.RUNE`&#x20;
+2. What is the asset? Find in this list [https://thornode.thorchain.info/thorchain/pools](https://thornode.thorchain.info/thorchain/pools) or go direct to pool [https://app.thorswap.finance/pool/ETH.ALPHA-0XA1FAA113CBE53436DF28FF0AEE54275C13B40975](https://app.thorswap.finance/pool/ETH.ALPHA-0XA1FAA113CBE53436DF28FF0AEE54275C13B40975) so it's `-:ETH.ALPHA-0XA1FAA113CBE53436DF28FF0AEE54275C13B40975:10000:THOR.RUNE`&#x20;
+3. Which chain do you want to post the tx? THORChain, because it is cheapest (as opposed to ETH) TC: `MsgDeposit` ETH: `router.deposit(params)` So we are doing a MsgDeposit with the memo above using Rune. (If BEP2, using BNB might be cheaper).&#x20;
+4. Are we sending in money?  No, it's a withdraw, so send 0 or 0.00000001, whatever works.&#x20;
+5. Which interface to use? They should all support MsgDeposit. Try [ASGARDEX Desktop](https://github.com/thorchain/asgardex-electron/releases).
 
