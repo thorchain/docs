@@ -98,7 +98,7 @@ $$
 
 #### Incentive Curve
 
-The Incentive Curve can be used to ensure Node Operators are not being too much in a stable situation or over-bonded situation and reduce rewards to Liquidity providers in an under-bonded situation. Increasing rewards in an under-bonded situation may be done to retain Liquidity providers.&#x20;
+The Incentive Curve can be used to ensure Node Operators are not being paid too much in a stable situation or in a over-bonded situation and can reduce rewards to Liquidity providers in an under-bonded situation. Increasing Liquidity providers rewards in an under-bonded situation may be done to retain Liquidity providers.&#x20;
 
 Reducing the Incentive Curve will reduce rewards to liquidity providers and increasing it will give liquidity providers more rewards, given the same `totalBonded` and `totalPooled`numbers. While it influences rewards, it is still bound by the Incentive Pendulum.
 
