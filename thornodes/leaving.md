@@ -173,7 +173,7 @@ IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
 First, destroy the node and tools, this will delete your node then your tooling 1-by-1. Do this from the `node-launcher` repo:
 
 ```
-make destroy destroy-tools
+make destroy-tools
 ```
 
 ![Destroying the Tooling](<../.gitbook/assets/image (28) (1).png>)

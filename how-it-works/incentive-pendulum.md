@@ -2,7 +2,7 @@
 description: >-
   THORChain's Incentive Pendulum keeps the network in a balanced state. It stops
   the network from becoming unsafe or inefficient by changing the distribution
-  of rewards to node operators and liquidity p
+  of rewards to node operators and LPs.
 ---
 
 # Incentive Pendulum
@@ -47,7 +47,7 @@ To fix this, the system increases the amount of rewards going to node operators 
 
 The system can also become inefficient. In this case, pooled capital would be much lower in value than bonded capital. This is a problem because it means that much more capital is being put into securing pooled assets than those assets are actually worth.
 
-To fix this, the system increases rewards for liquidity providers and decreases rewards for node operators. This attracts more liquidity providers to the system, and fewer node operators. Liquidity providers add more capital to receive more rewards, increasing pooled capital. Some node operators remove their bonded Rune, seeking more profitable places to put their capital. Bonded capital falls.  
+To fix this, the system increases rewards for liquidity providers and decreases rewards for node operators. This attracts more liquidity providers to the system, and fewer node operators. Liquidity providers add more capital to receive more rewards, increasing pooled capital. Some node operators remove their bonded Rune, seeking more profitable places to put their capital. Bonded capital falls.\
 In this way, the system returns to the optimal state.
 
 ### Under and Over-Bonded States
@@ -65,30 +65,45 @@ Try this [interactive model](https://rebase.foundation/network/thorchain/system-
 The algorithm that controls the Incentive Pendulum is as follows:
 
 $$
-shareFactor = \frac{b + s}{b - s}
+shareFactor = \frac{b - s}{b + s / ic}
 $$
 
 $$
-b = totalBonded, s = totalPooled
+b = totalBonded, s = totalPooled, ic = Incentive Curve
 $$
+
+Incentive Curve is taken from constants however can be overridden in Mimir.
 
 In the stable situation of 67m RUNE bonded and 33m RUNE pooled:
 
 $$
-shareFactor = \frac{67 + 33}{67 - 33} = 3
+shareFactor = \frac{67 -  33}{67 + 33/100} = 0.5
 $$
 
-The state machine then takes the inverse of this to determine how much to send to Liquidity providers:
+Node Operators and Liquidity providers will share the rewards equally. While Liquidity providers provide 33% of Rune (totalPooled) they will be paid 50% of the rewards as they provide 50% of liquidity (RUNE and Asset). An Incentive Curve of 100 ensures this.&#x20;
+
+In an under-bonded situation of 60m RUNE Bonded and 40m RUNE pooled:&#x20;
 
 $$
-\frac{1}{shareFactor}= \frac{1}{3} = 0.33%
+shareFactor = \frac{60 -  40}{60  + 40/2} = 0.25
 $$
 
-Thus, 33% of the rewards will be sent to Liquidity providers in the stable scenario.
+Thus, 75% of rewards will go to Node Operators and 25% to Liquidity providers.&#x20;
+
+In a more under-bonded situation, the Incentive Curve is be increased to provide more rewards to Liquidity providers as they might leave if rewards are too low. An Incentive Curve of 2 would produce 0.12.
+
+$$
+shareFactor = \frac{55 -  45}{55  + 45/4} = 0.15
+$$
+
+#### Incentive Curve
+
+The Incentive Curve can be used to ensure Node Operators are not being too much in a stable situation or over-bonded situation and reduce rewards to Liquidity providers in an under-bonded situation. Increasing rewards in an under-bonded situation may be done to retain Liquidity providers.&#x20;
+
+Reducing the Incentive Curve will reduce rewards to liquidity providers and increasing it will give liquidity providers more rewards, given the same `totalBonded` and `totalPooled`numbers. While it influences rewards, it is still bound by the Incentive Pendulum.
 
 ## Driving Capital Allocation
 
-As a by-product of the Incentive Pendulum's aggressive re-targeting of 67:33 split of BONDED:POOLED RUNE, it means that in an equilibrium, the value of BONDED RUNE will always be double the value of POOLED RUNE. Since POOLED RUNE is 1:1 bonded with POOLED Capital \(due to liquidity pools\), then the total market value of RUNE is targeted to be 3 times the value of pooled assets.
+As a by-product of the Incentive Pendulum's aggressive re-targeting of 67:33 split of BONDED:POOLED RUNE, it means that in an equilibrium, the value of BONDED RUNE will always be double the value of POOLED RUNE. Since POOLED RUNE is 1:1 bonded with POOLED Capital (due to liquidity pools), then the total market value of RUNE is targeted to be 3 times the value of pooled assets.
 
-If there is any disruption to this, then it means capital will be re-allocated by Nodes and Liquidity providers to pursue maximum yield, and thus correct the inbalance.
-
+If there is any disruption to this, then it means capital will be re-allocated by Nodes and Liquidity providers to pursue maximum yield, and thus correct the imbalance.
