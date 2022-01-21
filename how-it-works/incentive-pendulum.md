@@ -72,35 +72,89 @@ $$
 b = totalBonded, s = totalPooled, ic = Incentive Curve
 $$
 
-Incentive Curve is taken from constants however can be overridden in Mimir.
+In a **stable** state of 67m RUNE bonded and 33m RUNE pooled:
 
-In the stable situation of 67m RUNE bonded and 33m RUNE pooled:
+
+
+$$
+shareFactor = \frac{67 -  33}{67 + 33/1} = 0.33
+$$
+
+Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.&#x20;
+
+In the **under-bonded** state of 60m RUNE bonded and 40m RUNE pooled
+
+$$
+shareFactor = \frac{60 -  40}{60  + 40/1} = 0.2
+$$
+
+Thus, 20% of the rewards go to Liquidity Providers and 80% to the Node Operators, incentivising more node operators to be created.&#x20;
+
+In a **very under-bonded** state of 55m RUNE bonded and 45m RUNE pooled
+
+$$
+shareFactor = \frac{55 -  45}{55  + 45/1} = 0.10
+$$
+
+Thus, Liquidity providers will receive 10% of the rewards. This may drive Liquidity providers away.
+
+In an **over-bonded** state of 80m RUNE bonded and 20m RUNE pooled:
+
+
+
+$$
+shareFactor = \frac{80 -  20}{80  + 20/1} = 0.6
+$$
+
+Thus, 60% of the rewards go to Liquidity Providers and 40% go to Node Operators.
+
+### Incentive Curve
+
+In the **stable** state of 67m RUNE bonded and 33m RUNE pooled, Liquidity providers are providing half the assets TVL (RUNE and Assets) and bonders are providing the other half.&#x20;
+
+The Incentive Curve can be used to adjust the reward flow with respect to the Incentive Pendulum.
+
+
+
+In a stable situation with the Incentive Curve set to 1.
+
+$$
+shareFactor = \frac{67 -  33}{67 + 33/1} = 0.33
+$$
+
+Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.&#x20;
+
+In a stable situation with the Incentive Curve set to 2.
+
+$$
+shareFactor = \frac{67 -  33}{67 + 33/2} = 0.4
+$$
+
+In a stable situation with the Incentive Curve set to 4.
+
+Thus, 40% of the rewards go to Liquidity Providers and 60% go to Node Operators.&#x20;
+
+$$
+shareFactor = \frac{67 -  33}{67 + 33/4} = 0.45
+$$
+
+In a stable situation with the Incentive Curve set to 100.
 
 $$
 shareFactor = \frac{67 -  33}{67 + 33/100} = 0.5
 $$
 
-Node Operators and Liquidity providers will share the rewards equally. While Liquidity providers provide 33% of Rune (totalPooled) they will be paid 50% of the rewards as they provide 50% of liquidity (RUNE and Asset). An Incentive Curve of 100 ensures this.&#x20;
+Thus, 50% of the rewards go to Liquidity Providers and 50% go to Node Operators.&#x20;
 
-In an under-bonded situation of 60m RUNE Bonded and 40m RUNE pooled:&#x20;
+The Incentive Pendulum is a linear path between Liquidity providers and Node Operators. The Incentive Curve can smooth the effect of the Incentive Pendulum as it moves. With the Incentive Pendulum in a set position, as Incentive Curve increases so do the rewards that are paid to Liquidity providers.&#x20;
 
-$$
-shareFactor = \frac{60 -  40}{60  + 40/2} = 0.25
-$$
+In a stable situation, it can be set to 100 to ensure Liquidity providers and Node Operator's are rewarded equally.&#x20;
 
-Thus, 75% of rewards will go to Node Operators and 25% to Liquidity providers.&#x20;
+In an under-bond state, it can be increased so Liquidity providers are not adversely affected by the reduction of rewards due to the Incentive Pendulum.
 
-In a more under-bonded situation, the Incentive Curve is be increased to provide more rewards to Liquidity providers as they might leave if rewards are too low. An Incentive Curve of 2 would produce 0.12.
+In an over-bonded state, it can be reduced to ensure Liquidity Providers are not being paid too much.&#x20;
 
-$$
-shareFactor = \frac{55 -  45}{55  + 45/4} = 0.15
-$$
-
-#### Incentive Curve
-
-The Incentive Curve can be used to ensure Node Operators are not being paid too much in a stable situation or in a over-bonded situation and can reduce rewards to Liquidity providers in an under-bonded situation. Increasing Liquidity providers rewards in an under-bonded situation may be done to retain Liquidity providers.&#x20;
-
-Reducing the Incentive Curve will reduce rewards to liquidity providers and increasing it will give liquidity providers more rewards, given the same `totalBonded` and `totalPooled`numbers. While it influences rewards, it is still bound by the Incentive Pendulum.
+Incentive Curve value set in constants however can be overridden in Mimir by [Node Operators](../thornodes/overview.md).
 
 ## Driving Capital Allocation
 
