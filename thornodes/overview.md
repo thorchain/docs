@@ -188,3 +188,24 @@ To get node account information, make an HTTP call to your `thor-api` port which
 http://<host>:1317/thorchain/nodeaccount/<node address>
 http://<host>:1317/thorchain/nodeaccounts
 ```
+
+## Node Voting
+
+THORNodes have the ability to vote on [Mimir ](https://midgard.thorchain.info/v2/thorchain/mimir)settings.&#x20;
+
+Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a Node is:
+
+```
+Make mimir
+=> Enter THORNode Mimir key: <key>
+=> Enter THORNode Mimir value: <value>
+```
+
+1. Mimir keys and values are listed in the [Mimir endpoint](https://midgard.thorswap.net/v2/thorchain/mimir).
+2. A node can vote at any time on any key value.
+3. A node's vote is valid as long as they are active (and removed if they are not).
+4. 2/3rds of active nodes need to agree for the change to happen
+5. If 2/3rds consensus is not reached, Mimir admin takes priority, or a constant if present. &#x20;
+6. A node can change their vote anytime.
+7. A node can delete their vote by using -1 value
+8. Voting costs one native transaction fee, which is deducted from their bond.
