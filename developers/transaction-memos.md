@@ -71,12 +71,12 @@ Refunds cost fees to prevent Denial of Service attacks. The user will pay the co
 
 Alternative MEMO types are available to clients:
 
-| Transaction | Long-form MEMO | Short-form MEMO | Symbol MEMO |
-| ----------- | -------------- | --------------- | ----------- |
-| ADD         | `ADD`          | `a`             | `+`         |
-| WITHDRAW    | `WITHDRAW`     | `wd`            | `-`         |
-| SWAP        | `SWAP`         | `s`             | `=`         |
-| DONATE      | `DONATE`       | `d`             | `%`         |
+| Transaction | Long-form MEMO | Short-form MEMO | Symbol MEMO     |
+| ----------- | -------------- | --------------- | --------------- |
+| ADD         | `ADD`          | _not supported_ | `+`             |
+| WITHDRAW    | `WITHDRAW`     | `wd`            | `-`             |
+| SWAP        | `SWAP`         | `s`             | `=`             |
+| DONATE      | `DONATE`       | `d`             | _not supported_ |
 
 ### Asset Notation
 
