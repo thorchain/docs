@@ -6,7 +6,9 @@ description: >-
 
 # Ecosystem
 
-## **THORChain Official Website and Socials**
+## **THORChain Website and Socials**
+
+All the following are commumity-run resources. There are no "official" channels.
 
 **Websites:** [**thorchain.org**](http://thorchain.org) **|** [**thorchain.com**](https://www.thorchain.com)****
 
