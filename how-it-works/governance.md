@@ -25,8 +25,8 @@ Users signal which assets they want on the network by staking in a new pool. THO
 
 Assets are delisted when all liquidity providers have taken all their assets out of it, or its pool depth drops too low. The logic is:
 
-1. When a new bootstrap pool is enabled, its depth is compared with the depth of the smallest active pools. 
-2. If it is deeper, the smallest active pool is placed back into bootstrap mode, and the new pool replaces it. 
+1. When a new bootstrap pool is enabled, its depth is compared with the depth of the smallest active pools.
+2. If it is deeper, the smallest active pool is placed back into bootstrap mode, and the new pool replaces it.
 
 The process is repeated to re-list an asset.
 
@@ -34,7 +34,7 @@ The process is repeated to re-list an asset.
 
 When the community wants to support a new chain
 
-1. Community developers write a new Bifröst module and propose it via a [THORChain Improvement Proposal \(TIP\)](governance.md#protocol-upgrades-and-thorchain-improvement-proposals-tips)
+1. Community developers write a new Bifröst module and propose it via a [THORChain Improvement Proposal (TIP)](governance.md#protocol-upgrades-and-thorchain-improvement-proposals-tips)
 2. THORChain developer community decides whether or not to approve it
 3. If approved, the code gets tested and validated by core developers
 4. If accepted, it gets added to THORNode software
@@ -43,9 +43,9 @@ When the community wants to support a new chain
 
 To delist, nodes stop watching a chain. When 67% are no longer watching, it gets removed. A process begins and the assets of that chain are returned to their owners.
 
-## Protocol Upgrades & THORChain Improvement Proposals \(TIPs\)
+## Protocol Upgrades & THORChain Improvement Proposals (TIPs)
 
-Developers from the community submit THORChain Improvement Proposals \(TIPs\) to improve the network. The community discusses, tests and validates the software. If they decide that the change is beneficial, it's merged into the THORNode software.
+Developers from the community submit THORChain Improvement Proposals (TIPs) to improve the network. The community discusses, tests and validates the software. If they decide that the change is beneficial, it's merged into the THORNode software.
 
 The protocol is made up of 3 main pieces, run by the nodes:
 
@@ -63,11 +63,13 @@ Emergency changes are difficult to coordinate because nodes cannot communicate. 
 
 ## Economic Limit
 
-There are only so many nodes who can participate on the network. This is because there's a minimum bond amount and a fixed supply of Rune. If the system is ever found to be always under-bonded or over-bonded, the minimum bond limit can be changed. 
+There are only so many nodes who can participate on the network. This is because there's a minimum bond amount and a fixed supply of Rune. If the system is ever found to be always under-bonded or over-bonded, the minimum bond limit can be changed.
 
 ## Mimir
 
-Mimir is a feature to allow admins to change constants in the chain, such as MinimumBond, ChurnSpeed and more during Chaosnet. When Mimir is destroyed, the chain will be uncapped and in Mainnet. 
+Mimir is a feature to allow changes in the constants of the chain, such as MinimumBond, ChurnSpeed and more.&#x20;
 
+There are two types of `mimir`
 
-
+* Node Mimir: set by each node. Once 2.3rds have set a mimir, it is enacted. Only active nodes have their votes counted
+* Admin Mimir: set by admins to over-ride constants during testing. Admin-mimir can't control funds, but it can set parameters. Ultimately admin-mimir will be removed.&#x20;

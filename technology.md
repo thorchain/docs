@@ -9,8 +9,8 @@ description: An overview of THORChain's 1-way State Pegs, State Machine and TSS 
 THORChain is a leaderless vault manager:
 
 1. 1-way State Pegs allow syncing state from external chains
-2. A State Machine to coordinate asset exchange logic and delegate outgoing transactions
-3. Bifröst Chain Client to processs chain-specific transactions
+2. A State Machine to coordinate asset exchange logic and delegate redemptions
+3. Bifröst Chain Client to convert redemptions into chain-specific transactions
 4. A TSS protocol to enable distributed threshold key-signing
 
 ![How THORChain works](<.gitbook/assets/image (4) (1).png>)
@@ -33,7 +33,7 @@ type Tx struct {
 }
 ```
 
-THORChain processes each observed transaction and waits for consensus. Once a super-majority of nodes agree on a particular transaction, it moves from a `pending` state to a finalised state.
+THORChain processes each observed transaction and collects `signers` - essentially the keys of each node that reports a transaction that is 100% identical. Once a super-majority of nodes agree on a particular transaction, it moves from a `pending` state to a finalised state.
 
 ```
 type ObservedTx struct {
@@ -92,7 +92,7 @@ This allows the system to use the security of the large vaults to hold the bulk 
 It takes 10-20 seconds to sign 27-of-40 TSS, so the system would be extremely limited if this vault did all the outbounds. But with each node (100) running an outbound vault, the system can do roughly 1 transaction per vault per second, so around 1500 times the output.
 {% endhint %}
 
-### Sharded Asgard Vaults
+### Multi-realm Asgard Vaults
 
 In order to further increase the node count to beyond 40 nodes, the system shards Asgard vaults into two when it approaches the `MaxNodesForAsgard` constant (and merges them if two ever drop below half of this). As such, with 100 nodes, there would be 3 Asgard vaults, with 100 yggdrasil vaults. The system constantly checks which vault has the highest excess security, and instructs users to send funds there.
 
@@ -101,8 +101,6 @@ In order to further increase the node count to beyond 40 nodes, the system shard
 The state machine constantly monitors and tops up each yggdrasil outbound vault, limited to 25% of the value of its bond in assets. Thus if a node bonded $4m, then up to $1m in assets would arrive on its vault. These top up transactions are identified with `yggdrasil+` memos.
 
 When the node churns out, it automatically returns these assets back to Asgard with a `yggdrasil-` memo.
-
-Not all assets are funded to yggrdrasil vaults since it would split the funding up far too much. Instead, all pools with a depth less than `minimumDepthForYggdrasil` keep their funds on Asgard vaults.&#x20;
 
 ### Migrating
 
