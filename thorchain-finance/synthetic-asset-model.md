@@ -93,3 +93,9 @@ Synth minting, swapping and redeeming will get a 50% reduction to the slip fee c
 
 If an active pool that minted synths becomes staged, then swaps are disabled. However, synth holders can always redeem for RUNE, or the underlying asset, by specifying that on the way out.
 
+
+
+### Alternate Synth Derivation
+
+![](<../.gitbook/assets/image (41).png>)
+
