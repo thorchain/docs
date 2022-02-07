@@ -186,7 +186,7 @@ $$
 slip = \frac {a}{( a + A)} - \frac {r }{( r + R)} = \frac{R a - r A}{( r + R)*(a + A)}
 $$
 
-
+This outputs 0 if no change to the price, and 1.0 if the depth on one side doubles, changing the price by 100%. Subtracting the absolute value from 1 and multiplying against the units given to the LP means they paying a fee to other LPs to change the price. This fee roughly evaluates to be the same fee as though they had swapped first.&#x20;
 
 
 
