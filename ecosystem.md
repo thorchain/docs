@@ -18,7 +18,7 @@ description: >-
 
 ****[**THORBoard** ](https://thorchain.live)- THORChain Dashboard
 
-****[**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [THORChain.net](https://thorchain.net/#/txs)- THORChain Block Explorer
+****[**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [**THORChain.net**](https://thorchain.net/#/txs) - THORChain Block Explorer
 
 [**Nine Realms**](https://twitter.com/ninerealms\_cap) **** - Brings institutional liquidity to THORChain, THORSec, and pen-tests protocol)
 

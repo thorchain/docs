@@ -26,27 +26,29 @@ Rewards are calculated according to whether or not the block contains any swap t
 {% tab title="BLOCK WITH SWAPS" %}
 How a block with fees splits the reward. In this example, 1000 RUNE is being divided as rewards:
 
-| **Pool Depth \(RUNE\)** | **Fees** | **Share \(of Fees\)** | Rewards |
-| :--- | :--- | :--- | :--- |
-| 1,000,000 | 1000 | 33% | 333 |
-| 2,000,000 | 0 | 0% | 0 |
-| 3,000,000 | 2000 | 67% | 667 |
-| **6,000,000** | **3000** | **100%** | **1000** |
+|                       |          |                     |          |
+| --------------------- | -------- | ------------------- | -------- |
+| **Pool Depth (RUNE)** | **Fees** | **Share (of Fees)** | Rewards  |
+| 1,000,000             | 1000     | 33%                 | 333      |
+| 2,000,000             | 0        | 0%                  | 0        |
+| 3,000,000             | 2000     | 67%                 | 667      |
+| **6,000,000**         | **3000** | **100%**            | **1000** |
 {% endtab %}
 
 {% tab title="BLOCK WITH NO SWAPS" %}
 How a block with no fees splits the rewards. In this example, 1000 RUNE is being divided:
 
-| **Pool Depth \(RUNE\)** | **Fees** | **Share \(of Depth\)** | Rewards |
-| :--- | :--- | :--- | :--- |
-| 1,000,000 | 0 | 17% | 167 |
-| 2,000,000 | 0 | 33% | 333 |
-| 3,000,000 | 0 | 50% | 500 |
-| **6,000,000** | **0** | **100%** | **1000** |
+|                       |          |                      |          |
+| --------------------- | -------- | -------------------- | -------- |
+| **Pool Depth (RUNE)** | **Fees** | **Share (of Depth)** | Rewards  |
+| 1,000,000             | 0        | 17%                  | 167      |
+| 2,000,000             | 0        | 33%                  | 333      |
+| 3,000,000             | 0        | 50%                  | 500      |
+| **6,000,000**         | **0**    | **100%**             | **1000** |
 {% endtab %}
 {% endtabs %}
 
-This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity.
+This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity. &#x20;
 
 ### Factors Affecting Yield
 
@@ -81,7 +83,7 @@ Liquidity providers are incentivised to deposit symmetrically but should deposit
 
 **Symmetrical deposits** is where users deposit an _equal_ value of 2 assets to a pool. For example, a user deposits $1000 of BTC and $1000 of RUNE to the BTC/RUNE pool.
 
-**Asymmetrical deposits** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $2000 of BTC and $0 of RUNE to the BTC/RUNE pool. Under the hood, the member is given an ownership of the pool that takes into account the slip created in the price. The liquidity provider will end up with &lt;$1000 in BTC and &lt;$1000 in RUNE. The deeper the pool, the closer to a total of $2000 the member will own.
+**Asymmetrical deposits** is where users deposit _unequal_ values of 2 assets to a pool. For example, a user deposits $2000 of BTC and $0 of RUNE to the BTC/RUNE pool. Under the hood, the member is given an ownership of the pool that takes into account the slip created in the price. The liquidity provider will end up with <$1000 in BTC and <$1000 in RUNE. The deeper the pool, the closer to a total of $2000 the member will own.
 
 _Note: there is no difference between swapping into symmetrical shares, then depositing that, or depositing asymmetrically and being arb'd to be symmetrical. You will still experience the same net slip._
 {% endhint %}
@@ -106,7 +108,7 @@ This change to the ratio of assets is called a 'slip'. A proportion of each slip
 
 Rewards also come from a large token reserve. This token reserve is continuously filled up from[ network fees](../how-it-works/fees.md#network-fee). Part of the token reserve is paid out to liquidity providers over the long-term. This provides continuous income even during times of low exchange volume.
 
-Learn about how [factors affecting yield and how yield is calculated](https://github.com/thorchain/docs/tree/14ece484bcf892fa893159b79c0d469113061c53/roles/staking.md#compensation).
+Learn about how [factors affecting yield and how yield is calculated.](liquidity-providers.md#compensation)
 
 {% hint style="info" %}
 See here for an [interactive example](https://rebase.foundation/network/thorchain/system-component/providing-liquidity) of the staking process.
@@ -124,7 +126,6 @@ Liquidity providers must have assets to deposit and their assets must be native 
 
 Liquidity providers must pay for security of their assets, since security is not free. This "payment" is the requirement for liquidity providers to hold RUNE, which acts as a redeemable insurance policy whilst they are in the pool. Holding RUNE allows liquidity providers to retain an ability to economically leverage nodes to ensure security of assets. When the liquidity provider withdraws, they can sell their RUNE back to the asset they desire. H
 
-The only direct cost to liquidity providers is the [network fee](../how-it-works/fees.md#network-fee), charged for withdrawing assets \(pays for the compute resources and gas costs in order to process outbound transactions\). An indirect cost to liquidity providers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of liquidity provider purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's [slip-based fee](../how-it-works/fees.md#slip-based-fee).
+The only direct cost to liquidity providers is the [network fee](../how-it-works/fees.md#network-fee), charged for withdrawing assets (pays for the compute resources and gas costs in order to process outbound transactions). An indirect cost to liquidity providers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of liquidity provider purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's [slip-based fee](../how-it-works/fees.md#slip-based-fee).
 
 Liquidity providers are not subject to any direct penalties for misconduct.
-

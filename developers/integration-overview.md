@@ -8,9 +8,9 @@ description: Learn the general principles of integrating with THORChain
 
 ### Read Only Applications
 
-Dashboards, explorers etc
+Dashboards, explorers etc.
 
-1. Connect to Midgard to get rich data about the system, included time-series graphs and aggregated values like TotalVolume etc.
+1. Connect to Midgard to get rich data about the system, including time-series graphs and aggregated values like TotalVolume etc.
 2. Connect to THORNode (or proxied via Midgard) to drill into the state-machine and access the current state (or historical just by adding a `?height=1234` to specify a certain height.
 3. Connect to RPC to get information about the Ledger, which is not specific to THORChain, such as `/genesis` or account/transaction information
 
@@ -35,7 +35,7 @@ If you don't need SSL, you can connect to any of the non-SSL public nodes (ie, j
 
 #### Get The Vault
 
-Vaults are fetched from the `/inbound_addresses` endpoint.
+Vaults are fetched from the `/inbound_addresses` [endpoint](https://thornode.thorchain.info/thorchain/inbound\_addresses).
 
 ![https://thornode.thorchain.info/thorchain/inbound\_addresses](<../.gitbook/assets/image (32) (1).png>)
 

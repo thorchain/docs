@@ -6,6 +6,5 @@ description: >-
 
 # Lending Model
 
-Work in progress:  
-[https://gitlab.com/thorchain/thornode/-/issues/838](https://gitlab.com/thorchain/thornode/-/issues/838)
-
+Work in progress:\
+The Lending Design is being updated.&#x20;
