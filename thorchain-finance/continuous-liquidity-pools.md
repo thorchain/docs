@@ -172,11 +172,23 @@ The liquidity provider is allocated rewards proportional to their ownership of t
 
 ### Derivation
 
-The new units are derived from the mean of adding new liquidity to both sides, multiplied by existing pool units.
+The new units are derived from the mean of adding new liquidity to both sides, multiplied by existing pool units.&#x20;
 
 $$
-units = P *  \frac{(r/R + a/A)}{2}
+units = P *  \frac{(r/R + a/A)}{2} = \frac {P(R a + r A)}{2 RA}
 $$
+
+Once outputted, the units then need to be factored with the slip adjustment. This equation purely looks at the delta change between the two sides. If they were added in the same quantity, then there is no change:
+
+
+
+$$
+slip = \frac {a}{( a + A)} - \frac {r }{( r + R)} = \frac{R a - r A}{( r + R)*(a + A)}
+$$
+
+
+
+
 
 ## Impermanent Loss Protection
 
