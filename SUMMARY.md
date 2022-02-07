@@ -23,7 +23,7 @@
 * [Liquidity Model](thorchain-finance/continuous-liquidity-pools.md)
 * [Synthetic Asset Model](thorchain-finance/synthetic-asset-model.md)
 * [Lending Model](thorchain-finance/lending-model.md)
-* [Composite Model](thorchain-finance/composite-model.md)
+* [Stablecoin](thorchain-finance/composite-model.md)
 
 ## Developers
 
