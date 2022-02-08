@@ -58,19 +58,26 @@ The network is safe when it is over-bonded, but it shrewd Node Operators will pr
 
 Deciding to run a node should be carefully considered and thought through. While the payoffs/rewards can be significant, there can also be an equally significant costs.
 
-### Risks
+### Risks to Bond
 
-To run a node, you must obtain a significant amount of Rune, currently 1 million Rune. This Rune is sent into the network as “bond” and held as leverage on each node to ensure they behave in the best interest of the network. Running a malicious or unreliable node results in a slashing of this bond.
+To run a node, you must obtain a significant amount of Rune, minimums [apply](overview.md#churning-in). This RUNE is sent into the network as “bond” and held as leverage on each node to ensure they behave in the best interest of the network.
 
-Here are the ways in which a validator’s bond can get slashed
+Running a malicious node or stealing from the network results in a slashing of this bond. Here are the ways in which a validator’s bond can get slashed.
 
-* **Double Sign** (5% of minimum bond) - if it is observed that a single validator node is committing blocks on multiple chains. To avoid this, never run two nodes with the same node account at the same time.
-* **Not Observing** (2 slash pts) - if a node does not observe transactions for all chains, while other nodes do, they get slash points added.
-* **Not signing a transaction** (600 slash pts) - if a node does not sign an outbound transaction, as requested by the network, they will get slash points added.
-* **Unauthorized transaction** (1.5x transaction value) - if a node sends funds without authorization, the bond is slashed 1.5x the value of the stolen funds. The slashed bond is dumped into the pool(s) where the funds were stolen and added to the reserve.
+* **Double Sign** (5% of minimum bond) - if it is observed that a single validator node is committing blocks on multiple chains. To avoid this, never run two nodes with the same node account at the same time.&#x20;
+* **Unauthorised transaction** (1.5x transaction value) - if a node sends funds without authorization, the bond is slashed 1.5x the value of the stolen funds. The slashed bond is dumped into the pool(s) where the funds were stolen and added to the reserve.
+
+Bond slashing takes directly from the bond and does not affect rewards.
+
+### **Risk to Income**
+
+When a node is active, it earns rewards from the network in RUNE. Sufficient rewards are required to be earned in order for a Validator to be profitable. Running an unreliable node results in rewards being slashed. Here are the ways in which a validator’s rewards can be slashed.
+
+* **Not Observing** (2 slash pts) - if a node does not observe transactions for all chains, while other nodes do, they get slash points added.&#x20;
+* **Not signing a transaction** (600 slash pts) - if a node does not sign an outbound transaction, as requested by the network, they will get slash points added.&#x20;
 * **Fail to keygen** (1 hr of revenue) - When the network attempts to churn, and attempts to create a new Asgard pubkey for the network, and fails to do so due to a specific node(s), they will lose 1 hr of revenue from their bond.
 
-Slash points undo profits made on the network. For every 1 slash point a node receives, they lose 1 block of profits. If a node account has more slash points than blocks they have been active, they will lose the equivalent in bond.
+Slash points undo profits made on the network. For every 1 slash point a node receives, they lose 1 block of rewards. Rewards slashing reduces earned rewards and does not affect a validator’s bond.
 
 ## Compensation
 
