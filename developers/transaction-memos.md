@@ -37,8 +37,8 @@ The following memos are permitted:
 | `:ASSET`     | The asset identifier                                                                                                                        |               |
 | `:DESTADDR`  | The destination address to send to                                                                                                          |               |
 | `:LIM`       | The trade limit  ie, set 100000000 to be guaranteed a minimum of 1 full asset. A refund will be executed if the output is below the limit.  | Optional      |
-| `:AFFILIATE` | The affiliate address. Must be THORName or THOR Address.                                                                                    | Optional      |
-| `:FEE`       | The affiliate fee. Limited from 0 to 1000 Basis Points                                                                                      | Optional      |
+| `:AFFILIATE` | The affiliate address. Must be THORName or THOR Address. RUNE is sent to Affiliate.                                                         | Optional      |
+| `:FEE`       | The affiliate fee. Limited from 0 to 1000 Basis Points.                                                                                     | Optional      |
 
 **Examples**
 
@@ -48,37 +48,52 @@ The following memos are permitted:
 
 **`s:ASSET:DESTADDR:LIM:AFFILIATE:FEE`** swap with limit and affiliate
 
-
-
-
-
 ### Add Liquidity <a href="#swap" id="swap"></a>
 
-**`ADD:ASSET:PAIREDADDR`**​
+**`ADD:ASSET:PAIREDADDR:AFFILIATE:FEE`**
 
-| Parameter    | Notes                                                                                                                                                                                                                                   | Extra                                                                        |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Payload      | The asset to add liquidity with. Must be supported by THORChain (active, staged pool or whitelisted asset)                                                                                                                              |                                                                              |
-| `ADD`        | The Add Liquidity handler.                                                                                                                                                                                                              | also `a` `+`                                                                 |
-| `:ASSET`     | The pool to add liquidity to.                                                                                                                                                                                                           |                                                                              |
-| `PAIREDADDR` | The other address to link with. If on external chain, link to THOR address. If on THORChain, link to external address. If a paired address is found, the LP is matched and added. If none is found, the liquidity is put into pending.  | Optional. If not specified, a single-sided add-liquidity action is created.  |
+| Parameter     | Notes                                                                                                                                                                                                                                   | Extra                                                                        |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Payload       | The asset to add liquidity with. Must be supported by THORChain (active, staged pool or whitelisted asset)                                                                                                                              |                                                                              |
+| `ADD`         | The Add Liquidity handler.                                                                                                                                                                                                              | also `a` `+`                                                                 |
+| `:ASSET`      | The pool to add liquidity to.                                                                                                                                                                                                           |                                                                              |
+| `:PAIREDADDR` | The other address to link with. If on external chain, link to THOR address. If on THORChain, link to external address. If a paired address is found, the LP is matched and added. If none is found, the liquidity is put into pending.  | Optional. If not specified, a single-sided add-liquidity action is created.  |
+| `:AFFILIATE`  | The affiliate address. Must be THORName or THOR Address. The affiliate is added in to the pool as an LP.                                                                                                                                | Optional                                                                     |
+| `:FEE`        | The affiliate fee. Limited from 0 to 1000 Basis Points. Fee is allocated to the affiliate.                                                                                                                                              | Optional                                                                     |
+
+**Examples**
+
+**`ADD:ASSET`** single-sided add liquidity.
+
+**`+:ASSET:PAIREDADDR`** add on both sides.&#x20;
+
+**`a:ASSET:PAIREDADDR:AFFILIATE:FEE`** add with affiliate
+
+### Withdraw Liquidity
+
+**`WITHDRAW:ASSET:BASISPOINTS:ASSET`**
+
+| Parameter  | Notes                | Extra |
+| ---------- | -------------------- | ----- |
+| `WITHDRAW` | The withdraw handler |       |
+|            |                      |       |
+|            |                      |       |
+|            |                      |       |
 
 
 
 {% tabs %}
 {% tab title="MULTICHAIN" %}
-| Type                    | Payload                                                                                                                    | MEMO                                                                                                                                                     | Expected Outcome                                                                                                              |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **ADD LIQUIDITY**       | <p><strong>AssetChain:</strong><br><code>ASSET</code></p><p><strong>THORChain:</strong></p><p><code>RUNE</code></p>        | <p><strong>AssetChain:</strong></p><p><code>ADD:ASSET:thorAddress</code></p><p><strong>THORChain:</strong></p><p><code>ADD:ASSET:assetAddress</code></p> | Adds into the specified pool symmetrically. The asset that reaches THORChain first is put into "pending".                     |
-| **ADD LIQUIDITY-ASSYM** | Either                                                                                                                     | <p><strong>AssetChain:</strong></p><p><code>ADD:ASSET</code></p><p><strong>THORChain:</strong></p><p><code>ADD:ASSET</code></p>                          | Adds into the specified pool asymmetrically.                                                                                  |
-| **WITHDRAW**            | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT</code></p><p>Percent is in basis points (0-10000, where 10000=100%)</p>                                                  | Withdraws from a pool                                                                                                         |
-| **WITHDRAW-ASSYM**      | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT:ASSET</code></p><p>Withdraw to the corresponding asset (RUNE or ASSET).</p>                                              | Withdraws asymmetrically from a pool                                                                                          |
-| **SWAP**                | `Amount to swap`                                                                                                           | ``                                                                                                                                                       | Swaps to asset.                                                                                                               |
-| **DONATE** Assets       | `RUNE &`                                                                                                                   | <p>Token</p><p>Can be either.</p>                                                                                                                        | `DONATE:ASSET`                                                                                                                |
-| **BOND** **UNBOND**     | Asset to add to bond.                                                                                                      | <p><code>BOND:thornode</code><br><code>UNBOND:thornode:basispoints</code></p>                                                                            | Bond or Unbond to the THORNode                                                                                                |
-| **LEAVE**               | None                                                                                                                       | `LEAVE:thornode`                                                                                                                                         | Force a THORNode to be kicked out, never to return. The bond will be returned.                                                |
-| **RESERVE**             | RUNE                                                                                                                       | `RESERVE`                                                                                                                                                | Add to the reserve                                                                                                            |
-| **OTHER**               | Asset to add to THORChain                                                                                                  | <p><code>noop:novault</code></p><p><code>noop</code></p>                                                                                                 | These are special memos to bump state. Novault means the asset is not credited to the vault, it just fixes insolvency issues. |
+| Type                | Payload                                                                                                                    | MEMO                                                                                                        | Expected Outcome                                                                                                              |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **WITHDRAW**        | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT</code></p><p>Percent is in basis points (0-10000, where 10000=100%)</p>     | Withdraws from a pool                                                                                                         |
+| **WITHDRAW-ASSYM**  | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT:ASSET</code></p><p>Withdraw to the corresponding asset (RUNE or ASSET).</p> | Withdraws asymmetrically from a pool                                                                                          |
+| **SWAP**            | `Amount to swap`                                                                                                           | ``                                                                                                          | Swaps to asset.                                                                                                               |
+| **DONATE** Assets   | `RUNE &`                                                                                                                   | <p>Token</p><p>Can be either.</p>                                                                           | `DONATE:ASSET`                                                                                                                |
+| **BOND** **UNBOND** | Asset to add to bond.                                                                                                      | <p><code>BOND:thornode</code><br><code>UNBOND:thornode:basispoints</code></p>                               | Bond or Unbond to the THORNode                                                                                                |
+| **LEAVE**           | None                                                                                                                       | `LEAVE:thornode`                                                                                            | Force a THORNode to be kicked out, never to return. The bond will be returned.                                                |
+| **RESERVE**         | RUNE                                                                                                                       | `RESERVE`                                                                                                   | Add to the reserve                                                                                                            |
+| **OTHER**           | Asset to add to THORChain                                                                                                  | <p><code>noop:novault</code></p><p><code>noop</code></p>                                                    | These are special memos to bump state. Novault means the asset is not credited to the vault, it just fixes insolvency issues. |
 {% endtab %}
 {% endtabs %}
 
