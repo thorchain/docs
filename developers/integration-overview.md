@@ -6,41 +6,31 @@ description: Learn the general principles of integrating with THORChain
 
 ## Overview
 
-### Read Only Applications
-
-Dashboards, explorers etc.
+### Read Only Applications (dashboards)
 
 1. Connect to Midgard to get rich data about the system, including time-series graphs and aggregated values like TotalVolume etc.
 2. Connect to THORNode (or proxied via Midgard) to drill into the state-machine and access the current state (or historical just by adding a `?height=1234` to specify a certain height.
 3. Connect to RPC to get information about the Ledger, which is not specific to THORChain, such as `/genesis` or account/transaction information
 
-### Write Applications
+### Write Applications (wallets)
 
-Wallets, interfaces etc.
-
-These applications require first-principle thinking and excellent understanding of how the system works.
-
-1. Connect to a trusted THORNode or connect to several public THORNodes and ensure they all agree
+1. Connect to a self-hosted or public Midgard
 2. Get the `/inbound_addresses`
-3. Compose the transaction with the correct memo and correct gas price.
+3. Build the transaction with the correct memo and correct gas price.
 4. Send the vault the transaction and wait for execution
 
 #### Connecting
 
 First, you need to connect to THORChain. You can use the official clients which have SSL, or run your own node, host it on SSL.
 
-{% hint style="info" %}
-If you don't need SSL, you can connect to any of the non-SSL public nodes (ie, just their IP address). Web applications need SSL, but mobile and desktop apps don't.
-{% endhint %}
-
 #### Get The Vault
 
-Vaults are fetched from the `/inbound_addresses` [endpoint](https://thornode.thorchain.info/thorchain/inbound\_addresses).
+Vaults are fetched from the `/inbound_addresses` [endpoint](https://midgard.thorchain.info/v2/thorchain/inbound\_addresses).
 
-![https://thornode.thorchain.info/thorchain/inbound\_addresses](<../.gitbook/assets/image (32) (1).png>)
+![https://midgard.thorchain.info/v2/thorchain/inbound\_addresses](<../.gitbook/assets/image (32) (1).png>)
 
 {% hint style="warning" %}
-If you connect to public THORNodes, you must be conscious of the fact that you can be phished and could send money to the WRONG vault. You should do safety checks, ie, comparing with other nodes, or even inspecting the vault itself for presence of funds. You should also consider running your own 'fullnode' instance to query for trusted data.
+If you connect to a public Midgard, you must be conscious of the fact that you can be phished and could send money to the WRONG vault. You should do safety checks, ie, comparing with other nodes, or even inspecting the vault itself for presence of funds. You should also consider running your own 'fullnode' instance to query for trusted data.
 {% endhint %}
 
 {% hint style="danger" %}

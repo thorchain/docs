@@ -8,37 +8,65 @@ description: Transaction Intent, Memos, Refunds and Asset Notation.
 
 THORChain processes all transactions made to the vault address that it monitors. The address is discovered by clients by querying THORChain (via Midgard).
 
-Transactions to THORChain pass user-intent with the `MEMO` field on their respective chains. The THORChain inspects the transaction object, as well as the `MEMO` in order to process the transaction, so care must be taken to ensure the `MEMO` and the transaction is valid. If not, THORChain will automatically refund.
-
-### Mechanism for Transaction Intent
+Transactions to THORChain pass user-intent with the `MEMO` field on their respective chains. The THORChain inspects the transaction object, as well as the `MEMO` in order to process the transaction, so care must be taken to ensure the `MEMO` and the transaction is valid. If not, THORChain will automatically refund (if bad memo).
 
 Each chain will have a unique way of adding state to a transaction. Long assets can be shortened using Asset abbreviations (below) as well as THORNames to reduce the size of destination/affiliate addresses.
 
-| Chain         | Mechanism            | Notes                                                                      |
-| ------------- | -------------------- | -------------------------------------------------------------------------- |
-| Bitcoin       | OP\_RETURN           | Limited to 80 bytes.                                                       |
-| Ethereum      | Smart Contract Input | Use `deposit(vault, asset, amount, memo)` function, where `memo` is string |
-| Binance Chain | MEMO                 | Each transaction has an optional memo, limited to 128 bytes.               |
-| Monero        | Extra Data           | Each transaction can have attached `extra data` field, that has no limits. |
+### Format
 
-### Transactions
+Memos follow the format:
 
-The following transactions are permitted:
+`FUNCTION:PARAM1:PARAM2:PARAM3:PARAM4`
+
+The function is invoked by a string, which in turn calls a particular handler in the state machine. The state machine parses the memo looking for the parameters which is simply decodes from human-readable strings.&#x20;
+
+In addition, some parameters are optional. Simply leave them blank, but retain the `:` separator:
+
+`FUNCTION:PARAM1:PARAM2::`
+
+### Permitted Memos
+
+The following memos are permitted:
+
+### Swap
+
+**`SWAP:ASSET:DESTADDR:LIM:AFFILIATE:FEE`**
+
+| Parameter    | Notes                                                                                                                                       | Alternates/Optional |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| `SWAP`       | The swap handler                                                                                                                            | also `s`, `=`       |
+| `:ASSET`     | The asset identifier                                                                                                                        |                     |
+| `:DESTADDR`  | The destination address to send to                                                                                                          |                     |
+| `:LIM`       | The trade limit  ie, set 100000000 to be guaranteed a minimum of 1 full asset. A refund will be executed if the output is below the limit.  | Optional            |
+| `:AFFILIATE` | The affiliate address. Must be THORName or THOR Address.                                                                                    | Optional            |
+| `:FEE`       | The affiliate fee. Limited from 0 to 1000 Basis Points                                                                                      | Optional            |
+
+**Examples**
+
+**`SWAP:ASSET:DESTADDR`** simply swap
+
+**`=:ASSET:DESTADDR:LIM`** swap with limit
+
+**`s:ASSET:DESTADDR:LIM:AFFILIATE:FEE`** swap with limit and affiliate
+
+
+
+
 
 {% tabs %}
 {% tab title="MULTICHAIN" %}
-| Type                    | Payload                                                                                                                    | MEMO                                                                                                                                                                                                                                                                                                                                                                     | Expected Outcome                                                                                                              |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| **ADD LIQUIDITY**       | <p><strong>AssetChain:</strong><br><code>ASSET</code></p><p><strong>THORChain:</strong></p><p><code>RUNE</code></p>        | <p><strong>AssetChain:</strong></p><p><code>ADD:ASSET:thorAddress</code></p><p><strong>THORChain:</strong></p><p><code>ADD:ASSET:assetAddress</code></p>                                                                                                                                                                                                                 | Adds into the specified pool symmetrically. The asset that reaches THORChain first is put into "pending".                     |
-| **ADD LIQUIDITY-ASSYM** | Either                                                                                                                     | <p><strong>AssetChain:</strong></p><p><code>ADD:ASSET</code></p><p><strong>THORChain:</strong></p><p><code>ADD:ASSET</code></p>                                                                                                                                                                                                                                          | Adds into the specified pool asymmetrically.                                                                                  |
-| **WITHDRAW**            | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT</code></p><p>Percent is in basis points (0-10000, where 10000=100%)</p>                                                                                                                                                                                                                                                                  | Withdraws from a pool                                                                                                         |
-| **WITHDRAW-ASSYM**      | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT:ASSET</code></p><p>Withdraw to the corresponding asset (RUNE or ASSET).</p>                                                                                                                                                                                                                                                              | Withdraws asymmetrically from a pool                                                                                          |
-| **SWAP**                | `Amount to swap`                                                                                                           | <p><code>SWAP:ASSET:DESTADDR:LIM</code></p><p>Set a destination address to swap and send to someone.<br></p><p>Set trade protection. If the value isn't achieved then it is refunded. ie, set 100000000 to be guaranteed a minimum of 1 full asset.</p><p>If <code>LIM</code> is omitted, then there is no price protection:</p><p><code>SWAP:ASSET:DESTADDR:</code></p> | Swaps to asset.                                                                                                               |
-| **DONATE** Assets       | <p><code>RUNE &#x26;| Token</code></p><p>Can be either.</p>                                                                | `DONATE:ASSET`                                                                                                                                                                                                                                                                                                                                                           | Adds to the pool balances without being credited.                                                                             |
-| **BOND** **UNBOND**     | Asset to add to bond.                                                                                                      | <p><code>BOND:thornode</code><br><code>UNBOND:thornode:basispoints</code></p>                                                                                                                                                                                                                                                                                            | Bond or Unbond to the THORNode                                                                                                |
-| **LEAVE**               | None                                                                                                                       | `LEAVE:thornode`                                                                                                                                                                                                                                                                                                                                                         | Force a THORNode to be kicked out, never to return. The bond will be returned.                                                |
-| **RESERVE**             | RUNE                                                                                                                       | `RESERVE`                                                                                                                                                                                                                                                                                                                                                                | Add to the reserve                                                                                                            |
-| **OTHER**               | Asset to add to THORChain                                                                                                  | <p><code>noop:novault</code></p><p><code>noop</code></p>                                                                                                                                                                                                                                                                                                                 | These are special memos to bump state. Novault means the asset is not credited to the vault, it just fixes insolvency issues. |
+| Type                    | Payload                                                                                                                    | MEMO                                                                                                                                                     | Expected Outcome                                                                                                              |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **ADD LIQUIDITY**       | <p><strong>AssetChain:</strong><br><code>ASSET</code></p><p><strong>THORChain:</strong></p><p><code>RUNE</code></p>        | <p><strong>AssetChain:</strong></p><p><code>ADD:ASSET:thorAddress</code></p><p><strong>THORChain:</strong></p><p><code>ADD:ASSET:assetAddress</code></p> | Adds into the specified pool symmetrically. The asset that reaches THORChain first is put into "pending".                     |
+| **ADD LIQUIDITY-ASSYM** | Either                                                                                                                     | <p><strong>AssetChain:</strong></p><p><code>ADD:ASSET</code></p><p><strong>THORChain:</strong></p><p><code>ADD:ASSET</code></p>                          | Adds into the specified pool asymmetrically.                                                                                  |
+| **WITHDRAW**            | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT</code></p><p>Percent is in basis points (0-10000, where 10000=100%)</p>                                                  | Withdraws from a pool                                                                                                         |
+| **WITHDRAW-ASSYM**      | <p><strong>AssetChain:</strong><br><code>lowest possible</code></p><p><strong>THORChain:</strong></p><p><code>0</code></p> | <p><code>WITHDRAW:ASSET:PERCENT:ASSET</code></p><p>Withdraw to the corresponding asset (RUNE or ASSET).</p>                                              | Withdraws asymmetrically from a pool                                                                                          |
+| **SWAP**                | `Amount to swap`                                                                                                           | ``                                                                                                                                                       | Swaps to asset.                                                                                                               |
+| **DONATE** Assets       | `RUNE &`                                                                                                                   | <p>Token</p><p>Can be either.</p>                                                                                                                        | `DONATE:ASSET`                                                                                                                |
+| **BOND** **UNBOND**     | Asset to add to bond.                                                                                                      | <p><code>BOND:thornode</code><br><code>UNBOND:thornode:basispoints</code></p>                                                                            | Bond or Unbond to the THORNode                                                                                                |
+| **LEAVE**               | None                                                                                                                       | `LEAVE:thornode`                                                                                                                                         | Force a THORNode to be kicked out, never to return. The bond will be returned.                                                |
+| **RESERVE**             | RUNE                                                                                                                       | `RESERVE`                                                                                                                                                | Add to the reserve                                                                                                            |
+| **OTHER**               | Asset to add to THORChain                                                                                                  | <p><code>noop:novault</code></p><p><code>noop</code></p>                                                                                                 | These are special memos to bump state. Novault means the asset is not credited to the vault, it just fixes insolvency issues. |
 {% endtab %}
 {% endtabs %}
 
@@ -105,3 +133,14 @@ Assets can be abbreviated using fuzzy logic. The following will all be matched a
 | ETH.USDT-0xdac1                                     |
 | ETH.USDT-0xdac17f958d2ee523a220                     |
 | ETH.USDT-0xdac17f958d2ee523a2206206994597c13d831ec7 |
+
+### Mechanism for Transaction Intent <a href="#mechanism-for-transaction-intent" id="mechanism-for-transaction-intent"></a>
+
+| Chain         | Mechanism            | Notes                                                                      |
+| ------------- | -------------------- | -------------------------------------------------------------------------- |
+| Bitcoin       | OP\_RETURN           | Limited to 80 bytes.                                                       |
+| Ethereum      | Smart Contract Input | Use `deposit(vault, asset, amount, memo)` function, where `memo` is string |
+| Binance Chain | MEMO                 | Each transaction has an optional memo, limited to 128 bytes.               |
+| Monero        | Extra Data           | Each transaction can have attached `extra data` field, that has no limits. |
+
+Each chain will have a unique way of adding state to a transaction. Long assets can be shortened using Asset abbreviations (below) as well as THORNames to reduce the size of destination/affiliate addresses.​ChainMechanismNotesBitcoinOP\_RETURNLimited to 80 bytes.EthereumSmart Contract InputUse `deposit(vault, asset, amount, memo)` function, where `memo` is stringBinance ChainMEMOEach transaction has an optional memo, limited to 128 bytes.MoneroExtra DataEach transaction can have attached `extra data` field, that has no limits.

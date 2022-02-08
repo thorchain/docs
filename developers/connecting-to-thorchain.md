@@ -10,9 +10,9 @@ The Network Information comes from three sources:
 2. **THORNODE**: Raw blockchain data relating to the THORChain state machine. THORChain block explorers will query THORChain-specific information here.
 3. **TENDERMINT**: Tendermint standard data, used by all block explorers to query for base information.
 
-{% tabs %}
-{% tab title="MIDGARD" %}
-Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more.
+### Midgard
+
+Midgard returns time-series information regarding the THORChain network, such as volume, pool information, users, liquidity providers and more. It also proxies to THORNode to reduce burden on the network.&#x20;
 
 **Any Node**
 
@@ -36,10 +36,10 @@ http://\<host>:8080/v2/doc
 **Official Stagenet**
 
 [https://stagenet-midgard.ninerealms.com/v2/doc](https://stagenet-midgard.ninerealms.com/v2/doc)
-{% endtab %}
 
-{% tab title="THORNODE" %}
-THORNode returns application-specific information regarding the THORChain state machine, such as balances, transactions and more.
+### THORNode
+
+THORNode returns application-specific information regarding the THORChain state machine, such as balances, transactions and more. Careful querying this too much - you could overload the public nodes. Consider running your own node.&#x20;
 
 **Any Node**
 
@@ -57,10 +57,10 @@ http://\<host>:1317/thorchain/doc/
 **Official Stagenet**
 
 [https://stagenet-thornode.ninerealms.com/](https://stagenet-thornode.ninerealms.com)
-{% endtab %}
 
-{% tab title="TENDERMINT" %}
-RPC allows base blockchain information to be returned.
+### RPC
+
+RPC allows base blockchain information to be returned. This is the "default" cosmos RPC endpoints.&#x20;
 
 **Any Node**
 
@@ -93,24 +93,5 @@ MAINNET Port: `27146`
 
 P2P Guide\
 [https://docs.tendermint.com/master/spec/p2p/](https://docs.tendermint.com/master/spec/p2p/)
-{% endtab %}
-
-{% tab title="CHAIN CLIENTS" %}
-Each node allows connecting to its Chain Clients.
-
-**Official**\
-[https://btc.thorchain.info](https://btc.thorchain.info)
-
-[https://bch.thorchain.info](https://bch.thorchain.info)
-
-[https://ltc.thorchain.info](https://ltc.thorchain.info)
-
-[https://bnb.thorchain.info](https://bnb.thorchain.info)
-
-[https://eth.thorchain.info](https://eth.thorchain.info)
-{% endtab %}
-{% endtabs %}
-
-
 
 ##
