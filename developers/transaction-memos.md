@@ -6,8 +6,6 @@ description: Transaction Intent, Memos, Refunds and Asset Notation.
 
 ### Overview
 
-THORChain processes all transactions made to the vault address that it monitors. The address is discovered by clients by querying THORChain (via Midgard).
-
 Transactions to THORChain pass user-intent with the `MEMO` field on their respective chains. The THORChain inspects the transaction object, as well as the `MEMO` in order to process the transaction, so care must be taken to ensure the `MEMO` and the transaction is valid. If not, THORChain will automatically refund (if bad memo).
 
 Each chain will have a unique way of adding state to a transaction. Long assets can be shortened using Asset abbreviations (below) as well as THORNames to reduce the size of destination/affiliate addresses.
@@ -32,14 +30,15 @@ The following memos are permitted:
 
 **`SWAP:ASSET:DESTADDR:LIM:AFFILIATE:FEE`**
 
-| Parameter    | Notes                                                                                                                                       | Alternates/Optional |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| `SWAP`       | The swap handler                                                                                                                            | also `s`, `=`       |
-| `:ASSET`     | The asset identifier                                                                                                                        |                     |
-| `:DESTADDR`  | The destination address to send to                                                                                                          |                     |
-| `:LIM`       | The trade limit  ie, set 100000000 to be guaranteed a minimum of 1 full asset. A refund will be executed if the output is below the limit.  | Optional            |
-| `:AFFILIATE` | The affiliate address. Must be THORName or THOR Address.                                                                                    | Optional            |
-| `:FEE`       | The affiliate fee. Limited from 0 to 1000 Basis Points                                                                                      | Optional            |
+| Parameter    | Notes                                                                                                                                       | Extra         |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| Payload      | Send the asset to swap. Must be an active pool on THORChain.                                                                                |               |
+| `SWAP`       | The swap handler                                                                                                                            | also `s`, `=` |
+| `:ASSET`     | The asset identifier                                                                                                                        |               |
+| `:DESTADDR`  | The destination address to send to                                                                                                          |               |
+| `:LIM`       | The trade limit  ie, set 100000000 to be guaranteed a minimum of 1 full asset. A refund will be executed if the output is below the limit.  | Optional      |
+| `:AFFILIATE` | The affiliate address. Must be THORName or THOR Address.                                                                                    | Optional      |
+| `:FEE`       | The affiliate fee. Limited from 0 to 1000 Basis Points                                                                                      | Optional      |
 
 **Examples**
 
@@ -50,6 +49,19 @@ The following memos are permitted:
 **`s:ASSET:DESTADDR:LIM:AFFILIATE:FEE`** swap with limit and affiliate
 
 
+
+
+
+### Add Liquidity <a href="#swap" id="swap"></a>
+
+**`ADD:ASSET:PAIREDADDR`**​
+
+| Parameter    | Notes                                                                                                                                                                                                                                   | Extra                                                                        |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Payload      | The asset to add liquidity with. Must be supported by THORChain (active, staged pool or whitelisted asset)                                                                                                                              |                                                                              |
+| `ADD`        | The Add Liquidity handler.                                                                                                                                                                                                              | also `a` `+`                                                                 |
+| `:ASSET`     | The pool to add liquidity to.                                                                                                                                                                                                           |                                                                              |
+| `PAIREDADDR` | The other address to link with. If on external chain, link to THOR address. If on THORChain, link to external address. If a paired address is found, the LP is matched and added. If none is found, the liquidity is put into pending.  | Optional. If not specified, a single-sided add-liquidity action is created.  |
 
 
 
