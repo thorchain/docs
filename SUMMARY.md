@@ -15,6 +15,7 @@
   * [Prices](how-it-works/prices.md)
   * [Governance](how-it-works/governance.md)
   * [THORChain Name Service](how-it-works/thorchain-name-service.md)
+  * [Constants and Mimir](how-it-works/constants-and-mimir.md)
 * [Ecosystem](ecosystem.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
 
