@@ -101,7 +101,7 @@ Income for one node can be estimated based on a few inputs:
 
 * Number of active nodes
 * Reward emission rate
-* % of rewards allocated to notes, set by the Incentive Pendulum
+* % of rewards allocated to nodes, set by the Incentive Pendulum
 * Price of RUNE\*
 
 These inputs should be plugged into the following formula:
