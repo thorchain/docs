@@ -205,7 +205,7 @@ Simply put, Cross-chain bridges are a better solution than Atomic Swaps. Atomic 
 
 #### What is the RUNE monetary policy / Tokenomics?&#x20;
 
-The goal is to have a fixed supply at all times. Instead of constantly emitting (infinite supply like Cosmos or Ethereum) or reducing the emission down to zero (Bitcoin) the network elects to match emissions to the difference between current circulating supply and the max supply, as well as burning fees. This means there is 500 million progressively emitted to nodes for security and liquidity over time.
+The goal is to have a fixed supply at all times. Instead of constantly emitting (infinite supply like Cosmos or Ethereum) or reducing the emission down to zero (Bitcoin) the network elects to match emissions to the difference between current circulating supply and the max supply, as well as burning fees. This means there is 500 million progressively emitted to nodes for security and liquidity over time. See [Emission Schedule](how-it-works/emission-schedule.md) for more information.&#x20;
 
 #### How are new pools added in THORChain?
 
@@ -215,7 +215,7 @@ This means there is an open decentralised liquidity competition where the commun
 
 There is a set max of 100 active pools, and once achieved, deeper pending pools will be able to replace shallowest active pools. See Governance for more information.
 
-**What is the Contract Address of RUNE?**&#x20;
+#### **What is the Contract Address of RUNE?**&#x20;
 
 ERC20 RUNE contract address: https://etherscan.io/address/0x3155ba85d5f96b2d030a4966af206230e46849cb&#x20;
 
