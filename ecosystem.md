@@ -8,7 +8,7 @@ description: >-
 
 ## **THORChain Website and Socials**
 
-All the following are commumity-run resources. There are no "official" channels.
+All the following are community-run resources. There are no "official" channels.
 
 **Websites:** [**thorchain.org**](http://thorchain.org) **|** [**thorchain.com**](https://www.thorchain.com)****
 
@@ -30,23 +30,25 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### Exchanges
 
-****[**THORSwap**](https://thorswap.finance)****
+****[**ASGARDEX Desktop**](https://github.com/thorchain/asgardex-electron/releases/) **** - Wallet and Exchange Client for THORChain
 
-****[**ASGARDEX Desktop**](https://github.com/thorchain/asgardex-electron/releases/)
+[**THORSwap**](https://thorswap.finance) **-** World's first multi-chain dex powered by THORChain
 
-****[**SKIPexchange**](https://app.skip.exchange/swap)
+****[**Dragon’s DEX**](https://dragonsdex.com) **** - Cross Chain Dex, Mobile
 
-****[**Dragon’s DEX**](https://dragonsdex.com)
+****[**Rango Exchange**](https://rango.exchange) - First Multi-chain DEX Aggregator
 
-****[**Rango Exchange**](https://rango.exchange)&#x20;
+****[**THORGram**](https://t.me/thorgram\_public) **** - THORSwap in Telegram
 
-****[**THORGram**](https://t.me/thorgram\_public)
+****[**Liquidity**](https://liquality.io) **-** Browser Extension Crypto Wallet with Built-In Swaps
+
+[**Shapeshift** ](https://shapeshift.com)- Explore the Defi Universe
 
 ### **Wallets**
 
-****[**XDeFi** ](https://www.xdefi.io)**-** Cross Chain Wallet
+****[**XDeFi** ](https://www.xdefi.io)**-** Cross Chain Wallet, Browser Extention
 
-****[**THORWallet**](https://thorwallet.org) **-** Cross Chain Wallet
+****[**THORWallet**](https://thorwallet.org) **-** Cross Chain Wallet, Mobile Wallet
 
 ### **Education**
 
@@ -58,8 +60,6 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**THORNoob**](https://medium.com/@THORNoob) **** - Weekly Community Updates and Educational Articles
 
-****[**SKALDCamp** ](https://twitter.com/SKALDcamp)**-** Community-operated THORChain marketing
-
 ### **Analytics**
 
 ****[**THORYield** ](https://thoryield.com)**-** View your added liquidity on THORChain
@@ -68,7 +68,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**THORChain Data Digest**](https://alexsimpson96.medium.com) - THORChain Data Reports / Analysis&#x20;
 
-****[**DecentralFi**](https://decentralfi.io) - Track MCCN positions  - https://decentralfi.io/liquidity?wallet={thor address}
+****[**DecentralFi**](https://decentralfi.io) - Track positions  - https://decentralfi.io/liquidity?wallet={thor address}
 
 ****[**THORBelt** ](https://www.thorbelt.com)- **** View your liquidity, assist with trading.
 
@@ -82,9 +82,9 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**LP Calculator**](https://science.flipsidecrypto.com/thorchain/) - THORChain LP Calculator
 
-****[**THORChain Vision**](https://thorchain.vision/console)****
+****[**THORChain Vision**](https://thorchain.vision/console) **** - Contains key stats and figures related to core Thorchain operations.
 
-****[**Swapalyzer of THORChain**](https://swapalyzer.ofthor.com)****
+****[**Swapalyzer of THORChain**](https://swapalyzer.ofthor.com) - View Swap information
 
 ### **Infrastructure**
 
@@ -114,7 +114,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**xchainpy-lib**](https://github.com/xchainjs/xchainpy-lib) - A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in PY.
 
-[**thorchain-arb**](https://github.com/hoodieonwho/thorchain-arb) - THORChain MCCN Arb Bot.
+[**thorchain-arb**](https://github.com/hoodieonwho/thorchain-arb) - THORChain Arb Bot.
 
 ### Community Socials
 
