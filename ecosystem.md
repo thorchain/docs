@@ -20,9 +20,9 @@ All the following are community-run resources. There are no "official" channels.
 
 ****[**THORBoard** ](https://thorchain.live)- THORChain Dashboard
 
-****[**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [**THORChain.net**](https://thorchain.net/#/txs) - THORChain Block Explorer
+****[**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [**THORChain.net**](https://thorchain.net/#/txs) - THORChain Block Explorers
 
-[**Nine Realms**](https://twitter.com/ninerealms\_cap) **** - Brings institutional liquidity to THORChain, THORSec, and pen-tests protocol)
+[**Nine Realms**](https://twitter.com/ninerealms\_cap) **** - Brings institutional liquidity to THORChain, THORSec, and pen-tests protocol
 
 ## **Community Projects**
 
@@ -52,7 +52,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### **Education**
 
-****[**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos.&#x20;
+****[**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos
 
 ****[**LP University**](https://discord.gg/jVWS4EAYhh)  ****  - **** Educational, Liquidity Pooling Strategy Discussions
 
@@ -74,7 +74,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**THORChain Information Bot**](https://t.me/thor\_infobot) - Useful commands to fetch network info
 
-[**THORChain Monitoring Bot**](https://t.me/thorchain\_alert) **-** Telegram Monitoring Bot
+[**THORChain Monitoring Bot**](https://t.me/thorchain\_alert) **-** Monitoring of major events in THORChain
 
 ****[**THORChain Twitter Bot**](https://twitter.com/thor\_bot) - Posts network stats
 
