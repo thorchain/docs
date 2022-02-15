@@ -66,17 +66,7 @@ Follow THORChain Twitter to not miss any #RAISETHECAPS updates.&#x20;
 
 #### **What Interfaces / Exchanges are there? How to access THORChain?**&#x20;
 
-You can use any available interfaces to interact with THORChain:
-
-* ASGARDEX (Desktop): https://github.com/thorchain/asgardex-electron/releases&#x20;
-* Rango Exchange (Web): https://rango.exchange/ SKIPswap
-* (Web): https://skip.exchange/ ShapeShift
-* (Web): https://beta.shapeshift.com/
-* ShapeShift (Mobile App): https://shapeshift.com/library/mobile-app&#x20;
-* THORGram (Telegram Bot) https://t.me/thorgram\_public THORSwap
-* (Web): https://app.thorswap.finance/ THORSwap (Desktop): https://thorswap.finance/desktop/
-
-➜ Also see [Exchanges](ecosystem.md#exchanges).
+You can many interfaces to interact with THORChain. See [Exchanges](ecosystem.md#exchanges).
 
 #### **Can I stake RUNE?**&#x20;
 

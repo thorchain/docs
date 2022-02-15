@@ -40,7 +40,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**THORGram**](https://t.me/thorgram\_public) **** - THORSwap in Telegram
 
-****[**Liquidity**](https://liquality.io) **-** Browser Extension Crypto Wallet with Built-In Swaps
+****[**Liquality** ](https://liquality.io)**-** Browser Extension Crypto Wallet with Built-In Swaps
 
 [**Shapeshift** ](https://shapeshift.com)- Explore the Defi Universe
 
