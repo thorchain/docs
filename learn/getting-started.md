@@ -4,7 +4,13 @@ description: Getting started with THORChain and How Tos
 
 # Getting Started
 
-## How to Acquire Native Rune?&#x20;
+## Using THORChain
+
+Users do not need RUNE to interact with THORChain. They can perform swaps and add/remove liquidity without ever directly touching RUNE or the THORChain protocol. These users need to find a THORChain-connected wallet.&#x20;
+
+However, more advanced users will want to add symmetrical liquidity or bond as a Node. For this, they will need RUNE.&#x20;
+
+### Acquiring Native Rune&#x20;
 
 There are several ways.&#x20;
 
