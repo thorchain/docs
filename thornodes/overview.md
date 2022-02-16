@@ -87,7 +87,7 @@ Node Operators receive rewards if they are bonded and active on the network and 
 
 Nodes receive the same amount of rewards regardless of how much [RUNE](../rune.md) they've bonded. This stabilises the amount that nodes need to bond. Over time, this stability increases the median bonded amount and the security of the network.
 
-Rewards are affected by the [Emission Schedule](../how-it-works/emission-schedule.md) and the [Incentive Pendulum](../how-it-works/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
+Rewards are affected by the [Emission Schedule](../network/emission-schedule.md) and the [Incentive Pendulum](../network/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
 
 #### Keeping Track
 

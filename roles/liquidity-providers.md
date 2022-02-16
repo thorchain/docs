@@ -58,7 +58,7 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 **Size of Swaps** – Swappers who are in a hurry to exchange assets will tend to make larger swaps. Larger swaps lead to greater price slips and therefore higher fees.
 
-**Incentive Pendulum** – The Incentive Pendulum balances the amount of capital bonded in the network versus pooled. It does this by changing the amount of rewards given to node operators versus liquidity providers. Sometimes rewards will be higher for liquidity providers to encourage them to deposit assets; sometimes the opposite. [Learn more](../how-it-works/incentive-pendulum.md).
+**Incentive Pendulum** – The Incentive Pendulum balances the amount of capital bonded in the network versus pooled. It does this by changing the amount of rewards given to node operators versus liquidity providers. Sometimes rewards will be higher for liquidity providers to encourage them to deposit assets; sometimes the opposite. [Learn more](../network/incentive-pendulum.md).
 
 **Change in Asset Prices --** If the price of the assets change, then liquidity providers will receive more of one and less of the other. This may change yield if yield is being priced in a third asset, ie, USD.
 
@@ -68,7 +68,7 @@ This ensures that yield is being sent to where demand is being experienced - wit
 
 Depositing assets on THORChain is permissionless and non-custodial.
 
-Liquidity providers can propose new asset pools or add liquidity to existing pools. Anybody can propose a new asset by depositing it. See [asset listing/delisting](../how-it-works/governance.md#chain-listing-delisting) for details. Once a new asset pool is listed, anybody can add liquidity to it. In this sense, THORChain is permissionless.
+Liquidity providers can propose new asset pools or add liquidity to existing pools. Anybody can propose a new asset by depositing it. See [asset listing/delisting](../network/governance.md#chain-listing-delisting) for details. Once a new asset pool is listed, anybody can add liquidity to it. In this sense, THORChain is permissionless.
 
 The ability to use and withdraw assets is completely non-custodial. Only the original depositor has the ability to withdraw them. Nodes are bound by rules of the network and cannot take control of user-deposited assets.
 
@@ -90,7 +90,7 @@ _Note: there is no difference between swapping into symmetrical shares, then dep
 
 ### Withdrawing Assets
 
-Liquidity providers can withdraw their assets at any time. The network processes their request and the liquidity provider receives their ownership % of the pool along with the assets they've earned. A network fee is taken whenever assets are taken out of the network. These are placed into [the network reserve](../how-it-works/emission-schedule.md).
+Liquidity providers can withdraw their assets at any time. The network processes their request and the liquidity provider receives their ownership % of the pool along with the assets they've earned. A network fee is taken whenever assets are taken out of the network. These are placed into [the network reserve](../network/emission-schedule.md).
 
 ### **Yield Comes from Fees & Rewards**
 
@@ -104,7 +104,7 @@ The ratio of assets in a liquidity pool is comparable to an exchange rate.
 
 This change to the ratio of assets is called a 'slip'. A proportion of each slip is kept in the pool. This is allocated to liquidity providers and forms part of their staking yield. Learn more about [swapping](swapping.md).
 
-**Rewards** come from THORChain's own [reward emissions](../how-it-works/emission-schedule.md). Reward emissions follow a predetermined schedule of release.
+**Rewards** come from THORChain's own [reward emissions](../network/emission-schedule.md). Reward emissions follow a predetermined schedule of release.
 
 Rewards also come from a large token reserve. This token reserve is continuously filled up from[ network fees](../how-it-works/fees.md#network-fee). Part of the token reserve is paid out to liquidity providers over the long-term. This provides continuous income even during times of low exchange volume.
 

@@ -12,10 +12,16 @@ THORChain observes incoming user deposits to vaults, executes business logic (sw
 
 THORChain's key objective is to be resistant to centralisation and capture whilst facilitating cross-chain liquidity. THORChain only secures the assets in its vaults, and has economic guarantees that those assets are safe.
 
+You can learn about THORChain here:
+
+{% content-ref url="learn/" %}
+[learn](learn/)
+{% endcontent-ref %}
+
 You can learn how THORChain works here:
 
-{% content-ref url="technology.md" %}
-[technology.md](technology.md)
+{% content-ref url="how-it-works/technology.md" %}
+[technology.md](how-it-works/technology.md)
 {% endcontent-ref %}
 
 ## RUNE

@@ -13,7 +13,7 @@ THORChain synthetic assets are primitives for both higher-order financial featur
 THORChain synthetics are unique in that they are 50% backed by their own asset, with the other 50% backing being provided by RUNE. This is achieved by using pool ownership to collateralise the synth, which ensures always-on liquidity and pricing.
 
 {% hint style="info" %}
-[Virtual Depths](continuous-liquidity-pools.md#virtual-depths) have been added to all Synth Swaps (Minting and Redeeming). [`VirtualMultSynths`](../how-it-works/constants-and-mimir.md#synths)multiplies the pool depth (R and A) before the swap is calculated. This leads to 50% less slip and users paying 50% less fees.
+[Virtual Depths](continuous-liquidity-pools.md#virtual-depths) have been added to all Synth Swaps (Minting and Redeeming). [`VirtualMultSynths`](../network/constants-and-mimir.md#synths)multiplies the pool depth (R and A) before the swap is calculated. This leads to 50% less slip and users paying 50% less fees.
 {% endhint %}
 
 ### Minting

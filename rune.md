@@ -91,6 +91,6 @@ This drives Nodes to bond the optimal amount, and pays Liquidity providers for t
 
 Learn about the Incentive Pendulum here:
 
-{% content-ref url="how-it-works/incentive-pendulum.md" %}
-[incentive-pendulum.md](how-it-works/incentive-pendulum.md)
+{% content-ref url="network/incentive-pendulum.md" %}
+[incentive-pendulum.md](network/incentive-pendulum.md)
 {% endcontent-ref %}

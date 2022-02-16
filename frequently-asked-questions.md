@@ -52,7 +52,7 @@ BEP-2 and ERC-20 RUNE can be stored in many popular wallets like Trust Wallet, L
 
 #### **What are liquidity caps / why can’t I add liquidity?**&#x20;
 
-Multi-Chain Chaosnet has an upper limit on pooled liquidity, known as the “Liquidity Cap”. This is an upper limit across all pools combined; and once reached, no more liquidity can be added until the caps are raised. This mechanism is currently in place to protect the network and its users. Users can check the Fund cap status at: https://app.thorswap.finance/. Follow THORChain Twitter to not miss any #RAISETHECAPS updates.
+Multi-Chain Chaosnet has an upper limit on pooled liquidity, known as the “Liquidity Cap”. This is an upper limit across all pools combined; and once reached, no more liquidity can be added until the caps are raised. This mechanism is currently in place to protect the network and its users. Users can check the Fund cap status at: https://app.thorswap.finance/.&#x20;
 
 Follow THORChain Twitter to not miss any #RAISETHECAPS updates.&#x20;
 
@@ -132,7 +132,7 @@ Overview of the process and why:
 
 No. Only short tail assets with high MarketCap, good velocity and economic activity would have chances to win liquidity competition to get listed. Then the community will vote.&#x20;
 
-➜ See [Governance](how-it-works/governance.md#chain-listing-delisting).&#x20;
+➜ See [Governance](network/governance.md#chain-listing-delisting).&#x20;
 
 ➜ [Latest ERC20 Tokens List ](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/ethereum/token\_list.json)
 
@@ -195,7 +195,7 @@ Simply put, Cross-chain bridges are a better solution than Atomic Swaps. Atomic 
 
 #### What is the RUNE monetary policy / Tokenomics?&#x20;
 
-The goal is to have a fixed supply at all times. Instead of constantly emitting (infinite supply like Cosmos or Ethereum) or reducing the emission down to zero (Bitcoin) the network elects to match emissions to the difference between current circulating supply and the max supply, as well as burning fees. This means there is 500 million progressively emitted to nodes for security and liquidity over time. See [Emission Schedule](how-it-works/emission-schedule.md) for more information.&#x20;
+The goal is to have a fixed supply at all times. Instead of constantly emitting (infinite supply like Cosmos or Ethereum) or reducing the emission down to zero (Bitcoin) the network elects to match emissions to the difference between current circulating supply and the max supply, as well as burning fees. This means there is 500 million progressively emitted to nodes for security and liquidity over time. See [Emission Schedule](network/emission-schedule.md) for more information.&#x20;
 
 #### How are new pools added in THORChain?
 
