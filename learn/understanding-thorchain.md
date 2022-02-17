@@ -55,17 +55,17 @@ Block rewards are paid to Liquidity Providers and Node Operators on a set emissi
 
 Swaps in THORChain use native assets. Example: When a swap from RUNE to BTC occurs, RUNE is sent into THORChain from the user and BTC is sent out from one of THORChain’s vaults - Inbound gas is paid in Native RUNE, Outbound Fee is paid in BTC.
 
-When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH.
+When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH. See [Swappers ](../roles/swapping.md#how-swaps-work)for more information.&#x20;
 
 ### Risks associated with providing liquidity
 
 Alongside the obvious investment risks of any asset, with liquidity provision, there also comes the risk of impermanent (price-divergent) loss. The bigger the divergence of price between the two assets, the more you are exposed to impermanent loss.
 
-_When you provide liquidity in a liquidity pool, the two assets are bound together by the system because it will ensure that both sides of the pool have the same value._ _If the price of your deposited assets changes in the wider markets, then swappers will sell one side of the pool for the other. Thus your assets are continuously sold "on the way up" or "on the way down". In fact, your assets are sold at a price that is an average of the starting price and ending price. If you then compare your original deposited assets with what you finally get, you will think you "could have got a better price based on today's value"._&#x20;
+> _When you provide liquidity in a liquidity pool, the two assets are bound together by the system because it will ensure that both sides of the pool have the same value._ _If the price of your deposited assets changes in the wider markets, then swappers will sell one side of the pool for the other. Thus your assets are continuously sold "on the way up" or "on the way down". In fact, your assets are sold at a price that is an average of the starting price and ending price. If you then compare your original deposited assets with what you finally get, you will think you "could have got a better price based on today's value"_
 
 This is called impermanent loss because the losses are only realised when you withdraw from the pool. If the ratio swings to 5x (25.5% IL) but comes back to the same ratio when you entered the pool and withdrew your liquidity at that time, you will not have suffered any impermanent loss. It is similar to traditional finance’s unrealized losses. However, when you withdraw your liquidity from the pool at any other time, the loss becomes real and permanent. The fees you earn are generally able to compensate for those losses, or you may experience no loss at all and withdraw well compensated for your time in the pool.
 
-LPs are encouraged to provide liquidity in pools that they are bullish on, or nuetral on (don't care what the final price is). If an LP provides assets in a pool that they become bearish on, then they will be emotionally affected by the price draw-down, and may pull their assets out and realise a permanent loss.
+LPs are encouraged to provide liquidity in pools that they are bullish on, or neutral on (don't care what the final price is). If an LP provides assets in a pool that they become bearish on, then they will be emotionally affected by the price draw-down, and may pull their assets out and realise a permanent loss.
 
 ➜ [Liquidity Pooling Example](https://www.youtube.com/watch?v=C8cYaugKSFw)
 

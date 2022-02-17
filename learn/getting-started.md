@@ -20,13 +20,9 @@ There are several ways.&#x20;
 
 From there, send it to a [self custody wallet](https://linen.app/articles/what-is-a-self-custody-non-custodial-wallet/).
 
-## **What Wallets support Native RUNE?**
+## **What Wallets Support Native RUNE?**
 
-Many wallets support Native RUNE, below are two community-created wallets.
-
-#### **-** [**XDEFI**](https://www.xdefi.io)****
-
-#### **-** [**THORWallet**](https://thorwallet.org/,)****
+Many wallets support Native RUNE. See [below ](getting-started.md#wallets-and-interfaces)for more informaiton.&#x20;
 
 ![Wallet Support](https://lh3.googleusercontent.com/Y1oBM2Q\_0\_lNhJZpCAFetwa5QjpqoZCmEdo7tmlh81APw2\_LfbNwUxoenM\_zfx1NgGcr-taktTk7WSOXUbELSS5jUXgl7ed1yLxMHOircRvDj7845v8dtCpKa9bKztGkjN9GLoRZ)
 
@@ -76,7 +72,7 @@ You can see your position if you connect to THORChain via an Interface you can u
 
 \*Of significant note is that this mechanism of providing liquidity into the protocol; creates an opportunity for holders of non-yield generating assets (e.g. BTC, BNB) to earn a return on their investments.
 
-## What Wallets and Interfaces are there?
+## Wallets and Interfaces
 
 Below provides a starting point, see [Wallets ](../ecosystem.md#wallets)and [Exchanges ](../ecosystem.md#exchanges)for a full list.&#x20;
 
@@ -86,12 +82,17 @@ Below provides a starting point, see [Wallets ](../ecosystem.md#wallets)and [Exc
 
 A multi-chain web browser extension currently available on Chrome & Brave (soon on Firefox) built for DeFi users and NFT lovers. It is the world’s only wallet with native integrations on THORChain, Ethereum + several EVM networks and Terra.
 
+➜ [Guide](https://xdefi-wallet.gitbook.io/xdefi-wallet/web-browsers)
+
+➜ [FAQ](https://xdefi-wallet.gitbook.io/xdefi-wallet/faq/frequently-asked-questions)
+
 #### ****[**THORWallet**](https://thorwallet.org/,)****
 
 A non-custodial wallet that gives you full control over your keys and allows you to swap coins across different native blockchains without an intermediary. It also allows you to earn yield by providing liquidity or investing in the multichain savings account, with new features already in development.
 
-➜ [Guide](https://thorwallet.medium.com/introduction-of-thorwallet-ae6d1dfc207)[\
-](https://thorwallet.medium.com/introduction-of-thorwallet-ae6d1dfc207https://www.thorwallet.org/faq/general)➜ [FAQ ](https://www.thorwallet.org/faq/general)
+➜ [Guide](https://thorwallet.medium.com/introduction-of-thorwallet-ae6d1dfc207)
+
+➜ [FAQ](https://www.thorwallet.org/faq/general)
 
 ### **Exchanges/Platforms**
 
@@ -119,7 +120,7 @@ THORSwap is the world’s first Multichain DEX that utilizes the THORChain netwo
 
 ➜ [How to Enter Liquidity Pools using THORSwap](https://www.youtube.com/watch?v=SKv5aAMh2Js)
 
-**Shapeshift**
+****[**Shapeshift**](https://app.shapeshift.com)****
 
 ShapeShift is a borderless, cross-chain crypto trading platform and portfolio manager for user self-sovereignty. The platform enables users to buy, send, receive, swap, and manage assets via mobile interface or web platform, and lets them choose to use a range of software or hardware wallets, including ShapeShift native, Portis, KeepKey, Trezor, and Ledger**.**
 

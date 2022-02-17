@@ -46,9 +46,11 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### **Wallets**
 
-****[**XDeFi** ](https://www.xdefi.io)**-** Cross Chain Wallet, Browser Extention
+****[**XDeFi** ](https://www.xdefi.io)**-** Cross-chain Wallet, Browser Extention
 
-****[**THORWallet**](https://thorwallet.org) **-** Cross Chain Wallet, Mobile Wallet
+****[**THORWallet**](https://thorwallet.org) **-** Cross-chain Wallet, Mobile Wallet
+
+****[**Ferz Wallet**](https://ferz.com/en/) - Cross-platform Progressive Web Application
 
 ### **Education**
 
