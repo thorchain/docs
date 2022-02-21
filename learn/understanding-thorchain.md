@@ -10,7 +10,7 @@ description: >-
 
 Automated market makers (AMMs) are decentralised exchanges (DEX) that pool liquidity from users and price the assets within the pool by using algorithms. The exact mechanics vary from exchange to exchange, but generally, AMMs offer deep liquidity, low transaction fees, and 100% uptime for as many users as possible.
 
-Liquidity Providers (LPs) are network participants who deposit their assets into these pools (i.e. virtual, asset-specific reservoirs), and by doing so, come to own a share of that particular pool for as long as they retain their assets within. In exchange for adding their assets to the pools, LPs earn rewards, as swappers (who use pools to exchange assets) incur fees, which are proportionally distributed to the pool owners. Some protocols also boosts the liquidity APY by emitting block rewards (for example, $BNT by Bancor and $RUNE by THORChain).
+Liquidity Providers (LPs) are network participants who deposit their assets into these pools (i.e. virtual, asset-specific reservoirs), and by doing so, come to own a share of that particular pool for as long as they retain their assets within. In exchange for adding their assets to the pools, LPs earn rewards, as swappers (who use pools to exchange assets) incur fees, which are proportionally distributed to the pool owners. Some protocols also boost the liquidity APY by emitting block rewards (for example, $BNT by Bancor and $RUNE by THORChain).
 
 ### What is THORChain?
 
@@ -67,7 +67,7 @@ This is called impermanent loss because the losses are only realised when you wi
 
 LPs are encouraged to provide liquidity in pools that they are bullish on, or neutral on (don't care what the final price is). If an LP provides assets in a pool that they become bearish on, then they will be emotionally affected by the price draw-down, and may pull their assets out and realise a permanent loss.
 
-➜ [Liquidity Pooling Example](https://www.youtube.com/watch?v=C8cYaugKSFw)
+➜ [Liquidity Pooling Example High Level](https://www.youtube.com/watch?v=Kzt9SAQRvUQ)
 
 ### ILP: How THORChain protects its Liquidity Providers
 
@@ -75,8 +75,10 @@ Liquidity Providers will receive 100% Impermanent Loss Protection **** (ILP) aft
 
 Impermanent Loss Protection (ILP) ensures that you will not be worse off providing liquidity into THORChain than just holding two assets, RUNE and ASSET, in your wallet. Protection is always recorded and applied symmetrically to both assets after the deposit is rebalanced to 50/50. Impermanent Loss Protection can also be thought of as deposit protection compared to holding both assets. Minimum withdrawal value will be the same as if you held both assets.
 
-NOTE: The coverage will reset every time you add liquidity to the same pool and withdrawal fees will affect the withdrawal amount. Partial withdrawals doesn’t reset the ILP counter.
+NOTE: The coverage will reset every time you add liquidity to the same pool and withdrawal fees will affect the withdrawal amount. Partial withdrawals do not reset the ILP counter.
 
 ➜ [THORChain and Impermanent Loss](https://thorchain.medium.com/thorchains-immunity-to-impermanent-loss-8265a59066a4)
 
 ➜ [Impermanent Loss Protection Explained](https://youtu.be/yce7OJ\_z57g)
+
+➜ [Liquidly Pooling Example - Using Numbers](https://www.youtube.com/watch?v=C8cYaugKSFw)

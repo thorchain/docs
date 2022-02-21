@@ -194,9 +194,13 @@ This outputs 0 if no change to the price, and 1.0 if the depth on one side doubl
 
 Impermanent Loss Protection ensures LPs always either make a profit, or leave with at break even after a minimum period of time (set at 100 days), and partially covered before that point. This should alleviate most of the concerns regarding become an LP.
 
-THORChain tracks a member's deposit values. When the member goes to redeem, their loss (against their original deposit value) is calculated, and is subsidised with RUNE from the reserve.
+THORChain tracks a member's deposit values. When the member goes to redeem, their loss (against their original deposit value) is calculated and is subsidised with RUNE from the reserve.&#x20;
 
-There is a 100 day linear increase in the amount of coverage receives, such that at 50 days, the member receives 50%, 90 days is 90% etc.
+{% hint style="info" %}
+Impermanent Loss Protection is always recorded and calculated symmetrically.&#x20;
+{% endhint %}
+
+There is a 100 day linear increase in the amount of coverage received, such that at 50 days, the member receives 50%, 90 days is 90% etc.
 
 | Element | Description     | Element | Description     |
 | ------- | --------------- | ------- | --------------- |
@@ -207,11 +211,29 @@ $$
 \text{P1} = \frac{R1}{A1}
 $$
 
+`P1` is the pool ratio at withdrawal.&#x20;
+
 $$
-\text{coverage} = ((A0 * P1) + R0) - ((A1 * P1) + R1)
+\text{coverage} = ((A0 * P1) + R0) - ((A1 * P1) + R1) => ((A0 * R1/A1) + R0) - (R1 + R1)
 $$
 
-The coverage is then adjusted for the 100 day rule, then the extra RUNE added into the member's liquidity position to issue them extra liquidity units. The member then redeems all their units, and they will realise extra RUNE and extra ASSET.
+{% hint style="info" %}
+Deposit values are _not_ the amounts the member deposited. They are the immediate symmetrical value of what the member deposited instead.&#x20;
+{% endhint %}
+
+The coverage is then adjusted for the 100 day rule.
+
+``[`blocksForFullProtection` ](../network/constants-and-mimir.md)`= 1728000 // 100 days`
+
+$$
+\text{protectionProgress }= (currentHeight - heightLastAdded) / blocksForFullProtection
+$$
+
+$$
+\text{protection} = (protectionProgress * coverage)
+$$
+
+Then the extra RUNE added into the member's liquidity position to issue them extra liquidity units. The member then redeems all their units, and they will realise extra RUNE and extra ASSET.
 
 {% hint style="info" %}
 Since the protection amount is added asymetrically, the protection will experience a small slip. This helps to prevent attack vectors.
