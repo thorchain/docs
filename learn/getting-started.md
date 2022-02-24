@@ -86,11 +86,11 @@ A multi-chain web browser extension currently available on Chrome & Brave (soon 
 
 ➜ [FAQ](https://xdefi-wallet.gitbook.io/xdefi-wallet/faq/frequently-asked-questions)
 
-#### ****[**THORWallet**](https://thorwallet.org/,)****
+#### ****[**THORWallet**](https://www.thorwallet.org)****
 
 A non-custodial wallet that gives you full control over your keys and allows you to swap coins across different native blockchains without an intermediary. It also allows you to earn yield by providing liquidity or investing in the multichain savings account, with new features already in development.
 
-➜ [Guide](https://thorwallet.medium.com/introduction-of-thorwallet-ae6d1dfc207)
+➜ [Guide](https://thorwallet.medium.com/introduction-of-thorwallet-ae6d1dfc2076)
 
 ➜ [FAQ](https://www.thorwallet.org/faq/general)
 
