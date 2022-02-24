@@ -6,7 +6,7 @@ description: Node Operators
 
 ## Overview
 
-THORNodes service the THORCHain network, of which there is intended to be initially 120. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
+THORNodes service the THORCHain network, of which there is intended to be initially 99. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
 {% content-ref url="../thornodes/overview.md" %}
 [overview.md](../thornodes/overview.md)

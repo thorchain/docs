@@ -6,7 +6,7 @@ description: Overview of THORNodes
 
 ## Overview
 
-THORNodes service the THORChain network, of which there is intended to be initially 250. Each THORNode is comprised of several independent servers in a cluster. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
+THORNodes service the THORChain network. Each THORNode is comprised of several independent servers in a cluster. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
 To set up a node, you have three choices:
 
