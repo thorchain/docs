@@ -13,6 +13,10 @@ RUNE is the asset which powers the THORChain ecosystem and provides the economic
 3. Governance (signalling priority on-chain)
 4. Incentives (paying out rewards, charging fees, subsidising gas)
 
+{% hint style="info" %}
+An introduction to RUNE and its roles is [here](learn/understanding-thorchain.md#what-is-rune).
+{% endhint %}
+
 ## 1. Liquidity
 
 **Transmitting Purchasing Power**

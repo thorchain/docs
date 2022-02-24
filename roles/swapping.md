@@ -10,6 +10,10 @@ On THORChain, users can swap their digital assets for other digital assets. The 
 * Superior user experience through open finance protocols and permissionless access
 * 1-transaction access to fast chains (Binance Chain), smart chains (Ethereum), censorship-resistant chains (Bitcoin) and private chains (Monero).
 
+{% hint style="info" %}
+See an [overview of Swapping in THORChain](../learn/understanding-thorchain.md#how-swapping-works)
+{% endhint %}
+
 ## How Swaps Work
 
 ### Available Assets
@@ -38,12 +42,16 @@ When a user swaps 2 connected assets on THORChain, they swap between two pools:
 2. Move that RUNE into the second pool,
 3. Swap to the desired asset in the second pool with the RUNE from (2)
 
-The THORChain state machine handles this swap in one go, so the user is never handles RUNE.
+The THORChain state machine handles this swap in one go, so the user never handles RUNE.
 
-See [this example](swapping.md#example-connected-asset-binance-coin-to-connected-asset-bitcoin) for further detail and the page below for broader detail on Continuous Liquidity Pools.
+See [this example](swapping.md#example) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 
 {% content-ref url="../thorchain-finance/continuous-liquidity-pools.md" %}
 [continuous-liquidity-pools.md](../thorchain-finance/continuous-liquidity-pools.md)
+{% endcontent-ref %}
+
+{% content-ref url="../learn/getting-started.md" %}
+[getting-started.md](../learn/getting-started.md)
 {% endcontent-ref %}
 
 ### Calculating Swap Output

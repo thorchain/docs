@@ -112,7 +112,7 @@ Thus, 60% of the rewards go to Liquidity Providers and 40% go to Node Operators.
 
 In the **stable** state of 67m RUNE bonded and 33m RUNE pooled, Liquidity providers are providing half the assets TVL (RUNE and Assets) and bonders are providing the other half.&#x20;
 
-The Incentive Curve can be used to adjust the reward flow with respect to the Incentive Pendulum.
+The [Incentive Curve](constants-and-mimir.md) can be used to adjust the reward flow with respect to the Incentive Pendulum.
 
 
 
@@ -154,7 +154,7 @@ In an under-bond state, it can be increased so Liquidity providers are not adver
 
 In an over-bonded state, it can be reduced to ensure Liquidity Providers are not being paid too much.&#x20;
 
-Incentive Curve value set in constants however can be overridden in Mimir by [Node Operators](../thornodes/overview.md).
+Incentive Curve value set in constants however can be overridden in [Mimir ](constants-and-mimir.md)by [Node Operators](../thornodes/overview.md).
 
 ## Driving Capital Allocation
 

@@ -1,3 +1,7 @@
+---
+description: Learn how THORChain Works
+---
+
 # How It Works
 
 See how THORChain works.&#x20;
@@ -12,4 +16,8 @@ See how THORChain works.&#x20;
 
 {% content-ref url="technology.md" %}
 [technology.md](technology.md)
+{% endcontent-ref %}
+
+{% content-ref url="../network/incentive-pendulum.md" %}
+[incentive-pendulum.md](../network/incentive-pendulum.md)
 {% endcontent-ref %}

@@ -20,8 +20,8 @@ You can learn about THORChain here:
 
 You can learn how THORChain works here:
 
-{% content-ref url="how-it-works/technology.md" %}
-[technology.md](how-it-works/technology.md)
+{% content-ref url="how-it-works/" %}
+[how-it-works](how-it-works/)
 {% endcontent-ref %}
 
 ## RUNE

@@ -4,6 +4,12 @@ description: How to connect to Midgard, THORNode and the base Tendermint layer.
 
 # Connecting to THORChain
 
+This section covers technically how to connect to THORChain. As an end user, go to :
+
+{% content-ref url="../learn/getting-started.md" %}
+[getting-started.md](../learn/getting-started.md)
+{% endcontent-ref %}
+
 The Network Information comes from three sources:
 
 1. **MIDGARD**: Consumer information relating to swaps, pools, volume. DeFi dashboards, Wallets, Exchanges will primarily interact with Midgard.
