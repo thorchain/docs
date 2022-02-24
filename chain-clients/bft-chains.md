@@ -16,7 +16,9 @@ BFT chains do not re-org so no re-org logic required.&#x20;
 
 BFT chains do not require any confirmations.&#x20;
 
-### Fees
+### Gas
 
 BFT chains generally have static fees, so fee rates don't need to be updated regularly.
+
+
 
