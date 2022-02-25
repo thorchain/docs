@@ -22,9 +22,9 @@ From there, send it to a [self custody wallet](https://linen.app/articles/what-i
 
 ## **What Wallets Support Native RUNE?**
 
-Many wallets support Native RUNE. See [below ](getting-started.md#wallets-and-interfaces)for more informaiton.&#x20;
+Many wallets support Native RUNE. See [below ](getting-started.md#wallets-and-interfaces)for more information.
 
-![Wallet Support](https://lh3.googleusercontent.com/Y1oBM2Q\_0\_lNhJZpCAFetwa5QjpqoZCmEdo7tmlh81APw2\_LfbNwUxoenM\_zfx1NgGcr-taktTk7WSOXUbELSS5jUXgl7ed1yLxMHOircRvDj7845v8dtCpKa9bKztGkjN9GLoRZ)
+![Wallet Support](<../.gitbook/assets/image (42).png>)
 
 ## Adding and Removing Liquidity
 
@@ -64,7 +64,7 @@ You can see your position if you connect to THORChain via an Interface you can u
 
 ➜ [THORYield Guide](https://thorswap.medium.com/introducing-thoryield-v2-%EF%B8%8F-a6618c1cfcdb)
 
-### There are 3 factors affecting returns:
+**There are 3 factors affecting returns:**
 
 * **Proportion of transaction volume to pool depth** — If there is high volume compared to the depth of the pool then there will be higher rewards available to liquidity providers. If there is low volume compared to the depth of the pool then there will be lower rewards available.
 * **Share of the pool** — If you have a large share of the pool, you’ll earn higher returns. If a liquidity provider has 1% of a pool they receive 1% of the rewards for that pool.
@@ -96,15 +96,15 @@ A non-custodial wallet that gives you full control over your keys and allows you
 
 ### **Exchanges/Platforms**
 
-****[**AsgardEx Desktop**](https://github.com/thorchain/asgardex-electron/releases)****
+#### ****[**AsgardEx Desktop**](https://github.com/thorchain/asgardex-electron/releases)****
 
 AsgardEx is powered by THORChain technology. Swap between assets across chains. Deposit assets to earn yield. Instantly swap assets in your wallet, or swap and send them to a friend at market prices. A small fee proportional to the slip is paid to whoever put assets in the pool. Fees are always fair and transparent.
 
 ➜ [Guide](https://github.com/thorchain/ledger-thorchain/blob/main/docs/INSTRUCTIONS.md)
 
-****[**Rango Exchange**](https://rango.exchange)****
+#### ****[**Rango Exchange**](https://rango.exchange)****
 
-Rango is a cross-chain DEX aggregator. It combines power of DEX aggregators inside blockchains (e.g. 1Inch) with multiple bridges (e.g. Binance Bridge) and cross chain liquidity providers (e.g. Thorchain) to give you access to better liquidity. Rango can provide you complex routes from any coin in any blockchain to other coin in other blockchains.&#x20;
+Rango is a cross-chain DEX aggregator. It combines power of DEX aggregators inside blockchains (e.g. 1Inch) with multiple bridges (e.g. Binance Bridge) and cross chain liquidity providers (e.g. Thorchain) to give you access to better liquidity. Rango can provide you complex routes from any coin in any blockchain to another coin in other blockchains.&#x20;
 
 ➜ [FQAs](https://rango.exchange/faq)
 
@@ -112,7 +112,7 @@ Rango is a cross-chain DEX aggregator. It combines power of DEX aggregators insi
 
 ➜ [How to Swap](https://rango.exchange/how-to-swap)
 
-****[**THORSwap**](https://app.thorswap.finance)****
+#### ****[**THORSwap**](https://app.thorswap.finance)****
 
 THORSwap is the world’s first Multichain DEX that utilizes the THORChain network to provide a front-end user interface to perform cross-chain swaps. This is done in a permissionless, trustless, and non-custodial manner. There are no pegged or wrapped assets, it is purely native.
 
@@ -120,7 +120,7 @@ THORSwap is the world’s first Multichain DEX that utilizes the THORChain netwo
 
 ➜ [How to Enter Liquidity Pools using THORSwap](https://www.youtube.com/watch?v=SKv5aAMh2Js)
 
-****[**Shapeshift**](https://app.shapeshift.com)****
+#### ****[**Shapeshift**](https://app.shapeshift.com)****
 
 ShapeShift is a borderless, cross-chain crypto trading platform and portfolio manager for user self-sovereignty. The platform enables users to buy, send, receive, swap, and manage assets via mobile interface or web platform, and lets them choose to use a range of software or hardware wallets, including ShapeShift native, Portis, KeepKey, Trezor, and Ledger**.**
 

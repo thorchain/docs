@@ -98,3 +98,11 @@ Learn about the Incentive Pendulum here:
 {% content-ref url="network/incentive-pendulum.md" %}
 [incentive-pendulum.md](network/incentive-pendulum.md)
 {% endcontent-ref %}
+
+## Deterministic Value of RUNE
+
+In addition to the roles mentioned above, RUNE’s price has two factors; 1 a deterministic value based on the liquidity within the network and 2; a speculative premium.
+
+This 2:1 bond:stake ratio, combined with the 1:1 pool ratio, means that the amount of RUNE needed in the network is three times the amount of the non-RUNE assets locked. Thus, if $1,000,000 worth of non-Rune tokens are staked in THORChain, the market cap of RUNE will be at least $3,000,000. And like any token, stock, or asset in the world of finance, speculation around future value encourages additional upward price pressure.&#x20;
+
+The 3:1 ratio is just the minimum or the deterministic value of RUNE.

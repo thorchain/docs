@@ -56,13 +56,13 @@ There are four key roles in the system:
 
 THORNodes service the THORChain network, of which there is intended to be initially 100, but can scale to 250+. The design goal of THORChain is such that anyone can join the network with the required funds (permissionless) \*and be anonymous\*, yet still be secure. THORChain takes this a step further by having a high churn schedule, kicking out nodes continuously. This high-churn network ensures that it is censorship-resistant, evades capture and resists centralisation.
 
-Each THORNode is comprised of several independent servers in a cluster, which run full-nodes for each connected chain, a THORDaemon and a Midgard API. THORNodes should be anonymous, do not support delegation and are regularly churned out.
+Each THORNode is comprised of several independent servers in a cluster, which run full-nodes for each connected chain, a THORDaemon and a Midgard API. THORNodes should be anonymous, do not support public delegation and are regularly churned out.
 
 ## Developers
 
 {% hint style="info" %}
 Users make signed transactions with a "memo" conveying intent into vaults, which is then picked up by THORChain and executed.\
-They do not need to hold RUNE, or even care that RUNE was used, or even connect directly with THORChain. This makes THORChain suitable to be integrated into almost any wallet/service/exchange-provider as the "backend" liquidity protocol.
+They do not need to hold RUNE, or even care that RUNE was used. This makes THORChain suitable to be integrated into almost any wallet/service/exchange-provider as the "backend" liquidity protocol.
 {% endhint %}
 
 {% hint style="danger" %}
@@ -71,7 +71,7 @@ THORChain churns vaults regularly to resist capture. Do not send transactions di
 
 ### INTERFACES
 
-Interfaces allow users to connect to wallets, read balances, query Midgard and broadcast transactions in both the web and desktop environment. Anyone can build their own interface, and several wallet libraries have been built to help developers with this.
+Interfaces allow users to connect to wallets, read balances, query Midgard and broadcast transactions in both the web and desktop environment. Anyone can build their own interface.
 
 ### API - MIDGARD
 

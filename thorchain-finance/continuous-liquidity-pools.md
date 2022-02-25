@@ -155,17 +155,13 @@ Virtual Depths have been added to all Synth Swaps - using a multiplier of 2. Thi
 When a liquidity provider commits capital, the ownership % of the pool is calculated:
 
 $$
-\text{slipAdjustment} = 1 - \mid\frac {R a - r A}{( r + R)*(a + A)}\mid
-$$
-
-$$
-\text{units} = \frac {P(R a + r A)}{2 RA}*slipAdjustment
+\text{units} = \frac {P(R a + r A)}{2 RA}
 $$
 
 * r = rune deposited
 * a = asset deposited
-* R = Rune Balance (before)
-* A = Asset Balance (before)
+* R = Rune Balance (after)
+* A = Asset Balance (after)
 * P = Existing Pool Units
 
 The liquidity provider is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
@@ -177,16 +173,6 @@ The new units are derived from the mean of adding new liquidity to both sides, m
 $$
 units = P *  \frac{(r/R + a/A)}{2} = \frac {P(R a + r A)}{2 RA}
 $$
-
-Once outputted, the units then need to be factored with the slip adjustment. This equation purely looks at the delta change between the two sides. If they were added in the same quantity, then there is no change:
-
-
-
-$$
-slip = \frac {a}{( a + A)} - \frac {r }{( r + R)} = \frac{R a - r A}{( r + R)*(a + A)}
-$$
-
-This outputs 0 if no change to the price, and 1.0 if the depth on one side doubles, changing the price by 100%. Subtracting the absolute value from 1 and multiplying against the units given to the LP means they paying a fee to other LPs to change the price. This fee roughly evaluates to be the same fee as though they had swapped first.&#x20;
 
 
 
