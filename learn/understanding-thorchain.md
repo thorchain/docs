@@ -14,7 +14,7 @@ Liquidity Providers (LPs) are network participants who deposit their assets into
 
 ### What is THORChain?
 
-THORChain is an independent blockchain that operates as a Layer 1 cross-chain decentralised exchange (DEX). Built using the Cosmos SDK (https://docs.cosmos.network/), THORChain enables the exchange of assets across disparate blockchains in a non-custodial manner. THORChain is the backend to many user interfaces.
+THORChain is an independent blockchain that operates as a Layer 1 cross-chain decentralised exchange (DEX). Built using the [Cosmos SDK](https://docs.cosmos.network), THORChain enables the exchange of assets across disparate blockchains in a non-custodial manner. THORChain is the backend to many user interfaces.
 
 Key selling points of THORChain are:&#x20;
 
