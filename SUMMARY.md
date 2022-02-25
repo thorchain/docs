@@ -34,11 +34,7 @@
 
 ## Developers
 
-* [Integration Overview](developers/integration-overview.md)
-* [Connecting to THORChain](developers/connecting-to-thorchain.md)
-* [Transaction Memos](developers/transaction-memos.md)
-* [Libraries](developers/asgardex-modules.md)
-* [Seed Service](developers/seed-service.md)
+* [Dev Docs moved to Dedicated Site](developers/integration-overview.md)
 
 ## Chain Clients
 
