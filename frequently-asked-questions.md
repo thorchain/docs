@@ -251,7 +251,7 @@ This is not a concern, in the long term, BEP2/ERC20 RUNE will be upgraded to nat
 
 #### **How to manually construct a Memo**
 
-Thorchain responds to memo data posted to its vaults or using MsgDeposit. [https://docs.thorchain.org/developers/transaction-memos](https://docs.thorchain.org/developers/transaction-memos)
+Thorchain responds to [memo data](https://dev.thorchain.org/thorchain-dev/wallets/memos) posted to its vaults or using MsgDeposit.&#x20;
 
 Using an example to withdraw (e.g. in a pending pool).
 
