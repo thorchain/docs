@@ -13,7 +13,7 @@ THORChain synthetic assets are primitives for both higher-order financial featur
 THORChain synthetics are unique in that they are 50% backed by their own asset, with the other 50% backing being provided by RUNE. This is achieved by using pool ownership to collateralise the synth, which ensures always-on liquidity and pricing.
 
 {% hint style="info" %}
-[Virtual Depths](continuous-liquidity-pools.md#virtual-depths) have been added to all Synth Swaps (Minting and Redeeming). [`VirtualMultSynths`](../network/constants-and-mimir.md#synths)multiplies the pool depth (R and A) before the swap is calculated. This leads to 50% less slip and users paying 50% less fees.
+[Virtual Depths](continuous-liquidity-pools.md#virtual-depths) have been added to all Synth Swaps (Minting and Redeeming). [VirtualMultSynths](../network/constants-and-mimir.md#synths) multiplies the pool depth (R and A) before the swap is calculated. This leads to 50% less slip and users paying 50% less fees.
 {% endhint %}
 
 ### Minting
@@ -43,9 +43,9 @@ The ratio of Synth Units to Liquidity Pool units should be the same as the ratio
 
 
 * S = Synth Supply
-* R = Rune Depth
 * A = Asset Depth
 * L = Liquidity Units
+* U = Synth Units
 
 $$
 \frac{U}{L} = \frac{S}{2*(A-S)}
@@ -61,7 +61,7 @@ Synthetic Assets Minting is capped to 33% of the assets in the pool or about 16.
 
 ### Redeeming
 
-Synthetic Assets are burned by swapping the Synth for Rune. This is known as Burning or Redeeming. A Synthetic Asset can be redeemed to Rune at any time (or swapped to Rune than to an asset).
+Synthetic Assets are burned by swapping the Synth for Rune. This is known as Burning or Redeeming. A Synthetic Asset can be redeemed to Rune at any time (or swapped to Rune then to an asset).
 
 Synth Assets hold the value to normal assets and can be redeemed 1:1. Thus swapping 1 BTC for Rune then minting Synthetic BTC will give 1 Synthetic BTC. This can later be redeemed to Rune and swapped for 1 BTC, excluding fees.
 
@@ -89,7 +89,7 @@ To specify the destination asset is synth, simply provide a THOR address. If it 
 
 ### Economic Reasoning
 
-Synth holders do not experience any gain or any loss caused by price changes when minting / redeeming a synth. They do, however, pay a slip-based fee on entry or exit and tx fees. Synth minting, swaping and redeeming pay half the normal slip-base fee.
+Synth holders do not experience any gain or any loss caused by price changes when minting / redeeming a synth. They do, however, pay a slip-based fee on entry or exit and tx fees. Synth minting, swapping and redeeming pay half the normal slip-base fee.
 
 The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol Reserve is taking on the price risk.
 
