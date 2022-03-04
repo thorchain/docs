@@ -222,5 +222,5 @@ $$
 Then the extra RUNE added into the member's liquidity position to issue them extra liquidity units. The member then redeems all their units, and they will realise extra RUNE and extra ASSET.
 
 {% hint style="info" %}
-Since the protection amount is added asymetrically, the protection will experience a small slip. This helps to prevent attack vectors.
+Since the protection amount is added asymmetrically, the protection will experience a small slip. This helps to prevent attack vectors.
 {% endhint %}

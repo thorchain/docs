@@ -14,11 +14,11 @@ Liquidity Providers (LPs) are network participants who deposit their assets into
 
 ### What is THORChain?
 
-THORChain is an independent blockchain that operates as a Layer 1 cross-chain decentralised exchange (DEX). Built using the [Cosmos SDK](https://docs.cosmos.network), THORChain enables the exchange of assets across disparate blockchains in a non-custodial manner. THORChain is the backend to many user interfaces.
+THORChain is an independent blockchain that operates as a Layer 1 cross-chain decentralised exchange (DEX). Built using the [Cosmos SDK](https://docs.cosmos.network), THORChain enables the exchange of assets across disparate blockchains in a non-custodial manner. THORChain is the backend for many user interfaces.
 
 Key selling points of THORChain are:&#x20;
 
-* The ability to swap Layer-1, or native, assets across multiple chains - e.g. native BTC to ETH swap.&#x20;
+* The ability to swap Layer 1, or native, assets across multiple chains - e.g. native BTC to ETH swap.&#x20;
 * No user-registration required - simply send a transaction and THORChain will execute it.&#x20;
 * No wrapped assets - all assets are natively secured.&#x20;
 * Transparent, fair [prices](../how-it-works/prices.md), without relying on centralised third-parties.&#x20;
@@ -35,19 +35,19 @@ THORChain features a native token [RUNE](../rune.md), which owners can use to pa
 * Governance
 * Incentives
 
-**Rune as a Settlement Asset**&#x20;
+**RUNE as a Settlement Asset**&#x20;
 
 RUNE is the settlement asset for all pools, so a 1:1 ratio of RUNE:ASSET is required for pooling. For example, a pool with $100,000 in BTC will necessarily hold $100,000 worth of RUNE. Within a pool, all assets will have a 50% pairing with RUNE regardless of how assets are added or withdrawn.
 
-**Rune for Network Security**
+**RUNE for Network Security**
 
 In order to provide network security, THORChain requires twice as many RUNE to be bonded by Node Operators as there is RUNE pooled. For this security provision, node operators are economically incentivised to work within the [network’s best interest](../thornodes/overview.md#risk-of-running-a-node).
 
-**Rune for Governance**
+**RUNE for Governance**
 
-Users can vote with their liquidity (RUNE:ASSET symmetrically added) the pools they want to be active. The pools with the most liquidity (i.e. deepest) become active.
+Users can vote with their liquidity (RUNE:ASSET symmetrically added) for the pools they want to be active. The pools with the most liquidity (i.e. deepest) become active.
 
-**Rune as Incentives**&#x20;
+**RUNE as Incentives**&#x20;
 
 Block rewards are paid to Liquidity Providers and Node Operators on a set emission schedule - which are in addition to swap fees.
 
