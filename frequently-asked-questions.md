@@ -187,11 +187,11 @@ THORChain is planned to have 1M Rune minimum bond setting when the protocol is f
 
 #### Why does RUNE need to be the settlement asset in every pool?&#x20;
 
-If each pool is comprised of two assets eg. BTC:ETH then there will be a scaling problem with n\*(n-1)/2 possible connections. By having RUNE on one side of each pool, $RUNE becomes a settlement bridging asset allowing swaps between any two other assets. Additionally, having $RUNE in a pool ensures that the network can become aware of the value of assets it is securing.
+If each pool is comprised of two assets (e.g. BTC:ETH) then there will be a scaling problem with n\*(n-1)/2 possible connections. By having RUNE on one side of each pool, $RUNE becomes a settlement bridging asset allowing swaps between any two other assets. Additionally, having $RUNE in a pool ensures that the network can become aware of the value of assets it is securing.
 
 #### Why use 1-way state pegs instead of atomic swaps or 2-way asset pegs?&#x20;
 
-Simply put, Cross-chain bridges are a better solution than Atomic Swaps. Atomic Swaps involve a complex process of signing cryptographic keys between two parties that require interactivity. You also need a counterparty on all trades. Cross-chain bridges, coupled with continuous liquidity pools means you don't need a designated counterparty, and swaps can happen in less than a second. 1-way state pegs are better than 2-way asset pegs because assets don't need to be wrapped or pegged. Instead of having IOU tokens, real native assets can be used instead.
+Simply put, Cross-chain bridges are a better solution than Atomic Swaps. Atomic Swaps involve a complex process of signing cryptographic keys between two parties that require interactivity. You also need a counter-party on all trades. Cross-chain bridges, coupled with continuous liquidity pools means you don't need a designated counter-party, and swaps can happen in less than a second. 1-way state pegs are better than 2-way asset pegs because assets don't need to be wrapped or pegged. Instead of having IOU tokens, real native assets can be used instead.
 
 #### What is the RUNE monetary policy / Tokenomics?&#x20;
 
@@ -199,7 +199,7 @@ The goal is to have a fixed supply at all times. Instead of constantly emitting 
 
 #### How are new pools added in THORChain?
 
-Approx every three days, the pending pool with the deepest liquidity is churned in (becomes an active pool). This is called a Pool Churn. Note: A pending pool must have a minimum 10K RUNE to be eligible for a churn.
+Approximately every three days, the pending pool with the deepest liquidity is churned in (becomes an active pool). This is called a Pool Churn. Note: A pending pool must have a minimum 10K RUNE to be eligible for a churn.
 
 This means there is an open decentralised liquidity competition where the community can vote with their liquidity. N.B. Caps will prevent voting with liquidity.
 
