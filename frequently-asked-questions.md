@@ -140,6 +140,10 @@ No. Only short tail assets with high MarketCap, good velocity and economic activ
 
 Yes, see [Ecosystem](ecosystem.md).
 
+#### **Are Synths Interest-bearing Assets?**
+
+No. Synths enables synthetic assets with no IL and with single asset exposure. They do not generate yield.&#x20;
+
 ### **Asymmetrical / Symmetrical FAQs**
 
 #### Can I withdraw LP symmetrically after depositing an asset asymmetrically?&#x20;

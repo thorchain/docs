@@ -1,7 +1,7 @@
 ---
 description: >-
-  How THORChain enables interest-bearing synthetic assets with no IL and with
-  single asset exposure.
+  How THORChain enables synthetic assets with no IL and with single asset
+  exposure.
 ---
 
 # Synthetic Asset Model
