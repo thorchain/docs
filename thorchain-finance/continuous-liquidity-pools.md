@@ -209,7 +209,7 @@ Deposit values are _not_ the amounts the member deposited. They are the immediat
 
 The coverage is then adjusted for the 100 day rule.
 
-``[`blocksForFullProtection` ](../network/constants-and-mimir.md)`= 1728000 // 100 days`
+``[`blocksForFullProtection` ](../network/constants-and-mimir.md)`= 1440000 // 100 days`
 
 $$
 \text{protectionProgress }= (currentHeight - heightLastAdded) / blocksForFullProtection

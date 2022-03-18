@@ -28,27 +28,29 @@ All the following are community-run resources. There are no "official" channels.
 
 Below is a list of active THORChain community projects. If you would like to be funded to build something in the THORChain ecosystem please build something then reach out.
 
-### Exchanges
+### Exchanges Only
 
 ****[**ASGARDEX Desktop**](https://github.com/thorchain/asgardex-electron/releases/) **** - Wallet and Exchange Client for THORChain
 
 [**THORSwap**](https://thorswap.finance) **-** World's first multi-chain dex powered by THORChain
 
-****[**Dragon’s DEX**](https://dragonsdex.com) **** - Cross Chain Dex, Mobile
-
 ****[**Rango Exchange**](https://rango.exchange) - First Multi-chain DEX Aggregator
 
-****[**THORGram**](https://t.me/thorgram\_public) **** - THORSwap in Telegram
+****[**Brokkr** ](https://app.brokkr.finance/#/)**-** Investment Platform for optimized DeFi Investing
 
-****[**Liquality** ](https://liquality.io)**-** Browser Extension Crypto Wallet with Built-In Swaps
+[**THORGram**](https://t.me/thorgram\_public) **** - THORSwap in Telegram
 
 [**Shapeshift** ](https://shapeshift.com)- Explore the Defi Universe
 
+### Integrated Wallets and Exchanges
+
+****[**Liquality** ](https://liquality.io)**-** Browser Extension Crypto Wallet with Built-In Swaps
+
+[**XDeFi** ](https://www.xdefi.io)**-** Cross-chain Wallet & Dex, Browser Extention
+
+****[**THORWallet Dex** ](https://www.thorwallet.org)**-** Cross-chain Wallet & Dex, Mobile Wallet
+
 ### **Wallets**
-
-****[**XDeFi** ](https://www.xdefi.io)**-** Cross-chain Wallet, Browser Extention
-
-****[**THORWallet**](https://thorwallet.org) **-** Cross-chain Wallet, Mobile Wallet
 
 ****[**Ferz Wallet**](https://ferz.com/en/) - Cross-platform Progressive Web Application
 
@@ -139,5 +141,3 @@ Below is a list of active THORChain community projects. If you would like to be 
 ****[**Vanir Threads**](https://discord.gg/4DnN5j4nnw) **** - Discord Server
 
 ****[**PixelTHOR**](https://t.me/runenft) **** - Telegram Channel
-
-[**SKIPswap Feedback**](https://t.me/SKIPexchangeFeedback) **** - Telegram Channel

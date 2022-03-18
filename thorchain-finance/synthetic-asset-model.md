@@ -48,11 +48,11 @@ The ratio of Synth Units to Liquidity Pool units should be the same as the ratio
 * U = Synth Units
 
 $$
-\frac{U}{L} = \frac{S}{2*(A-S)}
+\frac{U}{L} = \frac{S}{(2A-S)}
 $$
 
 $$
-U = L * \frac{S}{2(A-S)}
+U = L * \frac{S}{(2A-S)}
 $$
 
 SynthUnits are issued to cover the new liquidity minted, but held by the pool (not owned by anyone). PoolUnits are therefore the sum of [liquidityUnits ](continuous-liquidity-pools.md#calculating-pool-ownership)+ synthUnits.
@@ -105,5 +105,5 @@ If an active pool that minted synths becomes staged, then swaps are disabled. Ho
 
 ### Alternate Synth Derivation
 
-![](<../.gitbook/assets/image (41) (1).png>)
+![](<../.gitbook/assets/image (41) (1) (1).png>)
 

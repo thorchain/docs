@@ -24,7 +24,7 @@ From there, send it to a [self custody wallet](https://linen.app/articles/what-i
 
 Many wallets support Native RUNE. See [below ](getting-started.md#wallets-and-interfaces)for more information.
 
-![Wallet Support](<../.gitbook/assets/image (42).png>)
+![Wallets Supported](<../.gitbook/assets/image (41).png>)
 
 ## Adding and Removing Liquidity
 
@@ -76,7 +76,7 @@ You can see your position if you connect to THORChain via an Interface you can u
 
 Below provides a starting point, see [Wallets ](../ecosystem.md#wallets)and [Exchanges ](../ecosystem.md#exchanges)for a full list.&#x20;
 
-### Wallets
+### Wallets and Exchanges
 
 #### [**XDEFI**](https://www.xdefi.io)****
 
