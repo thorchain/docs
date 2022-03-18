@@ -24,7 +24,7 @@ From there, send it to a [self custody wallet](https://linen.app/articles/what-i
 
 Many wallets support Native RUNE. See [below ](getting-started.md#wallets-and-interfaces)for more information.
 
-![Wallets Supported](<../.gitbook/assets/image (41).png>)
+![Wallets Supported](<../.gitbook/assets/image (41) (1).png>)
 
 ## Adding and Removing Liquidity
 

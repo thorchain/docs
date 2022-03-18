@@ -144,6 +144,10 @@ Yes, see [Ecosystem](ecosystem.md).
 
 No. Synths enables synthetic assets with no IL and with single asset exposure. They do not generate yield.&#x20;
 
+#### What Wallets Support Synths?
+
+![Wallets that Support Synths](<.gitbook/assets/image (41).png>)
+
 ### **Asymmetrical / Symmetrical FAQs**
 
 #### Can I withdraw LP symmetrically after depositing an asset asymmetrically?&#x20;

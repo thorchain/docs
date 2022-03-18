@@ -105,5 +105,5 @@ If an active pool that minted synths becomes staged, then swaps are disabled. Ho
 
 ### Alternate Synth Derivation
 
-![](<../.gitbook/assets/image (41) (1) (1).png>)
+![](<../.gitbook/assets/image (41) (1) (1) (1).png>)
 
