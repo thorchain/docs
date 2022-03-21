@@ -11,7 +11,7 @@ description: >-
 There are a maximum of 500m RUNE. All 100% was created at genesis and distributed via different mechanisms:
 
 * In return for capital: 5% (SEED) and 16% (IDO) was sold for capital to start the network and give it value. They took on risk to support the network.&#x20;
-* In return for time and effort: 10% was allocated to a group of devs who worked since 2018. The took on risk to deliver the network.&#x20;
+* In return for time and effort: 10% was allocated to a group of devs who worked since 2018. They took on risk to deliver the network.&#x20;
 * In return for bootstrap participation: 24% was given to users who participated in the bootstrapping of the network.&#x20;
 * In return for through-life participation: 44% has been placed in the Protocol to pay out to Nodes and LPs for the next 10+ years
 
