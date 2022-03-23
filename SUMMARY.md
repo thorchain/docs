@@ -57,6 +57,7 @@
 * [Deploying](thornodes/deploying.md)
 * [Joining](thornodes/joining.md)
 * [Managing](thornodes/managing.md)
+* [Pooled THORNodes](thornodes/pooled-thornodes.md)
 * [Alerting](thornodes/alerting.md)
 * [Leaving](thornodes/leaving.md)
 * [🛑 Emergency Procedures](thornodes/emergency-procedures.md)

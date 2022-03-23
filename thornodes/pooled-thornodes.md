@@ -1,0 +1,101 @@
+---
+description: How to manage a pooled THORNode with separate Operator and Providers.
+---
+
+# Pooled THORNodes
+
+## Summary
+
+Skilled Node Operators who don't individually have enough $RUNE to run a node themselves can use the Bond Provider feature to bootstrap bond from other $RUNE holders.&#x20;
+
+At the time of writing, Node Operators can define up to **6 thorchain addresses** as bond providers. These addresses will be able to Bond and Unbond to the node, and earn rewards based on the amount of bond they contribute. Node Operators take a fixed fee of **2000 basis points** (20%) on all rewards from the Bond Providers' bond. In the future this fee will be configurable per node.&#x20;
+
+Check the constants for most up-to-date settings for `MaxBondProviders` and `NodeOperatorFee` - and check current mimir values (which override constants):
+
+* [https://thornode.ninerealms.com/thorchain/constants](https://thornode.ninerealms.com/thorchain/constants)
+* [https://thornode.ninerealms.com/thorchain/mimir](https://thornode.ninerealms.com/thorchain/mimir)
+
+### Rationale
+
+The minimum $RUNE needed to churn in as a Validator is currently set at 300K - but with bond competition this number could be functionally much higher.&#x20;
+
+Not many people in the world have both the technical skills to run a Validator AND at least 300K $RUNE, which limits the supply of Node Operators who secure THORChain.
+
+Pooled THORNodes provide a way for a skilled operator to enter a trusted agreement with known Bond Providers to bootstrap enough capital for running a Validator. The Network's security increases, and more RUNE holders have access to yield-bearing bond-space.&#x20;
+
+### Economic Security
+
+At first glance it might seem Pooled Validators contradict the economic security model of THORChain (i.e. that Node Operators put up twice the value in slash-able bond as the assets they secure). With Pooled Validators it is possible for the Node Operator to individually put up less bond than the value of the assets that the node secures. This is a shift in the economic model, but a shift that only exists within the relationship between the Node Operator and the Bond Providers.&#x20;
+
+This is why a Pooled THORNode must be a trusting relationship between the Node Operator and the Bond Providers. The network does not care if a Pooled THORNode Operator steals all of the node's funds; it will still profit by slashing all of the node's bond, including that portion contributed by the Bond Providers. This total value will still be at least 2x the value that the Node Operator stole. In this case, only the Bond Providers lose out.&#x20;
+
+## Managing a Pooled THORNode
+
+### Node Operator
+
+#### Adding a Bond Provider
+
+Add a bond provider using a BOND transaction with a modified memo from a wallet you control (ledger, desktop, thorcli):
+
+`BOND:<NodeAddress>:<BondProviderAddress>`
+
+* NodeAddress - address of Node
+* BondProviderAddress - address of provider to whitelist&#x20;
+* RUNE Value - optional, will be added to the Operator's share of the bond.&#x20;
+
+_A Node Operator is the first on-chain bonding transaction to a new node. You cannot change the operator address after the fact._&#x20;
+
+**Removing a Bond Provider**
+
+A Node Provider can remove a bond provider using an UNBOND transaction with a modified memo:
+
+`UNBOND:<NodeAddress>:<Amount>:<BondProviderAddress>`
+
+* NodeAddress - address of Node
+* Amount - amount of Bond Provider's bond to refund
+* BondProviderAddress - address of Bond Provider to refund/remove
+* RUNE Value - 0
+
+_This command will refund the Bond Provider their bond and remove them from the Bond Provider list only if `Amount` constitutes all of the bond the Bond Provider is owed._
+
+### Bond Provider
+
+#### Adding/Removing Bond
+
+Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.&#x20;
+
+**Adding Bond:**
+
+`BOND:<NodeAddress>`&#x20;
+
+* NodeAddress - node to bond to
+* RUNE Value - how much to bond
+
+**Removing Bond:**
+
+`UNBOND:<NodeAddress>:<Amount>`
+
+* NodeAddress - node to unbond from
+* Amount - amount of RUNE to unbond
+* RUNE Value - 0
+
+_Can only be done when the Node is not Active or Ready_
+
+{% hint style="info" %}
+When the node is active a provider can't increase their bond, since the rewards have not been distributed yet.&#x20;
+
+When the node is ready, it is preparing to churn in, and thus locks in bond quantities.
+
+When the node is standby, it is not active or churning it, so bond amounts can be increase/decreased.
+{% endhint %}
+
+### Reward Shares
+
+Operators and Providers all have a bond amount registered to the node. Operators can start at 0.00 bonded. This on-chain bond amount is summed to the total bond, and thus everyone has a fair share in the Node's principle + rewards.&#x20;
+
+The 20% Operator Fee is distributed first to the operator from all RUNE rewards earnt by a node in a churn. The reward stays on the node bond, just that the Operator's on-chain bond increases.&#x20;
+
+Thus when an Operator or a Provider UNBONDs, everyone gets their fair share.&#x20;
+
+If an Operator LEAVES, all the bond is fairly distributed.&#x20;
+
