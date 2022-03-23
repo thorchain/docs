@@ -8,11 +8,15 @@ description: Overview of THORNodes
 
 THORNodes service the THORChain network. Each THORNode is comprised of several independent servers in a cluster. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
+Running a node is a serious undertaking. While Node Operators are well [compensated ](overview.md#compensation)for running a node, there are also [risks](overview.md#risks-to-bond), [skills required](overview.md#skillsets) and [costs](overview.md#costs).&#x20;
+
+See the [Node Operator 101 Video](https://youtu.be/XXYXNAolPEU) to learn more before running a node.&#x20;
+
 To set up a node, you have three choices:
 
 1. Set up manually (not recommended unless you are an expert)
 2. Set up via Kubernetes (recommended)
-3. Set up via Provider (coming soon)
+3. Set up via Provider (coming soon).
 
 {% content-ref url="kubernetes/" %}
 [kubernetes](kubernetes/)

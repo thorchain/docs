@@ -146,7 +146,7 @@ No. Synths enables synthetic assets with no IL and with single asset exposure. T
 
 #### What Wallets Support Synths?
 
-![Wallets that Support Synths](<.gitbook/assets/image (41).png>)
+![](<.gitbook/assets/image (39).png>)
 
 ### **Asymmetrical / Symmetrical FAQs**
 

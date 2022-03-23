@@ -24,7 +24,7 @@ From there, send it to a [self custody wallet](https://linen.app/articles/what-i
 
 Many wallets support Native RUNE. See [below ](getting-started.md#wallets-and-interfaces)for more information.
 
-![Wallets Supported](<../.gitbook/assets/image (41) (1).png>)
+![Wallets Supported](<../.gitbook/assets/image (42).png>)
 
 ## Adding and Removing Liquidity
 
@@ -123,5 +123,3 @@ THORSwap is the world’s first Multichain DEX that utilizes the THORChain netwo
 #### ****[**Shapeshift**](https://app.shapeshift.com)****
 
 ShapeShift is a borderless, cross-chain crypto trading platform and portfolio manager for user self-sovereignty. The platform enables users to buy, send, receive, swap, and manage assets via mobile interface or web platform, and lets them choose to use a range of software or hardware wallets, including ShapeShift native, Portis, KeepKey, Trezor, and Ledger**.**
-
-****
