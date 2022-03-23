@@ -85,14 +85,18 @@ Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.&#
 * Amount - amount of RUNE to unbond
 * RUNE Value - 0
 
-_Can only be done when the Node is not Active or Ready_
+_Can only be done when the Node is not Active or Ready, but CAN be done immediately after a churn (during funds migration)._&#x20;
 
 {% hint style="info" %}
 When the node is active a provider can't increase their bond, since the rewards have not been distributed yet.&#x20;
 
 When the node is ready, it is preparing to churn in, and thus locks in bond quantities.
 
-When the node is standby, it is not active or churning it, so bond amounts can be increase/decreased.
+When the node is standby, it is not active or churning it, so bond amounts can be increase/decreased.\
+\
+After the network churns, there is a period of time, typically 6 hours, in which the funds migrate to new vaults. Active nodes can add bond here. You can tell the network is migrating if there are `retiring` asgard vaults. \
+[https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)\
+
 {% endhint %}
 
 ### Reward Shares
