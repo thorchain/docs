@@ -47,9 +47,11 @@ Add a bond provider using a BOND transaction with a modified memo from a wallet 
 
 * NodeAddress - address of Node
 * BondProviderAddress - address of provider to whitelist&#x20;
-* RUNE Value - optional, will be added to the Operator's share of the bond.&#x20;
+* RUNE TX Value - 1.0 minimum (Anything over 1.0 is added to the Operator's Bond).&#x20;
 
 _A Node Operator is the first on-chain bonding transaction to a new node. You cannot change the operator address after the fact._&#x20;
+
+_The Operator is also added as a Bond Provider._&#x20;
 
 **Removing a Bond Provider**
 
@@ -60,7 +62,7 @@ A Node Provider can remove a bond provider using an UNBOND transaction with a mo
 * NodeAddress - address of Node
 * Amount - amount of Bond Provider's bond to refund
 * BondProviderAddress - address of Bond Provider to refund/remove
-* RUNE Value - 0
+* RUNE TX Value - 0
 
 _This command will refund the Bond Provider their bond and remove them from the Bond Provider list only if `Amount` constitutes all of the bond the Bond Provider is owed._
 
@@ -88,15 +90,20 @@ Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.&#
 _Can only be done when the Node is not Active or Ready, but CAN be done immediately after a churn (during funds migration)._&#x20;
 
 {% hint style="info" %}
-When the node is active a provider can't increase their bond, since the rewards have not been distributed yet.&#x20;
-
-When the node is ready, it is preparing to churn in, and thus locks in bond quantities.
+**When you can add Bond**
 
 When the node is standby, it is not active or churning it, so bond amounts can be increase/decreased.\
 \
-After the network churns, there is a period of time, typically 6 hours, in which the funds migrate to new vaults. Active nodes can add bond here. You can tell the network is migrating if there are `retiring` asgard vaults. \
-[https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)\
+After the network churns, there is a period of time typically 6 hours, in which the funds migrate to new vaults. Active nodes can add bond here. You can tell the network is migrating if there are `retiring` asgard vaults. \
+[https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)
+{% endhint %}
 
+{% hint style="warning" %}
+**When you can't add Bond**
+
+When the node is active a provider can't increase their bond, since the rewards have not been distributed yet.&#x20;
+
+When the node is ready, it is preparing to churn in, and thus locks in bond quantities.
 {% endhint %}
 
 ### Reward Shares
