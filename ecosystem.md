@@ -38,6 +38,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**Brokkr** ](https://app.brokkr.finance/#/)**-** Investment Platform for optimized DeFi Investing
 
+[**DefiSpot**](https://www.defispot.com/trade) - Buy and earn BTC, ETH, and more fully decentralized
+
 [**THORGram**](https://t.me/thorgram\_public) **** - THORSwap in Telegram
 
 [**Shapeshift** ](https://shapeshift.com)- Explore the Defi Universe

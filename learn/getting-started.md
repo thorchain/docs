@@ -112,6 +112,12 @@ Rango is a cross-chain DEX aggregator. It combines power of DEX aggregators insi
 
 ➜ [How to Swap](https://rango.exchange/how-to-swap)
 
+#### [**DefiSpot**](https://www.defispot.com/trade)
+
+DefiSpot is a multichain decentralized exchange (DEX) that aims to make it possible for users to swap, lend and add/remove liquidity to cryptocurrencies without needing a centralized third-party or requiring users to provide Know-Your-Customer (KYC) details.
+
+➜ [What is Defi Spot?](https://medium.com/defispot/what-is-defispot-and-why-does-it-exist-1cb6df53d6b1#:\~:text=DefiSpot%20is%20a%20multichain%20decentralized,%2DCustomer%20\(KYC\)%20details.)
+
 #### ****[**THORSwap**](https://app.thorswap.finance)****
 
 THORSwap is the world’s first Multichain DEX that utilizes the THORChain network to provide a front-end user interface to perform cross-chain swaps. This is done in a permissionless, trustless, and non-custodial manner. There are no pegged or wrapped assets, it is purely native.
