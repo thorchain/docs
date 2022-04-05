@@ -2,7 +2,7 @@
 description: >-
   THORChain's Incentive Pendulum keeps the network in a balanced state. It stops
   the network from becoming unsafe or inefficient by changing the distribution
-  of rewards to node operators and LPs.
+  of rewards (block rewards and liquidity fees) to node operators and LPs.
 ---
 
 # Incentive Pendulum
