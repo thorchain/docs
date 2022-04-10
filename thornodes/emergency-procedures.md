@@ -7,7 +7,7 @@ description: This page describes how to react in a network-wide emergency (funds
 THORChain is a distributed network. When the network is under attack or a funds-at-risk bug is discovered, Node Operators should react quickly to secure and defend.
 
 {% hint style="warning" %}
-Even during emergencies, Node Operators should refrain from doxxing themselves. Staying psuedo-anonymous is critical to ensuring the network is impartial, nuetral and resistant to capture.
+Even during emergencies, Node Operators should refrain from doxxing themselves. Staying pseudo-anonymous is critical to ensuring the network is impartial, neutral and resistant to capture.
 {% endhint %}
 
 ## Reporting a Bug
