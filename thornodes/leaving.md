@@ -6,7 +6,8 @@ description: How to leave THORChain
 
 ## Overview
 
-Every 42,400 BLOCKS (3 days) the system will churn its nodes.
+Every 3 days the system will churn its nodes.
+The exact churn interval in blocks is ChurnInterval in the [THORChain Constants](https://docs.thorchain.org/network/constants-and-mimir).
 
 Outgoing:
 
@@ -30,7 +31,7 @@ It is assumed nodes that wish to **LEAVE** will be away for a significant period
 ## Unbonding
 
 {% hint style="info" %}
-You can only unbond when your Node is on "standby", ie, just before it is selected to churn in, or after it is churned out.\
+You can only unbond when your Node is on "standby" or is "disabled", ie, before it is selected to churn in or after it has churned out.\
 You cannot unbond if you are "ready" or "active" or have any amount of funds on your Yggdrasil address
 {% endhint %}
 
