@@ -143,12 +143,12 @@ If `a = b = 2` then the pool behaves as if the depth is twice as deep, the slip 
 If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep as the `X` asset, or, that the pool is no longer 1:1 bonded. Instead the pool can be said to have 67:33 balance, where the liquidity providers are twice as exposed to one asset over the other.
 
 {% hint style="info" %}
-Virtual Depths have been added to all Synth Swaps - using a multiplier of 2. This means that Synth Swaps create 50% less slip and users pay 50% less fees. The multiplier is specified on `/constants` as:
+Virtual Depths were initially applied to Synth Swaps using a multiplier of 2. It was intended that Synth Swaps would create 50% less slip and users pay 50% less fees. However, this was disabled after discovering that this would allow front-running.  The multiplier is specified on `/constants` as:
 
 ```
 "VirtualMultSynths": 2,
 ```
-{% endhint %}
+but currently overridden by a Mimir value of 1.{% endhint %}
 
 ## Calculating Pool Ownership
 
