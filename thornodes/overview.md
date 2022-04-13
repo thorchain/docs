@@ -191,7 +191,7 @@ Types of node status:
 3. **Standby** - waiting to have minimum requirements verified to become “ready” status. This check happens on each churn event (3 days on average).
 4. **Ready** - node has met minimum requirements to be churned and is ready to do so. Could be selected to churn into the network. Cannot unbond while in this status.
 5. **Active** - node is an active participant of the network, by securing funds and committing new blocks to the THORChain blockchain. Cannot unbond while in this status.
-6. **Disabled** - node has been disabled.
+6. **Disabled** - node has been disabled by use of LEAVE, and cannot re-join.
 
 To get node account information, make an HTTP call to your `thor-api` port which will look like the following:
 
