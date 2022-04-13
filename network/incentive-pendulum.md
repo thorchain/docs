@@ -1,15 +1,12 @@
 ---
-description: >-
-  THORChain's Incentive Pendulum keeps the network in a balanced state. It stops
-  the network from becoming unsafe or inefficient by changing the distribution
-  of rewards to node operators and LPs.
+description: THORChain's Incentive Pendulum keeps the network in a balanced state.
 ---
 
 # Incentive Pendulum
 
 The capital on THORChain can lose its balance over time. Sometimes there will be too much capital in liquidity pools; sometimes there will be too much bonded by nodes. If there is too much capital in liquidity pools, the network is unsafe. If there is too much capital bonded by nodes, the network is inefficient.
 
-If the network becomes unsafe, it increases rewards for node operators and reduces rewards for liquidity providers. If the network becomes inefficient, it boosts rewards for liquidity providers and reduces rewards for node operators.
+If the network becomes unsafe, it increases rewards (block rewards and liquidity fees) for node operators and reduces rewards for liquidity providers. If the network becomes inefficient, it boosts rewards for liquidity providers and reduces rewards for node operators.
 
 ## Balancing System States
 
