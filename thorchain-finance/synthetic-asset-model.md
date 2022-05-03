@@ -40,8 +40,6 @@ SynthUnits represent the RUNE collateral value that needs to be kept in the pool
 
 The ratio of Synth Units to Liquidity Pool units should be the same as the ratio of synth assets to the total value of the pool without the synth assets (since LP units are all pool units without the synth units).
 
-
-
 * S = Synth Supply
 * A = Asset Depth
 * L = Liquidity Units
@@ -85,8 +83,6 @@ Synth Swaps can be done as follows:
 
 To specify the destination asset is synth, simply provide a THOR address. If it is Layer 1, then provide a layer 1 address, e.g. a BTC address.
 
-
-
 ### Economic Reasoning
 
 Synth holders do not experience any gain or any loss caused by price changes when minting / redeeming a synth. They do, however, pay a slip-based fee on entry or exit and tx fees. Synth minting, swapping and redeeming pay half the normal slip-base fee.
@@ -101,9 +97,6 @@ Synth minting, swapping and redeeming will get a 50% reduction to the slip fee c
 
 If an active pool that minted synths becomes staged, then swaps are disabled. However, synth holders can always redeem for RUNE, or the underlying asset, by specifying that on the way out.
 
-
-
 ### Alternate Synth Derivation
 
-![](<../.gitbook/assets/image (41) (1) (1).png>)
-
+![](<../.gitbook/assets/image (41) (3).png>)
