@@ -68,6 +68,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### **Analytics**
 
+****[**THORChain Vision**](https://thorchain.vision/console) **-** Key stats and figures related to core Thorchain operations
+
 ****[**THORYield** ](https://thoryield.com)**-** View your added liquidity on THORChain
 
 ****[**RUNEBalance** ](https://www.runebalance.com/#/pools)-[ ](https://www.runebalance.com/#/pools)View current arbitrage opportunities in the pools.&#x20;
