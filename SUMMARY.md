@@ -21,7 +21,7 @@
 
 * [Liquidity Model](thorchain-finance/continuous-liquidity-pools.md)
 * [Synthetic Asset Model](thorchain-finance/synthetic-asset-model.md)
-* [Lending Model](thorchain-finance/lending-model.md)
+* [THORFI](thorchain-finance/lending-model.md)
 * [Stablecoin](thorchain-finance/composite-model.md)
 
 ## Network
