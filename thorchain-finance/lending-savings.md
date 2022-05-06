@@ -1,14 +1,12 @@
 ---
-description: >-
-  How THORChain enables users to borrow from the system using collateral and pay
-  a fixed interest rate.
+description: THORFi Lending and Savings
 ---
 
-# THORFI
+# Lending and Savings
 
 ### Overview
 
-THORFi is stable coin, lending and savings mechnisum build on top of the existing THORChain protocol. See the THORFI design [here](https://gitlab.com/thorchain/thornode/-/issues/1255).&#x20;
+See the THORFI design [here](https://gitlab.com/thorchain/thornode/-/issues/1255).&#x20;
 
 ### THORFI Resources:
 
