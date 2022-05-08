@@ -85,13 +85,11 @@ To specify the destination asset is synth, simply provide a THOR address. If it 
 
 ### Economic Reasoning
 
-Synth holders do not experience any gain or any loss caused by price changes when minting / redeeming a synth. They do, however, pay a slip-based fee on entry or exit and tx fees. Synth minting, swapping and redeeming pay half the normal slip-base fee.
+Synth holders do not experience any gain or any loss caused by price changes when minting / redeeming a synth. They do, however, pay a slip-based fee on entry or exit and tx fees.
 
 The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol Reserve is taking on the price risk.
 
 Due to the collateralisation method, THORChain Synthetic Assets are impervious to impermanent loss and offer single asset exposure.
-
-Synth minting, swapping and redeeming will get a 50% reduction to the slip fee compared to swapping assets to incentivise the use of Synths.
 
 ### Staged Pools
 
