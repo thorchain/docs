@@ -27,11 +27,11 @@ A THORChain address can be assigned one (1) THORName to manage the other address
 }
 ```
 
-Currently, there are five (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Terra. There is a limit is 30 characters, including ^\[a-zA-Z0-9+\_-]+$.
+Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Terra. There is a limit is 30 characters, including ^\[a-zA-Z0-9+\_-]+$.
 
 **Technical Rationale**
 
-Bitcoin has a memo length limitation of 80 bytes and Monero has a memo lenght limitation of 97 bytes. This means swapping from Bitcoin to Monero is not possible using addresses, THORNames solves this issue and can also be used when specificing the affiliate address.
+Bitcoin has a memo length limitation of 80 bytes and Monero and addresss length of 97 bytes. This means swapping from Bitcoin to Monero is not possible using addresses, THORNames solves this issue and can also be used when specifying the affiliate address.
 
 {% hint style="info" %}
 Swap example comparison using THORNames.
