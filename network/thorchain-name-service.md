@@ -27,11 +27,11 @@ A THORChain address can be assigned one (1) THORName to manage the other address
 }
 ```
 
-Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Terra. There is a limit is 30 characters, including ^\[a-zA-Z0-9+\_-]+$.
+Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Terra. THORNames are limited to 30 characters, including ^\[a-zA-Z0-9+\_-]+$.
 
 **Technical Rationale**
 
-Bitcoin has a memo length limitation of 80 bytes and Monero and addresss length of 97 bytes. This means swapping from Bitcoin to Monero is not possible using addresses, THORNames solves this issue and can also be used when specifying the affiliate address.
+Bitcoin has a memo length limitation of 80 bytes and Monero has an address length of 97 bytes. This means swapping from Bitcoin to Monero is not possible using addresses, THORNames solves this issue and can also be used when specifying the affiliate address.
 
 {% hint style="info" %}
 Swap example comparison using THORNames.
@@ -57,7 +57,7 @@ There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fe
 * `TNSFeeOnSale`: 1000 Basis Points
 * `TNSBlockFee`: 20 tor per block (roughly 1 RUNE per year)
 
-Example: a 20 Rune registration is registered for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
+Example: a 20 Rune registration registersthe THORName for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
 
 ### Query a THORName
 
@@ -78,7 +78,7 @@ Examples in Stagenet are\
 
 ## Creating a THORName
 
-A Thornames are created by sending a memo in a MsgDeposit with [memo](https://dev.thorchain.org/thorchain-dev/wallets/memos) prefix: `name`, `n` or `~`
+THORNames are created by sending a memo in a MsgDeposit with [memo](https://dev.thorchain.org/thorchain-dev/wallets/memos) prefix: `name`, `n` or `~`
 
 Memo template is: `~:name:chain:address:?owner:?preferredAsset:?expiry`
 
@@ -90,6 +90,6 @@ Expiry is a block height that can be set in the past to unregister the THORName
 
 ## FAQ
 
-THORChain launched THORNames in June last year with a number of pre-registration sales. Read more here [https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8](https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8)
+THORChain launched THORNames in June 2021 with a number of pre-registration sales. Read more here [https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8](https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8)
 
 Pre-registered THORNames will be valid 12 months after THORNames is deployed to Chaosnet.&#x20;
