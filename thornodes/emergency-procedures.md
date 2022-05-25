@@ -72,3 +72,124 @@ The network will not be able to recover until the upgrade is complete, any mimir
 
 All wallets and frontends should monitor for any of the halts and automatically go into maintenance mode when invoked.
 
+## Node Migration
+
+### Create node backup
+
+* [ ] Copy mnemonic with the following command
+```
+kubectl get secret thornode-mnemonic -n thornode -o yaml > ~/mnemonic_secret_new.yaml
+```
+* [ ] Copy key files from THORNode pod
+>
+/root/.thornode/THORChain-ED25519\
+/root/.thornode/keyring-file/ (directory)\
+/root/.thornode/config/node_key.json\
+/root/.thornode/config/priv_validator_key.json
+>
+```
+#Replace $pod with the thornode pod name
+kubectl cp thornode/\$pod:/root/.thornode/THORChain-ED25519 ~/THORChain-ED25519
+kubectl cp thornode/\$pod:/root/.thornode/keyring-file/ ~/keyring-file/
+kubectl cp thornode/\$pod:/root/.thornode/config/node_key.json ~/config/node_key.json
+kubectl cp thornode/\$pod:/root/.thornode/config/priv_validator_key.json ~/config/priv_validator_key.json
+```
+* [ ] Make Bifrost backup
+```
+#Replace $pod with the old bifrost pod name
+kubectl exec deploy/thornode -c bifrost -- sh -c "cd /root/.thornode && tar cf \"bifrost.tar\" localstate-*.json"
+kubectl cp thornode/\$pod:/root/.thornode/bifrost.tar ~/bifrost.tar
+```
+
+### Restore Node backup
+* [ ] Copy node backup files made in [Node backup section](#create-node-backup) to the new node's control station
+* [ ] Create `yaml` config files for temporary pods
+thornode-recovery.yaml
+```
+kind: Pod
+apiVersion: v1
+metadata:
+  name: thornode-recovery
+spec:
+  volumes:
+    - name: volume-to-debug
+      persistentVolumeClaim:
+       claimName: thornode
+  containers:
+    - name: debugger
+      image: busybox
+      command: ['sleep', '3600']
+      volumeMounts:
+        - mountPath: "/data"
+          name: volume-to-debug
+```
+bifrost-recovery.yaml:
+```
+kind: Pod
+apiVersion: v1
+metadata:
+  name: bifrost-recovery
+spec:
+  volumes:
+    - name: volume-to-debug
+      persistentVolumeClaim:
+       claimName: bifrost
+  containers:
+    - name: debugger
+      image: busybox
+      command: ['sleep', '3600']
+      volumeMounts:
+        - mountPath: "/data"
+          name: volume-to-debug
+```
+* [ ] Scale thornode and bifrost deployments to 0
+```
+kubectl scale deployment thornode bifrost --replicas=0
+```
+* [ ] After thornode and bifrost are stopped run temporary pods
+```
+kubectl create -f thornode-recovery.yaml
+kubectl create -f bifrost-recovery.yaml
+```
+* [ ] Copy key files from the backup to the temporary pods
+```
+kubectl cp node_key.json thornode-recovery:/data/.thornode/config/node_key.json
+kubectl cp priv_validator_key.json thornode-recovery:/data/.thornode/config/priv_validator_key.json
+kubectl cp THORChain-ED25519 thornode-recovery:/data/.thornode/THORChain-ED25519
+kubectl cp keyring-file thornode-recovery:/data/.thornode/
+kubectl cp THORChain-ED25519 bifrost-recovery:/data/thornode/THORChain-ED25519
+kubectl cp keyring-file/thorchain.info bifrost-recovery:/data/thornode/keyring-file/thorchain.info
+```
+* [ ] Restore bifrost backup
+```
+kubectl cp bifrost.tar bifrost-recovery:/data/thornode/bifrost.tar
+kubectl exec deploy/thornode -c bifrost-recovery -- sh -c "cd /root/.thornode && tar xf bifrost.tar"
+```
+* [ ] Stop temporary pods
+```
+kubectl delete -f thornode-recovery.yaml
+kubectl delete -f bifrost-recovery.yaml
+```
+> **If you're maling live migration, then after stopping temporary pods on the NEW node stop thornode and bifrost daemons on the OLD node**
+* [ ] Re-scale thornode and bifrost deployments
+```
+kubectl scale deployment thornode bifrost --replicas=1
+```
+* [ ] Remove mnemonic
+```
+kubectl delete secret thornode-mnemonic
+```
+* [ ] Restore mnemonic from the backup
+```
+kubectl apply -f mnemonic_secret_new.yaml
+```
+* [ ] Set external IP address
+```
+cd ./node-launcher/ && make set-ip-address
+```
+* [ ] Test new THORNode
+* Check pods status
+* Check chain sync status
+* Check node name
+* Check status on the dashboard (e.g. [https://thornode.network/](https://thornode.network/))
+* Check slash rate
