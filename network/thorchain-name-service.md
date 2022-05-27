@@ -38,11 +38,11 @@ Swap example comparison using THORNames.
 
 Without:
 
-`=:BTC.BTC:bc1fx6fsev97atsm5j62kgecpslv6vx2nffv0qq2q:2117277:0500:bc1q6ptu8zayukjz3ag4d4pnjjhtxwd4jckh9gufwu`
+`=:BTC.BTC:bc1fx6fsev97atsm5j62kgecpslv6vx2nffv0qq2q:2117277:bc1q6ptu8zayukjz3ag4d4pnjjhtxwd4jckh9gufwu:500`
 
 `With:`
 
-`=:BTC.BTC:ODIN:2117277:0500:ORION`
+`=:BTC.BTC:ODIN:2117277:ORION:500`
 
 107 characters without THORNames, 33 characters with THORNames.&#x20;
 {% endhint %}
