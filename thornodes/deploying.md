@@ -64,7 +64,7 @@ make destroy-tools
 
 If you are successful, you will see the following message:
 
-![](<../.gitbook/assets/image (23) (1).png>)
+![](<../.gitbook/assets/image (14).png>)
 
 If there are any errors, they are typically fixed by running the command again.
 
@@ -88,7 +88,7 @@ Deploying a THORNode will take 1 day for every 3 months of ledger history, since
 
 If successful, you will see the following:
 
-![](<../.gitbook/assets/image (19) (1).png>)
+![](<../.gitbook/assets/image (15).png>)
 
 You are now ready to join the network:
 

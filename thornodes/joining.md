@@ -63,7 +63,7 @@ Before sending the BOND, verify that your THORNode is **fully synced** with conn
 Some `make` commands during setup require RUNE (0.02 to 1.0) to execute into the state machine to prevent DDoS. If your bond is too small (e.g. 1 RUNE) you may run out and not be able to complete the setup until adding more.
 {% endhint %}
 
-![Bonding using BOND option in ASGARDEX](<../.gitbook/assets/image (8) (1) (1) (1).png>)
+![Bonding using BOND option in ASGARDEX](<../.gitbook/assets/image (8) (1) (1).png>)
 
 Give the network 3-5 seconds to pick up your bond. To verify it has received your bond, run the following:
 

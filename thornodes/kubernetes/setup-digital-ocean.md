@@ -18,7 +18,7 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 **Windows should choose either:**
 
 1. **Deploy a THORNode from a Linux VPS.**
-2. **Use Windows Subsystem for Linux -** [**https://docs.microsoft.com/en-us/windows/wsl/about**](https://docs.microsoft.com/en-us/windows/wsl/about)\*\*\*\*
+2. **Use Windows Subsystem for Linux -** [**https://docs.microsoft.com/en-us/windows/wsl/about**](https://docs.microsoft.com/en-us/windows/wsl/about)****
 {% endhint %}
 
 ## **Steps**
@@ -48,7 +48,7 @@ The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doc
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh) to install the DO CTL.
+Use the package manager [homebrew](https://formulae.brew.sh/) to install the DO CTL.
 
 ```
 brew install doctl
@@ -73,7 +73,7 @@ You must install and configure the Kubernetes CLI tool (**kubectl**). **\*\*To i
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh) to install **kubectl**.
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **kubectl**.
 
 ```
 brew install kubernetes-cli
@@ -87,7 +87,7 @@ You also need **wget** and **jq**, follow [these instructions](https://www.gnu.o
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh) to install **wget** and **jq** _Note: You most likely have these installed already._
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq** _Note: You most likely have these installed already._
 
 ```
 brew install wget
@@ -106,13 +106,13 @@ make do
 
 During the deploy, you will be asked to enter information about your cluster:
 
-![](<../../.gitbook/assets/image (20) (1).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
 * Name
 * DO Region -- see valid [List of Regions](https://www.digitalocean.com/docs/platform/availability-matrix/#other-product-availability) (use lower-case)
 * Confirm `yes`
 
-![Kubernetes Availability (note, use lower-case in the terminal)](<../../.gitbook/assets/image (30) (1).png>)
+![Kubernetes Availability (note, use lower-case in the terminal)](<../../.gitbook/assets/image (26).png>)
 
 Final success message: `Apply complete! Resources: 2 added, 0 changed, 0 destroyed.`
 

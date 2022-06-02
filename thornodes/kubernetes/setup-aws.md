@@ -52,7 +52,7 @@ In order for Terraform to run operations on your behalf, you must install and co
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh) to install the AWS CLI.
+Use the package manager [homebrew](https://formulae.brew.sh/) to install the AWS CLI.
 
 ```
 brew install awscli
@@ -75,7 +75,7 @@ You also must install and configure the **AWS IAM Authenticator** tool. \*\*\*\*
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh) to install the **AWS IAM Authenticator**.
+Use the package manager [homebrew](https://formulae.brew.sh/) to install the **AWS IAM Authenticator**.
 
 ```bash
 brew install aws-iam-authenticator
@@ -89,7 +89,7 @@ You must install and configure the Kubernetes CLI tool (**kubectl**). \*\*\*\*To
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh) to install **kubectl**.
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **kubectl**.
 
 ```
 brew install kubernetes-cli
@@ -103,7 +103,7 @@ You also need **wget** and **jq**, follow [these instructions](https://www.gnu.o
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh) to install **wget** and **jq**\
+Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**\
 _Note: You most likely have these installed already._
 
 ```
@@ -123,15 +123,15 @@ make aws
 
 During the deploy, you will be asked to enter information about your cluster:
 
-![](<../../.gitbook/assets/image (20) (1).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
 * Name
 * AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
 * Confirm `yes`
 
-![Regions](<../../.gitbook/assets/image (29) (1).png>)
+![Regions](<../../.gitbook/assets/image (25).png>)
 
-![Note: AWS EKS is not available in some regions](<../../.gitbook/assets/image (25) (1).png>)
+![Note: AWS EKS is not available in some regions](<../../.gitbook/assets/image (21).png>)
 
 Or manually:
 

@@ -6,7 +6,7 @@ description: THORChain, Midgard, Wallets and the rest of the ecosystem.
 
 ## Technology
 
-THORChain is a decentralised cross-chain liquidity protocol based on [Tendermint](https://tendermint.com) & [Cosmos-SDK](https://cosmos.network) and utilising [Threshold Signature Schemes](https://eprint.iacr.org/2019/114.pdf) (TSS). It does not peg or wrap assets, it simply determines how to move them in response to user-actions.
+THORChain is a decentralised cross-chain liquidity protocol based on [Tendermint](https://tendermint.com/) & [Cosmos-SDK](https://cosmos.network/) and utilising [Threshold Signature Schemes](https://eprint.iacr.org/2019/114.pdf) (TSS). It does not peg or wrap assets, it simply determines how to move them in response to user-actions.
 
 THORChain observes incoming user deposits to vaults, executes business logic (swap, add/remove liquidity), and processes outbound transactions. THORChain is primarily a leaderless vault manager, ensuring that every stage of the process is byzantine-fault-tolerant.
 

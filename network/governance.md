@@ -17,7 +17,7 @@ THORChain governance decides:
 
 ### Asset Listing
 
-![](../.gitbook/assets/listing-new-assets.jpg)
+![](<../.gitbook/assets/Listing New Assets.jpg>)
 
 Users signal which assets they want on the network by staking in a new pool. THORChain will realise it is a new asset it hasn't been seen before and create a new pool and place it in bootstrap mode. This is a normal asset pool except swapping is disabled on it. Every few days the networks looks at all the bootstrapping pools and lists the one with the highest value.
 

@@ -40,8 +40,8 @@ Note:
 
 Many Wallets work with THORChain. Two community created ones are:&#x20;
 
-* [THORWallet](https://thorwallet.org) - https://thorwallet.org/&#x20;
-* [XDEFI ](https://www.xdefi.io)- https://www.xdefi.io/
+* [THORWallet](https://thorwallet.org/) - https://thorwallet.org/&#x20;
+* [XDEFI ](https://www.xdefi.io/)- https://www.xdefi.io/
 
 Other Wallets include:&#x20;
 
@@ -94,7 +94,7 @@ Outbound Throttling will delay large outbound transactions. The following are ro
 * $5000/block– 2.3 minutes&#x20;
 * $10k/block— 5 minutes
 
-➜ You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app)
+➜ You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app/)
 
 #### **Will I have Impermanent Loss Protection if I provide liquidity in THORChain?**&#x20;
 

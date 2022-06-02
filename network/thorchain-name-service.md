@@ -1,10 +1,10 @@
 ---
-description: How THORNames work
+description: How THORNames (TNS) work
 ---
 
 # THORChain Name Service
 
-Website: [https://thorname.com/](https://thorname.com)
+Website: [https://thorname.com/](https://thorname.com/)
 
 ## Overview
 
@@ -57,14 +57,14 @@ There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fe
 * `TNSFeeOnSale`: 1000 Basis Points
 * `TNSBlockFee`: 20 tor per block (roughly 1 RUNE per year)
 
-Example: a 20 Rune registration registersthe THORName for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
+Example: a 20 Rune registration registers the THORName for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
 
 ### Query a THORName
 
 A THORName can be queried by going to `/thorname/{thorname}`
 
 {% hint style="info" %}
-An Example in Stagenet is [https://stagenet-midgard.ninerealms.com/v2/thorname/lookup/ORION9RSTAGE](https://stagenet-midgard.ninerealms.com/v2/thorname/lookup/ORION9RSTAGE)
+An Example: [https://thornode.ninerealms.com/thorchain/thorname/orion](https://thornode.ninerealms.com/thorchain/thorname/orion)
 {% endhint %}
 
 While there is no reverse on-chain reverse lookup, a reverse lookup is possible within THORChain via `/thorname/lookup/{thorname}.`
