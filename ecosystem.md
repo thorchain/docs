@@ -40,6 +40,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**DefiSpot**](https://www.defispot.com/trade) - Buy and earn BTC, ETH, and more fully decentralized
 
+[**SKIP** ](https://app.skip.exchange/swap)- An exchange powered by THORChain
+
 [**THORGram**](https://t.me/thorgram\_public) **** - THORSwap in Telegram
 
 [**Shapeshift** ](https://shapeshift.com/)- Explore the Defi Universe
@@ -118,7 +120,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
 
-****[**XChainJS** ](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS.
+****[**XChainJS** ](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
 
 [**xchainpy-lib**](https://github.com/xchainjs/xchainpy-lib) - A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in PY.
 

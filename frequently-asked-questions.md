@@ -38,7 +38,7 @@ Note:
 
 #### **What Wallet can I use with THORChain and Native RUNE?**&#x20;
 
-Many Wallets work with THORChain. Two community created ones are:&#x20;
+Many Wallets work with THORChain. Two community-created ones are:&#x20;
 
 * [THORWallet](https://thorwallet.org/) - https://thorwallet.org/&#x20;
 * [XDEFI ](https://www.xdefi.io/)- https://www.xdefi.io/
@@ -52,11 +52,9 @@ BEP-2 and ERC-20 RUNE can be stored in many popular wallets like Trust Wallet, L
 
 #### **What are liquidity caps / why can’t I add liquidity?**&#x20;
 
-Multi-Chain Chaosnet has an upper limit on pooled liquidity, known as the “Liquidity Cap”. This is an upper limit across all pools combined; and once reached, no more liquidity can be added until the caps are raised. This mechanism is currently in place to protect the network and its users. Users can check the Fund cap status at: https://app.thorswap.finance/.&#x20;
+Multi-Chain Chaosnet had an upper limit on pooled liquidity, known as the “Liquidity Cap” or technically the soft cap. This has not been removed and there is no longer any liquidity caps.&#x20;
 
-Follow THORChain Twitter to not miss any #RAISETHECAPS updates.&#x20;
-
-➜ [THORChain Twitter](https://twitter.com/THORChain): Raise the cap Announcements will be made via official channels.
+The incentive pendulum now incentives a good balance between LP liquidity and Node liquidity.&#x20;
 
 #### **What assets can you swap and provide liquidity for?**&#x20;
 
