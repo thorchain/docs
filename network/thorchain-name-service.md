@@ -27,7 +27,7 @@ A THORChain address can be assigned one (1) THORName to manage the other address
 }
 ```
 
-Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Terra. THORNames are limited to 30 characters, including ^\[a-zA-Z0-9+\_-]+$.
+Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Terra. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
 
 **Technical Rationale**
 
