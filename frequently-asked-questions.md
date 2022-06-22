@@ -18,22 +18,13 @@ Unbalanced pools represent a profit opportunity for arbitrage traders -- if a tr
 
 #### **Where can I buy Rune?**&#x20;
 
-BEP-2 RUNE: Binance, FTX and Kucoin.
-
-ERC-20 RUNE&#x20;
-
-➜ [Sushi Swap](https://sushiswap.vision/token/0x3155ba85d5f96b2d030a4966af206230e46849cb) &#x20;
-
-➜ [UniSwap ](https://app.uniswap.org/#/swap)
-
-➜ [List of other exchanges](https://www.coingecko.com/en/coins/thorchain#markets)
-
-For Native RUNE**,** see interfaces below.&#x20;
+It is only Recommended to get buy Native RUNE, see interfaces below.&#x20;
 
 Note:
 
 * There is no BEP20 RUNE in existence.
 * You can only buy Native RUNE, BEP2 RUNE or ERC20 RUNE from the market.
+* Support for BEP2 RUNE or ERC20 RUNE will be removed
 * Only native RUNE is used in the THORChain Protocol.&#x20;
 
 #### **What Wallet can I use with THORChain and Native RUNE?**&#x20;
@@ -50,11 +41,9 @@ Other Wallets include:&#x20;
 
 BEP-2 and ERC-20 RUNE can be stored in many popular wallets like Trust Wallet, Ledger, Safepal etc.
 
-#### **What are liquidity caps / why can’t I add liquidity?**&#x20;
+#### **Is there a liquidity cap?**&#x20;
 
-Multi-Chain Chaosnet had an upper limit on pooled liquidity, known as the “Liquidity Cap” or technically the soft cap. This has not been removed and there is no longer any liquidity caps.&#x20;
-
-The incentive pendulum now incentives a good balance between LP liquidity and Node liquidity.&#x20;
+The Soft Cap has been removed, so there should be no limit to the amount of liquidity entered. There is a hard cap in place to ensure the total pooled cannot exceed the total bonded, making the network unsafe however the [Incentive Pendlumn](network/incentive-pendulum.md) makes this cap near impossible to reach.&#x20;
 
 #### **What assets can you swap and provide liquidity for?**&#x20;
 
@@ -246,24 +235,3 @@ Go to https://www.binance.org/en/recover and enter your seed phrase from your Tr
 You can use THORChain’s keystore wallet seed phrase for xDefi, or TrustWallet. It uses the standard BIP39 mnemonic phrase, it is compatible with all multi-coin wallets and Ledger. Simply input the seed phrase and your wallet should be imported. If you are using Ledger or cold storage, it is recommended to create a new wallet.
 
 Please be aware of the implications of inserting seed phrase previously used in hot wallets; into a cold hardware wallet.
-
-#### Why is native RUNE different price on THORChain / Crypto.com vs bep2/Erc20 RUNE on other CeX?
-
-This is due to inefficient arb opportunities, since there is only one way bridge from bep2/Erc20 to native RUNE, and not vice versa.
-
-There is NO direct bridge from native RUNE back to bep2/Erc20 RUNE.
-
-This is not a concern, in the long term, BEP2/ERC20 RUNE will be upgraded to native Rune then only Native RUNE will have significant volume/liquidity.
-
-#### **How to manually construct a Memo**
-
-Thorchain responds to [memo data](https://dev.thorchain.org/thorchain-dev/wallets/memos) posted to its vaults or using MsgDeposit.&#x20;
-
-Using an example to withdraw (e.g. in a pending pool).
-
-1. What is the memo you want? `-:CHAIN.ASSET:10000:THOR.RUNE`&#x20;
-2. What is the asset? Find in this list [https://thornode.thorchain.info/thorchain/pools](https://thornode.thorchain.info/thorchain/pools) or go direct to pool [https://app.thorswap.finance/pool/ETH.ALPHA-0XA1FAA113CBE53436DF28FF0AEE54275C13B40975](https://app.thorswap.finance/pool/ETH.ALPHA-0XA1FAA113CBE53436DF28FF0AEE54275C13B40975) so it's `-:ETH.ALPHA-0XA1FAA113CBE53436DF28FF0AEE54275C13B40975:10000:THOR.RUNE`&#x20;
-3. Which chain do you want to post the tx? THORChain, because it is cheapest (as opposed to ETH) TC: `MsgDeposit` ETH: `router.deposit(params)` So we are doing a MsgDeposit with the memo above using Rune. (If BEP2, using BNB might be cheaper).&#x20;
-4. Are we sending in money?  No, it's a withdraw, so send 0 or 0.00000001, whatever works.&#x20;
-5. Which interface to use? They should all support MsgDeposit. Try [ASGARDEX Desktop](https://github.com/thorchain/asgardex-electron/releases).
-

@@ -14,7 +14,7 @@ All the following are community-run resources. There are no "official" channels.
 
 **Socials**: [**Telegram**](https://t.me/thorchain\_org) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Medium**](https://medium.com/thorchain)
 
-**Documentation:** [**Docs**](https://docs.thorchain.org/) **|** [**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf) **|** [**Audits**](https://github.com/thorchain/Resources/tree/master/Audits)****
+**Documentation:** [**Docs**](https://docs.thorchain.org/) **|** [**Dev Docs**](https://dev.thorchain.org/) **|** [**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf) **|** [**Audits**](https://github.com/thorchain/Resources/tree/master/Audits)****
 
 **Development**: [**GitLab** ](https://gitlab.com/thorchain)**|** [**GitHub** ](https://github.com/thorchain)**|** [**Bounty Program**](https://immunefi.com/bounty/thorchain/) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4)
 
@@ -147,3 +147,25 @@ Below is a list of active THORChain community projects. If you would like to be 
 ****[**Vanir Threads**](https://discord.gg/4DnN5j4nnw) **** - Discord Server
 
 ****[**PixelTHOR**](https://t.me/runenft) **** - Telegram Channel
+
+### Regional Socials
+
+Russian: [https://t.me/ThorchainRussian](https://t.me/ThorchainRussian)
+
+Chinese: [https://t.me/thorchain\_chinese](https://t.me/thorchain\_chinese)
+
+Italian: [https://t.me/+2h7NgzNJ4KIxNzFk](https://t.me/+2h7NgzNJ4KIxNzFk)
+
+Portuguese: [https://t.me/thorchainportuguese](https://t.me/thorchainportuguese)
+
+France: [https://t.me/THORChainFr](https://t.me/THORChainFr)
+
+Spanish: [http://t.me/THORChain\_es](http://t.me/THORChain\_es)
+
+Dutch: [https://t.me/nl\_be\_thorchain\_rune](https://t.me/nl\_be\_thorchain\_rune)
+
+German: [https://t.me/ThorChainGermany](https://t.me/ThorChainGermany)
+
+Vietnamese: [https://t.me/Thorchain\_Rune\_Vietnam](https://t.me/Thorchain\_Rune\_Vietnam)
+
+Indian: [https://t.me/thorchainIndia](https://t.me/thorchainIndia)
