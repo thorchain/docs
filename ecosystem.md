@@ -18,11 +18,11 @@ All the following are community-run resources. There are no "official" channels.
 
 **Development**: [**GitLab** ](https://gitlab.com/thorchain)**|** [**GitHub** ](https://github.com/thorchain)**|** [**Bounty Program**](https://immunefi.com/bounty/thorchain/) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4)
 
+**Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol** ](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/thorchain-dev/network/interface-management)****
+
 ****[**THORBoard** ](https://thorchain.live/)- THORChain Dashboard
 
 ****[**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [**THORChain.net**](https://thorchain.net/#/txs) - THORChain Block Explorers
-
-[**Nine Realms**](https://twitter.com/ninerealms\_cap) **** - Brings institutional liquidity to THORChain, THORSec, and pen-tests protocol
 
 ## **Community Projects**
 
