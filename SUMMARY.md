@@ -29,6 +29,7 @@
 * [Emission Schedule](network/emission-schedule.md)
 * [Incentive Pendulum](network/incentive-pendulum.md)
 * [Governance](network/governance.md)
+* [Security](network/security.md)
 * [THORChain Name Service](network/thorchain-name-service.md)
 * [Constants and Mimir](network/constants-and-mimir.md)
 
