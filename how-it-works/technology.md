@@ -13,7 +13,7 @@ THORChain is a leaderless vault manager:
 3. Bifröst Chain Client to processs chain-specific transactions
 4. A TSS protocol to enable distributed threshold key-signing
 
-![How THORChain works](<../.gitbook/assets/image (3).png>)
+![How THORChain works](<../.gitbook/assets/image (3) (1).png>)
 
 ## The Bifröst Protocol: 1-way State Pegs
 
@@ -48,7 +48,7 @@ type ObservedTx struct {
 
 Each chain client is quite light-weight, containing only as much logic as is necessary to connect to that particular chain. Most of the logic is in the observer itself.
 
-![](<../.gitbook/assets/image (6).png>)
+![](<../.gitbook/assets/image (6) (2).png>)
 
 ## THORChain State Machine
 

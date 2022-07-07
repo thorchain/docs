@@ -29,17 +29,7 @@ Note:
 
 #### **What Wallet can I use with THORChain and Native RUNE?**&#x20;
 
-Many Wallets work with THORChain. Two community-created ones are:&#x20;
-
-* [THORWallet](https://thorwallet.org/) - https://thorwallet.org/&#x20;
-* [XDEFI ](https://www.xdefi.io/)- https://www.xdefi.io/
-
-Other Wallets include:&#x20;
-
-* Trust Wallet&#x20;
-* Keystore Ledger
-
-BEP-2 and ERC-20 RUNE can be stored in many popular wallets like Trust Wallet, Ledger, Safepal etc.
+See [What Wallets Support Native RUNE?](learn/getting-started.md#what-wallets-support-native-rune)
 
 #### **Is there a liquidity cap?**&#x20;
 
@@ -47,7 +37,7 @@ The Soft Cap has been removed, so there should be no limit to the amount of liqu
 
 #### **What assets can you swap and provide liquidity for?**&#x20;
 
-* Current Chains — BTC, ETH, LTC, BNB, BCH
+* Current Chains — BTC, ETH, LTC, BNB, BCH, Cosmos
 * Tokens such as: ERC-20 (USDT and SUSHI), BEP2 (BUSD and BTCB).
 * See full list at https://viewblock.io/thorchain/pools or https://thorchain.net/#/pools
 
@@ -73,13 +63,7 @@ Regarding ILP, Liquidity Providers will receive 100% IL protection after they ha
 
 #### **What is Outbound Throttling?**&#x20;
 
-Outbound Throttling will delay large outbound transactions. The following are rough approximations for delays:&#x20;
-
-* $100/block– 4 seconds&#x20;
-* $500/block– 20 seconds
-* $1000/block– 40 seconds
-* $5000/block– 2.3 minutes&#x20;
-* $10k/block— 5 minutes
+See [Outbound Transaction Throttling](network/security.md#b905-1)
 
 ➜ You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app/)
 
@@ -204,9 +188,11 @@ There is a set max of 100 active pools, and once achieved, deeper pending pools 
 
 ERC20 RUNE contract address: https://etherscan.io/address/0x3155ba85d5f96b2d030a4966af206230e46849cb&#x20;
 
-Inbound Router https://etherscan.io/address/0xc145990e84155416144c532e31f89b840ca8c2ce ➜ Can be verified at https://thornode.thorchain.info/thorchain/inbound\_addresses
+Inbound Router https://etherscan.io/address/0xD37BbE5744D730a1d98d8DC97c42F0Ca46aD7146&#x20;
 
-N.B. There is no contract address for BEP-2 RUNE and Native RUNE and there is no BEP20 RUNE.
+➜ Can be verified at [https://thornode.thorchain.info/thorchain/inbound\_addresses](https://thornode.thorchain.info/thorchain/inbound\_addresses)
+
+N.B. There is no contract address for BEP-2 RUNE and Native RUNE and there is no BEP20 RUNE. ERC20 router address may change with an update so never cache the address, use /inbound\_addresses to ensure you have the latest.&#x20;
 
 ### Frequent Issues
 
