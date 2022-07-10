@@ -8,7 +8,7 @@ THORChain has several layers of security within the code base to ensure solvency
 
 ### **Conformation Counting** <a href="#b905" id="b905"></a>
 
-To project against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Conformation counting for specific chains when receiving incoming value. [Birforst ](../how-it-works/technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations required is dependent on the size of the incoming value.
+To protect against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Conformation counting for specific chains when receiving incoming value. [Bitfröst ](../how-it-works/technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations required is dependent on the size of the incoming value.
 
 See more full details [here](../chain-clients/overview.md#confirmation-counting).&#x20;
 
@@ -24,7 +24,7 @@ To prevent large amounts of funds from leaving the network in an instant, large 
 
 This feature is controlled by several [Mimir ](constants-and-mimir.md#outbound-transactions)values that can be changed by Node Operators as required. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge\_requests/1844).
 
-This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, but is necessary in ensuring the protection of liquidity provider funds.
+This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, it is necessary, in ensuring the protection of liquidity provider funds.
 
 The feature is designed to grow as the network grows and is controlled by several Mimir values that can be changed by Node Operators as required. Additionally, the feature is designed to promote bug disclosure instead of directly attacking the network as a bug disclosure is likely more profitable.
 
