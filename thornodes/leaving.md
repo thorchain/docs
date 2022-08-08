@@ -6,7 +6,7 @@ description: How to leave THORChain
 
 ## Overview
 
-Every 3 days the system will churn its nodes. \
+Every 7 days the system will churn its nodes. \
 The exact churn interval in blocks is ChurnInterval in the [THORChain Constants](https://docs.thorchain.org/network/constants-and-mimir).
 
 Outgoing:
@@ -14,7 +14,8 @@ Outgoing:
 1. Nodes wishing to leave, and/or
 2. The most unreliable node(s), and/or
 3. The oldest node
-4. But a maximum of 1/3rd the network
+4. The smallest bond
+5. But a maximum of 1/3rd the network
 
 Incoming:
 
@@ -31,10 +32,10 @@ It is assumed nodes that wish to **LEAVE** will be away for a significant period
 ## Unbonding
 
 {% hint style="info" %}
-You cannot unbond if you are "Ready" or "Active" or have any amount of funds in your Yggdrasil address
+You cannot unbond if you are "Ready" or "Active" or have any amount of funds in your Yggdrasil address. If you want to unbond Active Node, you have to wait to be churned out by the network or send the Leave request at any time to force the Node to be churned out on the next churn. If the Node was just churned out of the Active set, it must wait for the Vaults migration to be completed before it can unbond (about 6 hours).
 {% endhint %}
 
-If a Node Operator wants to retrieve part of their bond & rewards (such as deciding to take profits), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
+If a Node Operator wants to retrieve part of their bond & rewards (such as deciding to take profits), they can Unbond at any time while the Node is in Standby state. This action doesn't change Node operation and keeps it ready to be churned back in.
 
 To unbond from the system, simply send an **UNBOND** transaction.
 
