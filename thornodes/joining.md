@@ -201,12 +201,14 @@ RUNE is always displayed in 1e8 format, 100000000 = 1 RUNE
 
 ### Bonding More
 
-At any time during standby, you can bond more by making an additional BOND transaction with memo:
+While the Node is in standby, you can bond more at any time.
+If the Node is active, you can bond more only during the vaults migration window after the churn (around 6 hours)
+Bonding is done by making an additional BOND transaction with memo:
 
 `BOND:<thornode-address>`
 
 {% hint style="info" %}
-Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. You can top up BOND using a different wallet but make sure you keep the private key to the original BOND wallet secure and accessible.
+Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. You can top up BOND using a different wallet if you allow it but make sure you keep the private key to the original BOND wallet secure and accessible.
 {% endhint %}
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.
