@@ -63,6 +63,7 @@
 * [Leaving](thornodes/leaving.md)
 * [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [✔️ CHECKLIST](thornodes/checklist.md)
+* [Multi-node Deployment](thornodes/multi-node-deployment.md)
 
 ## Get Involved
 
