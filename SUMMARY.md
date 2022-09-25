@@ -72,4 +72,4 @@
 ***
 
 * [Community Telegram](https://t.me/thorchain\_org)
-* [Dev Discord](https://discord.gg/kvZhpEtHAw)
+* [Dev Discord](https://discord.gg/7RRmc35UEG)
