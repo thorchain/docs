@@ -176,7 +176,7 @@ First, destroy the node and tools, this will delete your node then your tooling 
 make destroy-tools
 ```
 
-![Destroying the Tooling](<../.gitbook/assets/image (22).png>)
+![Destroying the Tooling](<../.gitbook/assets/image (28) (1).png>)
 
 ### 2) Destroy the cluster
 
@@ -202,7 +202,7 @@ make destroy-do
 
 You will be asked to confirm:
 
-![](<../.gitbook/assets/image (23).png>)
+![](<../.gitbook/assets/image (26) (1).png>)
 
 {% hint style="danger" %}
 **DO NOT DESTROY YOUR NODE UNTIL YOU HAVE CHURNED OUT AND HAVE RECEIVED YOUR FULL BOND BACK IN YOUR CUSTODY**
@@ -210,4 +210,4 @@ You will be asked to confirm:
 **IF YOU DESTROY YOUR NODE WITH FUNDS LOCKED UP - YOU WILL LOSE A SIGNIFICANT QUANTITY OF FUNDS**
 {% endhint %}
 
-![Final destroy complete](<../.gitbook/assets/image (24).png>)
+![Final destroy complete](<../.gitbook/assets/image (27) (1).png>)

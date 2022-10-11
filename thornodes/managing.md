@@ -166,13 +166,13 @@ See previous section to access the Grafana admin interface through the command `
 
 Within the Grafana admin interface, to access the logs, find the `Explore` view from the left menu sidebar. Once in the `Explore` view, select Loki as the source, then select the service you want to show the logs by creating a query. The easiest way is to open the "Log browser" menu, then select the "job" label and then as value, select the service you want. For example you can select `thornode/bifrost` to show the logs of the Bifrost service within the default `thornode` namespace when deploying a mainnet validator THORNode.
 
-![](<../.gitbook/assets/image (30).png>)
+![](<../.gitbook/assets/image (11) (1).png>)
 
-![](<../.gitbook/assets/image (31).png>)
+![](<../.gitbook/assets/image (37) (1).png>)
 
-![](<../.gitbook/assets/image (32).png>)
+![](<../.gitbook/assets/image (36) (1).png>)
 
-![](<../.gitbook/assets/image (33).png>)
+![](<../.gitbook/assets/image (33) (1).png>)
 {% endtab %}
 
 {% tab title="DESTROY" %}
@@ -212,7 +212,7 @@ Open [http://localhost:3000](http://localhost:3000/) in your browser.
 
 Login as the `admin` user. The default password should have been displayed in the previous command (`make grafana`).
 
-![](<../.gitbook/assets/image (16).png>)
+![](<../.gitbook/assets/image (22) (1).png>)
 
 **Access Prometheus admin UI**
 
@@ -234,7 +234,7 @@ You should have available different dashboards to see the metrics across your cl
 Click the 🔍 SEARCH ICON to find the list of dashboards
 {% endhint %}
 
-![Example of Grafana Dashboard](<../.gitbook/assets/image (9) (1) (1).png>)
+![Example of Grafana Dashboard](<../.gitbook/assets/image (9) (3).png>)
 
 For a more in-depth introduction of Grafana, please[ follow the documentation here](https://grafana.com/docs/grafana/latest/getting-started/what-is-grafana/)**.**
 
@@ -268,7 +268,7 @@ View your kubernetes dashboard by running the following:
 make dashboard
 ```
 
-![Kubernetes Dashboard](<../.gitbook/assets/image (12).png>)
+![Kubernetes Dashboard](<../.gitbook/assets/image (14) (1).png>)
 
 ## Backing up a THORNode
 
@@ -350,11 +350,11 @@ Each node has a unique address on each supported chain. This is their Yggdrasil 
 
 To find your Yggdrasil addresses, firstly navigate to [https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)
 
-![](../.gitbook/assets/yggdrasil\_vaults.png)
+![](<../.gitbook/assets/yggdrasil\_vaults (1).png>)
 
 1. Find your node address and click on the link.
 
-![](../.gitbook/assets/yggdrasil\_vault.png)
+![](<../.gitbook/assets/yggdrasil\_vault (1).png>)
 
 Alternatively, visit any thorchain endpoint using your node address from `make status`:
 
@@ -377,7 +377,7 @@ And look for `addresses` array at the bottom.
 3. Paste in your mnemonic and choose **RUNE - THORChain** from the drop-down list.
 4. Your private key string is the first one: `m/44'/931'/0'/0/0`
 
-![](../.gitbook/assets/bip39.png)
+![](<../.gitbook/assets/bip39 (1).png>)
 
 ## Dealing with slash
 
@@ -398,7 +398,7 @@ When a node is slashed 600 points, it is typically because the yggdrasil vault f
 
 **Cause:** The network uses `geth` inbuilt `eth_estimateGas` function to estimate how much gas to set as limit for a transaction. On rare occasions this can return a number too low causing the transaction to fail. In this case there is nothing you can do - just wait it out. Note: your Yggdrasil ETH vault is now insolvent by a small amount of gas burned in the failed transaction that you will need to personally top-up prior to LEAVE. See section on LEAVE for more details.
 
-![](../.gitbook/assets/eth\_out\_of\_gas.png)
+![](<../.gitbook/assets/eth\_out\_of\_gas (1).png>)
 
 **Potential problem 2:** Transaction didn't mine after 15mins
 
@@ -406,7 +406,7 @@ When a node is slashed 600 points, it is typically because the yggdrasil vault f
 
 You should be able to see a transaction like the following, which is sending `0` ETH back to itself which cancels anything pending:
 
-![](../.gitbook/assets/eth\_cancel\_nonce.png)
+![](<../.gitbook/assets/eth\_cancel\_nonce (1).png>)
 
 #### 600 point slash (repeated)
 
@@ -426,11 +426,11 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 5. Go to [https://etherscan.io](https://etherscan.io) and paste your yggdrasil ETH address in the search box
 6. Find the last successful transaction send out from your yggdrasil ETH address. It is the top transaction in the list:
 
-![](../.gitbook/assets/etherscan\_tx\_list.png)
+![](<../.gitbook/assets/etherscan\_tx\_list (1).png>)
 
 * Click the transaction. Note the nonce used in the last good transaction (e.g. `39`), and then plus 1 (e.g. `40`). This is the **lowest stuck tx nonce**.
 
-![](../.gitbook/assets/etherscan\_tx\_nonce.png)
+![](<../.gitbook/assets/etherscan\_tx\_nonce (1).png>)
 
 1. Find the **highest** stuck nonce from your local geth:
 2. `make shell` then choose `ethereum-daemon`

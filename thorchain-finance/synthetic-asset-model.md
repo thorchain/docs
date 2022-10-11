@@ -87,9 +87,34 @@ To specify the destination asset is synth, simply provide a THOR address. If it 
 
 Synth holders do not experience any gain or any loss caused by price changes when minting / redeeming a synth. They do, however, pay a slip-based fee on entry or exit and tx fees.
 
-The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol Reserve is taking on the price risk.
+The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol [Reserve ](../network/emission-schedule.md#reserve)is taking on the price risk.
 
 Due to the collateralisation method, THORChain Synthetic Assets are impervious to impermanent loss and offer single asset exposure.
+
+### Synth Minting Cap
+
+Due to synths, Liquidity Providers are taking a leveraged position on the RUNE asset today. This can help them earn more rewards if RUNE outperforms the asset, but can also go the other way. The higher the percentage of synths that exist on the network relative to pool depth, the higher the leveraged position Liquidity Providers are taking. Higher than 50% is unhealthy for the network overall.
+
+Due to this, the minting of synths is capped to an upper limit of the total pool depth to protect Liquidity Providers and the network. The [Mimir ](../network/constants-and-mimir.md)setting `MaxSynthPerAssetDepth` setting controls the cap which is the asset depth percentage.
+
+### Protocol Owned Liquidity (POL)
+
+With the addition of yield-bearing synths, there can be a high demand for minting synths that exceed the cap with normal liquidity. See the original [PR](https://gitlab.com/thorchain/thornode/-/issues/1342).&#x20;
+
+POL has been introduced to deal with a high demand for minting synths while maintaining a safe synth minting limit by using the RUNE within the [Reserve](../network/emission-schedule.md#reserve).&#x20;
+
+The network can monitor the synth utilisation on a per pool basis, and add liquidity (asymmetrically addition of RUNE) if utilisation is greater than `cap - 5%` (if economic security allows). If synth utilisation is under this figure, then the reserve would remove liquidity (if the PoL has an LP position in this pool).&#x20;
+
+* cap = e.g. 1500 (in basis points)
+* range = 500 (in basis points)
+* PA = pool asset depth
+* S = synth supply
+
+$$
+utilisation = S / PA * 10000
+$$
+
+By having the reserve add rune into the pool, it de-risks LPs from over RUNE leverage, as the reserve takes on some of that risk. The Reserve is long on its own (and only) asset. This, in turn, creates synth space in the pool, more synth minting and more single-sided asset deposits in the form of synths to enter.&#x20;
 
 ### Staged Pools
 

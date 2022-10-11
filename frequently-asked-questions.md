@@ -109,7 +109,7 @@ No. Only short tail assets with high MarketCap, good velocity and economic activ
 
 #### Is there a place where I can see the THORChain Ecosystem?&#x20;
 
-Yes, see [Ecosystem](ecosystem.md).
+Yes, see [Ecosystem](ecosystem.md)
 
 #### **Are Synths Interest-bearing Assets?**
 

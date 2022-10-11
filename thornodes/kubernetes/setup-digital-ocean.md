@@ -106,13 +106,13 @@ make do
 
 During the deploy, you will be asked to enter information about your cluster:
 
-![](<../../.gitbook/assets/image (13).png>)
+![](<../../.gitbook/assets/image (20) (1).png>)
 
 * Name
 * DO Region -- see valid [List of Regions](https://www.digitalocean.com/docs/platform/availability-matrix/#other-product-availability) (use lower-case)
 * Confirm `yes`
 
-![Kubernetes Availability (note, use lower-case in the terminal)](<../../.gitbook/assets/image (26).png>)
+![Kubernetes Availability (note, use lower-case in the terminal)](<../../.gitbook/assets/image (30) (1).png>)
 
 Final success message: `Apply complete! Resources: 2 added, 0 changed, 0 destroyed.`
 

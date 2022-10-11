@@ -22,7 +22,7 @@ These different states can be seen in the relationship between bonded Rune and p
 
 ### Optimal State
 
-![](../.gitbook/assets/Optimal.jpg)
+![](../.gitbook/assets/optimal.jpg)
 
 In the optimal state, bonded capital is roughly equal to pooled capital. Bonded capital is 100% Rune; pooled capital half Rune and half external assets.
 
@@ -30,7 +30,7 @@ In the optimal state, bonded capital is roughly equal to pooled capital. Bonded 
 
 ### Unsafe State
 
-![](../.gitbook/assets/Unsafe.jpg)
+![](../.gitbook/assets/unsafe.jpg)
 
 The system may become unsafe. In this case, pooled capital is higher than bonded capital. Pooled Rune is now equal to bonded Rune – a 50/50 split.
 
@@ -40,7 +40,7 @@ To fix this, the system increases the amount of rewards going to node operators 
 
 ### Inefficient State
 
-![](../.gitbook/assets/Inefficient.jpg)
+![](../.gitbook/assets/inefficient.jpg)
 
 The system can also become inefficient. In this case, pooled capital would be much lower in value than bonded capital. This is a problem because it means that much more capital is being put into securing pooled assets than those assets are actually worth.
 

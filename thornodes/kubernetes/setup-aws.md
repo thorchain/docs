@@ -123,15 +123,15 @@ make aws
 
 During the deploy, you will be asked to enter information about your cluster:
 
-![](<../../.gitbook/assets/image (13).png>)
+![](<../../.gitbook/assets/image (20) (1).png>)
 
 * Name
 * AWS Region -- see valid [List of Regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
 * Confirm `yes`
 
-![Regions](<../../.gitbook/assets/image (25).png>)
+![Regions](<../../.gitbook/assets/image (29) (1).png>)
 
-![Note: AWS EKS is not available in some regions](<../../.gitbook/assets/image (21).png>)
+![Note: AWS EKS is not available in some regions](<../../.gitbook/assets/image (25) (1).png>)
 
 Or manually:
 
