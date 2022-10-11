@@ -129,3 +129,42 @@ Liquidity providers must pay for security of their assets, since security is not
 The only direct cost to liquidity providers is the [network fee](../how-it-works/fees.md#network-fee), charged for withdrawing assets (pays for the compute resources and gas costs in order to process outbound transactions). An indirect cost to liquidity providers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of liquidity provider purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's [slip-based fee](../how-it-works/fees.md#slip-based-fee).
 
 Liquidity providers are not subject to any direct penalties for misconduct.
+
+
+
+## How Yield is Calculated
+
+The yield of a pool on THORChain is calculated using a metric called **Liquidity Unit Value Index** (LUVI) which can be viewed on [Midgard](https://midgard.ninerealms.com/v2/pools).
+
+When a user deposits assets into a liquidity pool, they are given ownership of Liquidity Units which represent a percentage of ownership of the pool. LUVI is a measure of the relative value of each liquidity unit and is independent of price.
+
+$$
+LUVI =\frac{ \sqrt (Asset \ Depth * Rune \ Depth)}{Pool \ Units}
+
+\\
+\\
+$$
+
+Where:
+
+$$
+Pool \ Units = Liquidity \ Units + Synth \ Units
+$$
+
+{% hint style="info" %}
+Learn more about [Liquidity Units](https://docs.thorchain.org/thorchain-finance/continuous-liquidity-pools#calculating-pool-ownership) and [Synth Units](https://docs.thorchain.org/thorchain-finance/continuous-liquidity-pools#calculating-pool-ownership)
+{% endhint %}
+
+The yield of a pool uses LUVI value data from the previous 30 days and extrapolates an APR if that performance is repeated over the course of a year. A `period` parameter may be used to change the number of days of data that are taken into consideration.
+
+{% hint style="info" %}
+Example: [https://midgard.ninerealms.com/v2/pools?period=100d](https://midgard.ninerealms.com/v2/pools?period=100d) calculates the APR of a pool with the previous 100 days of data rather than the default of 30 days.
+{% endhint %}
+
+Factors that affect LUVI:
+
+* Swap fees, block rewards, and pool donations increase LUVI and are the primary yield sources
+* An increase of the synthetic asset liability of a pool decreases LUVI
+* An increase in `ASSET Depth` or `RUNE Depth` of a pool increase LUVI
+* Changes in the ratio of `ASSET Depth` and `RUNE Depth` in a pool change LUVI
+* Changes in `ASSET Price` or `RUNE Price` do not necessarily change LUVI&#x20;
