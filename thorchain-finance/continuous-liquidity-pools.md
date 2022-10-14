@@ -143,12 +143,14 @@ If `a = b = 2` then the pool behaves as if the depth is twice as deep, the slip 
 If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep as the `X` asset, or, that the pool is no longer 1:1 bonded. Instead the pool can be said to have 67:33 balance, where the liquidity providers are twice as exposed to one asset over the other.
 
 {% hint style="info" %}
-Virtual Depths were initially applied to Synth Swaps using a multiplier of 2. It was intended that Synth Swaps would create 50% less slip and users pay 50% less fees. However, this was disabled after discovering that this would allow front-running.  The multiplier is specified on `/constants` as:
+Virtual Depths were initially applied to Synth Swaps using a multiplier of 2. It was intended that Synth Swaps would create 50% less slip and users pay 50% less fees. However, this was disabled after discovering that this would allow front-running. The multiplier is specified on `/constants` as:
 
 ```
 "VirtualMultSynths": 2,
 ```
-but currently overridden by a Mimir value of 1.{% endhint %}
+
+but currently overridden by a Mimir value of 1.
+{% endhint %}
 
 ## Calculating Pool Ownership
 
@@ -162,28 +164,48 @@ $$
 * a = asset deposited
 * R = Rune Balance (after)
 * A = Asset Balance (after)
-* P = Existing Pool Units
+* P = Pool Units (after)
 
 The liquidity provider is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
 
 ### Derivation
 
-The new units are derived from the mean of adding new liquidity to both sides, multiplied by existing pool units.&#x20;
+The new units are derived from the mean of adding new liquidity to both sides, multiplied by final total pool units.
 
 $$
-units = P *  \frac{(r/R + a/A)}{2} = \frac {P(R a + r A)}{2 RA}
+units = P * \frac{(r/R + a/A)}{2} = \frac {P(R a + r A)}{2 RA}
 $$
 
+In terms of amounts before the deposit:
 
+$$
+units = (P_0+units) * \frac{(R_0+r) a + r (A_0+a)}{2 (R_0+r)(A_0+a)} = (P_0+units) * \frac{rA_0+R_0a+2ra}{2rA_0+2R_0a+2R_0A_0+2ra}
+$$
+
+$$
+units(2rA_0+2R_0a+2R_0A_0+2ra)=(P_0+units)(rA_0+R_0a+2ra)
+$$
+
+$$
+units(2rA_0+2R_0a+2R_0A_0+2ra-(rA_0+R_0a+2ra))=P_0(rA_0+R_0a+2ra)
+$$
+
+$$
+units(rA_0+R_0a+2R_0A_0)=P_0(rA_0+R_0a+2ra)
+$$
+
+$$
+units=P_0*\frac{rA_0+R_0a+2ra}{rA_0+R_0a+2R_0A_0}
+$$
 
 ## Impermanent Loss Protection
 
 Impermanent Loss Protection ensures LPs always either make a profit, or leave with at break even after a minimum period of time (set at 100 days), and partially covered before that point. This should alleviate most of the concerns regarding become an LP.
 
-THORChain tracks a member's deposit values. When the member goes to redeem, their loss (against their original deposit value) is calculated and is subsidised with RUNE from the reserve.&#x20;
+THORChain tracks a member's deposit values. When the member goes to redeem, their loss (against their original deposit value) is calculated and is subsidised with RUNE from the reserve.
 
 {% hint style="info" %}
-Impermanent Loss Protection is always recorded and calculated symmetrically.&#x20;
+Impermanent Loss Protection is always recorded and calculated symmetrically.
 {% endhint %}
 
 There is a 100 day linear increase in the amount of coverage received, such that at 50 days, the member receives 50%, 90 days is 90% etc.
@@ -197,19 +219,19 @@ $$
 \text{P1} = \frac{R1}{A1}
 $$
 
-`P1` is the pool ratio at withdrawal.&#x20;
+`P1` is the pool ratio at withdrawal.
 
 $$
 \text{coverage} = ((A0 * P1) + R0) - ((A1 * P1) + R1) => ((A0 * R1/A1) + R0) - (R1 + R1)
 $$
 
 {% hint style="info" %}
-Deposit values are _not_ the amounts the member deposited. They are the immediate symmetrical value of what the member deposited instead.&#x20;
+Deposit values are _not_ the amounts the member deposited. They are the immediate symmetrical value of what the member deposited instead.
 {% endhint %}
 
 The coverage is then adjusted for the 100 day rule.
 
-``[`blocksForFullProtection` ](../network/constants-and-mimir.md)`= 1440000 // 100 days`
+\`\`[`blocksForFullProtection` ](../network/constants-and-mimir.md)`= 1440000 // 100 days`
 
 $$
 \text{protectionProgress }= (currentHeight - heightLastAdded) / blocksForFullProtection
