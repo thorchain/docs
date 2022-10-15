@@ -160,11 +160,12 @@ $$
 \text{units} = \frac {P(R a + r A)}{2 RA}
 $$
 
+* units = newly created pool units for the liquidity provider
 * r = rune deposited
 * a = asset deposited
-* R = Rune Balance (after)
-* A = Asset Balance (after)
-* P = Pool Units (after)
+* R = total Rune Balance (after deposit)
+* A = total Asset Balance (after deposit)
+* P = total Pool Units (after deposit)
 
 The liquidity provider is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
 
@@ -179,19 +180,23 @@ $$
 In terms of amounts before the deposit:
 
 $$
-units = (P_0+units) * \frac{(R_0+r) a + r (A_0+a)}{2 (R_0+r)(A_0+a)} = (P_0+units) * \frac{rA_0+R_0a+2ra}{2rA_0+2R_0a+2R_0A_0+2ra}
+units = (P_0+units) * \frac{(R_0+r) a + r (A_0+a)}{2 (R_0+r)(A_0+a)}
 $$
 
 $$
-units(2rA_0+2R_0a+2R_0A_0+2ra)=(P_0+units)(rA_0+R_0a+2ra)
+= (P_0+units) * \frac{rA_0+R_0a+2ra}{2rA_0+2R_0a+2R_0A_0+2ra}
 $$
 
 $$
-units(2rA_0+2R_0a+2R_0A_0+2ra-(rA_0+R_0a+2ra))=P_0(rA_0+R_0a+2ra)
+units*(2rA_0+2R_0a+2R_0A_0+2ra)=(P_0+units)(rA_0+R_0a+2ra)
 $$
 
 $$
-units(rA_0+R_0a+2R_0A_0)=P_0(rA_0+R_0a+2ra)
+units*(2rA_0+2R_0a+2R_0A_0+2ra-(rA_0+R_0a+2ra))=P_0(rA_0+R_0a+2ra)
+$$
+
+$$
+units*(rA_0+R_0a+2R_0A_0)=P_0(rA_0+R_0a+2ra)
 $$
 
 $$
