@@ -20,13 +20,11 @@ All the following are community-run resources. There are no "official" channels.
 
 **Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol** ](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/thorchain-dev/network/interface-management)****
 
-****[**THORBoard** ](https://thorchain.live/)- THORChain Dashboard
-
-****[**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [**THORChain.net**](https://thorchain.net/#/txs) - THORChain Block Explorers
+**Block Explorers**: [**Viewblock Explorer** ](https://viewblock.io/thorchain) **|** [**THORChain.net**](https://thorchain.net/#/txs)
 
 ## **Community Projects**
 
-Below is a list of active THORChain community projects. If you would like to be funded to build something in the THORChain ecosystem please build something then reach out.
+Below is a list of active THORChain community projects. Also, see [linktree](https://linktr.ee/multichain). If you would like to be funded to build something in the THORChain ecosystem please build something then reach out.
 
 ### Exchanges Only
 
@@ -58,6 +56,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**Ferz Wallet**](https://ferz.com/en/) - Cross-platform Progressive Web Application
 
+[**Edge Wallet**](https://edge.app/) **** - Cross-platform Mobile Application
+
 ### **Education**
 
 ****[**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos
@@ -74,13 +74,9 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**THORYield** ](https://thoryield.com/)**-** View your added liquidity on THORChain
 
-****[**RUNEBalance** ](https://www.runebalance.com/#/pools)-[ ](https://www.runebalance.com/#/pools)View current arbitrage opportunities in the pools.&#x20;
-
 ****[**THORChain Data Digest**](https://alexsimpson96.medium.com/) - THORChain Data Reports / Analysis&#x20;
 
 ****[**DecentralFi**](https://decentralfi.io/) - Track positions  - https://decentralfi.io/liquidity?wallet={thor address}
-
-****[**THORBelt** ](https://www.thorbelt.com/)- **** View your liquidity, assist with trading.
 
 ****[**THORChain Information Bot**](https://t.me/thor\_infobot) - Useful commands to fetch network info
 
@@ -108,7 +104,9 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ****[**Mimir**](https://thornode.thorchain.info/thorchain/mimir) **** - Overrides for Constants
 
-[**Midgard Docs** ](https://midgard.thorchain.info/v2/doc)- Documentation for Midgard API to query THORChain.&#x20;
+[**Midgard Docs** ](https://midgard.thorchain.info/v2/doc)- Documentation for Midgard API to query THORChain.
+
+****[**Thornode Docs**](https://thornode.ninerealms.com/thorchain/doc/) - Documentation for Thornode API to query Thornode.
 
 [**Tx Queue**](https://thornode.thorchain.info/thorchain/queue) - THORChain Transaction Queue
 
@@ -118,9 +116,9 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ### Community Dev Projects
 
-****[**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
+[**XChainJS** ](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
 
-****[**XChainJS** ](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
+****[**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
 
 [**xchainpy-lib**](https://github.com/xchainjs/xchainpy-lib) - A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in PY.
 
