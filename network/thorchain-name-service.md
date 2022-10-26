@@ -27,9 +27,51 @@ A THORChain address can be assigned one (1) THORName to manage the other address
 }
 ```
 
-Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Terra. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
+Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Cosmos. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
 
-**Technical Rationale**
+### Query a THORName
+
+A THORName can be queried by going to `/thorname/{thorname}`
+
+{% hint style="info" %}
+[https://midgard.ninerealms.com/v2/thorname/lookup/orion](https://midgard.ninerealms.com/v2/thorname/lookup/orion)
+{% endhint %}
+
+A THORName can be checked using `/thorname/lookup/{thorname}`
+
+{% hint style="info" %}
+[https://midgard.ninerealms.com/v2/thorname/lookup/orion](https://midgard.ninerealms.com/v2/thorname/lookup/orion)
+{% endhint %}
+
+While there is no reverse on-chain reverse lookup, a reverse lookup is possible within THORChain via using a given THORName `/thorname/lookup/{address}.`&#x20;
+
+{% hint style="info" %}
+Example using a THOR address: [https://midgard.ninerealms.com/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd](https://midgard.ninerealms.com/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd)
+{% endhint %}
+
+## Fees
+
+There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fee, which works out to be around 1 RUNE annually. A user who pays 2 RUNE will then keep their name registered for 2 years. Fees are controlled by Constants/Mimir, the current settings are:&#x20;
+
+* `TNSRegisterFee`: 10 RUNE
+* `TNSFeeOnSale`: 1000 Basis Points
+* `TNSBlockFee`: 20 tor per block (roughly 1 RUNE per year)
+
+Example: a 20 Rune registration registers the THORName for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
+
+## Creating a THORName
+
+THORNames are created by sending a memo in a MsgDeposit with [memo](https://dev.thorchain.org/thorchain-dev/wallets/memos) prefix: `name`, `n` or `~`
+
+Memo template is: `~:name:chain:address:?owner:?preferredAsset:?expiry`
+
+{% hint style="info" %}
+Example: `~:ODIN:BTC:bc1Address:thorAddress:BTC.BTC:1231231`
+{% endhint %}
+
+Expiry is a block height that can be set in the past to unregister the THORName.
+
+### **Technical Rationale**
 
 Bitcoin has a memo length limitation of 80 bytes and Monero has an address length of 97 bytes. This means swapping from Bitcoin to Monero is not possible using addresses, THORNames solves this issue and can also be used when specifying the affiliate address.
 
@@ -48,45 +90,6 @@ Without:
 {% endhint %}
 
 Interfaces like [AsgardEx Desktop](https://github.com/thorchain/asgardex-electron/releases) allow you to create your own memo.&#x20;
-
-## Fees
-
-There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fee, which works out to be around 1 RUNE annually. A user who pays 2 RUNE will then keep their name registered for 2 years. Fees are controlled by Constants/Mimir, the current settings are:&#x20;
-
-* `TNSRegisterFee`: 10 RUNE
-* `TNSFeeOnSale`: 1000 Basis Points
-* `TNSBlockFee`: 20 tor per block (roughly 1 RUNE per year)
-
-Example: a 20 Rune registration registers the THORName for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
-
-### Query a THORName
-
-A THORName can be queried by going to `/thorname/{thorname}`
-
-{% hint style="info" %}
-An Example: [https://thornode.ninerealms.com/thorchain/thorname/orion](https://thornode.ninerealms.com/thorchain/thorname/orion)
-{% endhint %}
-
-While there is no reverse on-chain reverse lookup, a reverse lookup is possible within THORChain via `/thorname/lookup/{thorname}.`
-
-{% hint style="info" %}
-Examples in Stagenet are\
-[https://stagenet-midgard.ninerealms.com/v2/thorname/rlookup/bc1q6ptu8zayukjz3ag4d4pnjjhtxwd4jckh9gufwu](https://stagenet-midgard.ninerealms.com/v2/thorname/rlookup/bc1q6ptu8zayukjz3ag4d4pnjjhtxwd4jckh9gufwu)&#x20;
-
-[https://stagenet-midgard.ninerealms.com/v2/thorname/rlookup/bnb1l0xncjcm6xk48rmgy6uqe9ms0vgf3dk4v9jayj](https://stagenet-midgard.ninerealms.com/v2/thorname/rlookup/bnb1l0xncjcm6xk48rmgy6uqe9ms0vgf3dk4v9jayj)
-{% endhint %}
-
-## Creating a THORName
-
-THORNames are created by sending a memo in a MsgDeposit with [memo](https://dev.thorchain.org/thorchain-dev/wallets/memos) prefix: `name`, `n` or `~`
-
-Memo template is: `~:name:chain:address:?owner:?preferredAsset:?expiry`
-
-{% hint style="info" %}
-Example: `~:ODIN:BTC:bc1Address:thorAddress:BTC.BTC:1231231`
-{% endhint %}
-
-Expiry is a block height that can be set in the past to unregister the THORName
 
 ## FAQ
 
