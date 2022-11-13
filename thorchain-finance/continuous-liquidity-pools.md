@@ -157,15 +157,19 @@ but currently overridden by a Mimir value of 1.
 When a liquidity provider commits capital, the ownership % of the pool is calculated:
 
 $$
-\text{units} = \frac {P(R a + r A)}{2 RA}
+units=P*\frac{rA+Ra+2ra}{rA+Ra+2RA}
 $$
+
+
+
+
 
 * units = newly created pool units for the liquidity provider
 * r = rune deposited
 * a = asset deposited
-* R = total Rune Balance (after deposit)
-* A = total Asset Balance (after deposit)
-* P = total Pool Units (after deposit)
+* R = total Rune Balance (before deposit)
+* A = total Asset Balance (before deposit)
+* P = total Pool Units (before deposit)
 
 The liquidity provider is allocated rewards proportional to their ownership of the pool. If they own 2% of the pool, they are allocated 2% of the pool's rewards.
 
