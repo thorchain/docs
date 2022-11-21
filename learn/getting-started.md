@@ -60,7 +60,7 @@ Liquidity providers can withdraw their assets at any time and without any cooldo
 
 ## **How to track your position**
 
-You can see your position if you connect to THORChain via an Interface you can use [THORYield](https://app.thoryield.com/).
+You can see your position if you connect to THORChain via an interface such as [THORYield](https://app.thoryield.com/).
 
 ➜ [THORYield Guide](https://thorswap.medium.com/introducing-thoryield-v2-%EF%B8%8F-a6618c1cfcdb)
 
