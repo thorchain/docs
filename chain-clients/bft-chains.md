@@ -1,5 +1,5 @@
 ---
-description: This covers BNB, Terra and Cosmos connections
+description: This covers BNB and Cosmos connections
 ---
 
 # BFT Chains
@@ -10,7 +10,7 @@ Assets on BFT chains are generally native tokens (not contract-based), and can p
 
 ### Re-orgs
 
-BFT chains do not re-org so no re-org logic required.&#x20;
+BFT chains do not re-org so no re-org logic is required.&#x20;
 
 ### Conf-counting
 
@@ -19,6 +19,3 @@ BFT chains do not require any confirmations.&#x20;
 ### Gas
 
 BFT chains generally have static fees, so fee rates don't need to be updated regularly.
-
-
-

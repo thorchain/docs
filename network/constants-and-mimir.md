@@ -12,8 +12,8 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 
 **Values**
 
-* Constant Values: [https://midgard.thorchain.info/v2/thorchain/constants](https://midgard.thorchain.info/v2/thorchain/constants)&#x20;
-* Mimir Values: [https://midgard.thorchain.info/v2/thorchain/mimir](https://midgard.thorchain.info/v2/thorchain/mimir) &#x20;
+* Constant Values: [ ](https://midgard.ninerealms.com/v2/thorchain/constants)[https://midgard.ninerealms.com/v2/thorchain/constants](https://midgard.ninerealms.com/v2/thorchain/constants)
+* Mimir Values: [https://midgard.ninerealms.com/v2/thorchain/mimir](https://midgard.ninerealms.com/v2/thorchain/mimir)
 
 **Key**:&#x20;
 
@@ -190,3 +190,7 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 `PoolCycle`\*: Number of blocks the network will churn the pools (add/remove new available pools)
 
 `StagedPoolCost`: Number of rune (1e8 notation) that a stage pool is deducted on each pool cycle.
+
+
+
+More documentation can be found [here](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md).
