@@ -21,7 +21,7 @@ An introduction to RUNE and its roles is [here](learn/understanding-thorchain.md
 
 **Transmitting Purchasing Power**
 
-Since RUNE is pooled 50:50 alongside external assets in its pools, then as the value of those assets increase/decrease, then the RUNE pooled will also increase/decrease by being arbed out/in The RUNE unit value may not change, but the quantity of RUNE in the pool does. This means the system is always aware of the value of the assets it is trying to secure - it's simply the quantity of RUNE in all its pools.&#x20;
+Since RUNE is pooled 50:50 alongside external assets in its pools, when the value of those assets increase/decrease, the RUNE pooled will also increase/decrease by being arbed out or in. The RUNE unit value may not change, but the quantity of RUNE in the pool does. This means the system is always aware of the value of the assets it is trying to secure - it's simply the quantity of RUNE in all its pools.&#x20;
 
 Once it is aware of the value of the assets it is securing, it can use incentives to ensure security of those assets.
 
