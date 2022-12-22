@@ -87,9 +87,7 @@ Slash points undo profits made on the network. For every 1 slash point a node re
 
 ### Bond Rewards
 
-Node Operators receive rewards if they are bonded and active on the network and are paid out in Rune. While revenue is generated every block (every 5 seconds) to each operator, those funds are not available to the operator until they churn out of the network. Each operator makes the same amount of income, no matter how much they bond to the network.They're claimed whenever a node leaves the network. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
-
-Nodes receive the same amount of rewards regardless of how much [RUNE](../rune.md) they've bonded. This stabilises the amount that nodes need to bond. Over time, this stability increases the median bonded amount and the security of the network.
+Node Operators receive rewards if they are bonded and active on the network and are paid out in Rune. While revenue is generated every block (every 5 seconds) to each operator, those funds are not available to the operator until they churn out of the network. Node Operators earn rewards relative to their bond, the more they bond, the more they earn. Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. They're claimed whenever a node leaves the network. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
 
 Rewards are affected by the [Emission Schedule](../network/emission-schedule.md) and the [Incentive Pendulum](../network/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
 
