@@ -1,7 +1,5 @@
 ---
-description: >-
-  How THORChain facilitates continuous, incentivised liquidity, with IL
-  Protection.
+description: How THORChain facilitates continuous, incentivised liquidity.
 ---
 
 # Liquidity Model
@@ -208,6 +206,10 @@ units=P_0*\frac{rA_0+R_0a+2ra}{rA_0+R_0a+2R_0A_0}
 $$
 
 ## Impermanent Loss Protection
+
+{% hint style="success" %}
+ILP was grandfathered in Q1 2023 after the launch of the Savings Product - which offers single-sided yield with no price exposure to RUNE. Existing LPs retained their ILP, new dual-LPs will need to be more sophisticated to handle increased volatility of yield.&#x20;
+{% endhint %}
 
 Impermanent Loss Protection ensures LPs always either make a profit, or leave with at break even after a minimum period of time (set at 100 days), and partially covered before that point. This should alleviate most of the concerns regarding become an LP.
 

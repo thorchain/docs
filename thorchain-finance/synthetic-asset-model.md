@@ -1,101 +1,121 @@
 ---
-description: >-
-  How THORChain enables synthetic assets with no IL and with single asset
-  exposure.
+description: How THORChain enables synthetic assets with single asset exposure.
 ---
 
 # Synthetic Asset Model
 
-THORChain synthetic assets are primitives for both higher-order financial features, as well as fully-secured, fully-backed synthetic assets that can be sent anywhere in the Cosmos IBC ecosystem and they will always retain the guarantee they can be redeemed for the underlying.
+{% hint style="danger" %}
+THORChain can not ensure security of wrapped assets, so does not wrap L1 assets to represent them. Instead it uses its liquidity to synthesise them, since liquidity is always 100% secured.&#x20;
+{% endhint %}
 
 ## Synthetic Assets
 
-THORChain synthetics are unique in that they are 50% backed by their own asset, with the other 50% backing being provided by RUNE. This is achieved by using pool ownership to collateralise the synth, which ensures always-on liquidity and pricing.
+THORChain synthetics are unique in that they are 100% collateralised when they exist, but switch to being 1:1 pegged at the time of redemption. Other synthetic or wrapped asset designs are either over-collateralised, or pegged, never both. This means they are either capital-inefficient (require over-collateralisation), or capital-sensitive (can depeg if <100% collateralisation).&#x20;
+
+The advantage of THORChain's design is that the collateralisation is managed by the system on a best-effort basis to be aspirationally 100%. However when the asset is redeemed, it switches to being pegged 1:1, which means they can tolerate going below 100% collateralisation without losing the peg. The deficit is regained by liquidity-sensitive fees on the redemption so that the last holders of the asset can achieve re-collateralisation.&#x20;
+
+The collateral for synthetic assets is constant-product liquidity, always 50% in the asset, with the other 50% in RUNE. As price changes, the pool re-balances on the curve, having much stronger inertia than if it were 100% collaterised by the endogenous asset (RUNE). The price-shift is subsidised by the other liquidity in the pool.&#x20;
 
 {% hint style="info" %}
-[Virtual Depths](continuous-liquidity-pools.md#virtual-depths) were initially applied to Synth Swaps (Minting and Redeeming). [VirtualMultSynths](../network/constants-and-mimir.md#synths) multiplies the pool depth (R and A) before the swap is calculated. This was intended to to implement less slip and thus users paying less fees, but was disabled (VirtualMultSynths set to 1) after it was discovered that this would allow front-running.
+Synthetic Assets are aspirationally 100% collateralised by pool liquidity when they exist, but redeemed on a 1:1 pegged basis, no matter the health of the collateral.&#x20;
 {% endhint %}
 
-### Minting
+### Minting - 1:1 pegged
 
-Synthetic Assets are created by adding Rune to a pool (or swapping from an asset into RUNE, then adding that) for a synthetic asset of that pool. This is known as Minting.
+Synthetic Assets are created by swapping RUNE (or the Asset), into its synthetic counterpart, using the pool liquidity depth. This process is identical if the asset was swapped into the L1 instead. Thus when minting, the pool treats both the synthetic and its L1 as identical in purchasing power:
 
 $$
-synthAmount = (r * R * A)/(r + R)^2
+\text{synthAmount} = \frac{r \cdot R \cdot A}{(r + R)^2}
 $$
 
 * r = rune deposited
 * R = Rune Depth (before)
 * A = Asset Depth (before)
 
-The total Synth Supply is updated;
+This is the [identical equation to L1 swaps](continuous-liquidity-pools.md#slip-based-fee-model-clp).
+
+
+
+The total Synth Supply is then updated:
 
 $$
-synthSupply += synthAmount
+\text{synthSupply} += \text{synthAmount}
 $$
 
-#### Synth Units
 
-SynthUnits represent the RUNE collateral value that needs to be kept in the pool. They are computationally derived at any point, this ensures there is only enough at any time to represent the outstanding supply.
 
-The ratio of Synth Units to Liquidity Pool units should be the same as the ratio of synth assets to the total value of the pool without the synth assets (since LP units are all pool units without the synth units).
+### Synth Units - 100% collateralisation
 
-* S = Synth Supply
-* A = Asset Depth
-* L = Liquidity Units
-* U = Synth Units
+In the above swap - an asset was added to the pool (the RUNE or ASSET), but none taken out since the swap output is minted from nothing. Thus the pool has extra liquidity that needs to be isolated from other LPs. This is the purpose of Synth Units.
+
+Synth Units represent the liquidity collateral value that is required to "back" the synths 100%, and stops other dual-LPs from claiming ownership of it. They are computationally derived at any point which ensures there is exactly enough at any time to represent the outstanding supply.
+
+The ratio of Synth Units to Liquidity Units should be the same as the ratio of synth supply to the total value of the pool without the synths (since LP units are all pool units without the synth units).
+
+* U = Synth Units (what needs to be isolated to back the synthS)
+* L = Liquidity Units (dual-LPs)
+* S = Synth Supply (the synths to be backed)
+* A = Asset Depth (the assets in the pool)
+
+
 
 $$
 \frac{U}{L} = \frac{S}{(2A-S)}
 $$
 
 $$
-U = L * \frac{S}{(2A-S)}
+U = L \cdot \frac{S}{(2A-S)}
 $$
 
-SynthUnits are issued to cover the new liquidity minted, but held by the pool (not owned by anyone). PoolUnits are therefore the sum of [liquidityUnits ](continuous-liquidity-pools.md#calculating-pool-ownership)+ synthUnits.
+Synth Units are issued to cover the new liquidity minted, but held by the pool (not owned by anyone). Pool Units are therefore the sum of [liquidityUnits ](continuous-liquidity-pools.md#calculating-pool-ownership)+ synthUnits.
 
-Synthetic Assets Minting is capped to 33% of the assets in the pool or about 16.5% of the pool depth. Minting assets increases the total RUNE pooled amount, which cannot be greater than the total bonded.
+{% hint style="warning" %}
+Synth Collateralisation is done aspirationally. If the total value of the liquidity in the pool drops below the total value of the synths, then Synth Units minted will go to infinity, diluting the dual-LPs to 0%.&#x20;
+{% endhint %}
 
-### Redeeming
+### Redeeming: 1:1 pegged
 
-Synthetic Assets are burned by swapping the Synth for Rune. This is known as Burning or Redeeming. A Synthetic Asset can be redeemed to Rune at any time (or swapped to Rune then to an asset).
-
-Synth Assets hold the value to normal assets and can be redeemed 1:1. Thus swapping 1 BTC for Rune then minting Synthetic BTC will give 1 Synthetic BTC. This can later be redeemed to Rune and swapped for 1 BTC, excluding fees.
+Synthetic Assets are redeemed by swapping the Synth across the pool. The synth is swapped using the same formula as though it was an L1 asset, thus the synth has the same purchasing power to the L1. It is therefore pegged.&#x20;
 
 $$
-runeAmount = (s * A * R)/(s + A)^2
+\text{runeAmount} = \frac{s \cdot A \cdot R}{(s + A)^2}
 $$
 
 * s = Synths to Redeem
 * R = Rune Depth (before)
 * A = Asset Depth (before)
 
-Pool Units, Synth Supply and Rune Pool Depth are correspondingly decremented.
+The Synth Supply is thus decremented, and this in turn updates the oustanding Synth Units since it is computationally derived.&#x20;
 
 ### Swapping
 
 Synth Swaps can be done as follows:
 
-* Layer 1 to Synth: L1 in, Rune moved over to the pool, synth MINTED
-* Synth to Layer 1: Synth REDEEMED, RUNE moved to next pool, Layer 1 swapped out
-* Synth to Synth: Synth REDEEMED, RUNE moved over to the pool, synth MINTED
+* Layer 1 to Synth: L1 in, Synth Minted
+* Synth to Layer 1: Synth REDEEMED, L1 swapped out
+* Synth to Synth: Synth REDEEMED, RUNE moved between pools, synth MINTED
 
 To specify the destination asset is synth, simply provide a THOR address. If it is Layer 1, then provide a layer 1 address, e.g. a BTC address.
 
-### Economic Reasoning
+## Economics
 
-Synth holders do not experience any gain or any loss caused by price changes when minting / redeeming a synth. They do, however, pay a slip-based fee on entry or exit and tx fees.
+### Fees
 
-The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol [Reserve ](../network/emission-schedule.md#reserve)is taking on the price risk.
+All swaps pay fees, and a synth Mint or Redeem to an L1 is two swaps. Thus 10.0 btc/btc swapped across a pool of 1000 BTC.BTC will receive `10 - ((10/1000)*10)*2 = 9.8` minus any outboundFees. Is the synth pegged 1:0.98? No, because the same holder could swap 10 BTC in 1.0 BTC increments and receive `10*(1 - ((1/1000)*1)*2) = 9.98` minus 10 outboundFees. Both outboundFees and liquidityFees as a function of the swap size can be controlled by the user.
 
-Due to the collateralisation method, THORChain Synthetic Assets are impervious to impermanent loss and offer single asset exposure.
+### Effect on Dual-LPs
+
+The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. If Synths as a function of Pool Liquidity goes to 100%, then dual-LPs are diluted to 0%.&#x20;
+
+As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol [Reserve ](../network/emission-schedule.md#reserve)is taking on the price risk. With the Grandfathering of ILP, the RESERVE will instead enter the pools as a dual-LP of last-resort. This stops Synths going to 100%.&#x20;
 
 ### Synth Minting Cap
 
-Due to synths, Liquidity Providers are taking a leveraged position on the RUNE asset today. This can help them earn more rewards if RUNE outperforms the asset, but can also go the other way. The higher the percentage of synths that exist on the network relative to pool depth, the higher the leveraged position Liquidity Providers are taking. Higher than 50% is unhealthy for the network overall.
+Due to synths, Liquidity Providers are taking a leveraged position on the RUNE asset today. This can help them earn more rewards if RUNE outperforms the asset, but can also go the other way. The higher the percentage of synths that exist on the network relative to pool depth, the higher the leveraged position Liquidity Providers are taking.&#x20;
 
 Due to this, the minting of synths is capped to an upper limit of the total pool depth to protect Liquidity Providers and the network. The [Mimir ](../network/constants-and-mimir.md)setting `MaxSynthPerAssetDepth` setting controls the cap which is the asset depth percentage.
+
+This will soon be deprecated to allow PoL to control Synths.
 
 ### Protocol Owned Liquidity (POL)
 
@@ -111,7 +131,7 @@ The network can monitor the synth utilisation on a per pool basis, and add liqui
 * S = synth supply
 
 $$
-utilisation = S / PA * 10000
+\text{utilisation} = \frac{S}{PA} \cdot 10000
 $$
 
 By having the reserve add rune into the pool, it de-risks LPs from over RUNE leverage, as the reserve takes on some of that risk. The Reserve is long on its own (and only) asset. This, in turn, creates synth space in the pool, more synth minting and more single-sided asset deposits in the form of synths to enter.&#x20;
