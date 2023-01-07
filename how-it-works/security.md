@@ -8,9 +8,9 @@ THORChain has several layers of security within the code base to ensure solvency
 
 ### **Conformation Counting** <a href="#b905" id="b905"></a>
 
-To project against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Conformation counting for specific chains when receiving incoming value. [Bifrost ](../how-it-works/technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations are required is dependent on the size of the incoming value.
+To project against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Conformation counting for specific chains when receiving incoming value. [Bifrost ](technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations are required is dependent on the size of the incoming value.
 
-See more full details [here](../chain-clients/overview.md#confirmation-counting).&#x20;
+See more full details [here](broken-reference).&#x20;
 
 Note, THORChain and Binance Beacon Chain have near-instant finality so confirmation counting is not required.&#x20;
 

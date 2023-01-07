@@ -8,12 +8,6 @@ description: THORChain, THORNodes, Wallets and the ecosystem.
 
 THORChain is a decentralised cross-chain liquidity protocol which uses the [Tendermint](https://tendermint.com/) consensus engine, [Cosmos-SDK](https://cosmos.network/) state machine and GG20 [Threshold Signature Scheme](https://eprint.iacr.org/2019/114.pdf) (TSS). It does not peg or wrap assets, it manages funds directly in on-chain vaults, and secures those funds using economic security. It could be described as a "cross-chain automated market maker (AMM), like Uniswap".&#x20;
 
-Building on the foundation of liquidity pools, THORChain pursues three important financial primitives:
-
-1. Allow a user to **Swap** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.&#x20;
-2. Allow a user to **Save** {_Asset X on Chain A_}.
-3. Allow a user to **Lend** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.&#x20;
-
 ## Innovations
 
 There a numerous innovations in the THORChain Protocol that were built with first principles to be decentralised, resistant to capture and sustainable as possible:
@@ -42,18 +36,16 @@ You can learn how THORChain works here:
 [how-it-works](how-it-works/)
 {% endcontent-ref %}
 
-## ROLES
+## THORChain Finance
 
-There are five key roles in the system:
+Building on the foundation of liquidity pools, THORChain pursues three important financial primitives:
 
-1. **Liquidity Providers (LPs)** who add liquidity to pools and earn fees and rewards. There are 3 types of LPs: Dual-LP, Protocol-owned Liquidity and Savers.&#x20;
-2. **Swappers** who use the liquidity to swap assets ad-hoc, paying fees.
-3. **Borrowers** who deposit L1 collateral to borrow USD-denominated debt in the form of L1 assets, paying fees. Collateral is held in Network Equity (RUNE) whilst the loan is open.&#x20;
-4. **Traders** who monitor pools and rebalance continually, paying fees but with the intent to earn a profit.
-5. **Node Operators** who provide a bond and are paid to secure the system.
+1. Allow a user to **Swap** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.&#x20;
+2. Allow a user to **Save** {_Asset X on Chain A_}.
+3. Allow a user to **Lend** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.&#x20;
 
-{% content-ref url="roles/" %}
-[roles](roles/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ## THORNodes

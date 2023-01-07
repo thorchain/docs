@@ -55,7 +55,7 @@ There is no minimum or maximum time or amount. Join and leave whenever you wish.
 
 * Total Asset amount (in a specific block of a specific blockchain)
 * Per block reward of the chain
-* Block time Required confirmations = Total Asset Amount (in a specific block of a specific blockchain) divided by the chain's per block reward Then that is multiplied by block time to get the approx "wait time". See [Confirmation-Counting](chain-clients/overview.md#confirmation-counting).&#x20;
+* Block time Required confirmations = Total Asset Amount (in a specific block of a specific blockchain) divided by the chain's per block reward Then that is multiplied by block time to get the approx "wait time". See [Confirmation-Counting](broken-reference).&#x20;
 
 Regarding ILP, Liquidity Providers will receive 100% IL protection after they have been in the pool for 100 days, getting 1% ILP coverage for each day in the pool - but the liquidity can be withdrawn at any time.
 

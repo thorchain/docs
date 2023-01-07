@@ -23,21 +23,10 @@
 
 ## THORChain Finance
 
-* [Liquidity Model](thorchain-finance/continuous-liquidity-pools.md)
-* [Synthetic Asset Model](thorchain-finance/synthetic-asset-model.md)
+* [Liquidity](thorchain-finance/continuous-liquidity-pools.md)
+* [Synthetics](thorchain-finance/synthetic-asset-model.md)
 * [Savers](thorchain-finance/savings.md)
 * [Lending](thorchain-finance/lending.md)
-
-## Developers
-
-* [Dev Docs moved to Dedicated Site](developers/integration-overview.md)
-
-## Chain Clients
-
-* [Overview](chain-clients/overview.md)
-* [UTXO Chains](chain-clients/utxo-chains.md)
-* [EVM Chains](chain-clients/evm-chains.md)
-* [BFT Chains](chain-clients/bft-chains.md)
 
 ## THORNodes
 
