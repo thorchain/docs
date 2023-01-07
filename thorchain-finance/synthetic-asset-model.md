@@ -107,13 +107,13 @@ All swaps pay fees, and a synth Mint or Redeem to an L1 is two swaps. Thus 10.0 
 
 The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. If Synths as a function of Pool Liquidity goes to 100%, then dual-LPs are diluted to 0%.&#x20;
 
-As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol [Reserve ](../network/emission-schedule.md#reserve)is taking on the price risk. With the Grandfathering of ILP, the RESERVE will instead enter the pools as a dual-LP of last-resort. This stops Synths going to 100%.&#x20;
+As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol [Reserve ](../how-it-works/emission-schedule.md#reserve)is taking on the price risk. With the Grandfathering of ILP, the RESERVE will instead enter the pools as a dual-LP of last-resort. This stops Synths going to 100%.&#x20;
 
 ### Synth Minting Cap
 
 Due to synths, Liquidity Providers are taking a leveraged position on the RUNE asset today. This can help them earn more rewards if RUNE outperforms the asset, but can also go the other way. The higher the percentage of synths that exist on the network relative to pool depth, the higher the leveraged position Liquidity Providers are taking.&#x20;
 
-Due to this, the minting of synths is capped to an upper limit of the total pool depth to protect Liquidity Providers and the network. The [Mimir ](../network/constants-and-mimir.md)setting `MaxSynthPerAssetDepth` setting controls the cap which is the asset depth percentage.
+Due to this, the minting of synths is capped to an upper limit of the total pool depth to protect Liquidity Providers and the network. The [Mimir ](../how-it-works/constants-and-mimir.md)setting `MaxSynthPerAssetDepth` setting controls the cap which is the asset depth percentage.
 
 This will soon be deprecated to allow PoL to control Synths.
 
@@ -121,7 +121,7 @@ This will soon be deprecated to allow PoL to control Synths.
 
 With the addition of yield-bearing synths, there can be a high demand for minting synths that exceed the cap with normal liquidity. See the original [PR](https://gitlab.com/thorchain/thornode/-/issues/1342).&#x20;
 
-POL has been introduced to deal with a high demand for minting synths while maintaining a safe synth minting limit by using the RUNE within the [Reserve](../network/emission-schedule.md#reserve).&#x20;
+POL has been introduced to deal with a high demand for minting synths while maintaining a safe synth minting limit by using the RUNE within the [Reserve](../how-it-works/emission-schedule.md#reserve).&#x20;
 
 The network can monitor the synth utilisation on a per pool basis, and add liquidity (asymmetrically addition of RUNE) if utilisation is greater than `cap - 5%` (if economic security allows). If synth utilisation is under this figure, then the reserve would remove liquidity (if the PoL has an LP position in this pool).&#x20;
 

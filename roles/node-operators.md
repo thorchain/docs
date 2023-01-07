@@ -6,7 +6,7 @@ description: Node Operators
 
 ## Overview
 
-THORNodes service the THORCHain network, of which there is intended to be initially 120. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
+THORNodes service the THORChain network, of which there is intended to be initially 120. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
 {% content-ref url="../thornodes/overview.md" %}
 [overview.md](../thornodes/overview.md)
@@ -20,8 +20,8 @@ Node Operators earn 67% of the system income when it is stable. You can read mor
 [overview.md](../thornodes/overview.md)
 {% endcontent-ref %}
 
-{% content-ref url="../network/incentive-pendulum.md" %}
-[incentive-pendulum.md](../network/incentive-pendulum.md)
+{% content-ref url="../how-it-works/incentive-pendulum.md" %}
+[incentive-pendulum.md](../how-it-works/incentive-pendulum.md)
 {% endcontent-ref %}
 
 ### Set up Instructions
@@ -44,21 +44,7 @@ There are a variety of tools available in the ecosystem for Node Operators, such
 [alerting.md](../thornodes/alerting.md)
 {% endcontent-ref %}
 
-## Public Delegation Is Not Permitted
 
-For THORChain to work, it needs to be a nuetral ammoral platform that has no opinion on the nature of transactions processed on its network, nor the source or destination of funds. THORChain needs to avoid all sources of bias, subjectivity or localised influence. It needs to be a moving target, shuffling funds and avoiding capture. It needs to treat node operators as second-class citizens, paying them for their services and ejecting any node that has been in the system for too long or starts misbehaving. THORChain treats liquidity providers as first-class citizens and does everything it needs to protect their capital.
-
-Public delegation is not permitted on the THORChain protocol because delegation undermines both the decentralisation of the project as well as its security. However Private Delegation is permitted, but within limits.&#x20;
-
-### Decentralisation and Neutrality
-
-If public delegation was permitted, then Node Operators would begin running initiatives that would try and attract delegated funds, such as marketing campaigns, or reducing commissions to low or negative amounts. This type of behaviour is wide-spread on other DPoS networks. This begins to erode the decentralisation of the network since funds would accumulate with large branded nodes that can pay for large campaigns.
-
-As a follow-on, if nodes began social signalling, they would naturally try and build brands to gain public trust. They would buy domain names, and try and promote on-chain identification of their nodes "monikors" to allow users to easily find and delegate them. Over time, this brand will become more and more associated with the protocol and the protocol would start to lose its neutrality. The branded node would try and assert themselves more and more on the network, and this bias would make its way into the source code and eventually affect how the protocol would operate.
-
-{% hint style="danger" %}
-Nodes must stay anonymous and be identified only by their public key and IP address, both of which can be obfuscated from their true identity (such as washing funds prior to bonding and using a proxy node to obfuscate their real IP address).
-{% endhint %}
 
 ### Security
 

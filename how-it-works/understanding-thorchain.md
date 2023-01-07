@@ -21,7 +21,7 @@ Key selling points of THORChain are:&#x20;
 * The ability to swap Layer 1, or native, assets across multiple chains - e.g. native BTC to ETH swap.&#x20;
 * No user-registration required - simply send a transaction and THORChain will execute it.&#x20;
 * No wrapped assets - all assets are natively secured.&#x20;
-* Transparent, fair [prices](../how-it-works/prices.md), without relying on centralised third-parties.&#x20;
+* Transparent, fair [prices](broken-reference), without relying on centralised third-parties.&#x20;
 * [Continuous Liquidity Pools](../thorchain-finance/continuous-liquidity-pools.md#benefits-of-the-clp-model) that maximise the efficiency of the protocol.
 
 ➜ [An Introduction to THORChain for Bitcoiners](https://erikvoorhees.medium.com/an-introduction-to-thorchain-for-bitcoiners-3f621bf0028e)
@@ -68,17 +68,3 @@ This is called impermanent loss because the losses are only realised when you wi
 LPs are encouraged to provide liquidity in pools that they are bullish on, or neutral on (don't care what the final price is). If an LP provides assets in a pool that they become bearish on, then they will be emotionally affected by the price draw-down, and may pull their assets out and realise a permanent loss.
 
 ➜ [Liquidity Pooling Example High Level](https://www.youtube.com/watch?v=Kzt9SAQRvUQ)
-
-### ILP: How THORChain protects its Liquidity Providers
-
-Liquidity Providers will receive 100% Impermanent Loss Protection **** (ILP) after they have been in the pool for 100 days, getting 1% coverage for each day in the pool. Essentially this means you are adding 1% protection for every day that you provide liquidity. 49 days provided = 49% IL protection, 100 days = 100% IL protection.
-
-Impermanent Loss Protection (ILP) ensures that you will not be worse off providing liquidity into THORChain than just holding two assets, RUNE and ASSET, in your wallet. Protection is always recorded and applied symmetrically to both assets after the deposit is rebalanced to 50/50. Impermanent Loss Protection can also be thought of as deposit protection compared to holding both assets. Minimum withdrawal value will be the same as if you held both assets.
-
-NOTE: The coverage will reset every time you add liquidity to the same pool and withdrawal fees will affect the withdrawal amount. Partial withdrawals do not reset the ILP counter.
-
-➜ [THORChain and Impermanent Loss](https://thorchain.medium.com/thorchains-immunity-to-impermanent-loss-8265a59066a4)
-
-➜ [Impermanent Loss Protection Explained](https://youtu.be/yce7OJ\_z57g)
-
-➜ [Liquidly Pooling Example - Using Numbers](https://www.youtube.com/watch?v=C8cYaugKSFw)

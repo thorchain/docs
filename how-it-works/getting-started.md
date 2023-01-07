@@ -15,8 +15,6 @@ However, more advanced users will want to add symmetrical liquidity or bond as a
 There are several ways.&#x20;
 
 * Buy any THORChain supported assets (such as BUSD/BTC/ETH) then swap it for native RUNE.&#x20;
-* Purchase Native RUNE from Crypto.com.&#x20;
-* Buy BNB.RUNE from an [exchange ](https://www.coingecko.com/en/coins/thorchain#markets)and then [upgrade it to Native RUNE](https://www.youtube.com/watch?v=xp0t5cOW2os)
 
 From there, send it to a [self custody wallet](https://linen.app/articles/what-is-a-self-custody-non-custodial-wallet/).
 
@@ -56,7 +54,7 @@ If you add asymmetrically with RUNE first:
 
 ### Withdrawing Liquidity
 
-Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they’ve earned. Fees do apply when withdrawing, see [Outbound Fee](../how-it-works/fees.md#outbound-fee).
+Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they’ve earned. Fees do apply when withdrawing, see [Outbound Fee](fees.md#outbound-fee).
 
 ## **How to track your position**
 

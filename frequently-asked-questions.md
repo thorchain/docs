@@ -12,7 +12,7 @@ Providing liquidity on THORChain creates an opportunity for holders of stagnant 
 
 #### **Does THORChain need external sources for price feeds, like oracles or weighted averages?**
 
-THORChain depends on its continuous liquidity pool design and arbitrageurs to set prices. When pools become imbalanced, arbitrage bots trade to rebalance them. THORChain knows the exchange rates between external asset pairs because RUNE binds all pools together. See [Prices](how-it-works/prices.md#getting-the-prices-for-any-asset).
+THORChain depends on its continuous liquidity pool design and arbitrageurs to set prices. When pools become imbalanced, arbitrage bots trade to rebalance them. THORChain knows the exchange rates between external asset pairs because RUNE binds all pools together. See [Prices](broken-reference).
 
 Unbalanced pools represent a profit opportunity for arbitrage traders -- if a trader can purchase a token at a lower price on THORChain and sell it for a profit elsewhere, they will. These trades re-balance the pool and ensure that prices accurately reflect the market value. These pool balancing trades happen 24/7 via arbitrage bots interacting with the protocol's API directly. It's even possible to run an arbitrage bot of your own!
 
@@ -29,11 +29,11 @@ Note:
 
 #### **What Wallet can I use with THORChain and Native RUNE?**&#x20;
 
-See [What Wallets Support Native RUNE?](learn/getting-started.md#what-wallets-support-native-rune)
+See [What Wallets Support Native RUNE?](how-it-works/getting-started.md#what-wallets-support-native-rune)
 
 #### **Is there a liquidity cap?**&#x20;
 
-The Soft Cap has been removed, so there should be no limit to the amount of liquidity entered. There is a hard cap in place to ensure the total pooled cannot exceed the total bonded, making the network unsafe however the [Incentive Pendlumn](network/incentive-pendulum.md) makes this cap near impossible to reach.&#x20;
+The Soft Cap has been removed, so there should be no limit to the amount of liquidity entered. There is a hard cap in place to ensure the total pooled cannot exceed the total bonded, making the network unsafe however the [Incentive Pendlumn](how-it-works/incentive-pendulum.md) makes this cap near impossible to reach.&#x20;
 
 #### **What assets can you swap and provide liquidity for?**&#x20;
 
@@ -63,7 +63,7 @@ Regarding ILP, Liquidity Providers will receive 100% IL protection after they ha
 
 #### **What is Outbound Throttling?**&#x20;
 
-See [Outbound Transaction Throttling](network/security.md#b905-1)
+See [Outbound Transaction Throttling](how-it-works/security.md#b905-1)
 
 ➜ You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app/)
 
@@ -103,7 +103,7 @@ Overview of the process and why:
 
 No. Only short tail assets with high MarketCap, good velocity and economic activity would have chances to win liquidity competition to get listed. Then the community will vote.&#x20;
 
-➜ See [Governance](network/governance.md#chain-listing-delisting).&#x20;
+➜ See [Governance](how-it-works/governance.md#chain-listing-delisting).&#x20;
 
 ➜ [Latest ERC20 Tokens List ](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/ethereum/token\_list.json)
 
@@ -174,7 +174,7 @@ Simply put, Cross-chain bridges are a better solution than Atomic Swaps. Atomic 
 
 #### What is the RUNE monetary policy / Tokenomics?&#x20;
 
-The goal is to have a fixed supply at all times. Instead of constantly emitting (infinite supply like Cosmos or Ethereum) or reducing the emission down to zero (Bitcoin) the network elects to match emissions to the difference between current circulating supply and the max supply, as well as burning fees. This means there is 500 million progressively emitted to nodes for security and liquidity over time. See [Emission Schedule](network/emission-schedule.md) for more information.&#x20;
+The goal is to have a fixed supply at all times. Instead of constantly emitting (infinite supply like Cosmos or Ethereum) or reducing the emission down to zero (Bitcoin) the network elects to match emissions to the difference between current circulating supply and the max supply, as well as burning fees. This means there is 500 million progressively emitted to nodes for security and liquidity over time. See [Emission Schedule](how-it-works/emission-schedule.md) for more information.&#x20;
 
 #### How are new pools added in THORChain?
 

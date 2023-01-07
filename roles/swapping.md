@@ -11,7 +11,7 @@ On THORChain, users can swap their digital assets for other digital assets. The 
 * 1-transaction access to fast chains (Binance Chain), smart chains (Ethereum), censorship-resistant chains (Bitcoin) and private chains (Monero).
 
 {% hint style="info" %}
-See an [overview of Swapping in THORChain](../learn/understanding-thorchain.md#how-swapping-works)
+See an [overview of Swapping in THORChain](../how-it-works/understanding-thorchain.md#how-swapping-works)
 {% endhint %}
 
 ## How Swaps Work
@@ -21,7 +21,7 @@ See an [overview of Swapping in THORChain](../learn/understanding-thorchain.md#h
 Users can swap any assets which are on connected chains and which have been added to the network. Users can swap from any connected asset to any other connected asset. They can also swap from any connected asset to [RUNE](../rune.md).
 
 {% hint style="info" %}
-Learn more about how chains and assets get added to the network in [the Governance section](../network/governance.md).
+Learn more about how chains and assets get added to the network in [the Governance section](../how-it-works/governance.md).
 
 To add an asset to THORChain, users simply deposit a new asset to put it in the queue for listing. Swaps can only be made on pools when they have been added to the network and have moved out of the bootstrap phase.
 {% endhint %}
@@ -50,8 +50,8 @@ See [this example](swapping.md#example) for further detail and the page below fo
 [continuous-liquidity-pools.md](../thorchain-finance/continuous-liquidity-pools.md)
 {% endcontent-ref %}
 
-{% content-ref url="../learn/getting-started.md" %}
-[getting-started.md](../learn/getting-started.md)
+{% content-ref url="../how-it-works/getting-started.md" %}
+[getting-started.md](../how-it-works/getting-started.md)
 {% endcontent-ref %}
 
 ### Calculating Swap Output

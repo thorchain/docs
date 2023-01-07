@@ -4,20 +4,49 @@ description: Learn how THORChain Works
 
 # How It Works
 
-See how THORChain works.&#x20;
+### High Level Overview
 
-{% content-ref url="fees.md" %}
-[fees.md](fees.md)
+{% content-ref url="understanding-thorchain.md" %}
+[understanding-thorchain.md](understanding-thorchain.md)
 {% endcontent-ref %}
 
-{% content-ref url="prices.md" %}
-[prices.md](prices.md)
+### Getting Started
+
+{% content-ref url="getting-started.md" %}
+[getting-started.md](getting-started.md)
 {% endcontent-ref %}
+
+### Technical Info
 
 {% content-ref url="technology.md" %}
 [technology.md](technology.md)
 {% endcontent-ref %}
 
-{% content-ref url="../network/incentive-pendulum.md" %}
-[incentive-pendulum.md](../network/incentive-pendulum.md)
+{% content-ref url="incentive-pendulum.md" %}
+[incentive-pendulum.md](incentive-pendulum.md)
 {% endcontent-ref %}
+
+{% content-ref url="emission-schedule.md" %}
+[emission-schedule.md](emission-schedule.md)
+{% endcontent-ref %}
+
+{% content-ref url="fees.md" %}
+[fees.md](fees.md)
+{% endcontent-ref %}
+
+{% content-ref url="governance.md" %}
+[governance.md](governance.md)
+{% endcontent-ref %}
+
+{% content-ref url="constants-and-mimir.md" %}
+[constants-and-mimir.md](constants-and-mimir.md)
+{% endcontent-ref %}
+
+{% content-ref url="security.md" %}
+[security.md](security.md)
+{% endcontent-ref %}
+
+{% content-ref url="thorchain-name-service.md" %}
+[thorchain-name-service.md](thorchain-name-service.md)
+{% endcontent-ref %}
+

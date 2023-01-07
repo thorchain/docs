@@ -1,13 +1,17 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Learn](learn/README.md)
-  * [Understanding THORChain](learn/understanding-thorchain.md)
-  * [Getting Started](learn/getting-started.md)
 * [How It Works](how-it-works/README.md)
-  * [Fees](how-it-works/fees.md)
-  * [Prices](how-it-works/prices.md)
+  * [Understanding THORChain](how-it-works/understanding-thorchain.md)
+  * [Getting Started](how-it-works/getting-started.md)
   * [Technology](how-it-works/technology.md)
+  * [Incentive Pendulum](how-it-works/incentive-pendulum.md)
+  * [Emission Schedule](how-it-works/emission-schedule.md)
+  * [Fees](how-it-works/fees.md)
+  * [Governance](how-it-works/governance.md)
+  * [Constants and Mimir](how-it-works/constants-and-mimir.md)
+  * [Security](how-it-works/security.md)
+  * [THORChain Name Service](how-it-works/thorchain-name-service.md)
 * [Roles](roles/README.md)
   * [Liquidity Providers](roles/liquidity-providers.md)
   * [Swappers](roles/swapping.md)
@@ -21,17 +25,8 @@
 
 * [Liquidity Model](thorchain-finance/continuous-liquidity-pools.md)
 * [Synthetic Asset Model](thorchain-finance/synthetic-asset-model.md)
-* [Yield Bearing Synths](thorchain-finance/savings.md)
+* [Savers](thorchain-finance/savings.md)
 * [Lending](thorchain-finance/lending.md)
-
-## Network
-
-* [Emission Schedule](network/emission-schedule.md)
-* [Incentive Pendulum](network/incentive-pendulum.md)
-* [Governance](network/governance.md)
-* [Security](network/security.md)
-* [THORChain Name Service](network/thorchain-name-service.md)
-* [Constants and Mimir](network/constants-and-mimir.md)
 
 ## Developers
 
@@ -64,10 +59,6 @@
 * [🛑 Emergency Procedures](thornodes/emergency-procedures.md)
 * [✔️ CHECKLIST](thornodes/checklist.md)
 * [Multi-node Deployment](thornodes/multi-node-deployment.md)
-
-## Get Involved
-
-* [Contribute](get-involved/contribute.md)
 
 ***
 

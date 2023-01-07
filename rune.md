@@ -14,7 +14,7 @@ RUNE is the asset which powers the THORChain ecosystem and provides the economic
 4. Incentives (paying out rewards, charging fees, subsidising gas)
 
 {% hint style="info" %}
-An introduction to RUNE and its roles is [here](learn/understanding-thorchain.md#what-is-rune).
+An introduction to RUNE and its roles is [here](how-it-works/understanding-thorchain.md#what-is-rune).
 {% endhint %}
 
 ## 1. Liquidity
@@ -95,8 +95,8 @@ This drives Nodes to bond the optimal amount, and pays Liquidity providers for t
 
 Learn about the Incentive Pendulum here:
 
-{% content-ref url="network/incentive-pendulum.md" %}
-[incentive-pendulum.md](network/incentive-pendulum.md)
+{% content-ref url="how-it-works/incentive-pendulum.md" %}
+[incentive-pendulum.md](how-it-works/incentive-pendulum.md)
 {% endcontent-ref %}
 
 ## Deterministic Value of RUNE
