@@ -31,6 +31,10 @@ It is assumed nodes that wish to **LEAVE** will be away for a significant period
 ## Unbonding
 
 {% hint style="info" %}
+Yggdrasil vaults have been deprecated, see [ADR-002](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-002-removeyggvaults.md). They may be used again in the future. Nodes that were active before ADR-002 need to leave as described below.&#x20;
+{% endhint %}
+
+{% hint style="info" %}
 You cannot unbond if you are "Ready" or "Active" or have any amount of funds in your Yggdrasil address
 {% endhint %}
 

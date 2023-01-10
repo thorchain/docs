@@ -17,7 +17,7 @@ Check the constants for most up-to-date settings for `MaxBondProviders` and `Nod
 
 ### Rationale
 
-The minimum $RUNE needed to churn in as a THORNode is currently set at 300K - but with bond competition this number could be much higher.&#x20;
+The minimum $RUNE needed to churn in as a THORNode is currently set at 300K - but with bond competition, this number could be much higher.&#x20;
 
 Not many people in the world have both the technical skills to run a Validator AND at least 300K $RUNE, which limits the supply of Node Operators who secure THORChain.
 
@@ -34,6 +34,8 @@ It would be disastrous to THORChain if operators could collect unlimited bond qu
 
 This is why Pooled THORNodes are invite-only and limited to 6 per node. It is difficult to access economies of scale in these small quantities.&#x20;
 {% endhint %}
+
+##
 
 ## Managing a Pooled THORNode
 

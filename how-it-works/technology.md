@@ -88,8 +88,8 @@ There are two types of vaults in THORChain's system - "inbound vaults" and "outb
 
 This allows the system to use the security of the large vaults to hold the bulk of assets, but delegate to the small, fast outbound vaults the outgoing assets. Every THORNode runs an outbound vault.
 
-{% hint style="info" %}
-It takes 10-20 seconds to sign 27-of-40 TSS, so the system would be extremely limited if this vault did all the outbounds. But with each node (100) running an outbound vault, the system can do roughly 1 transaction per vault per second, so around 1500 times the output.
+{% hint style="success" %}
+**Yggdrasil** Vaults are deprecated since [ADR-002](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-002-removeyggvaults.md). Yggdrasil Vaults will slowly disappear as older nodes churn out. New nodes since ADR-002 will not have a Yggdrasil Vault.
 {% endhint %}
 
 ### Sharded Asgard Vaults
