@@ -68,7 +68,7 @@ Some `make` commands during setup require RUNE (0.02 to 1.0) to execute into the
 Give the network 3-5 seconds to pick up your bond. To verify it has received your bond, run the following:
 
 ```
-curl https://thornode.thorchain.info/thorchain/node/<node-address>
+curl https://thornode.ninerealms.com/thorchain/node/<node-address>
 ```
 
 If you run `make status` again, you should see this:
@@ -210,3 +210,12 @@ Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. Y
 {% endhint %}
 
 You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.
+
+### Node Operator Fee
+
+* Setting the Node Operator fee `10000` causes all rewards to be paid back each churn.
+* Setting the Node Operator fee to `5000` causes 50% of rewards to be paid back to the Node Operator address and 50% to be accrued back to the bond.
+
+To set a Node Operator fee, send a deposit transaction with the following memo:
+
+`BOND:<node address>:<bond wallet address>:<operator fee in basis pts>`

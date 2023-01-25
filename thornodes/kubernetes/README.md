@@ -35,7 +35,7 @@ There are three important steps to getting your node set up, deployed and churne
 
 ### Repository Management
 
-Your repository should be organised as follows:
+Your repository can be organised as follows:
 
 ```
 ./thornode-ops

@@ -317,7 +317,7 @@ Prior to `git pull` or `make pull` updates, review node-launcher repo diffs:
 
 ```
 git fetch
-git diff multichain..origin/multichain
+git diff master..origin/master
 ```
 
 Regularly review patches in GitLab: [https://gitlab.com/thorchain/devops/node-launcher/-/commits/multichain](https://gitlab.com/thorchain/devops/node-launcher/-/commits/multichain)
@@ -336,14 +336,6 @@ YOU ARE RESPONSIBLE FOR THE CODE RUNNING ON YOUR NODE. **YOU ARE** THE NETWORK. 
 
 ## Yggdrasil vaults
 
-At the moment , there are five external chain get connected to THORChain, there are
-
-* Binance Chain
-* Bitcoin
-* Bitcoin cash
-* Litecoin
-* Ethereum
-
 Each node has a unique address on each supported chain. This is their Yggdrasil vault. The network will fund all nodes Yggdrasil vaults and instruct them to perform small transactions in order to lower the number of computationally expensive TSS signatures.
 
 #### Finding Yggdrasil addresses
@@ -359,13 +351,13 @@ To find your Yggdrasil addresses, firstly navigate to [https://viewblock.io/thor
 Alternatively, visit any thorchain endpoint using your node address from `make status`:
 
 ```
-http://thornode.thorchain.info/thorchain/node/<Node Address>
+http://thornode.ninerealms.com/thorchain/node/<Node Address>
 ```
 
 Copy your `secp256k1` public key and put it here:
 
 ```
-http://thornode.thorchain.info/thorchain/vault/<Public Key>
+http://thornode.ninerealms.com/thorchain/vault/<Public Key>
 ```
 
 And look for `addresses` array at the bottom.
@@ -440,7 +432,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 6. If the highest nonce is larger than your lowest nonce, it means there are a few transactions sent and stuck in the mempool of your local ETH daemon. You need to unstuck these from highest to lowest.
 7. Make a fork of [https://replit.com/@thorchain/YggCancelETH](https://replit.com/@thorchain/YggCancelETH)
 8. Update `index.js` `lastPendingNonce` and `firstStuckNonce`. Also put in your hex encoded private key to KEY variable. Remember to add the `0x` prefix which bip39 calculator above will not have.
-9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.thorchain.info/thorchain/inbound\_addresses](https://thornode.thorchain.info/thorchain/inbound\_addresses) (which ever is higher).
+9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.ninerealms.com/thorchain/inbound\_addresses](https://thornode.ninerealms.com/thorchain/inbound\_addresses) (which ever is higher).
 10. Run the script using `node index.js`. Note: you may need to install some dependecies first with `npm install ethers`. The output should look like:
 
     ```bash

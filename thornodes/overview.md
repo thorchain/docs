@@ -12,11 +12,10 @@ Running a node is a serious undertaking. While Node Operators are well [compensa
 
 See the [Node Operator 101 Video](https://youtu.be/XXYXNAolPEU) to learn more before running a node.&#x20;
 
-To set up a node, you have three choices:
+To set up a node, you have two choices:
 
 1. Set up manually (not recommended unless you are an expert)
 2. Set up via Kubernetes (recommended)
-3. Set up via Provider (coming soon).
 
 {% content-ref url="kubernetes/" %}
 [kubernetes](kubernetes/)
@@ -24,19 +23,22 @@ To set up a node, you have three choices:
 
 ## THORNode Stack
 
-Each THORNode is comprised of 5 major components.
+Each THORNode is comprised of 4 major components.
 
 1. **`thornode`** - this is a daemon that runs the THORChain chain itself and a HTTP server, that gives a RESTful API to the chain.
 2. **`bifrost`** - this daemon creates connections to remote chains (like Bitcoin, Ethereum, Binance, etc) to both observe activity on those chains (incoming/outgoing transactions), and also sign/broadcast outgoing transactions (moving funds on remote chains).
 3. **`gateway`**: THORNode gateway proxy to get a single IP address for multiple deployments
-4. **`midgard`** - this daemotn is a layer 2 REST API that provides front-end consumers with semi real-time rolled up data and analytics of the THORChain network. Most requests to the network will come through Midgard. This daemon is here to keep the chain itself from fielding large quantities of requests. You can think of it as a “read-only slave” to the chain. This keeps the resources of the network focused on processing transactions.
-5. **Full nodes** - for every chain that is supported by the network, each THORNode operator will run their own full node of each chain (Bitcoin, Ethereum, Binance, etc).
+4. **Full nodes** - for every chain that is supported by the network, each THORNode operator will run their own full node of each chain (Bitcoin, Ethereum, Binance, etc).
+
+THORNode operators may choose to run the following optional services:
+
+* **`midgard`** - a layer 2 REST API that provides front-end consumers with semi real-time rolled up data and analytics of the THORChain network. Most requests to the network will come through Midgard. The Midgard API keeps the chain itself from fielding large quantities of requests, allowing THORNode to focus on validating and propagating blocks across the network. You can think of it as a “read-only slave” to the chain.
 
 ### Churning
 
 As new nodes join/leave the network, this triggers a “churning event”. Which means the list of validators that can commit blocks to the chain changes, and also creates a new Asgard vault, while retiring an old one. All funds in this retiring vault are moved to the new Asgard vault.
 
-Normally, a churning event happens every 3 days (50,000 blocks), although it is possible for it to happen more frequently (such as when a node optionally requests to leave the network using the `LEAVE` memo).
+Normally, a churning event happens roughly every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://thornode.ninerealms.com/thorchain/mimir)).
 
 #### Churning Out
 
@@ -46,17 +48,11 @@ On every churn, the network selects one or more nodes to be churned out of the n
 2. Banned by other nodes (network-removal)
 3. How long an active nodes has been committing blocks (oldest gets removed)
 4. Bad behavior (accrued slash points for poor node operation)
+5. Nodes that do not meet the minimum version requirement (capped by [`MAXNODETOCHURNOUTFORLOWVERSION`](https://thornode.ninerealms.com/thorchain/mimir))
 
 #### Churning In
 
 On every churn, the network may select one or more nodes to be churned into the network but never adds more than one to the total. Which nodes that are selected are purely by validator bond size. Larger bond nodes are selected over lower bond nodes.
-
-{% hint style="info" %}
-There is a endpoint on Midgard that has deep analytics in mean and median active & standby bond sizes to drive efficient discovery of the best "bond" size.\
-Chaosnet minimum bond is currently: 300K Rune ([MIMIR Override)](https://thorchain.net/#/network/constants) however competition has raised this higher. In the long term it is likely to stabilise between 2m and 2.5m RUNE.
-
-The network is safe when it is over-bonded, but it shrewd Node Operators will probably actively manage their bond and pool part of it instead to maximise yield.
-{% endhint %}
 
 ## Risk of Running a Node
 
@@ -87,7 +83,13 @@ Slash points undo profits made on the network. For every 1 slash point a node re
 
 ### Bond Rewards
 
-Node Operators receive rewards if they are bonded and active on the network and are paid out in Rune. While revenue is generated every block (every 5 seconds) to each operator, those funds are not available to the operator until they churn out of the network. Node Operators earn rewards relative to their bond, the more they bond, the more they earn. Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. They're claimed whenever a node leaves the network. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
+Node Operators receive rewards if they are bonded and active on the network and are paid out in RUNE. While revenue is generated every block (approximately every 6 seconds) to each operator, those funds are not available immediately. Rewards can be accessed one of two ways:
+
+* Setting a Node Operator fee in basis points, which causes rewards to be paid directly to the Node Operator address after each churn. For example:
+* If no Node Operator fee is set, 100% of rewards will be accrued back to the bond after each churn. A Node Operator must then either LEAVE or wait until the node churns out to unbond principal or rewards.
+* See [here](joining.md#node-operator-fee) for details on how to set a Node Operator fee.
+
+Node Operators earn rewards relative to their bond, the more they bond, the more they earn. Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
 
 Rewards are affected by the [Emission Schedule](../how-it-works/emission-schedule.md) and the [Incentive Pendulum](../how-it-works/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
 
@@ -126,7 +128,7 @@ In this example, an individual operator would receive 62,127 RUNE over the month
 
 ## Costs
 
-Depending on how the node was set up, it will likely cost between $1000 and $2000 per month, potentially more as the blockchain scales. The main driver of costs is resource allocation to hosting each THORNode service.
+Depending on how the node was set up, it will likely cost between $1,500 and $3,0000 per month, potentially more as the blockchain scales and more chain integrations are added. The main driver of costs is resource allocation to hosting the fullnode daemons required for each of THORNode's chain integrations.
 
 ## Skillsets
 
@@ -150,32 +152,44 @@ When you run a THORNode, each THORNode will have its own node account. An exampl
 
 ```
 {
-  "node_address": "thor19h62vypuelrj0pv4jhl26wf79yr5zhxcmd5w85",
-  "status": "active",
-  "pub_key_set": {
-    "secp256k1": "thorpub1addwnpepq0ylvhrqepmsm3rqxr4ecuyx42l4y29g2d932zlse258432ccuy8spmddj5",
-    "ed25519": "thorpub1addwnpepq0ylvhrqepmsm3rqxr4ecuyx42l4y29g2d932zlse258432ccuy8spmddj5"
-  },
-  "validator_cons_pub_key": "thorcpub1zcjduepqzknjn39xtkdzr6a2zuzry7f02rn3cnqvy8ar7p2admk80j8xageqj9slpw",
-  "bond": "30240000000000",
-  "active_block_height": "180",
-  "bond_address": "tbnb1rqhrnvyex4p5zchhu0slgr76dc4cl5dnvzxx2h",
-  "status_since": "123",
-  "signer_membership": [
-    "thorpub1addwnpepqwm3arc5xqgjf8yt70psygcjasfj3c776cux4yxcaacyd9vm859lckczll7"
-  ],
-  "requested_to_leave": false,
-  "forced_to_leave": false,
-  "leave_height": "0",
-  "ip_address": "206.189.235.75",
-  "version": "0.1.0",
-  "slash_points": "17",
-  "jail": {
-    "node_address": "thor19h62vypuelrj0pv4jhl26wf79yr5zhxcmd5w85",
-    "release_height": "2393",
-    "reason": "failed to perform keysign"
+    "node_address": "thor10rgvc7c44mq5vpcq07dx5fg942eykagm9p6gxh",
+    "status": "Active",
+    "pub_key_set": {
+      "secp256k1": "thorpub1addwnpepq2gmjlu6y0whj8gtfnl3ccta66zx3u5p04wdh834e065x4z6qndzsulj5aa",
+      "ed25519": "thorpub1zcjduepqxg5dfc27l3tw2xrxtw63025gaxwup723y0t7p8w2ww37vqgvyw7q348pxp"
+    },
+    "validator_cons_pub_key": "thorcpub1zcjduepqaxvrp5xjrmg65e3a06sdkr5z7y67xdlzyetlx40p857gxw5g4tqs2xdavr",
+    "active_block_height": 9187905,
+    "status_since": 9187905,
+    "node_operator_address": "thor10afkwx5heh26fjwum682neq7wkkre5md0wp8vc",
+    "total_bond": "85959109978465",
+    "bond_providers": {
+      "node_operator_fee": "2000",
+      "providers": [
+        {
+          "bond_address": "thor10afkwx5heh26fjwum682neq7wkkre5md0wp8vc",
+          "bond": "85959109978465"
+        }
+      ]
+    },
+    "signer_membership": [...pub keys of asgard vault memembership],
+    "requested_to_leave": false,
+    "forced_to_leave": false,
+    "leave_height": 0,
+    "ip_address": "<redacted>",
+    "version": "1.104.0",
+    "slash_points": 37,
+    "jail": {
+      "release_height": 9232551
+    },
+    "current_award": "13105483797",
+    "observe_chains": [...block heights of last observed tx on external chains],
+    "preflight_status": {
+      "status": "Ready",
+      "reason": "OK",
+      "code": 0
+    }
   }
-}
 ```
 
 Most importantly, this will tell you how many slash points the node account has accrued, their status, and the size of their bond (which is in 1e8 notation, 1 Rune == 100000000).
@@ -189,9 +203,9 @@ Types of node status:
 3. **Standby** - waiting to have minimum requirements verified to become “ready” status. This check happens on each churn event (3 days on average).
 4. **Ready** - node has met minimum requirements to be churned and is ready to do so. Could be selected to churn into the network. Cannot unbond while in this status.
 5. **Active** - node is an active participant of the network, by securing funds and committing new blocks to the THORChain blockchain. Cannot unbond while in this status.
-6. **Disabled** - node has been disabled by use of LEAVE, and cannot re-join.
+6. **Disabled** - node has been disabled by use of LEAVE while in standby, and cannot re-join.
 
-To get node account information, make an HTTP call to your `thor-api` port which will look like the following:
+To get node account information, make an HTTP call to your `thornode` port which will look like the following:
 
 ```
 http://<host>:1317/thorchain/nodeaccount/<node address>
@@ -202,7 +216,7 @@ http://<host>:1317/thorchain/nodeaccounts
 
 THORNodes have the ability to vote on [Mimir ](https://midgard.thorchain.info/v2/thorchain/mimir)settings.&#x20;
 
-Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a Node is:
+Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a node is:
 
 ```
 Make mimir

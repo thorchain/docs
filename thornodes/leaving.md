@@ -6,8 +6,7 @@ description: How to leave THORChain
 
 ## Overview
 
-Every 3 days the system will churn its nodes. \
-The exact churn interval in blocks is ChurnInterval in the [THORChain Constants](https://docs.thorchain.org/network/constants-and-mimir).
+Approximately every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://thornode.ninerealms.com/thorchain/mimir)) the system will churn its vaults and nodes.&#x20;
 
 Outgoing:
 
@@ -18,14 +17,14 @@ Outgoing:
 
 Incoming:
 
-1. The node(s) with the highest bond (typically 4).
+1. The node(s) with the highest bond (2 or [`NUMBEROFNEWNODESPERCHURN`](https://thornode.ninerealms.com/thorchain/mimir)).
 
-Churned out nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing but keep their cluster online, they will be eventually churned back in.
+Churned out nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing, but keep their cluster online and up-to-date with the latest THORNode version, they will be eventually churn back in.
 
-Alternatively, an "Active" node can leave the system voluntarily, in which case they are marked to churn out first. Leaving is considered permanent, and the node-address is permanently jailed. This prevents abuse of the **LEAVE** system since leaving at short notice is disruptive and expensive.
+Alternatively, an "Active" node can leave the system voluntarily, in which case they are marked to churn out first.&#x20;
 
 {% hint style="warning" %}
-It is assumed nodes that wish to **LEAVE** will be away for a significant period of time, so by permanently jailing their address it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software.
+It is assumed nodes that wish to **LEAVE** while on Standby will be away for a significant period of time, so by permanently jailing their address, it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software.
 {% endhint %}
 
 ## Unbonding
@@ -35,7 +34,7 @@ Yggdrasil vaults have been deprecated, see [ADR-002](https://gitlab.com/thorchai
 {% endhint %}
 
 {% hint style="info" %}
-You cannot unbond if you are "Ready" or "Active" or have any amount of funds in your Yggdrasil address
+You cannot unbond if you are "Ready" or "Active" or have any amount of funds in your Yggdrasil address.
 {% endhint %}
 
 If a Node Operator wants to retrieve part of their bond & rewards (such as deciding to take profits), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
@@ -44,7 +43,7 @@ To unbond from the system, simply send an **UNBOND** transaction.
 
 Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond.
 
-`UNBOND:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz:1000000000000`
+`UNBOND:<node address>:1000000000000`
 
 {% hint style="info" %}
 THORChain always treats assets in 1e8 'base format' ie, 1.0 RUNE = 100,000,000 units (tor). To get from one to the other, simply multiply by 100m.
@@ -65,30 +64,24 @@ This ensures you can safely leave this system if you no longer have access to yo
 
 ## Issues with Unbonding/Leaving
 
-If you can't UNBOND, it means your ygg-vault still has funds on it. This means your node spent more gas than it was supposed to during the cycle (various reasons) and is partially insolvent. To fix this you need to rectify your node's insolvency first (send it the missing funds directly) before doing anything.
+If you can't UNBOND, it means your Yggdrasil vault still has funds on it. This means your node spent more gas than it was supposed to during the cycle (various reasons) and is partially insolvent. To fix this you need to rectify your node's insolvency first (send it the missing funds directly) before doing anything.
 
 ## Leaving
 
-Leaving is considered permanent. There are two steps.
+1. If a node issues a LEAVE while Active, they are eligible to churn back in on the next churn
+2. If a node issues a LEAVE while on Standby, the node is considered Disabled and will never churn back in.
 
-1. If you are **Active**, send a LEAVE transaction to be ear-marked to churn out. This will take several hours even after changing your status to 'Standby'.
-2. If you are **Standby,** send a LEAVE transaction to get your bond back and be permanently jailed.
-
-{% hint style="info" %}
-Prior to running a mainnet validator, you should practice a full sequence of deploy, BOND in and LEAVE on a testnet cluster to ensure you know what you are doing and what to expect.
-{% endhint %}
-
-To leave the system, send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 tor in funds. Or use ASGARDEX.
+To leave the system, send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 RUNE.
 
 **Example**:
 
-`LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
+`LEAVE:<node address>`
 
-⏱\_Wait a few hours, verify on the /nodeaccount endpoint that you are now \*\*`Disabled`\*\*👀\_ Then send another LEAVE:
+⏱ _Wait a few hours, verify on the /nodes endpoint that you are now `Disabled` _ 👀 __ Then send another LEAVE:
 
-`LEAVE:thor1ryr5eancepklax5am8mdpkx6mr0rg4xjnjx6zz`
+`LEAVE:<node address>`
 
-⏱\_Wait a few minutes, verify you have received your bond back 👀\_ - `make status` should show `BOND 0.00` and your wallet should get the full Bond back.
+⏱ _Wait a few minutes, verify you have received your bond back_ 👀 - `make status` should show `BOND 0.00` and your wallet should get the full Bond back.
 
 {% hint style="info" %}
 Sometimes your Yggdrasil ETH vault may be slightly insolvent due to out-of-gas transactions consuming gas whilst Active. If the network will not let you LEAVE, you may need to manually send your Yggdrasil ETH vault 0.01 - 0.05 ETH from your own personal funds as a top-up, then try LEAVE again. Note: any funds you send to top-up ETH vault you cannot send back to yourself until _AFTER_ your node has left and you have received your bond back, otherwise it will be fined 1.5x what you transfer out.
@@ -101,7 +94,7 @@ https://thornode.thorchain.info/thorchain/vault/\<vaultPubKey>
 _🔥 Commence destroying your node 🔥_
 
 {% hint style="danger" %}
-If your node is both offline and inaccessible, then it will be unable to automatically return any assets in its yggdrasil vaults and it will be slashed 1.5x the value of those assets.
+If your node is both offline and inaccessible, then it will be unable to automatically return any assets in its Yggdrasil vaults and it will be slashed 1.5x the value of those assets.
 
 Example: If your node has a $5m bond (in RUNE), but has $1m in assets in its vaults it can't return, it will lose $1.5m in RUNE from its bond. The Node will only get back $3.5m of its bond.
 {% endhint %}
@@ -135,7 +128,7 @@ Use the **address** field. Chains with a **router** present such as ETH need to 
 The **memo** required is `YGGDRASIL-:<BlockHeight>`. For example `YGGDRASIL-:782412`. The block height can be found from the `status_since` field here:
 
 ```
-https://thornode.thorchain.info/thorchain/node/<your node address>
+https://thornode.ninerealms.com/thorchain/node/<your node address>
 ```
 
 {% hint style="info" %}

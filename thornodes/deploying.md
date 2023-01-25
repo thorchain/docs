@@ -11,7 +11,7 @@ Now you have a Kubernetes cluster ready to use, you can install the THORNode ser
 {% hint style="info" %}
 Helm charts are the defacto and currently easiest and simple way to package and deploy Kubernetes application. The team created different Helm charts to help to deploy all the necessary services. Please retrieve the source files from the Git repository here to follow the instructions below:
 
-\*\*\*\*[ **https://gitlab.com/thorchain/devops/node-launcher**](https://gitlab.com/thorchain/devops/node-launcher)\*\*\*\*
+[**https://gitlab.com/thorchain/devops/node-launcher**](https://gitlab.com/thorchain/devops/node-launcher)
 {% endhint %}
 
 ### Requirements
@@ -124,7 +124,7 @@ Note, to expedite syncing external chains, it is feasible to continually delete 
 Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight, ("xxx" is your unique ID):
 
 ```
-kubectl logs -f binance-daemon-xxx -n thornode
+kubectl logs -f deploy/binance-daemon -n thornode
 ```
 {% endhint %}
 
@@ -137,7 +137,7 @@ Get real-world blockheights on the external blockchain explorers, eg:\
 
 ## CHART SUMMARY
 
-#### THORNode full stack umbrella chart
+#### THORNode full stack / chart
 
 * **thornode**: Umbrella chart packaging all services needed to run a fullnode or validator THORNode.
 
@@ -145,23 +145,13 @@ This should be the only chart used to run THORNode stack unless you know what yo
 
 #### THORNode services:
 
-* **thor-daemon**: THORNode daemon
-* **thor-api**: THORNode API
-* **thor-gateway**: THORNode gateway proxy to get a single IP address for multiple deployments
+* **thornode**: THORNode daemon
+* **gateway**: THORNode gateway proxy to get a single IP address for multiple deployments
 * **bifrost**: Bifrost service
 * **midgard**: Midgard API service
 
-#### External services:
-
-* **binance-daemon**: Binance fullnode daemon
-* **bitcoin-daemon**: Bitcoin fullnode daemon
-* **ethereum-daemon**: Ethereum fullnode daemon
-* **chain-daemon**: as required for supported chains
-
 #### Tools
 
-* **elastic**: ELK stack, deperecated. Use elastic-operator chart
-* **elastic-operator**: ELK stack using operator for logs management
 * **prometheus**: Prometheus stack for metrics
 * **loki**: Loki stack for logs
 * **kubernetes-dashboard**: Kubernetes dashboard
