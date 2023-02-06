@@ -19,7 +19,8 @@
   * [Node Operators](roles/node-operators.md)
 * [RUNE](rune.md)
 * [Ecosystem](ecosystem.md)
-* [Frequently Asked Questions](frequently-asked-questions.md)
+* [Frequently Asked Questions](frequently-asked-questions/README.md)
+  * [Liquidity Providers](frequently-asked-questions/liquidity-providers.md)
 
 ## THORChain Finance
 

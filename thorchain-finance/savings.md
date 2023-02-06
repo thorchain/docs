@@ -6,7 +6,7 @@ description: THORFi Savings - Single-sided asset exposure using Synthetics
 
 ### Overview
 
-Users can gain yield with single sided asset exposure using [Synthetics](synthetic-asset-model.md). See the PR [here](https://gitlab.com/thorchain/thornode/-/issues/1342).&#x20;
+Users can gain yield with single sided asset exposure using [Synthetics](synthetic-asset-model.md). See the PR [here](https://gitlab.com/thorchain/thornode/-/issues/1342) and article [here](https://medium.com/thorchain/thorchain-savers-vaults-fc3f086b4057).
 
 Firstly, the User mints a Synthetic asset - this is an asset that retains 1:1 purchase rights on the underlying L1 asset. Then the User locks this synthetic asset in a Savings vault, and they are issued Saver Units - units that track their ownership of the total vault balance. The protocol monitors the yield the underlying Synth liquidity is earning, and pays that yield directly into the vault. The user can then reclaim their principle and earnings at any point later.&#x20;
 
@@ -41,11 +41,9 @@ There may be an economic bug in Synths, leading to breakdown in the accounting o
 
 Savers pay a liquidity fee to enter and exit, as well as network fees to pay for gas. Liquidity fees are demand-responsive and prevent economic attacks. Network fees to pay for gas ensure the system is sustainable.&#x20;
 
-
-
-
-
 ### Resources:
+
+[Savers Vaults Live on THORChain](https://medium.com/thorchain/thorchain-savers-vaults-fc3f086b4057) - THORChain Medium
 
 [Under the Hood: Single Sided Yield & Protocol Owned Liquidity](https://crypto-university.medium.com/under-the-hood-single-sided-yield-protocol-owned-liquidity-a5ef725a5d7a) - LP University
 
