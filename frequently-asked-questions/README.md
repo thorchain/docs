@@ -16,7 +16,7 @@ There are approx 8 core devs and 9 devs from Nine Realms working on the protocol
 
 **Where can I buy Rune?**&#x20;
 
-Exchanges like Binance list Native RUNE. Only Native RUNE is supported on THORChain.&#x20;
+Buy directly on THORChain by swapping any supported asset for Native RUNE or exchanges like Binance list Native RUNE. Only Native RUNE is supported on THORChain.&#x20;
 
 **What is the circulating supply of RUNE?**
 
@@ -33,6 +33,10 @@ All tokens have vested, except for those found in "vesting wallets", see [https:
 2 remaining vested wallets hold 10m RUNE (2% of supply). Will be progressively unlocked until mid-2023. [https://viewblock.io/thorchain/address/](https://viewblock.io/thorchain/address/thor1lrnrawjlfp6jyrzf39r740ymnuk9qgdgp29rqv)
 
 See the [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) **** allocation and additional information.&#x20;
+
+#### **What is the Roadmap?**
+
+The roadmap is detailed in the [THORChain 2023 Look Ahead](https://medium.com/thorchain/thorchain-2023-look-ahead-c1488da2c238) article.&#x20;
 
 #### **How are swap fees calculated?**&#x20;
 
