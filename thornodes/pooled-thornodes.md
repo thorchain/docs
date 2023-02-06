@@ -66,6 +66,10 @@ While the node is churned out, A Node Operator can remove a Bond Provider using 
 
 _This command will refund the Bond Provider their bond and remove them from the Bond Provider list only if `Amount` constitutes all of the bond the Bond Provider is owed._
 
+#### Node Operator Fee
+
+Node operators can set a fee that is paid to them from the earnings each churn. See [here](joining.md#node-operator-fee) for details on how to set a Node Operator fee.
+
 ### Bond Provider
 
 #### Adding/Removing Bond
@@ -86,8 +90,6 @@ Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.&#
 * NodeAddress - THORNode address (prefixed by `thor`)
 * Amount - Amount of RUNE to unbond
 * RUNE Tx Value - 0.02
-
-_Can only be done when the Node is not Active or Ready, but CAN be done immediately after a churn (during funds migration)._&#x20;
 
 {% hint style="info" %}
 **When you can add Bond**

@@ -85,11 +85,10 @@ Slash points undo profits made on the network. For every 1 slash point a node re
 
 Node Operators receive rewards if they are bonded and active on the network and are paid out in RUNE. While revenue is generated every block (approximately every 6 seconds) to each operator, those funds are not available immediately. Rewards can be accessed one of two ways:
 
-* Setting a Node Operator fee in basis points, which causes rewards to be paid directly to the Node Operator address after each churn. For example:
+* Setting a Node Operator fee in basis points, which causes rewards to be paid directly to the Node Operator address after each churn. See [here](joining.md#node-operator-fee) for details on how to set a Node Operator fee.
 * If no Node Operator fee is set, 100% of rewards will be accrued back to the bond after each churn. A Node Operator must then either LEAVE or wait until the node churns out to unbond principal or rewards.
-* See [here](joining.md#node-operator-fee) for details on how to set a Node Operator fee.
 
-Node Operators earn rewards relative to their bond, the more they bond, the more they earn. Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
+Node Operators earn rewards relative to their bond, the more they bond, the more they earn up to 3 times the median bond. Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
 
 Rewards are affected by the [Emission Schedule](../how-it-works/emission-schedule.md) and the [Incentive Pendulum](../how-it-works/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
 
@@ -128,7 +127,7 @@ In this example, an individual operator would receive 62,127 RUNE over the month
 
 ## Costs
 
-Depending on how the node was set up, it will likely cost between $1,500 and $3,0000 per month, potentially more as the blockchain scales and more chain integrations are added. The main driver of costs is resource allocation to hosting the fullnode daemons required for each of THORNode's chain integrations.
+Depending on how the node was set up, it will likely cost between $2,000 and $3,500 per month, potentially more as the blockchain scales and more chain integrations are added. The main driver of costs is resource allocation to hosting the fullnode daemons required for each of THORNode's chain integrations.
 
 ## Skillsets
 
