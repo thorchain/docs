@@ -74,6 +74,9 @@ All wallets and frontends should monitor for any of the halts and automatically 
 
 ## Node Migration
 
+###
+🚩 Warning: Running more than one active `thornode` with the same keys will result in significant bond slashing. It is highly recommended that you only use this procedure in emergency situations and while your node is in `Standby`. In addition, be certain your old node is disabled before your new node becomes `Active`.
+
 ### Create node backup
 
 * [ ] Copy mnemonic with the following command
@@ -111,6 +114,7 @@ kubectl cp thornode/\$pod:/root/.thornode/bifrost.tar ~/bifrost.tar
 
 ### Restore Node backup
 
+* [ ] When setting up your new node, it is important to set the same password for your `thornode` during `make install`
 * [ ] Copy node backup files made in [Node backup section](emergency-procedures.md#create-node-backup) to the new node's control station
 * [ ] Create `yaml` config files for temporary pods thornode-recovery.yaml
 
@@ -182,7 +186,7 @@ kubectl cp keyring-file/thorchain.info bifrost-recovery:/data/thornode/keyring-f
 
 ```
 kubectl cp bifrost.tar bifrost-recovery:/data/thornode/bifrost.tar
-kubectl exec deploy/thornode -c bifrost-recovery -- sh -c "cd /root/.thornode && tar xf bifrost.tar"
+kubectl exec bifrost-recovery -- sh -c "mkdir /root/.thornode && cd /root/.thornode && tar xf /data/thornode/bifrost.tar"
 ```
 
 * [ ] Stop temporary pods
@@ -192,7 +196,7 @@ kubectl delete -f thornode-recovery.yaml
 kubectl delete -f bifrost-recovery.yaml
 ```
 
-> **If you're maling live migration, then after stopping temporary pods on the NEW node stop thornode and bifrost daemons on the OLD node**
+> **🚩After stopping temporary pods on the NEW node, ensure that you have stopped `thornode` and `bifrost` daemons on the OLD node BEFORE you re-enable `thornode` and `bifrost`. Failure to do so will result in significant bond slashing.**
 
 * [ ] Re-scale thornode and bifrost deployments
 
