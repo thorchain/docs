@@ -16,7 +16,7 @@ There are approx 8 core devs and 9 devs from Nine Realms working on the protocol
 
 **Where can I buy Rune?**&#x20;
 
-Buy directly on THORChain by swapping any supported asset for Native RUNE or exchanges like Binance list Native RUNE. Only Native RUNE is supported on THORChain.&#x20;
+Directly on THORChain by swapping any supported asset for Native RUNE or exchanges like Binance list Native RUNE. Only Native RUNE is supported on THORChain.&#x20;
 
 **What is the circulating supply of RUNE?**
 
@@ -30,9 +30,7 @@ The protocol [inflation ](https://docs.thorchain.org/network/emission-schedule)i
 
 All tokens have vested, except for those found in "vesting wallets", see [https://viewblock.io/thorchain/addresses](https://viewblock.io/thorchain/addresses)
 
-2 remaining vested wallets hold 10m RUNE (2% of supply). Will be progressively unlocked until mid-2023. [https://viewblock.io/thorchain/address/](https://viewblock.io/thorchain/address/thor1lrnrawjlfp6jyrzf39r740ymnuk9qgdgp29rqv)
-
-See the [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) **** allocation and additional information.&#x20;
+2 remaining vested wallets hold 10m RUNE (2% of supply). Will be progressively unlocked until mid-2023. [https://viewblock.io/thorchain/address/](https://viewblock.io/thorchain/address/thor1lrnrawjlfp6jyrzf39r740ymnuk9qgdgp29rqv). See the [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) **** allocation and additional information.&#x20;
 
 #### **What is the Roadmap?**
 
@@ -66,19 +64,19 @@ Overview of the process and why:
 
 ➜ See [Outbound-Fee](../how-it-works/fees.md#outbound-fee).&#x20;
 
-➜ Standard Fee [inbound address](https://thornode.ninerealms.com/thorchain/inbound\_addresses) end point.
+➜ Standard Fee [inbound address](https://thornode.ninerealms.com/thorchain/inbound\_addresses) endpoint.
 
 ➜ [Watch Fees and Wait Times Explained](https://www.youtube.com/watch?v=XAdaEXO-Ofg) video
 
 #### Is there a place where I can see the THORChain Ecosystem?&#x20;
 
-Yes, see [Ecosystem](../ecosystem.md)
+Yes, the [website](https://thorchain.org/ecosystem) or the [Ecosystem](../ecosystem.md) page.
 
 ### **Technical FAQs**
 
 **How fast is THORChain?**
 
-Transactions Per Second, can go up to 5000 TPS, but are rarely seen. The highest number of swaps in one day was 100k swaps. Current transaction data can be seen at [https://viewblock.io/thorchain](https://viewblock.io/thorchain) and [https://midgard.ninerealms.com/v2/stats](https://midgard.ninerealms.com/v2/stats)
+Transactions Per Second (TPS), can go up to 5000 TPS, but are rarely seen. The highest number of swaps in one day was 100k swaps. Current transaction data can be seen at [https://viewblock.io/thorchain](https://viewblock.io/thorchain) and [https://midgard.ninerealms.com/v2/stats](https://midgard.ninerealms.com/v2/stats)
 
 #### Why use BFT Tendermint?&#x20;
 
@@ -86,13 +84,13 @@ THORChain uses Tendermint which is a classical BFT algorithm. 2/3 of the validat
 
 **What is TSS and how is it used to hold network funds?**
 
-Thorchain uses Threshold Signature Scheme (TSS) as a leaderless vault to hold funds within the network. TSS works like a multi-sig wallet but there there is no one or set of private keys that can be stolen. As a collective, all node operators work together to create a TSS vault and the super majority are required to sign a transaction for funds to leave the fault. Node operators need to bond more than 1.5x in bond the vault they can secure to ensure they do not collude to steal funds.
+Thorchain uses Threshold Signature Scheme (TSS) as a leaderless vault to hold funds within the network. TSS works like a multi-sig wallet but there there is no one or set of private keys that can be stolen. As a collective, all node operators work together to create a TSS vault and the super majority are required to sign a transaction for funds to leave the vault. Node operators need to bond more than 1.5x in bond the vault they can secure to ensure they do not collude to steal funds.
 
 #### **Does THORChain need external sources for price feeds, like oracles or weighted averages?**
 
 THORChain depends on its continuous liquidity pool design and arbitrageurs to set prices. When pools become imbalanced, arbitrage bots trade to rebalance them. THORChain knows the exchange rates between external asset pairs because RUNE binds all pools together. See [Prices](broken-reference).
 
-Unbalanced pools represent a profit opportunity for arbitrage traders -- if a trader can purchase a token at a lower price on THORChain and sell it for a profit elsewhere, they will. These trades re-balance the pool and ensure that prices accurately reflect the market value. These pool balancing trades happen 24/7 via arbitrage bots interacting with the protocol's API directly. It's even possible to run an arbitrage bot of your own!
+Unbalanced pools represent a profit opportunity for arbitrage traders -- if a trader can purchase a token at a lower price on THORChain and sell it for a profit elsewhere, they will. These trades re-balance the pool and ensure that prices accurately reflect the market value. These pool-balancing trades happen 24/7 via arbitrage bots interacting with the protocol's API directly. It's even possible to run an arbitrage bot of your own!
 
 #### **Is there a liquidity cap?**&#x20;
 
