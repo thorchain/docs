@@ -183,6 +183,8 @@ Lending controls are in place to address these concerns.&#x20;
 
 ## Lending Resources
 
+Learning
+
 * [Lending Walkthrough by Grassroots Crypto](https://www.youtube.com/watch?v=2jA4DDWxAbk)
 * [Lending Risks & Concerns by Grassroots Crypto](https://www.youtube.com/watch?v=glY\_RVYdsfM)
 * [Lending Design by Chad Barraford](https://www.youtube.com/watch?v=kNV7zVJTtJ0)
@@ -193,3 +195,4 @@ Lending controls are in place to address these concerns.&#x20;
 * Lending Design - [https://gitlab.com/thorchain/thornode/-/issues/1412](https://gitlab.com/thorchain/thornode/-/issues/1412)&#x20;
 * [Lending Primer](https://docs.google.com/document/d/15TBFAvMXL1WZ92kX3Memipt78epB6opqa9xKC8uhqtg/edit) by NineRelams
 * [Lending Health Dashboard](https://dashboards.ninerealms.com/#lending) by NineRelams
+* [Lending health Script](https://replit.com/@Orion9R/WIP-THORChain-LendingHealth) (Replit) by NineRelams
