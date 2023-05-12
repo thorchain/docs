@@ -21,7 +21,7 @@ A monitoring application for THORNodes.
 > A Vǫrðr or warden is a guardian spirit who will follow the soul of a living person from birth until death.
 
 {% hint style="info" %}
-Vǫrðr is a community developed monitoring app for THORNodes. It's fully open-source at [https://github.com/sourcapital/vordr](https://github.com/sourcapital/vordr).
+Vǫrðr is a community developed monitoring app for THORNodes. It's fully open-source at [https://github.com/sourcapital/vordr](https://github.com/sourcapital/vordr). This is 3rd party software outside of the scope of THORSec.
 {% endhint %}
 
 ## Features
