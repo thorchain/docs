@@ -12,8 +12,8 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 
 **Values**
 
-* Constant Values: [ ](https://midgard.ninerealms.com/v2/thorchain/constants)[https://midgard.ninerealms.com/v2/thorchain/constants](https://midgard.ninerealms.com/v2/thorchain/constants)
-* Mimir Values: [https://midgard.ninerealms.com/v2/thorchain/mimir](https://midgard.ninerealms.com/v2/thorchain/mimir)
+* Constant Values: [ ](https://midgard.ninerealms.com/v2/thorchain/constants)[https://thornode.ninerealms.com/thorchain/constants](https://thornode.ninerealms.com/thorchain/constants)
+* Mimir Values: [https://thornode.ninerealms.com/thorchain/mimir](https://thornode.ninerealms.com/thorchain/mimir)
 
 **Key**:&#x20;
 
