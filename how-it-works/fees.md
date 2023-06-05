@@ -38,19 +38,11 @@ The network then observes an outgoing transaction and records how much it cost i
 
 ## **Outbound Fee**
 
-The user is charged an amount that is **three times** the stored gas cost for each chain. The Node can then pay a gas price that is **1 times** the gas price, and the pool is subsidised a value that is **twice** what was observed. This means the pool earns a margin of 1x, and the Reserve earns a margin of 1x.
+Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.&#x20;
 
-Example:
+The network fee is collected in RUNE and sent to the Protocol Reserve. If the transaction involves an asset that is not RUNE the user pays the Network Fee in the external asset. If the transaction is in RUNE then the amount is directly taken in RUNE.
 
-| Chain         | Typical | Outbound Fee | Network Fee (Paid by Pool) | Pool Gets | Reserve Earns |
-| ------------- | ------- | ------------ | -------------------------- | --------- | ------------- |
-| Bitcoin       | $1      | $3           | $1                         | $2        | $1            |
-| Ethereum      | $10     | $30          | $10                        | $20       | $10           |
-| Binance Chain | $0.03   | $0.09        | $0.03                      | $0.06     | $0.03         |
-
-The Network Fee is collected in RUNE and sent to the Protocol Reserve. If the transaction involves an asset which is not RUNE the user pays the Network Fee in the external asset. Then the equivalent is taken from that pool's RUNE supply and added to the Protocol Reserve.
-
-If the transaction is in RUNE then the amount is directly taken in RUNE.
+Several factors affect the fee amount such as the gas rate and transaction size. See [dev docs](https://dev.thorchain.org/thorchain-dev/concepts/fees#outbound-fee) for more details.&#x20;
 
 ## Slip-Based Fee
 

@@ -60,6 +60,10 @@ Users can repay loans at any time, with any amount in any asset. Repayment is co
 4. Burn Derived Asset (thor.btc) (amount is the same percentage of collateral as a percentage of loan debt paid) -> Mint RUNE
 5. RUNE -> BTC.BTC (loan originator)
 
+{% hint style="success" %}
+Collateral is not returned until the loan is fully repaid. The user will always have the right to have their returned collateral if they repay the loan.&#x20;
+{% endhint %}
+
 ## Derived/Virtual Pool Depth
 
 Derived/virtual pool are created for each derived asset, including TOR, to allow swapping between L1 assets and derived assets va RUNE. Their depths expand and contract to throttle the amount of slippage users pay when swapping from an L1 asset to a derived asset. In periods of volatility, pool depth contracts to increase the slippage on swaps during this period of time. This incentivises users to wait for a period of lower volatility to exit/enter lending and protects the system against pool manipulation.
@@ -68,12 +72,7 @@ The TOR pool is a derived asset pool and operates the same as other derived asse
 
 `totalRuneDepth`: Sum of all RUNE in anchor pools (i.e. - USDC, USDT, BUSD-BD1 for TOR or just BTC.BTC for the L1)
 
-| Element              | Description                                            |
-| -------------------- | ------------------------------------------------------ |
-| MaxAnchorBlocks      | Protocol Setting, blocks to accumulate slip            |
-| derivedMinDepth      | Protocol Setting, Min derived pool depth               |
-| derivedDepthBasisPts | Protocol Setting, increase/decrease derived pool depth |
-| MaxAnchorSlip        | Protocol Setting, Max allowed slip on derived pool     |
+<table><thead><tr><th width="260">Element</th><th>Description</th></tr></thead><tbody><tr><td>MaxAnchorBlocks</td><td>Protocol Setting, blocks to accumulate slip</td></tr><tr><td>derivedMinDepth</td><td>Protocol Setting, Min derived pool depth</td></tr><tr><td>derivedDepthBasisPts</td><td>Protocol Setting, increase/decrease derived pool depth</td></tr><tr><td>MaxAnchorSlip</td><td>Protocol Setting, Max allowed slip on derived pool</td></tr></tbody></table>
 
 $$
 totalSlip = {\sum_{\substack{i=block}}^{\text{MaxAnchorBlocks}}}{poolSlip(i)}
@@ -183,16 +182,14 @@ Lending controls are in place to address these concerns.&#x20;
 
 ## Lending Resources
 
-Learning
-
-* [Lending Walkthrough by Grassroots Crypto](https://www.youtube.com/watch?v=2jA4DDWxAbk)
-* [Lending Risks & Concerns by Grassroots Crypto](https://www.youtube.com/watch?v=glY\_RVYdsfM)
-* [Lending Design by Chad Barraford](https://www.youtube.com/watch?v=kNV7zVJTtJ0)
-* [Lending Q\&A](https://www.youtube.com/watch?v=fUug5MBQBhA) by The Community
+* [How Lending Works by GrassRoots Crypto](https://youtu.be/AaqHG00RJks)
+* [THORChain Lending Rollout Q\&A by the Community](https://youtu.be/rkq8gteNBvk)
+* [Lending Walkthrough by GrassRoots Crypto](https://www.youtube.com/watch?v=2jA4DDWxAbk)
+* [Lending Risks & Concerns by GrassRoots Crypto](https://www.youtube.com/watch?v=glY\_RVYdsfM)
 
 **Documents / Spreadsheets**&#x20;
 
 * Lending Design - [https://gitlab.com/thorchain/thornode/-/issues/1412](https://gitlab.com/thorchain/thornode/-/issues/1412)&#x20;
 * [Lending Primer](https://docs.google.com/document/d/15TBFAvMXL1WZ92kX3Memipt78epB6opqa9xKC8uhqtg/edit) by NineRelams
 * [Lending Health Dashboard](https://dashboards.ninerealms.com/#lending) by NineRelams
-* [Lending health Script](https://replit.com/@Orion9R/WIP-THORChain-LendingHealth) (Replit) by NineRelams
+* [Lending Health Script](https://replit.com/@Orion9R/WIP-THORChain-LendingHealth) (Replit) by NineRelams
