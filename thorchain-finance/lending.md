@@ -93,7 +93,7 @@ newRuneDepth =  \frac{MaxAnchorSlip - totalSlip}{MaxAnchorSlip} * totalRuneDepth
 $$
 
 $$
-FinalRuneDepth = MAX({minRuneDepth, NewRuneDepth})
+FinalRuneDepth = MAX({minRuneDepth, newRuneDepth})
 $$
 
 {% hint style="info" %}
