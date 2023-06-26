@@ -89,11 +89,11 @@ $$
 Update rune depth to constrict based on slip:
 
 $$
-newRuneDepth =  \frac{MaxAnchorSlip - totalSlip}{10,000} * totalRuneDepth
+newRuneDepth =  \frac{MaxAnchorSlip - totalSlip}{MaxAnchorSlip} * totalRuneDepth
 $$
 
 $$
-FinalRuneDepth = MAX({minRuneDepth, totalRuneDepth})
+FinalRuneDepth = MAX({minRuneDepth, NewRuneDepth})
 $$
 
 {% hint style="info" %}
