@@ -8,7 +8,7 @@ description: How to manage a pooled THORNode with separate Operator and Provider
 
 Skilled Node Operators who don't individually have enough $RUNE to run a node themselves can use the Bond Provider feature to collect bond from other $RUNE holders.
 
-Node Operators can define up to **6 THOR addresses** as Bond Providers. These addresses will be able to bond and unbond to the node, earning rewards proportional to the amount of bond they contribute. Node Operators define an operator fee in **** basis points, which defaults to zero and must be set explicitly when bond providers are added. The Node Operator fee is taken from rewards and paid directly to the Node Operator address after each churn.
+Node Operators can define up to **10 THOR addresses** as Bond Providers. These addresses will be able to bond and unbond to the node, earning rewards proportional to the amount of bond they contribute. Node Operators define an operator fee in basis points, which defaults to zero and must be set explicitly when bond providers are added. The Node Operator fee is taken from rewards and paid directly to the Node Operator address after each churn.
 
 ### Rationale
 
@@ -22,12 +22,10 @@ Pooled THORNodes provide a way for a skilled Operator to enter a trusted agreeme
 
 At first glance it might seem Pooled Validators contradict the economic security model of THORChain (i.e. that Node Operators put up twice the value in slash-able bond as the assets they secure). With Pooled Validators it is possible for the Node Operator to individually put up less bond than the value of the assets that the node secures. However this nuance only exists within the relationship between the Node Operator and the Bond Providers. The Network only considers the THORNode as single entity thus the economic model is intact.&#x20;
 
-This is why the Node Operator and the Bond Providers must be in trusting relationships. The network does not care if an Operator steals all of the node's yggdrasil funds (25% of the bond); it will still profit by slashing 37.5% of the node's bond, including that portion contributed by the Bond Providers. This total value will still be at least 1.5x the value that the Node Operator stole.&#x20;
-
 {% hint style="warning" %}
 It would be disastrous to THORChain if operators could collect unlimited bond quantities from anon/retail providers. Malicious Operators could start marketing campaigns collecting RUNE and then rug-pull their users, or worse, access economies of scale and take over the network.&#x20;
 
-This is why Pooled THORNodes are invite-only and limited to 6 per node. It is difficult to access economies of scale in these small quantities.&#x20;
+This is why Pooled THORNodes are invite-only and limited to 10 per node. It is difficult to access economies of scale in these small quantities.&#x20;
 {% endhint %}
 
 ## Managing a Pooled THORNode

@@ -6,7 +6,27 @@ description: THORChain, THORNodes, Wallets and the ecosystem.
 
 ## About
 
-THORChain is a decentralised cross-chain liquidity protocol which uses the [Tendermint](https://tendermint.com/) consensus engine, [Cosmos-SDK](https://cosmos.network/) state machine and GG20 [Threshold Signature Scheme](https://eprint.iacr.org/2019/114.pdf) (TSS). It does not peg or wrap assets, it manages funds directly in on-chain vaults, and secures those funds using economic security. It could be described as a "cross-chain automated market maker (AMM), like Uniswap".&#x20;
+THORChain is a decentralised cross-chain liquidity protocol that utilises the Tendermint consensus engine, Cosmos-SDK state machine, and GG20 Threshold Signature Scheme (TSS). It operates as an independent Layer 1 cross-chain decentralised exchange (DEX) built on the Cosmos SDK.
+
+THORChain allows users to swap native assets across multiple chains without the need for wrapped or pegged assets. It ensures transparent and fair prices without relying on centralised third parties. The protocol features continuous liquidity pools that maximise efficiency. It does not peg or wrap assets, it manages funds directly in on-chain vaults, and secures those funds using economic security. It could be described as a "cross-chain automated market maker (AMM), like Uniswap".
+
+## THORChain Finance
+
+Building on the foundation of liquidity pools, THORChain pursues three important financial primitives:
+
+1. Allow a user to **Swap** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.&#x20;
+2. Allow a user to **Save** {_Asset X on Chain A_}.
+3. Allow a user to **Lend** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.&#x20;
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+## Developers
+
+Developers can create innovative products that integrate with THORChain, including wallets, exchanges, and various services, and monetise their efforts via affiliate fees. Developers can earn up to 10% in affiliate fees for swaps and liquidity additions, which encompass savers deposits. Developers only need to focus on creating engaging front-end interfaces and attracting users.
+
+See the [Dedicated Developer Documentation ](https://dev.thorchain.org/thorchain-dev/)and quick start guides for [Swapping ](https://dev.thorchain.org/thorchain-dev/swap-guide/quickstart-guide)and [Savers](https://dev.thorchain.org/thorchain-dev/saving-guide/quickstart-guide).
 
 ## Innovations
 
@@ -36,18 +56,6 @@ You can learn how THORChain works here:
 [how-it-works](how-it-works/)
 {% endcontent-ref %}
 
-## THORChain Finance
-
-Building on the foundation of liquidity pools, THORChain pursues three important financial primitives:
-
-1. Allow a user to **Swap** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.&#x20;
-2. Allow a user to **Save** {_Asset X on Chain A_}.
-3. Allow a user to **Lend** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.&#x20;
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
 ## THORNodes
 
 THORNodes service the THORChain network, of which there is intended to be initially 100, but can scale to 250+. The design goal of THORChain is such that anyone can join the network with the required funds (permissionless) and be anonymous, yet still be secure. THORChain takes this a step further by having a high churn schedule, kicking out nodes continuously. This high-churn network ensures that it is censorship-resistant, evades capture and resists centralisation.
@@ -57,19 +65,6 @@ Each THORNode is comprised of several independent servers in a cluster, which ru
 {% content-ref url="roles/node-operators.md" %}
 [node-operators.md](roles/node-operators.md)
 {% endcontent-ref %}
-
-## Developers
-
-Developers build products that integrate with THORChain, such as wallets, exchanges and other services. Developers simply need to connect to Midgard, but they should also consider running their own nodes.
-
-The order of integration is as follows:
-
-1. Connect to THORChain via Midgard or THORNode.
-2. Use data provided to display pools, assets, users, as well as get quotes for swaps/savers/lending.
-3. Use existing wallet infrastructure to send L1 transactions
-4. Use `xchainjs` packages to sign transactions and broadcast.
-
-Learn more at the [`Dedicated Dev Site`](https://dev.thorchain.org/thorchain-dev/).
 
 ## CONTRIBUTING
 

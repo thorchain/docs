@@ -2,7 +2,7 @@
 description: How THORChain enables synthetic assets with single asset exposure.
 ---
 
-# Synthetic Asset Model
+# Synthetics
 
 {% hint style="danger" %}
 THORChain can not ensure security of wrapped assets, so does not wrap L1 assets to represent them. Instead it uses its liquidity to synthesise them, since liquidity is always 100% secured.&#x20;
@@ -10,11 +10,9 @@ THORChain can not ensure security of wrapped assets, so does not wrap L1 assets 
 
 ## Synthetic Assets
 
-THORChain synthetics are unique in that they are 100% collateralised when they exist, but switch to being 1:1 pegged at the time of redemption. Other synthetic or wrapped asset designs are either over-collateralised, or pegged, never both. This means they are either capital-inefficient (require over-collateralisation), or capital-sensitive (can depeg if <100% collateralisation).&#x20;
+THORChain synthetics are unique in that they are 100% collateralised when they exist but switch to being 1:1 pegged at the time of redemption. Other synthetic or wrapped asset designs are either over-collateralised or pegged, never both. This means they are either capital-inefficient (requiring over-collateralisation) or capital-sensitive (can depeg if <100% collateralisation). The advantage of THORChain's design is that the collateralisation is managed by the system on a best-effort basis to be aspirationally 100%. However, when the asset is redeemed, it switches to being pegged 1:1, which means they can tolerate going below 100% collateralisation without losing the peg. The deficit is regained by liquidity-sensitive fees on the redemption so that the last holders of the asset can achieve re-collateralisation.
 
-The advantage of THORChain's design is that the collateralisation is managed by the system on a best-effort basis to be aspirationally 100%. However when the asset is redeemed, it switches to being pegged 1:1, which means they can tolerate going below 100% collateralisation without losing the peg. The deficit is regained by liquidity-sensitive fees on the redemption so that the last holders of the asset can achieve re-collateralisation.&#x20;
-
-The collateral for synthetic assets is constant-product liquidity, always 50% in the asset, with the other 50% in RUNE. As price changes, the pool re-balances on the curve, having much stronger inertia than if it were 100% collaterised by the endogenous asset (RUNE). The price-shift is subsidised by the other liquidity in the pool.&#x20;
+The collateral for synthetic assets is constant-product liquidity, always 50% in the asset, with the other 50% in RUNE. As the price changes, the pool rebalances on the curve, having much stronger inertia than if it were 100% collateralised by the endogenous asset (RUNE). The price-shift is subsidised by the other liquidity in the pool.
 
 {% hint style="info" %}
 Synthetic Assets are aspirationally 100% collateralised by pool liquidity when they exist, but redeemed on a 1:1 pegged basis, no matter the health of the collateral.&#x20;
@@ -119,9 +117,7 @@ This will soon be deprecated to allow PoL to control Synths.
 
 ### Protocol Owned Liquidity (POL)
 
-With the addition of yield-bearing synths, there can be a high demand for minting synths that exceed the cap with normal liquidity. See the original [PR](https://gitlab.com/thorchain/thornode/-/issues/1342).&#x20;
-
-POL has been introduced to deal with a high demand for minting synths while maintaining a safe synth minting limit by using the RUNE within the [Reserve](../how-it-works/emission-schedule.md#reserve).&#x20;
+With the addition of [yield-bearing synths,](savings.md) there can be a high demand for minting synths that exceed the cap with normal liquidity. See the original [PR](https://gitlab.com/thorchain/thornode/-/issues/1342). POL has been introduced to deal with a high demand for minting synths while maintaining a safe synth minting limit by using the RUNE within the [Reserve](../how-it-works/emission-schedule.md#reserve).&#x20;
 
 The network can monitor the synth utilisation on a per pool basis, and add liquidity (asymmetrically addition of RUNE) if utilisation is greater than `cap - 5%` (if economic security allows). If synth utilisation is under this figure, then the reserve would remove liquidity (if the PoL has an LP position in this pool).&#x20;
 
