@@ -2,9 +2,9 @@
 description: How THORChain facilitates continuous, incentivised liquidity.
 ---
 
-# Liquidity Model
+# Liquidity
 
-Instead of limit-order books, THORChain uses continuous liquidity pools (CLP). The CLP is arguably one of the most important features of THORChain, with the following benefits:
+Instead of limit-order books, THORChain utilises [continuous liquidity pools](continuous-liquidity-pools.md#continuous-liquidity-pools) (CLP). The CLP is one of THORChain's most significant features, offering the following benefits:
 
 * Provides “always-on” liquidity to all assets in its system.
 * Allows users to trade assets at transparent, fair prices, without relying on centralised third-parties.
@@ -14,7 +14,56 @@ Instead of limit-order books, THORChain uses continuous liquidity pools (CLP). T
 * Collects fee revenue for liquidity providers in a fair way.
 * Responds to fluctuating demands of liquidity.
 
-## CLP Derivation
+## Benefits of the CLP Model
+
+Assuming a working Swap Queue, the CLP Model has the following benefits:
+
+* The fee paid asymptotes to zero as demand subsides, so price delta between the pool price and reference market price can also go to zero.
+* Traders will compete for trade opportunities and pay maximally to liquidity providers.
+* The fee paid for any trade is responsive to the demand for liquidity by market-takers.
+* Prices inherit an "inertia" since large fast changes cause high fee revenue
+* Arbitrage opportunities are democratised as there is a diminishing return to arbitrage as the price approaches parity with reference
+* Traders are forced to consider the "time domain" (how impatient they want to be) for each trade.
+
+The salient point is the last one - that a liquidity-sensitive fee penalises traders for being impatient, however traders have a [choice](continuous-liquidity-pools.md#streaming-swaps-and-swap-optimisation). This is an important quality in markets, since it allows time for market-changing information to be propagated to all market participants, rather than a narrow few having an edge.
+
+### Slip-based Fee Model (CLP)
+
+The Slip-based Fee Model adds liquidity-sensitive fee compared to the [XYK ](continuous-liquidity-pools.md#clp-derivation)model. This ensures the fee paid is commensurate to the demand of the pool's liquidity, and is the one THORChain uses. The fee equation is shown below:
+
+$$
+fee = \frac{x^2Y}{(x+X)^2}
+$$
+
+### Streaming Swaps and Swap Optimisation
+
+THORChain allows users to choose their preferred trade strategy:
+
+1. Time-optimised: Get the trade done quickly, regardless of the cost.
+2. Price-optimised: Get the best price possible, even if it takes longer.
+
+The size of the swap and the desired timeframe are related. Impatient swappers who opt for a time-optimised swap will incur higher [slip fees](continuous-liquidity-pools.md#benefits-of-the-clp-model). Patient swappers achieve better prices but need to wait.
+
+Previously, swaps were always executed as soon as possible (time-optimised), without user control. Manual optimisation of prices required breaking up swaps into smaller ones, incurring tedious L1 inbound and outbound fees for each swap, reducing cost savings.
+
+Streaming Swaps gives users control over the timeframe, enabling better price optimisation. Large swaps can be divided into smaller ones over a specified time period without additional L1 fees.
+
+Streaming Swaps (Time-Optimised) is similar to a Time Weighted Average Price (TWAP) trade, limited to a 24-hour period.
+
+Two key aspects are:
+
+1. The interval allows arbitrageurs enough time to rebalance the pool within the swap, ensuring capital requirements are met throughout.
+2. The count enables the swapper to reduce the size of sub-swaps, minimising slippage for each execution.
+
+A time-optimised swap experiences less slippage compared to a price-optimised swap, without incurring on-chain L1 fees.
+
+&#x20;A fully price-optimised swap can achieve a swap fee as low as 5 basis points (excluding inbound and outbound fees).
+
+Swappers can set a price limit (minimum output). If sub-swaps cannot achieve the specified price during the swap stream, the total or partial inbound amount will be refunded.
+
+## Continuous Liquidity Pools
+
+### CLP Derivation
 
 | Element | Description   | Element | Description    |
 | ------- | ------------- | ------- | -------------- |
@@ -110,46 +159,6 @@ It is possible to build primitive trade ordering in an Ethereum Smart Contract i
 THORChain is able to order trades based on fee & slip size, known as the Swap Queue. This ensures fees collected are maximal and prevents low-value trades.
 {% endhint %}
 
-## Benefits of the CLP Model
-
-Assuming a working Swap Queue, the CLP Model has the following benefits:
-
-* The fee paid asymptotes to zero as demand subsides, so price delta between the pool price and reference market price can also go to zero.
-* Traders will compete for trade opportunities and pay maximally to liquidity providers.
-* The fee paid for any trade is responsive to the demand for liquidity by market-takers.
-* Prices inherit an "inertia" since large fast changes cause high fee revenue
-* Arbitrage opportunities are democratised as there is a diminishing return to arbitrage as the price approaches parity with reference
-* Traders are forced to consider the "time domain" (how impatient they want to be) for each trade.
-
-The salient point is the last one - that a liquidity-sensitive fee penalises traders for being impatient. This is an important quality in markets, since it allows time for market-changing information to be propagated to all market participants, rather than a narrow few having an edge.
-
-## Virtual Depths
-
-Balances of the pool (X and Y), are used as inputs for the CLP model. An amplification factor can be applied (to both, or either) in order to change the "weights" of the balances:
-
-| Element | Description           |
-| ------- | --------------------- |
-| a       | Input Balance Weight  |
-| b       | Output Balance Weight |
-
-$$
-Eqn 7: y= \frac{ xYbXa} {(x+Xa)^2 }
-$$
-
-If `a = b = 2` then the pool behaves as if the depth is twice as deep, the slip is thus half as much, and the price the swapper receives is better. This is akin to smoothing the bonding curve, but it does not affect pool solvency in any way. Virtual depths are currently not implemented
-
-If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep as the `X` asset, or, that the pool is no longer 1:1 bonded. Instead the pool can be said to have 67:33 balance, where the liquidity providers are twice as exposed to one asset over the other.
-
-{% hint style="info" %}
-Virtual Depths were initially applied to Synth Swaps using a multiplier of 2. It was intended that Synth Swaps would create 50% less slip and users pay 50% less fees. However, this was disabled after discovering that this would allow front-running. The multiplier is specified on `/constants` as:
-
-```
-"VirtualMultSynths": 2,
-```
-
-but currently overridden by a Mimir value of 1.
-{% endhint %}
-
 ## Calculating Pool Ownership
 
 When a liquidity provider commits capital, the ownership % of the pool is calculated:
@@ -204,6 +213,33 @@ $$
 $$
 units=P_0*\frac{rA_0+R_0a+2ra}{rA_0+R_0a+2R_0A_0}
 $$
+
+## Virtual Depths
+
+Balances of the pool (X and Y), are used as inputs for the CLP model. An amplification factor can be applied (to both, or either) in order to change the "weights" of the balances:
+
+| Element | Description           |
+| ------- | --------------------- |
+| a       | Input Balance Weight  |
+| b       | Output Balance Weight |
+
+$$
+Eqn 7: y= \frac{ xYbXa} {(x+Xa)^2 }
+$$
+
+If `a = b = 2` then the pool behaves as if the depth is twice as deep, the slip is thus half as much, and the price the swapper receives is better. This is akin to smoothing the bonding curve, but it does not affect pool solvency in any way. Virtual depths are currently not implemented
+
+If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep as the `X` asset, or, that the pool is no longer 1:1 bonded. Instead the pool can be said to have 67:33 balance, where the liquidity providers are twice as exposed to one asset over the other.
+
+{% hint style="info" %}
+Virtual Depths were initially applied to Synth Swaps using a multiplier of 2. It was intended that Synth Swaps would create 50% less slip and users pay 50% less fees. However, this was disabled after discovering that this would allow front-running. The multiplier is specified on `/constants` as:
+
+```
+"VirtualMultSynths": 2,
+```
+
+but currently overridden by a Mimir value of 1.
+{% endhint %}
 
 ## Impermanent Loss Protection
 
