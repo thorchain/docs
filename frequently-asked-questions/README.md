@@ -24,13 +24,13 @@ Approx 330M with a max of 500M. Full details at [https://ops.ninerealms.com/netw
 
 **What is the inflation rate of RUNE?**
 
-The protocol [inflation ](https://docs.thorchain.org/network/emission-schedule)is RESERVE/blocksPerYear/emissionCurve. With an active reserve of 100m, the annual inflation is 12.5m RUNE. 12.5m/\~340m outstanding is approx 3.6% per year. See the  [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) **** for more information.&#x20;
+The protocol [inflation ](https://docs.thorchain.org/network/emission-schedule)is RESERVE/blocksPerYear/emissionCurve. With an active reserve of 100m, the annual inflation is 12.5m RUNE. 12.5m/\~340m outstanding is approx 3.6% per year. See the  [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) for more information.&#x20;
 
 **What are the Vesting and Allocation Details?**
 
 All tokens have vested, except for those found in "vesting wallets", see [https://viewblock.io/thorchain/addresses](https://viewblock.io/thorchain/addresses)
 
-2 remaining vested wallets hold 10m RUNE (2% of supply). Will be progressively unlocked until mid-2023. [https://viewblock.io/thorchain/address/](https://viewblock.io/thorchain/address/thor1lrnrawjlfp6jyrzf39r740ymnuk9qgdgp29rqv). See the [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) **** allocation and additional information.&#x20;
+2 remaining vested wallets hold 10m RUNE (2% of supply). Will be progressively unlocked until mid-2023. [https://viewblock.io/thorchain/address/](https://viewblock.io/thorchain/address/thor1lrnrawjlfp6jyrzf39r740ymnuk9qgdgp29rqv). See the [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) allocation and additional information.&#x20;
 
 #### **What is the Roadmap?**
 
@@ -38,7 +38,7 @@ The roadmap is detailed in the [THORChain 2023 Look Ahead](https://medium.com/th
 
 #### **How are swap fees calculated?**&#x20;
 
-Swap fees are dependent on the depth of liquidity pools, the deeper the pools (aka the more liquidity) the less the fee is. Swap fee also depends on the size of the deposit. Bigger deposits incur more swap fees. **** See [Fees](../how-it-works/fees.md#slip-based-fee).&#x20;
+Swap fees are dependent on the depth of liquidity pools, the deeper the pools (aka the more liquidity) the less the fee is. Swap fee also depends on the size of the deposit. Bigger deposits incur more swap fees. See [Fees](../how-it-works/fees.md#slip-based-fee).&#x20;
 
 #### **What Interfaces / Exchanges are there? How to access THORChain?**&#x20;
 

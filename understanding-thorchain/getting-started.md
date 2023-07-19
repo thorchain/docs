@@ -54,7 +54,7 @@ If you add asymmetrically with RUNE first:
 
 ### Withdrawing Liquidity
 
-Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they’ve earned. Fees do apply when withdrawing, see [Outbound Fee](fees.md#outbound-fee).
+Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they’ve earned. Fees do apply when withdrawing, see [Outbound Fee](../how-it-works/fees.md#outbound-fee).
 
 ## **How to track your position**
 
@@ -76,7 +76,7 @@ Below provides a starting point, see [Wallets ](../ecosystem.md#wallets)and [Exc
 
 ### Wallets and Exchanges
 
-#### [**XDEFI**](https://www.xdefi.io/)****
+#### [**XDEFI**](https://www.xdefi.io/)
 
 A multi-chain web browser extension currently available on Chrome & Brave (soon on Firefox) built for DeFi users and NFT lovers. It is the world’s only wallet with native integrations on THORChain, Ethereum + several EVM networks and Terra.
 
@@ -84,7 +84,7 @@ A multi-chain web browser extension currently available on Chrome & Brave (soon 
 
 ➜ [FAQ](https://xdefi-wallet.gitbook.io/xdefi-wallet/faq/frequently-asked-questions)
 
-#### ****[**THORWallet**](https://www.thorwallet.org/)****
+#### [**THORWallet**](https://www.thorwallet.org/)
 
 A non-custodial wallet that gives you full control over your keys and allows you to swap coins across different native blockchains without an intermediary. It also allows you to earn yield by providing liquidity or investing in the multichain savings account, with new features already in development.
 
@@ -94,13 +94,13 @@ A non-custodial wallet that gives you full control over your keys and allows you
 
 ### **Exchanges/Platforms**
 
-#### ****[**AsgardEx Desktop**](https://github.com/thorchain/asgardex-electron/releases)****
+#### [**AsgardEx Desktop**](https://github.com/thorchain/asgardex-electron/releases)
 
 AsgardEx is powered by THORChain technology. Swap between assets across chains. Deposit assets to earn yield. Instantly swap assets in your wallet, or swap and send them to a friend at market prices. A small fee proportional to the slip is paid to whoever put assets in the pool. Fees are always fair and transparent.
 
 ➜ [Guide](https://github.com/thorchain/ledger-thorchain/blob/main/docs/INSTRUCTIONS.md)
 
-#### ****[**Rango Exchange**](https://rango.exchange/)****
+#### [**Rango Exchange**](https://rango.exchange/)
 
 Rango is a cross-chain DEX aggregator. It combines power of DEX aggregators inside blockchains (e.g. 1Inch) with multiple bridges (e.g. Binance Bridge) and cross chain liquidity providers (e.g. Thorchain) to give you access to better liquidity. Rango can provide you complex routes from any coin in any blockchain to another coin in other blockchains.&#x20;
 
@@ -116,7 +116,7 @@ DefiSpot is a multichain decentralized exchange (DEX) that aims to make it possi
 
 ➜ [What is Defi Spot?](https://medium.com/defispot/what-is-defispot-and-why-does-it-exist-1cb6df53d6b1)
 
-#### ****[**THORSwap**](https://app.thorswap.finance/)****
+#### [**THORSwap**](https://app.thorswap.finance/)
 
 THORSwap is the world’s first Multichain DEX that utilizes the THORChain network to provide a front-end user interface to perform cross-chain swaps. This is done in a permissionless, trustless, and non-custodial manner. There are no pegged or wrapped assets, it is purely native.
 
@@ -124,6 +124,6 @@ THORSwap is the world’s first Multichain DEX that utilizes the THORChain netwo
 
 ➜ [How to Enter Liquidity Pools using THORSwap](https://www.youtube.com/watch?v=SKv5aAMh2Js)
 
-#### ****[**Shapeshift**](https://app.shapeshift.com/)****
+#### [**Shapeshift**](https://app.shapeshift.com/)
 
 ShapeShift is a borderless, cross-chain crypto trading platform and portfolio manager for user self-sovereignty. The platform enables users to buy, send, receive, swap, and manage assets via mobile interface or web platform, and lets them choose to use a range of software or hardware wallets, including ShapeShift native, Portis, KeepKey, Trezor, and Ledger**.**

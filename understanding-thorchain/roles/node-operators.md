@@ -8,28 +8,28 @@ description: Node Operators
 
 THORNodes service the THORChain network, of which there is intended to be initially 120. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
-{% content-ref url="../thornodes/overview.md" %}
-[overview.md](../thornodes/overview.md)
+{% content-ref url="../../thornodes/overview.md" %}
+[overview.md](../../thornodes/overview.md)
 {% endcontent-ref %}
 
 ### Rewards
 
 Node Operators earn 67% of the system income when it is stable. You can read more here:
 
-{% content-ref url="../thornodes/overview.md" %}
-[overview.md](../thornodes/overview.md)
+{% content-ref url="../../thornodes/overview.md" %}
+[overview.md](../../thornodes/overview.md)
 {% endcontent-ref %}
 
-{% content-ref url="../how-it-works/incentive-pendulum.md" %}
-[incentive-pendulum.md](../how-it-works/incentive-pendulum.md)
+{% content-ref url="../../how-it-works/incentive-pendulum.md" %}
+[incentive-pendulum.md](../../how-it-works/incentive-pendulum.md)
 {% endcontent-ref %}
 
 ### Set up Instructions
 
 Follow these setup up instructions
 
-{% content-ref url="../thornodes/kubernetes/" %}
-[kubernetes](../thornodes/kubernetes/)
+{% content-ref url="../../thornodes/kubernetes/" %}
+[kubernetes](../../thornodes/kubernetes/)
 {% endcontent-ref %}
 
 ### Anonymity
@@ -40,8 +40,8 @@ Node Operators should stay anonymous and never socially signal that they are run
 
 There are a variety of tools available in the ecosystem for Node Operators, such as the Telegram Alerts bot:
 
-{% content-ref url="../thornodes/alerting.md" %}
-[alerting.md](../thornodes/alerting.md)
+{% content-ref url="../../thornodes/alerting.md" %}
+[alerting.md](../../thornodes/alerting.md)
 {% endcontent-ref %}
 
 

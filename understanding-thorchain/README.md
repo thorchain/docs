@@ -28,7 +28,7 @@ Key selling points of THORChain are:&#x20;
 
 ### What is RUNE?
 
-THORChain features a native token [RUNE](../rune.md), which owners can use to participate in the network and is used to pay for the swap/gas fees for RUNE pairs. RUNE has specific utility within the THORChain ecosystem, as it fills four key roles:&#x20;
+THORChain features a native token [RUNE](rune.md), which owners can use to participate in the network and is used to pay for the swap/gas fees for RUNE pairs. RUNE has specific utility within the THORChain ecosystem, as it fills four key roles:&#x20;
 
 * Settlement Asset
 * Network Security&#x20;
@@ -55,7 +55,7 @@ Block rewards are paid to Liquidity Providers and Node Operators on a set emissi
 
 Swaps in THORChain use native assets. Example: When a swap from RUNE to BTC occurs, RUNE is sent into THORChain from the user and BTC is sent out from one of THORChain’s vaults - Inbound gas is paid in Native RUNE, Outbound Fee is paid in BTC.
 
-When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH. See [Swappers ](../roles/swapping.md#how-swaps-work)for more information.&#x20;
+When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH. See [Swappers ](roles/swapping.md#how-swaps-work)for more information.&#x20;
 
 ### Risks associated with providing liquidity
 

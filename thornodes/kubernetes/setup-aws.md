@@ -22,7 +22,7 @@ description: Setting up a Kubernetes Cluster with AWS
 1. **Deploy a THORNode from a Linux VPS.**
 2. **Use Windows Subsystem for Linux -** [**https://docs.microsoft.com/en-us/windows/wsl/about**](https://docs.microsoft.com/en-us/windows/wsl/about)\*\*\*\*
 
-***
+
 {% endhint %}
 
 ## **Steps**

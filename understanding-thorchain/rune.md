@@ -14,7 +14,7 @@ RUNE is the asset which powers the THORChain ecosystem and provides the economic
 4. Incentives (paying out rewards, charging fees, subsidising gas)
 
 {% hint style="info" %}
-An introduction to RUNE and its roles is [here](how-it-works/understanding-thorchain.md#what-is-rune).
+An introduction to RUNE and its roles is [here](./#what-is-rune).
 {% endhint %}
 
 ## 1. Liquidity
@@ -79,8 +79,8 @@ THORNodes each occupy one of the 100 slots in the system can can vote on changin
 
 RUNE is the native currency of THORChain and is consumed as transaction fees on the network. All swaps are charged both a fixed network fee, as well as a dynamic slip-based fee. This prevents various attack paths such as denial-of-service attacks, as well as sandwich attacks on a pool. Learn more about fees here:
 
-{% content-ref url="how-it-works/fees.md" %}
-[fees.md](how-it-works/fees.md)
+{% content-ref url="../how-it-works/fees.md" %}
+[fees.md](../how-it-works/fees.md)
 {% endcontent-ref %}
 
 **Subsidising Gas**
@@ -95,8 +95,8 @@ This drives Nodes to bond the optimal amount, and pays Liquidity providers for t
 
 Learn about the Incentive Pendulum here:
 
-{% content-ref url="how-it-works/incentive-pendulum.md" %}
-[incentive-pendulum.md](how-it-works/incentive-pendulum.md)
+{% content-ref url="../how-it-works/incentive-pendulum.md" %}
+[incentive-pendulum.md](../how-it-works/incentive-pendulum.md)
 {% endcontent-ref %}
 
 ## Deterministic Value of RUNE

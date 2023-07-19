@@ -62,8 +62,8 @@ THORNodes service the THORChain network, of which there is intended to be initia
 
 Each THORNode is comprised of several independent servers in a cluster, which run full-nodes for each connected chain.&#x20;
 
-{% content-ref url="roles/node-operators.md" %}
-[node-operators.md](roles/node-operators.md)
+{% content-ref url="understanding-thorchain/roles/node-operators.md" %}
+[node-operators.md](understanding-thorchain/roles/node-operators.md)
 {% endcontent-ref %}
 
 ## CONTRIBUTING

@@ -77,7 +77,7 @@ To leave the system, send the following transaction from your original bond addr
 
 `LEAVE:<node address>`
 
-⏱ _Wait a few hours, verify on the /nodes endpoint that you are now `Disabled` _ 👀 __ Then send another LEAVE:
+⏱ _Wait a few hours, verify on the /nodes endpoint that you are now `Disabled`_ 👀  Then send another LEAVE:
 
 `LEAVE:<node address>`
 

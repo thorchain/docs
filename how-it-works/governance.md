@@ -43,19 +43,18 @@ When the community wants to support a new chain
 
 To delist, nodes stop watching a chain. When 67% are no longer watching, it gets removed. A process begins and the assets of that chain are returned to their owners.
 
-## Protocol Upgrades & THORChain Improvement Proposals (TIPs)
+## Change Management within THORChain
 
-Developers from the community submit THORChain Improvement Proposals (TIPs) to improve the network. The community discusses, tests and validates the software. If they decide that the change is beneficial, it's merged into the THORNode software.
+Developers from the community submit Architecture Decision Records (ADR) which are then voted on by node operators.\
+An ADR should provide:
 
-The protocol is made up of 3 main pieces, run by the nodes:
+* Context on the relevant goals and the current state
+* Proposed changes to achieve the goals
+* Summary of pros and cons
+* References
+* Changelog
 
-* application logic – runs the blockchain
-* schema – stores key values of vaults
-* network software – keeps the TSS protocol key generation and signing
-
-When nodes are churned off the network they can choose to update their software version. Over time more and more nodes will run the latest version. When 67% of nodes are running the new software, the network is automatically updated. This is how application logic, chain connections and schema are updated.
-
-When upgrading the network software, a certain block number in the future is set when the upgrade will happen. When the network reaches that point, the whole chain stops running and a genesis import to a new network occurs and operations continue normally.
+The ADR process is defined [here](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/PROCESS.md) and ADR status is listed [here](https://gitlab.com/thorchain/thornode/-/tree/develop/docs/architecture).
 
 ### Emergency Changes
 

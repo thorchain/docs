@@ -16,7 +16,7 @@ Note, THORChain and Binance Beacon Chain have near-instant finality so confirmat
 
 ### **Outbound Transaction Throttling** <a href="#b905" id="b905"></a>
 
-To prevent large amounts of funds from leaving the network in an instant, large outbound transactions are throttled from immediately leaving the network. Each block has an outbound value limit **** (currently 1000 RUNE worth) and each outbound transaction has a maximum time limit that it can be processed. This has three effects:
+To prevent large amounts of funds from leaving the network in an instant, large outbound transactions are throttled from immediately leaving the network. Each block has an outbound value limit (currently 1000 RUNE worth) and each outbound transaction has a maximum time limit that it can be processed. This has three effects:
 
 * Each outbound transaction to compete for the next outbound block, else, it will be processed in the following block, effectively throttling the total outbound capacity of the network. This is independent of [conf-counting](https://docs.thorchain.org/chain-clients/overview#confirmation-counting).
 * Large outbounds to spread across multiple blocks, up to 720 blocks (approx one hour).
@@ -36,7 +36,7 @@ The [THORSwap](http://thorswap.finance/) team has created a dashboard to view de
 
 THORChain has different levels of halt controls within the network which are controlled by Mimir values or by nodes, depending on the type and level.
 
-The halts that can affect an individual **** chain are:
+The halts that can affect an individual chain are:
 
 1. Halt Signing- outbounds que
 2. Halt LP - add/remove stopped, swapping allowed.

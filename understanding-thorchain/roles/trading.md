@@ -8,7 +8,7 @@ Prices on THORChain are maintained by profit-seeking traders. Traders find asset
 
 Traders compare the exchange rates on THORChain with the rates on external markets. If they find the price is lower on THORChain they can buy there and sell on an external market. If they find the price is lower on external markets they can buy there and sell on THORChain. This process is repeated at high-frequency. Over time, price information propagates and THORChain settles with external markets.
 
-This is how THORChain avoids the need for oracles and how prices are set. To learn more, see [Prices](https:/).
+This is how THORChain avoids the need for oracles and how prices are set. To learn more, see [Prices](../../roles/https:/).
 
 ## How it Works
 
