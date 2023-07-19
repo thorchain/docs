@@ -52,5 +52,6 @@
 
 ***
 
+* [Website](https://thorchain.org/)
 * [Community Telegram](https://t.me/thorchain\_org)
 * [Dev Discord](https://discord.gg/7RRmc35UEG)

@@ -88,7 +88,7 @@ Node Operators receive rewards if they are bonded and active on the network and 
 * Setting a Node Operator fee in basis points, which causes rewards to be paid directly to the Node Operator address after each churn. See [here](joining.md#node-operator-fee) for details on how to set a Node Operator fee.
 * If no Node Operator fee is set, 100% of rewards will be accrued back to the bond after each churn. A Node Operator must then either LEAVE or wait until the node churns out to unbond principal or rewards.
 
-Node Operators earn rewards relative to their bond, the more they bond, the more they earn up to 3 times the median bond. Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
+Node Operators earn rewards relative to their bond, the more they bond, the more they up to the [effective bond cap. ](https://gitlab.com/thorchain/thornode/-/merge\_requests/2464?commit\_id=ed4cb1fef0986b5e1934b832c8f5666b0e9184dd#15e70b3dc512eb985618965c14fdc1df3b01bc41)Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
 
 Rewards are affected by the [Emission Schedule](../how-it-works/emission-schedule.md) and the [Incentive Pendulum](../how-it-works/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
 
