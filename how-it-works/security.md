@@ -6,9 +6,9 @@ description: Describes the different security elements within THORChain
 
 THORChain has several layers of security within the code base to ensure solvency of the network, stability of the protocol and minimise the impact of any exploit. These measures are in addition to human security efforts, see more information [here](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1).
 
-### **Conformation Counting** <a href="#b905" id="b905"></a>
+### Confirmation **Counting** <a href="#b905" id="b905"></a>
 
-To project against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Conformation counting for specific chains when receiving incoming value. [Bifrost ](technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations are required is dependent on the size of the incoming value.
+To protect against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Confirmation Counting for specific chains when receiving incoming value. [Bifrost ](technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations are required is dependent on the size of the incoming value.
 
 See more full details [here](broken-reference).&#x20;
 
@@ -24,7 +24,7 @@ To prevent large amounts of funds from leaving the network in an instant, large 
 
 This feature is controlled by several [Mimir ](constants-and-mimir.md#outbound-transactions)values that can be changed by Node Operators as required. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge\_requests/1844).
 
-This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, but is necessary in ensuring the protection of liquidity provider funds.
+This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, but it is necessary in ensuring the protection of liquidity provider funds.
 
 The feature is designed to grow as the network grows and is controlled by several Mimir values that can be changed by Node Operators as required. Additionally, the feature is designed to promote bug disclosure instead of directly attacking the network as a bug disclosure is likely more profitable.
 
