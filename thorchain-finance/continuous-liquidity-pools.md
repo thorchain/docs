@@ -44,22 +44,26 @@ THORChain allows users to choose their preferred trade strategy:
 
 The size of the swap and the desired timeframe are related. Impatient swappers who opt for a time-optimised swap will incur higher [slip fees](continuous-liquidity-pools.md#benefits-of-the-clp-model). Patient swappers achieve better prices but need to wait.
 
-Previously, swaps were always executed as soon as possible (time-optimised), without user control. Manual optimisation of prices required breaking up swaps into smaller ones, incurring tedious L1 inbound and outbound fees for each swap, reducing cost savings.
+Previously, swaps were always executed as soon as possible (time-optimised), without user control. Manual optimisation of prices required breaking up swaps into smaller ones, incurring L1 inbound and outbound fees for each swap, reducing cost savings.
 
-Streaming Swaps gives users control over the timeframe, enabling better price optimisation. Large swaps can be divided into smaller ones over a specified time period without additional L1 fees.
+Streaming Swaps gives users control over the timeframe, enabling better price optimisation. Large swaps can be divided into smaller ones over specific intervals without additional L1 fees.
 
-Streaming Swaps (Time-Optimised) is similar to a Time Weighted Average Price (TWAP) trade, limited to a 24-hour period.
+Streaming Swaps (Price-Optimised) is similar to a Time Weighted Average Price (TWAP) trade, limited to a 24-hour period.
 
-Two key aspects are:
+Two important parts are:
 
-1. The interval allows arbitrageurs enough time to rebalance the pool within the swap, ensuring capital requirements are met throughout.
-2. The count enables the swapper to reduce the size of sub-swaps, minimising slippage for each execution.
+1. The **interval** allows arbitrageurs enough time to rebalance the pool within the swap, ensuring capital requirements are met throughout.
+2. The **count** enables the swapper to reduce the size of sub-swaps, minimising slippage for each execution.
 
-A time-optimised swap experiences less slippage compared to a price-optimised swap, without incurring on-chain L1 fees.
+A price-optimised swap experiences less slippage compared to a time-optimised swap, without losing capital to on-chain L1 fees.
 
 &#x20;A fully price-optimised swap can achieve a swap fee as low as 5 basis points (excluding inbound and outbound fees).
 
 Swappers can set a price limit (minimum output). If sub-swaps cannot achieve the specified price during the swap stream, the total or partial inbound amount will be refunded.
+
+{% hint style="info" %}
+Streaming Swaps are currently enabled for Swaps. Streaming Swaps will likely be activated for Savers and Lending in the future.
+{% endhint %}
 
 ## Continuous Liquidity Pools
 
