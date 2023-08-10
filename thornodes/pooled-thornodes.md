@@ -42,6 +42,8 @@ Add a bond provider using a BOND transaction with a modified memo from a wallet 
 
 `BOND:<NodeAddress>:<BondProviderAddress>:<NodeOperatorFee>`
 
+**Example:** BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun:thor1tfm4q8u57qzsznpvh02s8j483aga63cl02k6jt:2000
+
 * NodeAddress - THORNode address (prefixed by `thor`)
 * BondProviderAddress - Bond Provider address to whitelist (prefixed by `thor`)
 * NodeOperatorFee - fee in basis points to be taken from rewards and paid directly to Node Operator's address after each churn.
@@ -66,7 +68,22 @@ _This command will refund the Bond Provider their bond and remove them from the 
 
 #### Node Operator Fee
 
-Node operators can set a fee that is paid to them from the earnings each churn. See [here](joining.md#node-operator-fee) for details on how to set a Node Operator fee.
+Node operators can set a fee that is paid to them from the earnings each churn.&#x20;
+
+To set a Node Operator fee, send a deposit transaction with the following memo:
+
+`BOND:<node address>:<bond wallet address>:<operator fee in basis pts>`
+
+Example: `BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun:thor1tfm4q8u57qzsznpvh02s8j483aga63cl02k6jt:2000`
+
+To adjust the Fee, The no operators can send:\
+`BOND:<node address>::<operator fee in basis pts>`
+
+**Example**: `BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun::4000` to see the fee to 40%.
+
+Fees can range from 100 to 9900 basis pts. Setting 0 or 10000 causes all rewards to be to the node operator each churn.
+
+See [here](joining.md#node-operator-fee) for more details.
 
 ### Bond Provider
 
@@ -92,9 +109,9 @@ Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.&#
 {% hint style="info" %}
 **When you can add Bond**
 
-When the node is standby, it is not active or churning, so bond amounts can be increase/decreased.\
+When the node is standby, it is not active or churning, so bond amounts can be increased/decreased.\
 \
-After the network churns, there is a period of time typically 6 hours, in which the funds migrate to new vaults. Active nodes can add bond here. You can tell the network is migrating if there are `retiring` asgard vaults. \
+After the network churns, there is a period of time typically 6 hours, in which the funds migrate to new vaults. Active nodes can add bond here. You can tell the network is migrating if there are `retiring` Asgard Vaults. \
 [https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)
 {% endhint %}
 
