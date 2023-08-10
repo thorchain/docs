@@ -81,9 +81,9 @@ To adjust the Fee, The no operators can send:\
 
 **Example**: `BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun::4000` to see the fee to 40%.
 
-Fees can range from 100 to 9900 basis pts. Setting 0 or 10000 causes all rewards to be to the node operator each churn.
+Fees can range from 100 to 9900 basis pts. Setting 10000 causes all rewards to be to the node operator each churn. Setting it to 0 causes rewards to accrue to the bond.&#x20;
 
-See [here](joining.md#node-operator-fee) for more details.
+&#x20;See [here](joining.md#node-operator-fee) for more details.
 
 ### Bond Provider
 
