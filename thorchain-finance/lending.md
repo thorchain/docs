@@ -23,15 +23,19 @@ Lending benefits the protocol by:
 * Increased total bonded, allowing THORChain to scale.
 * Providing an attractive sink for capital
 
-The original lending design is proposed [here](https://gitlab.com/thorchain/thornode/-/issues/1412).
+{% hint style="success" %}
+[ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md) with full Lending details was released and approved by Node Operators. Lending will be launched on Mainnet.&#x20;
+{% endhint %}
 
-Lending will need to be adopted by node operators before it is added to THORChain. Questions and discussions are in the #lending channel of the dev discord.
+{% hint style="warning" %}
+Collateral will be restricted to BTC and ETH only on launch
+{% endhint %}
 
 ## Lending Fundamentals
 
 #### Derived Assets and Pools
 
-Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are backed by the liquidity of RUNE, and the liquidity of that is based on the RUNE-ASSET pair. Derived Assets are swapped from or swap to L1 assets, via RUNE, using [derived asset pools](lending.md#derived-virtual-pool-depth) which are based on the equivalent L1 pools. Unlike, Synethic Assets, derived assets are independent of Liquidity Pools and all swap fees are burnt. Derived assets are for accounting and there are no plans for them to be exportable or held by users.
+Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are backed by the liquidity of RUNE, and the liquidity of that is based on the RUNE-ASSET pair. Derived Assets are swapped from or swap to L1 assets, via RUNE, using [derived asset pools](lending.md#derived-virtual-pool-depth) that are based on the equivalent L1 pools. Unlike, Synethic Assets, derived assets are independent of Liquidity Pools and all swap fees are burnt. Derived assets are for accounting and there are no plans for them to be exportable or held by users.
 
 #### TOR Accounting
 
@@ -66,7 +70,7 @@ Collateral is not returned until the loan is fully repaid. The user will always 
 
 ## Derived/Virtual Pool Depth
 
-Derived/virtual pool are created for each derived asset, including TOR, to allow swapping between L1 assets and derived assets va RUNE. Their depths expand and contract to throttle the amount of slippage users pay when swapping from an L1 asset to a derived asset. In periods of volatility, pool depth contracts to increase the slippage on swaps during this period of time. This incentivises users to wait for a period of lower volatility to exit/enter lending and protects the system against pool manipulation.
+Derived/virtual pools are created for each derived asset, including TOR, to allow swapping between L1 assets and derived assets va RUNE. Their depths expand and contract to throttle the amount of slippage users pay when swapping from an L1 asset to a derived asset. In periods of volatility, pool depth contracts to increase the slippage on swaps during this period of time. This incentivises users to wait for a period of lower volatility to exit/enter lending and protects the system against pool manipulation.
 
 The TOR pool is a derived asset pool and operates the same as other derived asset pools except the TOR price comes from the medium of the four pools instead of one L1 Asset Pool.
 
@@ -178,16 +182,31 @@ If the value of $RUNE relative to $BTC is the same when the loan is opened and c
 
 Lending controls are in place to address these concerns.
 
+### Summary of Largest Risks
+
+Block Science reviewed the lending mechanisms exhaustively. The Output of their research includes:
+
+* [Risk Report](https://hackmd.io/@blockscience/H1Q-erh\_n)
+* [Simulation Summary](https://hackmd.io/R\_ksPSG0T6mtjsEE7U9q-w)
+* [CadCad simulation framework](https://gitlab.com/thorchain/misc/cadcad-thorchain/-/tree/main/documentation)
+
 ## Lending Resources
 
+**Explainer Article**
+
+* [Lending 101 by LP University](https://crypto-university.medium.com/under-the-hood-lending-101-f934e1c22792)&#x20;
+
+**Explainer Videos**
+
 * [How Lending Works by GrassRoots Crypto](https://youtu.be/AaqHG00RJks)
-* [THORChain Lending Rollout Q\&A by the Community](https://youtu.be/rkq8gteNBvk)
-* [Lending Walkthrough by GrassRoots Crypto](https://www.youtube.com/watch?v=2jA4DDWxAbk)
+* [Lending with Numbers by GrassRoots Crypto](https://youtu.be/PVpYU5kCOHI)
 * [Lending Risks & Concerns by GrassRoots Crypto](https://www.youtube.com/watch?v=glY\_RVYdsfM)
 
-**Documents / Spreadsheets**
+**Dashboard**
 
-* Lending Design - [https://gitlab.com/thorchain/thornode/-/issues/1412](https://gitlab.com/thorchain/thornode/-/issues/1412)
-* [Lending Primer](https://docs.google.com/document/d/15TBFAvMXL1WZ92kX3Memipt78epB6opqa9xKC8uhqtg/edit) by NineRelams
-* [Lending Health Dashboard](https://dashboards.ninerealms.com/#lending) by NineRelams
-* [Lending Health Script](https://replit.com/@Orion9R/WIP-THORChain-LendingHealth) (Replit) by NineRelams
+* [Lending Health Dashboard by NineRelams](https://dashboards.ninerealms.com/#lending)
+
+**Design Documents**
+
+* [ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md)
+* [Original](https://gitlab.com/thorchain/thornode/-/issues/1412) [Design](https://gitlab.com/thorchain/thornode/-/issues/1412)
