@@ -28,7 +28,8 @@ Lending benefits the protocol by:
 {% endhint %}
 
 {% hint style="warning" %}
-Collateral will be restricted to BTC and ETH only on launch
+Collateral will be restricted to BTC and ETH only on launch.\
+The Minimum Loan Term will be 30 days on launch.
 {% endhint %}
 
 ## Lending Fundamentals
