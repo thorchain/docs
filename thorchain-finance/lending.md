@@ -6,20 +6,20 @@ description: THORFi Lending within THORChain
 
 ## Overview
 
-Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio `CR` (collateralization ratio). The debt is always denominated in USD (aka `TOR`) regardless of what L1 asset the user receives.
+Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio `CR` (collateralization ratio). The debt is always denominated in USD (aka `TOR`), regardless of what L1 asset the user receives.
 
 All loans have 0% interest, no liquidations, and no expiration. Risk [is contained](lending.md#lending-controls) by limits on collateral for each pool, slip-based fees when opening and closing loans, dynamic CR, and a circuit breaker on RUNE supply.
 
 Lending allows users to:
 
-* Create loans using native assets as collateral
+* Create a loan using native assets as collateral
 * Hold a loan without the risk of liquidation
 * Be short on USD and long on crypto assets such as Bitcoin
 
 Lending benefits the protocol by:
 
 * Increased capital efficiency of the pools which increases system income and real yield.
-* Creating additional trading volume
+* Increased trading volume
 * Increased total bonded, allowing THORChain to scale.
 * Providing an attractive sink for capital
 
@@ -36,7 +36,7 @@ The Minimum Loan Term will be 30 days on launch.
 
 #### Derived Assets and Pools
 
-Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are backed by the liquidity of RUNE, and the liquidity of that is based on the RUNE-ASSET pair. Derived Assets are swapped from or swap to L1 assets, via RUNE, using [derived asset pools](lending.md#derived-virtual-pool-depth) that are based on the equivalent L1 pools. Unlike, Synethic Assets, derived assets are independent of Liquidity Pools and all swap fees are burnt. Derived assets are for accounting and there are no plans for them to be exportable or held by users.
+Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are backed by the liquidity of RUNE, and the liquidity of that is based on the RUNE-ASSET pair. Derived Assets are swapped from or swap to L1 assets, via RUNE, using [derived asset pools](lending.md#derived-virtual-pool-depth) that are based on the equivalent L1 pools. Unlike, Synthetic Assets, derived assets are independent of Liquidity Pools and all swap fees are burnt. Derived assets are for accounting and there are no plans for them to be exportable or held by users.
 
 #### TOR Accounting
 
@@ -46,9 +46,9 @@ All collateral, debt and repayments within Lending are converted to and accounte
 
 #### Open Loan Flow
 
-The user provides Bticoin collateral and can receive the debt in any asset however it is all accounted for in TOR.
+The user provides Bitcoin collateral and can receive the debt in any asset however it is all accounted for in TOR.
 
-1. User sends in collateral (BTC.BTC -> Rune, Rune -> thor.btc)
+1. User sends in collateral (BTC.BTC -> RUNE, RUNE -> thor.btc)
 2. thor.btc is held as collateral in the Lending module
 3. Convert thor.btc value to TOR terms
 4. Calculate debt in TOR based on CR and collateral TOR value.
@@ -91,18 +91,18 @@ $$
 startRuneDepth = \frac{derivedDepthBasisPts}{10,000} * totalRuneDepth
 $$
 
-Update rune depth to constrict based on slip:
+Update RUNE depth to constrict based on slip:
 
 $$
 newRuneDepth = \frac{MaxAnchorSlip - totalSlip}{MaxAnchorSlip} * totalRuneDepth
 $$
 
 $$
-FinalRuneDepth = MAX({minRuneDepth, newRuneDepth})
+finalRuneDepth = MAX({minRuneDepth, newRuneDepth})
 $$
 
 {% hint style="info" %}
-Derived Asset Pool depth ranges from `derivedMinDepth`to 100% of L1 asset but is reduced by `totalSlip`. Target is 90%-100%.
+Derived Asset Pool depth ranges from `derivedMinDepth`to 100% of L1 asset but is reduced by `totalSlip`. The target is 90%-100%.
 {% endhint %}
 
 {% hint style="info" %}
@@ -132,7 +132,7 @@ $$
 `totalAvailableRuneForProtocol` is distributed among pools available for lending based on their RUNE depth. For each lending pool, the `totalAvailableRuneForPool` (tarfp) is:
 
 $$
-tarfp = \frac{ poolRuneDeoth } {totalRuneDepthofLendingPools} * {totalAvailableRuneForProtocol}
+tarfp = \frac{ poolRuneDepth } {totalRuneDepthofLendingPools} * {totalAvailableRuneForProtocol}
 $$
 
 `totalAvailableAssetForPool` is convert rune value to Asset Terms. This imposes a collateral holding limit for each pool, a new loan cannot be opened if the new gross collateral exceeds this amount.
@@ -205,7 +205,7 @@ Block Science reviewed the lending mechanisms exhaustively. The Output of their 
 
 **Dashboard**
 
-* [Lending Health Dashboard by NineRelams](https://dashboards.ninerealms.com/#lending)
+* [Lending Health Dashboard by NineRealms](https://dashboards.ninerealms.com/#lending)
 
 **Design Documents**
 
