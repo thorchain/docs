@@ -48,9 +48,9 @@ All collateral, debt and repayments within Lending are converted to and accounte
 
 The user provides Bitcoin collateral and can receive the debt in any asset however it is all accounted for in TOR.
 
-1. User sends in collateral (BTC.BTC -> RUNE, RUNE -> thor.btc)
-2. thor.btc is held as collateral in the Lending module
-3. Convert thor.btc value to TOR terms
+1. The user sends in collateral (BTC.BTC -> RUNE, RUNE -> THOR.BTC)
+2. THOR.BTC is held as collateral in the Lending module
+3. Convert THOR.BTC value to TOR terms
 4. Calculate debt in TOR based on CR and collateral TOR value.
 5. Mint TOR,
 6. TOR -> RUNE, RUNE -> L1 out (e.g. - ETH)
@@ -62,7 +62,7 @@ Users can repay loans at any time, with any amount in any asset. Repayment is co
 1. L1 -> RUNE (optional, user can also pay back with RUNE)
 2. RUNE -> Mint TOR
 3. Burn TOR (amount deducted from loan debt)
-4. Burn Derived Asset (thor.btc) (amount is the same percentage of collateral as a percentage of loan debt paid) -> Mint RUNE
+4. Burn Derived Asset (THOR.BTC) (amount is the same percentage of collateral as a percentage of loan debt paid) -> Mint RUNE
 5. RUNE -> BTC.BTC (loan originator)
 
 {% hint style="success" %}
@@ -75,16 +75,16 @@ Derived/virtual pools are created for each derived asset, including TOR, to allo
 
 The TOR pool is a derived asset pool and operates the same as other derived asset pools except the TOR price comes from the medium of the four pools instead of one L1 Asset Pool.
 
-`totalRuneDepth`: Sum of all RUNE in anchor pools (i.e. - USDC, USDT, BUSD-BD1 for TOR or just BTC.BTC for the L1)
+The `totalRuneDepth` is the sum of all RUNE in anchor pools (i.e. - USDC, USDT, BUSD-BD1 for TOR or just BTC.BTC for the L1)
 
-<table><thead><tr><th width="260">Element</th><th>Description</th></tr></thead><tbody><tr><td>MaxAnchorBlocks</td><td>Protocol Setting, blocks to accumulate slip</td></tr><tr><td>derivedMinDepth</td><td>Protocol Setting, Min derived pool depth</td></tr><tr><td>derivedDepthBasisPts</td><td>Protocol Setting, increase/decrease derived pool depth</td></tr><tr><td>MaxAnchorSlip</td><td>Protocol Setting, Max allowed slip on derived pool</td></tr></tbody></table>
-
-$$
-totalSlip = {\sum_{\substack{i=block}}^{\text{MaxAnchorBlocks}}}{poolSlip(i)}
-$$
+<table><thead><tr><th width="260">Element</th><th>Description</th></tr></thead><tbody><tr><td>MaxAnchorBlocks</td><td>Protocol Setting, blocks to accumulate slip</td></tr><tr><td>DerivedMinDepth</td><td>Protocol Setting, Min derived pool depth</td></tr><tr><td>DerivedDepthBasisPts</td><td>Protocol Setting, increase/decrease derived pool depth</td></tr><tr><td>MaxAnchorSlip</td><td>Protocol Setting, Max allowed slip on derived pool</td></tr></tbody></table>
 
 $$
-MinRuneDepth = \frac{derivedMinDepth}{10,000} * totalRuneDepth
+totalSlip = {\sum_{\substack{i=block}}^{\text{maxAnchorBlocks}}}{poolSlip(i)}
+$$
+
+$$
+minRuneDepth = \frac{derivedMinDepth}{10,000} * totalRuneDepth
 $$
 
 $$
@@ -94,7 +94,7 @@ $$
 Update RUNE depth to constrict based on slip:
 
 $$
-newRuneDepth = \frac{MaxAnchorSlip - totalSlip}{MaxAnchorSlip} * totalRuneDepth
+newRuneDepth = \frac{maxAnchorSlip - totalSlip}{maxAnchorSlip} * totalRuneDepth
 $$
 
 $$
@@ -113,12 +113,10 @@ Derived Asset Pool spawn as required within a block and derived asset swaps are 
 
 ### Collateral Limits
 
-Lending is capped by limited the collateral that can be received by the protocol.
-
-`LendingLever`: throttles the amount of RUNE available for lending, in basis points.
+Lending is capped by limited the collateral that can be received by the protocol. The `lendingLever`throttles the amount of RUNE available for lending, in basis points.
 
 $$
-runeBurnt= {MaxRuneSupply - CurrentRuneSupply}
+runeBurnt= {maxRuneSupply - murrentRuneSupply}
 $$
 
 {% hint style="info" %}
@@ -126,16 +124,16 @@ Current Rune Supply is Native RUNE Circulating Supply.
 {% endhint %}
 
 $$
-totalAvailableRuneForProtocol = \frac{ LendingLever}{10,000} *runeBurnt
+totalAvailableRuneForProtocol = \frac{ lendingLever}{10,000} *runeBurnt
 $$
 
-`totalAvailableRuneForProtocol` is distributed among pools available for lending based on their RUNE depth. For each lending pool, the `totalAvailableRuneForPool` (tarfp) is:
+`totalAvailableRuneForProtocol` is distributed among pools available for lending based on their RUNE depth. For each lending pool, the `totalAvailableRuneForPool` (`tarfp`) is:
 
 $$
 tarfp = \frac{ poolRuneDepth } {totalRuneDepthofLendingPools} * {totalAvailableRuneForProtocol}
 $$
 
-`totalAvailableAssetForPool` is convert rune value to Asset Terms. This imposes a collateral holding limit for each pool, a new loan cannot be opened if the new gross collateral exceeds this amount.
+`totalAvailableAssetForPool` is converted from RUNE to Asset value. This imposes a collateral holding limit for each pool, a new loan cannot be opened if the new gross collateral exceeds this amount.
 
 ### Collateralization Ratio
 
@@ -166,14 +164,14 @@ Debt is calculated based on the collateral provided and the CR of the pool.
 | CR                   | Collateralization ratio |
 
 $$
-Debt = CollateralValueInTOR * \frac{10,000}{CR}
+debt = CollateralValueInTOR * \frac{10,000}{CR}
 $$
 
-The TOR Debt is swapped to the requested L1 asset and then sent to the user, slip fees apply.
+The TOR debt is swapped to the requested L1 asset and then sent to the user, slip fees apply.
 
 ### Loan Repayment Maturity
 
-The protocol setting `LoanRepaymentMaturity` defines the number of blocks before a loan can be repaid/closed. There is no option for repayment before this period.
+The protocol setting `loanRepaymentMaturity` defines the number of blocks before a loan can be repaid/closed. There is no option for repayment before this period.
 
 ## Concerns + Considerations
 
