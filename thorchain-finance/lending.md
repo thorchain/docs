@@ -6,9 +6,14 @@ description: THORFi Lending within THORChain
 
 ## Overview
 
-Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio `CR` (collateralization ratio). The debt is always denominated in USD (aka `TOR`), regardless of what L1 asset the user receives.
+Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio (CR). The debt is always denominated in USD (aka `TOR`), regardless of what L1 asset the user receives.
 
-All loans have 0% interest, no liquidations, and no expiration. Risk [is contained](lending.md#lending-controls) by limits on collateral for each pool, slip-based fees when opening and closing loans, dynamic CR, and a circuit breaker on RUNE supply.
+All loans have 0% interest, no liquidations, and no expiration. Risk [is mitigated](lending.md#lending-controls) by:
+
+* Limits on collateral for the network and each pool
+* Slip-based fees when opening and closing loans
+* Dynamic collateralization ratio
+* A circuit breaker on RUNE total supply
 
 Lending allows users to:
 
@@ -34,28 +39,28 @@ The Minimum Loan Term will be 30 days on launch.
 
 ## Lending Fundamentals
 
-#### Derived Assets and Pools
+### Derived Assets and Pools
 
-Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are backed by the liquidity of RUNE, and the liquidity of that is based on the RUNE-ASSET pair. Derived Assets are swapped from or swap to L1 assets, via RUNE, using [derived asset pools](lending.md#derived-virtual-pool-depth) that are based on the equivalent L1 pools. Unlike, Synthetic Assets, derived assets are independent of Liquidity Pools and all swap fees are burnt. Derived assets are for accounting and there are no plans for them to be exportable or held by users.
+Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are backed by the liquidity of RUNE, and the liquidity of that is based on the RUNE-ASSET pair. Derived assets are swapped from or swap to L1 assets, via RUNE, using [derived asset pools](lending.md#derived-virtual-pool-depth) that are based on the equivalent L1 pools. Unlike, Synthetic Assets, derived assets are independent of Liquidity Pools and all swap fees are burnt. Derived assets are for accounting and there are no plans for them to be exportable or held by users.
 
-#### TOR Accounting
+### TOR Accounting
 
 TOR (`thor.tor`) is a non-transferable unit of account within THORChain designed to match the value of $1 USD and has been in use since [ADR 003](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-003-flooredoutboundfee.md). It cannot be exported anywhere and always has a market cap of $0. TOR is valued by taking the median price of the active USD pools.
 
 All collateral, debt and repayments within Lending are converted to and accounted for in TOR.
 
-#### Open Loan Flow
+### Open Loan Flow
 
 The user provides Bitcoin collateral and can receive the debt in any asset however it is all accounted for in TOR.
 
 1. The user sends in collateral (BTC.BTC -> RUNE, RUNE -> THOR.BTC)
 2. THOR.BTC is held as collateral in the Lending module
 3. Convert THOR.BTC value to TOR terms
-4. Calculate debt in TOR based on CR and collateral TOR value.
-5. Mint TOR,
+4. Calculate debt in TOR based on CR and collateral TOR value
+5. Mint TOR
 6. TOR -> RUNE, RUNE -> L1 out (e.g. - ETH)
 
-#### Loan Repayment / CloseFlow
+### Loan Repayment / CloseFlow
 
 Users can repay loans at any time, with any amount in any asset. Repayment is converted into TOR.
 
@@ -102,12 +107,34 @@ finalRuneDepth = MAX({minRuneDepth, newRuneDepth})
 $$
 
 {% hint style="info" %}
-Derived Asset Pool depth ranges from `derivedMinDepth`to 100% of L1 asset but is reduced by `totalSlip`. The target is 90%-100%.
+Derived Asset Pool depth ranges from `derivedMinDepth` (10%) to 100% of L1 asset but is reduced by `totalSlip`. The target is 90%-100%.
 {% endhint %}
 
+
+
 {% hint style="info" %}
-Derived Asset Pool spawn as required within a block and derived asset swaps are processed after all L1 swaps within the swap queue.
+Derived Asset Pools spawn as required within a block and derived asset swaps are processed after all L1 swaps within the swap queue.
 {% endhint %}
+
+### Impact of Derived Pool Depth on Slippage
+
+The depth of the virtual pool will fluctuate depending on the amount of the trading volume within a time window determined by the variable [`maxAnchorSlip`](https://thornode.ninerealms.com/thorchain/mimir)`,` currently about 15 hours. This will reduce the output of swaps from derived pools compared to L1 pools. The [Pools](https://thornode.ninerealms.com/thorchain/pools) API endpoint contains '`derived_depth_bps`' which shows the derived pool depth relative to the L1 pool depth. For example, '`derived_depth_bps:9091`' this means the pool is 90.91% depth of the L1 Bitcoin pool. To quantify the impact this has to swaps across the derived pool, you first need to calculate the derived pool's RUNE depth using the following formula:
+
+$$
+derivedPoolRuneDepth = \frac{r \times \text{health}_R \times \text{health}_a} {( r + \text{health}_R )^2}
+$$
+
+Where `r` is the RUNE depth of the pool and `health` is `derived_depth_bps.`
+
+Next, multiply `derivedPoolRuneDepth` by [`assetPrice`](https://midgard.ninerealms.com/v2/pools) (the ratio of RUNE to Asset) to determine the `derivedPoolAssetDepth`.
+
+$$
+derivedPoolAssetDepth = derivedPoolRuneDepth \times \frac{RuneDepth} {AssetDepth}
+$$
+
+The `derivedPoolRuneDepth` and `derivedPoolAssetDepth` can then be used to calculate the swap output for the derived pool.
+
+The difference between the swap outputs of the derived and L1 pools quantifies the reduction due to the variable depth of the derived pool.
 
 ## Lending Controls
 
@@ -116,7 +143,7 @@ Derived Asset Pool spawn as required within a block and derived asset swaps are 
 Lending is capped by limited the collateral that can be received by the protocol. The `lendingLever`throttles the amount of RUNE available for lending, in basis points.
 
 $$
-runeBurnt= {maxRuneSupply - murrentRuneSupply}
+runeBurnt= {maxRuneSupply - currentRuneSupply}
 $$
 
 {% hint style="info" %}
