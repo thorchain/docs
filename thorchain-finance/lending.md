@@ -29,7 +29,7 @@ Lending benefits the protocol by:
 * Providing an attractive sink for capital
 
 {% hint style="success" %}
-[ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md) with full Lending details was released and approved by Node Operators. Lending will be launched on Mainnet.&#x20;
+[ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md) with full Lending details was released and approved by Node Operators.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -109,8 +109,6 @@ $$
 {% hint style="info" %}
 Derived Asset Pool depth ranges from `derivedMinDepth` (10%) to 100% of L1 asset but is reduced by `totalSlip`. The target is 90%-100%.
 {% endhint %}
-
-
 
 {% hint style="info" %}
 Derived Asset Pools spawn as required within a block and derived asset swaps are processed after all L1 swaps within the swap queue.
