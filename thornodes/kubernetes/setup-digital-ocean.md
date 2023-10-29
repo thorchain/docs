@@ -4,13 +4,14 @@ description: Setting up a Kubernetes Cluster with Digital Ocean (DO)
 
 # Setup - Digital Ocean
 
-## **Deploy a Kubernetes cluster in DO using EKS service.**
+## **Deploy a Kubernetes cluster in DO using DOKS service.**
 
 ### **Requirements**
 
 1. DO account
 2. `doctl` and DO credentials configured
 3. `kubectl`
+4. `homebrew`
 
 {% hint style="warning" %}
 **LINUX/MAC is the preferred method of setup.**
@@ -42,13 +43,13 @@ brew install terraform
 {% endtab %}
 {% endtabs %}
 
-#### **DOCLI**
+#### **DOCTL**
 
 The [Digital Ocean Control tool](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) allows you to manage your DO services.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
-Use the package manager [homebrew](https://formulae.brew.sh/) to install the DO CTL.
+Use the package manager [homebrew](https://formulae.brew.sh/) to install the `doctl`.
 
 ```
 brew install doctl
@@ -60,16 +61,16 @@ doctl account get
 {% endtabs %}
 
 {% hint style="warning" %}
-You will be asked for you Personal Access Token with read/write priveleges (retrieve from API Panel from the Digital Ocean web console.)
+You will be asked for a Personal Access Token with read/write priveleges (retrieve from the API Panel in the Digital Ocean web console.)
 
 **API -> Tokens/Keys -> Create Token.**
 
-Make sure you handle your secrets securely!
+Make sure you handle your secrets securely! You will need this token twice more for setup and if you navigate away from the API web console it will not be displayed again.
 {% endhint %}
 
 #### Kubernetes Control Tool
 
-You must install and configure the Kubernetes CLI tool (**kubectl**). **\*\*To install** kubectl\*\* , follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
+You must install and configure the Kubernetes CLI tool (`kubectl`). **To install kubectl** , follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
 
 {% tabs %}
 {% tab title="LINUX/MAC" %}
@@ -80,6 +81,27 @@ brew install kubernetes-cli
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="warning" %}
+**DO Droplet Limit**
+
+You will need to increase your Droplet Limit if you get an error like this:
+```
+Error: Error creating Kubernetes cluster: POST https://api.digitalocean.com/v2/kubernetes/clusters: 422 (request "8b639077-b8d3-4913-b3ec-8e70283dea49") validation error: worker_node_pool_specs[0].invalid droplet size
+```
+On the Digital Ocean web console (Settings > Team > Droplet Limit) you will be able to request the `Droplet Limit` be increased. 10 Droplets is the default limit, request 25 to begin with.
+{% endhint %}
+
+{% hint style="info" %}
+
+**Check the versions of `kubectl` that are supported by DO**
+
+```
+doctl kubernetes options versions
+```
+
+Make sure that you have installed a version of `kubectl` that is supported by DO.
+{% endhint %}
 
 #### **wget && jq**
 
@@ -109,7 +131,7 @@ During the deploy, you will be asked to enter information about your cluster:
 ![](<../../.gitbook/assets/image (20) (1).png>)
 
 * Name
-* DO Region -- see valid [List of Regions](https://www.digitalocean.com/docs/platform/availability-matrix/#other-product-availability) (use lower-case)
+* DO Region -- see valid [List of Regions](https://www.digitalocean.com/docs/platform/availability-matrix/#other-product-availability) (**use lower-case**)
 * Confirm `yes`
 
 ![Kubernetes Availability (note, use lower-case in the terminal)](<../../.gitbook/assets/image (30) (1).png>)
