@@ -44,8 +44,6 @@ There are a variety of tools available in the ecosystem for Node Operators, such
 [alerting.md](../../thornodes/alerting.md)
 {% endcontent-ref %}
 
-
-
 ### Security
 
 The most important aspect is that Nodes must pay for their Bond, since this is a core assumption to the security of the network. If a node pays $1m for their bond, then they will never try to steal assets unless if they can access more than $1m of funds. If they can, then they will make a profit.
@@ -60,9 +58,9 @@ Nodes must pay for their bond to ensure the economic assumptions of the network 
 
 THORChain makes private delegation possible, because it does not erode towards the issues discussed above.&#x20;
 
-Private Delegation requires Node Operators to know and whitelist in their bonders, and there can only be up to 6 per node. This assumes the bonders are in trust circles with their operators and have their own recourse to ensure operators act in accordance to their obligations. From the point of view of THORChain, a solo node is no different to a delegated node. The network will operate identically.&#x20;
+Private Delegation requires Node Operators to know and whitelist in their bonders, and there can only be up to 10 per node. This assumes the bonders are in trust circles with their operators and have their own recourse to ensure operators act in accordance to their obligations. From the point of view of THORChain, a solo node is no different to a delegated node. The network will operate identically.&#x20;
 
 In addition, there is no discretion as to fee commissions per operator. This means bonders will prioritise on engaging with operators based purely on their trust circles, not fees.&#x20;
 
-The limit of 6 bonders per node ensures that Operators can't try to access economies of scale. They are limited to large RUNE holders only.&#x20;
+The limit of 10 bonders per node ensures that Operators can't try to access economies of scale. They are limited to large RUNE holders only.&#x20;
 
