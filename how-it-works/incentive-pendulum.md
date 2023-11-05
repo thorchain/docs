@@ -4,6 +4,12 @@ description: THORChain's Incentive Pendulum keeps the network in a balanced stat
 
 # Incentive Pendulum
 
+The Incentive Pendulum controls the flow of system income between node operators and liquidity providers based on the total bond and total pooled.
+
+[Total Bonded](https://viewblock.io/thorchain/address/thor17gw75axcnr8747pkanye45pnrwk7p9c3cqncsv): Sum of all RUNE bonded by [node operators](../understanding-thorchain/roles/node-operators.md).
+
+[Total Pooled](https://viewblock.io/thorchain/pools): Sum of liquidity in all pools by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
+
 The capital on THORChain can lose its balance over time. Sometimes there will be too much capital in liquidity pools; sometimes there will be too much bonded by nodes. If there is too much capital in liquidity pools, the network is unsafe. If there is too much capital bonded by nodes, the network is inefficient.
 
 If the network becomes unsafe, it increases rewards (block rewards and liquidity fees) for node operators and reduces rewards for liquidity providers. If the network becomes inefficient, it boosts rewards for liquidity providers and reduces rewards for node operators.

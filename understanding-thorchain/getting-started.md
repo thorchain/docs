@@ -12,9 +12,7 @@ However, more advanced users will want to add symmetrical liquidity or bond as a
 
 ### Acquiring Native Rune&#x20;
 
-There are several ways.&#x20;
-
-* Buy any THORChain supported assets (such as BUSD/BTC/ETH) then swap it for native RUNE.&#x20;
+Buy any THORChain supported assets (such as BUSD/BTC/ETH) then swap it for native RUNE.&#x20;
 
 From there, send it to a [self custody wallet](https://linen.app/articles/what-is-a-self-custody-non-custodial-wallet/).
 
