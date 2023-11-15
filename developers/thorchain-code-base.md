@@ -6,7 +6,7 @@ description: A Guide to THORChain's Backend
 
 THORChain is a decentralised cross-chain liquidity protocol based on [Tendermint](https://tendermint.com/) & [Cosmos-SDK](https://cosmos.network/). 
 
-THORChain uses [Tendermint ](https://docs.tendermint.com/master/nodes/)for BFT consenus and networking and extends the  [Cosmos-SDK](https://docs.cosmos.network/v0.43/basics/app-anatomy.html) base app and creates its own module for specific logic handling. 
+THORChain uses [Tendermint ](https://docs.tendermint.com/master/nodes/)for BFT consensus and networking and extends the  [Cosmos-SDK](https://docs.cosmos.network/v0.43/basics/app-anatomy.html) base app and creates its own module for specific logic handling. 
 
 Code base location - develop branch
 
@@ -40,7 +40,7 @@ Internal
 
 ## Getting Super Powers
 
-Becoming a super hero is a fairly straight forward process:
+Becoming a super hero is a fairly straightforward process:
 
 ```
 $ give me super-powers
