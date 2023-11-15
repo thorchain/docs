@@ -34,7 +34,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Rango Exchange**](https://rango.exchange/) - First Multi-chain DEX Aggregator
 
-[**Lends**](https://app.lends.so/) - Borrow against it your crypto
+[**Lends**](https://app.lends.so/) - Borrow against your crypto
 
 [**Brokkr** ](https://app.brokkr.finance/#/)**-** Investment Platform for optimized DeFi Investing
 
@@ -144,7 +144,7 @@ Italian: [https://t.me/+2h7NgzNJ4KIxNzFk](https://t.me/+2h7NgzNJ4KIxNzFk)
 
 Portuguese: [https://t.me/thorchainportuguese](https://t.me/thorchainportuguese)
 
-France: [https://t.me/THORChainFr](https://t.me/THORChainFr)
+French: [https://t.me/THORChainFr](https://t.me/THORChainFr)
 
 Spanish: [http://t.me/THORChain\_es](http://t.me/THORChain\_es)
 
