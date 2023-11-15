@@ -29,7 +29,7 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 
 `MaxTxOutOffset`: Max number of blocks a scheduled outbound transaction can be delayed&#x20;
 
-`MinTxOutVolumeThreshold`: Quantity of outbound value (in 1e8 rune) in a block before its considered "full" and additional value is pushed into the next block&#x20;
+`MinTxOutVolumeThreshold`: Quantity of outbound value (in 1e8 rune) in a block before it's considered "full" and additional value is pushed into the next block&#x20;
 
 `TxOutDelayMax`: Maximum number of blocks a scheduled transaction can be delayed
 
