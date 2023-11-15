@@ -30,7 +30,7 @@ See the [Dedicated Developer Documentation ](https://dev.thorchain.org/thorchain
 
 ## Innovations
 
-There a numerous innovations in the THORChain Protocol that were built with first principles to be decentralised, resistant to capture and sustainable as possible:
+There a numerous innovations in the THORChain Protocol that were built with first principles to be decentralised, resistant to capture and as sustainable as possible:
 
 1. **Capped Proof Of Bond** validator selection keeps the network decentralised and Nakamoto Coefficient high.&#x20;
 2. **3-Day Validator Churning** stops validator stagnation, proves spendability of funds and upgrades the network with minimal governance.&#x20;
@@ -44,7 +44,7 @@ There a numerous innovations in the THORChain Protocol that were built with firs
 
 ## 3-Pillars of THORChain: Security, Liquidity, Volume
 
-THORChain contributors work to three goals:
+THORChain contributors work towards three goals:
 
 1. Improve the **Security** of the network, via either **Functional** (Solvency Checker, Node Pause, TxOut Throttler), **Procedural** (THORSec, Stagenet testing, PR reviews) or **Economic** (RUNE in the bond, or value of the $RUNE in the bond) Security.&#x20;
 2. Improve the **Liquidity** of the network, via Total Value Locked (TVL), or better UX around providing liquidity (Savers).&#x20;
