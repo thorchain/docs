@@ -8,7 +8,7 @@ description: THORChain Frequently Asked Questions and Issues
 
 **Who founded THORChain?**
 
-It was founded in 2018 by an psuedo-anonymous core team of contributors, of which Chad Barraford is a member. Today Nine Realms has publicly taken over THORChain operations which is led by Gavin McDermott.
+It was founded in 2018 by a pseudo-anonymous core team of contributors, of which Chad Barraford is a member. Today Nine Realms has publicly taken over THORChain operations which is led by Gavin McDermott.
 
 **How many developers are there?**
 
