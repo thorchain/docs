@@ -35,7 +35,7 @@ $$
 
 So if the reserve has 180m rune, a single block will emit \~4.28 Rune from the reserve, which means 1/2rds of that is awarded to the node operators. The rest is paid to liquidity providers.
 
-The exact distribution between node operators and liquidity providers (and therefore savers) is controlled be the [Incentive Pendulum](incentive-pendulum.md).
+The exact distribution between node operators and liquidity providers (and therefore savers) is controlled by the [Incentive Pendulum](incentive-pendulum.md).
 
 The emission curve is designed to start at around 30% APR and target 2% after 10 years. At that point, the majority of the revenue will come from fees.
 
