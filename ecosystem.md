@@ -50,8 +50,6 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**THORWallet Dex** ](https://www.thorwallet.org/)**-** Cross-chain Wallet & Dex, Mobile Wallet
 
-[**Ferz Wallet**](https://ferz.com/en/) - Cross-platform Progressive Web Application
-
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
 
 ### **Education**
@@ -107,6 +105,8 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 [**XChainJS** ](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
 
 [**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
+
+[**SwapKit**](https://docs.thorswap.finance/swapkit-docs/) - By THORSwap offers a composable, user-friendly Partner API/SDK on top of THORChain's cross-chain liquidity protocol.
 
 [**xchainpy-lib**](https://github.com/xchainjs/xchainpy-lib) - A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in PY.
 
