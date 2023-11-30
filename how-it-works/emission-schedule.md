@@ -33,7 +33,7 @@ $$
 blockReward = \frac{ \frac{reserve}{emissionCurve}}{blocksPerYear} = \frac{ \frac{180,000,000}{8}}{5256000} = 4.28
 $$
 
-So if the reserve has 180m rune, a single block will emit \~4.28 Rune from the reserve, which means 1/2rds of that is awarded to the node operators. The rest is paid to liquidity providers.
+So if the reserve has 180m rune, a single block will emit \~4.28 Rune from the reserve, which means half  of that is awarded to the node operators. The rest is paid to liquidity providers.
 
 The exact distribution between node operators and liquidity providers (and therefore savers) is controlled be the [Incentive Pendulum](incentive-pendulum.md).
 
