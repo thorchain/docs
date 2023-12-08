@@ -149,3 +149,7 @@ Go to https://www.binance.org/en/recover and enter your seed phrase from your Tr
 You can use THORChain’s keystore wallet seed phrase for xDefi, or TrustWallet. It uses the standard BIP39 mnemonic phrase, it is compatible with all multi-coin wallets and Ledger. Simply input the seed phrase and your wallet should be imported. If you are using Ledger or cold storage, it is recommended to create a new wallet.
 
 Please be aware of the implications of inserting seed phrase previously used in hot wallets; into a cold hardware wallet.
+
+#### I used a Taproot BTC address to swap or add liquidity
+
+THORChain does NOT currently support Taproot. User funds will be lost!
