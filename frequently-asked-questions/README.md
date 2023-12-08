@@ -152,4 +152,4 @@ Please be aware of the implications of inserting seed phrase previously used in 
 
 #### I used a Taproot BTC address to swap or add liquidity
 
-THORChain does NOT currently support Taproot. User funds will be lost!
+THORChain does NOT currently support Taproot. User funds will be lost if sent to or from a taproot address!
