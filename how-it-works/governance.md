@@ -71,4 +71,4 @@ Mimir is a feature to allow changes in the constants of the chain, such as Minim
 There are two types of `mimir`
 
 * Node Mimir: set by each node. Once 2.3rds have set a mimir, it is enacted. Only active nodes have their votes counted
-* Admin Mimir: set by admins to over-ride constants during testing. Admin-mimir can't control funds, but it can set parameters. Ultimately admin-mimir will be removed. Admin-mimr has a set exclusion list, values that cannot be updated by Admin, defined [here](https://gitlab.com/thorchain/thornode/-/blame/develop/x/thorchain/mimir\_accesscontrols.go#L10).
+* Admin Mimir: set by admins to override constants during testing. Admin-mimir can't control funds, but it can set parameters. Ultimately admin-mimir will be removed. Admin-mimr has a set exclusion list, values that cannot be updated by Admin, defined [here](https://gitlab.com/thorchain/thornode/-/blame/develop/x/thorchain/mimir\_accesscontrols.go#L10).

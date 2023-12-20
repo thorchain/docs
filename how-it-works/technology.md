@@ -10,7 +10,7 @@ THORChain is a leaderless vault manager:
 
 1. 1-way State Pegs allow syncing state from external chains
 2. A State Machine to coordinate asset exchange logic and delegate outgoing transactions
-3. Bifröst Chain Client to processs chain-specific transactions
+3. Bifröst Chain Client to process chain-specific transactions
 4. A TSS protocol to enable distributed threshold key-signing
 
 ![How THORChain works](<../.gitbook/assets/image (4) (1).png>)
