@@ -18,7 +18,7 @@ All the following are community-run resources. There are no "official" channels.
 
 **Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol** ](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/thorchain-dev/network/interface-management)
 
-**Block Explorers**: [**ViewBlock**  ](https://viewblock.io/thorchain)**|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORYield**](https://app.thoryield.com/transactions?page=1)
+**Block Explorers**: [**ViewBlock** ](https://viewblock.io/thorchain)**|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORYield**](https://app.thoryield.com/transactions?page=1)
 
 ## **Community Projects**
 
@@ -56,7 +56,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos
 
-[**LP University**](https://discord.gg/jVWS4EAYhh)  - Educational, Liquidity Pooling Strategy Discussions
+[**THORChain University**](https://discord.com/invite/tcuniversity) - Educational, Liquidity Pooling Strategy Discussions
 
 [**RuneBase** ](https://www.runebase.org/)- News and Updates on THORChain
 
@@ -68,7 +68,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**THORYield** ](https://thoryield.com/)**-** View your added liquidity on THORChain
 
-[**THORChain Data Digest**](https://alexsimpson96.medium.com/) - THORChain Data Reports / Analysis&#x20;
+[**THORChain Data Digest**](https://alexsimpson96.medium.com/) - THORChain Data Reports / Analysis
 
 [**DecentralFi**](https://decentralfi.io/) - Track positions  - https://decentralfi.io/liquidity?wallet={thor address}
 
@@ -98,7 +98,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Viewblock Dashboard**](https://dash.viewblock.io/d/thorchain) - THORChain Block Dashboard
 
-[**Viewblock Explorer** ](https://viewblock.io/thorchain) - THORChain Block Explorer
+[**Viewblock Explorer** ](https://viewblock.io/thorchain)- THORChain Block Explorer
 
 ### Community Dev Projects
 
@@ -114,7 +114,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 ### Community Socials
 
-[**THORChain Dev Discord** ](https://discord.gg/u6wMSKHpD4)(for only dev discussions):&#x20;
+[**THORChain Dev Discord** ](https://discord.gg/u6wMSKHpD4)(for only dev discussions):
 
 [**LP University**](https://discord.gg/c4EhDZdFMA) - Discord Server
 
