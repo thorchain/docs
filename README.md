@@ -18,10 +18,6 @@ Building on the foundation of liquidity pools, THORChain pursues three important
 2. Allow a user to **Save** {_Asset X on Chain A_}.
 3. Allow a user to **Lend** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.&#x20;
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
 ## Developers
 
 Developers can create innovative products that integrate with THORChain, including wallets, exchanges, and various services, and monetise their efforts via affiliate fees. Developers can earn up to 10% in affiliate fees for swaps and liquidity additions, which encompass savers deposits. Developers only need to focus on creating engaging front-end interfaces and attracting users.
