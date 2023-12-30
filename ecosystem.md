@@ -56,7 +56,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos
 
-[**THORChain University**](https://discord.com/invite/tcuniversity) - Educational, Liquidity Pooling Strategy Discussions
+[**THORChain University**](https://discord.com/invite/tcuniversity) - Educational, Feature-based Discussions
 
 [**RuneBase** ](https://www.runebase.org/)- News and Updates on THORChain
 
