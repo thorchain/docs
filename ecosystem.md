@@ -18,7 +18,7 @@ All the following are community-run resources. There are no "official" channels.
 
 **Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol** ](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/thorchain-dev/network/interface-management)
 
-**Block Explorers**: [**ViewBlock** ](https://viewblock.io/thorchain)**|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORYield**](https://app.thoryield.com/transactions?page=1)
+**Block Explorers**: [**RuneScan** ](https://runescan.io)**|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORYield**](https://app.thoryield.com/transactions?page=1)
 
 ## **Community Projects**
 
@@ -28,53 +28,55 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**ASGARDEX Desktop**](https://github.com/asgardex/asgardex-desktop/releases) - Wallet and Exchange Client for THORChain
 
-[**THORSwap**](https://thorswap.finance/) **-** World's first multi-chain dex powered by THORChain
+[**Coinbot**](https://t.me/TeamCoinBot_bot) - Telegram Exchange Bot for THORChain
 
-[**Shapeshift** ](https://shapeshift.com/)- Explore the Defi Universe
+[**Decentralfi**](https://decentralfi.io/) - Exchange Powered by THORChain
+
+[**DefiSpot**](https://www.defispot.com/trade) - Buy and Earn BTC, ETH, and More Fully Decentralized
+
+[**Lends**](https://app.lends.so/) - Borrow Against Your Crypto
 
 [**Rango Exchange**](https://rango.exchange/) - First Multi-chain DEX Aggregator
 
-[**Lends**](https://app.lends.so/) - Borrow against your crypto
+[**RocketX**](https://app.rocketx.exchange/) - Advanced, Hybrid CEX and DEX Aggregator
 
-[**Brokkr** ](https://app.brokkr.finance/#/)**-** Investment Platform for optimized DeFi Investing
+[**Swapper**](https://app.swapper.market/) - Exchange Powered by THORChain
 
-[**DefiSpot**](https://www.defispot.com/trade) - Buy and earn BTC, ETH, and more fully decentralized
+[**THORSwap**](https://thorswap.finance/) - World's First Multi-chain Dex Powered by THORChain
 
-[**THORGram**](https://t.me/thorgram\_public) - THORSwap in Telegram
+[**Unizen**](https://zcx.com/trade) - Omni-chain Enabled Aggregator
 
 ### Integrated Wallets and Exchanges
 
-[**Liquality** ](https://liquality.io/)**-** Browser Extension Crypto Wallet with Built-In Swaps
-
-[**XDeFi** ](https://www.xdefi.io)**-** Cross-chain Wallet & Dex, Browser Extention
-
-[**THORWallet Dex** ](https://www.thorwallet.org/)**-** Cross-chain Wallet & Dex, Mobile Wallet
-
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
+
+[**Liquality** ](https://liquality.io/) - Browser Extension Crypto Wallet with Built-In Swaps
+
+[**ShapeShift** ](https://shapeshift.com/) - The Original Multichain Exchange
+
+[**THORWallet Dex** ](https://www.thorwallet.org/) - Cross-chain Wallet & Dex, Mobile Wallet
+
+[**Trust Wallet** ](https://trustwallet.com/) - Best Crypto Wallet for Web3, NFTs and DeFi
+
+[**XDeFi** ](https://www.xdefi.io) - Cross-chain Wallet & Dex, Browser Extention
 
 ### **Education**
 
-[**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/)- Educational videos
+[**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
 
 [**THORChain University**](https://discord.com/invite/tcuniversity) - Educational, Feature-based Discussions
 
-[**RuneBase** ](https://www.runebase.org/)- News and Updates on THORChain
-
-[**THORNoob**](https://medium.com/@THORNoob) - Weekly Community Updates and Educational Articles
-
 ### **Analytics**
 
-[**THORChain Charts**](https://thorcharts.org/) **-** Key stats and figures related to core Thorchain operations
+[**THORChain Charts**](https://thorcharts.org/) - Key stats and figures related to core Thorchain operations
 
-[**THORYield** ](https://thoryield.com/)**-** View your added liquidity on THORChain
-
-[**THORChain Data Digest**](https://alexsimpson96.medium.com/) - THORChain Data Reports / Analysis
+[**THORYield** ](https://thoryield.com/) - View your added liquidity on THORChain
 
 [**DecentralFi**](https://decentralfi.io/) - Track positions  - https://decentralfi.io/liquidity?wallet={thor address}
 
 [**THORChain Information Bot**](https://t.me/thor\_infobot) - Useful commands to fetch network info
 
-[**THORChain Monitoring Bot**](https://t.me/thorchain\_alert) **-** Monitoring of major events in THORChain
+[**THORChain Monitoring Bot**](https://t.me/thorchain\_alert) - Monitoring of major events in THORChain
 
 [**THORChain Twitter Bot**](https://twitter.com/thor\_bot) - Posts network stats
 
@@ -98,7 +100,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Viewblock Dashboard**](https://dash.viewblock.io/d/thorchain) - THORChain Block Dashboard
 
-[**Viewblock Explorer** ](https://viewblock.io/thorchain)- THORChain Block Explorer
+[**RuneScan Explorer** ](https://runescan.io)- THORChain Block Explorer
 
 ### Community Dev Projects
 
@@ -114,25 +116,23 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 ### Community Socials
 
-[**THORChain Dev Discord** ](https://discord.gg/u6wMSKHpD4)(for only dev discussions):
+[**THORChain Dev Discord** ](https://discord.gg/u6wMSKHpD4)(only for dev discussions)
 
-[**LP University**](https://discord.gg/c4EhDZdFMA) - Discord Server
-
-[**THORSwap**](https://discord.gg/thorswap) - Discord Server
-
-[**xDefi**](https://discord.com/invite/xdefiwallet) - Discord Server
-
-[**THORChadDAO**](https://discord.gg/CWypyjbZjW) - Discord Server
-
-[**THORStarter**](https://t.me/thorstarter) - Telegram Chanel
+[**TC University**](https://discord.com/invite/tcuniversity) - Discord Server
 
 [**DefiSpot**](https://discord.gg/7Zuypgv6Qf) - Discord Server
 
+[**Lends**](https://discord.gg/NqjGxTVCWE) - Discord Server
+
+[**ShapeShift**](https://discord.gg/shapeshift) - Discord Server
+
 [**THORGuards**](https://discord.gg/KQEhr3jtAd) - Discord Server
 
-[**Vanir Threads**](https://discord.gg/4DnN5j4nnw) - Discord Server
+[**THORSwap**](https://discord.gg/thorswap) - Discord Server
 
-[**PixelTHOR**](https://t.me/runenft) - Telegram Channel
+[**THORWallet DEX**](https://discord.gg/gzs8skbaR3) - Discord Server
+
+[**xDefi**](https://discord.com/invite/xdefi) - Discord Server
 
 ### Regional Socials
 
