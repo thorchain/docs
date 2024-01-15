@@ -26,7 +26,7 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 ### Exchanges Only
 
-[**ASGARDEX Desktop**](https://github.com/asgardex/asgardex-desktop/releases) - Wallet and Exchange Client for THORChain
+[**ASGARDEX Desktop**](https://www.asgardex.com/) - Wallet and Exchange Client for THORChain
 
 [**Coinbot**](https://t.me/TeamCoinBot_bot) - Telegram Exchange Bot for THORChain
 
@@ -59,6 +59,19 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 [**Trust Wallet** ](https://trustwallet.com/) - Best Crypto Wallet for Web3, NFTs and DeFi
 
 [**XDeFi** ](https://www.xdefi.io) - Cross-chain Wallet & Dex, Browser Extention
+
+### (Non-Exchanges) Wallets which Supports Native RUNE
+
+**Keystore Json/txt File** - Password Encrypted File Supported by Many THORChain Exchanges
+
+[**KeepKey** ](https://www.keepkey.com/) - Hardware Wallet Accessed via ShapeShift UI: The Next Frontier
+of Crypto Security
+
+[**Ledger** ](https://www.ledger.com/) - Hardware Wallet with [Native RUNE Support](https://support.ledger.com/hc/en-us/articles/4402987997841-THORChain-RUNE-?docs=true): The Smartest Way to Secure your Crypto
+
+[**MetaMask via ShapeShift Snap** ](https://shapeshift.com/snap) - Browser Extension Wallet: Multichain Snap for MetaMask
+
+[**Leap Wallet** ](https://www.leapwallet.io/) - Browser Extension Wallet: The Super Wallet for Web3
 
 ### **Education**
 
