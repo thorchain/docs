@@ -12,7 +12,7 @@ THORChain offers a suite of decentralized and permissionless services:
 
 2. [Savings](https://docs.thorchain.org/thorchain-finance/savings) with native assets, e.g. native BTC, and earning yield paid in the same native assets.
 
-3. Depositing native assets, e.g. native BTC, as collateral for an [over-collateralized loan](https://docs.thorchain.org/thorchain-finance/lending), and withdrawing the debt asset in any native assets, e.g. native BTC or native ETH.
+3. [Lending](https://docs.thorchain.org/thorchain-finance/lending) out native assets, e.g. native BTC, as collateral to take out over-collateralized loans in any native assets, e.g. native BTC or native ETH.
 
 4. Depositing native assets, e.g. native BTC, into [Liquidity Pools (LPs)](https://docs.thorchain.org/understanding-thorchain/roles/liquidity-providers) asymmetrically, to provide liquidity.
 
