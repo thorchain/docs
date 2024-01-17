@@ -20,7 +20,7 @@ THORChain offers a suite of decentralized and permissionless services:
 
 \*THORChain does NOT currently support Taproot addresses (BTC, LTC or otherwise).
 
-For all the above services, users do not need to hold (or even be aware of) the RUNE token). They just need to choose from a plethora of [Frontend User Interfaces](https://docs.thorchain.org/ecosystem#exchanges-only) (Wallets and Exchanges) to interact with THORChain. For instructions, troubleshooting and support, please contact the respective User Interfaces support channels.
+For all the above services, users do not need to hold (or even be aware of) the RUNE token. They just need to choose from a plethora of [Frontend User Interfaces](https://docs.thorchain.org/ecosystem#exchanges-only) (Wallets and Exchanges) to interact with THORChain. For instructions, troubleshooting and support, please contact the respective User Interfaces support channels.
 
 ## Interacting with the RUNE token
 
