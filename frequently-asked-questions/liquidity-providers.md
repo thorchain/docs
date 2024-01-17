@@ -32,10 +32,6 @@ No. Liquidity Providers will receive 100% IL protection has ended on THORChain i
 
 ### **Asymmetrical / Symmetrical FAQs**
 
-#### Can I withdraw LP symmetrically after depositing an asset asymmetrically?&#x20;
-
-No. You cannot withdraw symmetrically. You can withdraw only asymmetrically for LP you deposited asymmetrically.&#x20;
-
 #### I entered asymmetrically but received less than anticipated.
 
 Yes, because when you pool asymmetrically your asset is swapped into 50% rune and 50% asset. When swapping you are subject to slippage and fees. There are 2 types charged on asymmetrical deposits/withdrawals:
@@ -51,11 +47,11 @@ No, there is only the deposit transaction fee.&#x20;
 
 #### What ways can I withdraw my asymmetrical deposit?&#x20;
 
-If you deposit asymmetrically you can ONLY withdraw asymmetrically.&#x20;
+If you deposit asymmetrically you can ONLY withdraw asymmetrically, to the same asset/address that was used for deposits.&#x20;
 
 #### What ways can I withdraw my symmetrical deposit?&#x20;
 
-You can withdraw your symmetrical deposit both asymmetrically and symmetrically.&#x20;
+You can withdraw your symmetrical deposit both asymmetrically (in either asset) and symmetrically.&#x20;
 
 **Will all ERC20 and BEP2 assets be supported and listed on THORChain by default?**
 
@@ -65,5 +61,48 @@ No. Only short tail assets with high MarketCap, good velocity and economic activ
 
 ➜ [Latest ERC20 Tokens List ](https://gitlab.com/thorchain/thornode/-/blob/develop/bifrost/pkg/chainclients/ethereum/token\_list.json)
 
+### Adding and Removing Liquidity
 
+#### Entering and Leaving a Pool
 
+To deposit assets on THORChain, you need a compatible wallet with your assets connected to one of the many User Interfaces. Liquidity providers can add liquidity to any of the active or pending pools. There is no minimum deposit amount, however, your deposit will have to cover the deposit and later a withdrawal fee costs. The ability to manage and withdraw assets is completely non-custodial and does not require any KYC or permission process. Only the original depositor has the ability to withdraw them (based on the address used to deposit the assets). Note, every time you add liquidity, Impermanent Loss Protection time resets.
+
+While Symmetrically additions are recommended, Asymmetrical additions are supported, below are the rules:
+
+If you add symmetrically first;
+
+* You will be able to add asymmetrically with RUNE later&#x20;
+* You will be able to add asymmetrically with ASSET later but it would create a new LP position&#x20;
+* You will be able to add symmetrically later
+
+If you add asymmetrically with ASSET first;
+
+* You will be able to add asymmetrically with RUNE later but it would create a new LP position
+* You will be able to add asymmetrically with ASSET later
+* You will be able to add symmetrically later but it would create a new LP position
+
+If you add asymmetrically with RUNE first;
+
+* You will be able to add asymmetrically with RUNE later
+* You will be able to add asymmetrically with ASSET later but it would create a new LP position
+* You will not be able to add symmetrically later&#x20;
+
+![Addition Rules](https://lh3.googleusercontent.com/Vqi0wC-1dEnTGS410rXaiKpaGW5KUrzEBZPtD\_jPyWOKsooVQtWZ5hZlJWuAvmuA4c22V4WGjjlDGKKhE6p4JWKXzHKt5CS4tvnKDGdNuTsEpkQr7Ual0LpMWkEH1yFIzCqzC\_Do)
+
+#### Withdrawing Liquidity
+
+Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they’ve earned. Fees do apply when withdrawing, see [Outbound Fee](../how-it-works/fees.md#outbound-fee).
+
+### **How to track your position**
+
+You can see your position if you connect to THORChain via an Interface you can use [THORYield](https://app.thoryield.com/).
+
+➜ [THORYield Guide](https://thorswap.medium.com/introducing-thoryield-v2-%EF%B8%8F-a6618c1cfcdb)
+
+**There are 3 factors affecting returns:**
+
+* **Proportion of transaction volume to pool depth** — If there is high volume compared to the depth of the pool then there will be higher rewards available to liquidity providers. If there is low volume compared to the depth of the pool then there will be lower rewards available.
+* **Share of the pool** — If you have a large share of the pool, you’ll earn higher returns. If a liquidity provider has 1% of a pool they receive 1% of the rewards for that pool.
+* **Fee size** — fees are determined by the underlying blockchain and the rewards from fees are proportional to the fees charged. A chain with higher fees will generate higher rewards for liquidity providers.
+
+\*Of significant note is that this mechanism of providing liquidity into the protocol; creates an opportunity for holders of non-yield generating assets (e.g. BTC, BNB) to earn a return on their investments.

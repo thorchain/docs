@@ -1,129 +1,31 @@
 ---
-description: Getting started with THORChain and How Tos
+description: Getting started with THORChain
 ---
 
 # Getting Started
 
 ## Using THORChain
 
-Users do not need RUNE to interact with THORChain. They can perform swaps and add/remove liquidity without ever directly touching RUNE or the THORChain protocol. These users need to find a THORChain-connected wallet.&#x20;
+THORChain offers a suite of decentralized and permissionless services:
 
-However, more advanced users will want to add symmetrical liquidity or bond as a Node. For this, they will need RUNE.&#x20;
+1. [Swapping](https://docs.thorchain.org/understanding-thorchain/roles/swapping) cross-chain between native assets, e.g. from native BTC (on the Bitcoin blockchain) to native ETH (on the Ethereum blockchain).
 
-### Acquiring Native Rune&#x20;
+2. [Savings](https://docs.thorchain.org/thorchain-finance/savings) with native assets, e.g. native BTC, and earning yield paid in the same native assets.
 
-Buy any THORChain supported assets (such as BUSD/BTC/ETH) then swap it for native RUNE.&#x20;
+3. [Lending](https://docs.thorchain.org/thorchain-finance/lending) out native assets, e.g. native BTC, as collateral to take out over-collateralized loans in any native assets, e.g. native BTC or native ETH.
 
-From there, send it to a [self custody wallet](https://linen.app/articles/what-is-a-self-custody-non-custodial-wallet/).
+4. [Liquidity Pools (LPs)](https://docs.thorchain.org/understanding-thorchain/roles/liquidity-providers): Depositing native assets, e.g. native BTC, to provide liquidity asymmetrically.
 
-## **What Wallets Support Native RUNE?**
+\*N.B. THORChain's Savings and LP create an opportunity for holders of non-yield generating native assets (e.g. BTC, BNB) to earn a return on their investments.
 
-Many wallets support Native RUNE. See [below ](getting-started.md#wallets-and-interfaces)for more information.
+\*THORChain does NOT currently support Taproot addresses (BTC, LTC or otherwise).
 
-![Supported Wallets](<../.gitbook/assets/image (3).png>)
+For all the above services, users do not need to hold (or even be aware of) the RUNE token. They just need to choose from a plethora of [Frontend User Interfaces](https://docs.thorchain.org/ecosystem#exchanges-only) (Wallets and Exchanges) to interact with THORChain. For instructions, troubleshooting and support, please contact the respective User Interfaces support channels.
 
-## Adding and Removing Liquidity
+## Interacting with the RUNE token
 
-### Entering and Leaving a Pool
+The [RUNE](https://docs.thorchain.org/understanding-thorchain/rune) token is the native asset on THORChain’s own sovereign blockchain. Users who want to hold RUNE, deposit into LPs symmetrically, and/or [bonding](https://docs.thorchain.org/understanding-thorchain/roles/node-operators) into nodes, will need a wallet which can hold native RUNE. Check here for a [list of wallets which support native RUNE](https://docs.thorchain.org/ecosystem#integrated-wallets-and-exchanges).
 
-To deposit assets on THORChain, you need a compatible wallet with your assets connected to one of the many User Interfaces. Liquidity providers can add liquidity to any of the active or pending pools. There is no minimum deposit amount, however, your deposit will have to cover the deposit and later a withdrawal fee costs. The ability to manage and withdraw assets is completely non-custodial and does not require any KYC or permission process. Only the original depositor has the ability to withdraw them (based on the address used to deposit the assets). Note, every time you add liquidity, Impermanent Loss Protection time resets.
+Users can swap for RUNE, from THORChain directly, using any of the [Frontend User Interfaces](https://docs.thorchain.org/ecosystem#exchanges-only); or acquire from supported centralized exchanges.
 
-While Symmetrically additions are recommended, Asymmetrical additions are supported, below are the rules:
 
-If you add symmetrically first;
-
-* You will be able to add asymmetrically with RUNE later&#x20;
-* You will be able to add asymmetrically with ASSET later but it would create a new LP position&#x20;
-* You will be able to add symmetrically later
-
-If you add asymmetrically with ASSET first;
-
-* You will be able to add asymmetrically with RUNE later but it would create a new LP position
-* You will be able to add asymmetrically with ASSET later
-* You will be able to add symmetrically later but it would create a new LP position
-
-If you add asymmetrically with RUNE first:
-
-* You will be able to add asymmetrically with RUNE later
-* You will be able to add asymmetrically with ASSET later but it would create a new LP position
-* You will not be able to add symmetrically later&#x20;
-
-![Addition Rules](https://lh3.googleusercontent.com/Vqi0wC-1dEnTGS410rXaiKpaGW5KUrzEBZPtD\_jPyWOKsooVQtWZ5hZlJWuAvmuA4c22V4WGjjlDGKKhE6p4JWKXzHKt5CS4tvnKDGdNuTsEpkQr7Ual0LpMWkEH1yFIzCqzC\_Do)
-
-### Withdrawing Liquidity
-
-Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they’ve earned. Fees do apply when withdrawing, see [Outbound Fee](../how-it-works/fees.md#outbound-fee).
-
-## **How to track your position**
-
-You can see your position if you connect to THORChain via an Interface you can use [THORYield](https://app.thoryield.com/).
-
-➜ [THORYield Guide](https://thorswap.medium.com/introducing-thoryield-v2-%EF%B8%8F-a6618c1cfcdb)
-
-**There are 3 factors affecting returns:**
-
-* **Proportion of transaction volume to pool depth** — If there is high volume compared to the depth of the pool then there will be higher rewards available to liquidity providers. If there is low volume compared to the depth of the pool then there will be lower rewards available.
-* **Share of the pool** — If you have a large share of the pool, you’ll earn higher returns. If a liquidity provider has 1% of a pool they receive 1% of the rewards for that pool.
-* **Fee size** — fees are determined by the underlying blockchain and the rewards from fees are proportional to the fees charged. A chain with higher fees will generate higher rewards for liquidity providers.
-
-\*Of significant note is that this mechanism of providing liquidity into the protocol; creates an opportunity for holders of non-yield generating assets (e.g. BTC, BNB) to earn a return on their investments.
-
-## Wallets and Interfaces
-
-Below provides a starting point, see [Wallets ](../ecosystem.md#wallets)and [Exchanges ](../ecosystem.md#exchanges)for a full list.&#x20;
-
-> ⚠️ THORChain does NOT support BTC Taproot! User funds will be lost if sent to or from a taproot address!
-
-### Wallets and Exchanges
-
-#### [**XDEFI**](https://www.xdefi.io/)
-
-A multi-chain web browser extension currently available on Chrome & Brave (soon on Firefox) built for DeFi users and NFT lovers. It is the world’s only wallet with native integrations on THORChain, Ethereum + several EVM networks and Terra.
-
-➜ [Guide](https://xdefi-wallet.gitbook.io/xdefi-wallet/web-browsers)
-
-➜ [FAQ](https://xdefi-wallet.gitbook.io/xdefi-wallet/faq/frequently-asked-questions)
-
-#### [**THORWallet**](https://www.thorwallet.org/)
-
-A non-custodial wallet that gives you full control over your keys and allows you to swap coins across different native blockchains without an intermediary. It also allows you to earn yield by providing liquidity or investing in the multichain savings account, with new features already in development.
-
-➜ [Guide](https://thorwallet.medium.com/introduction-of-thorwallet-ae6d1dfc2076)
-
-➜ [FAQ](https://www.thorwallet.org/faq/general)
-
-### **Exchanges/Platforms**
-
-#### [**AsgardEx Desktop**](https://github.com/thorchain/asgardex-electron/releases)
-
-AsgardEx is powered by THORChain technology. Swap between assets across chains. Deposit assets to earn yield. Instantly swap assets in your wallet, or swap and send them to a friend at market prices. A small fee proportional to the slip is paid to whoever put assets in the pool. Fees are always fair and transparent.
-
-➜ [Guide](https://github.com/thorchain/ledger-thorchain/blob/main/docs/INSTRUCTIONS.md)
-
-#### [**Rango Exchange**](https://rango.exchange/)
-
-Rango is a cross-chain DEX aggregator. It combines power of DEX aggregators inside blockchains (e.g. 1Inch) with multiple bridges (e.g. Binance Bridge) and cross chain liquidity providers (e.g. Thorchain) to give you access to better liquidity. Rango can provide you complex routes from any coin in any blockchain to another coin in other blockchains.&#x20;
-
-➜ [FQAs](https://rango.exchange/faq)
-
-➜ [Tutorials](https://rango.exchange/tutorials)
-
-➜ [How to Swap](https://rango.exchange/how-to-swap)
-
-#### [**DefiSpot**](https://www.defispot.com/trade)
-
-DefiSpot is a multichain decentralized exchange (DEX) that aims to make it possible for users to swap, lend and add/remove liquidity to cryptocurrencies without needing a centralized third-party or requiring users to provide Know-Your-Customer (KYC) details.
-
-➜ [What is Defi Spot?](https://medium.com/defispot/what-is-defispot-and-why-does-it-exist-1cb6df53d6b1)
-
-#### [**THORSwap**](https://app.thorswap.finance/)
-
-THORSwap is the world’s first Multichain DEX that utilizes the THORChain network to provide a front-end user interface to perform cross-chain swaps. This is done in a permissionless, trustless, and non-custodial manner. There are no pegged or wrapped assets, it is purely native.
-
-➜ [FAQs](https://app.thorswap.finance/faq)
-
-➜ [How to Enter Liquidity Pools using THORSwap](https://www.youtube.com/watch?v=SKv5aAMh2Js)
-
-#### [**Shapeshift**](https://app.shapeshift.com/)
-
-ShapeShift is a borderless, cross-chain crypto trading platform and portfolio manager for user self-sovereignty. The platform enables users to buy, send, receive, swap, and manage assets via mobile interface or web platform, and lets them choose to use a range of software or hardware wallets, including ShapeShift native, Portis, KeepKey, Trezor, and Ledger**.**
