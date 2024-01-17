@@ -20,7 +20,7 @@ For all the above services, users do not need to hold (or even be aware of) the 
 
 \*Of significant note is that THORChain's Savings and LP create an opportunity for holders of non-yield generating native assets (e.g. BTC, BNB) to earn a return on their investments.
 
-### Note: THORChain does NOT currently support Taproot addresses (BTC, LTC or otherwise) as per the information [here](https://discord.com/channels/838986635756044328/1193894402242912356/1196456209671270491).
+Note: THORChain does NOT currently support Taproot addresses (BTC, LTC or otherwise) as per the information [here](https://discord.com/channels/838986635756044328/1193894402242912356/1196456209671270491).
 
 For instructions, troubleshooting and support, please contact the respective User Interfaces support channels.
 
