@@ -14,9 +14,9 @@ THORChain offers a suite of decentralized and permissionless services:
 
 3. [Lending](https://docs.thorchain.org/thorchain-finance/lending) out native assets, e.g. native BTC, as collateral to take out over-collateralized loans in any native assets, e.g. native BTC or native ETH.
 
-4. Depositing native assets, e.g. native BTC, into [Liquidity Pools (LPs)](https://docs.thorchain.org/understanding-thorchain/roles/liquidity-providers) asymmetrically, to provide liquidity.
+4. [Liquidity Pools (LPs)](https://docs.thorchain.org/understanding-thorchain/roles/liquidity-providers): Depositing native assets, e.g. native BTC, to provide liquidity asymmetrically.
 
-\*Of significant note is that THORChain's Savings and LP create an opportunity for holders of non-yield generating native assets (e.g. BTC, BNB) to earn a return on their investments.
+\*N.B. THORChain's Savings and LP create an opportunity for holders of non-yield generating native assets (e.g. BTC, BNB) to earn a return on their investments.
 
 \*THORChain does NOT currently support Taproot addresses (BTC, LTC or otherwise).
 
