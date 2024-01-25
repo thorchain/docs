@@ -46,6 +46,8 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Swapper**](https://app.swapper.market/) - Exchange Powered by THORChain
 
+[**Symbiosis Finance**](https://symbiosis.finance/) - A Multi-chain Liquidity Protocol
+
 [**THORSwap**](https://thorswap.finance/) - World's First Multi-chain Dex Powered by THORChain
 
 [**Unizen**](https://zcx.com/trade) - Omni-chain Enabled Aggregator
