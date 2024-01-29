@@ -8,9 +8,9 @@ description: Overview of THORNodes
 
 THORNodes service the THORChain network. Each THORNode is comprised of several independent servers in a cluster. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
-Running a node is a serious undertaking. While Node Operators are well [compensated ](overview.md#compensation)for running a node, there are also [risks](overview.md#risks-to-bond), [skills required](overview.md#skillsets) and [costs](overview.md#costs).&#x20;
+Running a node is a serious undertaking. While Node Operators are well [compensated ](overview.md#compensation)for running a node, there are also [risks](overview.md#risks-to-bond), [skills required](overview.md#skillsets) and [costs](overview.md#costs).
 
-See the [Node Operator 101 Video](https://youtu.be/XXYXNAolPEU) to learn more before running a node.&#x20;
+See the [Node Operator 101 Video](https://youtu.be/XXYXNAolPEU) to learn more before running a node.
 
 To set up a node, you have two choices:
 
@@ -64,7 +64,7 @@ To run a node, you must obtain a significant amount of Rune, minimums [apply](ov
 
 Running a malicious node or stealing from the network results in a slashing of this bond. Here are the ways in which a validator’s bond can get slashed.
 
-* **Double Sign** (5% of minimum bond) - if it is observed that a single validator node is committing blocks on multiple chains. To avoid this, never run two nodes with the same node account at the same time.&#x20;
+* **Double Sign** (5% of minimum bond) - if it is observed that a single validator node is committing blocks on multiple chains. To avoid this, never run two nodes with the same node account at the same time.
 * **Unauthorised transaction** (1.5x transaction value) - if a node sends funds without authorization, the bond is slashed 1.5x the value of the stolen funds. The slashed bond is dumped into the pool(s) where the funds were stolen and added to the reserve.
 
 Bond slashing takes directly from the bond and does not affect rewards.
@@ -73,8 +73,8 @@ Bond slashing takes directly from the bond and does not affect rewards.
 
 When a node is active, it earns rewards from the network in RUNE. Sufficient rewards are required to be earned in order for a Validator to be profitable. Running an unreliable node results in rewards being slashed. Here are the ways in which a validator’s rewards can be slashed.
 
-* **Not Observing** (2 slash pts) - if a node does not observe transactions for all chains, while other nodes do, they get slash points added.&#x20;
-* **Not signing a transaction** (600 slash pts) - if a node does not sign an outbound transaction, as requested by the network, they will get slash points added.&#x20;
+* **Not Observing** (2 slash pts) - if a node does not observe transactions for all chains, while other nodes do, they get slash points added.
+* **Not signing a transaction** (600 slash pts) - if a node does not sign an outbound transaction, as requested by the network, they will get slash points added.
 * **Fail to keygen** (1 hr of revenue) - When the network attempts to churn, and attempts to create a new Asgard pubkey for the network, and fails to do so due to a specific node(s), they will lose 1 hr of revenue from their bond.
 
 Slash points undo profits made on the network. For every 1 slash point a node receives, they lose 1 block of rewards. Rewards slashing reduces earned rewards and does not affect a validator’s bond.
@@ -149,7 +149,7 @@ If the answer is no, it’s probably best that you do not run a node and partici
 
 When you run a THORNode, each THORNode will have its own node account. An example node account looks like this:
 
-```
+``` json
 {
     "node_address": "thor10rgvc7c44mq5vpcq07dx5fg942eykagm9p6gxh",
     "status": "Active",
@@ -206,18 +206,18 @@ Types of node status:
 
 To get node account information, make an HTTP call to your `thornode` port which will look like the following:
 
-```
+``` text
 http://<host>:1317/thorchain/nodeaccount/<node address>
 http://<host>:1317/thorchain/nodeaccounts
 ```
 
 ## Node Voting
 
-THORNodes have the ability to vote on [Mimir ](https://midgard.thorchain.info/v2/thorchain/mimir)settings.&#x20;
+THORNodes have the ability to vote on [Mimir](https://midgard.thorchain.info/v2/thorchain/mimir)settings.
 
 Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a node is:
 
-```
+``` text
 Make mimir
 => Enter THORNode Mimir key: <key>
 => Enter THORNode Mimir value: <value>
@@ -227,7 +227,7 @@ Make mimir
 2. A node can vote at any time on any key value.
 3. A node's vote is valid as long as they are active (and removed if they are not).
 4. 2/3rds of active nodes need to agree for the change to happen
-5. If 2/3rds consensus is not reached, Mimir admin takes priority, or a constant if present. &#x20;
+5. If 2/3rds consensus is not reached, Mimir admin takes priority, or a constant if present.
 6. A node can change their vote anytime.
 7. A node can delete their vote by using -1 value
 8. Voting costs one native transaction fee, which is deducted from their bond.

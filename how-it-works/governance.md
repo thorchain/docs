@@ -17,7 +17,7 @@ THORChain governance decides:
 
 ### Asset Listing
 
-![](../.gitbook/assets/listing-new-assets.jpg)
+![New Assets](../.gitbook/assets/listing-new-assets.jpg)
 
 Users signal which assets they want on the network by staking in a new pool. THORChain will realise it is a new asset it hasn't been seen before and create a new pool and place it in bootstrap mode. This is a normal asset pool except swapping is disabled on it. Every few days the networks looks at all the bootstrapping pools and lists the one with the highest value.
 
@@ -66,9 +66,9 @@ There are only so many nodes who can participate on the network. This is because
 
 ## Mimir
 
-Mimir is a feature to allow changes in the constants of the chain, such as MinimumBond, ChurnSpeed and more.&#x20;
+Mimir is a feature to allow changes in the constants of the chain, such as MinimumBond, ChurnSpeed and more.
 
 There are two types of `mimir`
 
 * Node Mimir: set by each node. Once 2.3rds have set a mimir, it is enacted. Only active nodes have their votes counted
-* Admin Mimir: set by admins to override constants during testing. Admin-mimir can't control funds, but it can set parameters. Ultimately admin-mimir will be removed. Admin-mimr has a set exclusion list, values that cannot be updated by Admin, defined [here](https://gitlab.com/thorchain/thornode/-/blame/develop/x/thorchain/mimir\_accesscontrols.go#L10).
+* Admin Mimir: set by admins to override constants during testing. Admin-mimir can't control funds, but it can set parameters. Ultimately admin-mimir will be removed. Admin-mimir has a set exclusion list, values that cannot be updated by Admin, defined [here](https://gitlab.com/thorchain/thornode/-/blame/develop/x/thorchain/mimir\_accesscontrols.go#L10).

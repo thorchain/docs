@@ -85,8 +85,3 @@ The LEAVE memo is `LEAVE:<node-address>`
 * [ ] I have run `make destroy-aws` to destroy my cluster from `cluster-launcher`
 
 {% page-ref page="leaving.md" %}
-
-
-
-## 
-

@@ -7,6 +7,7 @@ description: Alert Channels & Monitoring Software
 ## Community Alert Channels
 
 To listen for update announcements, join the following channels:
+
 * **THORNode Announcements (Telegram)**: [https://t.me/thornode_ann](https://t.me/thornode_ann)
 * **THORChain Community Devs (Discord)**: [https://discord.gg/g6Z2whSvGF](https://discord.gg/g6Z2whSvGF)
 
@@ -26,13 +27,13 @@ Vǫrðr is a community developed monitoring app for THORNodes. It's fully open-s
 
 ## Features
 
-- All chains are monitored for `Health` and `Sync Status` every minute
-- THORChain version is monitored every minute
-- Kubernetes pod restarts are monitored every 5 minutes
-- Kubernetes pod logs of all chains are aggregated
-- Slash points are monitored every minute
-- Jailing is monitored every minute
-- Chain observations are monitored every minute
+* All chains are monitored for `Health` and `Sync Status` every minute
+* THORChain version is monitored every minute
+* Kubernetes pod restarts are monitored every 5 minutes
+* Kubernetes pod logs of all chains are aggregated
+* Slash points are monitored every minute
+* Jailing is monitored every minute
+* Chain observations are monitored every minute
 
 ## Supported Chains
 

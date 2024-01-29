@@ -56,11 +56,10 @@ Nodes must pay for their bond to ensure the economic assumptions of the network 
 
 ### Private Delegation
 
-THORChain makes private delegation possible, because it does not erode towards the issues discussed above.&#x20;
+THORChain makes private delegation possible, because it does not erode towards the issues discussed above.
 
-Private Delegation requires Node Operators to know and whitelist in their bonders, and there can only be up to 10 per node. This assumes the bonders are in trust circles with their operators and have their own recourse to ensure operators act in accordance to their obligations. From the point of view of THORChain, a solo node is no different to a delegated node. The network will operate identically.&#x20;
+Private Delegation requires Node Operators to know and whitelist in their bonders, and there can only be up to 10 per node. This assumes the bonders are in trust circles with their operators and have their own recourse to ensure operators act in accordance to their obligations. From the point of view of THORChain, a solo node is no different to a delegated node. The network will operate identically.
 
-In addition, there is no discretion as to fee commissions per operator. This means bonders will prioritise on engaging with operators based purely on their trust circles, not fees.&#x20;
+In addition, there is no discretion as to fee commissions per operator. This means bonders will prioritise on engaging with operators based purely on their trust circles, not fees.
 
-The limit of 10 bonders per node ensures that Operators can't try to access economies of scale. They are limited to large RUNE holders only.&#x20;
-
+The limit of 10 bonders per node ensures that Operators can't try to access economies of scale. They are limited to large RUNE holders only.

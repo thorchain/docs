@@ -68,6 +68,3 @@ Run a genesis ceremony with 4 nodes on the mock network—
 ```text
 make run-mocknet-genesis
 ```
-
-
-

@@ -338,9 +338,9 @@ YOU ARE RESPONSIBLE FOR THE CODE RUNNING ON YOUR NODE. **YOU ARE** THE NETWORK. 
 
 Each node has a unique address on each supported chain. This is their Yggdrasil vault. The network will fund all nodes Yggdrasil vaults and instruct them to perform small transactions in order to lower the number of computationally expensive TSS signatures.
 
-#### Finding Yggdrasil addresses
+### Finding Yggdrasil addresses
 
-To find your Yggdrasil addresses, firstly navigate to [https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)
+To find your Yggdrasil addresses, firstly navigate to [https://runescan.io/vaults](https://runescan.io/vaults)
 
 ![](<../.gitbook/assets/yggdrasil\_vaults (1).png>)
 
@@ -379,7 +379,7 @@ The best prevention is to have a cluster with lots of fast resources (cpu, memor
 
 Unfortunately even when your node is fully in-sync, it is still possible to be slashed due to external chain events. Here are some of the scenarios:
 
-#### 600 point slash (isolated)
+### 600 point slash (isolated)
 
 When a node is slashed 600 points, it is typically because the yggdrasil vault failed to send an outbound transaction (more accurately: the transaction it was tasked to perform wasn't mined within a specified time limit). This most likely to happen on ETH chain. Here is what you need to check:
 
@@ -435,7 +435,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.ninerealms.com/thorchain/inbound\_addresses](https://thornode.ninerealms.com/thorchain/inbound\_addresses) (which ever is higher).
 10. Run the script using `node index.js`. Note: you may need to install some dependecies first with `npm install ethers`. The output should look like:
 
-    ```bash
+    ``` bash
     0x2aefdf705d1b28dfdf6b524ec697082326b23a2e62b7f25a60c1d2a1a9108243
     CANCELLING 39 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
     0x1cc81e968d68cfddcd8b605591b9ac7955ec7fdabf222678d3bcfaea4d7c4fd0
@@ -460,6 +460,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
     CANCELLING 29 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
     0x43bad098782f7bac68e401390ef300dc97d9d1d1b322eb566de1ff06b2cf9b21
     ```
+
 11. `make restart` and choose `ethereum-daemon`
 
 #### Constantly accumulating slash points

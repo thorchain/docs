@@ -4,7 +4,7 @@ description: Learn how THORChain Works
 
 # How It Works
 
-### High Level Overview
+## High Level Overview
 
 {% content-ref url="../understanding-thorchain/" %}
 [understanding-thorchain](../understanding-thorchain/)
@@ -49,4 +49,3 @@ description: Learn how THORChain Works
 {% content-ref url="thorchain-name-service.md" %}
 [thorchain-name-service.md](thorchain-name-service.md)
 {% endcontent-ref %}
-

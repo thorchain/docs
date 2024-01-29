@@ -6,7 +6,7 @@ description: How to leave THORChain
 
 ## Overview
 
-Approximately every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://thornode.ninerealms.com/thorchain/mimir)) the system will churn its vaults and nodes.&#x20;
+Approximately every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://thornode.ninerealms.com/thorchain/mimir)) the system will churn its vaults and nodes.
 
 Outgoing:
 
@@ -21,7 +21,7 @@ Incoming:
 
 Churned out nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing, but keep their cluster online and up-to-date with the latest THORNode version, they will be eventually churn back in.
 
-Alternatively, an "Active" node can leave the system voluntarily, in which case they are marked to churn out first.&#x20;
+Alternatively, an "Active" node can leave the system voluntarily, in which case they are marked to churn out first.
 
 {% hint style="warning" %}
 It is assumed nodes that wish to **LEAVE** while on Standby will be away for a significant period of time, so by permanently jailing their address, it forces them to completely destroy and re-build before re-entering. This also ensures they are running the latest software.
@@ -30,7 +30,7 @@ It is assumed nodes that wish to **LEAVE** while on Standby will be away for a s
 ## Unbonding
 
 {% hint style="info" %}
-Yggdrasil vaults have been deprecated, see [ADR-002](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-002-removeyggvaults.md). They may be used again in the future. Nodes that were active before ADR-002 need to leave as described below.&#x20;
+Yggdrasil vaults have been deprecated, see [ADR-002](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-002-removeyggvaults.md). They may be used again in the future. Nodes that were active before ADR-002 need to leave as described below.
 {% endhint %}
 
 {% hint style="info" %}
@@ -86,9 +86,9 @@ To leave the system, send the following transaction from your original bond addr
 {% hint style="info" %}
 Sometimes your Yggdrasil ETH vault may be slightly insolvent due to out-of-gas transactions consuming gas whilst Active. If the network will not let you LEAVE, you may need to manually send your Yggdrasil ETH vault 0.01 - 0.05 ETH from your own personal funds as a top-up, then try LEAVE again. Note: any funds you send to top-up ETH vault you cannot send back to yourself until _AFTER_ your node has left and you have received your bond back, otherwise it will be fined 1.5x what you transfer out.
 
-View your node's vault to find insolvencies:\
-https://viewblock.io/thorchain/address/\<nodeAddress>\
-https://thornode.thorchain.info/thorchain/vault/\<vaultPubKey>
+View your node's vault to find insolvencies:
+- https://runescan.io/addresses/\<nodeAddress>\
+- https://thornode.thorchain.info/thorchain/vault/\<vaultPubKey>
 {% endhint %}
 
 _🔥 Commence destroying your node 🔥_
@@ -127,7 +127,7 @@ Use the **address** field. Chains with a **router** present such as ETH need to 
 
 The **memo** required is `YGGDRASIL-:<BlockHeight>`. For example `YGGDRASIL-:782412`. The block height can be found from the `status_since` field here:
 
-```
+``` text
 https://thornode.ninerealms.com/thorchain/node/<your node address>
 ```
 
@@ -169,7 +169,7 @@ IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
 
 First, destroy the node and tools, this will delete your node then your tooling 1-by-1. Do this from the `node-launcher` repo:
 
-```
+``` text
 make destroy-tools
 ```
 
@@ -191,9 +191,10 @@ make destroy-aws
 {% tab title="DO" %}
 You will be asked to enter your cluster name and region, as well as your Personal Token (the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)).
 
-```
+``` text
 make destroy-do
 ```
+
 {% endtab %}
 {% endtabs %}
 

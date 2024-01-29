@@ -8,7 +8,7 @@ The Incentive Pendulum controls the flow of system income between node operators
 
 [Total Bonded](https://viewblock.io/thorchain/address/thor17gw75axcnr8747pkanye45pnrwk7p9c3cqncsv): Sum of all RUNE bonded by [node operators](../understanding-thorchain/roles/node-operators.md).
 
-[Total Pooled](https://viewblock.io/thorchain/pools): Sum of liquidity in all pools by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
+[Total Pooled](https://runescan.io/pools): Sum of liquidity in all pools by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
 
 The capital on THORChain can lose its balance over time. Sometimes there will be too much capital in liquidity pools; sometimes there will be too much bonded by nodes. If there is too much capital in liquidity pools, the network is unsafe. If there is too much capital bonded by nodes, the network is inefficient.
 
@@ -77,13 +77,11 @@ $$
 
 In a **stable** state of 67m RUNE bonded and 33m RUNE pooled:
 
-
-
 $$
 shareFactor = \frac{67 -  33}{67 + 33/1} = 0.33
 $$
 
-Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.&#x20;
+Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.
 
 In the **under-bonded** state of 60m RUNE bonded and 40m RUNE pooled
 
@@ -91,7 +89,7 @@ $$
 shareFactor = \frac{60 -  40}{60  + 40/1} = 0.2
 $$
 
-Thus, 20% of the rewards go to Liquidity Providers and 80% to the Node Operators, incentivising more node operators to be created.&#x20;
+Thus, 20% of the rewards go to Liquidity Providers and 80% to the Node Operators, incentivising more node operators to be created.
 
 In a **very under-bonded** state of 55m RUNE bonded and 45m RUNE pooled
 
@@ -103,8 +101,6 @@ Thus, Liquidity providers will receive 10% of the rewards. This may drive Liquid
 
 In an **over-bonded** state of 80m RUNE bonded and 20m RUNE pooled:
 
-
-
 $$
 shareFactor = \frac{80 -  20}{80  + 20/1} = 0.6
 $$
@@ -113,11 +109,9 @@ Thus, 60% of the rewards go to Liquidity Providers and 40% go to Node Operators.
 
 ### Incentive Curve
 
-In the **stable** state of 67m RUNE bonded and 33m RUNE pooled, Liquidity providers are providing half the assets TVL (RUNE and Assets) and bonders are providing the other half.&#x20;
+In the **stable** state of 67m RUNE bonded and 33m RUNE pooled, Liquidity providers are providing half the assets TVL (RUNE and Assets) and bonders are providing the other half.
 
 The [Incentive Curve](constants-and-mimir.md) can be used to adjust the reward flow with respect to the Incentive Pendulum.
-
-
 
 In a stable situation with the Incentive Curve set to 1.
 
@@ -125,7 +119,7 @@ $$
 shareFactor = \frac{67 -  33}{67 + 33/1} = 0.33
 $$
 
-Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.&#x20;
+Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.
 
 In a stable situation with the Incentive Curve set to 2.
 
@@ -135,7 +129,7 @@ $$
 
 In a stable situation with the Incentive Curve set to 4.
 
-Thus, 40% of the rewards go to Liquidity Providers and 60% go to Node Operators.&#x20;
+Thus, 40% of the rewards go to Liquidity Providers and 60% go to Node Operators.
 
 $$
 shareFactor = \frac{67 -  33}{67 + 33/4} = 0.45
@@ -147,17 +141,17 @@ $$
 shareFactor = \frac{67 -  33}{67 + 33/100} = 0.5
 $$
 
-Thus, 50% of the rewards go to Liquidity Providers and 50% go to Node Operators.&#x20;
+Thus, 50% of the rewards go to Liquidity Providers and 50% go to Node Operators.
 
-The Incentive Pendulum is a linear path between Liquidity providers and Node Operators. The Incentive Curve can smooth the effect of the Incentive Pendulum as it moves. With the Incentive Pendulum in a set position, as Incentive Curve increases so do the rewards that are paid to Liquidity providers.&#x20;
+The Incentive Pendulum is a linear path between Liquidity providers and Node Operators. The Incentive Curve can smooth the effect of the Incentive Pendulum as it moves. With the Incentive Pendulum in a set position, as Incentive Curve increases so do the rewards that are paid to Liquidity providers.
 
-In a stable situation, it can be set to 100 to ensure Liquidity providers and Node Operator's are rewarded equally.&#x20;
+In a stable situation, it can be set to 100 to ensure Liquidity providers and Node Operator's are rewarded equally.
 
 In an under-bond state, it can be increased so Liquidity providers are not adversely affected by the reduction of rewards due to the Incentive Pendulum.
 
-In an over-bonded state, it can be reduced to ensure Liquidity Providers are not being paid too much.&#x20;
+In an over-bonded state, it can be reduced to ensure Liquidity Providers are not being paid too much.
 
-Incentive Curve value set in constants however can be overridden in [Mimir ](constants-and-mimir.md)by [Node Operators](../thornodes/overview.md).
+Incentive Curve value set in constants however can be overridden in [Mimir](constants-and-mimir.md)by [Node Operators](../thornodes/overview.md).
 
 ## Driving Capital Allocation
 

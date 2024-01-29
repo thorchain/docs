@@ -14,11 +14,11 @@ All the following are community-run resources. There are no "official" channels.
 
 **Documentation:** [**Docs**](https://docs.thorchain.org/) **|** [**Dev Docs**](https://dev.thorchain.org/) **|** [**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf) **|** [**Audits**](https://github.com/thorchain/Resources/tree/master/Audits)
 
-**Development**: [**GitLab** ](https://gitlab.com/thorchain)**|** [**GitHub** ](https://github.com/thorchain)**|** [**Bounty Program**](https://immunefi.com/bounty/thorchain/) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4)
+**Development**: [**GitLab**](https://gitlab.com/thorchain)**|** [**GitHub**](https://github.com/thorchain)**|** [**Bounty Program**](https://immunefi.com/bounty/thorchain/) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4)
 
-**Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol** ](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/thorchain-dev/network/interface-management)
+**Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol** ](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/concepts/network-halts.html)
 
-**Block Explorers**: [**RuneScan** ](https://runescan.io)**|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORYield**](https://app.thoryield.com/transactions?page=1)
+**Block Explorers**: [**RuneScan**](https://runescan.io)**|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORYield**](https://app.thoryield.com/transactions?page=1)
 
 ## **Community Projects**
 
@@ -56,32 +56,32 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
 
-[**Liquality** ](https://liquality.io/) - Browser Extension Crypto Wallet with Built-In Swaps
+[**Liquality**](https://liquality.io/) - Browser Extension Crypto Wallet with Built-In Swaps
 
-[**ShapeShift** ](https://shapeshift.com/) - The Original Multichain Exchange
+[**ShapeShift**](https://shapeshift.com/) - The Original Multichain Exchange
 
-[**THORWallet Dex** ](https://www.thorwallet.org/) - Cross-chain Wallet & Dex, Mobile Wallet
+[**THORWallet Dex**](https://www.thorwallet.org/) - Cross-chain Wallet & Dex, Mobile Wallet
 
-[**Trust Wallet** ](https://trustwallet.com/) - Best Crypto Wallet for Web3, NFTs and DeFi
+[**Trust Wallet**](https://trustwallet.com/) - Best Crypto Wallet for Web3, NFTs and DeFi
 
-[**XDeFi** ](https://www.xdefi.io) - Cross-chain Wallet & Dex, Browser Extention
+[**XDeFi**](https://www.xdefi.io) - Cross-chain Wallet & Dex, Browser Extention
 
 ### (Non-Exchanges) Wallets which Supports Native RUNE
 
 **Keystore Json/txt File** - Password Encrypted File Supported by Many THORChain Exchanges
 
-[**KeepKey** ](https://www.keepkey.com/) - Hardware Wallet Accessed via ShapeShift UI: The Next Frontier
+[**KeepKey**](https://www.keepkey.com/) - Hardware Wallet Accessed via ShapeShift UI: The Next Frontier
 of Crypto Security
 
-[**Ledger** ](https://www.ledger.com/) - Hardware Wallet with [Native RUNE Support](https://support.ledger.com/hc/en-us/articles/4402987997841-THORChain-RUNE-?docs=true): The Smartest Way to Secure your Crypto
+[**Ledger**](https://www.ledger.com/) - Hardware Wallet with [Native RUNE Support](https://support.ledger.com/hc/en-us/articles/4402987997841-THORChain-RUNE-?docs=true): The Smartest Way to Secure your Crypto
 
-[**MetaMask via ShapeShift Snap** ](https://shapeshift.com/snap) - Browser Extension Wallet: Multichain Snap for MetaMask
+[**MetaMask via ShapeShift Snap**](https://shapeshift.com/snap) - Browser Extension Wallet: Multichain Snap for MetaMask
 
-[**Leap Wallet** ](https://www.leapwallet.io/) - Browser Extension Wallet: The Super Wallet for Web3
+[**Leap Wallet**](https://www.leapwallet.io/) - Browser Extension Wallet: The Super Wallet for Web3
 
 ### **Education**
 
-[**GrassRoots Crypto** ](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
+[**GrassRoots Crypto**](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
 
 [**THORChain University**](https://discord.com/invite/tcuniversity) - Educational, Feature-based Discussions
 
@@ -89,7 +89,7 @@ of Crypto Security
 
 [**THORChain Charts**](https://thorcharts.org/) - Key stats and figures related to core Thorchain operations
 
-[**THORYield** ](https://thoryield.com/) - View your added liquidity on THORChain
+[**THORYield**](https://thoryield.com/) - View your added liquidity on THORChain
 
 [**DecentralFi**](https://decentralfi.io/) - Track positions  - https://decentralfi.io/liquidity?wallet={thor address}
 
@@ -107,9 +107,9 @@ of Crypto Security
 
 [**THORChain Network Explorer**](https://thorchain.net/) - THORChain Network Explorer
 
-[**THORmon** ](https://thorchain.network/)- Detailed THORNode Dashboard
+[**THORmon**](https://thorchain.network/)- Detailed THORNode Dashboard
 
-[**Constants** ](https://thornode.ninerealms.com/thorchain/constants)- Current THORChain Constants
+[**Constants**](https://thornode.ninerealms.com/thorchain/constants)- Current THORChain Constants
 
 [**Mimir**](https://thornode.ninerealms.com/thorchain/mimir) - Overrides for Constants
 
@@ -117,15 +117,13 @@ of Crypto Security
 
 [**Thornode Docs**](https://thornode.ninerealms.com/thorchain/doc/) - Documentation for Thornode API to query Thornode.
 
-[**Viewblock Dashboard**](https://dash.viewblock.io/d/thorchain) - THORChain Block Dashboard
-
-[**RuneScan Explorer** ](https://runescan.io)- THORChain Block Explorer
+[**RuneScan Explorer**](https://runescan.io)- THORChain Block Explorer
 
 ### Community Dev Projects
 
-[**XChainJS** ](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
+[**XChainJS**](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
 
-[**Ledger -** ](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
+[**Ledger -**](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
 
 [**SwapKit**](https://docs.thorswap.finance/swapkit-docs/) - By THORSwap offers a composable, user-friendly Partner API/SDK on top of THORChain's cross-chain liquidity protocol.
 
@@ -135,7 +133,7 @@ of Crypto Security
 
 ### Community Socials
 
-[**THORChain Dev Discord** ](https://discord.gg/u6wMSKHpD4)(only for dev discussions)
+[**THORChain Dev Discord**](https://discord.gg/u6wMSKHpD4)(only for dev discussions)
 
 [**TC University**](https://discord.com/invite/tcuniversity) - Discord Server
 

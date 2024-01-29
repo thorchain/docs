@@ -20,6 +20,8 @@
   * [THORChain Name Service](how-it-works/thorchain-name-service.md)
 * [Ecosystem](ecosystem.md)
 * [Frequently Asked Questions](frequently-asked-questions/README.md)
+  * [Savers](frequently-asked-questions/savers.md)
+  * [Lending](frequently-asked-questions/lending.md)
   * [Liquidity Providers](frequently-asked-questions/liquidity-providers.md)
 
 ## THORChain Finance

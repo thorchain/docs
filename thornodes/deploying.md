@@ -137,7 +137,7 @@ Get real-world blockheights on the external blockchain explorers, eg:\
 
 ## CHART SUMMARY
 
-#### THORNode full stack / chart
+### THORNode full stack / chart
 
 * **thornode**: Umbrella chart packaging all services needed to run a fullnode or validator THORNode.
 
@@ -150,7 +150,7 @@ This should be the only chart used to run THORNode stack unless you know what yo
 * **bifrost**: Bifrost service
 * **midgard**: Midgard API service
 
-#### Tools
+### Tools
 
 * **prometheus**: Prometheus stack for metrics
 * **loki**: Loki stack for logs
