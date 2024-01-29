@@ -245,6 +245,7 @@ but currently overridden by a Mimir value of 1.
 
 {% hint style="success" %}
 ILP was grandfathered in Q1 2023 after the launch of the Savings Product - which offers single-sided yield with no price exposure to RUNE. Existing LPs retained their ILP, new dual-LPs will need to be more sophisticated to handle increased volatility of yield.
+ILP is no longer offered to Liquidty Providers.
 {% endhint %}
 
 Impermanent Loss Protection ensures LPs always either make a profit, or leave with at break even after a minimum period of time (set at 100 days), and partially covered before that point. This should alleviate most of the concerns regarding become an LP.

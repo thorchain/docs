@@ -315,7 +315,7 @@ The following are attack vectors:
 
 Prior to `git pull` or `make pull` updates, review node-launcher repo diffs:
 
-```
+``` bash
 git fetch
 git diff master..origin/master
 ```
@@ -334,10 +334,6 @@ THORNODE SOFTWARE IS PROVIDED AS IS - YOU ARE SOLELY RESPONSIBLE FOR USING IT
 YOU ARE RESPONSIBLE FOR THE CODE RUNNING ON YOUR NODE. **YOU ARE** THE NETWORK. INSPECT ALL CODE YOU EXECUTE.
 {% endhint %}
 
-## Yggdrasil vaults
-
-Each node has a unique address on each supported chain. This is their Yggdrasil vault. The network will fund all nodes Yggdrasil vaults and instruct them to perform small transactions in order to lower the number of computationally expensive TSS signatures.
-
 ### Finding Yggdrasil addresses
 
 To find your Yggdrasil addresses, firstly navigate to [https://runescan.io/vaults](https://runescan.io/vaults)
@@ -350,13 +346,13 @@ To find your Yggdrasil addresses, firstly navigate to [https://runescan.io/vault
 
 Alternatively, visit any thorchain endpoint using your node address from `make status`:
 
-```
+``` text
 http://thornode.ninerealms.com/thorchain/node/<Node Address>
 ```
 
 Copy your `secp256k1` public key and put it here:
 
-```
+``` text
 http://thornode.ninerealms.com/thorchain/vault/<Public Key>
 ```
 
@@ -407,7 +403,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 1. Run `make logs` and choose `bifrost`
 2. Search your logs for `cancel` and look for transactions such as:
 
-```bash
+```json
 {"level":"info","service":"bifrost","module":"ethereum","time":"2021-05-28T14:43:58Z","message":"broadcast cancel transaction , tx hash: 0xec396286e54f9a95081e60424c73fcc0e580c47d2ffacb216ad9ef2d9c787082, nonce: 25 , new tx hash:0x5823abbee421f4c2ce230f5e7808b4dc6728ebeb5e21b62d95b812144d522672"}
 ```
 

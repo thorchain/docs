@@ -1,7 +1,8 @@
 # Lending Frequently Asked Questions
 
 ### What is Lending?
-Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio (collateralization ratio) with 0% interest, no liquidations, and no expiration.
+
+Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio with 0% interest, no liquidations, and no expiration.
 
 * [More information](../thorchain-finance/lending.md)
 * [Launch Article](https://medium.com/thorchain/lending-on-thorchain-646bbf2e6e1b)
@@ -9,7 +10,7 @@ Lending allows users to deposit native collateral, and then create a debt at a c
 
 ### Can I partially repay my loan?
 
-Debt can be partially repaid, but a borrower will only receive their collateral back when the debt is paid in full.
+Debt can be partially repaid, but a borrower will only receive their collateral back when the debt is repaid in full.
 
 ### What happens if I overpay my debt?
 
@@ -21,7 +22,7 @@ Yes, it is best to open and close loans during times of low volatility. To prote
 
 ### Will I always receive my full collateral back?
 
-You will receive your full collateral back upon repayment minus slip-based liquidity fees incurred from the loan opening and closing process. During low volatility periods, fees will be lower. During times of high volatility, fees will be higher due to the constricting virtual pool depth. Patient borrowers pay the least fees.
+You will receive your full collateral back upon repayment minus slip-based liquidity fees incurred from the loan opening and closing process. During low volatility periods, fees will be lower. During times of high volatility, fees will be higher due to the constricting virtual pool depth.
 
 ### When will lending be available for more collateral options?
 

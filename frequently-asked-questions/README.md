@@ -48,7 +48,7 @@ You can many interfaces to interact with THORChain. See [Exchanges](../ecosystem
 * You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app/)
 * Since Jan 2024, [Swapper Clout](https://gitlab.com/thorchain/thornode/-/issues/1723) has been enabled to optimise the Outbound Throttling.
 
-### **Are there withdrawal fees and why is there a 3x withdrawal fee premium?**
+### **Are there withdrawal fees and why is there a withdrawal fee premium?**
 
 Yes, there is a fee for every on-chain withdrawal from THORChain, whether it is a swap outbound, savings withdrawal, opening a loan, redeeming a collateral, or withdrawing from LPs.
 
