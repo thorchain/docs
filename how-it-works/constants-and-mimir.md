@@ -119,6 +119,10 @@ Mimir setting can be created and changed without a corresponding Constant.
 
 ### **Yggdrasil Management**
 
+{% hint style="success" %}
+**Yggdrasil** Vaults are deprecated since [ADR-002](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-002-removeyggvaults.md). Yggdrasil Vaults will slowly disappear as older nodes churn out. New nodes since ADR-002 will not have a Yggdrasil Vault.
+{% endhint %}
+
 `YggFundLimit`: Funding limit for yggdrasil vaults (percentage)
 
 `YggFundRetry`\*: Number of blocks to wait before attempting to fund a yggdrasil again

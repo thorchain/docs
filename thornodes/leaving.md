@@ -30,11 +30,11 @@ It is assumed nodes that wish to **LEAVE** while on Standby will be away for a s
 ## Unbonding
 
 {% hint style="info" %}
-Yggdrasil vaults have been deprecated, see [ADR-002](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-002-removeyggvaults.md). They may be used again in the future. Nodes that were active before ADR-002 need to leave as described below.
+Yggdrasil vaults have been deprecated, see [ADR-002](https://dev.thorchain.org/architecture/adr-002-removeyggvaults.html). They may be used again in the future. Nodes that were active before ADR-002 need to leave as described below.
 {% endhint %}
 
 {% hint style="info" %}
-You cannot unbond if you are "Ready" or "Active" or have any amount of funds in your Yggdrasil address.
+You cannot unbond if you are "Ready" or "Active".
 {% endhint %}
 
 If a Node Operator wants to retrieve part of their bond & rewards (such as deciding to take profits), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
