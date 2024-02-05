@@ -8,19 +8,19 @@ description: THORChain charges a fixed Outbound Fee and a dynamic Liquidity Fee.
 
 Conceptually, fees are both value-capture, access-control and resource-subsidisation mechanisms.
 
-#### Value Capture
+### Value Capture
 
 The fees need to capture value from those accessing the resource, and pay it to those providing the resource, and in this case the resource is liquidity. However liquidity is relative to the size of the transaction that demands it over the depth of the market that will service it. A small transaction in a deep pool has less demand for liquidity than a large transaction in a small pool.
 
-#### Access-control
+### Access-control
 
 The other reason for fees is access-control; a way to throttle demand for a fixed resource and let natural market forces take over. If there is too much demand for a resource, fees must rise commensurately. The resource in this case is liquidity, not market depth, thus fees must be proportional to liquidity.
 
-**Resource Subsidisation**
+### **Resource Subsidisation**
 
 Every swap on THORChain consumes resources (Disk, CPU, Network and Memory resources from validators). These costs are fixed in nature. In addition, every outgoing transaction demands resources on connected chains, such as paying the Bitcoin mining fee or Ethereum gas cost. As such, THORChain charges a single flat fee on every transaction that pays for internal and external resources.
 
-#### Other Benefits
+### Other Benefits
 
 In addition to the above, fees also create the following benefits:
 
@@ -38,11 +38,11 @@ The network then observes an outgoing transaction and records how much it cost i
 
 ## **Outbound Fee**
 
-Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.&#x20;
+Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.
 
 The network fee is collected in RUNE and sent to the Protocol Reserve. If the transaction involves an asset that is not RUNE the user pays the Network Fee in the external asset. If the transaction is in RUNE then the amount is directly taken in RUNE.
 
-Several factors affect the fee amount such as the gas rate and transaction size. See [dev docs](https://dev.thorchain.org/thorchain-dev/concepts/fees#outbound-fee) for more details.&#x20;
+Several factors affect the fee amount such as the gas rate and transaction size. See [dev docs](https://dev.thorchain.org/concepts/fees.html#outbound-fee) for more details.
 
 ## Slip-Based Fee
 

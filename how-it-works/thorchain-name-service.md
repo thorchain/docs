@@ -14,7 +14,7 @@ Users use a special memo and a THORChain `MsgDeposit` transaction to register th
 
 A THORChain address can be assigned one (1) THORName to manage the other addresses associated. For example: the THORName chris can receive $BTC to the chris.btc address, chris.eth to receive $ETH and so forth. Wallet providers will easily be able to integrate to resolve cross-chain addresses for a user.
 
-```
+``` json
 { "chris" :
    {"thor  : "thor1egxvam70a86jafa3s0m2g3m7548gcg3kqfmfax",
     "btc"  : "bc1qq2z2f4gs4nd7t0a9zzjtegu4nczhajjp90y9l9", 
@@ -43,7 +43,7 @@ A THORName can be checked using `/thorname/lookup/{thorname}`
 [https://midgard.ninerealms.com/v2/thorname/lookup/orion](https://midgard.ninerealms.com/v2/thorname/lookup/orion)
 {% endhint %}
 
-While there is no reverse on-chain reverse lookup, a reverse lookup is possible within THORChain via using a given THORName `/thorname/lookup/{address}.`&#x20;
+While there is no reverse on-chain reverse lookup, a reverse lookup is possible within THORChain via using a given THORName `/thorname/lookup/{address}.`
 
 {% hint style="info" %}
 Example using a THOR address: [https://midgard.ninerealms.com/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd](https://midgard.ninerealms.com/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd)
@@ -51,7 +51,7 @@ Example using a THOR address: [https://midgard.ninerealms.com/v2/thorname/rlooku
 
 ## Fees
 
-There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fee, which works out to be around 1 RUNE annually. A user who pays 2 RUNE will then keep their name registered for 2 years. Fees are controlled by Constants/Mimir, the current settings are:&#x20;
+There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fee, which works out to be around 1 RUNE annually. A user who pays 2 RUNE will then keep their name registered for 2 years. Fees are controlled by Constants/Mimir, the current settings are:
 
 * `TNSRegisterFee`: 10 RUNE
 * `TNSFeeOnSale`: 1000 Basis Points
@@ -61,7 +61,7 @@ Example: a 20 Rune registration registers the THORName for 10 years. (10 RUNE Re
 
 ## Creating a THORName
 
-THORNames are created by sending a memo in a MsgDeposit with [memo](https://dev.thorchain.org/thorchain-dev/wallets/memos) prefix: `name`, `n` or `~`
+THORNames are created by sending a memo in a MsgDeposit with [memo](https://dev.thorchain.org/affiliate-guide/thorname-guide.html) prefix: `name`, `n` or `~`
 
 Memo template is: `~:name:chain:address:?owner:?preferredAsset:?expiry`
 
@@ -86,13 +86,13 @@ Without:
 
 `=:BTC.BTC:ODIN:2117277:0500:ORION`
 
-107 characters without THORNames, 33 characters with THORNames.&#x20;
+107 characters without THORNames, 33 characters with THORNames.
 {% endhint %}
 
-Interfaces like [AsgardEx Desktop](https://github.com/thorchain/asgardex-electron/releases) allow you to create your own memo.&#x20;
+Interfaces like [AsgardEx Desktop](https://github.com/thorchain/asgardex-electron/releases) allow you to create your own memo.
 
 ## FAQ
 
 THORChain launched THORNames in June 2021 with a number of pre-registration sales. Read more here [https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8](https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8)
 
-Pre-registered THORNames will be valid 12 months after THORNames is deployed to Chaosnet.&#x20;
+Pre-registered THORNames will be valid 12 months after THORNames is deployed to Chaosnet.

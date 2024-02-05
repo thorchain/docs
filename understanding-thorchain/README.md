@@ -16,26 +16,26 @@ Liquidity Providers (LPs) are network participants who deposit their assets into
 
 THORChain is an independent blockchain that operates as a Layer 1 cross-chain decentralised exchange (DEX). Built using the [Cosmos SDK](https://docs.cosmos.network/), THORChain enables the exchange of assets across disparate blockchains in a non-custodial manner. THORChain is the backend for many user interfaces.
 
-Key selling points of THORChain are:&#x20;
+Key selling points of THORChain are:
 
-* The ability to swap Layer 1, or native, assets across multiple chains - e.g. native BTC to ETH swap.&#x20;
-* No user-registration required - simply send a transaction and THORChain will execute it.&#x20;
-* No wrapped assets - all assets are natively secured.&#x20;
-* Transparent, fair [prices](broken-reference), without relying on centralised third-parties.&#x20;
+* The ability to swap Layer 1, or native, assets across multiple chains - e.g. native BTC to ETH swap.
+* No user-registration required - simply send a transaction and THORChain will execute it.
+* No wrapped assets - all assets are natively secured.
+* Transparent, fair [prices](broken-reference), without relying on centralised third-parties.
 * [Continuous Liquidity Pools](../thorchain-finance/continuous-liquidity-pools.md#benefits-of-the-clp-model) that maximise the efficiency of the protocol.
 
 ➜ [An Introduction to THORChain for Bitcoiners](https://erikvoorhees.medium.com/an-introduction-to-thorchain-for-bitcoiners-3f621bf0028e)
 
 ### What is RUNE?
 
-THORChain features a native token [RUNE](rune.md), which owners can use to participate in the network and is used to pay for the swap/gas fees for RUNE pairs. RUNE has specific utility within the THORChain ecosystem, as it fills four key roles:&#x20;
+THORChain features a native token [RUNE](rune.md), which owners can use to participate in the network and is used to pay for the swap/gas fees for RUNE pairs. RUNE has specific utility within the THORChain ecosystem, as it fills four key roles:
 
 * Settlement Asset
-* Network Security&#x20;
+* Network Security
 * Governance
 * Incentives
 
-**RUNE as a Settlement Asset**&#x20;
+**RUNE as a Settlement Asset**
 
 RUNE is the settlement asset for all pools, so a 1:1 ratio of RUNE:ASSET is required for pooling. For example, a pool with $100,000 in BTC will necessarily hold $100,000 worth of RUNE. Within a pool, all assets will have a 50% pairing with RUNE regardless of how assets are added or withdrawn.
 
@@ -47,7 +47,7 @@ In order to provide network security, THORChain requires twice as many RUNE to b
 
 Users can vote with their liquidity (RUNE:ASSET symmetrically added) for the pools they want to be active. The pools with the most liquidity (i.e. deepest) become active.
 
-**RUNE as Incentives**&#x20;
+**RUNE as Incentives**
 
 Block rewards are paid to Liquidity Providers and Node Operators on a set emission schedule - which are in addition to swap fees.
 
@@ -55,7 +55,7 @@ Block rewards are paid to Liquidity Providers and Node Operators on a set emissi
 
 Swaps in THORChain use native assets. Example: When a swap from RUNE to BTC occurs, RUNE is sent into THORChain from the user and BTC is sent out from one of THORChain’s vaults - Inbound gas is paid in Native RUNE, Outbound Fee is paid in BTC.
 
-When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH. See [Swappers ](roles/swapping.md#how-swaps-work)for more information.&#x20;
+When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH. See [Swappers](roles/swapping.md#how-swaps-work)for more information.
 
 ### Risks associated with providing liquidity
 

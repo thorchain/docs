@@ -45,7 +45,7 @@ Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are
 
 ### TOR Accounting
 
-TOR (`thor.tor`) is a non-transferable unit of account within THORChain designed to match the value of $1 USD and has been in use since [ADR 003](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-003-flooredoutboundfee.md). It cannot be exported anywhere and always has a market cap of $0. TOR is valued by taking the median price of the active USD pools.
+TOR (`thor.tor`) is a non-transferable unit of account within THORChain designed to match the value of $1 USD and has been in use since [ADR 003](https://dev.thorchain.org/architecture/adr-003-flooredoutboundfee.html). It cannot be exported anywhere and always has a market cap of $0. TOR is valued by taking the median price of the active USD pools.
 
 All collateral, debt and repayments within Lending are converted to and accounted for in TOR.
 
@@ -82,7 +82,12 @@ The TOR pool is a derived asset pool and operates the same as other derived asse
 
 The `totalRuneDepth` is the sum of all RUNE in anchor pools (i.e. - USDC, USDT, BUSD-BD1 for TOR or just BTC.BTC for the L1)
 
-<table><thead><tr><th width="260">Element</th><th>Description</th></tr></thead><tbody><tr><td>MaxAnchorBlocks</td><td>Protocol Setting, blocks to accumulate slip</td></tr><tr><td>DerivedMinDepth</td><td>Protocol Setting, Min derived pool depth</td></tr><tr><td>DerivedDepthBasisPts</td><td>Protocol Setting, increase/decrease derived pool depth</td></tr><tr><td>MaxAnchorSlip</td><td>Protocol Setting, Max allowed slip on derived pool</td></tr></tbody></table>
+| Element              | Description                                   |
+|----------------------|-----------------------------------------------|
+| MaxAnchorBlocks      | Protocol Setting, blocks to accumulate slip   |
+| DerivedMinDepth      | Protocol Setting, Min derived pool depth      |
+| DerivedDepthBasisPts | Protocol Setting, increase/decrease derived pool depth |
+| MaxAnchorSlip        | Protocol Setting, Max allowed slip on derived pool |
 
 $$
 totalSlip = {\sum_{\substack{i=block}}^{\text{maxAnchorBlocks}}}{poolSlip(i)}
@@ -218,7 +223,7 @@ Block Science reviewed the lending mechanisms exhaustively. The Output of their 
 
 **Explainer Article**
 
-* [Lending 101 by LP University](https://crypto-university.medium.com/under-the-hood-lending-101-f934e1c22792)&#x20;
+* [Lending 101 by LP University](https://crypto-university.medium.com/under-the-hood-lending-101-f934e1c22792)
 
 **Explainer Videos**
 

@@ -315,7 +315,7 @@ The following are attack vectors:
 
 Prior to `git pull` or `make pull` updates, review node-launcher repo diffs:
 
-```
+``` bash
 git fetch
 git diff master..origin/master
 ```
@@ -334,13 +334,9 @@ THORNODE SOFTWARE IS PROVIDED AS IS - YOU ARE SOLELY RESPONSIBLE FOR USING IT
 YOU ARE RESPONSIBLE FOR THE CODE RUNNING ON YOUR NODE. **YOU ARE** THE NETWORK. INSPECT ALL CODE YOU EXECUTE.
 {% endhint %}
 
-## Yggdrasil vaults
+### Finding Yggdrasil addresses
 
-Each node has a unique address on each supported chain. This is their Yggdrasil vault. The network will fund all nodes Yggdrasil vaults and instruct them to perform small transactions in order to lower the number of computationally expensive TSS signatures.
-
-#### Finding Yggdrasil addresses
-
-To find your Yggdrasil addresses, firstly navigate to [https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)
+To find your Yggdrasil addresses, firstly navigate to [https://runescan.io/vaults](https://runescan.io/vaults)
 
 ![](<../.gitbook/assets/yggdrasil\_vaults (1).png>)
 
@@ -350,13 +346,13 @@ To find your Yggdrasil addresses, firstly navigate to [https://viewblock.io/thor
 
 Alternatively, visit any thorchain endpoint using your node address from `make status`:
 
-```
+``` text
 http://thornode.ninerealms.com/thorchain/node/<Node Address>
 ```
 
 Copy your `secp256k1` public key and put it here:
 
-```
+``` text
 http://thornode.ninerealms.com/thorchain/vault/<Public Key>
 ```
 
@@ -379,7 +375,7 @@ The best prevention is to have a cluster with lots of fast resources (cpu, memor
 
 Unfortunately even when your node is fully in-sync, it is still possible to be slashed due to external chain events. Here are some of the scenarios:
 
-#### 600 point slash (isolated)
+### 600 point slash (isolated)
 
 When a node is slashed 600 points, it is typically because the yggdrasil vault failed to send an outbound transaction (more accurately: the transaction it was tasked to perform wasn't mined within a specified time limit). This most likely to happen on ETH chain. Here is what you need to check:
 
@@ -407,7 +403,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 1. Run `make logs` and choose `bifrost`
 2. Search your logs for `cancel` and look for transactions such as:
 
-```bash
+```json
 {"level":"info","service":"bifrost","module":"ethereum","time":"2021-05-28T14:43:58Z","message":"broadcast cancel transaction , tx hash: 0xec396286e54f9a95081e60424c73fcc0e580c47d2ffacb216ad9ef2d9c787082, nonce: 25 , new tx hash:0x5823abbee421f4c2ce230f5e7808b4dc6728ebeb5e21b62d95b812144d522672"}
 ```
 
@@ -435,7 +431,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
 9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.ninerealms.com/thorchain/inbound\_addresses](https://thornode.ninerealms.com/thorchain/inbound\_addresses) (which ever is higher).
 10. Run the script using `node index.js`. Note: you may need to install some dependecies first with `npm install ethers`. The output should look like:
 
-    ```bash
+    ``` bash
     0x2aefdf705d1b28dfdf6b524ec697082326b23a2e62b7f25a60c1d2a1a9108243
     CANCELLING 39 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
     0x1cc81e968d68cfddcd8b605591b9ac7955ec7fdabf222678d3bcfaea4d7c4fd0
@@ -460,6 +456,7 @@ If your node is slashed 600 points continuously, it is likely your ETH vault is 
     CANCELLING 29 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
     0x43bad098782f7bac68e401390ef300dc97d9d1d1b322eb566de1ff06b2cf9b21
     ```
+
 11. `make restart` and choose `ethereum-daemon`
 
 #### Constantly accumulating slash points

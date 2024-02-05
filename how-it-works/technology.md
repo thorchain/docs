@@ -21,7 +21,7 @@ Each node has a "Bifröst" service that deals with the nuances of connecting to 
 
 The witness transaction has the following parameters that are essentially the same for each chain, no matter the type:
 
-```
+``` json
 type Tx struct {
 	ID          TxID    `json:"id"`
 	Chain       Chain   `json:"chain"`
@@ -35,7 +35,7 @@ type Tx struct {
 
 THORChain processes each observed transaction and waits for consensus. Once a super-majority of nodes agree on a particular transaction, it moves from a `pending` state to a finalised state.
 
-```
+``` json
 type ObservedTx struct {
 	Tx             common.Tx        `json:"tx"`
 	Status         status           `json:"status"`
@@ -58,7 +58,7 @@ The state machine processes the finalised transaction and performs logic, such a
 
 The `txOut` looks like the following:
 
-```
+``` json
 type TxOutItem struct {
 	Chain       common.Chain   `json:"chain"`
 	ToAddress   common.Address `json:"to"`
@@ -102,7 +102,7 @@ The state machine constantly monitors and tops up each yggdrasil outbound vault,
 
 When the node churns out, it automatically returns these assets back to Asgard with a `yggdrasil-` memo.
 
-Not all assets are funded to yggrdrasil vaults since it would split the funding up far too much. Instead, all pools with a depth less than `minimumDepthForYggdrasil` keep their funds on Asgard vaults.&#x20;
+Not all assets are funded to yggrdrasil vaults since it would split the funding up far too much. Instead, all pools with a depth less than `minimumDepthForYggdrasil` keep their funds on Asgard vaults.
 
 ### Migrating
 

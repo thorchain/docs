@@ -6,30 +6,30 @@ description: Constants and Mimir Settings Defined.
 
 ## Overview
 
-The network launched with a set number of constants, which has not changed. Constants can be overridden via Mimir and nodes have the ability to [vote on](../thornodes/overview.md#node-voting) and change Mimir values.&#x20;
+The network launched with a set number of constants, which has not changed. Constants can be overridden via Mimir and nodes have the ability to [vote on](../thornodes/overview.md#node-voting) and change Mimir values.
 
-Mimir setting can be created and changed without a corresponding Constant.&#x20;
+Mimir setting can be created and changed without a corresponding Constant.
 
-**Values**
+### **Values**
 
-* Constant Values: [ ](https://midgard.ninerealms.com/v2/thorchain/constants)[https://thornode.ninerealms.com/thorchain/constants](https://thornode.ninerealms.com/thorchain/constants)
+* Constant Values:[https://midgard.ninerealms.com/v2/thorchain/constants](https://thornode.ninerealms.com/thorchain/constants)
 * Mimir Values: [https://thornode.ninerealms.com/thorchain/mimir](https://thornode.ninerealms.com/thorchain/mimir)
 
-**Key**:&#x20;
+### **Key**
 
-* No Star or Hash - Constant only, no Mimir override.&#x20;
-* Star (\*) indicates a Mimir override of a Constant&#x20;
+* No Star or Hash - Constant only, no Mimir override.
+* Star (\*) indicates a Mimir override of a Constant
 * Hash (#) indicates Mimir with no Constant.
 
-## Outbound Transactions&#x20;
+## Outbound Transactions
 
 `OutboundTransactionFee`: Amount of rune to withhold on all outbound transactions (1e8 notation)
 
-### Scheduled Outbound&#x20;
+### Scheduled Outbound
 
-`MaxTxOutOffset`: Max number of blocks a scheduled outbound transaction can be delayed&#x20;
+`MaxTxOutOffset`: Max number of blocks a scheduled outbound transaction can be delayed
 
-`MinTxOutVolumeThreshold`: Quantity of outbound value (in 1e8 rune) in a block before it's considered "full" and additional value is pushed into the next block&#x20;
+`MinTxOutVolumeThreshold`: Quantity of outbound value (in 1e8 rune) in a block before it's considered "full" and additional value is pushed into the next block
 
 `TxOutDelayMax`: Maximum number of blocks a scheduled transaction can be delayed
 
@@ -75,7 +75,7 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 
 `HaltChainGlobal`\*: Pause observations on all chains (chain clients)
 
-`HaltTrading`: Stops swaps and additions, if done, will result in refunds. Observations still occur.&#x20;
+`HaltTrading`: Stops swaps and additions, if done, will result in refunds. Observations still occur.
 
 `Halt<chain>Chain`\*: Pause a specific blockchain
 
@@ -87,7 +87,7 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 
 `BlocksPerYear`: Blocks in a year
 
-`MaxUTXOsToSpend`\*: Max UTXOs to be spent in one block&#x20;
+`MaxUTXOsToSpend`\*: Max UTXOs to be spent in one block
 
 `MinimumNodesForBFT`: Minimum node count to keep the network running. Below this, Ragnarök is performed.
 
@@ -118,6 +118,10 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 `ValidatorMaxRewardRatio`\*:  the ratio to MinimumBondInRune at which validators stop receiving rewards proportional to their bond
 
 ### **Yggdrasil Management**
+
+{% hint style="success" %}
+**Yggdrasil** Vaults are deprecated since [ADR-002](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-002-removeyggvaults.md). Yggdrasil Vaults will slowly disappear as older nodes churn out. New nodes since ADR-002 will not have a Yggdrasil Vault.
+{% endhint %}
 
 `YggFundLimit`: Funding limit for yggdrasil vaults (percentage)
 
@@ -191,6 +195,4 @@ Mimir setting can be created and changed without a corresponding Constant.&#x20;
 
 `StagedPoolCost`: Number of rune (1e8 notation) that a stage pool is deducted on each pool cycle.
 
-
-
-More documentation can be found [here](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md).
+More documentation can be found [here](https://dev.thorchain.org/mimir.html).

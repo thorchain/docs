@@ -48,7 +48,7 @@ How a block with no fees splits the rewards. In this example, 1000 RUNE is being
 {% endtab %}
 {% endtabs %}
 
-This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity. &#x20;
+This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity. 
 
 ### Factors Affecting Yield
 
@@ -167,4 +167,4 @@ Factors that affect LUVI:
 * An increase of the synthetic asset liability of a pool decreases LUVI
 * An increase in `ASSET Depth` or `RUNE Depth` of a pool increase LUVI
 * Changes in the ratio of `ASSET Depth` and `RUNE Depth` in a pool change LUVI
-* Changes in `ASSET Price` or `RUNE Price` do not necessarily change LUVI&#x20;
+* Changes in `ASSET Price` or `RUNE Price` do not necessarily change LUVI.

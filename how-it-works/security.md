@@ -8,11 +8,11 @@ THORChain has several layers of security within the code base to ensure solvency
 
 ### Confirmation **Counting** <a href="#b905" id="b905"></a>
 
-To protect against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Confirmation Counting for specific chains when receiving incoming value. [Bifrost ](technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations are required is dependent on the size of the incoming value.
+To protect against double-spend attacks and re-orgs (non-instant finality chains), THORChain users Confirmation Counting for specific chains when receiving incoming value. [Bifrost](technology.md#the-bifroest-protocol-1-way-state-pegs)informs THORChain when to process the incoming value. How many confirmations are required is dependent on the size of the incoming value.
 
-See more full details [here](broken-reference).&#x20;
+See more full details [here](broken-reference).
 
-Note, THORChain and Binance Beacon Chain have near-instant finality so confirmation counting is not required.&#x20;
+Note, THORChain and Binance Beacon Chain have near-instant finality so confirmation counting is not required.
 
 ### **Outbound Transaction Throttling** <a href="#b905" id="b905"></a>
 
@@ -22,7 +22,7 @@ To prevent large amounts of funds from leaving the network in an instant, large 
 * Large outbounds to spread across multiple blocks, up to 720 blocks (approx one hour).
 * Ensures one large outbound request of $1,000,000 is handled the same as one million $1 outbound requests.
 
-This feature is controlled by several [Mimir ](constants-and-mimir.md#outbound-transactions)values that can be changed by Node Operators as required. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge\_requests/1844).
+This feature is controlled by several [Mimir](constants-and-mimir.md#outbound-transactions)values that can be changed by Node Operators as required. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge\_requests/1844).
 
 This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, but it is necessary in ensuring the protection of liquidity provider funds.
 
@@ -47,7 +47,7 @@ There are also network level halts
 
 1. Trading halt
 
-To get more information see [here](https://dev.thorchain.org/thorchain-dev/network/interface-management).
+To get more information see [here](https://dev.thorchain.org/concepts/network-halts.html).
 
 ### **Automatic Solvency Checker** <a href="#8e53" id="8e53"></a>
 
@@ -56,17 +56,13 @@ The solvency checker of the network’s primary vault was introduced to catch is
 * **Reactive:** The network continually compares the assets the network believes it has in its primary vault (Asgard Vault) to what assets are actually stored in the network’s chain wallets. For every connected chain, each node compares the stored Asgard vault value to each chain Asgard Wallet amount. If the Asgard Vault value is more than the wallet value by 1%, the node reports insolvency for that chain. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge\_requests/1797).
 * **Proactive:** This mode is more powerful and is intended to catch insolvencies even before they appear. When a node attempts to sign a txOut, it will do a calculation to check if by executing the txOut the vault becomes insolvent. If so, then it refuses to sign and reports insolvency. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge\_requests/1831).
 
-**Automatic Trading Halting**
+### **Automatic Trading Halting**
 
 If more than 66% of nodes, report an insolvency with a chain (reactive or proactive), trading for all assets on that chain is automatically halted (Halt{Chain}Trading). The halt will also emit a security event to ThorSec.
 
-**Why 1% difference allowance?**
+### **Why 1% difference allowance?**
 
 THORChain builds an awareness of balances purely by adding the incoming funds, then subtracting the outgoings. Thus the expected balance is the aggregate of the ins and outs. Divergences can occur when actual on-chain balances start to diverge. For gas assets (assets used to pay gas), small divergences can be intermittent, but normally less than +/- 1%.
-
-**Secondary Vault Security**
-
-Yggdrasil Vaults, the secondary vaults that hold approx 25% of the network funds, are secured by the Node Operators’ bonds and the threat of their bond being slashed 1.5x of any funds they mishandle (e.g steal or attempt to double spend).
 
 ### **Node Operator Triggered Halts** <a href="#e509" id="e509"></a>
 

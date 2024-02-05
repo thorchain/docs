@@ -16,8 +16,6 @@ THORChain offers a suite of decentralized and permissionless services:
 
 4. [Liquidity Pools (LPs)](https://docs.thorchain.org/understanding-thorchain/roles/liquidity-providers): Depositing native assets, e.g. native BTC, to provide liquidity asymmetrically.
 
-\*N.B. THORChain's Savings and LP create an opportunity for holders of non-yield generating native assets (e.g. BTC, BNB) to earn a return on their investments.
-
 \*THORChain does NOT currently support Taproot addresses (BTC, LTC or otherwise).
 
 For all the above services, users do not need to hold (or even be aware of) the RUNE token. They just need to choose from a plethora of [Frontend User Interfaces](https://docs.thorchain.org/ecosystem#exchanges-only) (Wallets and Exchanges) to interact with THORChain. For instructions, troubleshooting and support, please contact the respective User Interfaces support channels.
@@ -27,5 +25,3 @@ For all the above services, users do not need to hold (or even be aware of) the 
 The [RUNE](https://docs.thorchain.org/understanding-thorchain/rune) token is the native asset on THORChain’s own sovereign blockchain. Users who want to hold RUNE, deposit into LPs symmetrically, and/or [bonding](https://docs.thorchain.org/understanding-thorchain/roles/node-operators) into nodes, will need a wallet which can hold native RUNE. Check here for a [list of wallets which support native RUNE](https://docs.thorchain.org/ecosystem#integrated-wallets-and-exchanges).
 
 Users can swap for RUNE, from THORChain directly, using any of the [Frontend User Interfaces](https://docs.thorchain.org/ecosystem#exchanges-only); or acquire from supported centralized exchanges.
-
-

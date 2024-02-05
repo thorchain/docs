@@ -12,20 +12,20 @@ Node Operators can define up to **10 THOR addresses** as Bond Providers. These a
 
 ### Rationale
 
-The minimum $RUNE needed to churn in as a THORNode is currently set at 300K - but with bond competition, this number could be much higher.&#x20;
+The minimum $RUNE needed to churn in as a THORNode is currently set at 300K - but with bond competition, this number could be much higher.
 
 Not many people in the world have both the technical skills to run a validator AND at least 300K $RUNE, which limits the supply of Node Operators who secure THORChain.
 
-Pooled THORNodes provide a way for a skilled Operator to enter a trusted agreement with known Bond Providers to bootstrap enough capital for running a THORNode. The Network's security increases, and more RUNE holders have access to yield-bearing bond-space.&#x20;
+Pooled THORNodes provide a way for a skilled Operator to enter a trusted agreement with known Bond Providers to bootstrap enough capital for running a THORNode. The Network's security increases, and more RUNE holders have access to yield-bearing bond-space.
 
 ### Economic Security
 
-At first glance it might seem Pooled Validators contradict the economic security model of THORChain (i.e. that Node Operators put up twice the value in slash-able bond as the assets they secure). With Pooled Validators it is possible for the Node Operator to individually put up less bond than the value of the assets that the node secures. However this nuance only exists within the relationship between the Node Operator and the Bond Providers. The Network only considers the THORNode as single entity thus the economic model is intact.&#x20;
+At first glance it might seem Pooled Validators contradict the economic security model of THORChain (i.e. that Node Operators put up twice the value in slash-able bond as the assets they secure). With Pooled Validators it is possible for the Node Operator to individually put up less bond than the value of the assets that the node secures. However this nuance only exists within the relationship between the Node Operator and the Bond Providers. The Network only considers the THORNode as single entity thus the economic model is intact.
 
 {% hint style="warning" %}
-It would be disastrous to THORChain if operators could collect unlimited bond quantities from anon/retail providers. Malicious Operators could start marketing campaigns collecting RUNE and then rug-pull their users, or worse, access economies of scale and take over the network.&#x20;
+It would be disastrous to THORChain if operators could collect unlimited bond quantities from anon/retail providers. Malicious Operators could start marketing campaigns collecting RUNE and then rug-pull their users, or worse, access economies of scale and take over the network.
 
-This is why Pooled THORNodes are invite-only and limited to 10 per node. It is difficult to access economies of scale in these small quantities.&#x20;
+This is why Pooled THORNodes are invite-only and limited to 10 per node. It is difficult to access economies of scale in these small quantities.
 {% endhint %}
 
 ## Managing a Pooled THORNode
@@ -47,13 +47,13 @@ Add a bond provider using a BOND transaction with a modified memo from a wallet 
 * NodeAddress - THORNode address (prefixed by `thor`)
 * BondProviderAddress - Bond Provider address to whitelist (prefixed by `thor`)
 * NodeOperatorFee - fee in basis points to be taken from rewards and paid directly to Node Operator's address after each churn.
-* RUNE TX Value - 1.02 minimum (anything over 1.02 is added to the Operator's Bond).&#x20;
+* RUNE TX Value - 1.02 minimum (anything over 1.02 is added to the Operator's Bond).
 
-_A Node Operator is the first on-chain bonding transaction to a new node. You cannot change the operator address after the fact._&#x20;
+_A Node Operator is the first on-chain bonding transaction to a new node. You cannot change the operator address after the fact._
 
-_The Operator is also added as a Bond Provider._&#x20;
+_The Operator is also added as a Bond Provider._
 
-**Removing a Bond Provider**
+#### **Removing a Bond Provider**
 
 While the node is churned out, A Node Operator can remove a Bond Provider using an UNBOND transaction with a modified memo:
 
@@ -68,7 +68,7 @@ _This command will refund the Bond Provider their bond and remove them from the 
 
 #### Node Operator Fee
 
-Node operators can set a fee that is paid to them from the earnings each churn.&#x20;
+Node operators can set a fee that is paid to them from the earnings each churn.
 
 To set a Node Operator fee, send a deposit transaction with the following memo:
 
@@ -81,19 +81,19 @@ To adjust the Fee, The no operators can send:\
 
 **Example**: `BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun::4000` to see the fee to 40%.
 
-Fees can range from 100 to 9900 basis pts. Setting 10000 causes all rewards to be to the node operator each churn. Setting it to 0 causes rewards to accrue to the bond.&#x20;
+Fees can range from 100 to 9900 basis pts. Setting 10000 causes all rewards to be to the node operator each churn. Setting it to 0 causes rewards to accrue to the bond.
 
-&#x20;See [here](joining.md#node-operator-fee) for more details.
+See [here](joining.md#node-operator-fee) for more details.
 
 ### Bond Provider
 
 #### Adding/Removing Bond
 
-Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.&#x20;
+Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.
 
 **Adding Bond:**
 
-`BOND:<NodeAddress>`&#x20;
+`BOND:<NodeAddress>`
 
 * NodeAddress - THORNode address (prefixed by `thor`)
 * RUNE Tx Value - Amount of RUNE to bond
@@ -111,13 +111,13 @@ Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.&#
 
 When the node is standby, active or not churning, bond amounts can be increased/decreased.\
 You can tell the network is migrating if there are `retiring` Asgard Vaults. \
-[https://viewblock.io/thorchain/vaults](https://viewblock.io/thorchain/vaults)
+[https://runescan.io/vaults](https://runescan.io/vaults)
 {% endhint %}
 
 ### Reward Shares
 
-Operators and Providers all have a bond amount registered to the node. Operators can start at 0.00 bonded. This on-chain bond amount is summed to the total bond, and thus everyone has a fair share in the THORNode's principle + rewards.&#x20;
+Operators and Providers all have a bond amount registered to the node. Operators can start at 0.00 bonded. This on-chain bond amount is summed to the total bond, and thus everyone has a fair share in the THORNode's principle + rewards.
 
-The Operator Fee is distributed to the Node Operator address from all RUNE rewards earned by a node after each churn.&#x20;
+The Operator Fee is distributed to the Node Operator address from all RUNE rewards earned by a node after each churn.
 
-If an Operator LEAVES, all the bond is fairly distributed.&#x20;
+If an Operator LEAVES, all the bond is fairly distributed.

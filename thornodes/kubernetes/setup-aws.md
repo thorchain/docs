@@ -29,7 +29,7 @@ description: Setting up a Kubernetes Cluster with AWS
 
 Firstly, clone and enter the [cluster-launcher repository](https://gitlab.com/thorchain/devops/cluster-launcher)**.** All commands in this section are to be run inside this repo.
 
-```
+``` text
 git clone https://gitlab.com/thorchain/devops/cluster-launcher
 cd cluster-launcher
 ```
@@ -40,9 +40,10 @@ Then install the [terraform CLI](https://www.terraform.io):
 {% tab title="LINUX/MAC" %}
 Install Terraform:
 
-```
+``` text
 brew install terraform
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -54,10 +55,11 @@ In order for Terraform to run operations on your behalf, you must install and co
 {% tab title="LINUX/MAC" %}
 Use the package manager [homebrew](https://formulae.brew.sh/) to install the AWS CLI.
 
-```
+``` text
 brew install awscli
 aws configure
 ```
+
 {% endtab %}
 {% endtabs %}
 

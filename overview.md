@@ -5,7 +5,7 @@ description: A high-level overview of THORChain.
 # Overview
 
 {% hint style="info" %}
-This section provides a brief, plain language overview of THORChain. For more detailed information refer to the [technology ](technology.md)section on the next page and the [whitepaper](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain/whitepaper-en.md).
+This section provides a brief, plain language overview of THORChain. For more detailed information refer to the [technology](technology.md)section on the next page and the [whitepaper](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain/whitepaper-en.md).
 {% endhint %}
 
 ## THORChain's liquidity protocol
@@ -40,7 +40,7 @@ Profit from pool imbalances by arbitraging assets to restore pools to correct ma
 
 ## Design
 
-THORChain has been designed to be blockchain agnostic, favoring no specific chain or asset; but connecting blockchains together via bridges which enable the movement of assets into pools & out to users. 
+THORChain has been designed to be blockchain agnostic, favoring no specific chain or asset; but connecting blockchains together via bridges which enable the movement of assets into pools & out to users.
 
 The following components have been considered in THORChain's design, enabling trustless, permissionless and non-custodial properties for staking, swapping & trading.
 
@@ -56,7 +56,7 @@ _For more info on how THORChain utilises Tendermint & Cosmos_, refer _to the_ [_
 
 ### **Cross Chain State Pegs**
 
-Cross-chain state pegs are what connects main chains to THORChain and enables assets to be pooled together and transferred in & out to liquidity providers, swappers & traders. The mechanism is called a **1-way state peg**, because the assets are not pegged \(such as in Keep Network, Wrapped Bitcoin etc\), instead the chain state is pegged instead - and it is only 1-way.  Another way to think about it, is that THORNodes observe transactions on other blockchains and the truth about what was observed is ascertained through group consensus _"we all saw the same thing"_, instead of through proof _"_[_I can prove what I saw happened_](https://github.com/summa-tx/relays/tree/golang/golang)_"_. This is a far more flexible approach and can be abstracted much better. 
+Cross-chain state pegs are what connects main chains to THORChain and enables assets to be pooled together and transferred in & out to liquidity providers, swappers & traders. The mechanism is called a **1-way state peg**, because the assets are not pegged \(such as in Keep Network, Wrapped Bitcoin etc\), instead the chain state is pegged instead - and it is only 1-way.  Another way to think about it, is that THORNodes observe transactions on other blockchains and the truth about what was observed is ascertained through group consensus _"we all saw the same thing"_, instead of through proof _"_[_I can prove what I saw happened_](https://github.com/summa-tx/relays/tree/golang/golang)_"_. This is a far more flexible approach and can be abstracted much better.
 
 Nodes run clients for connected blockchains in order to reach consensus about what occurs on the main chain eg. block height, transactions etc. They make witness transactions into THORChain when they see a relevant transaction.
 
@@ -81,4 +81,3 @@ Users will be able to swap between BTC, ETH, XMR, BNB & any BEP2 asset using ASG
 Modern APIs and websockets will provide the necessary tools for traders to participate in the ecosystem, taking advantage of price asymmetry for their economic advantage & restoring pools to their fair market prices.
 
 ##  ****
-

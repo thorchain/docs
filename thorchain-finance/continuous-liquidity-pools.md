@@ -29,7 +29,7 @@ The salient point is the last one - that a liquidity-sensitive fee penalises tra
 
 ### Slip-based Fee Model (CLP)
 
-The Slip-based Fee Model adds liquidity-sensitive fee compared to the [XYK ](continuous-liquidity-pools.md#clp-derivation)model. This ensures the fee paid is commensurate to the demand of the pool's liquidity, and is the one THORChain uses. The fee equation is shown below:
+The Slip-based Fee Model adds liquidity-sensitive fee compared to the [XYK](continuous-liquidity-pools.md#clp-derivation)model. This ensures the fee paid is commensurate to the demand of the pool's liquidity, and is the one THORChain uses. The fee equation is shown below:
 
 $$
 fee = \frac{x^2Y}{(x+X)^2}
@@ -57,7 +57,7 @@ Two important parts are:
 
 A price-optimised swap experiences less slippage compared to a time-optimised swap, without losing capital to on-chain L1 fees.
 
-&#x20;A fully price-optimised swap can achieve a swap fee as low as 5 basis points (excluding inbound and outbound fees).
+A fully price-optimised swap can achieve a swap fee as low as 5 basis points (excluding inbound and outbound fees).
 
 Swappers can set a price limit (minimum output). If sub-swaps cannot achieve the specified price during the swap stream, the total or partial inbound amount will be refunded.
 
@@ -171,10 +171,6 @@ $$
 units=P*\frac{rA+Ra+2ra}{rA+Ra+2RA}
 $$
 
-
-
-
-
 * units = newly created pool units for the liquidity provider
 * r = rune deposited
 * a = asset deposited
@@ -238,7 +234,7 @@ If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep a
 {% hint style="info" %}
 Virtual Depths were initially applied to Synth Swaps using a multiplier of 2. It was intended that Synth Swaps would create 50% less slip and users pay 50% less fees. However, this was disabled after discovering that this would allow front-running. The multiplier is specified on `/constants` as:
 
-```
+``` text
 "VirtualMultSynths": 2,
 ```
 
@@ -248,7 +244,8 @@ but currently overridden by a Mimir value of 1.
 ## Impermanent Loss Protection
 
 {% hint style="success" %}
-ILP was grandfathered in Q1 2023 after the launch of the Savings Product - which offers single-sided yield with no price exposure to RUNE. Existing LPs retained their ILP, new dual-LPs will need to be more sophisticated to handle increased volatility of yield.&#x20;
+ILP was grandfathered in Q1 2023 after the launch of the Savings Product - which offers single-sided yield with no price exposure to RUNE. Existing LPs retained their ILP, new dual-LPs will need to be more sophisticated to handle increased volatility of yield.
+ILP is no longer offered to Liquidty Providers.
 {% endhint %}
 
 Impermanent Loss Protection ensures LPs always either make a profit, or leave with at break even after a minimum period of time (set at 100 days), and partially covered before that point. This should alleviate most of the concerns regarding become an LP.
@@ -282,7 +279,7 @@ Deposit values are _not_ the amounts the member deposited. They are the immediat
 
 The coverage is then adjusted for the 100 day rule.
 
-\`\`[`blocksForFullProtection` ](../how-it-works/constants-and-mimir.md)`= 1440000 // 100 days`
+\`\`[`blocksForFullProtection`](../how-it-works/constants-and-mimir.md)`= 1440000 // 100 days`
 
 $$
 \text{protectionProgress }= (currentHeight - heightLastAdded) / blocksForFullProtection
