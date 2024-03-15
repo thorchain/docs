@@ -36,8 +36,6 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Kensho Finance**](https://www.kensho.finance/) - Redefining DeFi Trading
 
-[**Lends**](https://app.lends.so/) - Borrow Against Your Crypto
-
 [**Ordiswap**](https://app.ordiswap.fi/) - A Dynamic AMM Infrastructure to BRC-20
 
 [**Rango Exchange**](https://rango.exchange/) - First Multi-chain DEX Aggregator
@@ -138,8 +136,6 @@ of Crypto Security
 [**TC University**](https://discord.com/invite/tcuniversity) - Discord Server
 
 [**DefiSpot**](https://discord.gg/7Zuypgv6Qf) - Discord Server
-
-[**Lends**](https://discord.gg/NqjGxTVCWE) - Discord Server
 
 [**ShapeShift**](https://discord.gg/shapeshift) - Discord Server
 
