@@ -54,6 +54,8 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
 
+[**Giddy**](https://giddy.co/) - Your Keys, Your Crypto
+
 [**Liquality**](https://liquality.io/) - Browser Extension Crypto Wallet with Built-In Swaps
 
 [**ShapeShift**](https://shapeshift.com/) - The Original Multichain Exchange
