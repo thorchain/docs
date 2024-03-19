@@ -8,11 +8,10 @@ description: THORFi Lending within THORChain
 
 Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio (CR). The debt is always denominated in USD (aka `TOR`), regardless of what L1 asset the user receives.
 
-All loans have 0% interest, no liquidations, and no expiration. Risk [is mitigated](lending.md#lending-controls) by:
+All loans have 0% interest, no liquidations, and no expiration. Since ADR 012 was implemented in Feb-2024, a flat 200% CR (or 50% Loan-to-Value, LTV) was implemented. Risk [is mitigated](lending.md#lending-controls) by:
 
 * Limits on collateral for the network and each pool
 * Slip-based fees when opening and closing loans
-* Dynamic collateralization ratio
 * A circuit breaker on RUNE total supply
 
 Lending allows users to:
@@ -30,6 +29,10 @@ Lending benefits the protocol by:
 
 {% hint style="success" %}
 [ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md) with full Lending details was released and approved by Node Operators.
+{% endhint %}
+
+{% hint style="success" %}
+[ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md?ref_type=heads) - setting CR to flat 200%, and burning Standby Reserve to increase collateral cap.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -167,6 +170,9 @@ $$
 
 ### Collateralization Ratio
 
+Since Feb-2024, a flat CR of 200% has been implemented.
+The below code/explanation for dynamic CR is still preserved (but overwritten by the flat CR).
+
 A dynamic CR increases as loans are opened within a pool and reduces as loans are repaid.
 
 | Element | Description                                   |
@@ -238,4 +244,5 @@ Block Science reviewed the lending mechanisms exhaustively. The Output of their 
 **Design Documents**
 
 * [ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md)
+* * [ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md?ref_type=heads)
 * [Original](https://gitlab.com/thorchain/thornode/-/issues/1412) [Design](https://gitlab.com/thorchain/thornode/-/issues/1412)
