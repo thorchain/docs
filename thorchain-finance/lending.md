@@ -6,13 +6,12 @@ description: THORFi Lending within THORChain
 
 ## Overview
 
-Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio (CR). The debt is always denominated in USD (aka `TOR`), regardless of what L1 asset the user receives.
+Lending allows users to deposit native collateral, and then create/receive a debt amount. The debt is always denominated in USD (aka `TOR`), regardless of what L1 asset the user receives.
 
-All loans have 0% interest, no liquidations, and no expiration. Risk [is mitigated](lending.md#lending-controls) by:
+All loans have 0% interest, no liquidations, no expiration, and flat 200% collaterization ratio (CR) or 50% loan-to-value (LTV). Risk [is mitigated](lending.md#lending-controls) by:
 
 * Limits on collateral for the network and each pool
 * Slip-based fees when opening and closing loans
-* Dynamic collateralization ratio
 * A circuit breaker on RUNE total supply
 
 Lending allows users to:
@@ -30,6 +29,10 @@ Lending benefits the protocol by:
 
 {% hint style="success" %}
 [ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md) with full Lending details was released and approved by Node Operators.
+{% endhint %}
+
+{% hint style="success" %}
+[ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md?ref_type=heads) where collateral caps were increased and collaterization ratio fixed.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -80,7 +83,7 @@ Derived/virtual pools are created for each derived asset, including TOR, to allo
 
 The TOR pool is a derived asset pool and operates the same as other derived asset pools except the TOR price comes from the medium of the four pools instead of one L1 Asset Pool.
 
-The `totalRuneDepth` is the sum of all RUNE in anchor pools (i.e. - USDC, USDT, BUSD-BD1 for TOR or just BTC.BTC for the L1)
+The `totalRuneDepth` is the sum of all RUNE in anchor pools (i.e. - USDC, USDT, etc., for TOR or just BTC.BTC for the L1)
 
 | Element              | Description                                   |
 |----------------------|-----------------------------------------------|
@@ -165,28 +168,9 @@ $$
 
 `totalAvailableAssetForPool` is converted from RUNE to Asset value. This imposes a collateral holding limit for each pool, a new loan cannot be opened if the new gross collateral exceeds this amount.
 
-### Collateralization Ratio
-
-A dynamic CR increases as loans are opened within a pool and reduces as loans are repaid.
-
-| Element | Description                                   |
-| ------- | --------------------------------------------- |
-| a       | Current pool collateral + new loan collateral |
-| b       | TotalAvailableAssetForPool                    |
-| MinCR   | Ratio in basis points, (LTV = 1/CR)           |
-| MaxCR   | Basis points, protocol setting                |
-
-$$
-CR = \frac{a}{b} * {(maxCR - minCR) + minCR}
-$$
-
-{% hint style="success" %}
-As more loans are taken out, the collateral limits are increased and so does the CR. The higher the collateralization ratio, the safer the system becomes.
-{% endhint %}
-
 ### Debt
 
-Debt is calculated based on the collateral provided and the CR of the pool.
+Debt is calculated based on the collateral provided and the CR of the pool. Since ADR 012, a flat 200% CR is used.
 
 | Element              | Description             |
 | -------------------- | ----------------------- |
@@ -238,4 +222,5 @@ Block Science reviewed the lending mechanisms exhaustively. The Output of their 
 **Design Documents**
 
 * [ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md)
+* * [ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md?ref_type=heads)
 * [Original](https://gitlab.com/thorchain/thornode/-/issues/1412) [Design](https://gitlab.com/thorchain/thornode/-/issues/1412)
