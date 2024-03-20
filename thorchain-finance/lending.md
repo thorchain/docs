@@ -170,8 +170,9 @@ $$
 
 ### Collateralization Ratio
 
-Since Feb-2024, a flat CR of 200% has been implemented.
-The below code/explanation for dynamic CR is still preserved (but overwritten by the flat CR).
+{% hint style="success" %}
+Since Feb-2024, a flat CR of 200% has been implemented by setting both MinCR and MaxCR to 200%.
+{% endhint %}
 
 A dynamic CR increases as loans are opened within a pool and reduces as loans are repaid.
 
@@ -185,10 +186,6 @@ A dynamic CR increases as loans are opened within a pool and reduces as loans ar
 $$
 CR = \frac{a}{b} * {(maxCR - minCR) + minCR}
 $$
-
-{% hint style="success" %}
-As more loans are taken out, the collateral limits are increased and so does the CR. The higher the collateralization ratio, the safer the system becomes.
-{% endhint %}
 
 ### Debt
 
