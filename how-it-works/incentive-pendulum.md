@@ -18,11 +18,11 @@ If the network becomes unsafe, it increases rewards (block rewards and liquidity
 
 THORChain can be in 1 of 5 main states—
 
-* Unsafe
-* Under-Bonded
-* Optimal
-* Over-Bonded
-* Inefficient
+- Unsafe
+- Under-Bonded
+- Optimal
+- Over-Bonded
+- Inefficient
 
 These different states can be seen in the relationship between bonded Rune and pooled Rune. The amount of Rune which has been bonded by node operators, and the amount which has been added to liquidity pools by liquidity providers.
 

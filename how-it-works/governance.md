@@ -10,12 +10,12 @@ THORChain aims to have as little governance baked into the system as possible. T
 
 THORChain governance decides:
 
-* which assets are listed/delisted
-* which chains are listed/delisted
-* when the protocol gets upgraded
-* the economic limit – how many nodes can participate
+- which assets are listed/delisted
+- which chains are listed/delisted
+- when the protocol gets upgraded
+- the economic limit – how many nodes can participate
 
-### Asset Listing
+## Asset Listing
 
 ![New Assets](../.gitbook/assets/listing-new-assets.jpg)
 
@@ -48,11 +48,11 @@ To delist, nodes stop watching a chain. When 67% are no longer watching, it gets
 Developers from the community submit Architecture Decision Records (ADR) which are then voted on by node operators.\
 An ADR should provide:
 
-* Context on the relevant goals and the current state
-* Proposed changes to achieve the goals
-* Summary of pros and cons
-* References
-* Changelog
+- Context on the relevant goals and the current state
+- Proposed changes to achieve the goals
+- Summary of pros and cons
+- References
+- Changelog
 
 The ADR process is defined [here](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/PROCESS.md) and ADR status is listed [here](https://gitlab.com/thorchain/thornode/-/tree/develop/docs/architecture).
 
@@ -70,5 +70,5 @@ Mimir is a feature to allow changes in the constants of the chain, such as Minim
 
 There are two types of `mimir`
 
-* Node Mimir: set by each node. Once 2.3rds have set a mimir, it is enacted. Only active nodes have their votes counted
-* Admin Mimir: set by admins to override constants during testing. Admin-mimir can't control funds, but it can set parameters. Ultimately admin-mimir will be removed. Admin-mimir has a set exclusion list, values that cannot be updated by Admin, defined [here](https://gitlab.com/thorchain/thornode/-/blame/develop/x/thorchain/mimir\_accesscontrols.go#L10).
+- Node Mimir: set by each node. Once 2.3rds have set a mimir, it is enacted. Only active nodes have their votes counted
+- Admin Mimir: set by admins to override constants during testing. Admin-mimir can't control funds, but it can set parameters. Ultimately admin-mimir will be removed. Admin-mimir has a set exclusion list, values that cannot be updated by Admin, defined [here](https://gitlab.com/thorchain/thornode/-/blame/develop/x/thorchain/mimir_accesscontrols.go#L10).
