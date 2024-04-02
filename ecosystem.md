@@ -34,6 +34,8 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**DefiSpot**](https://www.defispot.com/trade) - Buy and Earn BTC, ETH, and More Fully Decentralized
 
+[**Jumper Exchange**](https://jumper.exchange/) - Multi-chain Liquidity Aggregator Powered by Li.Fi
+
 [**Kensho Finance**](https://www.kensho.finance/) - Redefining DeFi Trading
 
 [**Ordiswap**](https://app.ordiswap.fi/) - A Dynamic AMM Infrastructure to BRC-20
@@ -52,9 +54,11 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 ### Integrated Wallets and Exchanges
 
+[**Cake Wallet**](https://cakewallet.com/) - Payments Made Easy
+
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
 
-[**EGiddy**](https://giddy.co/) - Your Keys. Your Crypto.
+[**Giddy**](https://giddy.co/) - Your Keys. Your Crypto.
 
 [**Liquality**](https://liquality.io/) - Browser Extension Crypto Wallet with Built-In Swaps
 
