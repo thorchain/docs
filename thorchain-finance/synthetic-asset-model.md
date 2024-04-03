@@ -99,8 +99,6 @@ All swaps pay fees, and a synth Mint or Redeem to an L1 is two swaps. Thus 10.0 
 
 The dynamic synth unit accounting is to ensure that gain or loss caused by price divergence in the synths is quickly realised to LPs. If Synths as a function of Pool Liquidity goes to 100%, then dual-LPs are diluted to 0%.
 
-As Liquidity Providers have [Impermanent Loss Protection](continuous-liquidity-pools.md#impermanent-loss-protection), as long as they stay for longer than 100 days, the Protocol [Reserve](../how-it-works/emission-schedule.md#reserve)is taking on the price risk. With the Grandfathering of ILP, the RESERVE will instead enter the pools as a dual-LP of last-resort. This stops Synths going to 100%.
-
 ### Synth Minting Cap
 
 Due to synths, Liquidity Providers are taking a leveraged position on the RUNE asset today. This can help them earn more rewards if RUNE outperforms the asset, but can also go the other way. The higher the percentage of synths that exist on the network relative to pool depth, the higher the leveraged position Liquidity Providers are taking.
