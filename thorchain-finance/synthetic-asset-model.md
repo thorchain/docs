@@ -105,8 +105,6 @@ Due to synths, Liquidity Providers are taking a leveraged position on the RUNE a
 
 Due to this, the minting of synths is capped to an upper limit of the total pool depth to protect Liquidity Providers and the network. The [Mimir](../how-it-works/constants-and-mimir.md)setting `MaxSynthPerAssetDepth` setting controls the cap which is the asset depth percentage.
 
-This will soon be deprecated to allow PoL to control Synths.
-
 ### Protocol Owned Liquidity (POL)
 
 With the addition of [yield-bearing synths,](savings.md) there can be a high demand for minting synths that exceed the cap with normal liquidity. See the original [PR](https://gitlab.com/thorchain/thornode/-/issues/1342). POL has been introduced to deal with a high demand for minting synths while maintaining a safe synth minting limit by using the RUNE within the [Reserve](../how-it-works/emission-schedule.md#reserve).
