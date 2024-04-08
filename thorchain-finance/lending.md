@@ -257,21 +257,27 @@ Block Science reviewed the lending mechanisms exhaustively. The Output of their 
 
 ## Lending Resources
 
-**Explainer Article**
+## FAQs
+
+* [General Lending FAQs](../frequently-asked-questions/lending.md#general-questions)
+* [In depth FAQs](../frequently-asked-questions/lending.md#in-depth-questions)
+
+### Explainer Article
 
 * [Lending 101 by LP University](https://crypto-university.medium.com/under-the-hood-lending-101-f934e1c22792)
 
-**Explainer Videos**
+### Explainer Videos
 
 * [How Lending Works by GrassRoots Crypto](https://youtu.be/AaqHG00RJks)
 * [Lending with Numbers by GrassRoots Crypto](https://youtu.be/PVpYU5kCOHI)
 * [Lending Risks & Concerns by GrassRoots Crypto](https://www.youtube.com/watch?v=glY\_RVYdsfM)
 
-**Dashboard**
+### Dashboard
 
 * [Lending Health Dashboard by NineRealms](https://dashboards.ninerealms.com/#lending)
+* [Lending Dashboard by banbannard](https://flipsidecrypto.xyz/banbannard/thorchain-lending-fOAKej)
 
-**Design Documents**
+### Design Documents
 
 * [ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md)
 * * [ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md?ref_type=heads)

@@ -30,7 +30,7 @@ Every time a swap is made in the L1 pool, the fees and rewards that were meant t
 Every time a swap is made in the L1 pool, the fees & rewards that were meant to be added to the pool is divided against the SynthYieldBasisPoints, then divided against the depth of the Savers Vault vs the Depth of the Pool (in terms of asset qty), then paid directly into the vault:
 
 The code for that is here:\
-[https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_network\_current.go#L703](https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_network\_current.go#L477)
+[https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_network\_current.go#L703](https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_network\_current.go#L703)
 
 ### Withdrawing
 
