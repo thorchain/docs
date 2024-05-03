@@ -74,10 +74,6 @@ The design of THORChain Lending is very different than defi loans you’ve seen 
 
 There certainly is risk, and no one is claiming otherwise. You always take on protocol risk for example, and it has an opportunity cost (ie you could be earning 2-6% APR on savers, but instead using your BTC for loan collateral). There is also a chance of high fees when opening or closing your loan depending on market conditions. So you may not be able to close your loan when you want to (at least not with low fees).
 
-### Seen it before…TC will rug just like blockfi, celsius and all the others
-
-CeFi companies like BlockFi Celsius etc took people’s collateral and made increasingly riskier bets to compete in a field of “high yielders” offerings. THORChain isn’t doing this, instead, it does only one thing with you collateral which is transparent and publicly known what that is exactly. While there is protocol risk (ie TSS exploit where funds are lost), it has been several years since an exploit has been carried out on the protocol, which instils confidence in the protocol and the devs/security engineers who work on it.
-
 ### What if there's a bank run?
 
 The only reason for a bank run to occur is if people feel their collateral is at risk. Borrowers don't care about a downturn in $RUNE price, as long as their collateral is safe. This is why the "golden rule" of this protocol is never to put collateral at risk, ie block users from closing loans.
