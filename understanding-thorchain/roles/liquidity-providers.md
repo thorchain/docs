@@ -22,31 +22,25 @@ Yield is calculated for liquidity providers every block. Yield is paid out to li
 
 Rewards are calculated according to whether or not the block contains any swap transactions. If the block contains swap transactions then the amount of fees collected per pool sets the amount of rewards. If the block doesn't contain trades then the amount of assets in the pool determines the rewards.
 
-{% tabs %}
-{% tab title="BLOCK WITH SWAPS" %}
-How a block with fees splits the reward. In this example, 1000 RUNE is being divided as rewards:
+How a block with swap fees splits the reward. In this example, 1000 RUNE is being divided as rewards:
 
-|                       |          |                     |          |
-| --------------------- | -------- | ------------------- | -------- |
-| **Pool Depth (RUNE)** | **Fees** | **Share (of Fees)** | Rewards  |
-| 1,000,000             | 1000     | 33%                 | 333      |
-| 2,000,000             | 0        | 0%                  | 0        |
-| 3,000,000             | 2000     | 67%                 | 667      |
-| **6,000,000**         | **3000** | **100%**            | **1000** |
-{% endtab %}
+|      |                       |          |                     |          |
+| ---- | --------------------- | -------- | ------------------- | -------- |
+|      | **Pool Depth (RUNE)** | **Fees** | **Share (of Fees)** | Rewards  |
+|Pool A| 1,000,000             | 1000     | 33%                 | 333      |
+|Pool B| 2,000,000             | 0        | 0%                  | 0        |
+|Pool C| 3,000,000             | 2000     | 67%                 | 667      |
+|Total | **6,000,000**         | **3000** | **100%**            | **1000** |
 
-{% tab title="BLOCK WITH NO SWAPS" %}
-How a block with no fees splits the rewards. In this example, 1000 RUNE is being divided:
+How a block with no swap fees splits the rewards. In this example, 1000 RUNE is being divided as rewards:
 
-|                       |          |                      |          |
-| --------------------- | -------- | -------------------- | -------- |
-| **Pool Depth (RUNE)** | **Fees** | **Share (of Depth)** | Rewards  |
-| 1,000,000             | 0        | 17%                  | 167      |
-| 2,000,000             | 0        | 33%                  | 333      |
-| 3,000,000             | 0        | 50%                  | 500      |
-| **6,000,000**         | **0**    | **100%**             | **1000** |
-{% endtab %}
-{% endtabs %}
+|      |                       |          |                      |          |
+| ---- | --------------------- | -------- | -------------------- | -------- |
+|      | **Pool Depth (RUNE)** | **Fees** | **Share (of Depth)** | Rewards  |
+|Pool A| 1,000,000             | 0        | 17%                  | 167      |
+|Pool B| 2,000,000             | 0        | 33%                  | 333      |
+|Pool C| 3,000,000             | 0        | 50%                  | 500      |
+|Total | **6,000,000**         | **0**    | **100%**             | **1000** |
 
 This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity. 
 
