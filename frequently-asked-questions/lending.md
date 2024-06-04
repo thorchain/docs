@@ -1,5 +1,7 @@
 # Lending Frequently Asked Questions
 
+## General Questions
+
 ### What is Lending?
 
 Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio with 0% interest, no liquidations, and no expiration.
@@ -59,3 +61,7 @@ The THORChain protocol and all RUNE holders are the counterparty to each loan. T
 ### How do I integrate with Lending?
 
 See the developer quick start guide [here](https://dev.thorchain.org/lending/quick-start-guide.html)
+
+## In Depth Questions
+
+[See this Twitter Thread](https://twitter.com/CBarraford/status/1775618463341408587)

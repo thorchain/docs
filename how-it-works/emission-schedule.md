@@ -10,10 +10,10 @@ description: >-
 
 There are a maximum of 500m RUNE. All 100% was created at genesis and distributed via different mechanisms:
 
-* In return for capital: 5% (SEED) and 16% (IDO) was sold for capital to start the network and give it value. They took on risk to support the network.
-* In return for time and effort: 10% was allocated to a group of devs who worked since 2018. They took on risk to deliver the network.
-* In return for bootstrap participation: 24% was given to users who participated in the bootstrapping of the network.
-* In return for through-life participation: 44% has been placed in the Protocol to pay out to Nodes and LPs for the next 10+ years.
+- In return for capital: 5% (SEED) and 16% (IDO) was sold for capital to start the network and give it value. They took on risk to support the network.
+- In return for time and effort: 10% was allocated to a group of devs who worked since 2018. They took on risk to deliver the network.
+- In return for bootstrap participation: 24% was given to users who participated in the bootstrapping of the network.
+- In return for through-life participation: 44% has been placed in the Protocol to pay out to Nodes and LPs for the next 10+ years.
 
 {% hint style="success" %}
 All vesting has been completed.
@@ -33,7 +33,7 @@ $$
 blockReward = \frac{ \frac{reserve}{emissionCurve}}{blocksPerYear} = \frac{ \frac{180,000,000}{8}}{5256000} = 4.28
 $$
 
-So if the reserve has 180m rune, a single block will emit \~4.28 Rune from the reserve, which means half  of that is awarded to the node operators. The rest is paid to liquidity providers.
+So if the reserve has 180m rune, a single block will emit \~4.28 Rune from the reserve, which means half of that is awarded to the node operators. The rest is paid to liquidity providers.
 
 The exact distribution between node operators and liquidity providers (and therefore savers) is controlled by the [Incentive Pendulum](incentive-pendulum.md).
 

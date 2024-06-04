@@ -244,8 +244,7 @@ but currently overridden by a Mimir value of 1.
 ## Impermanent Loss Protection
 
 {% hint style="success" %}
-ILP was grandfathered in Q1 2023 after the launch of the Savings Product - which offers single-sided yield with no price exposure to RUNE. Existing LPs retained their ILP, new dual-LPs will need to be more sophisticated to handle increased volatility of yield.
-ILP is no longer offered to Liquidty Providers.
+As per [ADR 005](https://dev.thorchain.org/architecture/adr-005-deprecate-ilp.html) Impermanent Loss Protection has been removed for all liquidiy providers.
 {% endhint %}
 
 Impermanent Loss Protection ensures LPs always either make a profit, or leave with at break even after a minimum period of time (set at 100 days), and partially covered before that point. This should alleviate most of the concerns regarding become an LP.
@@ -279,7 +278,7 @@ Deposit values are _not_ the amounts the member deposited. They are the immediat
 
 The coverage is then adjusted for the 100 day rule.
 
-\`\`[`blocksForFullProtection`](../how-it-works/constants-and-mimir.md)`= 1440000 // 100 days`
+[`blocksForFullProtection`](../how-it-works/constants-and-mimir.md)`= 1440000 // 100 days`
 
 $$
 \text{protectionProgress }= (currentHeight - heightLastAdded) / blocksForFullProtection

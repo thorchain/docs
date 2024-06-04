@@ -21,7 +21,7 @@ Each node has a "Bifröst" service that deals with the nuances of connecting to 
 
 The witness transaction has the following parameters that are essentially the same for each chain, no matter the type:
 
-``` json
+```json
 type Tx struct {
 	ID          TxID    `json:"id"`
 	Chain       Chain   `json:"chain"`
@@ -35,13 +35,13 @@ type Tx struct {
 
 THORChain processes each observed transaction and waits for consensus. Once a super-majority of nodes agree on a particular transaction, it moves from a `pending` state to a finalised state.
 
-``` json
+```json
 type ObservedTx struct {
 	Tx             common.Tx        `json:"tx"`
 	Status         status           `json:"status"`
-	OutHashes      common.TxIDs     `json:"out_hashes"` 
+	OutHashes      common.TxIDs     `json:"out_hashes"`
 	BlockHeight    int64            `json:"block_height"`
-	Signers        []sdk.AccAddress `json:"signers"` 
+	Signers        []sdk.AccAddress `json:"signers"`
 	ObservedPubKey common.PubKey    `json:"observed_pub_key"`
 }
 ```
@@ -58,7 +58,7 @@ The state machine processes the finalised transaction and performs logic, such a
 
 The `txOut` looks like the following:
 
-``` json
+```json
 type TxOutItem struct {
 	Chain       common.Chain   `json:"chain"`
 	ToAddress   common.Address `json:"to"`
