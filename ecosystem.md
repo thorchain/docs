@@ -38,6 +38,8 @@ Below is a list of active THORChain community projects. Also, see [Linktree](htt
 
 [**Kensho Finance**](https://www.kensho.finance/) - Redefining DeFi Trading
 
+[**Lends**](https://www.lends.so/) - Don't Sell Your Crypto, Borrow Against It
+
 [**Ordiswap**](https://app.ordiswap.fi/) - A Dynamic AMM Infrastructure to BRC-20
 
 [**Rango Exchange**](https://rango.exchange/) - First Multi-chain DEX Aggregator
