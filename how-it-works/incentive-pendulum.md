@@ -6,9 +6,11 @@ description: THORChain's Incentive Pendulum keeps the network in a balanced stat
 
 The Incentive Pendulum controls the flow of system income between node operators and liquidity providers based on the total bond and total pooled.
 
-[Total Bonded](https://viewblock.io/thorchain/address/thor17gw75axcnr8747pkanye45pnrwk7p9c3cqncsv): Sum of all RUNE bonded by [node operators](../understanding-thorchain/roles/node-operators.md).
-
-[Total Pooled](https://runescan.io/pools): Sum of liquidity in all pools by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
+- **[Total Bonded](https://runescan.io/address/thor17gw75axcnr8747pkanye45pnrwk7p9c3cqncsv)**: Sum of all RUNE bonded by active [node operators](../understanding-thorchain/roles/node-operators.md).
+- **Bond Hard Cap** : The highest bond in the bottom 2/3 of active node operators to ensure no single node has excessive influence on the Total Bond.
+- **Total Effective Bond**: The sum of all active node bonds. Bond amounts added are capped by the Bond Hard Cap. This maintains a balanced and secure network by distributing bonding power more evenly among node operators.
+- **Effective Security Bond**. The sum of the total bond of the bottom 2/3rds active nodes.
+- **[Total Pooled](https://runescan.io/address/thor1g98cy3n9mmjrpn0sxmn63lztelera37n8n67c0)**: Sum of liquidity in all [pools](https://runescan.io/pools) by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
 
 The capital on THORChain can lose its balance over time. Sometimes there will be too much capital in liquidity pools; sometimes there will be too much bonded by nodes. If there is too much capital in liquidity pools, the network is unsafe. If there is too much capital bonded by nodes, the network is inefficient.
 
@@ -67,91 +69,266 @@ Try this [interactive model](https://rebase.foundation/network/thorchain/system-
 
 The algorithm that controls the Incentive Pendulum is as follows:
 
-$$
-shareFactor = \frac{b - s}{b + s / ic}
-$$
+1. **Determine the Initial Share** of rewards for node operators based on the `vaultLiquidity` and `securityBond`.
 
 $$
-b = totalBonded, s = totalPooled, ic = Incentive Curve
+baseNodeShare= \frac{vaultLiquidity}{securityBond + vaultLiquidity} \times totalRewards
 $$
+
+1. **Calculate Base Pool Share** after allocating the `baseNodeShare` to node operators.
+
+$$
+basePoolShare = totalRewards - baseNodeShare
+$$
+
+1. **Adjust Node and Pool Shares:**
+
+    - **Adjust the Node Share** if `effectiveBond` exceeds the `securityBond` so Nodes are reward upto the Bond Hard Limit.
+    $$
+    adjustedNodeShare= \frac{effectiveBond}{securityBond} \times baseNodeShare
+    ​$$
+
+    - **Adjust Pool Share** based on the ratio of `pooledRune` to `vaultLiquidity` as non-poolled liquidiy is not yield bearing.
+    $$
+    adjustmentPoolShare= \frac{pooledRune}{vaultLiqThe amount of Rune which has been bonded by node operators, and the amounuidity} \times basePoolShare
+    $$
+
+1. Aggregate the adjusted shares for both node operators and LPs to ensure they do not exceed the total rewards.
+
+$$
+adjustmentRewards = adjustmentPoolShare + adjustmentNodeShare
+$$
+
+1. Calculate the final amount of rewards allocated to LPs, ensuring it does not exceed the totalRewards:
+
+$$
+finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards
+$$
+
+### Summary Formula
+
+$$
+\text{finalPoolShare} = \frac{\left( \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times (\text{totalRewards} - \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}) \right)}{\left( \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times (\text{totalRewards} - \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}) \right) + \left( \frac{\text{effectiveBond}}{\text{securityBond}} \times \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards} \right)} \times \text{totalRewards}
+$$
+
+Liquidity Providers are paid the ``finalPoolShare` and Nodes are paid the remainder
+
+## Stable Example
 
 In a **stable** state of 67m RUNE bonded and 33m RUNE pooled:
 
-$$
-shareFactor = \frac{67 -  33}{67 + 33/1} = 0.33
-$$
+Vaules are:
 
-Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.
+- securityBond = 67m RUNE
+- effectiveBond = 67m RUNE
+- vaultLiquidity = 35m RUNE
+- pooledRUNE = = 33m RUNE
+- totalRewards = 1 000 RUNE (from fees and block rewards)
+
+### Calculation Steps
+
+1. **Initial Node Share**:
+   $$
+   \text{baseNodeShare} = \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}
+   $$
+   $$
+   \text{baseNodeShare} = \frac{35,000,000}{67,000,000 + 35,000,000} \times 1,000
+   $$
+   $$
+   \text{baseNodeShare} = \frac{35,000,000}{102,000,000} \times 1,000
+   $$
+   $$
+   \text{baseNodeShare} \approx 343.14 \, \text{RUNE}
+   $$
+
+2. **Initial Pool Share**:
+   $$
+   \text{basePoolShare} = \text{totalRewards} - \text{baseNodeShare}
+   $$
+   $$
+   \text{basePoolShare} = 1,000 - 343.14
+   $$
+   $$
+   \text{basePoolShare} \approx 656.86 \, \text{RUNE}
+   $$
+
+3. **Adjusted Node and Pool Shares**:
+   - **Adjusted Node Share**:
+     $$
+     \text{adjustmentNodeShare} = \frac{\text{effectiveBond}}{\text{securityBond}} \times \text{baseNodeShare}
+     $$
+     Assuming effectiveBond = securityBond:
+     $$
+     \text{adjustmentNodeShare} = \frac{67,000,000}{67,000,000} \times 343.14
+     $$
+     $$
+     \text{adjustmentNodeShare} = 1 \times 343.14
+     $$
+     $$
+     \text{adjustmentNodeShare} \approx 343.14 \, \text{RUNE}
+     $$
+   - **Adjusted Pool Share**:
+     $$
+     \text{adjustmentPoolShare} = \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times \text{basePoolShare}
+     $$
+     $$
+     \text{adjustmentPoolShare} = \frac{33,000,000}{35,000,000} \times 656.86
+     $$
+     $$
+     \text{adjustmentPoolShare} \approx 619.04 \, \text{RUNE}
+     $$
+
+4. **Final Pool Share**:
+   $$
+   \text{adjustmentRewards} = \text{adjustmentPoolShare} + \text{adjustmentNodeShare}
+   $$
+   $$
+   \text{adjustmentRewards} = 619.04 + 343.14
+   $$
+   $$
+   \text{adjustmentRewards} \approx 962.18 \, \text{RUNE}
+   $$
+
+   $$
+   \text{finalPoolShare} = \frac{\text{adjustmentPoolShare}}{\text{adjustmentRewards}} \times \text{totalRewards}
+   $$
+   $$
+   \text{finalPoolShare} = \frac{619.04}{962.18} \times 1,000
+   $$
+   $$
+   \text{finalPoolShare} \approx 643.59 \, \text{RUNE}
+   $$
+
+5. **Final Node Share**:
+   $$
+   \text{finalNodeShare} = \text{totalRewards} - \text{finalPoolShare}
+   $$
+   $$
+   \text{finalNodeShare} = 1,000 - 643.59
+   $$
+   $$
+   \text{finalNodeShare} \approx 356.41 \, \text{RUNE}
+   $$
+
+### Percentage Split
+
+- **LPs' Share**:
+  $$
+  \text{LPs' Share Percentage} = \frac{\text{finalPoolShare}}{\text{totalRewards}} \times 100
+  $$
+  $$
+  \text{LPs' Share Percentage} = \frac{643.59}{1,000} \times 100
+  $$
+  $$
+  \text{LPs' Share Percentage} \approx 64.36\%
+  $$
+
+- **Nodes' Share**:
+  $$
+  \text{Nodes' Share Percentage} = \frac{\text{finalNodeShare}}{\text{totalRewards}} \times 100
+  $$
+  $$
+  \text{Nodes' Share Percentage} = \frac{356.41}{1,000} \times 100
+  $$
+  $$
+  \text{Nodes' Share Percentage} \approx 35.64\%
+  $$
+
+Therefore, the reward split is approximately 64.36% for liquidity providers (LPs) and 35.64% for node operators.
+
+## Underbonded Example
 
 In the **under-bonded** state of 60m RUNE bonded and 40m RUNE pooled
 
-$$
-shareFactor = \frac{60 -  40}{60  + 40/1} = 0.2
-$$
+Vaules are:
 
-Thus, 20% of the rewards go to Liquidity Providers and 80% to the Node Operators, incentivising more node operators to be created.
+- securityBond = 60m RUNE
+- effectiveBond = 60m RUNE
+- vaultLiquidity = 45m RUNE
+- pooledRUNE = = 40m RUNE
+- totalRewards = 1 000 RUNE (from fees and block rewards)
 
-In a **very under-bonded** state of 55m RUNE bonded and 45m RUNE pooled
+### Underbonded Calculation Steps
 
-$$
-shareFactor = \frac{55 -  45}{55  + 45/1} = 0.10
-$$
+1. **Initial Node Share**:
+   $$
+   \text{baseNodeShare} = \frac{45,000,000}{60,000,000 + 45,000,000} \times 1,000
+   $$
+   $$
+   \text{baseNodeShare} = \frac{45,000,000}{105,000,000} \times 1,000
+   $$
+   $$
+   \text{baseNodeShare} \approx 428.57 \, \text{RUNE}
+   $$
 
-Thus, Liquidity providers will receive 10% of the rewards. This may drive Liquidity providers away.
+2. **Initial Pool Share**:
+   $$
+   \text{basePoolShare} = 1,000 - 428.57
+   $$
+   $$
+   \text{basePoolShare} \approx 571.43 \, \text{RUNE}
+   $$
 
-In an **over-bonded** state of 80m RUNE bonded and 20m RUNE pooled:
+3. **Adjusted Node and Pool Shares**:
+   - **Adjusted Node Share**:
+     $$
+     \text{adjustmentNodeShare} = \frac{60,000,000}{60,000,000} \times 428.57
+     $$
+     $$
+     \text{adjustmentNodeShare} = 1 \times 428.57
+     $$
+     $$
+     \text{adjustmentNodeShare} \approx 428.57 \, \text{RUNE}
+     $$
+   - **Adjusted Pool Share**:
+     $$
+     \text{adjustmentPoolShare} = \frac{40,000,000}{45,000,000} \times 571.43
+     $$
+     $$
+     \text{adjustmentPoolShare} \approx 508.16 \, \text{RUNE}
+     $$
 
-$$
-shareFactor = \frac{80 -  20}{80  + 20/1} = 0.6
-$$
+4. **Final Pool Share**:
+   $$
+   \text{adjustmentRewards} = 508.16 + 428.57
+   $$
+   $$
+   \text{adjustmentRewards} \approx 936.73 \, \text{RUNE}
+   $$
+   $$
+   \text{finalPoolShare} = \frac{508.16}{936.73} \times 1,000
+   $$
+   $$
+   \text{finalPoolShare} \approx 542.41 \, \text{RUNE}
+   $$
 
-Thus, 60% of the rewards go to Liquidity Providers and 40% go to Node Operators.
+5. **Final Node Share**:
+   $$
+   \text{finalNodeShare} = 1,000 - 542.41
+   $$
+   $$
+   \text{finalNodeShare} \approx 457.59 \, \text{RUNE}
+   $$
 
-### Incentive Curve
+### Underbonded Percentage Split
 
-In the **stable** state of 67m RUNE bonded and 33m RUNE pooled, Liquidity providers are providing half the assets TVL (RUNE and Assets) and bonders are providing the other half.
+- **LPs' Share**:
+  $$
+  \text{LPs' Share Percentage} = \frac{542.41}{1,000} \times 100
+  $$
+  $$
+  \text{LPs' Share Percentage} \approx 54.24\%
+  $$
 
-The [Incentive Curve](constants-and-mimir.md) can be used to adjust the reward flow with respect to the Incentive Pendulum.
+- **Nodes' Share**:
+  $$
+  \text{Nodes' Share Percentage} = \frac{457.59}{1,000} \times 100
+  $$
+  $$
+  \text{Nodes' Share Percentage} \approx 45.76\%
+  $$
 
-In a stable situation with the Incentive Curve set to 1.
-
-$$
-shareFactor = \frac{67 -  33}{67 + 33/1} = 0.33
-$$
-
-Thus, 33% of the rewards go to Liquidity Providers and 67% go to Node Operators.
-
-In a stable situation with the Incentive Curve set to 2.
-
-$$
-shareFactor = \frac{67 -  33}{67 + 33/2} = 0.4
-$$
-
-In a stable situation with the Incentive Curve set to 4.
-
-Thus, 40% of the rewards go to Liquidity Providers and 60% go to Node Operators.
-
-$$
-shareFactor = \frac{67 -  33}{67 + 33/4} = 0.45
-$$
-
-In a stable situation with the Incentive Curve set to 100.
-
-$$
-shareFactor = \frac{67 -  33}{67 + 33/100} = 0.5
-$$
-
-Thus, 50% of the rewards go to Liquidity Providers and 50% go to Node Operators.
-
-The Incentive Pendulum is a linear path between Liquidity providers and Node Operators. The Incentive Curve can smooth the effect of the Incentive Pendulum as it moves. With the Incentive Pendulum in a set position, as Incentive Curve increases so do the rewards that are paid to Liquidity providers.
-
-In a stable situation, it can be set to 100 to ensure Liquidity providers and Node Operator's are rewarded equally.
-
-In an under-bond state, it can be increased so Liquidity providers are not adversely affected by the reduction of rewards due to the Incentive Pendulum.
-
-In an over-bonded state, it can be reduced to ensure Liquidity Providers are not being paid too much.
-
-Incentive Curve value set in constants however can be overridden in [Mimir](constants-and-mimir.md)by [Node Operators](../thornodes/overview.md).
+Therefore, the reward split is approximately 54.24% for liquidity providers (LPs) and 45.76% for node operators.
 
 ## Driving Capital Allocation
 
