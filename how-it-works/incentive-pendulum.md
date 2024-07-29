@@ -84,14 +84,16 @@ $$
 3. **Adjust Node and Pool Shares:**
 
     - **Adjust the Node Share** if `effectiveBond` exceeds the `securityBond` so Nodes are reward upto the Bond Hard Limit.
-    $$
-    adjustedNodeShare= \frac{effectiveBond}{securityBond} \times baseNodeShare
-    ​$$
+
+$$
+adjustedNodeShare= \frac{effectiveBond}{securityBond} \times baseNodeShare
+​$$
 
     - **Adjust Pool Share** based on the ratio of `pooledRune` to `vaultLiquidity` as non-poolled liquidiy is not yield bearing.
-    $$
-    adjustmentPoolShare= \frac{pooledRune}{vaultLiqThe amount of Rune which has been bonded by node operators, and the amounuidity} \times basePoolShare
-    $$
+
+$$
+adjustmentPoolShare= \frac{pooledRune}{vaultLiqThe amount of Rune which has been bonded by node operators, and the amounuidity} \times basePoolShare
+$$
 
 4. **Aggregate the adjusted shares** for both node operators and LPs to ensure they do not exceed the total rewards.
 
@@ -111,7 +113,7 @@ $$
 \text{finalPoolShare} = \frac{\left( \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times (\text{totalRewards} - \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}) \right)}{\left( \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times (\text{totalRewards} - \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}) \right) + \left( \frac{\text{effectiveBond}}{\text{securityBond}} \times \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards} \right)} \times \text{totalRewards}
 $$
 
-Liquidity Providers are paid the ``finalPoolShare` and Nodes are paid the remainder
+Liquidity Providers are paid the `finalPoolShare` and Nodes are paid the remainder.
 
 ## Stable Example
 
