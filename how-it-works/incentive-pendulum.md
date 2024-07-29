@@ -72,7 +72,7 @@ The algorithm that controls the Incentive Pendulum is as follows:
 1. **Determine the Initial Share** of rewards for node operators based on the `vaultLiquidity` and `securityBond`.
 
 $$
-baseNodeShare= \frac{vaultLiquidity}{securityBond + vaultLiquidity} \times totalRewards
+baseNodeShare= \frac{vaultLiquidity}{securityBond} \times totalRewards
 $$
 
 2. **Calculate Base Pool Share** after allocating the `baseNodeShare` to node operators.
@@ -83,16 +83,16 @@ $$
 
 3. **Adjust Node and Pool Shares:**
 
-    - **Adjust the Node Share** if `effectiveBond` exceeds the `securityBond` so Nodes are reward upto the Bond Hard Limit.
+- **Adjust the Node Share** if `effectiveBond` exceeds the `securityBond` so Nodes are reward upto the Bond Hard Limit.
 
 $$
 adjustedNodeShare= \frac{effectiveBond}{securityBond} \times baseNodeShare
 ​$$
 
-    - **Adjust Pool Share** based on the ratio of `pooledRune` to `vaultLiquidity` as non-poolled liquidiy is not yield bearing.
+ - **Adjust Pool Share** based on the ratio of `pooledRune` to `vaultLiquidity` as non-pooled liquidity is not yield-bearing:
 
 $$
-adjustmentPoolShare= \frac{pooledRune}{vaultLiqThe amount of Rune which has been bonded by node operators, and the amounuidity} \times basePoolShare
+\text{adjustmentPoolShare} = \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times \text{basePoolShare}
 $$
 
 4. **Aggregate the adjusted shares** for both node operators and LPs to ensure they do not exceed the total rewards.
@@ -105,12 +105,6 @@ $$
 
 $$
 finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards
-$$
-
-### Summary Formula
-
-$$
-\text{finalPoolShare} = \frac{\left( \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times (\text{totalRewards} - \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}) \right)}{\left( \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times (\text{totalRewards} - \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}) \right) + \left( \frac{\text{effectiveBond}}{\text{securityBond}} \times \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards} \right)} \times \text{totalRewards}
 $$
 
 Liquidity Providers are paid the `finalPoolShare` and Nodes are paid the remainder.
@@ -132,109 +126,75 @@ Vaules are:
 1. **Initial Node Share**:
 
 $$
-\text{baseNodeShare} = \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}
+baseNodeShare = \frac{35,000,000}{67,000,000} \times 1,000
 $$
 
 $$
-\text{baseNodeShare} = \frac{35,000,000}{67,000,000 + 35,000,000} \times 1,000
-$$
-
-$$
-\text{baseNodeShare} = \frac{35,000,000}{102,000,000} \times 1,000
-$$
-
-$$
-\text{baseNodeShare} \approx 343.14 \, \text{RUNE}
+baseNodeShare \approx 522.39 \, \text{RUNE}
 $$
 
 2. **Initial Pool Share**:
 
 $$
-\text{basePoolShare} = \text{totalRewards} - \text{baseNodeShare}
+basePoolShare = 1,000 - 522.39
 $$
 
 $$
-\text{basePoolShare} = 1,000 - 343.14
-$$
-
-$$
-\text{basePoolShare} \approx 656.86 \, \text{RUNE}
+basePoolShare \approx 477.61 \, \text{RUNE}
 $$
 
 3. **Adjusted Node and Pool Shares**:
-
-- **Adjusted Node Share**:
-
-$$
-\text{adjustmentNodeShare} = \frac{\text{effectiveBond}}{\text{securityBond}} \times \text{baseNodeShare}
-$$
-
-Assuming effectiveBond = securityBond:
+   - **Adjusted Node Share**:
 
 $$
-\text{adjustmentNodeShare} = \frac{67,000,000}{67,000,000} \times 343.14
+adjustedNodeShare = \frac{67,000,000}{67,000,000} \times baseNodeShare
 $$
 
 $$
-\text{adjustmentNodeShare} = 1 \times 343.14
+adjustedNodeShare = 1 \times 522.39
 $$
 
 $$
-\text{adjustmentNodeShare} \approx 343.14 \, \text{RUNE}
+adjustedNodeShare \approx 522.39 \, \text{RUNE}
 $$
 
-- **Adjusted Pool Share**:
-
+   - **Adjusted Pool Share**:
 $$
-\text{adjustmentPoolShare} = \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times \text{basePoolShare}
-$$
-
-$$
-\text{adjustmentPoolShare} = \frac{33,000,000}{35,000,000} \times 656.86
+adjustmentPoolShare = \frac{33,000,000}{35,000,000} \times basePoolShare
 $$
 
 $$
-\text{adjustmentPoolShare} \approx 619.04 \, \text{RUNE}
+adjustmentPoolShare \approx 450.34 \, \text{RUNE}
 $$
 
-4. **Final Pool Share**:
+4. **Aggregate the adjusted shares**:
 
 $$
-\text{adjustmentRewards} = \text{adjustmentPoolShare} + \text{adjustmentNodeShare}
-$$
-
-$$
-\text{adjustmentRewards} = 619.04 + 343.14
+adjustmentRewards = adjustmentPoolShare + adjustedNodeShare
 $$
 
 $$
-\text{adjustmentRewards} \approx 962.18 \, \text{RUNE}
+adjustmentRewards \approx 972.73 \, \text{RUNE}
+$$
+
+5. **Final Pool Share**:
+
+$$
+finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards
 $$
 
 $$
-\text{finalPoolShare} = \frac{\text{adjustmentPoolShare}}{\text{adjustmentRewards}} \times \text{totalRewards}
+finalPoolShare \approx 462.92 \, \text{RUNE}
+$$
+
+6. **Final Node Share**:
+
+$$
+finalNodeShare = totalRewards - finalPoolShare
 $$
 
 $$
-\text{finalPoolShare} = \frac{619.04}{962.18} \times 1,000
-$$
-
-$$
-\text{finalPoolShare} \approx 643.59 \, \text{RUNE}
-$$
-
-5. **Final Node Share**:
-
-$$
-\text{finalNodeShare} = \text{totalRewards} - \text{finalPoolShare}
-$$
-
-$$
-\text{finalNodeShare} = 1,000 - 643.59
-$$
-
-$$
-\text{finalNodeShare} \approx 356.41 \, \text{RUNE}
+finalNodeShare \approx 537.08 \, \text{RUNE}
 $$
 
 ### Percentage Split
@@ -242,147 +202,24 @@ $$
 - **LPs' Share**:
 
 $$
-\text{LPs' Share Percentage} = \frac{\text{finalPoolShare}}{\text{totalRewards}} \times 100
+LPs' Share Percentage = \frac{finalPoolShare}{totalRewards} \times 100
 $$
 
 $$
-\text{LPs' Share Percentage} = \frac{643.59}{1,000} \times 100
-$$
-
-$$
-\text{LPs' Share Percentage} \approx 64.36\%
+LPs' Share Percentage \approx \frac{462.92}{1,000} \times 100 \approx 46.29\%
 $$
 
 - **Nodes' Share**:
 
 $$
-\text{Nodes' Share Percentage} = \frac{\text{finalNodeShare}}{\text{totalRewards}} \times 100
+Nodes' Share Percentage = \frac{finalNodeShare}{totalRewards} \times 100
 $$
 
 $$
-\text{Nodes' Share Percentage} = \frac{356.41}{1,000} \times 100
+Nodes' Share Percentage \approx \frac{537.08}{1,000} \times 100 \approx 53.71\%
 $$
 
-$$
-\text{Nodes' Share Percentage} \approx 35.64\%
-$$
-
-Therefore, the reward split is approximately 64.36% for liquidity providers (LPs) and 35.64% for node operators.
-
-## Underbonded Example
-
-In the **under-bonded** state of 60m RUNE bonded and 40m RUNE pooled
-
-Vaules are:
-
-- securityBond = 60m RUNE
-- effectiveBond = 60m RUNE
-- vaultLiquidity = 45m RUNE
-- pooledRUNE = = 40m RUNE
-- totalRewards = 1 000 RUNE (from fees and block rewards)
-
-### Underbonded Calculation Steps
-
-1. **Initial Node Share**:
-
-$$
-\text{baseNodeShare} = \frac{45,000,000}{60,000,000 + 45,000,000} \times 1,000
-$$
-
-$$
-\text{baseNodeShare} = \frac{45,000,000}{105,000,000} \times 1,000
-$$
-
-$$
-\text{baseNodeShare} \approx 428.57 \, \text{RUNE}
-$$
-
-2. **Initial Pool Share**:
-
-$$
-\text{basePoolShare} = 1,000 - 428.57
-$$
-
-$$
-\text{basePoolShare} \approx 571.43 \, \text{RUNE}
-$$
-
-3. **Adjusted Node and Pool Shares**:
-
-- **Adjusted Node Share**:
-
-$$
-\text{adjustmentNodeShare} = \frac{60,000,000}{60,000,000} \times 428.57
-$$
-
-$$
-\text{adjustmentNodeShare} = 1 \times 428.57
-$$
-
-$$
-\text{adjustmentNodeShare} \approx 428.57 \, \text{RUNE}
-$$
-
-- **Adjusted Pool Share**:
-
-$$
-\text{adjustmentPoolShare} = \frac{40,000,000}{45,000,000} \times 571.43
-$$
-
-$$
-\text{adjustmentPoolShare} \approx 508.16 \, \text{RUNE}
-$$
-
-4. **Final Pool Share**:
-
-$$
-\text{adjustmentRewards} = 508.16 + 428.57
-$$
-
-$$
-\text{adjustmentRewards} \approx 936.73 \, \text{RUNE}
-$$
-
-$$
-\text{finalPoolShare} = \frac{508.16}{936.73} \times 1,000
-$$
-$$
-\text{finalPoolShare} \approx 542.41 \, \text{RUNE}
-$$
-
-5. **Final Node Share**:
-
-$$
-\text{finalNodeShare} = 1,000 - 542.41
-$$
-
-$$
-\text{finalNodeShare} \approx 457.59 \, \text{RUNE}
-$$
-
-### Underbonded Percentage Split
-
-- **LPs' Share**:
-
-$$
-\text{LPs' Share Percentage} = \frac{542.41}{1,000} \times 100
-$$
-
-$$
-\text{LPs' Share Percentage} \approx 54.24\%
-$$
-
-- **Nodes' Share**:
-
-$$
-\text{Nodes' Share Percentage} = \frac{457.59}{1,000} \times 100
-$$
-
-$$
-\text{Nodes' Share Percentage} \approx 45.76\%
-$$
-
-Therefore, the reward split is approximately 54.24% for liquidity providers (LPs) and 45.76% for node operators.
+Therefore, the reward split is approximately 46.29% for liquidity providers (LPs) and 53.71% for node operators.
 
 ## Driving Capital Allocation
 
