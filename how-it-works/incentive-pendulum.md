@@ -158,7 +158,8 @@ $$
 adjustedNodeShare \approx 522.39 \, \text{RUNE}
 $$
 
-   - **Adjusted Pool Share**:
+- **Adjusted Pool Share**:
+
 $$
 adjustmentPoolShare = \frac{33,000,000}{35,000,000} \times basePoolShare
 $$
