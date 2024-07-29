@@ -75,13 +75,13 @@ $$
 baseNodeShare= \frac{vaultLiquidity}{securityBond + vaultLiquidity} \times totalRewards
 $$
 
-1. **Calculate Base Pool Share** after allocating the `baseNodeShare` to node operators.
+2. **Calculate Base Pool Share** after allocating the `baseNodeShare` to node operators.
 
 $$
 basePoolShare = totalRewards - baseNodeShare
 $$
 
-1. **Adjust Node and Pool Shares:**
+3. **Adjust Node and Pool Shares:**
 
     - **Adjust the Node Share** if `effectiveBond` exceeds the `securityBond` so Nodes are reward upto the Bond Hard Limit.
     $$
@@ -93,13 +93,13 @@ $$
     adjustmentPoolShare= \frac{pooledRune}{vaultLiqThe amount of Rune which has been bonded by node operators, and the amounuidity} \times basePoolShare
     $$
 
-1. Aggregate the adjusted shares for both node operators and LPs to ensure they do not exceed the total rewards.
+4. **Aggregate the adjusted shares** for both node operators and LPs to ensure they do not exceed the total rewards.
 
 $$
 adjustmentRewards = adjustmentPoolShare + adjustmentNodeShare
 $$
 
-1. Calculate the final amount of rewards allocated to LPs, ensuring it does not exceed the totalRewards:
+5. **Calculate the final amount** of rewards allocated to LPs, ensuring it does not exceed the totalRewards:
 
 $$
 finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards
@@ -131,12 +131,15 @@ Vaules are:
    $$
    \text{baseNodeShare} = \frac{\text{vaultLiquidity}}{\text{securityBond} + \text{vaultLiquidity}} \times \text{totalRewards}
    $$
+
    $$
    \text{baseNodeShare} = \frac{35,000,000}{67,000,000 + 35,000,000} \times 1,000
    $$
+
    $$
    \text{baseNodeShare} = \frac{35,000,000}{102,000,000} \times 1,000
    $$
+
    $$
    \text{baseNodeShare} \approx 343.14 \, \text{RUNE}
    $$
@@ -145,46 +148,58 @@ Vaules are:
    $$
    \text{basePoolShare} = \text{totalRewards} - \text{baseNodeShare}
    $$
+
    $$
    \text{basePoolShare} = 1,000 - 343.14
    $$
+
    $$
    \text{basePoolShare} \approx 656.86 \, \text{RUNE}
    $$
 
 3. **Adjusted Node and Pool Shares**:
    - **Adjusted Node Share**:
-     $$
-     \text{adjustmentNodeShare} = \frac{\text{effectiveBond}}{\text{securityBond}} \times \text{baseNodeShare}
-     $$
-     Assuming effectiveBond = securityBond:
-     $$
-     \text{adjustmentNodeShare} = \frac{67,000,000}{67,000,000} \times 343.14
-     $$
-     $$
-     \text{adjustmentNodeShare} = 1 \times 343.14
-     $$
-     $$
-     \text{adjustmentNodeShare} \approx 343.14 \, \text{RUNE}
-     $$
+    $$
+    \text{adjustmentNodeShare} = \frac{\text{effectiveBond}}{\text{securityBond}} \times \text{baseNodeShare}
+    $$
+
+    Assuming effectiveBond = securityBond:
+
+    $$
+    \text{adjustmentNodeShare} = \frac{67,000,000}{67,000,000} \times 343.14
+    $$
+
+    $$
+    \text{adjustmentNodeShare} = 1 \times 343.14
+    $$
+
+    $$
+    \text{adjustmentNodeShare} \approx 343.14 \, \text{RUNE}
+    $$
+
    - **Adjusted Pool Share**:
-     $$
-     \text{adjustmentPoolShare} = \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times \text{basePoolShare}
-     $$
-     $$
-     \text{adjustmentPoolShare} = \frac{33,000,000}{35,000,000} \times 656.86
-     $$
-     $$
-     \text{adjustmentPoolShare} \approx 619.04 \, \text{RUNE}
-     $$
+
+    $$
+    \text{adjustmentPoolShare} = \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times \text{basePoolShare}
+    $$
+
+    $$
+    \text{adjustmentPoolShare} = \frac{33,000,000}{35,000,000} \times 656.86
+    $$
+
+    $$
+    \text{adjustmentPoolShare} \approx 619.04 \, \text{RUNE}
+    $$
 
 4. **Final Pool Share**:
    $$
    \text{adjustmentRewards} = \text{adjustmentPoolShare} + \text{adjustmentNodeShare}
    $$
+
    $$
    \text{adjustmentRewards} = 619.04 + 343.14
    $$
+
    $$
    \text{adjustmentRewards} \approx 962.18 \, \text{RUNE}
    $$
@@ -192,9 +207,11 @@ Vaules are:
    $$
    \text{finalPoolShare} = \frac{\text{adjustmentPoolShare}}{\text{adjustmentRewards}} \times \text{totalRewards}
    $$
+
    $$
    \text{finalPoolShare} = \frac{619.04}{962.18} \times 1,000
    $$
+
    $$
    \text{finalPoolShare} \approx 643.59 \, \text{RUNE}
    $$
@@ -203,9 +220,11 @@ Vaules are:
    $$
    \text{finalNodeShare} = \text{totalRewards} - \text{finalPoolShare}
    $$
+
    $$
    \text{finalNodeShare} = 1,000 - 643.59
    $$
+
    $$
    \text{finalNodeShare} \approx 356.41 \, \text{RUNE}
    $$
@@ -216,9 +235,11 @@ Vaules are:
   $$
   \text{LPs' Share Percentage} = \frac{\text{finalPoolShare}}{\text{totalRewards}} \times 100
   $$
+
   $$
   \text{LPs' Share Percentage} = \frac{643.59}{1,000} \times 100
   $$
+
   $$
   \text{LPs' Share Percentage} \approx 64.36\%
   $$
@@ -227,9 +248,11 @@ Vaules are:
   $$
   \text{Nodes' Share Percentage} = \frac{\text{finalNodeShare}}{\text{totalRewards}} \times 100
   $$
+
   $$
   \text{Nodes' Share Percentage} = \frac{356.41}{1,000} \times 100
   $$
+
   $$
   \text{Nodes' Share Percentage} \approx 35.64\%
   $$
@@ -254,9 +277,11 @@ Vaules are:
    $$
    \text{baseNodeShare} = \frac{45,000,000}{60,000,000 + 45,000,000} \times 1,000
    $$
+
    $$
    \text{baseNodeShare} = \frac{45,000,000}{105,000,000} \times 1,000
    $$
+
    $$
    \text{baseNodeShare} \approx 428.57 \, \text{RUNE}
    $$
@@ -265,36 +290,43 @@ Vaules are:
    $$
    \text{basePoolShare} = 1,000 - 428.57
    $$
+
    $$
    \text{basePoolShare} \approx 571.43 \, \text{RUNE}
    $$
 
 3. **Adjusted Node and Pool Shares**:
    - **Adjusted Node Share**:
-     $$
-     \text{adjustmentNodeShare} = \frac{60,000,000}{60,000,000} \times 428.57
-     $$
-     $$
-     \text{adjustmentNodeShare} = 1 \times 428.57
-     $$
-     $$
-     \text{adjustmentNodeShare} \approx 428.57 \, \text{RUNE}
-     $$
+    $$
+    \text{adjustmentNodeShare} = \frac{60,000,000}{60,000,000} \times 428.57
+    $$
+
+    $$
+    \text{adjustmentNodeShare} = 1 \times 428.57
+    $$
+
+    $$
+    \text{adjustmentNodeShare} \approx 428.57 \, \text{RUNE}
+    $$
    - **Adjusted Pool Share**:
-     $$
-     \text{adjustmentPoolShare} = \frac{40,000,000}{45,000,000} \times 571.43
-     $$
-     $$
-     \text{adjustmentPoolShare} \approx 508.16 \, \text{RUNE}
-     $$
+
+    $$
+    \text{adjustmentPoolShare} = \frac{40,000,000}{45,000,000} \times 571.43
+    $$
+
+    $$
+    \text{adjustmentPoolShare} \approx 508.16 \, \text{RUNE}
+    $$
 
 4. **Final Pool Share**:
    $$
    \text{adjustmentRewards} = 508.16 + 428.57
    $$
+
    $$
    \text{adjustmentRewards} \approx 936.73 \, \text{RUNE}
    $$
+
    $$
    \text{finalPoolShare} = \frac{508.16}{936.73} \times 1,000
    $$
@@ -306,6 +338,7 @@ Vaules are:
    $$
    \text{finalNodeShare} = 1,000 - 542.41
    $$
+
    $$
    \text{finalNodeShare} \approx 457.59 \, \text{RUNE}
    $$
@@ -316,6 +349,7 @@ Vaules are:
   $$
   \text{LPs' Share Percentage} = \frac{542.41}{1,000} \times 100
   $$
+
   $$
   \text{LPs' Share Percentage} \approx 54.24\%
   $$
@@ -324,6 +358,7 @@ Vaules are:
   $$
   \text{Nodes' Share Percentage} = \frac{457.59}{1,000} \times 100
   $$
+
   $$
   \text{Nodes' Share Percentage} \approx 45.76\%
   $$
