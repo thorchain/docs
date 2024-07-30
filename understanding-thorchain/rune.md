@@ -85,7 +85,7 @@ RUNE is the native currency of THORChain and is consumed as transaction fees on 
 
 ### **Subsidising Gas**
 
-The network continually consumes gas as it makes outgoing transactions (as well as internal transactions). Gas on networks such as Bitcoin and Ethereum becomes complicated fast, so THORChain doesn't make much of an effort to track every minutia of gas consumed. Instead, nodes are free to use at-will the base assets `BNB.BNB`, `ETH.ETH`, `BTC.BTC`, etc in order to pay for gas. These assets are used directly from the vaults. THORChain then observes outgoing transactions, reports on the gas used, and then pays back the liquidity providers in those pools to the value of twice the amount of gas used (in RUNE).
+The network continually consumes gas as it makes outgoing transactions (as well as internal transactions). Gas on networks such as Bitcoin and Ethereum becomes complicated fast, so THORChain doesn't make much of an effort to track every minutia of gas consumed. Instead, nodes are free to use at-will the base assets `BSC.BNB`, `ETH.ETH`, `BTC.BTC`, etc in order to pay for gas. These assets are used directly from the vaults. THORChain then observes outgoing transactions, reports on the gas used, and then pays back the liquidity providers in those pools to the value of twice the amount of gas used (in RUNE).
 
 ### **Paying out Emissions**
 

@@ -8,13 +8,13 @@ Prices on THORChain are maintained by profit-seeking traders. Traders find asset
 
 Traders compare the exchange rates on THORChain with the rates on external markets. If they find the price is lower on THORChain they can buy there and sell on an external market. If they find the price is lower on external markets they can buy there and sell on THORChain. This process is repeated at high-frequency. Over time, price information propagates and THORChain settles with external markets.
 
-This is how THORChain avoids the need for oracles and how prices are set. To learn more, see [Prices](../../roles/https:/).
+This is how THORChain avoids the need for oracles and how prices are set.
 
 ## How it Works
 
 ### Process
 
-A swap takes place in the BNB/RUNE pool, as described in [Prices](broken-reference). This leaves the pool unbalanced. The ratio on THORChain is 20:1 MATIC:RUNE, but is 16:1 on external markets. This means that RUNE is undervalued on THORChain.
+A swap takes place in the BTC/RUNE pool. This leaves the pool unbalanced. The ratio on THORChain is 20:1 MATIC:RUNE, but is 16:1 on external markets. This means that RUNE is undervalued on THORChain.
 
 Traders can now buy cheap RUNE on THORChain and sell it for a profit on external markets. To do so, they swap MATIC into the pool and get RUNE out. They sell this RUNE on external markets and make a profit.
 
@@ -34,9 +34,9 @@ Trading profits are impacted by liquidity on THORChain and on external markets. 
 
 If both markets are infinitely deep, then the following will occur:
 
-* Buy on External Market for $1.00, no price slip.
-* Sell on THORChain for $1.20, no price slip.
-* **Total Profit: 20%**
+- Buy on External Market for $1.00, no price slip.
+- Sell on THORChain for $1.20, no price slip.
+- **Total Profit: 20%**
 
 The trader can then continue to arbitrage for a profit of 20% continuously.
 
@@ -44,9 +44,9 @@ The trader can then continue to arbitrage for a profit of 20% continuously.
 
 If both markets have finite liquidity, but one is much deeper than the other, then the one of the markets will slip in price after the trade. However, the trader will experience a price that is roughly the average of the price before and after the trade:
 
-* Buy on External Market for $1.00, no price slip.
-* Sell on THORChain for $1.20, realised price of $1.10, price slip to $1.00.
-* **Total Profit: 10%**
+- Buy on External Market for $1.00, no price slip.
+- Sell on THORChain for $1.20, realised price of $1.10, price slip to $1.00.
+- **Total Profit: 10%**
 
 After the trade, there is no more price differential, but the trader made 10% in profit. The trader has made the pool price equal to the secondary market. They have transferred price information from one market to another.
 
@@ -54,9 +54,9 @@ After the trade, there is no more price differential, but the trader made 10% in
 
 If both markets have low liquidity, then the trader is attempting to make trades that slip each market towards each other:
 
-* Buy on External Market for $1.00, realised price of $1.05, price slip to $1.10.
-* Sell on THORChain for $1.20, realised price of $1.15, price slip to $1.10.
-* **Total Profit: >10%**
+- Buy on External Market for $1.00, realised price of $1.05, price slip to $1.10.
+- Sell on THORChain for $1.20, realised price of $1.15, price slip to $1.10.
+- **Total Profit: >10%**
 
 The market now has no more price differential. The trader has made each market equal to each other.
 

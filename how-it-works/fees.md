@@ -68,6 +68,8 @@ This fee is retained on the output side of the pool, ensuring it counters the tr
 In an Asset-Asset swap, the fee is applied twice since two pools are involved, however the user only sees it as a single fee and a single slip value.
 {% endhint %}
 
+Streaming Swaps has greatly increased the swap capital efficiency. A minumum 5pbs fee now applies to all swaps.
+
 ## Network Fee
 
-The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Currently, this is fixed and available on the `/constants` endpoint, but it is intended to be dynamic and set to be a fixed $ qty of assets. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves.
+The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. [ADR 008](https://dev.thorchain.org/architecture/adr-009-reserve-income-fee-overhaul.html) saw the introduction network fee priced in USD. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves.

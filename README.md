@@ -14,15 +14,15 @@ THORChain allows users to swap native assets across multiple chains without the 
 
 Building on the foundation of liquidity pools, THORChain pursues three important financial primitives:
 
-1. Allow a user to **Swap** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.
-2. Allow a user to **Save** {_Asset X on Chain A_}.
-3. Allow a user to **Lend** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.
+1. Allow a user to **[Swap](./thorchain-finance/continuous-liquidity-pools.md)** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.
+2. Allow a user to **[Save](./thorchain-finance/savings.md)** {_Asset X on Chain A_}.
+3. Allow a user to **[Lend](./thorchain-finance/lending.md)** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.
 
 ## Developers
 
-Developers can create innovative products that integrate with THORChain, including wallets, exchanges, and various services, and monetise their efforts via affiliate fees. Developers can earn up to 10% in affiliate fees for swaps and liquidity additions, which encompass savers deposits. Developers only need to focus on creating engaging front-end interfaces and attracting users.
+Developers can create innovative products that integrate with THORChain, including wallets, exchanges, and various services, and monetise their efforts via [affiliate fees](https://dev.thorchain.org/concepts/fees.html?highlight=aff#affiliate-fee). Developers can earn up to 10% in affiliate fees for swaps and liquidity additions, which encompass savers deposits. Developers only need to focus on creating engaging front-end interfaces and attracting users.
 
-See the [Dedicated Developer Documentation](https://dev.thorchain.org/)and quick start guides for [Swapping](https://dev.thorchain.org/swap-guide/quickstart-guide.html) and [Savers](https://dev.thorchain.org/saving-guide/quickstart-guide.html).
+See the [Dedicated Developer Documentation](https://dev.thorchain.org/)and quick start guides for [Swapping](https://dev.thorchain.org/swap-guide/quickstart-guide.html), [Savers](https://dev.thorchain.org/saving-guide/quickstart-guide.html) and [Lending](https://dev.thorchain.org/lending/quick-start-guide.html).
 
 ## Innovations
 

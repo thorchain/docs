@@ -54,7 +54,7 @@ An ADR should provide:
 - References
 - Changelog
 
-The ADR process is defined [here](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/PROCESS.md) and ADR status is listed [here](https://gitlab.com/thorchain/thornode/-/tree/develop/docs/architecture).
+The ADR process is defined [here](https://dev.thorchain.org/architecture/PROCESS.html) and ADR status is listed [here](https://dev.thorchain.org/architecture/index.html).
 
 ### Emergency Changes
 
