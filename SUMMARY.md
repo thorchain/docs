@@ -23,6 +23,7 @@
   * [Savers](frequently-asked-questions/savers.md)
   * [Lending](frequently-asked-questions/lending.md)
   * [Liquidity Providers](frequently-asked-questions/liquidity-providers.md)
+  * [RUNEPool](frequently-asked-questions/runepool.md)
 
 ## THORChain Finance
 
@@ -30,6 +31,7 @@
 * [Synthetics](thorchain-finance/synthetic-asset-model.md)
 * [Savers](thorchain-finance/savings.md)
 * [Lending](thorchain-finance/lending.md)
+* [RUNEPool](thorchain-finance/runepool.md)
 
 ## THORNodes
 
