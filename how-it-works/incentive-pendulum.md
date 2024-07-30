@@ -13,7 +13,7 @@ Key variables to the Incentive Pendulum are:
 - **Total Effective Bond**: The sum of all active node operator's bonds. For each node, the bond amount added is capped by the Bond Hard Cap. This maintains a balanced and secure network by distributing bonding power more evenly among node operators.
 - **Effective Security Bond**. The sum of the total bond of the bottom 2/3rds active node operators.
 - **[Total Pooled](https://runescan.io/address/thor1g98cy3n9mmjrpn0sxmn63lztelera37n8n67c0)**: Sum of liquidity in all [pools](https://runescan.io/pools) by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
-**Vault Liquidity**: Sum of L1 assets within all Asgard Vaults. Includes Pooled L1s and Trade Account L1s.
+- **Vault Liquidity**: Sum of L1 assets within all Asgard Vaults. Includes Pooled L1s and Trade Account L1s.
 
 The capital on THORChain can lose its balance over time. Sometimes there will be too much capital in liquidity pools; sometimes there will be too much bonded by nodes. If there is too much capital in liquidity pools, the network is unsafe. If there is too much capital bonded by nodes, the network is inefficient.
 
@@ -72,7 +72,7 @@ Try this [interactive model](https://rebase.foundation/network/thorchain/system-
 
 The algorithm that controls the Incentive Pendulum is as follows:
 
-| Parameters          | Notes                                            |
+| Parameters     | Notes                                            |
 | -------------- | ------------------------------------------------ |
 | securityBond   | Sum of bottom 2/3 of total bond                  |
 | effectiveBond  | Sum of all bond counting up to the hard bond cap |
