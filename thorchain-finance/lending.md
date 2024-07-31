@@ -233,7 +233,7 @@ This gives the following effect:
 - **70%:** 3
 - **60%:** 2
 - **50%:** 2
-- **10-40%:** 1 (e.g., no streaming)
+- **0-50%:** 1 (e.g., no streaming)
 
 This limits the streaming swap for Lending for open and closing loans during highly volatile times.
 

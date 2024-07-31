@@ -106,3 +106,10 @@ In addition to the roles mentioned above, RUNE’s price has two factors; 1 a de
 This 2:1 bond:stake ratio, combined with the 1:1 pool ratio, means that the amount of RUNE needed in the network is three times the amount of the non-RUNE assets locked. Thus, if $1,000,000 worth of non-Rune tokens are staked in THORChain, the market cap of RUNE will be at least $3,000,000. And like any token, stock, or asset in the world of finance, speculation around future value encourages additional upward price pressure.
 
 The 3:1 ratio is just the minimum or the deterministic value of RUNE.
+
+## For more informaiton on RUNE see
+
+- [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
+- [Under the Hood: Rune Supply](https://thorchain-university.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
+- [Currnet Supply Data](https://dashboards.ninerealms.com/#lending)
+- [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
