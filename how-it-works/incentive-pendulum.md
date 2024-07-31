@@ -29,7 +29,7 @@ THORChain can be in 1 of 5 main states:
 - Over-Bonded
 - Inefficient
 
-These different states can be observed through the relationship between bonded RUNE and vaulted RUNE, reflecting the amount of RUNE bonded by node operators, the amount added to liquidity pools by liquidity providers and the of L1 held within the Asgard vault outside of the liquidity pools.
+These different states can be observed through the relationship between bonded RUNE and Vaulted Liquidity, reflecting the amount of RUNE bonded by node operators, the amount of liqudity held in the Asgard Vault within or outside the of the liquidity pools.
 
 ### Optimal State
 
@@ -47,7 +47,7 @@ This results in an approximate 67% to 33% split between the Total Security Bond 
 
 ![](../.gitbook/assets/unsafe.jpg)
 
-The system may become unsafe. In this case, vaulted capital is higher than bonded capital. Vaulted Rune is now equal to bonded Rune, specifically the Effectivity Security Bond. – a 50/50 split.
+The system may become unsafe. In this case, vaulted capital is higher than bonded capital. Vaulted Rune is now equal to bonded Rune, specifically the Effectivity Security Bond – a 50/50 split.
 
 This is undesirable because it means that it's become profitable for node operators to work together to steal assets.
 
@@ -78,7 +78,7 @@ The algorithm that controls the Incentive Pendulum is as follows:
 
 | Parameters            | Notes                                            |
 | --------------------- | ------------------------------------------------ |
-| effectiveSecurityBond | Sum of bottom 2/3 of total bond                  |
+| effectiveSecurityBond | Sum of bottom 2/3 of node operator's bond        |
 | totalEffectiveBond    | Sum of all bond counting up to the hard bond cap |
 | vaultLiquidity        | RUNE value of L1 assets in the Asgard Vaults     |
 | pooledRUNE            | Total RUNE in all Pools                          |
@@ -98,7 +98,7 @@ $$
 
 3. **Adjust Node and Pool Shares:**
 
-- **Adjust the Node Share** if `totalEffectiveBond` exceeds the `effectiveSecurityBond` so Nodes are reward upto the Bond Hard Limit.
+- **Adjust the Node Share** if `totalEffectiveBond` exceeds the `effectiveSecurityBond` so Nodes are rewarded upto the Bond Hard Cap.
 
 $$
 adjustmentNodeShare = \frac{totalEffectiveBond}{effectiveSecurityBond} \times baseNodeShare
