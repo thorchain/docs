@@ -20,15 +20,17 @@
   * [THORChain Name Service](how-it-works/thorchain-name-service.md)
 * [Ecosystem](ecosystem.md)
 * [Frequently Asked Questions](frequently-asked-questions/README.md)
+  * [Liquidity Providers](frequently-asked-questions/liquidity-providers.md)
+  * [Asset Types](frequently-asked-questions/asset-types.md)
   * [Savers](frequently-asked-questions/savers.md)
   * [Lending](frequently-asked-questions/lending.md)
-  * [Liquidity Providers](frequently-asked-questions/liquidity-providers.md)
   * [RUNEPool](frequently-asked-questions/runepool.md)
 
 ## THORChain Finance
 
 * [Liquidity](thorchain-finance/continuous-liquidity-pools.md)
 * [Synthetics](thorchain-finance/synthetic-asset-model.md)
+* [Trade Assets](thorchain-finance/trade-assets.md)
 * [Savers](thorchain-finance/savings.md)
 * [Lending](thorchain-finance/lending.md)
 * [RUNEPool](thorchain-finance/runepool.md)
