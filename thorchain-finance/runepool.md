@@ -30,19 +30,19 @@ Adding RUNE to RUNEPool abstracts away user experience complexities, focusing on
 
 There are multiple dashboards to track the performance of RUNE added to the RUNEPool:
 
-* [thorchain.network/runepool](https://thorchain.network/runepool)
-* [thorchain.net/thorfi/runepool](https://thorchain.net/thorfi/runepool)
-* [runescan.io/txs?type=runepool](https://runescan.io/txs?type=runepool)
+- [thorchain.network/runepool](https://thorchain.network/runepool)
+- [thorchain.net/thorfi/runepool](https://thorchain.net/thorfi/runepool)
+- [runescan.io/txs?type=runepool](https://runescan.io/txs?type=runepool)
 
 Dashboards continuously evolve as Thorchain expands, but taking the example of [Thorchain.network](https://thorchain.network/runepool) you will find the following in the dashboard:
 
-* Provider: The wallet that provided the RUNE
-* Deposit: How much RUNE was provided by the provider
-* Value: How much RUNE is currently possible to withdraw from the RUNEPool by a particular wallet.
-* PnL: The difference between the Value and Deposit is the profit that a provider has made by adding RUNE to the RUNEPool
-* Latest Deposit: Block # when the last deposit was made by the provider
-* Lastet Withdrawal: Block # when the last withdrawal was made by the provider
-* Withdrawn: How much RUNE was withdrawn by the provider
+- Provider: The wallet that provided the RUNE
+- Deposit: How much RUNE was provided by the provider
+- Value: How much RUNE is currently possible to withdraw from the RUNEPool by a particular wallet.
+- PnL: The difference between the Value and Deposit is the profit that a provider has made by adding RUNE to the RUNEPool
+- Latest Deposit: Block # when the last deposit was made by the provider
+- Lastet Withdrawal: Block # when the last withdrawal was made by the provider
+- Withdrawn: How much RUNE was withdrawn by the provider
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-07-29 at 14.09.17.png" alt=""><figcaption></figcaption></figure>
 
@@ -71,12 +71,12 @@ This section provides a simple guide on how to use RUNEPool, including adding an
 
 **PoL-Enabled Pools**
 
-* **Enabled Assets**: POL is enabled for all eight native assets and five USD stable coins. The exact list can be found in the `mimir` endpoint.
+- **Enabled Assets**: POL is enabled for all eight native assets and five USD stable coins. The exact list can be found in the `mimir` endpoint.
 
 **RUNEPool Units (RPU)**
 
-* **Ownership Tracking**: RUNEPool Units (RPU) represent your share in the pool.
-* **Redemption**: When you redeem your units, you receive a share of the total POL size in RUNE.
+- **Ownership Tracking**: RUNEPool Units (RPU) represent your share in the pool.
+- **Redemption**: When you redeem your units, you receive a share of the total POL size in RUNE.
 
 **Deposit Process**
 
@@ -92,8 +92,8 @@ This section provides a simple guide on how to use RUNEPool, including adding an
 
 **Impermanent Loss Management**
 
-* **Aggregate IL**: Users experience aggregate impermanent loss across all PoL-enabled pools, reducing individual pool risks.
-* **Idle RUNE**: Undeployed RUNE reduces yield but also limits exposure to impermanent loss.
+- **Aggregate IL**: Users experience aggregate impermanent loss across all PoL-enabled pools, reducing individual pool risks.
+- **Idle RUNE**: Undeployed RUNE reduces yield but also limits exposure to impermanent loss.
 
 #### Showing Profit and Loss (PnL)
 
@@ -144,8 +144,8 @@ This guide should help you understand and utilize RUNEPool effectively. For more
 
 ### Sources
 
-* [dev.thorchain.org/concepts/rune-pool.html](https://dev.thorchain.org/concepts/rune-pool.html)
-* [RUNEPool Community Call](https://www.youtube.com/watch?v=vq6t9kPEBpw\&t=2s\&themeRefresh=1)
-* [Original Issue](https://gitlab.com/thorchain/thornode/-/issues/1841)
-* [\[ADD\] RUNEPool MR](https://gitlab.com/thorchain/thornode/-/merge\_requests/3612/)
-* [RUNEPool Implementation MR](https://gitlab.com/thorchain/thornode/-/merge\_requests/3631)
+- [dev.thorchain.org/concepts/rune-pool.html](https://dev.thorchain.org/concepts/rune-pool.html)
+- [RUNEPool Community Call](https://www.youtube.com/watch?v=vq6t9kPEBpw&t=2s&themeRefresh=1)
+- [Original Issue](https://gitlab.com/thorchain/thornode/-/issues/1841)
+- [\[ADD\] RUNEPool MR](https://gitlab.com/thorchain/thornode/-/merge_requests/3612/)
+- [RUNEPool Implementation MR](https://gitlab.com/thorchain/thornode/-/merge_requests/3631)

@@ -4,10 +4,10 @@ THORChain is a liquidity protocol that is made up of multiple types of assets to
 
 To serve everyone, THORChain&#x20;
 
-* Native Assets
-* Derived Assets
-* [Synthetic Assets](../thorchain-finance/synthetic-asset-model.md)
-* [Trade Assets](../thorchain-finance/trade-assets.md)
+- Native Assets
+- Derived Assets
+- [Synthetic Assets](../thorchain-finance/synthetic-asset-model.md)
+- [Trade Assets](../thorchain-finance/trade-assets.md)
 
 ### Native Assets
 
@@ -32,4 +32,3 @@ THORChain synthetics are fully collateralized while they exist and switch to a 1
 Ex: BTC\~BTC
 
 Trade Assets, a new class of primitives on THORChain, offer double the capital efficiency of synthetic assets, enhancing arbitrage and high-frequency trading. They settle with THORChain’s block speed and cost, enabling 6-second finality swaps without high fees. Redeemable anytime with no slippage, Trade Assets emulate centralized exchange trading but maintain on-chain transparency and security. Custodied by THORChain outside of liquidity pools, they provide user credits while holding funds 1:1 as L1 assets until withdrawal, making THORChain more user-friendly for active traders.
-
