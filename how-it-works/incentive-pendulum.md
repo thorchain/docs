@@ -21,7 +21,7 @@ If the network becomes unsafe, it increases rewards (block rewards and liquidity
 
 ## Balancing System States
 
-THORChain can be in 1 of 5 main states—
+THORChain can be in 1 of 5 main states:
 
 - Unsafe
 - Under-Bonded
@@ -29,21 +29,25 @@ THORChain can be in 1 of 5 main states—
 - Over-Bonded
 - Inefficient
 
-These different states can be seen in the relationship between bonded Rune and pooled Rune. The amount of Rune which has been bonded by node operators, and the amount which has been added to liquidity pools by liquidity providers.
+These different states can be observed through the relationship between bonded RUNE and vaulted RUNE, reflecting the amount of RUNE bonded by node operators, the amount added to liquidity pools by liquidity providers and the of L1 held within the Asgard vault outside of the liquidity pools.
 
 ### Optimal State
 
 ![](../.gitbook/assets/optimal.jpg)
 
-In the optimal state, bonded capital is roughly equal to pooled capital. Bonded capital is 100% Rune; pooled capital half Rune and half external assets.
+In the optimal state:
 
-67% of Rune in the system is bonded and 33% is pooled. This is the desired state. The system makes no changes to the incentives for node operators or liquidity providers.
+1. Effective Security Bond is roughly double the Vault Liquidity.
+2. Total Effective Bond is roughly dobule the Total Pooled.
+3. Total Pooled represents a significant proportion of the Vault Liquidity.
+
+This results in an approximate 67% to 33% split between the Total Security Bond and pooled RUNE and a 50% to 50% split between the Total Security Bond and Vault Liquidty.
 
 ### Unsafe State
 
 ![](../.gitbook/assets/unsafe.jpg)
 
-The system may become unsafe. In this case, pooled capital is higher than bonded capital. Pooled Rune is now equal to bonded Rune – a 50/50 split.
+The system may become unsafe. In this case, vaulted capital is higher than bonded capital. Vaulted Rune is now equal to bonded Rune, specifically the Effectivity Security Bond. – a 50/50 split.
 
 This is undesirable because it means that it's become profitable for node operators to work together to steal assets.
 
@@ -53,7 +57,7 @@ To fix this, the system increases the amount of rewards going to node operators 
 
 ![](../.gitbook/assets/inefficient.jpg)
 
-The system can also become inefficient. In this case, pooled capital would be much lower in value than bonded capital. This is a problem because it means that much more capital is being put into securing pooled assets than those assets are actually worth.
+The system can also become inefficient. In this case, vaulted capital would be much lower in value than bonded capital. This is a problem because it means that much more capital is being put into securing pooled assets than those assets are actually worth.
 
 To fix this, the system increases rewards for liquidity providers and decreases rewards for node operators. This attracts more liquidity providers to the system, and fewer node operators. Liquidity providers add more capital to receive more rewards, increasing pooled capital. Some node operators remove their bonded Rune, seeking more profitable places to put their capital. Bonded capital falls.\
 In this way, the system returns to the optimal state.
@@ -72,18 +76,18 @@ Try this [interactive model](https://rebase.foundation/network/thorchain/system-
 
 The algorithm that controls the Incentive Pendulum is as follows:
 
-| Parameters     | Notes                                            |
-| -------------- | ------------------------------------------------ |
-| securityBond   | Sum of bottom 2/3 of total bond                  |
-| effectiveBond  | Sum of all bond counting up to the hard bond cap |
-| vaultLiquidity | RUNE value of L1 assets in the Asgard Vaults     |
-| pooledRUNE     | Total RUNE in all Pools                          |
-| totalRewards   | Total Block Block reward (fees + block emission) |
+| Parameters            | Notes                                            |
+| --------------------- | ------------------------------------------------ |
+| effectiveSecurityBond | Sum of bottom 2/3 of total bond                  |
+| totalEffectiveBond    | Sum of all bond counting up to the hard bond cap |
+| vaultLiquidity        | RUNE value of L1 assets in the Asgard Vaults     |
+| pooledRUNE            | Total RUNE in all Pools                          |
+| totalRewards          | Total Block Block reward (fees + block emission) |
 
-1. **Determine the Initial Share** of rewards for node operators based on the `vaultLiquidity` and `securityBond`.
+1. **Determine the Initial Share** of rewards for node operators based on the `vaultLiquidity` and `effectiveSecurityBond`.
 
 $$
-baseNodeShare= \frac{vaultLiquidity}{securityBond} \times totalRewards
+baseNodeShare= \frac{vaultLiquidity}{effectiveSecurityBond} \times totalRewards
 $$
 
 2. **Calculate Base Pool Share** after allocating the `baseNodeShare` to node operators.
@@ -94,10 +98,10 @@ $$
 
 3. **Adjust Node and Pool Shares:**
 
-- **Adjust the Node Share** if `effectiveBond` exceeds the `securityBond` so Nodes are reward upto the Bond Hard Limit.
+- **Adjust the Node Share** if `totalEffectiveBond` exceeds the `effectiveSecurityBond` so Nodes are reward upto the Bond Hard Limit.
 
 $$
-adjustmentNodeShare = \frac{effectiveBond}{securityBond} \times baseNodeShare
+adjustmentNodeShare = \frac{totalEffectiveBond}{effectiveSecurityBond} \times baseNodeShare
 ​
 $$
 
@@ -123,96 +127,130 @@ Liquidity Providers are paid the `finalPoolShare` and Nodes are paid the remaind
 
 ## Stable Example
 
-In a **stable** state of 66m RUNE as security bond and 33m RUNE pooled:
-
 Values are:
 
-| Parameters     | Value      |
-| -------------- | ---------- |
-| securityBond   | 70m RUNE   |
-| effectiveBond  | 66m RUNE   |
-| vaultLiquidity | 35m RUNE   |
-| pooledRUNE     | 33m RUNE   |
-| totalRewards   | 1,000 RUNE |
+| Parameters            | Value      |
+| --------------------- | ---------- |
+| effectiveSecurityBond | 99m RUNE   |
+| totalEffectiveBond    | 66m RUNE   |
+| vaultLiquidity        | 49.5m RUNE |
+| pooledRUNE            | 33m RUNE   |
+| totalRewards          | 1200 RUNE  |
+
+These values indicate a balanced state where the `vaultLiquidity`, `totalEffectiveBond` and `effectiveSecurityBond` are appropriately aligned, ensuring the network remains both secure and efficient.
 
 ### Calculation Steps
 
-1. **Base Node Share**:
+1. **Initial Node Share**:
 
 $$
-baseNodeShare = \frac{vaultLiquidity}{securityBond} \times totalRewards
-$$
-
-$$
-baseNodeShare = \frac{35,000,000}{70,000,000} \times 1,000 = 500 \, \text{RUNE}
-$$
-
-2. **Base Pool Share**:
-
-$$
-basePoolShare = totalRewards - baseNodeShare
+\text{baseNodeShare} = \frac{49,500,000}{99,000,000} \times 1200
 $$
 
 $$
-basePoolShare = 1,000 - 500 = 500 \, \text{RUNE}
-$$
-
-3. **Adjusted Node Share**:
-
-$$
-adjustmentNodeShare = \frac{effectiveBond}{securityBond} \times baseNodeShare
+\text{baseNodeShare} = 0.5 \times 1200
 $$
 
 $$
-adjustmentNodeShare = \frac{66,000,000}{70,000,000} \times 500 \approx 471.43 \, \text{RUNE}
+\text{baseNodeShare} = 600 \, \text{RUNE}
 $$
 
-4. **Adjusted Pool Share**:
+2. **Initial Pool Share**:
 
 $$
-adjustmentPoolShare = \frac{pooledRUNE}{vaultLiquidity} \times basePoolShare
-$$
-
-$$
-adjustmentPoolShare = \frac{33,000,000}{35,000,000} \times 500 \approx 471.43 \, \text{RUNE}
-$$
-
-5. **Aggregate the Adjusted Shares**:
-
-$$
-adjustmentRewards = adjustmentPoolShare + adjustmentNodeShare
+\text{basePoolShare} = 1200 - 600
 $$
 
 $$
-adjustmentRewards = 471.43 + 471.43 = 942.86 \, \text{RUNE}
+\text{basePoolShare} = 600 \, \text{RUNE}
 $$
 
-6. **Final Pool Share**:
+3. **Adjusted Node and Pool Shares**:
+
+- **Adjusted Node Share**:
 
 $$
-finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards
-$$
-
-$$
-finalPoolShare = \frac{471.43}{942.86} \times 1,000 = 500 \, \text{RUNE}
-$$
-
-7. **Final Node Share**:
-
-$$
-finalNodeShare = totalRewards - finalPoolShare
+\text{adjustedNodeShare} = \frac{66,000,000}{99,000,000} \times 600
 $$
 
 $$
-finalNodeShare = 1,000 - 500 = 500 \, \text{RUNE}
+\text{adjustedNodeShare} = 0.6667 \times 600
+$$
+
+$$
+\text{adjustedNodeShare} = 400 \, \text{RUNE}
+$$
+
+- **Adjusted Pool Share**:
+
+$$
+\text{adjustmentPoolShare} = \frac{33,000,000}{49,500,000} \times 600
+$$
+
+$$
+\text{adjustmentPoolShare} = 0.6667 \times 600
+$$
+
+$$
+\text{adjustmentPoolShare} = 400 \, \text{RUNE}
+$$
+
+4. **Final Pool Share**:
+
+$$
+\text{adjustmentRewards} = 400 + 400
+$$
+
+$$
+\text{adjustmentRewards} = 800 \, \text{RUNE}
+$$
+
+$$
+\text{finalPoolShare} = \frac{400}{800} \times 1200
+$$
+
+$$
+\text{finalPoolShare} = 600 \, \text{RUNE}
+$$
+
+5. **Final Node Share**:
+
+$$
+\text{finalNodeShare} = 1200 - 600
+$$
+
+$$
+\text{finalNodeShare} = 600 \, \text{RUNE}
+$$
+
+### Percentage Split
+
+- **LPs' Share**:
+
+$$
+\text{LPs' Share Percentage} = \frac{600}{1200} \times 100
+$$
+
+$$
+\text{LPs' Share Percentage} = 50\%
+$$
+
+- **Nodes' Share**:
+
+$$
+\text{Nodes' Share Percentage} = \frac{600}{1200} \times 100
+$$
+
+$$
+\text{Nodes' Share Percentage} = 50\%
 $$
 
 ### Result
 
-- **Liquidity Providers' Share**: 500 RUNE (50%)
-- **Node Operators' Share**: 500 RUNE (50%)
+- **Liquidity Providers' Share**: 600 RUNE (50%)
+- **Node Operators' Share**: 600 RUNE (50%)
 
-Therefore, the reward split is approximately 50% for liquidity providers (LPs) and 50% for node operators.
+Therefore, in this stable state, the reward split is 50% for liquidity providers (LPs) and 50% for node operators.
 
 ## Driving Capital Allocation
 
