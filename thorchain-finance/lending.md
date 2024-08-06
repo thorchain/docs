@@ -28,11 +28,11 @@ Lending benefits the protocol by:
 - Providing an attractive sink for capital
 
 {% hint style="success" %}
-[ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md) with full Lending details was released and approved by Node Operators.
+[ADR 011: THORFi Lending Feature](https://dev.thorchain.org/architecture/adr-011-lending.html) with full Lending details was released and approved by Node Operators.
 {% endhint %}
 
 {% hint style="success" %}
-[ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md) - setting CR to flat 200%, and burning Standby Reserve to increase collateral cap.
+[ADR 012: THORFi Lending Scaling](https://dev.thorchain.org/architecture/adr-012-scale-lending.html) - setting CR to flat 200%, and burning Standby Reserve to increase collateral cap.
 {% endhint %}
 
 {% hint style="warning" %}

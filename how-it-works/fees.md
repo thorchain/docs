@@ -72,4 +72,5 @@ Streaming Swaps has greatly increased the swap capital efficiency. A minumum 5pb
 
 ## Network Fee
 
-The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. [ADR 008](https://dev.thorchain.org/architecture/adr-009-reserve-income-fee-overhaul.html) saw the introduction network fee priced in USD. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves.
+The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves.
+[ADR 008](https://dev.thorchain.org/architecture/adr-009-reserve-income-fee-overhaul.html) saw the introduction network of fees priced in USD. While still taken as RUNE or synths, the Network Fee is now set a USD amount instead of a fixed RUNE amount.

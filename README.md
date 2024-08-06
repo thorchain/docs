@@ -8,15 +8,16 @@ description: THORChain, THORNodes, Wallets and the ecosystem.
 
 THORChain is a decentralised cross-chain liquidity protocol that utilises the Tendermint consensus engine, Cosmos-SDK state machine, and GG20 Threshold Signature Scheme (TSS). It operates as an independent Layer 1 cross-chain decentralised exchange (DEX) built on the Cosmos SDK.
 
-THORChain allows users to swap native assets across multiple chains without the need for wrapped or pegged assets. It ensures transparent and fair prices without relying on centralised third parties. The protocol features continuous liquidity pools that maximise efficiency. It does not peg or wrap assets, it manages funds directly in on-chain vaults, and secures those funds using economic security. It could be described as a "cross-chain automated market maker (AMM), like Uniswap".
+THORChain allows users to swap native assets across multiple chains without the need for wrapped or pegged assets. It ensures transparent and fair prices without relying on centralised third parties. The protocol features continuous liquidity pools that maximise efficiency. It does not peg or wrap assets, it manages funds directly in on-chain vaults, and secures those funds using economic security. It could be described as a "cross-chain automated market maker (AMM), like Uniswap" or a "decentralised Binance".
 
 ## THORChain Finance
 
-Building on the foundation of liquidity pools, THORChain pursues three important financial primitives:
+Building on the foundation of liquidity pools, THORChain pursues four important financial primitives:
 
 1. Allow a user to **[Swap](./thorchain-finance/continuous-liquidity-pools.md)** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.
 2. Allow a user to **[Save](./thorchain-finance/savings.md)** {_Asset X on Chain A_}.
 3. Allow a user to **[Lend](./thorchain-finance/lending.md)** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.
+4. Allow a user to **[Pool](./thorchain-finance/runepool.md)** RUNE across liquidity pools
 
 ## Developers
 
@@ -64,4 +65,4 @@ Each THORNode is comprised of several independent servers in a cluster, which ru
 
 ## CONTRIBUTING
 
-THORChain is a public project. If you want to join the community or work on THORChain Core join the [Dev Discord](https://discord.gg/kvZhpEtHAw).
+THORChain is a public project. If you want to join the community or work on THORChain Core join the [Dev Discord](https://discord.gg/7RRmc35UEG).

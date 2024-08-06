@@ -22,7 +22,7 @@ All the following are community-run resources. There are no "official" channels.
 
 ## **Community Projects**
 
-Below is a list of active THORChain community projects. Also, see [Linktree](https://linktr.ee/thorchain). If you would like to be funded to build something in the THORChain ecosystem please build something then reach out.
+Below is a list of active THORChain community projects. If you would like to be funded to build something in the THORChain ecosystem please build something then reach out.
 
 ## Exchanges Only
 
@@ -91,7 +91,7 @@ of Crypto Security
 
 ## **Analytics**
 
-[**THORChain Charts**](https://thorcharts.org/) - Key stats and figures related to core Thorchain operations
+[**THORCharts**](https://thorcharts.org/) - Key stats and figures related to core Thorchain operations
 
 [**Nine Realms Dashboard**](https://dashboards.ninerealms.com/)
 
@@ -101,9 +101,7 @@ of Crypto Security
 
 [**THORChain Information Bot**](https://t.me/thor_infobot) - Useful commands to fetch network info
 
-[**THORChain Monitoring Bot**](https://t.me/thorchain_alert) - Monitoring of major events in THORChain
-
-[**THORChain Twitter Bot**](https://twitter.com/thor_bot) - Posts network stats
+[**THORChain THOR InfoBot**](https://twitter.com/THOR_InfoBot) - Monitoring of major events in THORChain
 
 [**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core Thorchain operations.
 

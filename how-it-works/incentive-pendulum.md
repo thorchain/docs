@@ -4,16 +4,16 @@ description: THORChain's Incentive Pendulum keeps the network in a balanced stat
 
 # Incentive Pendulum
 
-The Incentive Pendulum controls the flow of system income between node operators and liquidity providers based primarily on the total bond and total pooled RUNE. However, it also accounts for the effective bond and the vault liquidity to ensure an equitable and stable reward distribution. This mechanism adjusts the rewards dynamically to maintain a balanced network by incentivising either bonding or pooling as needed.
+The Incentive Pendulum controls the flow of system income between node operators and liquidity providers based primarily on the Effectove Security Bond and Total Vaulted. However, it also accounts for the Effective Bond and the Total Pooled to ensure an equitable and stable reward distribution. This mechanism adjusts the rewards dynamically to maintain a balanced network by incentivising either bonding or pooling as needed.
 
 Key variables to the Incentive Pendulum are:
 
 - **[Total Bonded](https://runescan.io/address/thor17gw75axcnr8747pkanye45pnrwk7p9c3cqncsv)**: Sum of all RUNE bonded by active [node operators](../understanding-thorchain/roles/node-operators.md).
 - **Bond Hard Cap** : The highest bond in the bottom 2/3 of active node operators to ensure no single node has excessive influence on the Total Bond.
-- **Total Effective Bond**: The sum of all active node operator's bonds. For each node, the bond amount added is capped by the Bond Hard Cap. This maintains a balanced and secure network by distributing bonding power more evenly among node operators.
+- **Total Effective Bond**: The sum of all active node operator's bonds up to the Bond Hard Cap. For each node, the bond amount added is capped by the Bond Hard Cap. This maintains a balanced and secure network by distributing bonding power more evenly among node operators.
 - **Effective Security Bond**. The sum of the total bond of the bottom 2/3rds active node operators.
 - **[Total Pooled](https://runescan.io/address/thor1g98cy3n9mmjrpn0sxmn63lztelera37n8n67c0)**: Sum of liquidity in all [pools](https://runescan.io/pools) by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
-- **Vault Liquidity**: Sum of L1 assets within all Asgard Vaults. Includes Pooled L1s and Trade Account L1s.
+- **Vault Liquidity**: Sum vaule of L1 assets within all Asgard Vaults valued in RUNE. Includes Pooled L1s and Trade Account L1s.
 
 The capital on THORChain can lose its balance over time. Sometimes there will be too much capital in liquidity pools; sometimes there will be too much bonded by nodes. If there is too much capital in liquidity pools, the network is unsafe. If there is too much capital bonded by nodes, the network is inefficient.
 
@@ -47,7 +47,7 @@ This results in an approximate 67% to 33% split between the Total Security Bond 
 
 ![](../.gitbook/assets/unsafe.jpg)
 
-The system may become unsafe. In this case, vaulted capital is higher than bonded capital. Vaulted Rune is now equal to bonded Rune, specifically the Effectivity Security Bond – a 50/50 split.
+The system may become unsafe. In this case, vaulted capital is higher than bonded capital. Vaulted Rune is now equal to the Effectivity Security Bond – a 50/50 split.
 
 This is undesirable because it means that it's become profitable for node operators to work together to steal assets.
 
@@ -76,13 +76,13 @@ Try this [interactive model](https://rebase.foundation/network/thorchain/system-
 
 The algorithm that controls the Incentive Pendulum is as follows:
 
-| Parameters            | Notes                                            |
-| --------------------- | ------------------------------------------------ |
-| effectiveSecurityBond | Sum of bottom 2/3 of node operator's bond        |
-| totalEffectiveBond    | Sum of all bond counting up to the hard bond cap |
-| vaultLiquidity        | RUNE value of L1 assets in the Asgard Vaults     |
-| pooledRUNE            | Total RUNE in all Pools                          |
-| totalRewards          | Total Block Block reward (fees + block emission) |
+| Parameters            | Notes                                                                    |
+| --------------------- | ------------------------------------------------------------------------ |
+| effectiveSecurityBond | Sum of bottom 2/3 of node operator's bond                                |
+| totalEffectiveBond    | Sum of all bond counting up to the hard bond cap                         |
+| vaultLiquidity        | RUNE value of L1 assets in the Asgard Vaults                             |
+| pooledRUNE            | Total RUNE in all Pools                                                  |
+| totalRewards          | Total Block Block reward (fees + [block emission](emission-schedule.md)) |
 
 1. **Determine the Initial Share** of rewards for node operators based on the `vaultLiquidity` and `effectiveSecurityBond`.
 
@@ -105,25 +105,25 @@ adjustmentNodeShare = \frac{totalEffectiveBond}{effectiveSecurityBond} \times ba
 ​
 $$
 
-- **Adjust Pool Share** based on the ratio of `pooledRune` to `vaultLiquidity` as non-pooled liquidity is not yield-bearing:
+- **Adjust Pool Share** based on the ratio of `pooledRune` to `vaultLiquidity` as non-pooled liquidity is not yield-bearing.
 
 $$
 \text{adjustmentPoolShare} = \frac{\text{pooledRune}}{\text{vaultLiquidity}} \times \text{basePoolShare}
 $$
 
-4. **Aggregate the adjusted shares** for both node operators and LPs to ensure they do not exceed the total rewards.
+4. **Aggregate the adjusted shares** for both node operators and liquidity providers to ensure they do not exceed the total rewards.
 
 $$
 adjustmentRewards = adjustmentPoolShare + adjustmentNodeShare
 $$
 
-5. **Calculate the final amount** of rewards allocated to LPs, ensuring it does not exceed the totalRewards:
+5. **Calculate the final amount** of rewards allocated to liquidity providers, ensuring it does not exceed the totalRewards.
 
 $$
 finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards
 $$
 
-Liquidity Providers are paid the `finalPoolShare` and Nodes are paid the remainder.
+Liquidity Providers are paid the `finalPoolShare` and nodes operators are paid the remainder.
 
 ## Stable Example
 
@@ -254,6 +254,13 @@ Therefore, in this stable state, the reward split is 50% for liquidity providers
 
 ## Driving Capital Allocation
 
-As a by-product of the Incentive Pendulum's aggressive re-targeting of 67:33 split of BONDED:POOLED RUNE, it means that in an equilibrium, the value of BONDED RUNE will always be double the value of POOLED RUNE. Since POOLED RUNE is 1:1 bonded with POOLED Capital (due to liquidity pools), then the total market value of RUNE is targeted to be 3 times the value of pooled assets.
+As a by-product of the Incentive Pendulum's aggressive re-targeting of the 50:50 split between Effective Security Bond and Vaulted RUNE, the system aims to maintain an equilibrium where the value of BONDED RUNE is proportionally aligned with the value of Vaulted RUNE. This ensures that:
+
+1. For every unit of POOLED RUNE, there is twice that amount in BONDED RUNE, creating a balance that maintains network security and efficiency.
+2. As POOLED RUNE is paired 1:1 with pooled assets (due to liquidity pools), the total market value of RUNE is targeted to be three times the value of the pooled assets.
+3. There is sufficient bond to secure the non-pooled assets.
+
+If there is any disruption to this balance, the Incentive Pendulum will reallocate rewards to correct the imbalance by incentivising node operators to bond more RUNE or liquidity providers to pool more assets.
 
 If there is any disruption to this, then it means capital will be re-allocated by Nodes and Liquidity providers to pursue maximum yield, and thus correct the imbalance.
+With the use of [RUNEPool](../thorchain-finance/runepool.md) and [Pooled THORnodes](../thornodes/pooled-thornodes.md) users can play both sides of the IP in order to maximise their return and help return the network back into equilibrium.

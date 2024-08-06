@@ -14,9 +14,9 @@ This is how THORChain avoids the need for oracles and how prices are set.
 
 ### Process
 
-A swap takes place in the BTC/RUNE pool. This leaves the pool unbalanced. The ratio on THORChain is 20:1 MATIC:RUNE, but is 16:1 on external markets. This means that RUNE is undervalued on THORChain.
+A swap takes place in the BTC/RUNE pool. This leaves the pool unbalanced. The ratio on THORChain is 20:1 BTC:RUNE, but is 16:1 on external markets. This means that RUNE is undervalued on THORChain.
 
-Traders can now buy cheap RUNE on THORChain and sell it for a profit on external markets. To do so, they swap MATIC into the pool and get RUNE out. They sell this RUNE on external markets and make a profit.
+Traders can now buy cheap RUNE on THORChain and sell it for a profit on external markets. To do so, they swap BTC into the pool and get RUNE out. They sell this RUNE on external markets and make a profit.
 
 The economics of the [swap formula](swapping.md#calculating-swap-output) mean that traders should aim to restore balance to the pool in a single trade. Rebalancing should be done incrementally. If larger rebalancing trades are attempted, arbitrage may not be profitable for traders.
 
