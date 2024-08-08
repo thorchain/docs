@@ -33,6 +33,7 @@
 * [Trade Assets](thorchain-finance/trade-assets.md)
 * [Savers](thorchain-finance/savings.md)
 * [Lending](thorchain-finance/lending.md)
+* [TOR](thorchain-finance/tor.md)
 * [RUNEPool](thorchain-finance/runepool.md)
 
 ## THORNodes

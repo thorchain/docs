@@ -36,6 +36,10 @@ The gas is consumed from each chain's base asset pool - the BTC pool pays for Bi
 
 The network then observes an outgoing transaction and records how much it cost in gas in the external asset. The final gas cost is then subsidised back into each pool by paying RUNE from the reserve.
 
+## **Inbound Fee**
+
+This is the fee the user pays to make a transaction on the source chain and hence will fluctuate depending on the source chain used.
+
 ## **Outbound Fee**
 
 Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.

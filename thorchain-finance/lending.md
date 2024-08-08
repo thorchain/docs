@@ -46,11 +46,11 @@ The Minimum Loan Term will be 30 days on launch.
 
 Derived assets, such as `thor.btc` and`thor.tor`, are algorithmic coins that are backed by the liquidity of RUNE, and the liquidity of that is based on the RUNE-ASSET pair. Derived assets are swapped from or swap to L1 assets, via RUNE, using [derived asset pools](lending.md#derived-pool-depth) that are based on the equivalent L1 pools. Unlike, Synthetic Assets, derived assets are independent of Liquidity Pools and all swap fees are burnt. Derived assets are for accounting and there are no plans for them to be exportable or held by users.
 
-### TOR Accounting
+### TOR Explained
 
 TOR (`thor.tor`) is a non-transferable unit of account within THORChain designed to match the value of $1 USD and has been in use since [ADR 003](https://dev.thorchain.org/architecture/adr-003-flooredoutboundfee.html). It cannot be exported anywhere and always has a market cap of $0. TOR is valued by taking the median price of the active USD pools.
 
-All collateral, debt and repayments within Lending are converted to and accounted for in TOR.
+All collateral, debt and repayments within Lending are converted to and accounted for in TOR. To understand TOR in depth, go to the dedicated [TOR section](tor.md).
 
 ### Open Loan Flow
 
@@ -85,12 +85,12 @@ The TOR pool is a derived asset pool and operates the same as other derived asse
 
 The `totalRuneDepth` is the sum of all RUNE in anchor pools (i.e. - USDC, USDT, BUSD-BD1 for TOR or just BTC.BTC for the L1)
 
-| Element              | Description                                   |
-|----------------------|-----------------------------------------------|
-| MaxAnchorBlocks      | Protocol Setting, blocks to accumulate slip   |
-| DerivedMinDepth      | Protocol Setting, Min derived pool depth      |
+| Element              | Description                                            |
+| -------------------- | ------------------------------------------------------ |
+| MaxAnchorBlocks      | Protocol Setting, blocks to accumulate slip            |
+| DerivedMinDepth      | Protocol Setting, Min derived pool depth               |
 | DerivedDepthBasisPts | Protocol Setting, increase/decrease derived pool depth |
-| MaxAnchorSlip        | Protocol Setting, Max allowed slip on derived pool |
+| MaxAnchorSlip        | Protocol Setting, Max allowed slip on derived pool     |
 
 $$
 totalSlip = {\sum_{\substack{i=block}}^{\text{maxAnchorBlocks}}}{poolSlip(i)}
@@ -208,7 +208,7 @@ The protocol setting `loanRepaymentMaturity` defines the number of blocks before
 
 ### Loan Streaming Quantity Calculation
 
-[Streaming swaps](https://dev.thorchain.org/swap-guide/streaming-swaps.html) are enabled on Lending; however, the number of streaming sub-swaps is subject to the maximum loan streaming quantity which determined by the health of the system. The loan streaming quantity (`MaxLoanStreamingQty`) is calculated based on the health of the system, represented by the ratio of [derived depth](#derived-pool-depth) to real depth (`x`).
+[Streaming swaps](https://dev.thorchain.org/swap-guide/streaming-swaps.html) are enabled on Lending; however, the number of streaming sub-swaps is subject to the maximum loan streaming quantity which determined by the health of the system. The loan streaming quantity (`MaxLoanStreamingQty`) is calculated based on the health of the system, represented by the ratio of [derived depth](lending.md#derived-pool-depth) to real depth (`x`).
 
 $$
 x = health (derivedDepth / realDepth)
@@ -257,7 +257,7 @@ Block Science reviewed the lending mechanisms exhaustively. The Output of their 
 
 ## Lending Resources
 
-## FAQs
+### FAQs
 
 * [General Lending FAQs](../frequently-asked-questions/lending.md#general-questions)
 * [In depth FAQs](../frequently-asked-questions/lending.md#in-depth-questions)
@@ -280,5 +280,5 @@ Block Science reviewed the lending mechanisms exhaustively. The Output of their 
 ### Design Documents
 
 * [ADR 011: THORFi Lending Feature](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-011-lending.md)
-* * [ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md?ref_type=heads)
+* [ADR 012: THORFi Lending Scaling](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/architecture/adr-012-scale-lending.md?ref\_type=heads)
 * [Original](https://gitlab.com/thorchain/thornode/-/issues/1412) [Design](https://gitlab.com/thorchain/thornode/-/issues/1412)
