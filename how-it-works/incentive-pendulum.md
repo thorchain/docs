@@ -38,10 +38,15 @@ These different states can be observed through the relationship between bonded R
 In the optimal state:
 
 1. Effective Security Bond is roughly double the Vault Liquidity.
-2. Total Effective Bond is roughly dobule the Total Pooled.
-3. Total Pooled represents a significant proportion of the Vault Liquidity.
+2. Total Effective Bond is roughly 1.5 times the Effective Security Bond.
+3. Total Pooled RUNE represents approximately two-thirds of the Vault Liquidity.
 
-This results in an approximate 67% to 33% split between the Total Security Bond and pooled RUNE and a 50% to 50% split between the Total Security Bond and Vault Liquidty.
+This results in:
+
+1. An approximate 67% to 33% split between the Total Security Bond and pooled RUNE.
+2. A 50% to 50% split between the Total Security Bond and Vault Liquidity.
+
+It is important to note that yield is paid based on the liquidity provided and not on income share splits, as explained below in the [Algorithm](#algorithm) section.
 
 ### Unsafe State
 
@@ -174,15 +179,15 @@ Values are:
 
    Base node share calculation:
 
-   $$
-   baseNodeShare = \frac{vaultLiquidity}{effectiveSecurityBond} \times totalRewards = \frac{33,000,000}{66,000,000} \times 1,000 = 500 \text{ RUNE}
-   $$
+$$
+baseNodeShare = \frac{vaultLiquidity}{effectiveSecurityBond} \times totalRewards = \frac{33,000,000}{66,000,000} \times 1,000 = 500 \text{ RUNE}
+$$
 
 3. **Calculate Base Pool Share:**
 
-   $$
-   basePoolShare = totalRewards - baseNodeShare = 1,000 - 500 = 500 \text{ RUNE}
-   $$
+$$
+basePoolShare = totalRewards - baseNodeShare = 1,000 - 500 = 500 \text{ RUNE}
+$$
 
 4. **Adjust Node and Pool Shares:**
 
@@ -210,15 +215,15 @@ $$
 
    - Final pool share:
 
-     $$
-     finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards = \frac{333.33}{1,083.33} \times 1,000 = 307.69 \text{ RUNE}
-     $$
+$$
+finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards = \frac{333.33}{1,083.33} \times 1,000 = 307.69 \text{ RUNE}
+$$
 
-   - Final node share:
+- Final node share:
 
-     $$
-     finalNodeShare = \frac{adjustmentNodeShare}{adjustmentRewards} \times totalRewards = \frac{750}{1,083.33} \times 1,000 = 692.31 \text{ RUNE}
-     $$
+$$
+finalNodeShare = \frac{adjustmentNodeShare}{adjustmentRewards} \times totalRewards = \frac{750}{1,083.33} \times 1,000 = 692.31 \text{ RUNE}
+$$
 
 7. **Yield Adjustment:**
 
@@ -241,17 +246,14 @@ $$
 - Node yield: \( 6.993 \times 10^{-6} \) RUNE per RUNE
 - Pool yield: \( 6.993 \times 10^{-6} \) RUNE per RUNE
 
-This ensures that the rewards are balanced according to the liquidity provided, maintaining the desired incentives for both liquidity providers and node operators.
+In this stable state, node yield matches pool yield meaning the system is in equilibrium based on the liquidy provided. This ensures that the rewards are balanced according to the liquidity provided, maintaining the desired incentives for both liquidity providers and node operators.
 
 ## Driving Capital Allocation
 
-As a by-product of the Incentive Pendulum's aggressive re-targeting of the 50:50 split between Effective Security Bond and Vaulted RUNE, the system aims to maintain an equilibrium where the value of BONDED RUNE is proportionally aligned with the value of Vaulted RUNE. This ensures that:
+As a by-product of the Incentive Pendulum's aggressive re-targeting of the 50:50 yield split between node:pool yield, the system aims to maintain an equilibrium where the value of BONDED RUNE is proportionally aligned with the value of Vaulted RUNE. This ensures that:
 
-1. For every unit of POOLED RUNE, there is twice that amount in BONDED RUNE, creating a balance that maintains network security and efficiency.
+1. For every unit of POOLED RUNE, there is approximately and 3 times that amount in effectiveSecurityBond, creating a balance that maintains network security and efficiency.
 2. As POOLED RUNE is paired 1:1 with pooled assets (due to liquidity pools), the total market value of RUNE is targeted to be three times the value of the pooled assets.
 3. There is sufficient bond to secure the non-pooled assets.
 
-If there is any disruption to this balance, the Incentive Pendulum will reallocate rewards to correct the imbalance by incentivising node operators to bond more RUNE or liquidity providers to pool more assets.
-
-If there is any disruption to this, then it means capital will be re-allocated by Nodes and Liquidity providers to pursue maximum yield, and thus correct the imbalance.
-With the use of [RUNEPool](../thorchain-finance/runepool.md) and [Pooled THORnodes](../thornodes/pooled-thornodes.md) users can play both sides of the IP in order to maximise their return and help return the network back into equilibrium.
+If there is any disruption to this balance, the Incentive Pendulum will reallocate rewards to correct the imbalance by incentivising node operators to bond more RUNE or liquidity providers to pool more assets. With the use of [RUNEPool](../thorchain-finance/runepool.md) and [Pooled THORnodes](../thornodes/pooled-thornodes.md) users can play both sides of the  Incentive Pendulum in order to maximise their return and help return the network back into equilibrium.
