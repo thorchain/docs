@@ -33,7 +33,7 @@ Multiple dashboards are available to track RUNEPool performance:
 ### **How to add to RUNEPool?**
 
 1. **Create a Transaction**: Use a `MsgDeposit` transaction with the memo `pool+`.
-2. **Native RUNE Only**: RUNEPool only works with native RUNE.
+2. **RUNE Only**: RUNEPool only works with RUNE.
 3. **Instructions**: Refer to the "[Deposit to the RUNEPool](https://dev.thorchain.org/concepts/memos.html#deposit-runepool)" section in the documentation for detailed steps.
 
 ### **How to withdraw from RUNEPool?**

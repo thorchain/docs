@@ -153,7 +153,7 @@ runeBurnt= {maxRuneSupply - currentRuneSupply}
 $$
 
 {% hint style="info" %}
-Current Rune Supply is Native RUNE Circulating Supply.
+Current Rune Supply is RUNE Circulating Supply.
 {% endhint %}
 
 $$

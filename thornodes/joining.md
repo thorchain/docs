@@ -55,7 +55,7 @@ Before sending the BOND, verify that your THORNode is **fully synced** with conn
 
 ### 2 - Send a small BOND (recommend 100-1000)
 
-1\) You will do a "Deposit" transaction using native THORChain RUNE (_not_ ERC20 or BEP2 RUNE). This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX Electron](https://github.com/thorchain/asgardex-electron/releases). The Bond is locked in a module controlled by the state machine.
+1\) You will do a "Deposit" transaction using RUNE. This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX](https://github.com/asgardex/asgardex-desktop/releases). The Bond is locked in a module controlled by the state machine.
 
 2\) Deposit your BOND using the memo `BOND:<thornode-address>` (or use an appropriate GUI that does this memo for you). Start small, the bond will be picked up.
 
@@ -213,8 +213,8 @@ You can also [remove some of your bond](https://docs.thorchain.org/thornodes/lea
 
 ### Node Operator Fee
 
-* Setting the Node Operator fee `10000` causes all rewards to be paid back each churn.
-* Setting the Node Operator fee to `5000` causes 50% of rewards to be paid back to the Node Operator address and 50% to be accrued back to the bond.
+- Setting the Node Operator fee `10000` causes all rewards to be paid back each churn.
+- Setting the Node Operator fee to `5000` causes 50% of rewards to be paid back to the Node Operator address and 50% to be accrued back to the bond.
 
 To set a Node Operator fee, send a deposit transaction with the following memo:
 

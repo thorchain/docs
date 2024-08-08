@@ -74,7 +74,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**KeepKey**](https://www.keepkey.com/) - Hardware Wallet Accessed via ShapeShift UI: The Next Frontier of Crypto Security
 
-[**Ledger**](https://www.ledger.com/) - Hardware Wallet with [Native RUNE Support](https://support.ledger.com/hc/en-us/articles/4402987997841-THORChain-RUNE-?docs=true): The Smartest Way to Secure your Crypto
+[**Ledger**](https://www.ledger.com/) - Hardware Wallet with [RUNE Support](https://support.ledger.com/hc/en-us/articles/4402987997841-THORChain-RUNE-?docs=true): The Smartest Way to Secure your Crypto
 
 [**MetaMask via ShapeShift Snap**](https://shapeshift.com/snap) - Browser Extension Wallet: Multichain Snap for MetaMask
 

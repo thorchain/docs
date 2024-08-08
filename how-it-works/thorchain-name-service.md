@@ -123,7 +123,7 @@ Without:
 107 characters without THORNames, 33 characters with THORNames.
 {% endhint %}
 
-Interfaces like [AsgardEx Desktop](https://github.com/thorchain/asgardex-electron/releases) allow you to create your own memo.
+Interfaces like [AsgardEx Desktop](https://github.com/asgardex/asgardex-desktop/releases) allow you to create your own memo.
 
 ## More Information
 

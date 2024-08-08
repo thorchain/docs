@@ -53,7 +53,7 @@ This section provides a simple guide on how to use RUNEPool, including adding an
 **Adding to RUNEPool**
 
 1. **Create a Transaction**: Use a `MsgDeposit` transaction with the memo `pool+`.
-2. **Native RUNE Only**: RUNEPool only works with native RUNE.
+2. **RUNE Only**: RUNEPool only works with RUNE.
 3. **Instructions**: For detailed steps, refer to the "Add to the RUNEPool" section in the documentation.
 
 **Withdrawing from RUNEPool**

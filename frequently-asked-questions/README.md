@@ -24,11 +24,11 @@ The roadmap is detailed in the [THORChain Q2 2024 Ecosystem Report](https://medi
 
 ### **Where can I buy Rune?**
 
-Directly on THORChain by swapping any supported asset for Native RUNE or exchanges like Binance list Native RUNE. Only Native RUNE is supported on THORChain.
+Directly on THORChain by swapping any supported asset for RUNE or exchanges like Binance list RUNE. Only RUNE is supported on THORChain.
 
 ### **What is the circulating supply of RUNE?**
 
-Approx. 330M with a max of 500M. Full details at [https://ops.ninerealms.com/network](https://ops.ninerealms.com/network) or [hhttps://runescan.io/addresses](https://runescan.io/addresses/) for a breakdown of Native RUNE.
+Approx. 330M with a max of 500M. Full details at [https://ops.ninerealms.com/network](https://ops.ninerealms.com/network) or [hhttps://runescan.io/addresses](https://runescan.io/addresses/) for a breakdown of the RUNE supply.
 
 ### **What is the inflation rate of RUNE?**
 
@@ -116,14 +116,13 @@ There is a set max of 100 active pools, and once achieved, deeper pending pools 
 
 #### **What is the Contract Address of RUNE?**
 
-- There is no contract address for Native RUNE, as it is the native asset on its own blockchain.
-- There used to be legacy ERC20 and BEP2 RUNE, but these were retired and are valueless.
+- There is no contract address for RUNE, as it is the native asset on its own blockchain.
 
 ## Frequent Issues
 
 ### My transaction failed, I can’t add liquidity or make swaps?
 
-Make sure you have a sufficient amount of native rune to process transactions. Also be sure to check if the liquidity caps are full. If so, you will not be able to add liquidity at that time. If you see errors like “No UTXOs to send” or “Need to wait for more UTXO confirmation”; likely you are trying to spend UTXO assets (BTC, LTC, BCH) that you have just transferred into your wallet. Please wait for more blockchain confirmations, and try again later!
+Make sure you have a sufficient amount of RUNE to process transactions. Also be sure to check if the liquidity caps are full. If so, you will not be able to add liquidity at that time. If you see errors like “No UTXOs to send” or “Need to wait for more UTXO confirmation”; likely you are trying to spend UTXO assets (BTC, LTC, BCH) that you have just transferred into your wallet. Please wait for more blockchain confirmations, and try again later!
 
 ➜ [Check Stuck transactions](https://track.ninerealms.com/)
 

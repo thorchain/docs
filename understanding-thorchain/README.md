@@ -53,7 +53,7 @@ Block rewards are paid to Liquidity Providers and Node Operators on a set emissi
 
 ### **How Swapping Works**
 
-Swaps in THORChain use native assets. Example: When a swap from RUNE to BTC occurs, RUNE is sent into THORChain from the user and BTC is sent out from one of THORChain’s vaults - Inbound gas is paid in Native RUNE, Outbound Fee is paid in BTC.
+Swaps in THORChain use native assets. Example: When a swap from RUNE to BTC occurs, RUNE is sent into THORChain from the user and BTC is sent out from one of THORChain’s vaults - Inbound gas is paid in RUNE, Outbound Fee is paid in BTC.
 
 When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH. See [Swappers](roles/swapping.md#how-swaps-work)for more information.
 

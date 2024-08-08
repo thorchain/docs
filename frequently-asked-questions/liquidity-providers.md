@@ -51,14 +51,9 @@ If you deposit asymmetrically you can ONLY withdraw asymmetrically, to the same 
 
 You can withdraw your symmetrical deposit both asymmetrically (in either asset) and symmetrically.
 
-**Will all ERC20 and BEP2 assets be supported and listed on THORChain by default?**
+**Will all ERC20 assets be supported and listed on THORChain by default?**
 
-No. Only short tail assets with high MarketCap, good velocity and economic activity would have chances to win liquidity competition to get listed. Token whitelists being maintained, for security purposes:
-
-- [Latest ERC20 Tokens List](https://gitlab.com/thorchain/thornode/-/blob/develop/common/tokenlist/ethtokens/eth_mainnet_latest.json)
-- [Latest BEP20 Tokens List](https://gitlab.com/thorchain/thornode/-/blob/develop/common/tokenlist/bsctokens/bsc_mainnet_latest.json)
-- [Latest AVAX-C Tokens List](https://gitlab.com/thorchain/thornode/-/blob/develop/common/tokenlist/avaxtokens/avax_mocknet_latest.json)
-- See [Governance](../how-it-works/governance.md#chain-listing-delisting).
+No. Only short tail assets with high MarketCap, good velocity and economic activity would have chances to win liquidity competition to get listed.
 
 ## Adding and Removing Liquidity
 
