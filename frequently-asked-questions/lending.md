@@ -1,4 +1,4 @@
-# Lending Frequently Asked Questions
+# Lending
 
 ## General Questions
 
@@ -10,6 +10,10 @@ Lending allows users to deposit native collateral, and then create a debt at a c
 - [Launch Article](https://medium.com/thorchain/lending-on-thorchain-646bbf2e6e1b)
 - [Explnation Video](https://youtu.be/AaqHG00RJks)
 - [Health Dashboard](https://dashboards.ninerealms.com/#lending)
+
+### What is TOR?
+
+TOR (`thor.tor`) is a non-transferable unit of account that debt is always denominated in within THORChain. TOR maintains its stability by anchoring to a median value of a basket of USD-pegged stablecoins (USDC, USDT, BUSD), ensuring it stays closely pegged to $1 USD. The RUNE<>TOR mechanism works through a two-way burn process: minting TOR burns an equivalent value of RUNE, and burning TOR mints the same value of RUNE. See more under [TOR](../thorchain-finance/tor.md).
 
 ### Can I partially repay my loan?
 

@@ -28,7 +28,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**ASGARDEX Desktop**](https://www.asgardex.com/) - Wallet and Exchange Client for THORChain
 
-[**Coinbot**](https://t.me/TeamCoinBot_bot) - Telegram Exchange Bot for THORChain
+[**Coinbot**](https://t.me/TeamCoinBot\_bot) - Telegram Exchange Bot for THORChain
 
 [**Decentralfi**](https://decentralfi.io/) - Exchange Powered by THORChain
 
@@ -74,8 +74,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 **Keystore Json/txt File** - Password Encrypted File Supported by Many THORChain Exchanges
 
-[**KeepKey**](https://www.keepkey.com/) - Hardware Wallet Accessed via ShapeShift UI: The Next Frontier
-of Crypto Security
+[**KeepKey**](https://www.keepkey.com/) - Hardware Wallet Accessed via ShapeShift UI: The Next Frontier of Crypto Security
 
 [**Ledger**](https://www.ledger.com/) - Hardware Wallet with [Native RUNE Support](https://support.ledger.com/hc/en-us/articles/4402987997841-THORChain-RUNE-?docs=true): The Smartest Way to Secure your Crypto
 
@@ -83,7 +82,9 @@ of Crypto Security
 
 [**Leap Wallet**](https://www.leapwallet.io/) - Browser Extension Wallet: The Super Wallet for Web3
 
-## **Education**
+[**Vultisig**](https://vultisig.com/) - A highly secure self-custodial multi-chain crypto vault with in-built two-factor authentication, and no tracking or registration requirements.
+
+### **Education**
 
 [**GrassRoots Crypto**](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
 
