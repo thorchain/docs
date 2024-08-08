@@ -6,9 +6,9 @@ Providing liquidity on THORChain creates an opportunity for holders of stagnant 
 
 ## **What assets can you swap and provide liquidity for?**
 
-* Current Chains — BTC, ETH, LTC, BNB, BCH, DOGE, Cosmos, AVAX, BSC
-* Native gas/base assets on each chain
-* See full list at <https://runescan.io/pools> or <https://thorchain.net/#/pools>
+- Current Chains — BTC, ETH, LTC, BCH, DOGE, Cosmos, AVAX, BSC
+- Native gas/base assets on each chain
+- See full list at <https://runescan.io/pools> or <https://thorchain.net/#/pools>
 
 ## **Can I stake RUNE?**
 
@@ -18,9 +18,9 @@ Not quite. “Providing liquidity” in THORChain is not the same thing as staki
 
 There is no minimum or maximum time or amount. Join and leave whenever you wish. There is however a required confirmation time before THORChain credits you with liquidity when adding or swapping to protect against Reorgs. Wait time is based on:
 
-* Total Asset amount (in a specific block of a specific blockchain)
-* Per block reward of the chain
-* Block time Required confirmations = Total Asset Amount (in a specific block of a specific blockchain) divided by the chain's per block reward Then that is multiplied by block time to get the approx "wait time". See [Confirmation-Counting](broken-reference).
+- Total Asset amount (in a specific block of a specific blockchain)
+- Per block reward of the chain
+- Block time Required confirmations = Total Asset Amount (in a specific block of a specific blockchain) divided by the chain's per block reward Then that is multiplied by block time to get the approx "wait time". See [Confirmation-Counting](broken-reference).
 
 ➜ [THORChain - Wait Times and Fees Explained!](https://youtu.be/XAdaEXO-Ofg) video
 
@@ -51,14 +51,9 @@ If you deposit asymmetrically you can ONLY withdraw asymmetrically, to the same 
 
 You can withdraw your symmetrical deposit both asymmetrically (in either asset) and symmetrically.
 
-**Will all ERC20 and BEP2 assets be supported and listed on THORChain by default?**
+**Will all ERC20 assets be supported and listed on THORChain by default?**
 
-No. Only short tail assets with high MarketCap, good velocity and economic activity would have chances to win liquidity competition to get listed.  Token whitelists being maintained, for security purposes:
-
-* [Latest ERC20 Tokens List](https://gitlab.com/thorchain/thornode/-/blob/develop/common/tokenlist/ethtokens/eth_mainnet_latest.json)
-* [Latest BEP20 Tokens List](https://gitlab.com/thorchain/thornode/-/blob/develop/common/tokenlist/bsctokens/bsc_mainnet_latest.json)
-* [Latest AVAX-C Tokens List](https://gitlab.com/thorchain/thornode/-/blob/develop/common/tokenlist/avaxtokens/avax_mocknet_latest.json)
-* See [Governance](../how-it-works/governance.md#chain-listing-delisting).
+No. Only short tail assets with high MarketCap, good velocity and economic activity would have chances to win liquidity competition to get listed.
 
 ## Adding and Removing Liquidity
 
@@ -70,23 +65,23 @@ While Symmetrically additions are recommended, Asymmetrical additions are suppor
 
 If you add symmetrically first;
 
-* You will be able to add asymmetrically with RUNE later
-* You will be able to add asymmetrically with ASSET later but it would create a new LP position
-* You will be able to add symmetrically later
+- You will be able to add asymmetrically with RUNE later
+- You will be able to add asymmetrically with ASSET later but it would create a new LP position
+- You will be able to add symmetrically later
 
 If you add asymmetrically with ASSET first;
 
-* You will be able to add asymmetrically with RUNE later but it would create a new LP position
-* You will be able to add asymmetrically with ASSET later
-* You will be able to add symmetrically later but it would create a new LP position
+- You will be able to add asymmetrically with RUNE later but it would create a new LP position
+- You will be able to add asymmetrically with ASSET later
+- You will be able to add symmetrically later but it would create a new LP position
 
 If you add asymmetrically with RUNE first;
 
-* You will be able to add asymmetrically with RUNE later
-* You will be able to add asymmetrically with ASSET later but it would create a new LP position
-* You will not be able to add symmetrically later
+- You will be able to add asymmetrically with RUNE later
+- You will be able to add asymmetrically with ASSET later but it would create a new LP position
+- You will not be able to add symmetrically later
 
-![Addition Rules](https://lh3.googleusercontent.com/Vqi0wC-1dEnTGS410rXaiKpaGW5KUrzEBZPtD\_jPyWOKsooVQtWZ5hZlJWuAvmuA4c22V4WGjjlDGKKhE6p4JWKXzHKt5CS4tvnKDGdNuTsEpkQr7Ual0LpMWkEH1yFIzCqzC\_Do)
+![Addition Rules](https://lh3.googleusercontent.com/Vqi0wC-1dEnTGS410rXaiKpaGW5KUrzEBZPtD_jPyWOKsooVQtWZ5hZlJWuAvmuA4c22V4WGjjlDGKKhE6p4JWKXzHKt5CS4tvnKDGdNuTsEpkQr7Ual0LpMWkEH1yFIzCqzC_Do)
 
 ### Withdrawing Liquidity
 
@@ -100,9 +95,9 @@ You can see your position if you connect to THORChain via an Interface you can u
 
 **There are four factors affecting returns:**
 
-* **Proportion of transaction volume to pool depth** — If there is high volume compared to the depth of the pool then there will be higher rewards available to liquidity providers. If there is low volume compared to the depth of the pool then there will be lower rewards available.
-* **Share of the pool** — If you have a large share of the pool, you’ll earn higher returns. If a liquidity provider has 1% of a pool they receive 1% of the rewards for that pool.
-* **Fee size** — fees are determined by the underlying blockchain and the rewards from fees are proportional to the fees charged. A chain with higher fees will generate higher rewards for liquidity providers.
-* **Synth leverage** — With the introduction of [Synths](../thorchain-finance/synthetic-asset-model) and [Savers](../thorchain-finance/savings.md), Liquidity Pool providers underwrite the Synths’ share of the pools. Thus Liquidity Pool providers has a leverage effect based on the RUNE:Asset price ratio changes and Synth utilization level
+- **Proportion of transaction volume to pool depth** — If there is high volume compared to the depth of the pool then there will be higher rewards available to liquidity providers. If there is low volume compared to the depth of the pool then there will be lower rewards available.
+- **Share of the pool** — If you have a large share of the pool, you’ll earn higher returns. If a liquidity provider has 1% of a pool they receive 1% of the rewards for that pool.
+- **Fee size** — fees are determined by the underlying blockchain and the rewards from fees are proportional to the fees charged. A chain with higher fees will generate higher rewards for liquidity providers.
+- **Synth leverage** — With the introduction of [Synths](../thorchain-finance/synthetic-asset-model) and [Savers](../thorchain-finance/savings.md), Liquidity Pool providers underwrite the Synths’ share of the pools. Thus Liquidity Pool providers has a leverage effect based on the RUNE:Asset price ratio changes and Synth utilization level
 
-\*Of significant note is that this mechanism of providing liquidity into the protocol; creates an opportunity for holders of non-yield generating assets (e.g. BTC, BNB) to earn a return on their investments.
+\*Of significant note is that this mechanism of providing liquidity into the protocol; creates an opportunity for holders of non-yield generating assets (e.g. BTC, ETH) to earn a return on their investments.

@@ -4,19 +4,19 @@
 
 Savers Vaults are way to supply single-asset liquidity on THORChain. Any user can simply deposit native Bitcoin, earn in-kind yield, and withdraw their principal any time since they maintain full control of their keys.
 
-* Orginal Launch Article https://medium.com/thorchain/thorchain-savers-vaults-fc3f086b4057
+- [Orginal Launch Article](https://medium.com/thorchain/thorchain-savers-vaults-fc3f086b4057)
 
-###  Is Savers Vault yield fixed rate or variable rate?
+### Is Savers Vault yield fixed rate or variable rate?
 
 Yield is variable and driven by swap fees, block rewards, pool depth, and the incentive pendulum. Annual percentage rates (APRs) are calculated using an extrapolation of past performance data from the last 30 days. Past performance does not guarantee or predict future results.
 
 ### Are there fees to enter and exit a Savers Vault?
 
-Yes. There are slippage fees paid on entering and exiting a Savers Vault. There is a 5 pbs for entry and exit fee for all savers position due to streaming swaps regardless of the size of the transaction. 
+Yes. There are slippage fees paid on entering and exiting a Savers Vault. There is a 5 pbs for entry and exit fee for all savers position due to streaming swaps regardless of the size of the transaction.
 
-###  Which assets are eligible to deposit in a Savers Vault?
+### Which assets are eligible to deposit in a Savers Vault?
 
-All L1 Assets and Selected Stables. See full list at https://thorchain.net/thorfi/savers
+All L1 Assets and Selected Stables. See full list at [https://thorchain.net/thorfi/savers](https://thorchain.net/thorfi/savers)
 
 ### Where can I access Savers Vaults?
 
@@ -26,8 +26,8 @@ Users can manage a THORChain Savers Vault positions through many interfaces. See
 
 Users can track their Savers Vault positions on any supported interface including:
 
-* THORYield
-* THOR Infobot
+- RUNEScan.io
+- THOR Infobot
 
 ### Should I use THORChain Savers Vaults?
 

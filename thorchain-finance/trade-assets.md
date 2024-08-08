@@ -18,12 +18,12 @@ Trade Assets are native assets custodied by THORChain but held outside of liquid
 
 ### Advantages of Trade Assets
 
-* Backed 1:1 by native assets secured by THORChain
-* Mint or redeem Trade Assets with no slippage (only L1 gas fees)
-* 2x capital efficiency of Synthetic Assets
-* No outbound fee when swapping to a Trade Asset
-* Finality with THORChain block speed (6 seconds)
-* Not subject to outbound delays or confirmation counting
+- Backed 1:1 by native assets secured by THORChain
+- Mint or redeem Trade Assets with no slippage (only L1 gas fees)
+- 2x capital efficiency of Synthetic Assets
+- No outbound fee when swapping to a Trade Asset
+- Finality with THORChain block speed (6 seconds)
+- Not subject to outbound delays or confirmation counting
 
 ### Trade Assets vs Synthetic Assets: Key Differences
 
@@ -39,17 +39,17 @@ With THORChain's growth and increased decentralization, the network is now resil
 
 There are multiple dashboards to track the performance of RUNE added to the RUNEPool:
 
-* [https://thorchain.network/trade](https://thorchain.network/trade)
-* [https://thorchain.net/thorfi/trades](https://thorchain.net/thorfi/trades)
-* [https://runescan.io/txs?type=traders](https://runescan.io/txs?type=traders)
+- [https://thorchain.network/trade](https://thorchain.network/trade)
+- [https://thorchain.net/thorfi/trades](https://thorchain.net/thorfi/trades)
+- [https://runescan.io/txs?type=traders](https://runescan.io/txs?type=traders)
 
 Dashboards for Trade Assets continuously evolve as Thorchain expands, but taking the example of [Thorchain.network](https://thorchain.network/trade/) you will find the following in the dashboard:
 
-* Trade Asset: Which asset minted as a Trade Asset
-* Price: Current price of 1 unit of the Trade Asset
-* Balance: How many units of the Trade Asset has been minted
-* Valuation: Price \* Balance
-* Pool Ratio: How much the Trade Asset make up entire Trade Asset pool does this  account for &#x20;
+- Trade Asset: Which asset minted as a Trade Asset
+- Price: Current price of 1 unit of the Trade Asset
+- Balance: How many units of the Trade Asset has been minted
+- Valuation: Price \* Balance
+- Pool Ratio: How much the Trade Asset make up entire Trade Asset pool does this account for &#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-07-30 at 13.30.44 (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -112,14 +112,14 @@ https://thornode.ninerealms.com/thorchain/trade/account/thor1g6pnmnyeg48yc3lg796
 
 ### Future Opportunities
 
-* **Arbitrage bots**: Enhance trading efficiency.
-* **Order books and high-frequency trading**: Support advanced trading strategies.
-* **P2P Lending market**: Enable deposit of one trade asset and withdrawal of another, with dynamic reserve asset interest rates.
+- **Arbitrage bots**: Enhance trading efficiency.
+- **Order books and high-frequency trading**: Support advanced trading strategies.
+- **P2P Lending market**: Enable deposit of one trade asset and withdrawal of another, with dynamic reserve asset interest rates.
 
 ### Sources
 
 1. Tade Accounts [Dev Docs](https://dev.thorchain.org/concepts/trade-accounts.html)
-2. Relevant PRs: [!3347](https://gitlab.com/thorchain/thornode/-/merge\_requests/3347)&[!3451](https://gitlab.com/thorchain/thornode/-/merge\_requests/3451)
+2. Relevant PRs: [!3347](https://gitlab.com/thorchain/thornode/-/merge_requests/3347)&[!3451](https://gitlab.com/thorchain/thornode/-/merge_requests/3451)
 3. [Twitter Spaces](https://twitter.com/THORChain)— held most weeks,[subscribe on RSS](https://rss.com/podcasts/thorchain/)or wherever you get your podcasts
 4. [THORChain University](https://crypto-university.medium.com/)— educational content, monthly posts, &[discord](https://discord.com/invite/c4EhDZdFMA)server
 5. [GrassRoots Crypto](https://www.youtube.com/c/grassrootscrypto)— update and explanation videos

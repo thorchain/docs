@@ -18,11 +18,11 @@ THORChain is an independent blockchain that operates as a Layer 1 cross-chain de
 
 Key selling points of THORChain are:
 
-* The ability to swap Layer 1, or native, assets across multiple chains - e.g. native BTC to ETH swap.
-* No user-registration required - simply send a transaction and THORChain will execute it.
-* No wrapped assets - all assets are natively secured.
-* Transparent, fair [prices](broken-reference), without relying on centralised third-parties.
-* [Continuous Liquidity Pools](../thorchain-finance/continuous-liquidity-pools.md#benefits-of-the-clp-model) that maximise the efficiency of the protocol.
+- The ability to swap Layer 1, or native, assets across multiple chains - e.g. native BTC to ETH swap.
+- No user-registration required - simply send a transaction and THORChain will execute it.
+- No wrapped assets - all assets are natively secured.
+- Transparent, fair prices, without relying on centralised third-parties.
+- [Continuous Liquidity Pools](../thorchain-finance/continuous-liquidity-pools.md#benefits-of-the-clp-model) that maximise the efficiency of the protocol.
 
 ➜ [An Introduction to THORChain for Bitcoiners](https://erikvoorhees.medium.com/an-introduction-to-thorchain-for-bitcoiners-3f621bf0028e)
 
@@ -30,10 +30,10 @@ Key selling points of THORChain are:
 
 THORChain features a native token [RUNE](rune.md), which owners can use to participate in the network and is used to pay for the swap/gas fees for RUNE pairs. RUNE has specific utility within the THORChain ecosystem, as it fills four key roles:
 
-* Settlement Asset
-* Network Security
-* Governance
-* Incentives
+- Settlement Asset
+- Network Security
+- Governance
+- Incentives
 
 **RUNE as a Settlement Asset**
 
@@ -53,7 +53,7 @@ Block rewards are paid to Liquidity Providers and Node Operators on a set emissi
 
 ### **How Swapping Works**
 
-Swaps in THORChain use native assets. Example: When a swap from RUNE to BTC occurs, RUNE is sent into THORChain from the user and BTC is sent out from one of THORChain’s vaults - Inbound gas is paid in Native RUNE, Outbound Fee is paid in BTC.
+Swaps in THORChain use native assets. Example: When a swap from RUNE to BTC occurs, RUNE is sent into THORChain from the user and BTC is sent out from one of THORChain’s vaults - Inbound gas is paid in RUNE, Outbound Fee is paid in BTC.
 
 When Swapping from BTC to ETH, BTC is sent into THORChain from the user and ETH is sent out from one of THORChain’s vaults. Internally, once the BTC is received, RUNE moves from the BTC pool to the ETH Pool - thus it is a double swap (BTC:RUNE, RUNE:ETH). Inbound gas is paid in BTC, Outbound Fee is paid in ETH. See [Swappers](roles/swapping.md#how-swaps-work)for more information.
 

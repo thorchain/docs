@@ -23,7 +23,7 @@ All vesting has been completed.
 The Reserve also backstops Savers and Lending. The Reserve is depleted by block rewards and POL and continually topped up by system income.
 {% endhint %}
 
-The Reserve and other modules can be viewed [here](https://runescan.io/addresses).
+The [Reserve module](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt) and other modules can be viewed [here](https://runescan.io/addresses).
 
 ## Block Rewards
 

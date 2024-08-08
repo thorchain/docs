@@ -14,20 +14,54 @@ Users use a special memo and a THORChain `MsgDeposit` transaction to register th
 
 A THORChain address can be assigned one (1) THORName to manage the other addresses associated. For example: the THORName chris can receive $BTC to the chris.btc address, chris.eth to receive $ETH and so forth. Wallet providers will easily be able to integrate to resolve cross-chain addresses for a user.
 
-``` json
-{ "chris" :
-   {"thor  : "thor1egxvam70a86jafa3s0m2g3m7548gcg3kqfmfax",
-    "btc"  : "bc1qq2z2f4gs4nd7t0a9zzjtegu4nczhajjp90y9l9", 
-    "eth"  : "0x04c5998ded94f8926e64a99b7dbc9f463370444c", 
-    "bch"  : "qz7262r7uufxk89emajqm97vskzwtxrf6yquk7zfwr",
-    "ltc"  : "ltc1qaa064vvv4d6stgrd3tt93fp6jxywnf777j6dl8", 
-    "bnb"  : "bnb1pa6hpjs7qv0vkd55n08yw7v7fks5tqa2xtt2gk"
-    "doge" : "DNUfRBroVNhu53QXRG9vtB7t8vxwji3iG6",
-    "terra": terra1hckhegjy544etz7l883e3psken44kna0w3dx2g"}
+Example from [https://midgard.ninerealms.com/v2/thorname/lookup/td](https://midgard.ninerealms.com/v2/thorname/lookup/td)
+
+```json
+{
+  "entries": [
+    {
+      "address": "0xee7ba2d9eca389928a628bf26ea87e65a5c27eca",
+      "chain": "AVAX"
+    },
+    {
+      "address": "qznskghhug46gxkx8ykxqxj4kmczge6zjg9trsgf5d",
+      "chain": "BCH"
+    },
+    {
+      "address": "bnb157sj7wvdju5td2hkgmkvkt2ngzlnyy7y46fswh",
+      "chain": "BNB"
+    },
+    {
+      "address": "0xee7ba2d9eca389928a628bf26ea87e65a5c27eca",
+      "chain": "BSC"
+    },
+    {
+      "address": "bc1qqtuq6td6enadcz8v7t2eafph0pq0cfjw2mzug9",
+      "chain": "BTC"
+    },
+    {
+      "address": "DBVz9bMNtDYrVLGqwhiFUzpYGcQu1B3PuR",
+      "chain": "DOGE"
+    },
+    {
+      "address": "0xe020c8934b23e5bcca1e7eecdb6f39674029fe47",
+      "chain": "ETH"
+    },
+    {
+      "address": "cosmos10w52zp06zccjq8zv9sh77p3n2c8sc559q5yl0z",
+      "chain": "GAIA"
+    },
+    {
+      "address": "thor1ymkrqd4klk2sjdqk7exufa4rlm89rp0h8n7hr2",
+      "chain": "THOR"
+    }
+  ],
+  "expire": "23726750",
+  "owner": "thor1ymkrqd4klk2sjdqk7exufa4rlm89rp0h8n7hr2"
 }
 ```
 
-Currently, there are seven (7) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, and Cosmos. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
+Currently, there are seven (8) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance, Bitcoin Cash, Doge, Cosmos and BSC. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
 
 ### Query a THORName
 
@@ -53,9 +87,9 @@ Example using a THOR address: [https://midgard.ninerealms.com/v2/thorname/rlooku
 
 There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fee, which works out to be around 1 RUNE annually. A user who pays 2 RUNE will then keep their name registered for 2 years. Fees are controlled by Constants/Mimir, the current settings are:
 
-* `TNSRegisterFee`: 10 RUNE
-* `TNSFeeOnSale`: 1000 Basis Points
-* `TNSBlockFee`: 20 tor per block (roughly 1 RUNE per year)
+- `TNSRegisterFee`: 10 RUNE
+- `TNSFeeOnSale`: 1000 Basis Points
+- `TNSBlockFee`: 20 tor per block (roughly 1 RUNE per year)
 
 Example: a 20 Rune registration registers the THORName for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
 
@@ -89,10 +123,8 @@ Without:
 107 characters without THORNames, 33 characters with THORNames.
 {% endhint %}
 
-Interfaces like [AsgardEx Desktop](https://github.com/thorchain/asgardex-electron/releases) allow you to create your own memo.
+Interfaces like [AsgardEx Desktop](https://github.com/asgardex/asgardex-desktop/releases) allow you to create your own memo.
 
-## FAQ
+## More Information
 
-THORChain launched THORNames in June 2021 with a number of pre-registration sales. Read more here [https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8](https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8)
-
-Pre-registered THORNames will be valid 12 months after THORNames is deployed to Chaosnet.
+THORChain launched THORNames in June 2021, read more here [https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8](https://medium.com/thorchain/thorchain-launches-thorname-service-abe42ba11df8).
