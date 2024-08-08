@@ -85,12 +85,12 @@ The TOR pool is a derived asset pool and operates the same as other derived asse
 
 The `totalRuneDepth` is the sum of all RUNE in anchor pools (i.e. - USDC, USDT, BUSD-BD1 for TOR or just BTC.BTC for the L1)
 
-| Element              | Description                                   |
-|----------------------|-----------------------------------------------|
-| MaxAnchorBlocks      | Protocol Setting, blocks to accumulate slip   |
-| DerivedMinDepth      | Protocol Setting, Min derived pool depth      |
+| Element              | Description                                            |
+| -------------------- | ------------------------------------------------------ |
+| MaxAnchorBlocks      | Protocol Setting, blocks to accumulate slip            |
+| DerivedMinDepth      | Protocol Setting, Min derived pool depth               |
 | DerivedDepthBasisPts | Protocol Setting, increase/decrease derived pool depth |
-| MaxAnchorSlip        | Protocol Setting, Max allowed slip on derived pool |
+| MaxAnchorSlip        | Protocol Setting, Max allowed slip on derived pool     |
 
 $$
 totalSlip = {\sum_{\substack{i=block}}^{\text{maxAnchorBlocks}}}{poolSlip(i)}

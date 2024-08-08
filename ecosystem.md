@@ -28,7 +28,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**ASGARDEX Desktop**](https://www.asgardex.com/) - Wallet and Exchange Client for THORChain
 
-[**Coinbot**](https://t.me/TeamCoinBot\_bot) - Telegram Exchange Bot for THORChain
+[**Coinbot**](https://t.me/TeamCoinBot_bot) - Telegram Exchange Bot for THORChain
 
 [**Decentralfi**](https://decentralfi.io/) - Exchange Powered by THORChain
 
@@ -51,8 +51,6 @@ Below is a list of active THORChain community projects. If you would like to be 
 [**Unizen**](https://zcx.com/trade) - Omni-chain Enabled Aggregator
 
 ### Integrated Wallets and Exchanges
-
-[**Vultisig**](https://vultisig.com/) - Multisig Crypto Vault
 
 [**Cake Wallet**](https://cakewallet.com/) - Payments Made Easy
 
