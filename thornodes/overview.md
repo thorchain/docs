@@ -12,6 +12,13 @@ Running a node is a serious undertaking. While Node Operators are well [compensa
 
 See the [Node Operator 101 Video](https://youtu.be/XXYXNAolPEU) to learn more before running a node.
 
+THORNode information can be viewed at the following dashboards:
+
+1. [thorchain.network](https://thorchain.network/nodes) - Comprehensive THORNode dashboard
+2. [thorchain.net](https://thorchain.net/nodes) - THORNode information and network statistics
+3. [runescan.io](https://runescan.io/nodes) - THORNode information within the block explorer
+4. [thorcharts.org ](https://thorcharts.org/thorchain\_earnings\_distribution)- Earning distribution and other historical data
+
 To set up a node, you have two choices:
 
 1. Set up manually (not recommended unless you are an expert)
@@ -149,7 +156,7 @@ If the answer is no, it’s probably best that you do not run a node and partici
 
 When you run a THORNode, each THORNode will have its own node account. An example node account looks like this:
 
-``` json
+```json
 {
     "node_address": "thor10rgvc7c44mq5vpcq07dx5fg942eykagm9p6gxh",
     "status": "Active",
@@ -206,7 +213,7 @@ Types of node status:
 
 To get node account information, make an HTTP call to your `thornode` port which will look like the following:
 
-``` text
+```
 http://<host>:1317/thorchain/nodeaccount/<node address>
 http://<host>:1317/thorchain/nodeaccounts
 ```
@@ -217,7 +224,7 @@ THORNodes have the ability to vote on [Mimir](https://midgard.thorchain.info/v2/
 
 Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a node is:
 
-``` text
+```
 Make mimir
 => Enter THORNode Mimir key: <key>
 => Enter THORNode Mimir value: <value>
