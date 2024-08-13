@@ -160,45 +160,56 @@ When you run a THORNode, each THORNode will have its own node account. An exampl
 
 ```json
 {
-    "node_address": "thor10rgvc7c44mq5vpcq07dx5fg942eykagm9p6gxh",
-    "status": "Active",
-    "pub_key_set": {
-      "secp256k1": "thorpub1addwnpepq2gmjlu6y0whj8gtfnl3ccta66zx3u5p04wdh834e065x4z6qndzsulj5aa",
-      "ed25519": "thorpub1zcjduepqxg5dfc27l3tw2xrxtw63025gaxwup723y0t7p8w2ww37vqgvyw7q348pxp"
-    },
-    "validator_cons_pub_key": "thorcpub1zcjduepqaxvrp5xjrmg65e3a06sdkr5z7y67xdlzyetlx40p857gxw5g4tqs2xdavr",
-    "active_block_height": 9187905,
-    "status_since": 9187905,
-    "node_operator_address": "thor10afkwx5heh26fjwum682neq7wkkre5md0wp8vc",
-    "total_bond": "85959109978465",
-    "bond_providers": {
-      "node_operator_fee": "2000",
-      "providers": [
-        {
-          "bond_address": "thor10afkwx5heh26fjwum682neq7wkkre5md0wp8vc",
-          "bond": "85959109978465"
-        }
-      ]
-    },
-    "signer_membership": [...pub keys of asgard vault memembership],
-    "requested_to_leave": false,
-    "forced_to_leave": false,
-    "leave_height": 0,
-    "ip_address": "<redacted>",
-    "version": "1.104.0",
-    "slash_points": 37,
-    "jail": {
-      "release_height": 9232551
-    },
-    "current_award": "13105483797",
-    "observe_chains": [...block heights of last observed tx on external chains],
-    "preflight_status": {
-      "status": "Ready",
-      "reason": "OK",
-      "code": 0
-    }
+  "node_address": "thor10rgvc7c44mq5vpcq07dx5fg942eykagm9p6gxh",
+  "status": "Active",
+  "pub_key_set": {
+    "secp256k1": "thorpub1addwnpepq2gmjlu6y0whj8gtfnl3ccta66zx3u5p04wdh834e065x4z6qndzsulj5aa",
+    "ed25519": "thorpub1zcjduepqxg5dfc27l3tw2xrxtw63025gaxwup723y0t7p8w2ww37vqgvyw7q348pxp"
+  },
+  "validator_cons_pub_key": "thorcpub1zcjduepqaxvrp5xjrmg65e3a06sdkr5z7y67xdlzyetlx40p857gxw5g4tqs2xdavr",
+  "peer_id": "16Uiu2HAm5EX9mPRpLgWYg7uH7WgSdBGXvfkXNhuAinCKUh1Agnas",
+  "active_block_height": 14561460,
+  "status_since": 14561460,
+  "node_operator_address": "thor10afkwx5heh26fjwum682neq7wkkre5md0wp8vc",
+  "total_bond": "96410371093662",
+  "bond_providers": {
+    "node_operator_fee": "2000",
+    "providers": [
+      {
+        "bond_address": "thor10afkwx5heh26fjwum682neq7wkkre5md0wp8vc",
+        "bond": "96410371093662"
+      }
+    ]
+  },
+  "signer_membership": [...pub keys of asgard vault memembership],
+  "requested_to_leave": false,
+  "forced_to_leave": false,
+  "leave_height": 0,
+  "ip_address": "<redacted>",
+  "version": "1.134.0",
+  "slash_points": 659,
+  "jail": {
+    "release_height": 17208649,
+    "reason": "failed to perform keysign"
+  },
+  "current_award": "15968622725",
+  "observe_chains": [...block heights of last observed tx on external chains],
+  "preflight_status": {
+    "status": "Ready",
+    "reason": "OK",
+    "code": 0
   }
+}
 ```
+
+To get node account information, make an HTTP call to your `thornode` port which will look like the following:
+
+```
+http://<host>:1317/thorchain/nodeaccount/<node address>
+http://<host>:1317/thorchain/nodeaccounts
+```
+
+Or use `https://thornode.ninerealms.com/thorchain/node/<node address>.`
 
 Most importantly, this will tell you how many slash points the node account has accrued, their status, and the size of their bond (which is in 1e8 notation, 1 Rune == 100000000).
 
@@ -212,13 +223,6 @@ Types of node status:
 4. **Ready** - node has met minimum requirements to be churned and is ready to do so. Could be selected to churn into the network. Cannot unbond while in this status.
 5. **Active** - node is an active participant of the network, by securing funds and committing new blocks to the THORChain blockchain. Cannot unbond while in this status.
 6. **Disabled** - node has been disabled by use of LEAVE while in standby, and cannot re-join.
-
-To get node account information, make an HTTP call to your `thornode` port which will look like the following:
-
-```
-http://<host>:1317/thorchain/nodeaccount/<node address>
-http://<host>:1317/thorchain/nodeaccounts
-```
 
 ## Node Voting
 

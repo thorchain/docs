@@ -62,6 +62,8 @@ make destroy-tools
 {% endtab %}
 {% endtabs %}
 
+You need to give the deployment a namespace name, `thorchain` is used in the example below.&#x20;
+
 If you are successful, you will see the following message:
 
 ![](<../.gitbook/assets/image (23) (1).png>)
@@ -75,11 +77,11 @@ It is important to deploy the tools first before deploying the THORNode services
 You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet or chaosnet/mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` (or `thornode-testnet` for testnet) by default.
 
 ```
-make install
+NET=mainnet TYPE=<type> NAME=<namepsace name> make install
 ```
 
 {% hint style="info" %}
-If you are intending to run all chain clients, bond in & earn rewards, you want to choose "Validator".
+If you are intending to run all chain clients, bond in & earn rewards, you want to choose "Validator". Select FullNode if you only want to run THORNode and Midgard.&#x20;
 {% endhint %}
 
 {% hint style="info" %}
