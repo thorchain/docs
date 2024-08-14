@@ -21,7 +21,7 @@ THORNode information can be viewed at the following dashboards:
 
 To set up a node, you have two choices:
 
-1. Set up manually (not recommended unless you are an expert)
+1. Set up [manually ](https://medium.com/@scorch\_ed/build-your-own-thorchain-validator-node-step-by-step-guide-a516e6c67b9f)(not recommended unless you are an expert)
 2. Set up via Kubernetes (recommended)
 
 {% content-ref url="kubernetes/" %}
@@ -97,7 +97,7 @@ Node Operators receive rewards if they are bonded and active on the network and 
 * Setting a Node Operator fee in basis points, which causes rewards to be paid directly to the Node Operator address after each churn. See [here](joining.md#node-operator-fee) for details on how to set a Node Operator fee.
 * If no Node Operator fee is set, 100% of rewards will be accrued back to the bond after each churn. A Node Operator must then either LEAVE or wait until the node churns out to unbond principal or rewards.
 
-Node Operators earn rewards relative to their bond, the more they bond, the more they up to the [effective bond cap. ](https://gitlab.com/thorchain/thornode/-/merge\_requests/2464?commit\_id=ed4cb1fef0986b5e1934b832c8f5666b0e9184dd#15e70b3dc512eb985618965c14fdc1df3b01bc41)Over time, this incentive increases the median bonded amount, increases the security of the network and allows the network to grow. See [Keeping Track of Rewards](overview.md#keeping-track-of-bond-rewards) below for more details.
+Node Operators earn rewards relative to their bond; the more they bond, the more they earn, up to the effective bond cap (the highest bond of the bottom 2/3rd active nodes). Over time, this incentive increases the median bonded amount, increasing the security of the network and allows the network to grow. [See Keeping Track of Rewards](overview.md#keeping-track) below for more details.
 
 Rewards are affected by the [Emission Schedule](../how-it-works/emission-schedule.md) and the [Incentive Pendulum](../how-it-works/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
 
@@ -105,7 +105,7 @@ Rewards are affected by the [Emission Schedule](../how-it-works/emission-schedul
 
 When a node joins the network the current block height is recorded. The system creates one block unit for every active node for every active block, and has a running total of the block units created. When a node leaves, it cashes in its block units for a portion of the bond rewards. The spent block units are destroyed.
 
-For example, there are 10000 RUNE in bond rewards outstanding. Node A has been active for 30 blocks, and has 33 block units, but accrued 3 slash points. There are 1000 block units in total. Node A leaves the network and cashes in its 30 block units (33 - 3). It receives 300 RUNE ((30/1000) \* 10000), leaving 9700 RUNE in node rewards. Its 33 block units are destroyed, leaving 967 block units left.
+For example, there are 10,000 RUNE in bond rewards outstanding. Node A has been active for 30 blocks, and has 33 block units, but accrued 3 slash points. There are 1000 block units in total. Node A leaves the network and cashes in its 30 block units (33 - 3). It receives 300 RUNE ((30/1000) \* 10000), leaving 9700 RUNE in node rewards. Its 33 block units are destroyed, leaving 967 block units left.
 
 ### Income
 
@@ -226,7 +226,7 @@ Types of node status:
 
 ## Node Voting
 
-THORNodes have the ability to vote on [Mimir](https://midgard.thorchain.info/v2/thorchain/mimir)settings.
+THORNodes have the ability to vote on [Mimir](https://midgard.thorchain.info/v2/thorchain/mimir) settings.
 
 Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a node is:
 
