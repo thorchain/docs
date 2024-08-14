@@ -8,8 +8,9 @@ Midgard is a layer 2 REST API that provides front-end consumers with semi real-t
 
 
 
-Midgard is heavily used in dashboards and transaction scanners like [Thorchain.net](https://thorchain.net/), [Thorchain.network](https://thorchain.network/) and [Runescan.io](https://runescan.io/).
+Midgard is heavily used in dashboards and transaction scanners like [Thorchain.net](https://thorchain.net/), [Thorchain.network](https://thorchain.network/) and [Runescan.io](https://runescan.io/). You find a full overview of the REST API endpoints on:
 
-
+* [https://thornode.ninerealms.com/thorchain/doc](https://thornode.ninerealms.com/thorchain/doc)
+* [https://midgard.ninerealms.com/v2/doc](https://midgard.ninerealms.com/v2/doc)
 
 For more information see [Gitlab repo](https://gitlab.com/thorchain/midgard).
