@@ -69,6 +69,8 @@ This fee is retained on the output side of the pool, ensuring it counters the tr
 In an Asset-Asset swap, the fee is applied twice since two pools are involved, however the user only sees it as a single fee and a single slip value.
 {% endhint %}
 
+Streaming Swaps has greatly increased the swap capital efficiency. A minumum 5 pbs fee now applies to all swaps.
+
 ## **Outbound Fee**
 
 Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.
@@ -79,4 +81,5 @@ Several factors affect the fee amount such as the gas rate and transaction size.
 
 ## Network Fee
 
-The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Currently, this is fixed and available on the `/constants` endpoint, but it is intended to be dynamic and set to be a fixed $ qty of assets. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves.
+The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves.
+[ADR 008](https://dev.thorchain.org/architecture/adr-009-reserve-income-fee-overhaul.html) saw the introduction network of fees priced in USD. While still taken as RUNE or synths, the Network Fee is now set a USD amount instead of a fixed RUNE amount.

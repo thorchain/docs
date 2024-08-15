@@ -22,6 +22,6 @@ For all the above services, users do not need to hold (or even be aware of) the 
 
 ## Interacting with the RUNE token
 
-The [RUNE](https://docs.thorchain.org/understanding-thorchain/rune) token is the native asset on THORChain’s own sovereign blockchain. Users who want to hold RUNE, deposit into LPs symmetrically, and/or [bonding](https://docs.thorchain.org/understanding-thorchain/roles/node-operators) into nodes, will need a wallet which can hold native RUNE. Check here for a [list of wallets which support native RUNE](https://docs.thorchain.org/ecosystem#integrated-wallets-and-exchanges).
+The [RUNE](https://docs.thorchain.org/understanding-thorchain/rune) token is the native asset on THORChain’s own sovereign blockchain. Users who want to hold RUNE, deposit into LPs symmetrically, and/or [bonding](https://docs.thorchain.org/understanding-thorchain/roles/node-operators) into nodes, will need a wallet which can hold RUNE. Check here for a [list of wallets which support RUNE](https://docs.thorchain.org/ecosystem#integrated-wallets-and-exchanges).
 
 Users can swap for RUNE, from THORChain directly, using any of the [Frontend User Interfaces](https://docs.thorchain.org/ecosystem#exchanges-only); or acquire from supported centralized exchanges.

@@ -10,9 +10,9 @@ RUNEPool matches external capital with various pools in the system. It manages m
 
 ### **What are the key components of RUNEPool?**
 
-* **PoL-Enabled Pools**: Defined via the mimir key POL-{Asset}, enabling all eight native assets and five USD stable coins.
-* **RUNEPool Units (RPU)**: Represent a pooler’s share in the pool. When redeemed, the holder's share of the total POL size in RUNE is distributed.
-* **Impermanent Loss Management (IL)**: Users experience aggregate IL across PoL-Enabled pools, reducing risk compared to any single pool.
+- **PoL-Enabled Pools**: Defined via the mimir key POL-{Asset}, enabling all eight native assets and five USD stable coins.
+- **RUNEPool Units (RPU)**: Represent a pooler’s share in the pool. When redeemed, the holder's share of the total POL size in RUNE is distributed.
+- **Impermanent Loss Management (IL)**: Users experience aggregate IL across PoL-Enabled pools, reducing risk compared to any single pool.
 
 ### **What are the benefits to RUNE holders?**
 
@@ -26,14 +26,14 @@ RUNEPool gathers idle RUNE from centralized exchanges and custodial services, mo
 
 Multiple dashboards are available to track RUNEPool performance:
 
-* [thorchain.network/runepool](http://thorchain.network/runepool)
-* [thorchain.net/thorfi/runepool](http://thorchain.net/thorfi/runepool)
-* [runescan.io/txs?type=runepool](http://runescan.io/txs?type=runepool)
+- [thorchain.network/runepool](http://thorchain.network/runepool)
+- [thorchain.net/thorfi/runepool](http://thorchain.net/thorfi/runepool)
+- [runescan.io/txs?type=runepool](http://runescan.io/txs?type=runepool)
 
 ### **How to add to RUNEPool?**
 
 1. **Create a Transaction**: Use a `MsgDeposit` transaction with the memo `pool+`.
-2. **Native RUNE Only**: RUNEPool only works with native RUNE.
+2. **RUNE Only**: RUNEPool only works with RUNE.
 3. **Instructions**: Refer to the "[Deposit to the RUNEPool](https://dev.thorchain.org/concepts/memos.html#deposit-runepool)" section in the documentation for detailed steps.
 
 ### **How to withdraw from RUNEPool?**
@@ -49,14 +49,14 @@ Multiple dashboards are available to track RUNEPool performance:
 
 ### **How does RUNEPool manage Impermanent Loss (IL)?**
 
-* **Aggregate IL**: Users experience aggregate IL across all PoL-enabled pools, reducing individual pool risks.
-* **Idle RUNE**: Undeployed RUNE reduces yield but also limits exposure to impermanent loss.
+- **Aggregate IL**: Users experience aggregate IL across all PoL-enabled pools, reducing individual pool risks.
+- **Idle RUNE**: Undeployed RUNE reduces yield but also limits exposure to impermanent loss.
 
 ### **How can I see the Profit and Loss (PnL) of RUNEPool?**
 
 The PnL can be split into Global (for all providers) and Individual:
 
-* **Global PnL:** The `/thorchain/runepool` endpoint returns the global PnL of RUNEPool, including details for the reserve and independent providers.
-* **Individual Provider PnL:** The `/thorchain/rune_provider/{thor_addr}` endpoint provides position information for a single provider.
+- **Global PnL:** The `/thorchain/runepool` endpoint returns the global PnL of RUNEPool, including details for the reserve and independent providers.
+- **Individual Provider PnL:** The `/thorchain/rune_provider/{thor_addr}` endpoint provides position information for a single provider.
 
 For more detailed instructions, refer to the [developer docs](https://dev.thorchain.org/concepts/rune-pool.html).
