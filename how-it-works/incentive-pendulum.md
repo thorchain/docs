@@ -8,12 +8,12 @@ The Incentive Pendulum controls the flow of system income between node operators
 
 Key variables to the Incentive Pendulum are:
 
-- **[Total Bonded](https://runescan.io/address/thor17gw75axcnr8747pkanye45pnrwk7p9c3cqncsv)**: Sum of all RUNE bonded by active [node operators](../understanding-thorchain/roles/node-operators.md).
-- **Bond Hard Cap** : The highest bond in the bottom 2/3 of active node operators to ensure no single node has excessive influence on the Total Bond.
-- **Total Effective Bond**: The sum of all active node operator's bonds up to the Bond Hard Cap. For each node, the bond amount added is capped by the Bond Hard Cap. This maintains a balanced and secure network by distributing bonding power more evenly among node operators.
-- **Effective Security Bond**. The sum of the total bond of the bottom 2/3rds active node operators.
-- **[Total Pooled](https://runescan.io/address/thor1g98cy3n9mmjrpn0sxmn63lztelera37n8n67c0)**: Sum of liquidity in all [pools](https://runescan.io/pools) by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
-- **Vault Liquidity**: Sum vaule of L1 assets within all Asgard Vaults valued in RUNE. Includes Pooled L1s and Trade Account L1s.
+* [**Total Bonded**](https://runescan.io/address/thor17gw75axcnr8747pkanye45pnrwk7p9c3cqncsv): Sum of all RUNE bonded by active [node operators](../understanding-thorchain/roles/node-operators.md).
+* **Bond Hard Cap** : The highest bond in the bottom 2/3 of active node operators to ensure no single node has excessive influence on the Total Bond.
+* **Total Effective Bond**: The sum of all active node operator's bonds up to the Bond Hard Cap. For each node, the bond amount added is capped by the Bond Hard Cap. This maintains a balanced and secure network by distributing bonding power more evenly among node operators.
+* **Effective Security Bond**. The sum of the total bond of the bottom 2/3rds active node operators.
+* [**Total Pooled**](https://runescan.io/address/thor1g98cy3n9mmjrpn0sxmn63lztelera37n8n67c0): Sum of liquidity in all [pools](https://runescan.io/pools) by liquidity providers which also includes [synthetics](../thorchain-finance/synthetic-asset-model.md) and [savers](../thorchain-finance/savings.md).
+* **Vault Liquidity**: Sum vaule of L1 assets within all Asgard Vaults valued in RUNE. Includes Pooled L1s and Trade Account L1s.
 
 The capital on THORChain can lose its balance over time. Sometimes there will be too much capital in liquidity pools; sometimes there will be too much bonded by nodes. If there is too much capital in liquidity pools, the network is unsafe. If there is too much capital bonded by nodes, the network is inefficient.
 
@@ -23,11 +23,11 @@ If the network becomes unsafe, it increases rewards (block rewards and liquidity
 
 THORChain can be in 1 of 5 main states:
 
-- Unsafe
-- Under-Bonded
-- Optimal
-- Over-Bonded
-- Inefficient
+* Unsafe
+* Under-Bonded
+* Optimal
+* Over-Bonded
+* Inefficient
 
 These different states can be observed through the relationship between bonded RUNE and Vaulted Liquidity, reflecting the amount of RUNE bonded by node operators, the amount of liqudity held in the Asgard Vault within or outside the of the liquidity pools.
 
@@ -46,7 +46,7 @@ This results in:
 1. An approximate 67% to 33% split between the Total Security Bond and pooled RUNE.
 2. A 50% to 50% split between the Total Security Bond and Vault Liquidity.
 
-It is important to note that yield is paid based on the liquidity provided and not on income share splits, as explained below in the [Algorithm](#algorithm) section.
+It is important to note that yield is paid based on the liquidity provided and not on income share splits, as explained below in the [Algorithm](incentive-pendulum.md#algorithm) section.
 
 ### Unsafe State
 
@@ -92,7 +92,7 @@ The algorithm that controls the Incentive Pendulum is as follows:
 1. **Check Security Bond:** No payments to liquidity providers when the `effectiveSecurityBond` is less than or equal to the `vaultLiquidity`:
 
 $$
-effectiveSecurityBond \leq vaultLiquidity \implies finalPoolShare = 0
+effectiveSecurityBond \leq vaultLiquidity \implies finalPoolShare = 0
 $$
 
 2. **Determine the Initial Share** of rewards for node operators based on the `vaultLiquidity` and `effectiveSecurityBond`:
@@ -109,13 +109,13 @@ $$
 
 4. **Adjust Node and Pool Shares:**
 
-- **Adjust the Node Share** if `totalEffectiveBond` exceeds the `effectiveSecurityBond` so Nodes are rewarded up to the Bond Hard Cap:
+* **Adjust the Node Share** if `totalEffectiveBond` exceeds the `effectiveSecurityBond` so Nodes are rewarded up to the Bond Hard Cap:
 
 $$
 adjustmentNodeShare = \frac{totalEffectiveBond}{effectiveSecurityBond} \times baseNodeShare
 $$
 
-- **Adjust Pool Share** based on the ratio of `pooledRUNE` to `vaultLiquidity` as non-pooled liquidity is not yield-bearing:
+* **Adjust Pool Share** based on the ratio of `pooledRUNE` to `vaultLiquidity` as non-pooled liquidity is not yield-bearing:
 
 $$
 adjustmentPoolShare = \frac{pooledRUNE}{vaultLiquidity} \times basePoolShare
@@ -143,13 +143,13 @@ Liquidity Providers are paid the `finalPoolShare` and node operators are paid th
 
 Ensure the yield (rewards per unit of liquidity) for liquidity providers and node operators is balanced, taking into account the total effective bond and the vault liquidity:
 
-- **Yield for Node Operators:**
+* **Yield for Node Operators:**
 
 $$
 nodeYield = \frac{finalNodeShare}{totalEffectiveBond}
 $$
 
-- **Yield for Liquidity Providers:**
+* **Yield for Liquidity Providers:**
 
 $$
 poolYield = \frac{finalPoolShare}{2 \times pooledRUNE}
@@ -171,13 +171,12 @@ Values are:
 
 ### Steps
 
-1. **Check Security Bond:**
+1.  **Check Security Bond:**
 
-   Since `effectiveSecurityBond` (66,000,000 RUNE) is greater than `vaultLiquidity` (33,000,000 RUNE), we proceed with the calculations.
+    Since `effectiveSecurityBond` (66,000,000 RUNE) is greater than `vaultLiquidity` (33,000,000 RUNE), we proceed with the calculations.
+2.  **Determine the Initial Share:**
 
-2. **Determine the Initial Share:**
-
-   Base node share calculation:
+    Base node share calculation:
 
 $$
 baseNodeShare = \frac{vaultLiquidity}{effectiveSecurityBond} \times totalRewards = \frac{33,000,000}{66,000,000} \times 1,000 = 500 \text{ RUNE}
@@ -190,14 +189,13 @@ basePoolShare = totalRewards - baseNodeShare = 1,000 - 500 = 500 \text{ RUNE}
 $$
 
 4. **Adjust Node and Pool Shares:**
-
-   - Adjusted node share calculation:
+   * Adjusted node share calculation:
 
 $$
 adjustmentNodeShare = \frac{totalEffectiveBond}{effectiveSecurityBond} \times baseNodeShare = \frac{99,000,000}{66,000,000} \times 500 = 750 \text{ RUNE}
 $$
 
-- Adjusted pool share calculation:
+* Adjusted pool share calculation:
 
 $$
 adjustmentPoolShare = \frac{pooledRUNE}{vaultLiquidity} \times basePoolShare = \frac{22,000,000}{33,000,000} \times 500 = 333.33 \text{ RUNE}
@@ -209,31 +207,30 @@ $$
 adjustmentRewards = adjustmentPoolShare + adjustmentNodeShare = 333.33 + 750 = 1,083.33 \text{ RUNE}
 $$
 
-6. **Calculate the Final Amount:**
+6.  **Calculate the Final Amount:**
 
-   Since `adjustmentRewards` (1,083.33 RUNE) exceeds `totalRewards` (1,000 RUNE), we cap the rewards:
+    Since `adjustmentRewards` (1,083.33 RUNE) exceeds `totalRewards` (1,000 RUNE), we cap the rewards:
 
-   - Final pool share:
+    * Final pool share:
 
 $$
 finalPoolShare = \frac{adjustmentPoolShare}{adjustmentRewards} \times totalRewards = \frac{333.33}{1,083.33} \times 1,000 = 307.69 \text{ RUNE}
 $$
 
-- Final node share:
+* Final node share:
 
 $$
 finalNodeShare = \frac{adjustmentNodeShare}{adjustmentRewards} \times totalRewards = \frac{750}{1,083.33} \times 1,000 = 692.31 \text{ RUNE}
 $$
 
 7. **Yield Adjustment:**
-
-   - Yield for node operators:
+   * Yield for node operators:
 
 $$
 nodeYield = \frac{finalNodeShare}{totalEffectiveBond} = \frac{692.31}{99,000,000} = 6.993 \times 10^{-6} \text{ RUNE per RUNE}
 $$
 
-- Yield for liquidity providers:
+* Yield for liquidity providers:
 
 $$
 poolYield = \frac{finalPoolShare}{2 \times pooledRUNE} = \frac{307.69}{2 \times 22,000,000} = 6.993 \times 10^{-6} \text{ RUNE per RUNE}
@@ -241,10 +238,10 @@ $$
 
 ### Summary
 
-- Final rewards for liquidity providers: 307.69 RUNE
-- Final rewards for node operators: 692.31 RUNE
-- Node yield: \( 6.993 \times 10^{-6} \) RUNE per RUNE
-- Pool yield: \( 6.993 \times 10^{-6} \) RUNE per RUNE
+* Final rewards for liquidity providers: 307.69 RUNE
+* Final rewards for node operators: 692.31 RUNE
+* Node yield: 6.993x10^-6 RUNE per RUNE
+* Pool yield: 6.993x10^-6 RUNE per RUNE
 
 In this stable state, node yield matches pool yield meaning the system is in equilibrium based on the liquidy provided. This ensures that the rewards are balanced according to the liquidity provided, maintaining the desired incentives for both liquidity providers and node operators.
 
