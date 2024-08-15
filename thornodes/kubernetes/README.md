@@ -37,7 +37,7 @@ There are three important steps to getting your node set up, deployed and churne
 
 Your repository can be organised as follows:
 
-``` text
+```
 ./thornode-ops
   |./cluster-launcher
   |./node-launcher
@@ -51,7 +51,7 @@ All of your set up commands are run in `cluster-launcher` and all of your deploy
 To prevent a catastrophic mistake in handling multiple nodes, set them up on different machines, or use different user profiles on your machine, or in the least, use different repos:
 {% endhint %}
 
-``` text
+```
 ./thornode-ops
   |./cluster-launcher
   |./node-launcher
@@ -62,6 +62,6 @@ To prevent a catastrophic mistake in handling multiple nodes, set them up on dif
 
 All of your commands can now be run separately.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 It is heavily advised to not set up nodes on the same provider. Deploy 1 node on Azure, 1 node on Digital Ocean etc.
 {% endhint %}

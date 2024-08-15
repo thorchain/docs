@@ -2,7 +2,7 @@
 description: An overview of THORChain's 1-way State Pegs, State Machine and TSS Protocol.
 ---
 
-# Technology
+# Bifrost, TSS and Vaults
 
 ## Overview
 
@@ -50,7 +50,7 @@ Each chain client is quite light-weight, containing only as much logic as is nec
 
 ![](<../.gitbook/assets/image (6) (1) (1).png>)
 
-## THORChain State Machine
+## THORChain State Machine (TSS)
 
 The state machine processes the finalised transaction and performs logic, such as ordering transactions, computing state changes, and delegating them to a particular outbound vault. Finally, a `txOut` item is created and stored in the Key-Value store.
 

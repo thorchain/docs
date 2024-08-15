@@ -18,8 +18,8 @@ description: Learn how THORChain Works
 
 ### Technical Info
 
-{% content-ref url="technology.md" %}
-[technology.md](technology.md)
+{% content-ref url="../technology/" %}
+[technology](../technology/)
 {% endcontent-ref %}
 
 {% content-ref url="incentive-pendulum.md" %}

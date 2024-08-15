@@ -35,3 +35,10 @@ You can find the addresses for various stablecoins on specific networks (TORANCH
 "TORANCHOR-ETH-USDC-0XA0B86991C6218B36C1D19D4A2E9EB0CE3606EB48": 1,
 "TORANCHOR-ETH-USDT-0XDAC17F958D2EE523A2206206994597C13D831EC7": 1,
 ```
+
+### TOR Usage
+
+TOR is used for accounting with THORChain and to price assets, instead of using any specific stablecoin. While TOR is currently non-transferable, greater use of TOR is a possibility.
+
+####
+

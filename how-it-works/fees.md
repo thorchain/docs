@@ -36,19 +36,16 @@ The gas is consumed from each chain's base asset pool - the BTC pool pays for Bi
 
 The network then observes an outgoing transaction and records how much it cost in gas in the external asset. The final gas cost is then subsidised back into each pool by paying RUNE from the reserve.
 
+A full overview of the THORChain fees:
+
+| Fee                   | Description                            | Amount                                                                             | Recipient                                |
+| --------------------- | -------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------- |
+| Inbound Fee           | Paid on every swap                     | Slip-based fee which is liquidity-sensitive                                        | 100% to Network participants intra-block |
+| Outbound Fee - L1     | L1 Outbounds                           | Ideally 1:1 gas spent, but a minimum of $1.00 is enforced to pay for TSS resources | Reserve                                  |
+| Outbound Fee - Native | RUNE, synth outbounds and trade assets | 0.02 RUNE                                                                          | Reserve                                  |
+| Network Fee           | RUNE, synth transfers and trade assets | 0.02 RUNE                                                                          | Reserve                                  |
+
 ## **Inbound Fee**
-
-This is the fee the user pays to make a transaction on the source chain and hence will fluctuate depending on the source chain used.
-
-## **Outbound Fee**
-
-Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.
-
-The network fee is collected in RUNE and sent to the Protocol Reserve. If the transaction involves an asset that is not RUNE the user pays the Network Fee in the external asset. If the transaction is in RUNE then the amount is directly taken in RUNE.
-
-Several factors affect the fee amount such as the gas rate and transaction size. See [dev docs](https://dev.thorchain.org/concepts/fees.html#outbound-fee) for more details.
-
-## Slip-Based Fee
 
 The CLP algorithm includes a slip-based fee which is liquidity-sensitive. Since demand for liquidity is defined as the size of the transaction over the depth of the market that will service it, then a fee which is proportional to liquidity solves key problems.
 
@@ -72,7 +69,15 @@ This fee is retained on the output side of the pool, ensuring it counters the tr
 In an Asset-Asset swap, the fee is applied twice since two pools are involved, however the user only sees it as a single fee and a single slip value.
 {% endhint %}
 
-Streaming Swaps has greatly increased the swap capital efficiency. A minumum 5pbs fee now applies to all swaps.
+Streaming Swaps has greatly increased the swap capital efficiency. A minumum 5 pbs fee now applies to all swaps.
+
+## **Outbound Fee**
+
+Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.
+
+The network fee is collected in RUNE and sent to the Protocol Reserve. If the transaction involves an asset that is not RUNE the user pays the Network Fee in the external asset. If the transaction is in RUNE then the amount is directly taken in RUNE.
+
+Several factors affect the fee amount such as the gas rate and transaction size. See [dev docs](https://dev.thorchain.org/concepts/fees.html#outbound-fee) for more details.
 
 ## Network Fee
 
