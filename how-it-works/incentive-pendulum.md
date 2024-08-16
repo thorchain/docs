@@ -4,7 +4,7 @@ description: THORChain's Incentive Pendulum keeps the network in a balanced stat
 
 # Incentive Pendulum
 
-The Incentive Pendulum controls the flow of system income between node operators and liquidity providers based primarily on the Effectove Security Bond and Total Vaulted. However, it also accounts for the Effective Bond and the Total Pooled to ensure an equitable and stable reward distribution. This mechanism adjusts the rewards dynamically to maintain a balanced network by incentivising either bonding or pooling as needed.
+The Incentive Pendulum controls the flow of system income between node operators and liquidity providers based primarily on the Effective Security Bond and Total Vaulted. However, it also accounts for the Effective Bond and the Total Pooled to ensure an equitable and stable reward distribution. This mechanism adjusts the rewards dynamically to maintain a balanced network by incentivising either bonding or pooling as needed.
 
 Key variables to the Incentive Pendulum are:
 
@@ -249,7 +249,7 @@ In this stable state, node yield matches pool yield meaning the system is in equ
 
 As a by-product of the Incentive Pendulum's aggressive re-targeting of the 50:50 yield split between node:pool yield, the system aims to maintain an equilibrium where the value of BONDED RUNE is proportionally aligned with the value of Vaulted RUNE. This ensures that:
 
-1. For every unit of POOLED RUNE, there is approximately and 3 times that amount in effectiveSecurityBond, creating a balance that maintains network security and efficiency.
+1. For every unit of POOLED RUNE, there is approximately around 3 times that amount in effectiveSecurityBond, creating a balance that maintains network security and efficiency.
 2. As POOLED RUNE is paired 1:1 with pooled assets (due to liquidity pools), the total market value of RUNE is targeted to be three times the value of the pooled assets.
 3. There is sufficient bond to secure the non-pooled assets.
 
