@@ -43,7 +43,9 @@
 
 ## THORNodes
 
-* [THORNode Overview](thornodes/overview.md)
+* [THORNode Overview](thornodes/overview/README.md)
+  * [Node Operations](thornodes/overview/node-operations.md)
+  * [Risks, Costs and Rewards](thornodes/overview/risks-costs-and-rewards.md)
 * [Cluster Launcher](thornodes/kubernetes/README.md)
   * [Setup - Linode](thornodes/kubernetes/setup-linode.md)
   * [Setup - Azure](thornodes/kubernetes/setup-azure.md)

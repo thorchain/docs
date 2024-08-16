@@ -8,16 +8,16 @@ description: Node Operators
 
 THORNodes service the THORChain network, of which there is intended to be initially 120. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
-{% content-ref url="../../thornodes/overview.md" %}
-[overview.md](../../thornodes/overview.md)
+{% content-ref url="../../thornodes/overview/" %}
+[overview](../../thornodes/overview/)
 {% endcontent-ref %}
 
 ### Rewards
 
 Node Operators earn 67% of the system income when it is stable. You can read more here:
 
-{% content-ref url="../../thornodes/overview.md" %}
-[overview.md](../../thornodes/overview.md)
+{% content-ref url="../../thornodes/overview/" %}
+[overview](../../thornodes/overview/)
 {% endcontent-ref %}
 
 {% content-ref url="../../how-it-works/incentive-pendulum.md" %}

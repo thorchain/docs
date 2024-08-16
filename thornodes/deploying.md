@@ -70,11 +70,15 @@ If you are successful, you will see the following message:
 
 If there are any errors, they are typically fixed by running the command again.
 
+{% hint style="success" %}
+`make help` will list all commands available.
+{% endhint %}
+
 ## Deploy THORNode
 
 It is important to deploy the tools first before deploying the THORNode services as some services will have metrics configuration that would fail and stop the THORNode deployment.
 
-You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet or chaosnet/mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` (or `thornode-testnet` for testnet) by default.
+You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet or chaosnet/mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` by default.
 
 ```
 NET=mainnet TYPE=<type> NAME=<namepsace name> make install

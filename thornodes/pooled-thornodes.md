@@ -42,7 +42,7 @@ Add a bond provider using a BOND transaction with a modified memo from a wallet 
 
 `BOND:<NodeAddress>:<BondProviderAddress>:<NodeOperatorFee>`
 
-**Example:** BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun:thor1tfm4q8u57qzsznpvh02s8j483aga63cl02k6jt:2000
+**Example:** `BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun:thor1tfm4q8u57qzsznpvh02s8j483aga63cl02k6jt:2000`
 
 * NodeAddress - THORNode address (prefixed by `thor`)
 * BondProviderAddress - Bond Provider address to whitelist (prefixed by `thor`)
@@ -110,7 +110,7 @@ Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.
 **When you can add Bond**
 
 When the node is standby, active or not churning, bond amounts can be increased/decreased.\
-You can tell the network is migrating if there are `retiring` Asgard Vaults. \
+You can tell the network is migrating if there are `retiring` Asgard Vaults.\
 [https://runescan.io/vaults](https://runescan.io/vaults)
 {% endhint %}
 
