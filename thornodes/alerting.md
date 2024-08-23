@@ -8,12 +8,14 @@ description: Alert Channels & Monitoring Software
 
 To listen for update announcements, join the following channels:
 
-* **THORNode Announcements (Telegram)**: [https://t.me/thornode_ann](https://t.me/thornode_ann)
+* **THORNode Announcements (Telegram)**: [https://t.me/thornode\_ann](https://t.me/thornode\_ann)
 * **THORChain Community Devs (Discord)**: [https://discord.gg/g6Z2whSvGF](https://discord.gg/g6Z2whSvGF)
 
 {% hint style="info" %}
 Be sure to use a pseudonym in order to prevent doxxing yourself. Node operators should remain anonymous for the health of the network and your personal/node security.
 {% endhint %}
+
+[Also see the Prometheus Alerts guide. ](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Alerting.md)
 
 ## Vǫrðr 👻
 
@@ -38,10 +40,10 @@ Vǫrðr is a community developed monitoring app for THORNodes. It's fully open-s
 ## Supported Chains
 
 | Client   | Chain                                                              |
-|----------|--------------------------------------------------------------------|
+| -------- | ------------------------------------------------------------------ |
 | Bitcoin  | Bitcoin (BTC), Litecoin (LTC), Bitcoin Cash (BCH), Dogecoin (DOGE) |
 | Ethereum | Ethereum (ETH), Avalanche (AVAX)                                   |
-| Cosmos   | Cosmos (ATOM), Binance (BNB), THORChain (RUNE)                     |
+| Cosmos   | Cosmos (ATOM), Binance (BSC), THORChain (RUNE)                     |
 
 {% hint style="info" %}
 See [https://github.com/sourcapital/vordr#kubernetes](https://github.com/sourcapital/vordr#kubernetes) on how to run Vǫrðr in the Kubernetes cluster.

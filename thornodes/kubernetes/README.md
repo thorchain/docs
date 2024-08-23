@@ -60,8 +60,9 @@ To prevent a catastrophic mistake in handling multiple nodes, set them up on dif
   |./node-launcher
 ```
 
-All of your commands can now be run separately.
+All of your commands can now be run separately. See [Multi Validator Cluster](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Multi-Validator-Cluster.md?ref\_type=heads) docs for more information.
 
 {% hint style="warning" %}
 It is heavily advised to not set up nodes on the same provider. Deploy 1 node on Azure, 1 node on Digital Ocean etc.
 {% endhint %}
+

@@ -9,28 +9,34 @@ description: Checklist of items for Node Operators
 * [ ] I have set up a local `thornode` repository with a `cluster-launcher` and `node-launcher` git cloned into the right sub-folders
 * [ ] I have installed all the pre-requisites
 * [ ] I have a AWS/DO account ready with credentials if using a service provider
-* [ ] I have deployed a cluster and saved my node details \(name of node, region\)
+* [ ] I have deployed a cluster and saved my node details (name of node, region)
 * [ ] I have installed tools via `make tools`
-* [ ] I have deployed a node by running `make chaosnet-validator`
+* [ ] I have deployed a node by running `make mainnet-validator`
 * [ ] I have securely saved my THORNode Password and THORNode Mnemonic
 
-{% page-ref page="kubernetes/" %}
+{% content-ref url="kubernetes/" %}
+[kubernetes](kubernetes/)
+{% endcontent-ref %}
 
-{% page-ref page="deploying.md" %}
+{% content-ref url="deploying.md" %}
+[deploying.md](deploying.md)
+{% endcontent-ref %}
 
 ## Joining
 
 * [ ] I have retrieved the latest VAULT address and sent a small test bond
 * [ ] I have confirmed my node has been credited the small bond
-* [ ] \(Optional\) I have confirmed I can unbond a small amount
+* [ ] (Optional) I have confirmed I can unbond a small amount
 * [ ] I have sent the final bond, higher than the MinimumBond
 * [ ] I have run `make set-ip-address` to set my Node's IP address
 * [ ] I have run `make set-node-keys` to set my Node's public keys
 * [ ] I have run `make set-version` to set my Node's version
 * [ ] I have verfied in `make status` that my node is ready to churn in
-* [ ] \(Optional\) I have added my node key to the Telegram Bot for notifications
+* [ ] (Optional) I have added my node key to the Telegram Bot for notifications
 
-{% page-ref page="joining.md" %}
+{% content-ref url="joining.md" %}
+[joining.md](joining.md)
+{% endcontent-ref %}
 
 {% hint style="info" %}
 The BOND memo is `BOND:<node-address>`
@@ -50,7 +56,9 @@ The BOND memo is `BOND:<node-address>`
 * [ ] I have sent an UNBOND transaction from the same wallet registered to my node
 * [ ] I have verified that I have received my BOND back
 
-{% page-ref page="leaving.md" %}
+{% content-ref url="leaving.md" %}
+[leaving.md](leaving.md)
+{% endcontent-ref %}
 
 {% hint style="info" %}
 The UNBOND memo is `UNBOND:<node-address>:<amount>`
@@ -61,10 +69,12 @@ The UNBOND memo is `UNBOND:<node-address>:<amount>`
 * [ ] I have confirmed my node is active and I wish to leave before waiting to churn naturally
 * [ ] I have sent the first LEAVE transaction and verified my node has "requested to leave".
 * [ ] I have verified that a churn has taken place and my node is in STANDBY
-* [ ] I have verified that my node has returned all hot funds by checking my node's yggdrasil vault on the explorer
+* [ ] I have verified that my node has returned hot funds
 * [ ] I have sent the final LEAVE transaction and received my bond back
 
-{% page-ref page="leaving.md" %}
+{% content-ref url="leaving.md" %}
+[leaving.md](leaving.md)
+{% endcontent-ref %}
 
 {% hint style="info" %}
 The LEAVE memo is `LEAVE:<node-address>`
@@ -73,15 +83,19 @@ The LEAVE memo is `LEAVE:<node-address>`
 ## Leaving Whilst Standby
 
 * [ ] I have verified that a churn has taken place and my node is in STANDBY
-* [ ] I have verified that my node has returned all hot funds by checking my node's yggdrasil vault on the explorer
+* [ ] I have verified that my node has returned all funds
 * [ ] I have sent the final LEAVE transaction and received my bond back
 
-{% page-ref page="leaving.md" %}
+{% content-ref url="leaving.md" %}
+[leaving.md](leaving.md)
+{% endcontent-ref %}
 
 ## Destroying a Node
 
-* [ ] I have verified that I have either UNBONDED my entire BOND or LEFT and received my BOND back. 
+* [ ] I have verified that I have either UNBONDED my entire BOND or LEFT and received my BOND back.
 * [ ] I have run `make destroy destroy-tools` to destroy my node from `node-launcher`
 * [ ] I have run `make destroy-aws` to destroy my cluster from `cluster-launcher`
 
-{% page-ref page="leaving.md" %}
+{% content-ref url="leaving.md" %}
+[leaving.md](leaving.md)
+{% endcontent-ref %}

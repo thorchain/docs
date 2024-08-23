@@ -11,7 +11,7 @@ The Makefile provide different commands to help you operate your THORNode.
 There are two types of make commands, READ and WRITE.
 
 {% hint style="info" %}
-Run `make help` at any stage to get an exhaustive list of help options and how to interact with the system.
+Run `make help` at any stage to get an exhaustive list of help options and how to interact with the system. See [here](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/README.md?ref\_type=heads) for an overview of each command.&#x20;
 {% endhint %}
 
 #### READ COMMANDS
@@ -46,7 +46,7 @@ make logs
 {% tab title="MNEMONIC" %}
 This will print your node mnemonic (phrase). Use this to ever rescue your node funds if something goes wrong.
 
-_Note: This phrase should only be used "in anger". This is your node "hot vault", also referred to as its yggdrasil vault, which allows the network to delegate swaps for faster execution. You will be slashed significantly if any funds are moved from this vault, since it is monitored by the THORChain network. Your bond is held at ransom in order to prevent you from stealing funds from this vault. Your bond will always be more valuable than funds on this vault, so you have no economic reason to touch these funds._
+_Note: Your bond is held at ransom in order to prevent you from stealing funds from this vault. Your bond will always be more valuable than funds on this vault, so you have no economic reason to touch these funds._
 
 ```
 make mnemonic
@@ -279,6 +279,10 @@ Again by default, with Kubernetes, by using persistent volumes used in the defau
 
 It is still recommended, as any project, to have different backups on top of those volumes to make sure you can recover in admin error deleting those volumes or other Kubernetes resources that would imply deleting those volumes.
 
+Also see the Create and Validator Backup guide.
+
+{% embed url="https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Restore-Validator-Backup.md" %}
+
 For AWS, you can easily setup in your console to have snapshots of your cluster volumes be taken every day. For other provider there can be different ways to achieve this as well either manually or automatically.
 
 It is up to the node operator to setup those extra backups of the core volumes to be able to recover in any kind of failures or human errors.
@@ -315,7 +319,7 @@ The following are attack vectors:
 
 Prior to `git pull` or `make pull` updates, review node-launcher repo diffs:
 
-``` bash
+```bash
 git fetch
 git diff master..origin/master
 ```
@@ -334,130 +338,11 @@ THORNODE SOFTWARE IS PROVIDED AS IS - YOU ARE SOLELY RESPONSIBLE FOR USING IT
 YOU ARE RESPONSIBLE FOR THE CODE RUNNING ON YOUR NODE. **YOU ARE** THE NETWORK. INSPECT ALL CODE YOU EXECUTE.
 {% endhint %}
 
-### Finding Yggdrasil addresses
-
-To find your Yggdrasil addresses, firstly navigate to [https://runescan.io/vaults](https://runescan.io/vaults)
-
-![](<../.gitbook/assets/yggdrasil\_vaults (1).png>)
-
-1. Find your node address and click on the link.
-
-![](<../.gitbook/assets/yggdrasil\_vault (1).png>)
-
-Alternatively, visit any thorchain endpoint using your node address from `make status`:
-
-``` text
-http://thornode.ninerealms.com/thorchain/node/<Node Address>
-```
-
-Copy your `secp256k1` public key and put it here:
-
-``` text
-http://thornode.ninerealms.com/thorchain/vault/<Public Key>
-```
-
-And look for `addresses` array at the bottom.
-
-#### Finding Yggdrasil Private Key
-
-1. Run `make mnemonic` and securely store this.
-2. Visit [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/) - or for more safety, clone the [GitHub repo](https://github.com/iancoleman/bip39) and open `src/index.html` offline.
-3. Paste in your mnemonic and choose **RUNE - THORChain** from the drop-down list.
-4. Your private key string is the first one: `m/44'/931'/0'/0/0`
-
-![](<../.gitbook/assets/bip39 (1).png>)
-
-## Dealing with slash
-
 When running a node, it is quite common to get slashed. The network relies on slash points to rate node quality. When your node is slashed, the first thing you need to do is run `make status`, and make sure all your chains are 100% in sync. If any of the external chains are not 100% in sync, then it will cause node to be slashed due to missing observations.
 
 The best prevention is to have a cluster with lots of fast resources (cpu, memory, IO, network) and good backups/redundancy to prevent downtime.
 
-Unfortunately even when your node is fully in-sync, it is still possible to be slashed due to external chain events. Here are some of the scenarios:
-
-### 600 point slash (isolated)
-
-When a node is slashed 600 points, it is typically because the yggdrasil vault failed to send an outbound transaction (more accurately: the transaction it was tasked to perform wasn't mined within a specified time limit). This most likely to happen on ETH chain. Here is what you need to check:
-
-1. Find your Yggdrasil ETH address. Use the previous instructions.
-2. Visit [https://etherscan.io/](https://etherscan.io/) and paste in your Yggdrasil ETH address.
-
-**Potential problem 1:** Transaction ran out of Gas (wrong estimate):
-
-**Cause:** The network uses `geth` inbuilt `eth_estimateGas` function to estimate how much gas to set as limit for a transaction. On rare occasions this can return a number too low causing the transaction to fail. In this case there is nothing you can do - just wait it out. Note: your Yggdrasil ETH vault is now insolvent by a small amount of gas burned in the failed transaction that you will need to personally top-up prior to LEAVE. See section on LEAVE for more details.
-
-![](<../.gitbook/assets/eth\_out\_of\_gas (1).png>)
-
-**Potential problem 2:** Transaction didn't mine after 15mins
-
-**Cause:** External unexpected Gas price hike. The network uses a 1.5x the previous N blocks as the gas rate to use. If there is a sudden increase in Gas price required due to unforseen external events, the transaction may not be mined. In order to make sure customer is paid in a reasonable time, there is a auto cancel transaction process build in bifrost. The network will keep monitoring the outbound transactions and if any of the outbound transaction signed out by yggdrasil vault didn't commit after 15 minutes, it will automatically cancel it and assign to another node to send.
-
-You should be able to see a transaction like the following, which is sending `0` ETH back to itself which cancels anything pending:
-
-![](<../.gitbook/assets/eth\_cancel\_nonce (1).png>)
-
-#### 600 point slash (repeated)
-
-If your node is slashed 600 points continuously, it is likely your ETH vault is stuck or transactions sent to your local geth aren't propagated fully into mempools used by miners. This might happen if your local ethereum-daemon doesn't sync well with the network, even though it reports 100% in sync.
-
-1. Run `make logs` and choose `bifrost`
-2. Search your logs for `cancel` and look for transactions such as:
-
-```json
-{"level":"info","service":"bifrost","module":"ethereum","time":"2021-05-28T14:43:58Z","message":"broadcast cancel transaction , tx hash: 0xec396286e54f9a95081e60424c73fcc0e580c47d2ffacb216ad9ef2d9c787082, nonce: 25 , new tx hash:0x5823abbee421f4c2ce230f5e7808b4dc6728ebeb5e21b62d95b812144d522672"}
-```
-
-1. Find the last cancel tx in the logs (with the highest nonce).
-2. Search etherscan for the `new tx hash` transaction ID.
-3. Your geth is stuck and out of sync if etherscan does **NOT** find the `new tx hash` cancelled transaction. If you do _not_ find your tx in etherscan - proceed as follows:
-4. Find the **lowest** nonce from Etherscan:
-5. Go to [https://etherscan.io](https://etherscan.io) and paste your yggdrasil ETH address in the search box
-6. Find the last successful transaction send out from your yggdrasil ETH address. It is the top transaction in the list:
-
-![](<../.gitbook/assets/etherscan\_tx\_list (1).png>)
-
-* Click the transaction. Note the nonce used in the last good transaction (e.g. `39`), and then plus 1 (e.g. `40`). This is the **lowest stuck tx nonce**.
-
-![](<../.gitbook/assets/etherscan\_tx\_nonce (1).png>)
-
-1. Find the **highest** stuck nonce from your local geth:
-2. `make shell` then choose `ethereum-daemon`
-3. `geth attach`
-4. `eth.getTransactionCount('{YOUR YGGDRASIL ETH ADDRESS}','pending')` -- this is the **highest stuck tx nonce**
-5. `exit` and `exit` again.
-6. If the highest nonce is larger than your lowest nonce, it means there are a few transactions sent and stuck in the mempool of your local ETH daemon. You need to unstuck these from highest to lowest.
-7. Make a fork of [https://replit.com/@thorchain/YggCancelETH](https://replit.com/@thorchain/YggCancelETH)
-8. Update `index.js` `lastPendingNonce` and `firstStuckNonce`. Also put in your hex encoded private key to KEY variable. Remember to add the `0x` prefix which bip39 calculator above will not have.
-9. Update `gasPrice` to a very high gas price. The price should be higher than all the transactions stuck in the mempool. Recommend to spend more than 200 Gwei or double the highest from [https://thornode.ninerealms.com/thorchain/inbound\_addresses](https://thornode.ninerealms.com/thorchain/inbound\_addresses) (which ever is higher).
-10. Run the script using `node index.js`. Note: you may need to install some dependecies first with `npm install ethers`. The output should look like:
-
-    ``` bash
-    0x2aefdf705d1b28dfdf6b524ec697082326b23a2e62b7f25a60c1d2a1a9108243
-    CANCELLING 39 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0x1cc81e968d68cfddcd8b605591b9ac7955ec7fdabf222678d3bcfaea4d7c4fd0
-    CANCELLING 38 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0xc0a15e2ec9c92300aae3924c26a26d64f964b2c2aba8d445fea9e54bf734e58a
-    CANCELLING 37 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0x1d6311b0fb33717091ec4e86282f445216068a9e13d48748906a6abf375a8392
-    CANCELLING 36 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0xf1ed11a1172937ed37514ba9d4d315806e1c8f49a075dde7e0c0239eed30853e
-    CANCELLING 35 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0xfd73ab1c15a18edc13aa9a192d85c369b4ba02fa72aa04e836fd8e9d41b5159c
-    CANCELLING 34 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0x45fd4c88168e9ce86716a45f1f0ea25b233a4affa90b866023b2ca7d25f57367
-    CANCELLING 33 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0xd2d283479386156b9c9441dd4630b25af42d5842b910c3aaa95e28e7bc499be2
-    CANCELLING 32 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0x2d37f455c9066c2d8c8f5ae2f62a720123677707047f8a4e3ee61bb1c261015e
-    CANCELLING 31 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0xdce9df663b7c35eb7aefc52d5640b710e2af38979615ce7686729d37dd0da5a8
-    CANCELLING 30 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0xccdd1b9d8e6ac0c7314fa39f78442c7702688db56091e8d379da75a3cfbce936
-    CANCELLING 29 for 0x3eb68bF15A7A6769219A66C5c493fa7C40511E19
-    0x43bad098782f7bac68e401390ef300dc97d9d1d1b322eb566de1ff06b2cf9b21
-    ```
-
-11. `make restart` and choose `ethereum-daemon`
+Unfortunately even when your node is fully in-sync, it is still possible to be slashed due to external chain events.
 
 #### Constantly accumulating slash points
 

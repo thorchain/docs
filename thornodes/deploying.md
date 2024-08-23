@@ -71,17 +71,22 @@ If you are successful, you will see the following message:
 If there are any errors, they are typically fixed by running the command again.
 
 {% hint style="success" %}
-`make help` will list all commands available.
+`make help` will list all commands available. See [here](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/README.md) for more information.
 {% endhint %}
 
 ## Deploy THORNode
 
 It is important to deploy the tools first before deploying the THORNode services as some services will have metrics configuration that would fail and stop the THORNode deployment.
 
-You have multiple commands available to deploy different configurations of THORNode. You can deploy testnet or chaosnet/mainnet. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` by default.
+{% hint style="info" %}
+Testnet no longer exists, only mainnet THORNodes can be created.&#x20;
+{% endhint %}
+
+You have multiple commands available to deploy different configurations of THORNode. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` by default.
 
 ```
-NET=mainnet TYPE=<type> NAME=<namepsace name> make install
+NET=mainnet TYPE=<type> NAME=<namepsace name> make install e.g.
+NET=mainnet TYPE=validator NAME=thornode make install
 ```
 
 {% hint style="info" %}
@@ -135,10 +140,7 @@ kubectl logs -f deploy/binance-daemon -n thornode
 {% endhint %}
 
 {% hint style="info" %}
-Get real-world blockheights on the external blockchain explorers, eg:\
-[https://testnet-explorer.binance.org/](https://testnet-explorer.binance.org)
-
-[https://explorer.binance.org/](https://explorer.binance.org)
+Get real-world blockheights of external blockchain at [https://thornode.ninerealms.com/thorchain/lastblock](https://thornode.ninerealms.com/thorchain/lastblock) or a block explorer like mempool.space.
 {% endhint %}
 
 ## CHART SUMMARY
@@ -147,7 +149,7 @@ Get real-world blockheights on the external blockchain explorers, eg:\
 
 * **thornode**: Umbrella chart packaging all services needed to run a fullnode or validator THORNode.
 
-This should be the only chart used to run THORNode stack unless you know what you are doing and want to run each chart separately (not recommended).
+This should be the only chart used to run [THORNode stack ](overview/#thornode-stack)unless you know what you are doing and want to run each chart separately (not recommended).
 
 #### THORNode services:
 

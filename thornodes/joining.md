@@ -8,7 +8,7 @@ description: How to join THORChain as an Node.
 
 Now that you have a THORNode deployed in your Kubernetes cluster, you need to start operating your node to join the network.
 
-There are a couple of steps to follow to do so.
+There are a couple of steps to follow.
 
 ### 1. Check your current node status
 
@@ -18,14 +18,14 @@ The first step would be to make sure your deployment was successful and your nod
 make status
 ```
 
-You will get an output along those lines, the example below is for a testnet node:
+You will get an output along those lines, the example below is for a mainnet node:
 
 ```
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
 /_/ /_//_/\____/_/|_/_/|_/\___/\_,_/\__/
-ADDRESS     tthor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
+ADDRESS     thor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
 IP
 VERSION     0.0.0
 STATUS      Unknown
@@ -45,9 +45,9 @@ LTC         0.012%     6,526/1,818,000
 BCH         2.293%     197,340/682,404
 ```
 
-Your node is running but as you can see in the \`Preflight\` section, your node is not yet ready to be churned in and currently is in standby status, since your node has no IP address setup yet.
+Your node is running but as you can see in the \`Preflight\` section, your node is not yet ready to be churned in and currently is in standby [status](overview/node-operations.md#node-statuses), since your node has no IP address setup yet.
 
-But to be able to set up the node IP address, you first need to get it registered in the chain by sending your BOND.
+Do not proceed until your node is fully synced al chains. You can see the required external chain hights [here](https://thornode.ninerealms.com/thorchain/lastblock) and the THORChain chain height [here](https://thornode.ninerealms.com/thorchain/block).  Continue to run `make status` untill all chains are synced.
 
 {% hint style="warning" %}
 Before sending the BOND, verify that your THORNode is **fully synced** with connected chains. Connected chains such as Ethereum & Bitcoin may take a day to sync. If your node is fully bonded and is selected to churn in to THORChain as ACTIVE without fully syncing all connected chains, you will immediately get slashed for missing observations, and lose money. It is normal to see Ethereum sit on 99.999% for many hours - be patient.
@@ -55,9 +55,10 @@ Before sending the BOND, verify that your THORNode is **fully synced** with conn
 
 ### 2 - Send a small BOND (recommend 100-1000)
 
-1\) You will do a "Deposit" transaction using RUNE. This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX](https://github.com/asgardex/asgardex-desktop/releases). The Bond is locked in a module controlled by the state machine.
+To be able to set up the node IP address, you first need to get it whitelisted in the chain by sending your BOND.
 
-2\) Deposit your BOND using the memo `BOND:<thornode-address>` (or use an appropriate GUI that does this memo for you). Start small, the bond will be picked up.
+1. &#x20;You will do a "Deposit" transaction using RUNE. This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX](https://github.com/asgardex/asgardex-desktop/releases). The Bond is locked in a module controlled by the state machine.
+2. Deposit your [BOND](https://dev.thorchain.org/concepts/memos.html#bond-unbond-and-leave) using the memo `BOND:<thornode-address>` (or use an appropriate GUI that does this memo for you). Send a small amount of RUNE to whitelist the node, the bond will be picked up.
 
 {% hint style="info" %}
 Some `make` commands during setup require RUNE (0.02 to 1.0) to execute into the state machine to prevent DDoS. If your bond is too small (e.g. 1 RUNE) you may run out and not be able to complete the setup until adding more.
@@ -78,7 +79,7 @@ If you run `make status` again, you should see this:
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
 /_/ /_//_/\____/_/|_/_/|_/\___/\_,_/\__/
-ADDRESS     tthor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
+ADDRESS     thor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
 IP
 VERSION     0.0.0
 STATUS      Whitelisted
@@ -114,6 +115,10 @@ If you run the status command again, you should now see a different message for 
 Once your IP address has been registered for discovery, you can use your own host for queries.
 {% endhint %}
 
+{% hint style="danger" %}
+Do not import your node menonic in a wallet. Nodes will have their own address.
+{% endhint %}
+
 ### 4 - Setup Node keys
 
 Tell THORChain about your public keys for signing sessions:
@@ -140,14 +145,16 @@ If you followed steps 1-5 above, your preflight will be saying:
 PREFLIGHT   { "status": "Standby", "reason": "node account does not have minimum bond requirement: 100000000000/30000000000000, "code": 1 }
 ```
 
-To address this, send the remaining bond, that is higher than the minimum bond. You can find that quantity on [https://thornode.thorchain.info/thorchain/constants](https://thornode.thorchain.info/thorchain/constants) and look for `MinimumBondInRune`. During Chaosnet some values may be override with [MIMIR](https://thornode.thorchain.info/thorchain/mimir). If you finally run `make status` you should see this, with keyword **"Ready":**
+To address this, send the remaining bond, that is higher than the minimum bond, currently 300K RUNE set by a network [Mimir ](https://thornode.ninerealms.com/thorchain/mimir)setting, look for `MinimumBondInRune`.  See [#bonding-the-right-amount](joining.md#bonding-the-right-amount "mention")for how much bond to send.
+
+If you finally run `make status` you should see this, with keyword **"Ready":**
 
 ```
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
 /_/ /_//_/\____/_/|_/_/|_/\___/\_,_/\__/
-ADDRESS     tthor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
+ADDRESS     thor13hh6qyj0xgw0gv7qpay8thfucxw8hqkved9vr2
 IP          1.2.3.4
 VERSION     0.54.0
 STATUS      Standby
@@ -169,34 +176,37 @@ BCH         100.000%   682,404/682,404
 
 ## Bonding The Right Amount
 
-Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise chances of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them. Keep an eye on `maximumStandbyBond` and make sure you are bonding higher than that amount.
+Although your node is ready to be churned in, it doesn’t mean it will be the next one to be selected since someone else could have posted a higher bond than you. To maximise chances of a quick entry, monitor Midgard to see what everyone else is bonding and try to outbid them.
 
-```
-curl http://52.221.153.64:8080/v2/network | json_pp
+This endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current active median.
+
+```json
+curl -s https://midgard.ninerealms.com/v2/network | jq '.bondMetrics'
 
 resp:
  "bondMetrics" : {
-      "minimumActiveBond" : "10001000000000",
-      "medianStandbyBond" : "1010000000000",
-      "medianActiveBond" : "15001000000000",
-      "averageStandbyBond" : "1010000000000",
-      "maximumActiveBond" : "15001000000000",
-      "averageActiveBond" : "12006800000000",
-      "maximumStandbyBond" : "1010000000000",
-      "totalStandbyBond" : "1010000000000",
-      "totalActiveBond" : "60034000000000",
-      "minimumStandbyBond" : "1010000000000"
+    "averageActiveBond": "97664560467471",
+    "averageStandbyBond": "9815575442995",
+    "bondHardCap": "102284516414049",
+    "maximumActiveBond": "111919846678019",
+    "maximumStandbyBond": "104416033169205",
+    "medianActiveBond": "99028435881350",
+    "medianStandbyBond": "318000000",
+    "minimumActiveBond": "53582883425758",
+    "minimumStandbyBond": "52363105276428",
+    "totalActiveBond": "9766456046747104",
+    "totalStandbyBond": "353360715947839"
    }
 ```
 
 {% hint style="info" %}
-Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes) and [https://thorchain.live](http://thorchain.live/thorchain/chaosnet). You should use your API endpoint as an authoritative reference.
+RUNE is always displayed in 1e8 format, 100000000 = 1 RUNE
 {% endhint %}
 
-The endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current maximum.
+You will need to be greater than the `minimumActiveBond.`Bonding more than `bondHardCap` will not result in more [rewards](overview/risks-costs-and-rewards.md#compensation). `medianActiveBond` is a good target to get and stay active.&#x20;
 
 {% hint style="info" %}
-RUNE is always displayed in 1e8 format, 100000000 = 1 RUNE
+Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes).
 {% endhint %}
 
 ### Bonding More
@@ -209,13 +219,15 @@ At any time during standby, you can bond more by making an additional BOND trans
 Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. You can top up BOND using a different wallet but make sure you keep the private key to the original BOND wallet secure and accessible.
 {% endhint %}
 
-You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on standby, using the UNBOND memo.
+You can also [remove some of your bond](https://docs.thorchain.org/thornodes/leaving) whilst you are on [standby](overview/node-operations.md#node-statuses), using the UNBOND memo.
 
 ### Node Operator Fee
 
-- Setting the Node Operator fee `10000` causes all rewards to be paid back each churn.
-- Setting the Node Operator fee to `5000` causes 50% of rewards to be paid back to the Node Operator address and 50% to be accrued back to the bond.
+* Setting the Node Operator fee `10000` causes all rewards to be paid back each churn.
+* Setting the Node Operator fee to `5000` causes 50% of rewards to be paid back to the Node Operator address and 50% to be accrued back to the bond.
 
-To set a Node Operator fee, send a deposit transaction with the following memo:
+To set a Node Operator fee, send a deposit transaction with the following [memo](pooled-thornodes.md#node-operator):
 
 `BOND:<node address>:<bond wallet address>:<operator fee in basis pts>`
+
+See [pooled-thornodes.md](pooled-thornodes.md "mention")for full information.&#x20;
