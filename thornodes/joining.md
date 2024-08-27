@@ -8,6 +8,10 @@ description: How to join THORChain as an Node.
 
 Now that you have a THORNode deployed in your Kubernetes cluster, you need to start operating your node to join the network.
 
+{% hint style="danger" %}
+Do not import your node menonic in a wallet. Nodes will have their own address.
+{% endhint %}
+
 There are a couple of steps to follow.
 
 ### 1. Check your current node status
@@ -49,8 +53,12 @@ Your node is running but as you can see in the \`Preflight\` section, your node 
 
 Do not proceed until your node is fully synced al chains. You can see the required external chain hights [here](https://thornode.ninerealms.com/thorchain/lastblock) and the THORChain chain height [here](https://thornode.ninerealms.com/thorchain/block).  Continue to run `make status` untill all chains are synced.
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Before sending the BOND, verify that your THORNode is **fully synced** with connected chains. Connected chains such as Ethereum & Bitcoin may take a day to sync. If your node is fully bonded and is selected to churn in to THORChain as ACTIVE without fully syncing all connected chains, you will immediately get slashed for missing observations, and lose money. It is normal to see Ethereum sit on 99.999% for many hours - be patient.
+{% endhint %}
+
+{% hint style="danger" %}
+Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. You can top up BOND using a different wallet but make sure you keep the private key to the original BOND wallet secure and accessible.
 {% endhint %}
 
 ### 2 - Send a small BOND (recommend 100-1000)
