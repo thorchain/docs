@@ -44,9 +44,9 @@ You can many interfaces to interact with THORChain. See [Exchanges](../ecosystem
 
 #### **What is Outbound Throttling?**
 
-- See [Outbound Transaction Throttling](../how-it-works/security.md#b905-1)
-- You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app/)
-- Since Jan 2024, [Swapper Clout](https://gitlab.com/thorchain/thornode/-/issues/1723) has been enabled to optimise the Outbound Throttling.
+* See [Outbound Transaction Throttling](../how-it-works/security.md#b905-1)
+* You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app/)
+* Since Jan 2024, [Swapper Clout](https://gitlab.com/thorchain/thornode/-/issues/1723) has been enabled to optimise the Outbound Throttling.
 
 ### **Are there withdrawal fees and why is there a withdrawal fee premium?**
 
@@ -54,15 +54,15 @@ Yes, there is a fee for every on-chain withdrawal from THORChain, whether it is 
 
 The outbound fees that THORChain levies is 1.5x t0 3x the “fast” fee recommended for the respective blockchain, depending on network load.
 
-- See The `outbound_fee_multiplier` pararamter in the [network endpoint](https://thornode.ninerealms.com/thorchain/network)
-- See [ADR 008: Implement a Dynamic Outbound Fee Multiplier](https://dev.thorchain.org/architecture/adr-008-implement-dynamic-outbound-fee-multiplier.html)
-- See [Outbound-Fee](../how-it-works/fees.md#outbound-fee).
+* See The `outbound_fee_multiplier` pararamter in the [network endpoint](https://thornode.ninerealms.com/thorchain/network)
+* See [ADR 008: Implement a Dynamic Outbound Fee Multiplier](https://dev.thorchain.org/architecture/adr-008-implement-dynamic-outbound-fee-multiplier.html)
+* See [Outbound-Fee](../how-it-works/fees.md#outbound-fee).
 
 The outbound fees that THORChain levies could be up to 2.5x the “fast” fee recommended for the respective blockchain.
 
-- See [Outbound-Fee](../how-it-works/fees.md#outbound-fee).
-- Standard Fee [inbound address](https://thornode.ninerealms.com/thorchain/inbound_addresses) endpoint.
-- [Watch Fees and Wait Times Explained](https://www.youtube.com/watch?v=XAdaEXO-Ofg) video.
+* See [Outbound-Fee](../how-it-works/fees.md#outbound-fee).
+* Standard Fee [inbound address](https://thornode.ninerealms.com/thorchain/inbound\_addresses) endpoint.
+* [Watch Fees and Wait Times Explained](https://www.youtube.com/watch?v=XAdaEXO-Ofg) video.
 
 #### Is there a place where I can see the THORChain Ecosystem?
 
@@ -100,9 +100,20 @@ If each pool is comprised of two assets (e.g. BTC:ETH) then there will be a scal
 
 Simply put, Cross-chain bridges are a better solution than Atomic Swaps. Atomic Swaps involve a complex process of signing cryptographic keys between two parties that require interactivity. You also need a counter-party on all trades. Cross-chain bridges, coupled with continuous liquidity pools means you don't need a designated counter-party, and swaps can happen in less than a second. 1-way state pegs are better than 2-way asset pegs because assets don't need to be wrapped or pegged. Instead of having IOU tokens, real native assets can be used instead.
 
+**How does THORChain prevent MEV?**
+
+THORChain is designed to minimize the risk of Miner Extractable Value (MEV), which is a common issue in many blockchain networks. MEV refers to the ability of validators or miners to manipulate the order of transactions within a block, such as front-running trades or causing liquidations. Here’s how THORChain is resistant to MEV:
+
+1. Multi-Chain Architecture: Unlike Ethereum and other EVM architectures—where MEV is more prevalent due to the single-chain structure and longer block times—THORChain operates across multiple blockchains. This makes it nearly impossible to manipulate transaction ordering simultaneously across different chains.
+2. Limited Node Control: Nodes in the THORChain network cannot reorder transactions—whether observed from external chains or internal. Their only power is to censor transactions, which further limits the potential for MEV. 2/3 of Nodes need to colloude to censor a transactions.
+3. Ordered Swaps, Delays and Swap Queues: Transactions (swaps) on THORChain are carefully ordered and processed with inbound and outbound delays. THORChain uses a [swap queue manager](https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_swap\_queue.go?ref\_type=heads#L17) that organizes swap transactions within each block to minimize MEV. It prioritizes transactions based on two key factors:
+   1. Liquidity Fee: Transactions with higher liquidity fees are prioritized.
+   2. Slip (Price Impact): Transactions with higher price impacts are given priority.
+   3. Scoring and Sorting: Each transaction is scored based on its liquidity fee and slip, and then sorted to determine the final order. This reduces the chances of MEV attacks like sandwiching.
+
 #### How much RUNE do you need to run a THORNode?
 
-The minimum bond is currently: 300K Rune [MIMIR Override)](https://thorchain.net/#/network/constants) - Minimum Bond In Rune for current value.
+The minimum bond is currently: 300K Rune ([MIMIR Override](https://thorchain.net/#/network/constants)) - Minimum Bond In Rune for current value.
 
 The actual bond required is set by the market (node operators) - see the average bond at [https://thorchain.net/nodes](https://thorchain.net/nodes)
 
@@ -116,7 +127,7 @@ There is a set max of 100 active pools, and once achieved, deeper pending pools 
 
 #### **What is the Contract Address of RUNE?**
 
-- There is no contract address for RUNE, as it is the native asset on its own blockchain.
+There is no contract address for RUNE, as it is the native asset on its own blockchain.
 
 ## Frequent Issues
 
