@@ -26,6 +26,7 @@
   * [IBC](technology/ibc.md)
 * [Frequently Asked Questions](frequently-asked-questions/README.md)
   * [Node Operators](frequently-asked-questions/node-operators.md)
+  * [App Layer / Bridge Assets](frequently-asked-questions/app-layer-bridge-assets.md)
   * [Liquidity Providers](frequently-asked-questions/liquidity-providers.md)
   * [Asset Types](frequently-asked-questions/asset-types.md)
   * [Savers](frequently-asked-questions/savers.md)

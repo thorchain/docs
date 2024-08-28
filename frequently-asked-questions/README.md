@@ -100,7 +100,7 @@ If each pool is comprised of two assets (e.g. BTC:ETH) then there will be a scal
 
 Simply put, Cross-chain bridges are a better solution than Atomic Swaps. Atomic Swaps involve a complex process of signing cryptographic keys between two parties that require interactivity. You also need a counter-party on all trades. Cross-chain bridges, coupled with continuous liquidity pools means you don't need a designated counter-party, and swaps can happen in less than a second. 1-way state pegs are better than 2-way asset pegs because assets don't need to be wrapped or pegged. Instead of having IOU tokens, real native assets can be used instead.
 
-**How does THORChain prevent MEV?**
+#### **How does THORChain prevent MEV?**
 
 THORChain is designed to minimize the risk of Miner Extractable Value (MEV), which is a common issue in many blockchain networks. MEV refers to the ability of validators or miners to manipulate the order of transactions within a block, such as front-running trades or causing liquidations. Here’s how THORChain is resistant to MEV:
 
