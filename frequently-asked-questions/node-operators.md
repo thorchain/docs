@@ -34,6 +34,20 @@ Churning is the process by which nodes are rotated in and out of the active vali
 
 Node Operators can invite Bond Providers to contribute to their bond. Up to 10 Bond Providers can be added, and they will earn rewards proportional to their contribution. Operators can set a fee that is deducted from these rewards. Note that only the first wallet that bonds owns the node and can manage these providers. See more in [Pooled THORNodes](../thornodes/pooled-thornodes.md).
 
+### How does early exit work for Bond Providers?
+
+Nodes can manually signal to exit the active validator set during the next churn by sending a `MsgDeposit` with a `LEAVE` memo. During each churn, the lowest bond, worst performer, and the oldest churned-in node get automatically churned out, along with any nodes that request to leave.
+
+Most nodes impose a penalty for bond providers requesting early exit, which results in missed rewards. However, some nodes offer this service without charge. When a node is churned out, it no longer earns rewards, which means bond providers and node operators both miss out on potential earnings. Additionally, a bond provider cannot unbond while the node is active but can add more bond if desired.
+
+Rewards for bond providers are auto-compounded back into their bond with each churn. These rewards remain locked until the node is churned out, at which point the bond providers can unbond and access their funds. Meanwhile, node operators receive their operator fee directly to their wallet each churn. For more details, you can refer to the following resources:
+
+• [THORChain Dev Memo Documentation](https://dev.thorchain.org/concepts/memos.html#bond-unbond-and-leave)
+
+• [Gitlab: Leave Event Keys](https://gitlab.com/thorchain/thornode/-/blob/v1.134.0/x/thorchain/handler\_leave.go#L154-155)
+
+• [Gitlab OperationalMimirs](https://gitlab.com/thorchain/thornode/-/blob/v1.134.0/x/thorchain/manager\_validator\_current.go#L1368-1369)
+
 ### Why are there so many slashes, and is it normal?
 
 Slashes can happen for various reasons, including node downtime or failing to observe or sign transactions correctly. While some slashing is normal, consistent slashing could indicate a problem with your setup. Monitoring slash points and correcting any issues immediately is essential.
