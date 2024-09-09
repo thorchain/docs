@@ -16,6 +16,7 @@ Running a malicious node or stealing from the network results in a slashing of t
 
 * **Double Sign** (5% of minimum bond) - if it is observed that a single validator node is committing blocks on multiple chains. To avoid this, never run two nodes with the same node account at the same time.
 * **Unauthorised transaction** (1.5x transaction value) - if a node sends funds without authorization, the bond is slashed 1.5x the value of the stolen funds. The slashed bond is dumped into the pool(s) where the funds were stolen and added to the reserve.
+* **Loss of Node Operator Key**: The first address to bond to a new node is known as the node operator address. This is the only address that can UNBOND a Node Provider's BOND. If the private key is lost, a Node Operator may lose control of their Node and provided BOND. See [THORNode Keys](thornode-stack.md#thornode-keys) for more informaiton.&#x20;
 
 Bond slashing takes directly from the bond and does not affect rewards.
 

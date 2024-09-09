@@ -100,6 +100,14 @@ Or use `https://thornode.ninerealms.com/thorchain/node/<node address>.`
 
 Most importantly, this will tell you how many slash points the node account has accrued, their status, and the size of their bond (which is in 1e8 notation, 1 Rune == 100000000).
 
+### Make Relay
+
+Make Relay can be used to send messages into the `#mainnet` channel of the Dev Discord. This allows Node Operators to communicate with Discord members without having post as a Discord user, helping to protect their identiy.&#x20;
+
+Usage: `make relay "{`_`Message you want to send}`_`"`
+
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption><p>Example of make relay as seen in Discord</p></figcaption></figure>
+
 ### Bond Providers
 
 Bond Providers can contribute to a Node Operator's bond. Node Operators have the option to add and remove bond providers and set a node operator' fee.
