@@ -1,0 +1,152 @@
+---
+description: Setting up a fullnode on plain Linux
+---
+
+# Thornode Linux
+
+This guide shows how to set up a Thorchain daemon and optionally Midgard. It doesn't handle Bifrost or other L1 client deployments.
+
+{% hint style="info" %}
+The steps shown here are tested on `Ubuntu 24.04`, different distributions may need adjustments to the commands.
+
+All commands are meant to be run as root user, if not specified otherwise. Depending on the server installation, they may need to be run from a different user via `sudo`.
+{% endhint %}
+
+## Prerequisites
+
+Install all needed packages for building and managing the thornode daemon
+
+```sh
+apt install -y --no-install-recommends aria2 ca-certificates git golang make curl jq pv
+```
+
+## Application user
+
+Add application user that is used to run the thornode daemon
+
+```sh
+useradd -m thornode -s /bin/bash
+```
+
+## Build
+
+As thornode application user, checkout the latest thornode code and run the build process.
+
+As `thornode` user run:
+
+```sh
+git clone --branch v2.135.0 https://gitlab.com/thorchain/thornode $HOME/build
+
+cd $HOME/build
+
+ln -fs /usr/bin/true docker; export PATH=$(pwd):$PATH; TAG=mainnet make install
+
+# the build process currently builds bifrost as well, which we are not interested in
+rm $HOME/go/bin/bifrost
+rm -rf $HOME/build
+```
+
+Note: The build process currently expects to have a docker binary available, which isn't needed for building the `thornode` binary, so providing it a fake docker command via symlink is just a hack around that limitation.
+
+## Prepare thornode environment
+
+### Config
+
+Before running the fullndode the first time, the configuration files and directory layout need to be created.
+
+As `thornode` user run:
+
+```sh
+$HOME/go/bin/thornode init thornode --overwrite --chain-id thorchain-1
+```
+
+### Seed nodes
+
+Seeds provide a list of active thorchain nodes, which are needed to join the network.
+
+As `thornode` user run:
+
+```sh
+sed -i 's/^seeds = ""/seeds = "c3613862c2608b3e861406ad02146f41cf5124e6@statesync-seed.ninerealms.com:27146,dbd1730bff1e8a21aad93bc6083209904d483185@statesync-seed-2.ninerealms.com:27146"/' $HOME/.thornode/config/config.toml
+```
+
+### Ports
+
+Thorchain doesn't use the cosmos-sdk default ports. Technically this step isn't needed, but it is meant to stay in line with all other thornode deployments.
+
+As `thornode` user run:
+
+```sh
+sed -ri 's/:2665([0-9])/:2714\1/g' $HOME/.thornode/config/config.toml
+```
+
+### Genesis
+
+To be able to join the network, thornode needs the correct genesis.json.
+
+As `thornode` user run:
+
+```sh
+curl https://storage.googleapis.com/public-snapshots-ninerealms/genesis/17562000.json -o $HOME/.thornode/config/genesis.json
+```
+
+### Sync
+
+The fastest way to join the network is by downloading a current snapshot and sync from it.
+
+As `thornode` user run:
+
+```sh
+# get latest snapshot
+FILENAME=$(curl -s "https://snapshots.ninerealms.com/snapshots?prefix=thornode" | grep -Eo "thornode/[0-9]+.tar.gz" | sort -n | tail -n 1 | cut -d "/" -f 2)
+
+# download snapshot
+aria2c --split=16 --max-concurrent-downloads=16 --max-connection-per-server=16 --continue --min-split-size=100M -d $HOME/.thornode -o $FILENAME "https://snapshots.ninerealms.com/snapshots/thornode/${FILENAME}"
+
+# ensure no chain data exists
+rm -rf $HOME/.thornode/data/{*.db,snapshot,cs.wal}
+
+# extract snapshot
+pv $HOME/.thornode/$FILENAME | tar -xzf - -C $HOME/.thornode --exclude "*_state.json"
+
+# cleanup snapshot
+rm -rf $HOME/.thornode/$FILENAME
+```
+
+## Systemd
+
+Create a service file to be able to manage the thornode process via systemd
+
+{% code title="/etc/systemd/system/thornode.service" overflow="wrap" %}
+
+```toml
+[Unit]
+Description=Thornode Daemon
+After=network-online.target
+
+[Service]
+User=thornode
+ExecStart=/home/thornode/go/bin/thornode start
+Restart=on-abort
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+```
+
+{% endcode %}
+
+Reload systemd config
+
+```sh
+systemctl daemon-reload
+```
+
+## Start
+
+Start the daemon
+
+```sh
+systemctl start thornode.service
+```
