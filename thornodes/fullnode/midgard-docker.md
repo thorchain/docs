@@ -120,12 +120,3 @@ docker run -d --restart=on-failure \
   --name midgard --net host \
   registry.gitlab.com/thorchain/midgard:2.24.4
 ```
-
-```
-docker run -d --restart=on-failure \
-  -v /opt/midgard/config/config.json:/config.json \
-  -v /opt/midgard/config/genesis.json:/genesis.json \
-  -v /opt/midgard/blockstore:/blockstore \
-  --name midgard --net host \
-  registry.gitlab.com/thorchain/midgard:2.24.4
-```
