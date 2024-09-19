@@ -1,10 +1,8 @@
 ---
-description: Setting up a fullnode on plain Linux
+description: Setting up a fullnode on Linux
 ---
 
 # Thornode on Linux
-
-This guide shows how to set up a Thorchain daemon and optionally Midgard. It doesn't handle Bifrost or other L1 client deployments.
 
 {% hint style="info" %}
 The steps shown here are tested on `Ubuntu 24.04`, different distributions may need adjustments to the commands.
@@ -14,15 +12,15 @@ All commands are meant to be run as root user, if not specified otherwise. Depen
 
 ## Prerequisites
 
-Install all needed packages for building and managing the thornode daemon
+Install all needed packages for building and configuring the THORNode daemon
 
 ```sh
-apt install -y --no-install-recommends aria2 ca-certificates git golang make curl jq pv
+apt install -y --no-install-recommends aria2 ca-certificates curl git golang jq make pv
 ```
 
 ## Application user
 
-Add application user that is used to run the thornode daemon
+Add the application user that is used to run the THORNode application
 
 ```sh
 useradd -m thornode -s /bin/bash
@@ -30,25 +28,25 @@ useradd -m thornode -s /bin/bash
 
 ## Build
 
-As thornode application user, checkout the latest thornode code and run the build process.
+Checkout the latest code and build the binary
 
 As `thornode` user run:
 
 ```sh
-git clone --branch v2.135.0 https://gitlab.com/thorchain/thornode $HOME/build
+git clone --branch v2.135.1 https://gitlab.com/thorchain/thornode $HOME/build
 
 cd $HOME/build
 
 ln -fs /usr/bin/true docker; export PATH=$(pwd):$PATH; TAG=mainnet make install
 
-# the build process currently builds bifrost as well, which we are not interested in
+# remove bifrost binary and build directory
 rm $HOME/go/bin/bifrost
 rm -rf $HOME/build
 ```
 
 Note: The build process currently expects to have a docker binary available, which isn't needed for building the `thornode` binary, so providing it a fake docker command via symlink is just a hack around that limitation.
 
-## Prepare thornode environment
+## Prepare environment
 
 ### Config
 
@@ -72,7 +70,7 @@ sed -i 's/^seeds = ""/seeds = "c3613862c2608b3e861406ad02146f41cf5124e6@statesyn
 
 ### Ports
 
-Thorchain doesn't use the cosmos-sdk default ports. Technically this step isn't needed, but it is meant to stay in line with all other thornode deployments.
+Thorchain doesn't use the cosmos-sdk default ports. Technically this step isn't needed, but it is meant to stay in line with all other THORNode deployments.
 
 As `thornode` user run:
 
@@ -82,7 +80,7 @@ sed -ri 's/:2665([0-9])/:2714\1/g' $HOME/.thornode/config/config.toml
 
 ### Genesis
 
-To be able to join the network, thornode needs the correct genesis.json.
+For joining the network, the correct genesis file is required
 
 As `thornode` user run:
 

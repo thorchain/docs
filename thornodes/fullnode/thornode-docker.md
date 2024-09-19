@@ -4,8 +4,6 @@ description: Setting up a fullnode with Docker
 
 # Thornode on Docker
 
-This guide shows how to set up a Thorchain daemon and optionally Midgard using Docker. It doesn't handle Bifrost or other L1 client deployments.
-
 {% hint style="info" %}
 The steps shown here are tested on `Ubuntu 24.04`, different distributions may need adjustments to the commands.
 
@@ -14,28 +12,33 @@ All commands are meant to be run as root user, if not specified otherwise. Depen
 
 ## Prerequisites
 
-Install all needed packages for building and managing the thornode daemon
+Install all packages needed for running and configuring the THORNode container
 
 ```sh
-apt install -y --no-install-recommends aria2 curl jq pv docker.io
+apt install -y --no-install-recommends aria2 curl docker.io jq pv
 ```
 
-## Work directory
+## Prepare environment
+
+### Work directory
 
 Prepare work directory
 
 ```sh
 mkdir -p /opt/thornode/.thornode/config
+```
 
-# get genesis.json
+### Genesis
+
+For joining the network, the correct genesis file is required
+
+```sh
 curl https://storage.googleapis.com/public-snapshots-ninerealms/genesis/17562000.json -o /opt/thornode/.thornode/config/genesis.json
 ```
 
 ### Sync
 
 The fastest way to join the network is by downloading a current snapshot and sync from it.
-
-As `thornode` user run:
 
 ```sh
 # get latest snapshot
@@ -66,5 +69,5 @@ docker run -d --restart=on-failure \
   -p 127.0.0.1:27147:27147 \
   -p 27146:27146 \
   --name thornode \
-  registry.gitlab.com/thorchain/thornode:mainnet-2.135.0 
+  registry.gitlab.com/thorchain/thornode:mainnet-2.135.1 
 ```

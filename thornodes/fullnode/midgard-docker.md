@@ -1,5 +1,5 @@
 ---
-description: Setting up midgard on plain Linux
+description: Setting up Midgard on Linux
 ---
 
 # Midgard on Docker
