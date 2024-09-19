@@ -2,7 +2,7 @@
 description: Setting up a fullnode on plain Linux
 ---
 
-# Thornode Linux
+# Thornode on Linux
 
 This guide shows how to set up a Thorchain daemon and optionally Midgard. It doesn't handle Bifrost or other L1 client deployments.
 

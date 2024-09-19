@@ -4,7 +4,11 @@ description: Setting up midgard on plain Linux
 
 # Midgard on Linux
 
-Although the steps shown here may work on different Linux distributions, they are tested and meant to be run on an `Ubuntu 24.04`. If not specified otherwise, all commands are meant to be run as `root` user. You might need to run them with `sudo`, depending on your server installation.
+{% hint style="info" %}
+The steps shown here are tested on `Ubuntu 24.04`, different distributions may need adjustments to the commands.
+
+All commands are meant to be run as root user, if not specified otherwise. Depending on the server installation, they may need to be run from a different user via `sudo`.
+{% endhint %}
 
 ## Prerequisites
 

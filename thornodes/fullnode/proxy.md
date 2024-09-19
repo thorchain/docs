@@ -2,7 +2,7 @@
 description: Make API/RPC available externally
 ---
 
-# Publish API/RPC endpoints
+# Proxy
 
 One easy way to make thornodes and midgards API or RPC endpoints available ecternally is by using a reverse proxy, a webserver that accepts all HTTP(S) requests and forwards them to the specific application.
 
