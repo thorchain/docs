@@ -24,7 +24,7 @@ apt install -y --no-install-recommends nginx
 
 ## Configuration
 
-### Remove default
+### Remove default page
 
 The default page is not needed and can be removed:
 
@@ -32,11 +32,11 @@ The default page is not needed and can be removed:
 rm -f /etc/nginx/sites-enabled/default
 ```
 
-### Enable API endpoint
+### Enable THORNode API endpoint
 
-The API endpoint is disabled by default and needs to be enabled first.
+When using a self built version of THORNode, the API endpoint is disabled by default and needs to be enabled in the thornode app config.
 
-{% code title="~thornode/.thornode/config/app.toml" overflow="wrap" %}
+{% code title="/home/thornode/.thornode/config/app.toml" overflow="wrap" %}
 
 ```toml
 [api]
@@ -59,7 +59,7 @@ Thornode needs to be restarted, for the changes to take effect.
 systemctl restart thornode.service
 ```
 
-### Proxy configs
+### Proxy configuration
 
 Create the required proxy configurations
 
@@ -141,7 +141,7 @@ server {
 {% endtab %}
 {% endtabs %}
 
-## Restart proxy
+## Restart proxy service
 
 ```sh
 systemctl restart nginx.service
