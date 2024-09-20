@@ -1,5 +1,5 @@
 ---
-description: Setting up Midgard on Linux
+description: Setting up Midgard with Docker
 ---
 
 # Midgard on Docker
@@ -12,7 +12,7 @@ All commands are meant to be run as root user, if not specified otherwise. Depen
 
 ## Prerequisites
 
-Install all needed packages for building and managing the thornode daemon
+Install all packages needed for running and configuring the Midgard container
 
 ```sh
 apt install -y --no-install-recommends docker.io
@@ -20,12 +20,20 @@ apt install -y --no-install-recommends docker.io
 
 ## Configuration
 
+### Work directories
+
 Prepare work directories
 
 ```sh
 mkdir -p /opt/timescale
 mkdir -p /opt/midgard/{config,blockstore}
+```
 
+### Genesis
+
+Download genesis file
+
+```sh
 # get genesis.json
 curl https://storage.googleapis.com/public-snapshots-ninerealms/genesis/17562000.json -o /opt/midgard/config/genesis.json
 ```
@@ -92,9 +100,9 @@ Add midgard config
 
 {% endcode %}
 
-## Database
+## Start
 
-Start the Timescale database
+Start the TimescaleDB database
 
 ```sh
 docker run -d --restart=on-failure \
@@ -108,9 +116,7 @@ docker run -d --restart=on-failure \
   postgres -c plan_cache_mode=force_custom_plan
 ```
 
-## Start
-
-Start the midgard container
+Start Midgard
 
 ```sh
 docker run -d --restart=on-failure \

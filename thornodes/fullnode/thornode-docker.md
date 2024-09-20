@@ -18,7 +18,7 @@ Install all packages needed for running and configuring the THORNode container
 apt install -y --no-install-recommends aria2 curl docker.io jq pv
 ```
 
-## Prepare environment
+## Configuration
 
 ### Work directory
 

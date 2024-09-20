@@ -15,8 +15,7 @@ All commands are meant to be run as root user, if not specified otherwise. Depen
 Install all needed packages for building and running midgard
 
 ```sh
-apt install -y --no-install-recommends gcc postgresql gnupg postgresql-common apt-transport-https lsb-release wget
-
+apt install -y --no-install-recommends apt-transport-https gcc gnupg lsb-release postgresql postgresql-common wget
 ```
 
 ## Application user
@@ -205,7 +204,7 @@ Add midgard config
 
 ## Systemd
 
-Create a service file to be able to manage the thornode process via systemd
+Create a service file to be able to manage the Midgard process via systemd
 
 {% code title="/etc/systemd/system/midgard.service" overflow="wrap" %}
 
