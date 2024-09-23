@@ -118,7 +118,7 @@ https://thornode.ninerealms.com/thorchain/trade/account/thor1g6pnmnyeg48yc3lg796
 
 ### Sources
 
-1. Tade Accounts [Dev Docs](https://dev.thorchain.org/concepts/trade-accounts.html)
+1. Trade Accounts [Dev Docs](https://dev.thorchain.org/concepts/trade-accounts.html)
 2. Relevant PRs: [!3347](https://gitlab.com/thorchain/thornode/-/merge_requests/3347)&[!3451](https://gitlab.com/thorchain/thornode/-/merge_requests/3451)
 3. [Twitter Spaces](https://twitter.com/THORChain)— held most weeks,[subscribe on RSS](https://rss.com/podcasts/thorchain/)or wherever you get your podcasts
 4. [THORChain University](https://crypto-university.medium.com/)— educational content, monthly posts, &[discord](https://discord.com/invite/c4EhDZdFMA)server
