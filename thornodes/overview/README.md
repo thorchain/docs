@@ -18,6 +18,10 @@ To understand more about running a THORNode, see the below links:
 [risks-costs-and-rewards.md](risks-costs-and-rewards.md)
 {% endcontent-ref %}
 
+{% content-ref url="thornode-stack.md" %}
+[thornode-stack.md](thornode-stack.md)
+{% endcontent-ref %}
+
 {% content-ref url="node-operations.md" %}
 [node-operations.md](node-operations.md)
 {% endcontent-ref %}
@@ -59,6 +63,8 @@ You can create a bare metal node with your own hardware or use the the cluster l
 {% content-ref url="../kubernetes/" %}
 [kubernetes](../kubernetes/)
 {% endcontent-ref %}
+
+{% embed url="https://github.com/AutoStake-com/thorchain-deploy" %}
 
 Once created, follow the [Deploying](../deploying.md), [Joining](../joining.md) and [Managing](../managing.md) pages.
 
