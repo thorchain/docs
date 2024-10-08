@@ -1,65 +1,37 @@
 ---
-description: This FAQ is to help dapp builders deploying to the THORChain App Layer
+description: >-
+  This FAQ clarifies how THORChain has implemented the Cosmos tech stack and
+  solved some of the most common problems faced by developers building on Cosmos
+  chains
 ---
 
-# App Layer / Bridge Assets
+# THORChain & Cosmos
 
-{% hint style="info" %}
-This is subject to change as details get worked out. This is not yet implemented. \
-See the [Dev Discord](https://discord.com/channels/838986635756044328/1276645235560284260) and [Gitlab MR](https://gitlab.com/thorchain/thornode/-/merge\_requests/3711) for more detailed information.
-
-Also see [Technology](../technology/) for generic Cosmos information.&#x20;
-{% endhint %}
-
-## What will Bridge Assets look like?
-
-<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
-
-\
-
-
-<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
-
-## What notation will they have?
-
-The plan is for the [delimiter](asset-types.md) to be a dash '-'. \
-E.g. `ETH.ETH` is L1. `ETH-ETH` will be a bridged asset.&#x20;
-
-While ETH.tc is pictured, that may change to `ETH-ETH`.
-
-## Common Cosmos chain pain points
-
-{% hint style="info" %}
-Below are Cosmos development pain points created by the Levana team to assist Nine Realms and others to identify and prevent common issues for dapp developers.
-{% endhint %}
-
-### Multiple asset representations
+## Multiple asset representations
 
 With many Cosmos chains running on various bridged assets, Cosmos teams often end up with multiple representations of the same asset, e.g. Axelar bridged BTC, Nomic bridged BTC, and wBTC bridged from multiple different layer 2s. This splits liquidity and causes significant user confusion.
 
 THORChain will only have one bridged asset for per asset. E.g. `ETH.ETH` on L1 will be represented as a bridged asset with `ETH-ETH`.&#x20;
 
-### Buggy RPC/gRPC node software
+## Buggy RPC/gRPC node software
 
 With multiple node providers validating blocks around the world, the risk of node crashes that disrupts work flow, testing and live implementations can happen. Some teams resort to spending significant amount of time adding fairly complex fallback and retry logic in our backend Cosmos library to deal with the situation, but it still occasionally causes alerts to go crazy.
 
 THORChain alleviates this problem by having anonymous nodes that [churn in and out](https://docs.thorchain.org/thornodes/overview/node-operations) validating blocks. The constant churn process keeps node operators on their toes and keeps the network running at optimal levels.
 
-### Derivation path/wallet address incompatibility
+## Derivation path/wallet address incompatibility
 
 Most chains in the Cosmos ecosystem use the same public key hash method and derivation path, making their addresses convertible (works for Osmosis, Neutron, Juno, and Sei v1). Other chains attempt to keep Ethereum compatibility (Injective and Sei v2). The result is that addresses cannot be converted between these chains, which makes things like cross-chain incentivization difficult.
 
 THORChain will have have addresses compatible with at least one other Cosmos chain as the "canonical chain". There is all work being done to try and link different wallet addresses together so that matching accounts can be found across many chains.
 
-### CosmWasm contract size limit
+## CosmWasm contract size limit
 
 Many CosmWasm contracts quickly move beyond the default 800kb limit for a contract. The CosmWasm team has previously discussed bumping this limit.&#x20;
 
 THORChain will push on bumping up the contract limit to 1.5mb or more.
 
-### Differing transaction size limits across nodes
+## Differing transaction size limits across nodes
 
 Having different settings between nodes for transaction size limits causes P2P sharing of mempool entries to sometimes get stuck. This can cause a node to be “starved” and none of the transactions broadcast to it to be picked up by the network. Levana’s workaround for this is quite involved:
 
@@ -69,19 +41,19 @@ Having different settings between nodes for transaction size limits causes P2P s
 
 THORChain has defined [Node Operations](../understanding-thorchain/roles/node-operators.md) that all nodes adhere to, and hence the problem of mempool entries getting stuck is solved.
 
-### Congestion attacks/lack of MEV
+## Congestion attacks/lack of MEV
 
 Some Cosmos chains have had periods of high traffic, either due to roll-up syncs, large NFT mints, or direct attacks on the chain. Most Cosmos chains have no concept of MEV or fee markets. Osmosis has implemented a basic fee market system, but it was at least initially buggy, and only gate-keeps entrance to the memory pool. It does not prioritize transactions within the pool.
 
 On THORChain, congestion attacks will be less impactful because of the use of chain-native oracles. More on how THORChain addresses MEV in the [FAQ](https://docs.thorchain.org/frequently-asked-questions#how-does-thorchain-prevent-mev).
 
-### Poor wallet compatibility/frontend library support
+## Poor wallet compatibility/frontend library support
 
 The Cosmos ecosystem generally uses CosmosKit for wallet integration. It’s a workable library, but has historically suffered from integration bugs, and the documentation has been poor. Furthermore, slight differences in behavior of different wallets has made broad wallet support difficult to achieve.
 
 THORChain is actively working with wallets like XDEFI/Ctrl, Keplr and Leap to alleviate compatibility issues, yet its an iterative process where there will be back and forth.
 
-### Mishandling of multiple gas coins
+## Mishandling of multiple gas coins
 
 Many Cosmos chains allow for multiple coins to pay for network/gas fees rather than just one. Having this option is suboptimal. As a recent example from Levana on Osmosis:
 
