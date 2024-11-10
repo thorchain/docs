@@ -10,11 +10,11 @@ All the following are community-run resources. There are no "official" channels.
 
 **Websites:** [**thorchain.org**](http://thorchain.org/) **|** [**thorchain.com**](https://www.thorchain.com/)
 
-**Socials**: [**Telegram**](https://t.me/thorchain_org) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Medium**](https://medium.com/thorchain)
+**Socials**: [**Telegram**](https://t.me/thorchain\_org) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Medium**](https://medium.com/thorchain)
 
 **Documentation:** [**Docs**](https://docs.thorchain.org/) **|** [**Dev Docs**](https://dev.thorchain.org/) **|** [**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf) **|** [**Audits**](https://github.com/thorchain/Resources/tree/master/Audits)
 
-**Development**: [**GitLab**](https://gitlab.com/thorchain) **|** [**GitHub**](https://github.com/thorchain) **|** [**Bounty Program**](https://immunefi.com/bounty/thorchain/) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4)
+**Development**: [**GitLab**](https://gitlab.com/thorchain) **|** [**GitHub**](https://github.com/thorchain) **|** [**Bounty Program**](https://gitlab.com/thorchain/thornode/-/blob/develop/bugbounty.md) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4)
 
 **Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol**](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/concepts/network-halts.html)
 
@@ -28,7 +28,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**ASGARDEX Desktop**](https://www.asgardex.com/) - Wallet and Exchange Client for THORChain
 
-[**Coinbot**](https://t.me/TeamCoinBot_bot) - Telegram Exchange Bot for THORChain
+[**Coinbot**](https://t.me/TeamCoinBot\_bot) - Telegram Exchange Bot for THORChain
 
 [**Decentralfi**](https://decentralfi.io/) - Exchange Powered by THORChain
 
@@ -98,15 +98,15 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**DecentralFi**](https://decentralfi.io/) - Track positions  - https://decentralfi.io/liquidity?wallet={thor address}
 
-[**THORChain Information Bot**](https://t.me/thor_infobot) - Useful commands to fetch network info
+[**THORChain Information Bot**](https://t.me/thor\_infobot) - Useful commands to fetch network info
 
-[**THORChain THOR InfoBot**](https://twitter.com/THOR_InfoBot) - Monitoring of major events in THORChain
+[**THORChain THOR InfoBot**](https://twitter.com/THOR\_InfoBot) - Monitoring of major events in THORChain
 
 [**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core Thorchain operations.
 
 ## **Infrastructure**
 
-[**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview) **|** [**THORNode Official Announcements**](https://t.me/thornode_ann)
+[**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview) **|** [**THORNode Official Announcements**](https://t.me/thornode\_ann)
 
 [**THORChain Network Explorer**](https://thorchain.net/) - THORChain Network Explorer
 
@@ -156,7 +156,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 Russian: [https://t.me/ThorchainRussian](https://t.me/ThorchainRussian)
 
-Chinese: [https://t.me/thorchain_chinese](https://t.me/thorchain_chinese)
+Chinese: [https://t.me/thorchain\_chinese](https://t.me/thorchain\_chinese)
 
 Italian: [https://t.me/+2h7NgzNJ4KIxNzFk](https://t.me/+2h7NgzNJ4KIxNzFk)
 
@@ -164,12 +164,12 @@ Portuguese: [https://t.me/thorchainportuguese](https://t.me/thorchainportuguese)
 
 French: [https://t.me/THORChainFr](https://t.me/THORChainFr)
 
-Spanish: [http://t.me/THORChain_es](http://t.me/THORChain_es)
+Spanish: [http://t.me/THORChain\_es](http://t.me/THORChain\_es)
 
-Dutch: [https://t.me/nl_be_thorchain_rune](https://t.me/nl_be_thorchain_rune)
+Dutch: [https://t.me/nl\_be\_thorchain\_rune](https://t.me/nl\_be\_thorchain\_rune)
 
 German: [https://t.me/ThorChainGermany](https://t.me/ThorChainGermany)
 
-Vietnamese: [https://t.me/Thorchain_Rune_Vietnam](https://t.me/Thorchain_Rune_Vietnam)
+Vietnamese: [https://t.me/Thorchain\_Rune\_Vietnam](https://t.me/Thorchain\_Rune\_Vietnam)
 
 Indian: [https://t.me/thorchainIndia](https://t.me/thorchainIndia)
