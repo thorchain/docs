@@ -4,6 +4,10 @@ description: THORFi Lending within THORChain
 
 # Lending
 
+{% hint style="success" %}
+Since Sept-2024, opening of new loans has been disabled as per Node consensus. Existing loans are unchanged and can still be repaid. A new lending design is expected to be launched on the upcoming THORChain AppLayer. 
+{% endhint %}
+
 ## Overview
 
 Lending allows users to deposit native collateral, and then create a debt at a collateralization ratio (CR). The debt is always denominated in USD (aka `TOR`), regardless of what L1 asset the user receives.
