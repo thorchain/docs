@@ -140,6 +140,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**TC University**](https://discord.com/invite/tcuniversity) - Discord Server
 
+[**Asgardex**](https://discord.gg/W9hGFBmCGp) - Discord Server
+
 [**DefiSpot**](https://discord.gg/7Zuypgv6Qf) - Discord Server
 
 [**ShapeShift**](https://discord.gg/shapeshift) - Discord Server
