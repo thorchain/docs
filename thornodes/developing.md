@@ -6,15 +6,22 @@ description: Deploying a custom stagenet to have a developer-controlled environm
 
 THORChain uses multiple network environments to move from an idea to mainnet deployment, each with a specific role:
 
-* Mainnet: The live production network where real assets are transacted. Security and reliability are ensured through validator consensus, with only well-tested changes deployed to minimize risks.
-* Stagenet: A pre-production network mirroring mainnet, used to test new features and chain integrations with real assets and participants. Changes require consensus, providing real-world validation but slower testing.
-* Devnet / Mocknet: A developer-managed environment for rapid testing and iteration. Validators and participants are fully controlled, making it ideal for testing new chains like TON, TRON, Optimism, or Arbitrum before advancing to the official stagenet or mainnet.
+* **Mainnet**: The live production network where real assets are transacted. Security and reliability are ensured through validator consensus, with only well-tested changes deployed to minimize risks.
+* **Stagenet**: A pre-production network mirroring mainnet, used to test new features and chain integrations with real assets and participants. Changes require consensus, providing real-world validation but slower testing.
+* **Devnet / Mocknet**: A developer-managed environment for rapid testing and iteration. Validators and participants are fully controlled, making it ideal for testing new chains like TON, TRON, Optimism, or Arbitrum before advancing to the official stagenet or mainnet.
 
 A devnet offers developers full control over the THORChain environment to test without impacting live networks. Key benefits include:
 
 * Autonomy: Configure without consensus delays.
 * Rapid Iteration: Test and refine quickly.
 * Risk Mitigation: Isolate changes to ensure live network stability.
+
+#### gRPC Support
+
+THORChain supports gRPC for enhanced communication between clients and servers. This feature is available in the Stagenet environment for testing and development purposes.
+
+* Enabled gRPC Endpoint: A gRPC endpoint has been deployed and can be accessed at `thornode-grpc.defiantlabs.net:443`.
+* New Feature Development: The addition of gRPC support is being tracked in [Merge Request #1232](https://gitlab.com/thorchain/devops/node-launcher/-/merge\_requests/1232), which adds the required functionality to the node-launcher repository.
 
 ### Prerequisites to Setup a Devnet
 

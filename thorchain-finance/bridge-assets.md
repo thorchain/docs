@@ -1,4 +1,4 @@
-# Bridge Assets
+# Secured Assets
 
 {% hint style="info" %}
 This is subject to change as details get worked out. This is not yet implemented. \
@@ -8,18 +8,21 @@ Also see [Technology](../technology/) for generic Cosmos information. What notat
 {% endhint %}
 
 The plan is for the [delimiter](../frequently-asked-questions/asset-types.md) to be a dash '-'. \
-E.g. `ETH.ETH` is L1. `ETH-ETH` will be a bridged asset.&#x20;
+E.g. `ETH.ETH` is L1. `ETH-ETH` will be a secured asset.&#x20;
 
 While ETH.tc is pictured, that may change to `ETH-ETH`.
 
-## What will Bridge Assets look like?
+## How will Secured Assets Move Between Base and App Layer?
+
+Secured assets are x/bank tokens on the App Layer (Rujira) representing 1:1 the native asset on base layer (THORChain)
+
+The native asset is secured to and from the app layer with the following flow:&#x20;
 
 <figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
-
-\
-
 
 <figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+
+Find more information about [Secured Assets](https://docs.rujira.network/developers/secured-assets) in the Rujira Docs
 
