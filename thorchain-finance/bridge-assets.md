@@ -2,7 +2,7 @@
 
 {% hint style="info" %}
 This is subject to change as details get worked out. This is not yet implemented. \
-See the [Dev Discord](https://discord.com/channels/838986635756044328/1276645235560284260) and [Gitlab MR](https://gitlab.com/thorchain/thornode/-/merge\_requests/3711) for more detailed information.
+See the [Dev Discord](https://discord.com/channels/838986635756044328/1276645235560284260) and [Gitlab MR](https://gitlab.com/thorchain/thornode/-/merge_requests/3711) for more detailed information.
 
 Also see [Technology](../technology/) for generic Cosmos information. What notation will they have?
 {% endhint %}
@@ -18,11 +18,20 @@ Secured assets are x/bank tokens on the App Layer (Rujira) representing 1:1 the 
 
 The native asset is secured to and from the app layer with the following flow:&#x20;
 
-<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+### Mint and Burn Secured Assets
 
-<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+Example shows the mint and burn process for BTC
 
-<figure><img src="../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/securedassets1.png" alt=""><figcaption></figcaption></figure>
+
+### Swapping Secured Assets
+
+Examples below explain how a user:
+
+1. Swap a Secured Asset (SA)—BTC—to another Secured Asset—ETH
+2. Swap a Secured Asset—BTC—to a base asset—ETH
+
+<figure><img src="../.gitbook/assets/securedassets2.png" alt=""><figcaption></figcaption></figure>
 
 Find more information about [Secured Assets](https://docs.rujira.network/developers/secured-assets) in the Rujira Docs
 

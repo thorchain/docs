@@ -24,25 +24,25 @@ Rewards are calculated according to whether or not the block contains any swap t
 
 How a block with swap fees splits the reward. In this example, 1000 RUNE is being divided as rewards:
 
-|      |                       |          |                     |          |
-| ---- | --------------------- | -------- | ------------------- | -------- |
-|      | **Pool Depth (RUNE)** | **Fees** | **Share (of Fees)** | Rewards  |
-|Pool A| 1,000,000             | 1000     | 33%                 | 333      |
-|Pool B| 2,000,000             | 0        | 0%                  | 0        |
-|Pool C| 3,000,000             | 2000     | 67%                 | 667      |
-|Total | **6,000,000**         | **3000** | **100%**            | **1000** |
+|        |                       |          |                     |          |
+| ------ | --------------------- | -------- | ------------------- | -------- |
+|        | **Pool Depth (RUNE)** | **Fees** | **Share (of Fees)** | Rewards  |
+| Pool A | 1,000,000             | 1000     | 33%                 | 333      |
+| Pool B | 2,000,000             | 0        | 0%                  | 0        |
+| Pool C | 3,000,000             | 2000     | 67%                 | 667      |
+| Total  | **6,000,000**         | **3000** | **100%**            | **1000** |
 
 How a block with no swap fees splits the rewards. In this example, 1000 RUNE is being divided as rewards:
 
-|      |                       |          |                      |          |
-| ---- | --------------------- | -------- | -------------------- | -------- |
-|      | **Pool Depth (RUNE)** | **Fees** | **Share (of Depth)** | Rewards  |
-|Pool A| 1,000,000             | 0        | 17%                  | 167      |
-|Pool B| 2,000,000             | 0        | 33%                  | 333      |
-|Pool C| 3,000,000             | 0        | 50%                  | 500      |
-|Total | **6,000,000**         | **0**    | **100%**             | **1000** |
+|        |                       |          |                      |          |
+| ------ | --------------------- | -------- | -------------------- | -------- |
+|        | **Pool Depth (RUNE)** | **Fees** | **Share (of Depth)** | Rewards  |
+| Pool A | 1,000,000             | 0        | 17%                  | 167      |
+| Pool B | 2,000,000             | 0        | 33%                  | 333      |
+| Pool C | 3,000,000             | 0        | 50%                  | 500      |
+| Total  | **6,000,000**         | **0**    | **100%**             | **1000** |
 
-This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity. 
+This ensures that yield is being sent to where demand is being experienced - with fees being the proxy. Since fees are proportional to slip, it means the increase in rewards ensure that pools experiencing a lot of slip are being incentivised and will attract more liquidity.
 
 ### Factors Affecting Yield
 
@@ -124,8 +124,6 @@ The only direct cost to liquidity providers is the [network fee](../../how-it-wo
 
 Liquidity providers are not subject to any direct penalties for misconduct.
 
-
-
 ## How Yield is Calculated
 
 The yield of a pool on THORChain is calculated using a metric called **Liquidity Unit Value Index** (LUVI) which can be viewed on [Midgard](https://midgard.ninerealms.com/v2/pools).
@@ -133,10 +131,7 @@ The yield of a pool on THORChain is calculated using a metric called **Liquidity
 When a user deposits assets into a liquidity pool, they are given ownership of Liquidity Units which represent a percentage of ownership of the pool. LUVI is a measure of the relative value of each liquidity unit and is independent of price.
 
 $$
-LUVI =\frac{ \sqrt (Asset \ Depth * Rune \ Depth)}{Pool \ Units}
-
-\\
-\\
+LUVI =\frac{ \sqrt (Asset \ Depth * Rune \ Depth)}{Pool \ Units} \\ \\
 $$
 
 Where:

@@ -21,15 +21,13 @@ description: Setting up a Kubernetes Cluster with AWS
 
 1. **Deploy a THORNode from a Linux VPS.**
 2. **Use Windows Subsystem for Linux -** [**https://docs.microsoft.com/en-us/windows/wsl/about**](https://docs.microsoft.com/en-us/windows/wsl/about)\*\*\*\*
-
-
 {% endhint %}
 
 ## **Steps**
 
 Firstly, clone and enter the [cluster-launcher repository](https://gitlab.com/thorchain/devops/cluster-launcher)**.** All commands in this section are to be run inside this repo.
 
-``` text
+```
 git clone https://gitlab.com/thorchain/devops/cluster-launcher
 cd cluster-launcher
 ```
@@ -40,10 +38,9 @@ Then install the [terraform CLI](https://www.terraform.io):
 {% tab title="LINUX/MAC" %}
 Install Terraform:
 
-``` text
+```
 brew install terraform
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -55,11 +52,10 @@ In order for Terraform to run operations on your behalf, you must install and co
 {% tab title="LINUX/MAC" %}
 Use the package manager [homebrew](https://formulae.brew.sh/) to install the AWS CLI.
 
-``` text
+```
 brew install awscli
 aws configure
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -106,7 +102,7 @@ You also need **wget** and **jq**, follow [these instructions](https://www.gnu.o
 {% tabs %}
 {% tab title="LINUX/MAC" %}
 Use the package manager [homebrew](https://formulae.brew.sh/) to install **wget** and **jq**\
-_Note: You most likely have these installed already._
+&#xNAN;_&#x4E;ote: You most likely have these installed already._
 
 ```
 brew install wget 
