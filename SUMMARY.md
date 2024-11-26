@@ -38,7 +38,7 @@
 * [Liquidity](thorchain-finance/continuous-liquidity-pools.md)
 * [Synthetics](thorchain-finance/synthetic-asset-model.md)
 * [Trade Assets](thorchain-finance/trade-assets.md)
-* [Secured Assets](thorchain-finance/secure-assets.md)
+* [Secured Assets](thorchain-finance/secured-assets.md)
 * [Savers](thorchain-finance/savings.md)
 * [Lending](thorchain-finance/lending.md)
 * [TOR](thorchain-finance/tor.md)

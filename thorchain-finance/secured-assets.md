@@ -28,7 +28,7 @@ The native asset is secured to and from the app layer with the following flow:&#
 
 Example shows the mint and burn process for BTC
 
-<figure><img src="../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 
 ### Swapping Secured Assets
 
@@ -37,10 +37,10 @@ Examples below explain how a user:
 1. Swap a Secured Asset (SA)—BTC—to another Secured Asset—ETH
 2. Swap a Secured Asset—BTC—to a base asset—ETH
 
-<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
-3. Secured Asset Swapping, swalling L1 under the hood
+3. Secured Asset Swapping, swapping the L1 under the hood
 
-<figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 Find more information about [Secured Assets](https://docs.rujira.network/developers/secured-assets) in the Rujira Docs or in the [Dev Docs](https://dev.thorchain.org/concepts/secured-assets.html).
