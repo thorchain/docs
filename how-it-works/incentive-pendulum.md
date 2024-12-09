@@ -4,6 +4,10 @@ description: THORChain's Incentive Pendulum keeps the network in a balanced stat
 
 # Incentive Pendulum
 
+{% hint style="success" %}
+Updated and detailed documentation on the Incentive Pendulum can be found in the [developer docs](https://dev.thorchain.org/concepts/incentive-pendulum.html).
+{% endhint %}
+
 The Incentive Pendulum controls the flow of system income between node operators and liquidity providers based primarily on the Effective Security Bond and Total Vaulted. However, it also accounts for the Effective Bond and the Total Pooled to ensure an equitable and stable reward distribution. This mechanism adjusts the rewards dynamically to maintain a balanced network by incentivising either bonding or pooling as needed.
 
 Key variables to the Incentive Pendulum are:
