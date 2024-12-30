@@ -13,14 +13,10 @@ There are a maximum of 500m RUNE. All 100% was created at genesis and distribute
 - In return for capital: 5% (SEED) and 16% (IDO) was sold for capital to start the network and give it value. They took on risk to support the network.
 - In return for time and effort: 10% was allocated to a group of devs who worked since 2018. They took on risk to deliver the network.
 - In return for bootstrap participation: 24% was given to users who participated in the bootstrapping of the network.
-- In return for through-life participation: 44% has been placed in the Protocol to pay out to Nodes and LPs for the next 10+ years.
+- In return for through-life participation: 44% has been placed in the Protocol Reserve to pay out to Nodes and LPs for the next 10+ years.
 
 {% hint style="success" %}
 All vesting has been completed.
-{% endhint %}
-
-{% hint style="info" %}
-The Reserve also backstops Savers and Lending. The Reserve is depleted by block rewards and POL and continually topped up by system income.
 {% endhint %}
 
 The [Reserve module](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt) and other modules can be viewed [here](https://runescan.io/addresses).
@@ -39,6 +35,15 @@ The exact distribution between node operators and liquidity providers (and there
 
 The emission curve is designed to start at around 30% APR and target 2% after 10 years. At that point, the majority of the revenue will come from fees.
 
-## System Income
+## Reserve Outflows and Inflows
 
-The Reserve is continually topped up by income, such as transfer fees and outbound fees. Other sources of revenue include THORName fees and excess liquidation fees on collateral.
+The Reserve is depleted by:
+- Block rewards (as per section above)
+- Deposits to [Protocol Owned Liquidity](https://docs.thorchain.org/thorchain-finance/synthetic-asset-model) 
+
+The Reserve is replenished by:
+- Withdrawals from Protocol Owned Liquidity
+- THORChain network fees
+- THORNames registration fees
+- Staged pool costs
+- Node bond slashes
