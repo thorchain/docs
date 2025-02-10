@@ -6,46 +6,42 @@ description: THORChain, THORNodes, Wallets and the ecosystem.
 
 ## About
 
-THORChain is a decentralised cross-chain liquidity protocol that utilises the Tendermint consensus engine, Cosmos-SDK state machine, and GG20 Threshold Signature Scheme (TSS). It operates as an independent Layer 1 cross-chain decentralised exchange (DEX) built on the Cosmos SDK.
+THORChain is an independent, cross-chain liquidity protocol that operates as a Layer 1 decentralised exchange (DEX). Built on the [Cosmos SDK](https://docs.cosmos.network/v0.52/learn/intro/overview), it utilizes the Tendermint consensus engine, the Cosmos-SDK state machine, and the GG20 Threshold Signature Scheme (TSS) to execute its purpose, which is to allow users to swap native assets across multiple chains with zero reliance on centralised third parties. In doing so, it stands as one of the few exchanges that verifiably ensures transparent and fair prices for cross-chain swaps of native assets.
 
-THORChain allows users to swap native assets across multiple chains without the need for wrapped or pegged assets. It ensures transparent and fair prices without relying on centralised third parties. The protocol features continuous liquidity pools that maximise efficiency. It does not peg or wrap assets, it manages funds directly in on-chain vaults, and secures those funds using economic security. It could be described as a "cross-chain automated market maker (AMM), like Uniswap" or a "decentralised Binance".
+THORChain's design renders no need for wrapped or pegged assets. Instead, the protocol deploys what are called continuous liquidity pools (CLPs), which—with highly complex algorithms—maximise the efficiency of its transactions. These CLPs allow for THORchain to manage funds directly in on-chain vaults, and it secures those funds via an economic security model. For all this, THORChain might be best described as a "cross-chain automated market maker (AMM), like Uniswap", or even a "decentralised Binance".
 
 ## THORChain Finance
 
-Building on the foundation of liquidity pools, THORChain pursues four important financial primitives:
+Building on the foundation of liquidity pools, THORChain pursues two important financial primitives:
 
-1. Allow a user to **[Swap](./thorchain-finance/continuous-liquidity-pools.md)** {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.
-2. Allow a user to **[Save](./thorchain-finance/savings.md)** {_Asset X on Chain A_}.
-3. Allow a user to **[Lend](./thorchain-finance/lending.md)** {_Asset X on Chain A_}, to **Borrow** {_Asset Y on Chain B_}.
-4. Allow a user to **[Pool](./thorchain-finance/runepool.md)** RUNE across liquidity pools
+1. Allow a user to [**Swap**](thorchain-finance/continuous-liquidity-pools.md) {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.
+2. Allow a user to [**Pool**](thorchain-finance/runepool.md) RUNE across liquidity pools,
 
 ## Developers
 
-Developers can create innovative products that integrate with THORChain, including wallets, exchanges, and various services, and monetise their efforts via [affiliate fees](https://dev.thorchain.org/concepts/fees.html?highlight=aff#affiliate-fee). Developers can earn up to 10% in affiliate fees for swaps and liquidity additions, which encompass savers deposits. Developers only need to focus on creating engaging front-end interfaces and attracting users.
+Developers can create innovative products that integrate with THORChain, including wallets, exchanges, and various services, monetising these efforts via [affiliate fees](https://dev.thorchain.org/concepts/fees.html?highlight=aff#affiliate-fee) (e.g., up to 10% in affiliate fees for swaps and liquidity additions). All that is needed is a focus on creating engaging front-end interfaces and attracting users.
 
-See the [Dedicated Developer Documentation](https://dev.thorchain.org/)and quick start guides for [Swapping](https://dev.thorchain.org/swap-guide/quickstart-guide.html), [Savers](https://dev.thorchain.org/saving-guide/quickstart-guide.html) and [Lending](https://dev.thorchain.org/lending/quick-start-guide.html).
+Developers interested in integrating THORChain should read the [Dedicated Developer Documentation](https://dev.thorchain.org/), as well as the quick start guide for [Swapping](https://dev.thorchain.org/swap-guide/quickstart-guide.html).
 
 ## Innovations
 
-There a numerous innovations in the THORChain Protocol that were built with first principles to be decentralised, resistant to capture and as sustainable as possible:
+&#x20;All created with the first principles of being decentralized, resistant to capture, as sustainable as possible, there are many novel innovations embedded within the THORChain Protocol:
 
-1. **Capped Proof Of Bond** validator selection keeps the network decentralised and Nakamoto Coefficient high.
-2. **3-Day Validator Churning** stops validator stagnation, proves spendability of funds and upgrades the network with minimal governance.
-3. **Asynchronous Network Upgrades** allows validators to upgrade to a new protocol version in their own time, with the network upgrading without ever breaking consensus.
-4. **Chain-agnostic Bifrost Protocol** handles UTXO, EVM, BFT and Cryptonote chain connections with minimal core-logic nuances.
-5. **Incentive Pendulum** streams rewards to Validators and Liquidity Providers to target a Network Security ratio that always keeps funds secured.
-6. **Continuous Liquidity Pools** that allows single-sided liquidity provision and uses liquidity-sensitive fees to resist price attacks.
-7. **Swap Queue** that orders swaps based on price impact in each block, which stops sandwich attacks and most other forms of Miner Extractable Value (MEV).
-8. **Liquidity Synths** to enable fast low-fee swaps across L1 pools and power single-sided Savers. Synths are a hybrid collaterised-pegged asset design that contribute to liquidity.
-9. **Derived Asset Collateral** to enable L1 lending, using the RUNE asset to underwrite the liability. This enables no interest, no liquidation, no expiry loans.
+1. **Capped Proof Of Bond**: Validator selection keeps the network decentralised and [Nakamoto Coefficient](https://nakaflow.io/) high
+2. **3-Day Validator Churning**: eliminates validator stagnation, proves spendability of funds, and upgrades the network—all with minimal governance
+3. **Asynchronous Network Upgrades**: allows validators to upgrade to a new protocol version in their own time; network upgrades occur without ever breaking consensus
+4. **Chain-agnostic Bifrost Protocol**: handles UTXO, EVM, BFT and Cryptonote chain connections with minimal core-logic nuances
+5. **Incentive Pendulum**: streams rewards to Validators and Liquidity Providers to target a Network Security ratio that ensures funds are always secured
+6. **Continuous Liquidity Pools**: allow single-sided liquidity provision, use liquidity-sensitive or "slip-based" fees to resist price attacks
+7. **Swap Queue**: orders swaps based on price impact in each block, stopping sandwich attacks and most other forms of Miner Extractable Value (MEV).
 
 ## 3-Pillars of THORChain: Security, Liquidity, Volume
 
-THORChain contributors work towards three goals:
+THORChain contributors work only towards three goals:
 
-1. Improve the **Security** of the network, via either **Functional** (Solvency Checker, Node Pause, TxOut Throttler), **Procedural** (THORSec, Stagenet testing, PR reviews) or **Economic** (RUNE in the bond, or value of the $RUNE in the bond) Security.
-2. Improve the **Liquidity** of the network, via Total Value Locked (TVL), or better UX around providing liquidity (Savers).
-3. Improve the **Volume** of the network, via Swap UX (Synths, Order Books), or wallet Integrations (Quotes Endpoint, Dev UX, Business Development)
+1. **Security**: Perpetually improve the security of the network, via either **Functional Security—**&#x65;.g., Solvency Checker, Node Pause, TxOut Throttler; **Procedural Security**—e.g., THORSec, Stagenet testing, PR reviews; or **Economic Security**—e.g., bonded RUNE value
+2. **Liquidity**: Perpetually increase the liquidity of the network by incentivizing users to deposit into liquidity pools, thereby increasing the network's Total Value Locked (TVL)
+3. **Volume**: Improve the volume of the network via swap UX and wallet integrations (Quotes Endpoint, Dev UX, BD)
 
 You can learn how THORChain works here:
 
@@ -55,9 +51,9 @@ You can learn how THORChain works here:
 
 ## THORNodes
 
-THORNodes service the THORChain network, of which there is intended to be initially 100, but can scale to 250+. The design goal of THORChain is such that anyone can join the network with the required funds (permissionless) and be anonymous, yet still be secure. THORChain takes this a step further by having a high churn schedule, kicking out nodes continuously. This high-churn network ensures that it is censorship-resistant, evades capture and resists centralisation.
+THORNodes are anonymous individuals who bond their RUNE to the network in order to provide validation services. As a fully permissionless network, THORChain allows anyone with the required funds to do this—all while maintaining user security. To further elevate network security, THORChain maintains a high churn schedule for these validators, every three days kicking out the oldest, slowest, and lowest bonded. This high-churn model ensures that THORChain remains resistant to centralization, capture, and censorship.
 
-Each THORNode is comprised of several independent servers in a cluster, which run full-nodes for each connected chain.
+Each individual THORNode is comprised of several independent servers in a cluster, which run full-nodes for each connected chain. Initially intended to max out capacity at 100 nodes, the protocol is now able scale to 250+ nodes.
 
 {% content-ref url="understanding-thorchain/roles/node-operators.md" %}
 [node-operators.md](understanding-thorchain/roles/node-operators.md)
@@ -65,4 +61,4 @@ Each THORNode is comprised of several independent servers in a cluster, which ru
 
 ## CONTRIBUTING
 
-THORChain is a public project. If you want to join the community or work on THORChain Core join the [Dev Discord](https://discord.gg/7RRmc35UEG).
+THORChain is an open-source, public project. If you want to join the community or work on THORChain Core, please do join the [Dev Discord](https://discord.gg/7RRmc35UEG).
