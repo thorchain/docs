@@ -54,7 +54,7 @@ a. Churn Gas Reimbursements: Covers migration gas costs during vault churns. The
 b. Non-Churn Gas Reimbursements: Reimburses gas costs for external-chain transactions (e.g., user-initiated outbound transactions). Over time, the total outbound fees collected for a given coin (including adjustments for surplus) are designed to equal the total gas reimbursements for that coin, which include both user-initiated transactions and churn migration costs.
 This reimbursement mechanism ensures that inflows from outbound fees balance the Reserve's gas reimbursement outflows on average, maintaining sustainability without accumulating an ongoing surplus.
 2. Reserve Adding to POL: Occurs when RUNEPool withdrawals can’t cover POL requirements or when the POL position requires an increase that RUNEPool cannot fully support.
-3. Block Rewards: Paid out to incentivise node operators and liquidity providers. This is the most significant ongoing expense.
+3. Block Rewards: Paid out to incentivise node operators and liquidity providers.
 
 
 ###  Additional Points
