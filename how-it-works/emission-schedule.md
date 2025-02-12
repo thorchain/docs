@@ -42,7 +42,7 @@ The emission curve is designed to start at around 30% APR and target 2% after 10
 1. Network Gas Fee: The Native THORChain transaction fee (0.02 RUNE) applies to transactions made on the THORChain blockchain for assets such as RUNE, Synthetic Assets, and Secure Assets. This fee represents the gas cost for processing transactions on the THORChain blockchain and is charged independently of any outbound transactions. Unlike outbound fees, which are applied to external-chain transactions, the Network Gas Fee only applies to transactions made on the THORChain blockchain itself.
 2. Outbound Fees: Fees collected from all outbound transactions to users, which vary depending on the asset type:
 a. Native Outbound Fee: A fixed 0.02 RUNE is charged on RUNE and other native asset outbound transactions. This is the THORChain Network Gas Fee covering the gas costs for processing the outbound transaction on the THORChain blockchain and not an additional outbound fee.
-b. Layer 1 Outbound Fee: For external-chain assets (e.g., Bitcoin, Ethereum), this fee bundles the external-chain gas cost, pool swap fee, and THORChain network fee into a single charge. The overall fee is determined by the L1 gas rate and the `dynamic_multiplier_basis_points`(https://thornode.ninerealms.com/thorchain/outbound_fees) for the respective chain.
+b. Layer 1 Outbound Fee: For external-chain assets (e.g., Bitcoin, Ethereum), this fee bundles the external-chain gas cost, gas pool swap fee, and THORChain network fee into a single charge. The overall fee is determined by the L1 gas rate and the `dynamic_multiplier_basis_points`(https://thornode.ninerealms.com/thorchain/outbound_fees) for the respective chain.
 3. Withdrawal of Reserve POL: Occurs when a RUNEPool addition replaces Reserve-backed POL or when a POL requirement is reduced.
 4. Slashing Income: Derived from node bond slashes, particularly for failures during keygen or other operational breaches.
 5. Staged Pool Costs: Deduction from the stage pool to cover churn-related costs for staged pools. These costs are determined by a Mimir-adjustable network variable `StagedPoolCost`.
@@ -50,9 +50,9 @@ b. Layer 1 Outbound Fee: For external-chain assets (e.g., Bitcoin, Ethereum), th
 ### Reserve Outflows
 
 1. Gas Reimbursement:
-a. Churn Gas Reimbursements: Covers migration gas costs during vault churns. These costs are funded by surplus gas collected from prior transactions. When the Reserve pays for migrate gas costs, it depletes the surplus RUNE amounts associated with those coins and slightly raises outbound fees for those coins in response.
+a. Churn Gas Reimbursements: Covers migration gas costs during vault churns. These costs are reimbursed by the Reserve and factored into the ongoing adjustments of outbound fees to maintain a balance.
 b. Non-Churn Gas Reimbursements: Reimburses gas costs for external-chain transactions (e.g., user-initiated outbound transactions). Over time, the total outbound fees collected for a given coin (including adjustments for surplus) are designed to equal the total gas reimbursements for that coin, which include both user-initiated transactions and churn migration costs.
-Together, these mechanisms ensure that inflows from outbound fees balance the Reserve's gas reimbursement outflows on average, maintaining sustainability without accumulating an ongoing surplus.
+This reimbursement mechanism ensures that inflows from outbound fees balance the Reserve's gas reimbursement outflows on average, maintaining sustainability without accumulating an ongoing surplus.
 2. Reserve Adding to POL: Occurs when RUNEPool withdrawals can’t cover POL requirements or when the POL position requires an increase that RUNEPool cannot fully support.
 3. Block Rewards: Paid out to incentivise node operators and liquidity providers. This is the most significant ongoing expense.
 
