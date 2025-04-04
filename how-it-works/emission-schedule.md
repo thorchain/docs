@@ -8,9 +8,9 @@ description: >-
 
 ## Reserve
 
-There are a maximum of 500m RUNE. All 100% was created at genesis and distributed via different mechanisms:
+There are a maximum of 500M RUNE. All 100% was created at genesis and distributed via different mechanisms:
 
-- In return for capital: 5% (SEED) and 16% (IDO) was sold for capital to start the network and give it value. They took on risk to support the network.
+- In return for capital: 5% (SEED) and 16% (IDO) were sold for capital to start the network and give it value. They took on risk to support the network.
 - In return for time and effort: 10% was allocated to a group of devs who worked since 2018. They took on risk to deliver the network.
 - In return for bootstrap participation: 24% was given to users who participated in the bootstrapping of the network.
 - In return for through-life participation: 44% has been placed in the Protocol Reserve to pay out to Nodes and LPs for the next 10+ years.
@@ -35,7 +35,7 @@ The exact distribution between node operators and liquidity providers (and there
 
 The emission curve is designed to start at around 30% APR and target 2% after 10 years. At that point, the majority of the revenue will come from fees.
 
-Note: The [emssision curve](https://dev.thorchain.org/mimir.html#economics) is currently set to 10, mearning block rewards are next to 0 per block. 
+Note: The [emission curve](https://dev.thorchain.org/mimir.html#economics) is currently set to 10, meaning block rewards are next to 0 per block. 
 
 ## Reserve Outflows and Inflows
 
@@ -43,11 +43,11 @@ Note: The [emssision curve](https://dev.thorchain.org/mimir.html#economics) is c
 
 1. Native Transaction Fee: The Native THORChain transaction fee (0.02 RUNE) applies to transactions made on the THORChain blockchain for assets such as RUNE, Synthetic Assets, and Secure Assets. This fee represents the cost for processing transactions on the THORChain blockchain and is charged independently of any outbound transactions. Unlike outbound fees, which are applied to external-chain transactions, the Native Transaction Fee only applies to transactions made on the THORChain blockchain itself.
 2. Outbound Fees: Fees collected from all outbound transactions to users, which vary depending on the asset type:
-- Native Outbound Fee: A fixed 0.02 RUNE is charged on RUNE and other native asset outbound transactions. This is the THORChain Network Gas Fee covering the gas costs for processing the outbound transaction on the THORChain blockchain and not an additional outbound fee.
+- Native Outbound Transaction Fee: A fixed 0.02 RUNE is charged on RUNE and other native asset outbound transactions. This is the THORChain network native transaction fee covering the costs for processing the native outbound transaction on the THORChain blockchain and not an additional outbound fee.
 - Layer 1 Outbound Fee: For external-chain assets (e.g., Bitcoin, Ethereum), this fee bundles the external-chain gas cost, gas pool swap fee, and THORChain network fee into a single charge. The overall fee is determined by the L1 gas rate and the [`dynamic_multiplier_basis_points`](https://thornode.ninerealms.com/thorchain/outbound_fees) for the respective chain.
 3. Withdrawal of Reserve POL: Occurs when a RUNEPool addition replaces Reserve-backed POL or when a POL requirement is reduced.
 4. Slashing Income: Derived from node bond slashes, particularly for failures during keygen or other operational breaches.
-5. Staged Pool Costs: Deduction from the stage pool to cover churn-related costs for staged pools. These costs are determined by a Mimir-adjustable network variable [`StagedPoolCost`](https://dev.thorchain.org/mimir.html#economics).
+5. Staged Pool Costs: Deduction from the stage pool to cover churn-related costs for the staged pools. These costs are determined by a Mimir-adjustable network variable [`StagedPoolCost`](https://dev.thorchain.org/mimir.html#economics).
 
 ### Reserve Outflows
 
