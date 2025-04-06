@@ -33,7 +33,7 @@ THORNode information can be viewed at the following dashboards:
 1. [thorchain.network](https://thorchain.network/nodes) - Comprehensive THORNode dashboard
 2. [thorchain.net](https://thorchain.net/nodes) - THORNode information and network statistics
 3. [runescan.io](https://runescan.io/nodes) - THORNode information within the block explorer
-4. [thorcharts.org ](https://thorcharts.org/thorchain\_earnings\_distribution)- Earning distribution and other historical data
+4. [thorcharts.org ](https://thorcharts.org/thorchain_earnings_distribution)- Earning distribution and other historical data
 
 ## Skillsets
 
@@ -63,8 +63,6 @@ You can create a bare metal node with your own hardware or use the the cluster l
 {% content-ref url="../kubernetes/" %}
 [kubernetes](../kubernetes/)
 {% endcontent-ref %}
-
-{% embed url="https://github.com/AutoStake-com/thorchain-deploy" %}
 
 Once created, follow the [Deploying](../deploying.md), [Joining](../joining.md) and [Managing](../managing.md) pages.
 
