@@ -4,9 +4,11 @@ description: Node Operators
 
 # Node Operators
 
-## Overview
+## THORNodes Overview
 
-THORNodes service the THORChain network, of which there is intended to be initially 120. Each THORNode is comprised of several independent servers. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
+THORNodes support the THORChain network. While the initial design target is 100 nodes, the network can scale to over 250+. The design goal of THORChain is such that anyone can join the network with the required funds (permissionless) and be anonymous, yet still be secure. THORChain takes this a step further by having a high churn schedule, kicking out nodes continuously. This high-churn network ensures that it is censorship-resistant, evades capture and resists centralisation.
+
+Each THORNode is comprised of several independent servers in a cluster, which run full-nodes for each connected chain. All THORNodes communicate and operate in cooperation to create a cross-chain swapping network.
 
 {% content-ref url="../../thornodes/overview/" %}
 [overview](../../thornodes/overview/)

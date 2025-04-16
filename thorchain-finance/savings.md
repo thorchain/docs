@@ -4,6 +4,12 @@ description: THORFi Savings - Single-sided asset exposure using Synthetics
 
 # Savers
 
+##
+
+{% hint style="warning" %}
+Since 04 Jan 2025, the withdrawal of Savers has been disabled. See [this article](https://medium.com/thorchain/thorfi-unwind-96b46dff72c0) for more information.
+{% endhint %}
+
 ## Overview
 
 Users can gain yield with single sided asset exposure using [Synthetics](synthetic-asset-model.md). See the PR [here](https://gitlab.com/thorchain/thornode/-/issues/1342) and article [here](https://medium.com/thorchain/thorchain-savers-vaults-fc3f086b4057).
@@ -17,20 +23,21 @@ Savers take on significantly less risk than an LP; therefore, they earn a propor
 Savers Yield is dynamic, depending on the system utilisation. The higher the synths utilisation in the pool, the lower the Savers Yield will be.
 
 Savers Yield is calculated as:
+
 $$
 saversYield = LPYield * (MaxSynthsForSaversYield - SynthsPerPool) * \frac{SynthYieldBasisPoints}{10000}
 $$
 
-- MaxSynthsForSaversYield = 60%, set by [MaxSynthsForSaversYield](https://dev.thorchain.org/mimir.html)
-- SynthYieldBasisPoints = 80%, set by [SynthYieldBasisPoints](https://dev.thorchain.org/mimir.html)
-- Synths Per Pool = [Synth Utilisation in the pool](./synthetic-asset-model.md)
+* MaxSynthsForSaversYield = 60%, set by [MaxSynthsForSaversYield](https://dev.thorchain.org/mimir.html)
+* SynthYieldBasisPoints = 80%, set by [SynthYieldBasisPoints](https://dev.thorchain.org/mimir.html)
+* Synths Per Pool = [Synth Utilisation in the pool](synthetic-asset-model.md)
 
 Every time a swap is made in the L1 pool, the fees and rewards that were meant to be added to the pool are divided against the Synth Yield Basis Points, then divided against the depth of the Savers' Vault vs. the Depth of the Pool (in terms of asset quantity), then paid directly into the vault.
 
 Every time a swap is made in the L1 pool, the fees & rewards that were meant to be added to the pool is divided against the SynthYieldBasisPoints, then divided against the depth of the Savers Vault vs the Depth of the Pool (in terms of asset qty), then paid directly into the vault:
 
 The code for that is here:\
-[https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_network\_current.go#L703](https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_network\_current.go#L703)
+[https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager\_network\_current.go#L703](https://gitlab.com/thorchain/thornode/-/blob/develop/x/thorchain/manager_network_current.go#L703)
 
 ### Withdrawing
 

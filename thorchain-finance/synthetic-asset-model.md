@@ -5,7 +5,8 @@ description: How THORChain enables synthetic assets with single asset exposure.
 # Synthetics
 
 {% hint style="warning" %}
-THORChain can not ensure security of wrapped assets, so does not wrap L1 assets to represent them. Instead it uses its liquidity to synthesise them, since liquidity is always 100% secured.
+Synthetic assets are no longer actively used within THORChain. \
+Since 04 Jan 2025, the withdrawal of Synthetics has been disabled. See [this article](https://medium.com/thorchain/thorfi-unwind-96b46dff72c0) for more information.
 {% endhint %}
 
 ## Synthetic Assets

@@ -12,8 +12,8 @@ description: Learn how THORChain Works
 
 ### Getting Started
 
-{% content-ref url="../understanding-thorchain/getting-started.md" %}
-[getting-started.md](../understanding-thorchain/getting-started.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ### Technical Info

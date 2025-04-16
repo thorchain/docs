@@ -1,8 +1,14 @@
+---
+description: Roles within THORChain
+---
+
 # Roles
 
-There are four key roles in the system:
+In the THORChain ecosystem, there are four key roles that network participants may play:
 
-1. **Liquidity providers** who add liquidity to pools and earn fees and rewards
-2. **Swappers** who use the liquidity to swap assets ad-hoc, paying fees
-3. **Traders** who monitor pools and rebalance continually, paying fees but with the intent to earn a profit
+1. **Liquidity providers**: these add liquidity to pools, earning fees for their temporary deposit
+2. **Swappers**: those users who use THORChain's liquidity to swap assets ad-hoc, paying fees for the service
+3. **Arbitrageurs**: expert traders who continually monitor and rebalance pools; still paying fees but with the intent to earn a profit
 4. **Node Operators** who provide a bond and are paid to secure the system.
+
+A single user may take on multiple roles simultaneously.

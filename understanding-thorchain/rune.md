@@ -4,6 +4,10 @@ description: An overview of the asset and its four key roles.
 
 # RUNE
 
+### What is RUNE?
+
+THORChain's native token is called [RUNE](rune.md), and it is carries a fundamental utility within each facet of THORChain's operational infrastructure, as well as the larger ecosystem. Specifically, it fills three key roles:
+
 ## Overview
 
 RUNE is the asset which powers the THORChain ecosystem and provides the economic incentives required to secure the network. RUNE has four key roles which are described below.
@@ -12,6 +16,20 @@ RUNE is the asset which powers the THORChain ecosystem and provides the economic
 2. Security (as a sybil-resistant mechanism, and a means for driving economic behaviour)
 3. Governance (signalling priority on-chain)
 4. Incentives (paying out rewards, charging fees, subsidising gas)
+
+### Governance
+
+**RUNE as a Settlement Asset**
+
+RUNE is the settlement asset for all liquidity pools, meaning that when a user pools their liquidity, a 1:1 ratio of RUNE:ASSET is required. This means the value of each native asset pool holds within it an equal value of RUNE. For example, a pool with $100,000 in BTC will necessarily hold $100,000 worth of RUNE. The reasoning for this is explained here[^1].
+
+**RUNE for Network Security**
+
+Node Operators must always have bonded twice as many RUNE as there is RUNE pooled. This ensures the protocol will remain solvent in perpetuity. In bonding this much capital, node operators are economically incentivised to work within the [network’s best interest](../thornodes/overview/#risk-of-running-a-node). Thus it through economic security that network security is achieved.
+
+**RUNE for Governance**
+
+By symmetrically adding liquidity to a staged pool, users vote for the pools they want to become active. The deepest pools (i.e. with the most liquidity) become active.
 
 {% hint style="info" %}
 An introduction to RUNE and its roles is [here](./#what-is-rune).
@@ -109,7 +127,9 @@ The 3:1 ratio is just the minimum or the deterministic value of RUNE.
 
 ## For more informaiton on RUNE see
 
-- [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
-- [Under the Hood: Rune Supply](https://thorchain-university.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
-- [Currnet Supply Data](https://dashboards.ninerealms.com/#lending)
-- [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
+* [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
+* [Under the Hood: Rune Supply](https://thorchain-university.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
+* [Currnet Supply Data](https://dashboards.ninerealms.com/#lending)
+* [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
+
+[^1]: hyperlink needed

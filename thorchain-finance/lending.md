@@ -4,8 +4,9 @@ description: THORFi Lending within THORChain
 
 # Lending
 
-{% hint style="success" %}
-Since Sept-2024, opening of new loans has been disabled as per Node consensus. Existing loans are unchanged and can still be repaid. A new lending design is expected to be launched on the upcoming THORChain AppLayer. 
+{% hint style="warning" %}
+Since Sept-2024, the opening of new loans has been disabled as per Node consensus.\
+Since 04 Jan 2025 closing of loans has been disabled. See [this article](https://medium.com/thorchain/thorfi-unwind-96b46dff72c0) for more information.
 {% endhint %}
 
 ## Overview
@@ -14,22 +15,22 @@ Lending allows users to deposit native collateral, and then create a debt at a c
 
 All loans have 0% interest, no liquidations, and no expiration. Since ADR 012 was implemented in Feb-2024, a flat 200% CR (or 50% Loan-to-Value, LTV) was implemented. Risk [is mitigated](lending.md#lending-controls) by:
 
-- Limits on collateral for the network and each pool
-- Slip-based fees when opening and closing loans
-- A circuit breaker on RUNE total supply
+* Limits on collateral for the network and each pool
+* Slip-based fees when opening and closing loans
+* A circuit breaker on RUNE total supply
 
 Lending allows users to:
 
-- Create a loan using native assets as collateral
-- Hold a loan without the risk of liquidation
-- Be short on USD and long on crypto assets such as Bitcoin
+* Create a loan using native assets as collateral
+* Hold a loan without the risk of liquidation
+* Be short on USD and long on crypto assets such as Bitcoin
 
 Lending benefits the protocol by:
 
-- Increased capital efficiency of the pools which increases system income and real yield.
-- Increased trading volume
-- Increased total bonded, allowing THORChain to scale.
-- Providing an attractive sink for capital
+* Increased capital efficiency of the pools which increases system income and real yield.
+* Increased trading volume
+* Increased total bonded, allowing THORChain to scale.
+* Providing an attractive sink for capital
 
 {% hint style="success" %}
 [ADR 011: THORFi Lending Feature](https://dev.thorchain.org/architecture/adr-011-lending.html) with full Lending details was released and approved by Node Operators.
@@ -226,18 +227,18 @@ $$
 
 This gives the following effect:
 
-- **100%:** Infinite
-- **99.99%:** 10,000
-- **99.9%:** 1,000
-- **99%:** 100
-- **98%:** 50
-- **95%:** 20 (20 streams means a $1m loan is 50BPS)
-- **90%:** 10
-- **80%:** 5
-- **70%:** 3
-- **60%:** 2
-- **50%:** 2
-- **0-50%:** 1 (e.g., no streaming)
+* **100%:** Infinite
+* **99.99%:** 10,000
+* **99.9%:** 1,000
+* **99%:** 100
+* **98%:** 50
+* **95%:** 20 (20 streams means a $1m loan is 50BPS)
+* **90%:** 10
+* **80%:** 5
+* **70%:** 3
+* **60%:** 2
+* **50%:** 2
+* **0-50%:** 1 (e.g., no streaming)
 
 This limits the streaming swap for Lending for open and closing loans during highly volatile times.
 
@@ -255,34 +256,34 @@ Lending controls are in place to address these concerns.
 
 Block Science reviewed the lending mechanisms exhaustively. The Output of their research includes:
 
-- [Risk Report](https://hackmd.io/@blockscience/H1Q-erh_n)
-- [Simulation Summary](https://hackmd.io/R_ksPSG0T6mtjsEE7U9q-w)
-- [CadCad simulation framework](https://gitlab.com/thorchain/misc/cadcad-thorchain/-/tree/main/documentation)
+* [Risk Report](https://hackmd.io/@blockscience/H1Q-erh_n)
+* [Simulation Summary](https://hackmd.io/R_ksPSG0T6mtjsEE7U9q-w)
+* [CadCad simulation framework](https://gitlab.com/thorchain/misc/cadcad-thorchain/-/tree/main/documentation)
 
 ## Lending Resources
 
 ### FAQs
 
-- [General Lending FAQs](../frequently-asked-questions/lending.md#general-questions)
-- [In depth FAQs](../frequently-asked-questions/lending.md#in-depth-questions)
+* [General Lending FAQs](../frequently-asked-questions/lending.md#general-questions)
+* [In depth FAQs](../frequently-asked-questions/lending.md#in-depth-questions)
 
 ### Explainer Article
 
-- [Lending 101 by LP University](https://crypto-university.medium.com/under-the-hood-lending-101-f934e1c22792)
+* [Lending 101 by LP University](https://crypto-university.medium.com/under-the-hood-lending-101-f934e1c22792)
 
 ### Explainer Videos
 
-- [How Lending Works by GrassRoots Crypto](https://youtu.be/AaqHG00RJks)
-- [Lending with Numbers by GrassRoots Crypto](https://youtu.be/PVpYU5kCOHI)
-- [Lending Risks & Concerns by GrassRoots Crypto](https://www.youtube.com/watch?v=glY_RVYdsfM)
+* [How Lending Works by GrassRoots Crypto](https://youtu.be/AaqHG00RJks)
+* [Lending with Numbers by GrassRoots Crypto](https://youtu.be/PVpYU5kCOHI)
+* [Lending Risks & Concerns by GrassRoots Crypto](https://www.youtube.com/watch?v=glY_RVYdsfM)
 
 ### Dashboard
 
-- [Lending Health Dashboard by NineRealms](https://dashboards.ninerealms.com/#lending)
-- [Lending Dashboard by banbannard](https://flipsidecrypto.xyz/banbannard/thorchain-lending-fOAKej)
+* [Lending Health Dashboard by NineRealms](https://dashboards.ninerealms.com/#lending)
+* [Lending Dashboard by banbannard](https://flipsidecrypto.xyz/banbannard/thorchain-lending-fOAKej)
 
 ### Design Documents
 
-- [ADR 011: THORFi Lending Feature](https://dev.thorchain.org/architecture/adr-011-lending.html)
-- [ADR 012: THORFi Lending Scaling](https://dev.thorchain.org/architecture/adr-012-scale-lending.html)
-- [Original Design](https://gitlab.com/thorchain/thornode/-/issues/1412)
+* [ADR 011: THORFi Lending Feature](https://dev.thorchain.org/architecture/adr-011-lending.html)
+* [ADR 012: THORFi Lending Scaling](https://dev.thorchain.org/architecture/adr-012-scale-lending.html)
+* [Original Design](https://gitlab.com/thorchain/thornode/-/issues/1412)

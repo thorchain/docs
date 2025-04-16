@@ -1,12 +1,11 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Understanding THORChain](understanding-thorchain/README.md)
-  * [Getting Started](understanding-thorchain/getting-started.md)
+* [Using THORChain](understanding-thorchain/README.md)
   * [Roles](understanding-thorchain/roles/README.md)
-    * [Liquidity Providers](understanding-thorchain/roles/liquidity-providers.md)
+    * [Liquidity Providers (LPs)](understanding-thorchain/roles/liquidity-providers.md)
     * [Swappers](understanding-thorchain/roles/swapping.md)
-    * [Traders](understanding-thorchain/roles/trading.md)
+    * [Arbitrageurs](understanding-thorchain/roles/trading.md)
     * [Node Operators](understanding-thorchain/roles/node-operators.md)
   * [RUNE](understanding-thorchain/rune.md)
 * [How It Works](how-it-works/README.md)
@@ -36,13 +35,13 @@
 ## THORChain Finance
 
 * [Liquidity](thorchain-finance/continuous-liquidity-pools.md)
-* [Synthetics](thorchain-finance/synthetic-asset-model.md)
 * [Trade Assets](thorchain-finance/trade-assets.md)
 * [Secured Assets](thorchain-finance/secured-assets.md)
-* [Savers](thorchain-finance/savings.md)
-* [Lending](thorchain-finance/lending.md)
 * [TOR](thorchain-finance/tor.md)
 * [RUNEPool](thorchain-finance/runepool.md)
+* [Synthetics](thorchain-finance/synthetic-asset-model.md)
+* [Savers](thorchain-finance/savings.md)
+* [Lending](thorchain-finance/lending.md)
 
 ## THORNodes
 
@@ -79,5 +78,6 @@
 ***
 
 * [Website](https://thorchain.org/)
+* [Community Discord](https://discord.com/invite/tcuniversity)
 * [Community Telegram](https://t.me/thorchain_org)
-* [Dev Discord](https://discord.gg/7RRmc35UEG)
+* [Developer Discord](https://discord.gg/7RRmc35UEG)

@@ -46,12 +46,39 @@ The THORChain state machine handles this swap in one go, so the user never handl
 
 See [this example](swapping.md#example) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 
+
+
+### **How Swapping Works**
+
+There are two modes possible for THORChain's swap mechanism: A single swap, and a double swap.
+
+**Single Swap**&#x20;
+
+A single swap occurs when a user swaps some native asset for an equivalent value of RUNE, or vice versa.&#x20;
+
+Example: RUNE<>BTC swap.&#x20;
+
+1. User RUNE —> sent into THORChain. Inbound gas paid in RUNE
+2. BTC —> sent out from one of THORChain’s vaults to user wallet. Outbound gas is paid in BTC.
+
+**Double Swap**
+
+A double swap occurs when a user swaps some native asset for some other native asset (that is not RUNE). While the user only sees one transaction, there is actually an additional one that occurs internally within THORChain.
+
+Example: BTC<>ETH swap
+
+1. User BTC —>THORChain. Inbound gas paid in BTC
+2. Once the BTC is received, RUNE in BTC pool —> sent to ETH Pool
+3. ETH —> sent out from one of THORChain’s vaults to user wallet.  Outbound Fee is paid in ETH
+
+Step 2 is the internal swap from BTC:RUNE —> RUNE:ETH. See [Swappers](swapping.md#how-swaps-work) for more information on how swapping works.
+
 {% content-ref url="../../thorchain-finance/continuous-liquidity-pools.md" %}
 [continuous-liquidity-pools.md](../../thorchain-finance/continuous-liquidity-pools.md)
 {% endcontent-ref %}
 
-{% content-ref url="../getting-started.md" %}
-[getting-started.md](../getting-started.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ### Calculating Swap Output
