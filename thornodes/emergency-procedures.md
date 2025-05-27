@@ -4,70 +4,105 @@ description: This page describes how to react in a network-wide emergency (funds
 
 # 🛑 Emergency Procedures
 
-THORChain is a distributed network. When the network is under attack or a funds-at-risk bug is discovered, Node Operators should react quickly to secure and defend.
+This document outlines the procedures for Node Operators to respond to network-wide emergencies, such as funds-at-risk scenarios or critical network attacks, on THORChain’s Mainnet. THORChain is a decentralized, permissionless cross-chain liquidity protocol, and Node Operators play a critical role in maintaining network security and integrity. These procedures ensure rapid, coordinated, and secure responses while preserving the network’s impartiality and resistance to capture.
 
-{% hint style="warning" %}
-Even during emergencies, Node Operators should refrain from doxxing themselves. Staying pseudo-anonymous is critical to ensuring the network is impartial, neutral and resistant to capture.
-{% endhint %}
+See the Additional Resources for more in-depth information and guides.
+
+### Key Principles
+
+* **Rapid Response**: Node Operators must act swiftly to secure the network when a funds-at-risk bug or attack is detected.
+* **Pseudo-Anonymity**: Operators should avoid revealing personal information, even during emergencies, to maintain network neutrality and security. Use tools like make relay to communicate anonymously via the THORChain Dev Discord.
+* **Decentralized Governance**: The removal of admin mimir means network decisions, such as halts or parameter changes, are now managed through [node voting](overview/#node-voting) or Mimir overrides initiated by nodes.
+* **Mainnet Context**: THORChain operates on Mainnet, with robust mechanisms like node churn, Threshold Signature Scheme (TSS), and Bifrost for cross-chain security.
 
 ## Reporting a Bug
 
-There is a formal [Bounty Program](https://immunefi.com/bounty/thorchain/) in place for reporting bugs. If you have discovered a bug, you should immediately DM the team or any other admins and/or report via the bounty program. If the bug is deemed to be serious/criticial, you will be paid a bounty commensurate to the severity of the issue. Reports need to include:
+If you discover a bug that poses a risk to funds or network stability, follow these steps:
 
-1. Description of the bug
-2. Steps to reproduce
-3. If funds are at risk
+1. **Immediate Notification**: Directly message the THORChain team or admins via the Dev Discord (tag @thorsec if needed) or other secure channels. Alternatively, submit the bug through the formal [Bounty Program](https://gitlab.com/thorchain/thornode/-/blob/develop/bugbounty.md) for evaluation.
+2. **Bug Report Details**: Include the following in your report:
+   * A clear description of the bug or vulnerability.
+   * Steps to reproduce the issue, if applicable.
+   * Potential impact (e.g., funds at risk, network disruption).
+   * Any relevant logs or evidence from your THORNode.
+3. **Bounty Program**: If the bug is verified as critical, you may be eligible for a bounty proportional to its severity. Do not disclose the bug publicly until it is resolved to prevent exploitation.
 
-## Admin Procedures
+## Emergency Classifications and Responses
 
-Once the bug has been verified, admin should make a decision on the level of response, including any mimir over-rides and announcements:
+Emergencies are classified based on severity, with corresponding actions for Node Operators:
 
-### Critical - Funds At Risk
+#### Critical - Funds At Risk
 
-* [ ] **Determine which level of halt is required:**
-* [ ] Can a trader siphon out funds by swapping? If yes, `haltTrading` using mimir
-* [ ] Can yggdrasil vaults siphon out funds? If yes, `haltInternalTx` using mimir
-* [ ] Can funds be siphoned out from any vault? If yes, `haltOutboundTx` using mimir
-* [ ] **Determine what type of announcement is required**:
-* [ ] Does the network need coordination from nodes? If yes, announce, with directions.
-* [ ] Can the team immediately apply a bug patch with no coordination? If yes, simply announce the halt.
-* [ ] **Generate a bug fix**
-* [ ] Is there KVStore migration required? If yes, will require migration testing
-* [ ] Is there Bifrost/TSS changes? If yes, will require network testing
-* [ ] **Test on Mocknet**
-* [ ] **Release for Chaosnet**
+* **Description**: A vulnerability or attack threatens the security of funds in liquidity pools or vaults.
+* **Actions**:
+  1. **Initiate Network Halt**: If a critical threat is confirmed, Node Operators can propose a network halt using the `make halt` command. This pauses the entire network to allow time for investigation and corrective actions such as voting to pause specific chain operations (e.g., [halting signing](https://dev.thorchain.org/concepts/network-halts.html)).
+  2. **Node Voting**: Propose and vote on emergency actions, such as Mimir overrides, to adjust network parameters. This will be discussed in the Dev Discord `#mainnet channel` channel. Voting requires consensus among active nodes.
+     * Use `thornode tx thorchain mimir <key> <value> --from <node-address>` to submit Mimir changes.
+  3. **Monitor and Communicate**: Use monitoring tools like [Vǫrðr](https://github.com/sourcapital/vordr) to check chain health and sync status. Relay critical updates anonymously via `make relay` to the Dev Discord `#mainnet channel`.
+  4. **Coordinate with Team**: Work with the core team and other operators to verify the threat and deploy patches. Avoid public disclosure to prevent panic or exploitation.
 
-### Major - Funds Not At Risk, but Network At Risk (disruption)
+#### Major - Network Disruption (Funds Not At Risk)
 
-* [ ] **Determine what type of announcement is required**:
-* [ ] Does the network need coordination from nodes? If yes, announce, with directions.
-* [ ] Can the team immediately apply a bug patch with no coordination? If yes, consider delaying announcement until bug fix ready.
-* [ ] **Generate a bug fix**
-* [ ] Is there KVStore migration required? If yes, will require migration testing
-* [ ] Is there Bifrost/TSS changes? If yes, will require network testing
-* [ ] **Test on Mocknet**
-* [ ] **Release for Chaosnet**
+* **Description**: A bug or attack disrupts network operations (e.g., chain sync issues, high slash points) but does not directly threaten funds.
+* **Actions**:
+  1. **Assess Node Status**: Check your node’s health using make status to ensure it is synced and operational. Review slash points and chain sync status via Grafana or Prometheus dashboards.
+  2. **Vote on Parameters**: If required, Propose Mimir changes to adjust network parameters (e.g., reduce `ChurnInterval` to stabilize the network).
+  3. **Restart Services**: If your node is affected, restart services using `make restart` or reset the node with make reset for unrecoverable issues (note: this is destructive and resets chain data).
+  4. **Monitor Logs**: Access logs via Grafana’s Loki interface to diagnose issues. Select the relevant service (e.g., thornode/bifrost) in the Log browser.
 
-### Minor - Funds Not At Risk, Network Not At Risk
+#### Minor - No Funds or Network At Risk
 
-* [ ] **Generate a bug fix**
-* [ ] Is there KVStore migration required? If yes, will require migration testing
-* [ ] Is there Bifrost/TSS changes? If yes, will require network testing
-* [ ] **Deploy to Testnet**
-* [ ] **Release for Chaosnet**
+* **Description**: Non-critical issues, such as minor performance degradation or isolated node failures.
+* **Actions**:
+  1. **Diagnose Locally**: Check your node’s metrics (CPU, memory, disk) using Prometheus or Kubernetes dashboards.
+  2. **Apply Updates**: Deploy patches or updates to your THORNode services using Helm charts from the node-launcher repository.
+  3. **Report**: Inform the team via Discord or the Bounty Program for tracking and future improvements. Alternatively, raise an issue within the THORChain [Thornode ](https://gitlab.com/thorchain/thornode)or [NodeLauncher ](https://gitlab.com/thorchain/devops/node-launcher)repositories.&#x20;
+
+## Network Halts
+
+THORChain supports network halts to pause operations during critical emergencies:
+
+* **Initiating a Halt**: [Node voting](overview/#node-voting) to pause signing for a specific chain (e.g., BTC, ETH). This prevents outbound transactions until the issue is resolved. All Halt controls are [listed here](https://dev.thorchain.org/concepts/network-halts.html).
+* **Voting on Halts**: Nodes can vote to approve or extend halts via the node voting mechanism. A supermajority is required for consensus.
+* **Resuming Operations**: Once the threat is mitigated, nodes vote to lift the halt using Mimir overrides or resume normal operations.
+
+## Monitoring and Recovery
+
+* **Monitoring Tools**: Use [Vǫrðr](https://github.com/sourcapital/vordr) for real-time chain health and sync status monitoring. Deploy Prometheus and Grafana for detailed metrics on node performance and network status.
+* **Backups**: Ensure your THORNode’s persistent volumes are backed up via your Kubernetes provider (e.g., AWS, Google Cloud or bare-metal). Regularly verify backups to protect against data loss.
+* **Recovery**: In case of node failure, restore from backups or resync your node. Avoid using `make reset or hard-reset-thornodes` unless absolutely necessary, as it deletes chain data.&#x20;
 
 ## Network Upgrades
 
-The network cannot upgrade until 100% of active nodes are on the updated version. This can be accelerated:
+Network upgrades are critical for patching vulnerabilities or improving protocol performance during emergencies. All active nodes must run the updated version for the network to proceed with an upgrade. The process can be managed in three ways:
 
-1. Naturally, by allowing the network to churn out old nodes
-2. Assertive, by waiting until a super-majority has upgraded (demonstrating acceptance of the upgrade) then banning old nodes
-3. Forced, by hard-forking out old nodes.
+* **Natural Upgrade**: Versions are proposed in the Dev Discord, nodes update their software, and the network naturally churns out nodes running older versions over several days via the regular churn process.
+* **Assertive Upgrade**: Once a supermajority of nodes has upgraded, demonstrating acceptance, operators can vote to ban nodes running outdated versions. Banned nodes are churned out, removed from the Threshold Signature Scheme (TSS), and ejected from the consensus set. These nodes must fully leave, destroy their setup, and redeploy a new node to rejoin.
+  * Use node voting (Node Voting) to propose and approve banning outdated nodes.
+* **Forced Upgrade (Hard Fork)**: In time-critical scenarios, a hard fork may be initiated to exclude old nodes. This carries significant risks, such as consensus failures or network instability, and should be a last resort.
+  * Coordinate via the Dev Discord and use Alerting for THORNodes to monitor fork outcomes.
+* **Best Practices for Upgrades**:
+  * Deploy updates using Helm charts from the Node Launcher Repository.
+  * Ensure backups are current before upgrading, as described in Restore Validator Backup and THORNode Snapshot Recovery and Storage Management.
+  * Monitor node sync and health post-upgrade using Vǫrðr Monitoring and Prometheus dashboards.
+  * Verify multi-validator cluster stability if applicable, as outlined in Multi-Validator Cluster Setup.
 
-During a natural upgrade cycle, it may take several days to churn out old nodes. If the upgrade is time-critical, the network may elect to ban old nodes. Banning a node will cycle them to be churned, kick them from TSS and eject them from the consensus set. That node will never be able to churn in again, they will need to fully leave, destroy their node, and set up a new one. Hard-forking out old nodes is also a possibility, but comes with significant risk of consensus failures.
+## Best Practices
 
-## Network Recovery
+* **Stay Synced**: Ensure your node is fully synced with all connected chains (e.g., Bitcoin, Ethereum) before taking action. Unsynchronized nodes may accrue slash points.
+* **Secure Keys**: Protect your operator key and node mnemonic. Loss of the operator key results in loss of bond access, and loss of the validator key may brick your node.
+* **Regular Updates**: Keep your THORNode software and Helm charts up to date using the node-launcher repository.
+* **Community Coordination**: Engage with other operators and the core team via the Dev Discord or Community Telegram for real-time collaboration.
 
-The network will not be able to recover until the upgrade is complete, any mimir over-rides are removed, and TSS is re-synced. Additionally, there may be a backlog of transactions that will need to be processed. This may take some time. If external chain daemons were stopped, re-syncing times may also be a factor.
+## Additional Resources
 
-All wallets and frontends should monitor for any of the halts and automatically go into maintenance mode when invoked.
+* [Network Halts](https://dev.thorchain.org/concepts/network-halts.html)
+* [Alerting for THORNodes](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Alerting.md?ref_type=heads)
+* [Multi-Validator Cluster Setup](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Multi-Validator-Cluster.md?ref_type=heads)
+* [Restore Validator Backup](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Restore-Validator-Backup.md?ref_type=heads)
+* [THORNode Snapshot Recovery and Storage Management](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Thornode-Snapshot-Recovery-and-Storage-Management.md?ref_type=heads)
+* [Node Voting](overview/#node-voting)
+* [THORNode Stack](overview/thornode-stack.md)
+* [Vǫrðr Monitoring](https://github.com/sourcapital/vordr)
+* [Node Launcher Repository](https://gitlab.com/thorchain/devops/node-launcher) (For THORNode deployment)
+* [THORNode Repository](https://gitlab.com/thorchain/thornode) (For THORNode Sofware)

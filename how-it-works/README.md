@@ -4,16 +4,10 @@ description: Learn how THORChain Works
 
 # How It Works
 
-## High Level Overview
+## High-Level Overview
 
 {% content-ref url="../understanding-thorchain/" %}
 [understanding-thorchain](../understanding-thorchain/)
-{% endcontent-ref %}
-
-### Getting Started
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ### Technical Info
