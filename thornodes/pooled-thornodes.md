@@ -53,16 +53,16 @@ _The Operator is also added as a Bond Provider._
 
 #### **Removing a Bond Provider**
 
-While the node is churned out, A Node Operator can remove a Bond Provider using an UNBOND transaction with a modified memo:
+While the node is churned out and the vault has successfully migrated, a Node Operator can remove a Bond Provider using an UNBOND transaction with a modified memo:
 
-`UNBOND:<NodeAddress>:<Amount>:<BondProviderAddress>`
+`UNBOND:<NodeAddress>:<AmountToUnbond>:<BondProviderAddress>`
 
 * NodeAddress - THORNode address (prefixed by `thor`)
-* Amount - amount of Bond Provider's bond to refund
+* AmountToUnbond - Amount of Bond Provider's bond to refund
 * BondProviderAddress - Bond Provider address to refund/remove (prefixed by `thor`)
-* RUNE Tx Value - 0.02 minimum
+* Amount - Most UIs will require an 'amount' for the transaction, this must be 0 (A gas fee of 0.02 RUNE will still need to be paid for the transaction but the UI will handle this)
 
-_This command will refund the Bond Provider their bond and remove them from the Bond Provider list only if `Amount` constitutes all of the bond the Bond Provider is owed._
+_This command will refund the Bond Provider their bond and remove them from the Bond Provider list only if `Amount` constitutes all of the bond the Bond Provider is owed. 0 (ZERO) will work to remove the BP from the Whitelist Addresseses if they have already unbonded all their bond._
 
 #### Node Operator Fee
 
@@ -74,12 +74,12 @@ To set a Node Operator fee, send a deposit transaction with the following memo:
 
 Example: `BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun:thor1tfm4q8u57qzsznpvh02s8j483aga63cl02k6jt:2000`
 
-To adjust the Fee, The no operators can send:\
-`BOND:<node address>::<operator fee in basis pts>`
+To adjust the fee, the no operators can send:\
+`BOND:<NodeAddress>::<OperatorFeeInBasisPts>`
 
 **Example**: `BOND:thor1agftrgu74z84hef6dt6ykhe7cmjf3f8dcpkfun::4000` to see the fee to 40%.
 
-Fees can range from 100 to 9900 basis pts. Setting 10000 causes all rewards to be to the node operator each churn. Setting it to 0 causes rewards to accrue to the bond.
+Fees can range from 0 to 10000 basis pts. Setting 10000 causes all rewards to be to the node operator each churn. Setting it to 0 causes rewards to accrue to the bond.
 
 See [here](joining.md#node-operator-fee) for more details.
 
@@ -98,16 +98,17 @@ Once whitelisted, a Bond Provider can Bond and Unbond from the node as normal.
 
 **Removing Bond:**
 
-`UNBOND:<NodeAddress>:<Amount>`
+`UNBOND:<NodeAddress>:<AmountToUnbond>`
 
 * NodeAddress - THORNode address (prefixed by `thor`)
-* Amount - Amount of RUNE to unbond
-* RUNE Tx Value - 0.02
+* AmountToUnbond - Amount of Bond Provider's bond to refund
+* Amount - Most UIs will require an 'amount' for the transaction, this must be 0 (A gas fee of 0.02 RUNE will still need to be paid for the transaction but the UI will handle this)
 
 {% hint style="info" %}
 **When you can add Bond**
 
 When the node is standby, active or not churning, bond amounts can be increased/decreased.\
+Bond can always be increased (whether Active or on Standby).
 You can tell the network is migrating if there are `retiring` Asgard Vaults.\
 [https://runescan.io/vaults](https://runescan.io/vaults)
 {% endhint %}
@@ -116,6 +117,6 @@ You can tell the network is migrating if there are `retiring` Asgard Vaults.\
 
 Operators and Providers all have a bond amount registered to the node. Operators can start at 0.00 bonded. This on-chain bond amount is summed to the total bond, and thus everyone has a fair share in the THORNode's principle + rewards.
 
-The Operator Fee is distributed to the Node Operator address from all RUNE rewards earned by a node after each churn.
+The Operator Fee is distributed to the Node Operator address from all RUNE rewards earned by a node after each churn. Bond Provider rewards are added to their Bond and auto-compounded.
 
 If an Operator LEAVES, all the bond is fairly distributed.
