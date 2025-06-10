@@ -6,12 +6,16 @@ description: This page describes how to react in a network-wide emergency (funds
 
 This document outlines the procedures for Node Operators to respond to network-wide emergencies, such as funds-at-risk scenarios or critical network attacks, on THORChain’s Mainnet. THORChain is a decentralized, permissionless cross-chain liquidity protocol, and Node Operators play a critical role in maintaining network security and integrity. These procedures ensure rapid, coordinated, and secure responses while preserving the network’s impartiality and resistance to capture.
 
+The overarching ethos for THORChain's security posture is "an abundance of caution". **Halt Earn, Halt Often!**
+
+`make pause` is the big red button that stops everything. Node Operators are supported by the community, developers and all stakeholders to `make pause` if there is any doubt. It is easily undone if incorrectly used (Eg: `make resume`)
+
 See the Additional Resources for more in-depth information and guides.
 
 ### Key Principles
 
 * **Rapid Response**: Node Operators must act swiftly to secure the network when a funds-at-risk bug or attack is detected.
-* **Pseudo-Anonymity**: Operators should avoid revealing personal information, even during emergencies, to maintain network neutrality and security. Use tools like make relay to communicate anonymously via the THORChain Dev Discord.
+* **Pseudo-Anonymity**: Operators should avoid revealing personal information, even during emergencies, to maintain network neutrality and security. Use tools like make relay to communicate anonymously via the THORChain Dev Discord. Alternatively, create a burner email and Discord account.
 * **Decentralized Governance**: The removal of admin mimir means network decisions, such as halts or parameter changes, are now managed through [node voting](overview/#node-voting) or Mimir overrides initiated by nodes.
 * **Mainnet Context**: THORChain operates on Mainnet, with robust mechanisms like node churn, Threshold Signature Scheme (TSS), and Bifrost for cross-chain security.
 
@@ -33,13 +37,13 @@ Emergencies are classified based on severity, with corresponding actions for Nod
 
 #### Critical - Funds At Risk
 
-* **Description**: A vulnerability or attack threatens the security of funds in liquidity pools or vaults.
+* **Description**: A vulnerability or attack threatens the security of funds in liquidity pools/vaults or anything that poses an existential risk to the protocol.
 * **Actions**:
-  1. **Initiate Network Halt**: If a critical threat is confirmed, Node Operators can propose a network halt using the `make halt` command. This pauses the entire network to allow time for investigation and corrective actions such as voting to pause specific chain operations (e.g., [halting signing](https://dev.thorchain.org/concepts/network-halts.html)).
+  1. **Initiate Network Halt**: If a critical threat is confirmed, a Node Operator must issue the `make pause` command to halt the entire network. This pauses the entire network for 720 blocks (~1hr) to allow time for investigation and corrective actions such as voting to pause specific chain operations (e.g., [halting signing](https://dev.thorchain.org/concepts/network-halts.html)). `make resume` will reduce the pause period by 720 blocks & another `make pause` will increase the pause by another 720 blocks. Once the first `make pause` is dispatched, the issue is not time critical as the entire network is paused and this paus period can and should be increased as appropriate.
   2. **Node Voting**: Propose and vote on emergency actions, such as Mimir overrides, to adjust network parameters. This will be discussed in the Dev Discord `#mainnet channel` channel. Voting requires consensus among active nodes.
      * Use `thornode tx thorchain mimir <key> <value> --from <node-address>` to submit Mimir changes.
   3. **Monitor and Communicate**: Use monitoring tools like [Vǫrðr](https://github.com/sourcapital/vordr) to check chain health and sync status. Relay critical updates anonymously via `make relay` to the Dev Discord `#mainnet channel`.
-  4. **Coordinate with Team**: Work with the core team and other operators to verify the threat and deploy patches. Avoid public disclosure to prevent panic or exploitation.
+  4. **Coordinate with Team**: Work with the core team and other operators to verify the threat and deploy patches. Avoid premature public disclosure to prevent panic or exploitation.
 
 #### Major - Network Disruption (Funds Not At Risk)
 
@@ -60,7 +64,7 @@ Emergencies are classified based on severity, with corresponding actions for Nod
 
 ## Network Halts
 
-THORChain supports network halts to pause operations during critical emergencies:
+In addition to the network wide pausing via the `make pause` command, THORChain supports blockchain specitic halts to pause operations during critical emergencies:
 
 * **Initiating a Halt**: [Node voting](overview/#node-voting) to pause signing for a specific chain (e.g., BTC, ETH). This prevents outbound transactions until the issue is resolved. All Halt controls are [listed here](https://dev.thorchain.org/concepts/network-halts.html).
 * **Voting on Halts**: Nodes can vote to approve or extend halts via the node voting mechanism. A supermajority is required for consensus.
@@ -74,13 +78,14 @@ THORChain supports network halts to pause operations during critical emergencies
 
 ## Network Upgrades
 
-Network upgrades are critical for patching vulnerabilities or improving protocol performance during emergencies. All active nodes must run the updated version for the network to proceed with an upgrade. The process can be managed in three ways:
+Network upgrades are critical for patching vulnerabilities, addition capabilities or improving protocol performance during emergencies. All active nodes must run the updated version for the network to proceed with an upgrade. The process can be managed in three ways:
 
-* **Natural Upgrade**: Versions are proposed in the Dev Discord, nodes update their software, and the network naturally churns out nodes running older versions over several days via the regular churn process.
+* **Natural Upgrade**: Versions are proposed in the Dev Discord for a certain block height, nodes follow instructions to signal support, at the block height the network stops for nodes to update their software, and the network naturally resumes when >2/3 of nodes adopt the newest version. Node with older versions are churned out via the regular churn process.
 * **Assertive Upgrade**: Once a supermajority of nodes has upgraded, demonstrating acceptance, operators can vote to ban nodes running outdated versions. Banned nodes are churned out, removed from the Threshold Signature Scheme (TSS), and ejected from the consensus set. These nodes must fully leave, destroy their setup, and redeploy a new node to rejoin.
   * Use node voting (Node Voting) to propose and approve banning outdated nodes.
 * **Forced Upgrade (Hard Fork)**: In time-critical scenarios, a hard fork may be initiated to exclude old nodes. This carries significant risks, such as consensus failures or network instability, and should be a last resort.
   * Coordinate via the Dev Discord and use Alerting for THORNodes to monitor fork outcomes.
+    
 * **Best Practices for Upgrades**:
   * Deploy updates using Helm charts from the Node Launcher Repository.
   * Ensure backups are current before upgrading, as described in Restore Validator Backup and THORNode Snapshot Recovery and Storage Management.
