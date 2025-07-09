@@ -55,7 +55,7 @@ THORChain is an open-source, public project with a vibrant and growing ecosystem
 
 #### 1. Join the Community
 
-Be part of the THORChain ecosystem by joining the [THORChain Community Discord](https://discord.com/invite/tcuniversity). It’s the best place to ask questions, learn how things work, and discuss all things THORChain with other users, builders, and contributors.
+Be part of the THORChain ecosystem by joining the [THORChain Community Discord](https://discord.gg/7mcWBkexYJ). It’s the best place to ask questions, learn how things work, and discuss all things THORChain with other users, builders, and contributors.
 
 #### 2. Build Interfaces
 

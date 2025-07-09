@@ -78,6 +78,6 @@
 ***
 
 * [Website](https://thorchain.org/)
-* [Community Discord](https://discord.com/invite/tcuniversity)
+* [Community Discord](https://discord.gg/7mcWBkexYJ)
 * [Community Telegram](https://t.me/thorchain_org)
 * [Developer Discord](https://discord.gg/7RRmc35UEG)

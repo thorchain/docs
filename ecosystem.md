@@ -20,9 +20,11 @@ All the following are community-run resources. There are no "official" channels.
 
 **Block Explorers**: [**RuneScan**](https://runescan.io) **|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORChain Tx Tracker**](https://track.ninerealms.com/) **|** [**xScanner**](https://www.xscanner.org/)
 
+**Community:** [**Community Discord**](https://discord.gg/7mcWBkexYJ) **|** [**Community Telegram**](https://t.me/thorchain_org) **|** [**X**](https://x.com/thorchain)&#x20;
+
 ## **Community Projects**
 
-Below is a list of active THORChain community projects. If you would like to be funded to build something in the THORChain ecosystem please build something then reach out.
+Below is a list of active THORChain community projects. If you would like to be funded to build something in the THORChain ecosystem, please build something first, then reach out.
 
 ## Exchanges Only
 
@@ -90,7 +92,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**GrassRoots Crypto**](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
 
-[**THORChain University**](https://discord.com/invite/tcuniversity) - Educational, Feature-based Discussions
+[**THORChain Community**](https://discord.gg/7mcWBkexYJ) - Educational, Feature-based Discussions
 
 ## **Analytics**
 
@@ -140,9 +142,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ## Community Socials
 
-[**THORChain Dev Discord**](https://discord.gg/u6wMSKHpD4)(only for dev discussions)
-
-[**TC University**](https://discord.com/invite/tcuniversity) - Discord Server
+[**THORChain Dev Discord**](https://discord.gg/u6wMSKHpD4) (only for dev discussions)
 
 [**Asgardex**](https://discord.gg/W9hGFBmCGp) - Discord Server
 
@@ -150,13 +150,13 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**ShapeShift**](https://discord.gg/shapeshift) - Discord Server
 
-[**THORGuards**](https://discord.gg/KQEhr3jtAd) - Discord Server
-
 [**THORSwap**](https://discord.gg/thorswap) - Discord Server
 
 [**THORWallet DEX**](https://discord.gg/gzs8skbaR3) - Discord Server
 
 [**xDefi**](https://discord.com/invite/xdefi) - Discord Server
+
+[**Vultisig**](https://discord.gg/rzKjMMwjwU) - Discord Server
 
 ### Regional Socials
 
