@@ -20,7 +20,7 @@ All the following are community-run resources. There are no "official" channels.
 
 **Block Explorers**: [**RuneScan**](https://runescan.io) **|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORChain Tx Tracker**](https://track.ninerealms.com/) **|** [**xScanner**](https://www.xscanner.org/)
 
-**Community:** [**Community Discord**](https://discord.gg/7mcWBkexYJ) **|** [**Community Telegram**](https://t.me/thorchain_org) **|** [**X**](https://x.com/thorchain)&#x20;
+**Community:** [**Community Discord**](https://discord.com/invite/c4EhDZdFMA) **|** [**Community Telegram**](https://t.me/thorchain_org) **|** [**X**](https://x.com/thorchain)&#x20;
 
 ## **Community Projects**
 
@@ -92,7 +92,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**GrassRoots Crypto**](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
 
-[**THORChain Community**](https://discord.gg/7mcWBkexYJ) - Educational, Feature-based Discussions
+[**THORChain Community**](https://discord.com/invite/c4EhDZdFMA) - Educational, Feature-based Discussions
 
 ## **Analytics**
 
