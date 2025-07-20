@@ -56,7 +56,7 @@ To set up a node, you have two choices:
 1. Set up manually (not recommended unless you are an expert)
 2. Set up via Kubernetes (recommended)
 
-You can create a bare metal node with your own hardware or use the the cluster launcher section for step by step guides using a host provider:
+You can create a bare metal node with your own hardware or use the cluster launcher section for step by step guides using a host provider:
 
 {% embed url="https://medium.com/@Runetard/bare-metal-node-n00b-guide-a29c5c067b4a" %}
 

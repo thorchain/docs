@@ -154,7 +154,7 @@ Deploying a cluster takes \~10 minutes
 
 ## CONFIGURE kubectl
 
-This is done automatically during provisioning. To configure authentication from the command line, use the following command. It will get the access credentials for your cluster and automatically configure kubectl in case you need to to manually reconfigure kubectl.
+This is done automatically during provisioning. To configure authentication from the command line, use the following command. It will get the access credentials for your cluster and automatically configure kubectl in case you need to manually reconfigure kubectl.
 
 ```
 make kubeconfig-aws
