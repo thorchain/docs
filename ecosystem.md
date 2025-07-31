@@ -26,6 +26,12 @@ All the following are community-run resources. There are no "official" channels.
 
 Below is a list of active THORChain community projects. If you would like to be funded to build something in the THORChain ecosystem, please build something first, then reach out.
 
+## Exchanges with THORChain-only Routes
+
+[**THORChain Leodex**](https://thorchain.leodex.io/) - 0 Fee THORChain Interface
+
+[**THORSwap RUNE Edition**](https://rune.thorswap.finance/) - Pure THORChain $RUNE Experience
+
 ## Exchanges Only
 
 [**ASGARDEX Desktop**](https://www.asgardex.com/) - Wallet and Exchange Client for THORChain
@@ -40,9 +46,9 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**Jumper Exchange**](https://jumper.exchange/) - Multi-chain Liquidity Aggregator Powered by Li.Fi
 
-[**Kensho Finance / Babylon**](https://www.kensho.finance/) - Redefining DeFi Trading
+[**LeoDex**](https://leodex.io/) - CrossChain DEX Interface
 
-[**Ordiswap**](https://app.ordiswap.fi/) - A Dynamic AMM Infrastructure to BRC-20
+[**Native Swap**](https://app.nativeswap.io/) - Native Cross-Chain Trading Without Barriers
 
 [**Rango Exchange**](https://rango.exchange/) - First Multi-chain DEX Aggregator
 
@@ -58,6 +64,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**Cake Wallet**](https://cakewallet.com/) - Payments Made Easy
 
+[**Ctrl**](https://ctrl.xyz/) - One Wallet for All Your Crypto
+
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
 
 [**Gem Wallet**](https://gemwallet.com/) - Open-source Crypto Wallet and Defi Wallet
@@ -72,7 +80,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**Trust Wallet**](https://trustwallet.com/) - Best Crypto Wallet for Web3, NFTs and DeFi
 
-[**XDeFi**](https://www.xdefi.io) - Cross-chain Wallet & Dex, Browser Extention
+[**Vultisig**](https://vultisig.com/) - A highly secure self-custodial multi-chain crypto vault with in-built two-factor authentication, and no tracking or registration requirements
 
 ### (Non-Exchanges) Wallets that Supports RUNE
 
@@ -80,13 +88,13 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**KeepKey**](https://www.keepkey.com/) - Hardware Wallet Accessed via ShapeShift UI: The Next Frontier of Crypto Security
 
+[**Keplr**](https://www.keplr.app/) - Your Multichain Gateway
+
 [**Ledger**](https://www.ledger.com/) - Hardware Wallet with [RUNE Support](https://support.ledger.com/hc/en-us/articles/4402987997841-THORChain-RUNE-?docs=true): The Smartest Way to Secure your Crypto
 
 [**MetaMask via ShapeShift Snap**](https://shapeshift.com/snap) - Browser Extension Wallet: Multichain Snap for MetaMask
 
 [**Leap Wallet**](https://www.leapwallet.io/) - Browser Extension Wallet: The Super Wallet for Web3
-
-[**Vultisig**](https://vultisig.com/) - A highly secure self-custodial multi-chain crypto vault with in-built two-factor authentication, and no tracking or registration requirements.
 
 ### **Education**
 
@@ -146,15 +154,13 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**Asgardex**](https://discord.gg/W9hGFBmCGp) - Discord Server
 
-[**DefiSpot**](https://discord.gg/7Zuypgv6Qf) - Discord Server
+[**Ctrl**](https://discord.gg/ctrlwallet) - Discord Server
 
 [**ShapeShift**](https://discord.gg/shapeshift) - Discord Server
 
 [**THORSwap**](https://discord.gg/thorswap) - Discord Server
 
 [**THORWallet DEX**](https://discord.gg/gzs8skbaR3) - Discord Server
-
-[**xDefi**](https://discord.com/invite/xdefi) - Discord Server
 
 [**Vultisig**](https://discord.gg/rzKjMMwjwU) - Discord Server
 
