@@ -28,7 +28,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ## Exchanges with THORChain-only Routes
 
-[**THORChain Leodex**](https://thorchain.leodex.io/) - 0 Fee THORChain Interface
+[**THORChain Leodex**](https://thorchain.leodex.io/) - THORChain-only Interface
 
 [**THORSwap RUNE Edition**](https://rune.thorswap.finance/) - Pure THORChain $RUNE Experience
 
