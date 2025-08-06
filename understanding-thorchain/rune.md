@@ -17,6 +17,24 @@ RUNE is the asset which powers the THORChain ecosystem and provides the economic
 3. Governance (signalling priority on-chain)
 4. Incentives (paying out rewards, charging fees, subsidising gas)
 
+### Governance
+
+**RUNE as a Settlement Asset**
+
+RUNE is the settlement asset for all liquidity pools, meaning that when a user pools their liquidity, a 1:1 ratio of RUNE:ASSET is required. This means the value of each native asset pool holds within it an equal value of RUNE. For example, a pool with $100,000 in BTC will necessarily hold $100,000 worth of RUNE.
+
+**RUNE for Network Security**
+
+Node Operators must always have bonded twice as many RUNE as there is RUNE pooled. This ensures the protocol will remain solvent in perpetuity. In bonding this much capital, node operators are economically incentivised to work within the [network’s best interest](../thornodes/overview/#risk-of-running-a-node). Thus it through economic security that network security is achieved.
+
+**RUNE for Governance**
+
+By symmetrically adding liquidity to a staged pool, users vote for the pools they want to become active. The deepest pools (i.e. with the most liquidity) become active.
+
+{% hint style="info" %}
+An introduction to RUNE and its roles is [here](./#what-is-rune).
+{% endhint %}
+
 ## 1. Liquidity
 
 ### **Transmitting Purchasing Power**
