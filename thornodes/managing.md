@@ -272,7 +272,7 @@ make dashboard
 
 ## Backing up a THORNode
 
-You should backup your THORNode in case of failures. By default, if you are using the Kubernetes deployments solution, all the the deployments are automatically backed up by persistent volume disks.\
+You should backup your THORNode in case of failures. By default, if you are using the Kubernetes deployments solution, all the deployments are automatically backed up by persistent volume disks.\
 Depending on your provider, the volumes are usually available in the provider administration UI, for example in AWS, you can find those volumes in your regular console, in the region you chose to deploy your Kubernetes cluster.
 
 Again by default, with Kubernetes, by using persistent volumes used in the default configuration, you are already protected again restart failures at container level, or node failures. As long as you don’t specifically use the destroy commands from the Makefile or manually delete your Kubernetes deployments, your volumes will NOT be deleted at any time.
