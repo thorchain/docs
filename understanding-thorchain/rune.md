@@ -21,7 +21,7 @@ RUNE is the asset which powers the THORChain ecosystem and provides the economic
 
 **RUNE as a Settlement Asset**
 
-RUNE is the settlement asset for all liquidity pools, meaning that when a user pools their liquidity, a 1:1 ratio of RUNE:ASSET is required. This means the value of each native asset pool holds within it an equal value of RUNE. For example, a pool with $100,000 in BTC will necessarily hold $100,000 worth of RUNE. The reasoning for this is explained here[^1].
+RUNE is the settlement asset for all liquidity pools, meaning that when a user pools their liquidity, a 1:1 ratio of RUNE:ASSET is required. This means the value of each native asset pool holds within it an equal value of RUNE. For example, a pool with $100,000 in BTC will necessarily hold $100,000 worth of RUNE.
 
 **RUNE for Network Security**
 
@@ -89,7 +89,7 @@ Additionally, if a connected chain is no longer economically valuable, then all 
 
 ### **One-Node-One-Vote**
 
-THORNodes each occupy one of the 100 slots in the system can can vote on changing network parameters using a mechanism called `node-mimir`.
+THORNodes each occupy one of the 120 slots in the system can can vote on changing network parameters using a mechanism called `node-mimir`.
 
 ## 4. Incentives
 
@@ -129,7 +129,7 @@ The 3:1 ratio is just the minimum or the deterministic value of RUNE.
 
 * [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
 * [Under the Hood: Rune Supply](https://thorchain-university.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
-* [Currnet Supply Data](https://dashboards.ninerealms.com/#lending)
+* [Current Supply Data](https://dashboards.ninerealms.com/#lending)
 * [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
 
 [^1]: hyperlink needed
