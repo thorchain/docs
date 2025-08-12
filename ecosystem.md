@@ -48,7 +48,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**LeoDex**](https://leodex.io/) - CrossChain DEX Interface
 
-[**Native Swap**](https://app.nativeswap.io/) - Native Cross-Chain Trading Without Barriers
+[**Native Swap**](https://nativeswap.io/) - Native Cross-Chain Trading Without Barriers
 
 [**Rango Exchange**](https://rango.exchange/) - First Multi-chain DEX Aggregator
 
