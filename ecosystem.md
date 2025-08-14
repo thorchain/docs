@@ -28,9 +28,13 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ## Exchanges with THORChain-only Routes
 
-[**THORChain Leodex**](https://thorchain.leodex.io/) - THORChain-only Interface
+[**Rujira Swap**](https://rujira.network/swap/)
 
-[**THORSwap RUNE Edition**](https://rune.thorswap.finance/) - Pure THORChain $RUNE Experience
+[**RUNEBond Swap**](https://swap.runebond.com/)
+
+[**THORChain Leodex**](https://thorchain.leodex.io/)
+
+[**THORSwap RUNE Edition**](https://rune.thorswap.finance/)
 
 ## Exchanges Only
 
@@ -45,6 +49,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 [**FortunaSwap**](https://fortunaswap.finance/) - Cross-Chain DEX
 
 [**Jumper Exchange**](https://jumper.exchange/) - Multi-chain Liquidity Aggregator Powered by Li.Fi
+
+[**Junction Exchange**](https://app.junction.exchange/) - Refer. Trade. Earn Together
 
 [**LeoDex**](https://leodex.io/) - CrossChain DEX Interface
 
