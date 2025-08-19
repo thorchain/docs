@@ -4,11 +4,11 @@ description: How THORChain's USD-pegged stablecoin TOR works.
 
 # TOR
 
-To understand [Lending](lending.md) within THORChain fully, one needs to understands the mechanics of `TOR`.
+To understand [Lending (Deprecated)](../archived/lending.md) within THORChain fully, one needs to understand the mechanics of `TOR`.
 
 TOR (`thor.tor`) is a non-transferable unit of account within THORChain designed to match the value of $1 USD and has been in use since [ADR 003](https://dev.thorchain.org/architecture/adr-003-flooredoutboundfee.html). It cannot be exported anywhere and always has a market cap of $0. TOR is valued by taking the median price of the active USD pools.
 
-All collateral, debt and repayments within Lending are converted to and accounted for in TOR.&#x20;
+All collateral, debt and repayments within Lending were converted to and accounted for in TOR.&#x20;
 
 ### TOR Price Stability
 

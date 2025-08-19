@@ -50,7 +50,7 @@ You can many interfaces to interact with THORChain. See [Exchanges](../ecosystem
 
 ### **Are there withdrawal fees and why is there a withdrawal fee premium?**
 
-Yes, there is a fee for every on-chain withdrawal from THORChain, whether it is a swap outbound, savings withdrawal, opening a loan, redeeming a collateral, or withdrawing from LPs.
+Yes, there is a fee for every on-chain withdrawal from THORChain, whether it is a swap outbound, withdrawing from LPs, or other network operations.
 
 The outbound fees that THORChain levies is 1.5x t0 3x the “fast” fee recommended for the respective blockchain, depending on network load.
 

@@ -62,7 +62,7 @@ A fully price-optimised swap can achieve a swap fee as low as 5 basis points (ex
 Swappers can set a price limit (minimum output). If sub-swaps cannot achieve the specified price during the swap stream, the total or partial inbound amount will be refunded.
 
 {% hint style="info" %}
-Streaming Swaps are currently enabled for Swaps. Streaming Swaps will likely be activated for Savers and Lending in the future.
+Streaming Swaps are currently enabled for Swaps. Streaming Swaps were previously available for the deprecated Savers and Lending features.
 {% endhint %}
 
 ## Continuous Liquidity Pools
