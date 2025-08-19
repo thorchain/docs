@@ -23,7 +23,7 @@ Native Assets are L1 assets (eg BTC) available on its native L1 (eg Bitcoin Netw
 
 Ex: THOR.BTC
 
-[Derived Assets](../thorchain-finance/lending.md#derived-assets-and-pools) are Native Assets (eg BTC) available on another L1 (eg THORChain if THOR.BTC). This allows the Native Asset to be sent, received and swapped on another L1 than it's native L1.
+[Derived Assets (Deprecated)](../archived/lending.md#derived-assets-and-pools) are Native Assets (eg BTC) available on another L1 (eg THORChain if THOR.BTC). This allows the Native Asset to be sent, received and swapped on another L1 than it's native L1.
 
 ### Synthetic Assets
 

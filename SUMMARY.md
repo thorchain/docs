@@ -28,9 +28,12 @@
   * [Node Operators](frequently-asked-questions/node-operators.md)
   * [Liquidity Providers](frequently-asked-questions/liquidity-providers.md)
   * [Asset Types](frequently-asked-questions/asset-types.md)
-  * [Savers](frequently-asked-questions/savers.md)
-  * [Lending](frequently-asked-questions/lending.md)
   * [RUNEPool](frequently-asked-questions/runepool.md)
+* [Archived](archived/README.md)
+  * [Savers (Deprecated)](archived/savers.md)
+  * [Lending (Deprecated)](archived/lending.md)
+  * [Savers FAQ (Deprecated)](archived/savers-faq.md)
+  * [Lending FAQ (Deprecated)](archived/lending-faq.md)
 
 ## THORChain Finance
 
@@ -40,8 +43,6 @@
 * [TOR](thorchain-finance/tor.md)
 * [RUNEPool](thorchain-finance/runepool.md)
 * [Synthetics](thorchain-finance/synthetic-asset-model.md)
-* [Savers](thorchain-finance/savings.md)
-* [Lending](thorchain-finance/lending.md)
 
 ## THORNodes
 
