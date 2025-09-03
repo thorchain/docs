@@ -46,7 +46,7 @@ If the answer is no, it’s probably best that you do not run a node and partici
 * Advanced knowledge of Linux server administration and security
 * Advanced knowledge of Kubernetes
 * Advanced experience running a host of nodes on a hosted platform such as AWS, Google Cloud, Digital Ocean, etc
-* Knowledge of running full nodes for other chains such as Bitcoin andEthereum.
+* Knowledge of running full nodes for other chains such as Bitcoin and Ethereum.
 * Willingness to be “on call” at all times to respond to issues when/if your node becomes unavailable
 
 ## Creating a Node

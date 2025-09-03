@@ -57,7 +57,7 @@ Example from [https://midgard.ninerealms.com/v2/thorname/lookup/td](https://midg
 }
 ```
 
-Currently, there are ten (10) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance Chain, Bitcoin Cash, Doge, Cosmos, BSC, Base and TRON. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
+Currently, there are eleven (11) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance Smart Chain, Bitcoin Cash, Doge, Cosmos, BSC, Base, TRON and XRP. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
 
 ### Query a THORName
 

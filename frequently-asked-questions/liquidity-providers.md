@@ -6,7 +6,7 @@ Providing liquidity on THORChain creates an opportunity for holders of stagnant 
 
 ### **What assets can you swap and provide liquidity for?**
 
-- Current Chains — BTC, ETH, LTC, BCH, DOGE, Cosmos, AVAX, BSC, TRON
+- Current Chains — BTC, ETH, LTC, BCH, DOGE, Cosmos, AVAX, BSC, BASE, TRON, XRP
 - Native gas/base assets on each chain
 - See full list at [https://runescan.io/pools](https://runescan.io/pools) or [https://thorchain.net/#/pools](https://thorchain.net/#/pools)
 
