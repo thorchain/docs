@@ -43,7 +43,7 @@ There are multiple dashboards to track the performance of RUNE added to the RUNE
 - [https://thorchain.net/thorfi/trades](https://thorchain.net/thorfi/trades)
 - [https://runescan.io/txs?type=traders](https://runescan.io/txs?type=traders)
 
-Dashboards for Trade Assets continuously evolve as Thorchain expands, but taking the example of [Thorchain.network](https://thorchain.network/trade/) you will find the following in the dashboard:
+Dashboards for Trade Assets continuously evolve as THORChain expands, but taking the example of [THORChain.network](https://thorchain.network/trade/) you will find the following in the dashboard:
 
 - Trade Asset: Which asset minted as a Trade Asset
 - Price: Current price of 1 unit of the Trade Asset

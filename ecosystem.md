@@ -110,7 +110,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 ## **Analytics**
 
-[**THORCharts**](https://thorcharts.org/) - Key stats and figures related to core Thorchain operations
+[**THORCharts**](https://thorcharts.org/) - Key stats and figures related to core THORChain operations
 
 [**Nine Realms Dashboard**](https://dashboards.ninerealms.com/)
 
@@ -122,7 +122,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**THORChain THOR InfoBot**](https://twitter.com/THOR_InfoBot) - Monitoring of major events in THORChain
 
-[**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core Thorchain operations.
+[**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core THORChain operations.
 
 ## **Infrastructure**
 
@@ -174,7 +174,7 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 Russian: [https://t.me/ThorchainRussian](https://t.me/ThorchainRussian)
 
-Chinese: [https://t.me/thorchain\_chinese](https://t.me/thorchain_chinese)
+Chinese: [https://t.me/thorchain_chinese](https://t.me/thorchain_chinese)
 
 Italian: [https://t.me/+2h7NgzNJ4KIxNzFk](https://t.me/+2h7NgzNJ4KIxNzFk)
 
@@ -182,12 +182,12 @@ Portuguese: [https://t.me/thorchainportuguese](https://t.me/thorchainportuguese)
 
 French: [https://t.me/THORChainFr](https://t.me/THORChainFr)
 
-Spanish: [http://t.me/THORChain\_es](http://t.me/THORChain_es)
+Spanish: [http://t.me/THORChain_es](http://t.me/THORChain_es)
 
-Dutch: [https://t.me/nl\_be\_thorchain\_rune](https://t.me/nl_be_thorchain_rune)
+Dutch: [https://t.me/nl_be_thorchain_rune](https://t.me/nl_be_thorchain_rune)
 
 German: [https://t.me/ThorChainGermany](https://t.me/ThorChainGermany)
 
-Vietnamese: [https://t.me/Thorchain\_Rune\_Vietnam](https://t.me/Thorchain_Rune_Vietnam)
+Vietnamese: [https://t.me/Thorchain_Rune_Vietnam](https://t.me/Thorchain_Rune_Vietnam)
 
 Indian: [https://t.me/thorchainIndia](https://t.me/thorchainIndia)

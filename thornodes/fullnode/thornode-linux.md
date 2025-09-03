@@ -70,7 +70,7 @@ sed -i 's/^seeds = ""/seeds = "c3613862c2608b3e861406ad02146f41cf5124e6@statesyn
 
 ### Ports
 
-Thorchain doesn't use the cosmos-sdk default ports. Technically this step isn't needed, but it is meant to stay in line with all other THORNode deployments.
+THORChain doesn't use the cosmos-sdk default ports. Technically this step isn't needed, but it is meant to stay in line with all other THORNode deployments.
 
 As `thornode` user run:
 
