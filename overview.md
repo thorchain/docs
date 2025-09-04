@@ -69,9 +69,3 @@ THORChain employs threshold signature schemes \([TSS](https://eprint.iacr.org/20
 A single key/signature would be impractical, and multisig comes with risk. Shamir Secret Sharing \(SSS\) is superior to both however has the downside of exposing the private key at a single point in time. Threshold Signature Schemes \(TSS\) removes the burden of the single atomic key and splits the responsibility between parties. In this way, there is no key. Nodes perform multiparty computation \(MPC\) using their own secret share to generate a public key for main chain assets, and distributively sign to generate a single signature on the blockchain without ever revealing the private key.
 
 _For more info on how THORChain implements TSS, refer to the_ [_TSS section here._](technology.md#threshold-signature-schemes)\_\_
-
-## **What does the future of THORChain look like?**
-
-Four components will be in place for mainnet: the liquidity protocol, cross-chain bridges, interface for swapping & staking and developer tooling for arbitrage.
-
-The mainnet will see the THORChain liquidity protocol operational with 99 nodes securing cross-chain bridges to Bitcoin, Monero, Ethereum & Binance Chain. Transactions will be signed using a custom threshold signature scheme implementation.

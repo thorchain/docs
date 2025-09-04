@@ -6,9 +6,9 @@ description: THORChain's value proposition for Swappers.
 
 On THORChain, users can swap their digital assets for other digital assets. The network aims to give users access to:
 
-* A large variety of assets through cross-chain compatibility and simple asset listing
-* Superior user experience through open finance protocols and permissionless access
-* 1-transaction access to fast chains (Binance Chain), smart chains (Ethereum), censorship-resistant chains (Bitcoin) and private chains (Monero).
+- A large variety of assets through cross-chain compatibility and simple asset listing
+- Superior user experience through open finance protocols and permissionless access
+- 1-transaction access to fast chains (Binance Smart Chain), smart chains (Ethereum) and censorship-resistant chains (Bitcoin).
 
 {% hint style="info" %}
 See an [overview of Swapping in THORChain](../#how-swapping-works)
@@ -46,8 +46,6 @@ The THORChain state machine handles this swap in one go, so the user never handl
 
 See [this example](swapping.md#example) for further detail and the page below for broader detail on Continuous Liquidity Pools.
 
-
-
 ### **How Swapping Works**
 
 There are two modes possible for THORChain's swap mechanism: A single swap, and a double swap.
@@ -69,16 +67,12 @@ Example: BTC<>ETH swap
 
 1. User BTC —>THORChain. Inbound gas paid in BTC
 2. Once the BTC is received, RUNE in BTC pool —> sent to ETH Pool
-3. ETH —> sent out from one of THORChain’s vaults to user wallet.  Outbound Fee is paid in ETH
+3. ETH —> sent out from one of THORChain’s vaults to user wallet. Outbound Fee is paid in ETH
 
 Step 2 is the internal swap from BTC:RUNE —> RUNE:ETH. See [Swappers](swapping.md#how-swaps-work) for more information on how swapping works.
 
 {% content-ref url="../../thorchain-finance/continuous-liquidity-pools.md" %}
 [continuous-liquidity-pools.md](../../thorchain-finance/continuous-liquidity-pools.md)
-{% endcontent-ref %}
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ### Calculating Swap Output
@@ -91,10 +85,10 @@ $$
 
 where
 
-* x is input asset amount
-* X is input asset balance
-* y is output asset amount
-* Y is output asset balance
+- x is input asset amount
+- X is input asset balance
+- y is output asset amount
+- Y is output asset balance
 
 #### Example
 

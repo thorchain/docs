@@ -6,15 +6,15 @@ description: >-
 
 # RUNEPool
 
-RUNEPool is a feature of THORChain that allows RUNE holders to join the Protocol Owned Liquidity (POL). By buying into the liquidity pool through RUNEPool, users get a share of the liquidity that Thorchain owns across all its pools. This participation helps users earn Annual Percentage Rate (APR) returns and improves the efficiency of the protocol's liquidity, supporting the growth of Thorchain's network.
+RUNEPool is a feature of THORChain that allows RUNE holders to join the Protocol Owned Liquidity (POL). By buying into the liquidity pool through RUNEPool, users get a share of the liquidity that THORChain owns across all its pools. This participation helps users earn Annual Percentage Rate (APR) returns and improves the efficiency of the protocol's liquidity, supporting the growth of THORChain's network.
 
 ## How does RUNEPool work?
 
-RUNEPool dynamically matches external capital with various pools in the system. Managing 13 different pools, each on its price curve, RUNEPool aggregates and distributes RUNE across these pools. By using the [Incentive Pendulum](https://docs.thorchain.org/how-it-works/incentive-pendulum), RUNEPool smoothens out price curves, reducing volatility and making Thorchain products more attractive to investors.
+RUNEPool dynamically matches external capital with various pools in the system. Managing 13 different pools, each on its price curve, RUNEPool aggregates and distributes RUNE across these pools. By using the [Incentive Pendulum](https://docs.thorchain.org/how-it-works/incentive-pendulum), RUNEPool smoothens out price curves, reducing volatility and making THORChain products more attractive to investors.
 
 #### Use Case
 
-RUNEPool offers a single product to gather idle RUNE from centralized exchanges and custodial services, moving them into Thorchain's decentralized infrastructure to generate yield. This enhances the productivity of these assets and builds up POL through community participation.
+RUNEPool offers a single product to gather idle RUNE from centralized exchanges and custodial services, moving them into THORChain's decentralized infrastructure to generate yield. This enhances the productivity of these assets and builds up POL through community participation.
 
 #### Benefits
 
@@ -34,7 +34,7 @@ There are multiple dashboards to track the performance of RUNE added to the RUNE
 - [thorchain.net/thorfi/runepool](https://thorchain.net/thorfi/runepool)
 - [runescan.io/txs?type=runepool](https://runescan.io/txs?type=runepool)
 
-Dashboards continuously evolve as Thorchain expands, but taking the example of [Thorchain.network](https://thorchain.network/runepool) you will find the following in the dashboard:
+Dashboards continuously evolve as THORChain expands, but taking the example of [THORChain.network](https://thorchain.network/runepool) you will find the following in the dashboard:
 
 - Provider: The wallet that provided the RUNE
 - Deposit: How much RUNE was provided by the provider

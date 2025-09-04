@@ -8,7 +8,7 @@ description: A high-level overview of what THORChain is, does, encourages, and p
 
 THORChain is an independent, cross-chain liquidity protocol that operates as a Layer 1 decentralised exchange (DEX). Built on the [Cosmos SDK](https://docs.cosmos.network/v0.52/learn/intro/overview), it utilises the CometBFT consensus engine, the Cosmos-SDK state machine, and the GG20 Threshold Signature Scheme (TSS) to execute its purpose, which is to allow users to swap native assets across multiple chains with zero reliance on centralised third parties. In doing so, it stands as one of the few exchanges that verifiably ensures transparent and fair prices for cross-chain swaps of native assets.
 
-THORChain's design renders no need for wrapped or pegged assets. Instead, the protocol deploys what are called continuous liquidity pools (CLPs), which—with highly complex algorithms—maximise the efficiency of its transactions. These CLPs allow for THORchain to manage funds directly in on-chain vaults, and it secures those funds via an economic security model. For all this, THORChain might be best described as a "cross-chain automated market maker (AMM), like Uniswap", or even a "decentralised Binance".
+THORChain's design renders no need for wrapped or pegged assets. Instead, the protocol deploys what are called continuous liquidity pools (CLPs), which—with highly complex algorithms—maximise the efficiency of its transactions. These CLPs allow for THORChain to manage funds directly in on-chain vaults, and it secures those funds via an economic security model. For all this, THORChain might be best described as a "cross-chain automated market maker (AMM), like Uniswap", or even a "decentralised Binance".
 
 ## THORChain's Financial Offerings
 
@@ -66,4 +66,3 @@ Join the [Dev Discord](https://discord.gg/u6wMSKHpD4) to collaborate with other 
 #### 3. Build Apps with Rujira
 
 For building secure and sustainable decentralized applications (dApps) and smart contracts on top of THORChain check out [Rujira](https://docs.rujira.network/developers/getting-started). You can also join the [Rujira Discord](https://discord.gg/XPvsxhWKfb) for developers to connect with core contributors and other app developers.
-

@@ -33,7 +33,7 @@ THORNode information can be viewed at the following dashboards:
 1. [thorchain.network](https://thorchain.network/nodes) - Comprehensive THORNode dashboard
 2. [thorchain.net](https://thorchain.net/nodes) - THORNode information and network statistics
 3. [runescan.io](https://runescan.io/nodes) - THORNode information within the block explorer
-4. [thorcharts.org ](https://thorcharts.org/thorchain_earnings_distribution)- Earning distribution and other historical data
+4. [thorcharts.org](https://thorcharts.org/thorchain_earnings_distribution) - Earning distribution and other historical data
 
 ## Skillsets
 
@@ -41,12 +41,12 @@ Running a THORNode is no simple task. As an operator, you will need to run/maint
 
 > _Have you used pagerduty before?_
 
-If the answer is no, it’s probably best that you do not run a node and participate in the network in other ways, such as a [RUNEPool participant ](../../thorchain-finance/runepool.md)or a [bond provider.](../pooled-thornodes.md) The following skill sets are required to be an effective node operator.
+If the answer is no, it’s probably best that you do not run a node and participate in the network in other ways, such as a [RUNEPool participant](../../thorchain-finance/runepool.md)or a [bond provider.](../pooled-thornodes.md) The following skill sets are required to be an effective node operator.
 
 * Advanced knowledge of Linux server administration and security
 * Advanced knowledge of Kubernetes
 * Advanced experience running a host of nodes on a hosted platform such as AWS, Google Cloud, Digital Ocean, etc
-* Knowledge of running full nodes for other chains such as Bitcoin, Ethereum, and Binance.
+* Knowledge of running full nodes for other chains such as Bitcoin and Ethereum.
 * Willingness to be “on call” at all times to respond to issues when/if your node becomes unavailable
 
 ## Creating a Node
@@ -68,11 +68,11 @@ Once created, follow the [Deploying](../deploying.md), [Joining](../joining.md) 
 
 ## Node Voting
 
-THORNodes have the ability to vote on [Mimir](https://midgard.thorchain.info/v2/thorchain/mimir) settings. This is important when voting for [ADRs](https://dev.thorchain.org/architecture/index.html) and important network changes.&#x20;
+THORNodes have the ability to vote on [Mimir](https://midgard.thorchain.info/v2/thorchain/mimir) settings. This is important when voting for [ADRs](https://dev.thorchain.org/architecture/index.html) and important network changes.
 
 Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a node is:
 
-```
+```cmd
 Make mimir
 => Enter THORNode Mimir key: <key>
 => Enter THORNode Mimir value: <value>

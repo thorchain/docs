@@ -2,11 +2,11 @@
 
 ### **What is RUNEPool?**
 
-RUNEPool is a feature of THORChain that allows RUNE holders to join the Protocol Owned Liquidity (POL). By participating, users get a share of the liquidity that Thorchain owns across all its pools, earning Annual Percentage Rate (APR) returns and improving the protocol's liquidity efficiency, supporting Thorchain's growth.
+RUNEPool is a feature of THORChain that allows RUNE holders to join the Protocol Owned Liquidity (POL). By participating, users get a share of the liquidity that THORChain owns across all its pools, earning Annual Percentage Rate (APR) returns and improving the protocol's liquidity efficiency, supporting THORChain's growth.
 
 ### **How does RUNEPool work?**
 
-RUNEPool matches external capital with various pools in the system. It manages multiple pools, distributing RUNE across them to smooth out price curves and reduce volatility. This makes Thorchain products more attractive to investors.
+RUNEPool matches external capital with various pools in the system. It manages multiple pools, distributing RUNE across them to smooth out price curves and reduce volatility. This makes THORChain products more attractive to investors.
 
 ### **What are the key components of RUNEPool?**
 
@@ -20,7 +20,7 @@ RUNEPool simplifies user experience by focusing on the Incentive Pendulum and fe
 
 ### **What is the use case for RUNEPool?**
 
-RUNEPool gathers idle RUNE from centralized exchanges and custodial services, moving them into Thorchain's decentralized infrastructure to generate yield. This enhances asset productivity and builds up POL through community participation.
+RUNEPool gathers idle RUNE from centralized exchanges and custodial services, moving them into THORChain's decentralized infrastructure to generate yield. This enhances asset productivity and builds up POL through community participation.
 
 ### **How can I track RUNEPool performance?**
 
