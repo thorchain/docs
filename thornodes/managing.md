@@ -303,7 +303,7 @@ kubectl cp thornode/{thornode pod name}:root/.thornode/config/node_key.json node
 kubectl cp thornode/{thornode pod name}:root/.thornode/config/priv_validator_key.json priv_validator_key.json
 ```
 
-For full disaster recovery (complete loss of cluster), it is possible to issue LEAVE command from the original BOND wallet and manual return of funds from your Yggdrasil. In this case you need a secure backup of `make mnemonic` (Yggdrasil mnemonic) and a working wallet that did the original BOND. See [Leaving](https://docs.thorchain.org/thornodes/leaving).
+For full disaster recovery (complete loss of cluster), it is possible to issue LEAVE command from the original BOND wallet. See [Leaving](https://docs.thorchain.org/thornodes/leaving) for detailed procedures.
 
 ## Node Security
 
@@ -312,7 +312,7 @@ The following are attack vectors:
 1. If anyone accesses your cloud credentials, they can log in and steal your funds
 2. If anyone accesses the device you used to log into kubernetes, they can log in and steal your funds
 3. If anyone accesses your hardware device used to bond, they can sign a LEAVE transaction and steal your bond once it is returned
-4. If anyone has your Yggdrasil `make mnemonic` phrase, including in logs, they can steal your funds
+4. If anyone has access to your node's private keys through logs or configuration files, they can steal your funds
 5. If any GitLab repo is compromised and you `git pull` any nefarius code into your node and run `make <any command>`, you can lose all your funds.
 
 #### Checking diffs
