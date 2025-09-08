@@ -18,9 +18,15 @@ All native tokens on THORChain listed [here](https://thornode.ninerealms.com/cos
 
 Derived assets `TOR` and L1 `RUNE` will work easily. Notably, trade assets are missing because they are not assets, they are deposit slips.
 
-
-
 You can find more information about CosmWasm in their official [docs](https://docs.cosmwasm.com/docs/).
 
-```
-```
+## Developer Resources
+
+For technical implementation details on:
+
+- Deploying CosmWasm contracts on THORChain
+- Contract whitelisting process
+- TokenFactory integration
+- Testing contracts on stagenet
+
+See the [THORChain Developer Documentation](https://dev.thorchain.org/)

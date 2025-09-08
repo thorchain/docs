@@ -110,3 +110,7 @@ The cost of a swap is made up of two parts:
 All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../../how-it-works/fees.md#network-fee).
 
 Note that users who force their swaps through quickly cause large slips and pay larger fees to liquidity providers.
+
+{% hint style="info" %}
+For technical details on transaction memo formats, swap parameters, and integration guides, see the [THORChain Developer Documentation](https://dev.thorchain.org/).
+{% endhint %}

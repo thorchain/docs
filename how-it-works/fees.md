@@ -1,84 +1,64 @@
 ---
-description: THORChain charges a fixed Outbound Fee and a dynamic Liquidity Fee.
+description: THORChain uses multiple fee types (Inbound, Liquidity, Affiliate, and Outbound) to ensure fair value exchange and network sustainability.
 ---
 
 # Fees
 
-## **Fees**
+Fees in THORChain serve three purposes:
 
-Conceptually, fees are both value-capture, access-control and resource-subsidisation mechanisms.
+- **Value capture:** Liquidity providers are compensated in proportion to the demand placed on pool liquidity. See the [Fees dev docs](https://dev.thorchain.org/concepts/fees.html) for full information.
+- **Access control:** Slip-based fees naturally throttle demand for scarce liquidity. In practice, this effect is moderated by:
+  - [Streaming Swaps](https://dev.thorchain.org/swap-guide/streaming-swaps.html), which split large swaps into smaller chunks to reduce single-block pressure.
+  - [`L1SlipMinBps` (Mimir)](https://dev.thorchain.org/mimir.html#swapping), which enforces a minimum slip (bps) per swap.
+- **Resource costs:** Outbound fees cover destination-chain gas and protocol overhead using a dynamic multiplier (OFM).
 
-### Value Capture
+## Additional benefits
 
-The fees need to capture value from those accessing the resource, and pay it to those providing the resource, and in this case the resource is liquidity. However liquidity is relative to the size of the transaction that demands it over the depth of the market that will service it. A small transaction in a deep pool has less demand for liquidity than a large transaction in a small pool.
+- Spam/dust resistance: minimums and slip floors make abuse economically costly.
+- Stable UX expectations: users see predictable fee components rather than raw external gas volatility.
+- Long-term sustainability: fee design reduces reliance on emissions alone. See [Incentive Pendulum](https://docs.thorchain.org/thorchain-finance/incentive-pendulum) for how fees and rewards adjust to balance liquidity and security.
 
-### Access-control
+## Fee overview
 
-The other reason for fees is access-control; a way to throttle demand for a fixed resource and let natural market forces take over. If there is too much demand for a resource, fees must rise commensurately. The resource in this case is liquidity, not market depth, thus fees must be proportional to liquidity.
-
-### **Resource Subsidisation**
-
-Every swap on THORChain consumes resources (Disk, CPU, Network and Memory resources from validators). These costs are fixed in nature. In addition, every outgoing transaction demands resources on connected chains, such as paying the Bitcoin mining fee or Ethereum gas cost. As such, THORChain charges a single flat fee on every transaction that pays for internal and external resources.
-
-### Other Benefits
-
-In addition to the above, fees also create the following benefits:
-
-1. Avoid dust attacks
-2. Store up income after the initial Emission Schedule reduces
-3. Give the user a stable fee, rather than a dynamic one which changes with the external network's fees
-
-## Fee Process
-
-THORChain maintains an awareness of the trailing gas price for each connected chain, saving both gas price as well as gas cost (inferring transaction weight). Nodes are instructed to pay for outgoing transactions using a gas price that is a multiple of the stored value.
-
-The gas is consumed from each chain's base asset pool - the BTC pool pays for Bitcoin fees, the ETH pool for Ethereum fees etc.
-
-The network then observes an outgoing transaction and records how much it cost in gas in the external asset. The final gas cost is then subsidised back into each pool by paying RUNE from the reserve.
-
-A full overview of the THORChain fees:
-
-| Fee                   | Description                            | Amount                                                                             | Recipient                                |
-| --------------------- | -------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------- |
-| Inbound Fee           | Paid on every swap                     | Slip-based fee which is liquidity-sensitive                                        | 100% to Network participants intra-block |
-| Outbound Fee - L1     | L1 Outbounds                           | Ideally 1:1 gas spent, but a minimum of $1.00 is enforced to pay for TSS resources | Reserve                                  |
-| Outbound Fee - Native | RUNE, synth outbounds and trade assets | 0.02 RUNE                                                                          | Reserve                                  |
-| Network Fee           | RUNE, synth transfers and trade assets | 0.02 RUNE                                                                          | Reserve                                  |
-
-## **Inbound Fee**
-
-The CLP algorithm includes a slip-based fee which is liquidity-sensitive. Since demand for liquidity is defined as the size of the transaction over the depth of the market that will service it, then a fee which is proportional to liquidity solves key problems.
-
-Firstly it has better **value-capture** when demand for liquidity is high, no matter the size of the transaction or the depth of the market. This means that over time, pool depths will settle to an equilibrium that is relative to the sizes of transactions that are passed over it. This solves the bootstrapping problem, because low-depth pools may turn out to be more profitable than high-depth pools to liquidity providers.
-
-Secondly it has better **access-control**, since the more a trader (or attacker) demands liquidity, the more they have to pay for it. This makes sandwich attacks prohibitively expensive allowing pools to become reliable price feeds.
-
-Additionally a slip-based fee is stateless and non-opinionated. The final fee paid is always commensurate to the demand of resources (both internal and external) no matter what it is.
-
-$$
-slip = \frac{x}{x+X}
-$$
-
-$$
-fee = slip * output = \frac{x}{x+X} * \frac{xY}{x+X} = \frac{x^2Y}{(x+X)^2}
-$$
-
-This fee is retained on the output side of the pool, ensuring it counters the trade direction.
+| Fee Type      | What it covers                                                                              | Where it’s paid / taken                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Inbound Fee   | Source-chain L1 transaction fee for sending funds into THORChain                            | Paid directly by the user to the source chain’s miners/validators (wallet-controlled gas) |
+| Liquidity Fee | Slip-based swap fee that compensates LPs, proportional to liquidity demand                  | Deducted by the protocol during the swap (from the output)                                |
+| Affiliate Fee | Optional integrator fee (0–10,000 bps) tied to a THORName                                   | Skimmed on swap (see dev docs for ordering with Streaming Swaps)                          |
+| Outbound Fee  | Destination-chain gas × dynamic multiplier (OFM ~1–3×), which also covers protocol overhead | Deducted from the swap output; includes the THORChain network component                   |
 
 {% hint style="info" %}
-In an Asset-Asset swap, the fee is applied twice since two pools are involved, however the user only sees it as a single fee and a single slip value.
+Transactions on the THORChain chain itself (e.g., native RUNE or trade-asset transfers) incur the Native Transaction Fee of 0.02 RUNE. See [Fees dev docs](https://dev.thorchain.org/concepts/fees.html#3-network-fee).
 {% endhint %}
 
-Streaming Swaps has greatly increased the swap capital efficiency. A minumum 5 pbs fee now applies to all swaps.
+## Inbound Fee
 
-## **Outbound Fee**
+When you initiate a swap, you broadcast a transaction on the source chain and pay that chain’s normal L1 fee (e.g., sats/byte on Bitcoin, gwei on Ethereum). Using a “fast” gas setting is recommended so the swap isn’t delayed or refunded due to stale pricing. See [Inbound Fee](https://dev.thorchain.org/concepts/fees.html#1-inbound-fee).
 
-Any outbound liquidity incurs a fee to pay for the outbound gas cost and a network fee which is deducted from the outbound amount. The outbound gas will be sufficient for the outbound to be in the next block.
+## Liquidity Fee
 
-The network fee is collected in RUNE and sent to the Protocol Reserve. If the transaction involves an asset that is not RUNE the user pays the Network Fee in the external asset. If the transaction is in RUNE then the amount is directly taken in RUNE.
+THORChain’s CLP model applies a slip-based fee that scales with the amount of liquidity your swap consumes relative to pool depth—this compensates LPs and naturally throttles demand. In practice, two protocol features shape this effect:
 
-Several factors affect the fee amount such as the gas rate and transaction size. See [dev docs](https://dev.thorchain.org/concepts/fees.html#outbound-fee) for more details.
+- [Streaming Swaps](https://dev.thorchain.org/swap-guide/streaming-swaps.html): large swaps are split over time to reduce single-block pressure and improve execution for patient swappers.
+- [`L1SlipMinBps` (Mimir)](https://dev.thorchain.org/mimir.html#swapping): enforces a minimum fee in basis points per swap, ensuring a floor even when pools are very deep.
 
-## Network Fee
+For the slip math and derivations, see the [Fees dev docs](https://dev.thorchain.org/concepts/fees.html) and [Continuous Liquidity Pools](https://docs.thorchain.org/thorchain-finance/continuous-liquidity-pools).
 
-The third fee to discuss is the Network Fee. This is what users pay to make transactions on THORChain ledger itself. Additionally, THORChain has custom gas logic where users pay fees in the asset they send, because all assets on THORChain have protocol pricing, either being RUNE, or synths, where synths are derived from the pools themselves. [ADR 009](https://dev.thorchain.org/architecture/adr-009-reserve-income-fee-overhaul.html) saw the introduction network of fees priced in USD. While still taken as RUNE or synths, the Network Fee is now set a USD amount instead of a fixed RUNE amount.
+## Affiliate Fee
+
+Interfaces can include an optional affiliate fee (in basis points) that’s collected via a registered THORName. See the [Affiliate Fee dev docs](https://dev.thorchain.org/concepts/fees.html#affiliate-fee) for information, and how to configure preferred payout assets.
+
+## Outbound Fee
+
+To deliver your final asset, THORChain pays gas on the destination chain and charges an Outbound Fee from your swap output. This fee:
+
+- Covers actual L1 gas and protocol overhead.
+- Uses a dynamic Outbound Fee Multiplier (OFM) that moves between ~1× and 3× based on network and protocol factors.
+- Is published via THORNode endpoints so integrators can budget precisely.
+
+For implementation details, see the [Outbound Fee dev docs](https://dev.thorchain.org/concepts/fees.html#4-outbound-fee).
+
+## Gas observation & process
+
+Mechanics for gas observation, estimation, solvency checks, and per-chain behaviors are handled by [Bifrost](https://dev.thorchain.org/bifrost/how-bifrost-works.html) and its [Chain Clients](https://dev.thorchain.org/chain-clients/index.html). Refer to those pages for internals and per-chain specifics.
+

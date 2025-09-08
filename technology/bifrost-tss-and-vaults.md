@@ -33,6 +33,10 @@ type Tx struct {
 }
 ```
 
+{% hint style="info" %}
+For complete technical specifications of transaction structures, memo formats, and chain-specific integration details, see the [THORChain Developer Documentation](https://dev.thorchain.org/).
+{% endhint %}
+
 THORChain processes each observed transaction and waits for consensus. Once a super-majority of nodes agree on a particular transaction, it moves from a `pending` state to a finalised state.
 
 ```json
