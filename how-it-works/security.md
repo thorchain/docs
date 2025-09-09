@@ -66,7 +66,7 @@ A single node can pause trading (HaltTrading) for up to an hour (720 blocks). An
 
 ### Unauthorized Transaction Detection
 
-This blanket protection will automatically pause THORChain on a specific chain (Halt{Chain}Trading) and stop Yggdrasill vault funding if an unauthorised transaction is detected. This will emit a security event and be sent to THORSec. The halt will allow Node Operators, THORSec, and the development team to investigate and react immediately following an unauthorised transaction and issue a fix and restore service as quickly as possible. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge_requests/2188).
+This blanket protection will automatically pause THORChain on a specific chain (Halt{Chain}Trading) if an unauthorised transaction is detected. This will emit a security event and be sent to THORSec. The halt will allow Node Operators, THORSec, and the development team to investigate and react immediately following an unauthorised transaction and issue a fix and restore service as quickly as possible. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge_requests/2188).
 
 ## Automatic Security Flagging
 

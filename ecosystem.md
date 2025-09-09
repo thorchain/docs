@@ -142,6 +142,18 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**RuneScan Explorer**](https://runescan.io)- THORChain Block Explorer
 
+## Building on THORChain
+
+For developers looking to integrate THORChain or build new applications:
+
+- Complete integration guides and API documentation
+- Transaction memo formats and specifications
+- Smart contract deployment (CosmWasm)
+- Affiliate fee implementation
+- Testing on stagenet
+
+See the [THORChain Developer Documentation](https://dev.thorchain.org/)
+
 ## Community Dev Projects
 
 [**XChainJS**](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).

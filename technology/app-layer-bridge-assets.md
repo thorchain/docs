@@ -11,7 +11,7 @@ description: >-
 
 With many Cosmos chains running on various bridged assets, Cosmos teams often end up with multiple representations of the same asset, e.g. Axelar bridged BTC, Nomic bridged BTC, and wBTC bridged from multiple different layer 2s. This splits liquidity and causes significant user confusion.
 
-THORChain will only have one bridged asset for per asset. E.g. `ETH.ETH` on L1 will be represented as a bridged asset with `ETH-ETH`.&#x20;
+THORChain will only have one bridged asset for per asset. E.g. `ETH.ETH` on L1 will be represented as a bridged asset with `ETH-ETH`.
 
 ## Buggy RPC/gRPC node software
 
@@ -27,7 +27,7 @@ THORChain will have have addresses compatible with at least one other Cosmos cha
 
 ## CosmWasm contract size limit
 
-Many CosmWasm contracts quickly move beyond the default 800kb limit for a contract. The CosmWasm team has previously discussed bumping this limit.&#x20;
+Many CosmWasm contracts quickly move beyond the default 800kb limit for a contract. The CosmWasm team has previously discussed bumping this limit.
 
 THORChain will push on bumping up the contract limit to 1.5mb or more.
 
@@ -35,9 +35,9 @@ THORChain will push on bumping up the contract limit to 1.5mb or more.
 
 Having different settings between nodes for transaction size limits causes P2P sharing of mempool entries to sometimes get stuck. This can cause a node to be “starved” and none of the transactions broadcast to it to be picked up by the network. Levana’s workaround for this is quite involved:
 
-* They run a backend server, the querier, which provides a transaction broadcast endpoint
-* Their backend library has added support for an “all nodes broadcast,” where any broadcasts are sent to both the primary node and any fallbacks we’ve configured
-* Their frontends do not rely on the standard RPC interface leveraged by cosmjs, but instead have custom code to talk to the querier
+- They run a backend server, the querier, which provides a transaction broadcast endpoint
+- Their backend library has added support for an “all nodes broadcast,” where any broadcasts are sent to both the primary node and any fallbacks we’ve configured
+- Their frontends do not rely on the standard RPC interface leveraged by cosmjs, but instead have custom code to talk to the querier
 
 THORChain has defined [Node Operations](../understanding-thorchain/roles/node-operators.md) that all nodes adhere to, and hence the problem of mempool entries getting stuck is solved.
 
@@ -57,11 +57,11 @@ THORChain is actively working with wallets like XDEFI/Ctrl, Keplr and Leap to al
 
 Many Cosmos chains allow for multiple coins to pay for network/gas fees rather than just one. Having this option is suboptimal. As a recent example from Levana on Osmosis:
 
-* Governance contract lives on Osmosis
-* Governance token, LVN, is a native coin on Osmosis, and it can be used for gas fees
-* An option in the Levana governance UI allows users to stake the entirety of their LVN holdings
-* Keplr has on occasion selected LVN as the gas token to be used in such transactions, even when a user has another gas coin available
-* All simulations and checks within the Levana dapp will indicate that this transaction will succeed, since selection of gas coin occurs after our app initiates the signing process
-* Keplr provides no useful warning about the fact that more LVN will be used than are available in the wallet
+- Governance contract lives on Osmosis
+- Governance token, LVN, is a native coin on Osmosis, and it can be used for gas fees
+- An option in the Levana governance UI allows users to stake the entirety of their LVN holdings
+- Keplr has on occasion selected LVN as the gas token to be used in such transactions, even when a user has another gas coin available
+- All simulations and checks within the Levana dapp will indicate that this transaction will succeed, since selection of gas coin occurs after our app initiates the signing process
+- Keplr provides no useful warning about the fact that more LVN will be used than are available in the wallet
 
 THORChain addresses this by only allowing for [RUNE](../understanding-thorchain/rune.md) to be used to pay network/gas fees

@@ -8,7 +8,7 @@ To understand [Lending (Deprecated)](../archived/lending.md) within THORChain fu
 
 TOR (`thor.tor`) is a non-transferable unit of account within THORChain designed to match the value of $1 USD and has been in use since [ADR 003](https://dev.thorchain.org/architecture/adr-003-flooredoutboundfee.html). It cannot be exported anywhere and always has a market cap of $0. TOR is valued by taking the median price of the active USD pools.
 
-All collateral, debt and repayments within Lending were converted to and accounted for in TOR.&#x20;
+All collateral, debt and repayments within Lending were converted to and accounted for in TOR.
 
 ### TOR Price Stability
 
@@ -40,4 +40,3 @@ You can find the addresses for various stablecoins on specific networks (TORANCH
 TOR is used for accounting with THORChain and to price assets, instead of using any specific stablecoin. While TOR is currently non-transferable, greater use of TOR is a possibility.
 
 ####
-

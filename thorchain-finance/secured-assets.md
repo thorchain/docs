@@ -14,7 +14,7 @@ Also see [Technology](../technology/) for generic Cosmos information. What notat
 ### Asset Notation
 
 The [delimiter](../frequently-asked-questions/asset-types.md) for Secured Assets is a dash '-'. \
-E.g. `ETH.ETH` is L1. `ETH-ETH` will be a secured asset.&#x20;
+E.g. `ETH.ETH` is L1. `ETH-ETH` will be a secured asset.
 
 While ETH.tc is pictured, that may change to `ETH-ETH`.
 
@@ -22,7 +22,7 @@ While ETH.tc is pictured, that may change to `ETH-ETH`.
 
 Secured assets are x/bank tokens on the App Layer (Rujira) representing claim to the native asset on base layer (THORChain).
 
-The native asset is secured to and from the app layer with the following flow:&#x20;
+The native asset is secured to and from the app layer with the following flow:
 
 ### Mint and Burn Secured Assets
 

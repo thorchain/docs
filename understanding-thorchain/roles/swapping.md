@@ -50,11 +50,11 @@ See [this example](swapping.md#example) for further detail and the page below fo
 
 There are two modes possible for THORChain's swap mechanism: A single swap, and a double swap.
 
-**Single Swap**&#x20;
+**Single Swap**
 
-A single swap occurs when a user swaps some native asset for an equivalent value of RUNE, or vice versa.&#x20;
+A single swap occurs when a user swaps some native asset for an equivalent value of RUNE, or vice versa.
 
-Example: RUNE<>BTC swap.&#x20;
+Example: RUNE<>BTC swap.
 
 1. User RUNE —> sent into THORChain. Inbound gas paid in RUNE
 2. BTC —> sent out from one of THORChain’s vaults to user wallet. Outbound gas is paid in BTC.
@@ -110,3 +110,7 @@ The cost of a swap is made up of two parts:
 All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../../how-it-works/fees.md#network-fee).
 
 Note that users who force their swaps through quickly cause large slips and pay larger fees to liquidity providers.
+
+{% hint style="info" %}
+For technical details on transaction memo formats, swap parameters, and integration guides, see the [THORChain Developer Documentation](https://dev.thorchain.org/).
+{% endhint %}
