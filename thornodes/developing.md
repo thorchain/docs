@@ -6,37 +6,37 @@ description: Deploying a custom stagenet to have a developer-controlled environm
 
 THORChain uses multiple network environments to move from an idea to mainnet deployment, each with a specific role:
 
-* **Mainnet**: The live production network where real assets are transacted. Security and reliability are ensured through validator consensus, with only well-tested changes deployed to minimize risks.
-* **Stagenet**: A pre-production network mirroring mainnet, used to test new features and chain integrations with real assets and participants. Changes require consensus, providing real-world validation but slower testing.
-* **Devnet / Mocknet**: A developer-managed environment for rapid testing and iteration. Validators and participants are fully controlled, making it ideal for testing new chains like TON, TRON, Optimism, or Arbitrum before advancing to the official stagenet or mainnet.
+- **Mainnet**: The live production network where real assets are transacted. Security and reliability are ensured through validator consensus, with only well-tested changes deployed to minimize risks.
+- **Stagenet**: A pre-production network mirroring mainnet, used to test new features and chain integrations with real assets and participants. Changes require consensus, providing real-world validation but slower testing.
+- **Devnet / Mocknet**: A developer-managed environment for rapid testing and iteration. Validators and participants are fully controlled, making it ideal for testing new chains like TON, TRON, Optimism, or Arbitrum before advancing to the official stagenet or mainnet.
 
 A devnet offers developers full control over the THORChain environment to test without impacting live networks. Key benefits include:
 
-* Autonomy: Configure without consensus delays.
-* Rapid Iteration: Test and refine quickly.
-* Risk Mitigation: Isolate changes to ensure live network stability.
+- Autonomy: Configure without consensus delays.
+- Rapid Iteration: Test and refine quickly.
+- Risk Mitigation: Isolate changes to ensure live network stability.
 
 #### gRPC Support
 
 THORChain supports gRPC for enhanced communication between clients and servers. This feature is available in the Stagenet environment for testing and development purposes.
 
-* Enabled gRPC Endpoint: A gRPC endpoint has been deployed and can be accessed at `thornode-grpc.defiantlabs.net:443`.
-* New Feature Development: The addition of gRPC support is being tracked in [Merge Request #1232](https://gitlab.com/thorchain/devops/node-launcher/-/merge\_requests/1232), which adds the required functionality to the node-launcher repository.
+- Enabled gRPC Endpoint: A gRPC endpoint has been deployed and can be accessed at `thornode-grpc.defiantlabs.net:443`.
+- New Feature Development: The addition of gRPC support is being tracked in [Merge Request #1232](https://gitlab.com/thorchain/devops/node-launcher/-/merge_requests/1232), which adds the required functionality to the node-launcher repository.
 
 ### Prerequisites to Setup a Devnet
 
 #### Hardware Requirements
 
-* CPU: 8 cores
-* Memory: 32 GiB
-* Storage: 256 GiB
+- CPU: 8 cores
+- Memory: 32 GiB
+- Storage: 256 GiB
 
 #### Software Requirements
 
-* kubectl: Kubernetes CLI \[v1.31.1 or later]
-* Helm: Manage Kubernetes deployments with Helm charts.
-* Minikube: Local Kubernetes cluster for testing.
-* THORNode Binary: Core THORChain binary for managing nodes.
+- kubectl: Kubernetes CLI \[v1.31.1 or later]
+- Helm: Manage Kubernetes deployments with Helm charts.
+- Minikube: Local Kubernetes cluster for testing.
+- THORNode Binary: Core THORChain binary for managing nodes.
 
 ## 1. Installation
 
@@ -53,13 +53,13 @@ sudo apt install -y kubectl// Some code
 
 2. Install Helm
 
-```
+```bash
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 
 3. Install Minikube
 
-```
+```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
@@ -118,7 +118,7 @@ EOF
 
 #### Initialize Configuration
 
-```
+```bash
 thornode init custom --home ~/.thornode
 ```
 
@@ -144,7 +144,7 @@ make tools
 
 2. Edit thornode-stack/stagenet.yaml:
 
-* Enable **Gaia Daemon** only for testing:
+- Enable **Gaia Daemon** only for testing:
 
 ```yaml
 gaia-daemon:
@@ -158,8 +158,8 @@ gaia-daemon:
       memory: 512Mi
 ```
 
-* Adjust resource allocations (CPU/memory) and persistence sizes.
-* Add environment variables for the faucet and chain configuration:
+- Adjust resource allocations (CPU/memory) and persistence sizes.
+- Add environment variables for the faucet and chain configuration:
 
 ```yaml
 thornode:
@@ -197,14 +197,14 @@ thornode tx thorchain mimir ChurnInterval --from faucet --chain-id thorchain --n
 
 ## 5. Test Your Environment
 
-* Verify connectivity:
+- Verify connectivity:
 
 ```bash
 export KUBECONFIG=~/.kube/config
 kubectl get nodes
 ```
 
-* Access API:
+- Access API:
 
 ```bash
 API: http://localhost:1317
@@ -213,13 +213,13 @@ RPC: http://localhost:27147
 
 ## Advanced Options
 
-* Custom Configurations: Use custom seed phrases or faucet wallets.
-* Enable Chains: Modify the docker-compose.yml or stagenet.yaml file to include more chains.
-* Deploy Custom Contracts: Override environment variables to test unique configurations.
+- Custom Configurations: Use custom seed phrases or faucet wallets.
+- Enable Chains: Modify the docker-compose.yml or stagenet.yaml file to include more chains.
+- Deploy Custom Contracts: Override environment variables to test unique configurations.
 
 ## References
 
-For more details or if you encounter any errors in above steps, check out the docs in Gitlab directly:&#x20;
+For more details or if you encounter any errors in above steps, check out the docs in Gitlab directly:
 
 {% embed url="https://gitlab.com/thorchain/devops/node-launcher/-/blob/6e05a0292d0ea4cafd4b48f053ca93423c3ae912/docs/Custom-Stagenet.md" %}
 

@@ -8,10 +8,10 @@ THORChain is a liquidity protocol that is made up of multiple types of assets to
 
 To serve everyone, THORChain:
 
-* [Native Assets](asset-types.md#native-assets)
-* [Derived Assets](asset-types.md#derived-assets)
-* [Synthetic Assets](../thorchain-finance/synthetic-asset-model.md)
-* [Trade Assets](../thorchain-finance/trade-assets.md)
+- [Native Assets](asset-types.md#native-assets)
+- [Derived Assets](asset-types.md#derived-assets)
+- [Synthetic Assets](../thorchain-finance/synthetic-asset-model.md)
+- [Trade Assets](../thorchain-finance/trade-assets.md)
 
 ### Native Assets
 

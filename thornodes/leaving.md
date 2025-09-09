@@ -29,14 +29,13 @@ It is assumed nodes that wish to LEAVE while on Standby will be away for a signi
 
 ## Unbonding
 
-
 {% hint style="info" %}
 You cannot unbond if you are "Ready" or "Active".
 {% endhint %}
 
 If a Node Operator wants to retrieve part of their bond & rewards (such as deciding to take profits), they can simply Unbond. This keeps their Node on standby, ready to be churned back in.
 
-To unbond from the system, simply send an UNBOND transaction.
+To unbond from the system, simply send an **UNBOND** transaction.
 
 Example, this will draw out 10k in RUNE from the bond, as long as the remaining amount is higher than the minimum bond.
 
@@ -47,7 +46,7 @@ THORChain always treats assets in 1e8 'base format' ie, 1.0 RUNE = 100,000,000 u
 {% endhint %}
 
 {% hint style="info" %}
-If using ASGARDEX to BOND or UNBOND, simply put the RUNE amount, e.g. "100" for 100 RUNE. It does the memo in 1e8 for you.
+If using ASGARDEX to **BOND** or **UNBOND**, simply put the RUNE amount, e.g. "100" for 100 RUNE. It does the memo in 1e8 for you.
 {% endhint %}
 
 {% hint style="info" %}
@@ -55,7 +54,7 @@ You can get your node address by running `make status`
 {% endhint %}
 
 {% hint style="warning" %}
-Only the address that originally bonded the funds can UNBOND or LEAVE.\
+Only the address that originally bonded the funds can **UNBOND** or **LEAVE**.\
 This ensures you can safely leave this system if you no longer have access to your node (but it is still running).
 {% endhint %}
 
@@ -70,11 +69,11 @@ If you cannot unbond, check your node's status and ensure you are in Standby mod
 
 To leave the system, send the following transaction from your original bond address to the Vault Address: `LEAVE:<ADDRESS>` with at least 1 RUNE.
 
-Example:
+**Example**:
 
 `LEAVE:<node address>`
 
-⏱ _Wait a few hours, verify on the /nodes endpoint that you are now `Disabled`_ 👀  Then send another LEAVE:
+⏱ _Wait a few hours, verify on the /nodes endpoint that you are now `Disabled`_ 👀 Then send another LEAVE:
 
 `LEAVE:<node address>`
 
@@ -86,16 +85,13 @@ View your node's status on [Runescan](https://runescan.io) or the [THORNode API]
 
 _🔥 Commence destroying your node 🔥_
 
-
-
-
 ## Destroying
 
 ### Confirming you have left
 
 You should complete this checklist before you do the next step:
 
-1. Have you sent a final LEAVE transaction and have you received your BOND back - ie 1,000,000 RUNE, and can your account for any slash points or rewards?
+1. Have you sent a final **LEAVE** transaction and have you received your BOND back - ie 1,000,000 RUNE, and can your account for any slash points or rewards?
 
 If yes, then proceed:
 
@@ -115,7 +111,7 @@ IF YOU DESTROY A NODE PREMATURELY, YOU MAY LOSE A SIGNIFICANT AMOUNT OF FUNDS
 
 First, destroy the node and tools, this will delete your node then your tooling 1-by-1. Do this from the `node-launcher` repo:
 
-``` text
+```bash
 make destroy-tools
 ```
 
@@ -129,15 +125,16 @@ Then destroy the cluster from the `cluster-launcher` repo:
 {% tab title="AWS" %}
 You will be asked to enter your cluster name and region (the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)).
 
-```
+```bash
 make destroy-aws
 ```
+
 {% endtab %}
 
 {% tab title="DO" %}
 You will be asked to enter your cluster name and region, as well as your Personal Token (the same as what you [put in when you first deployed](https://docs.thorchain.org/thornodes/kubernetes/setup#deploy-kubernetes-cluster)).
 
-``` text
+```bash
 make destroy-do
 ```
 

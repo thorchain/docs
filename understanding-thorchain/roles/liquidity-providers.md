@@ -4,7 +4,7 @@ description: A deeper dive into the Liquidity Provider  role
 
 # Liquidity Providers (LPs)
 
-Liquidity providers contribute native, network-supported assets to the THORChain liquidity pools. They may deposit any number of assets they choose of any value, doing so for their chosen amount of time; in short, there are no restrictions to LPing other than the need to pay deposit and withdrawal fees. “As stated, these LPs are compensated for their temporary contributions with swap fees, which are dynamically affected by several factors.&#x20;
+Liquidity providers contribute native, network-supported assets to the THORChain liquidity pools. They may deposit any number of assets they choose of any value, doing so for their chosen amount of time; in short, there are no restrictions to LPing other than the need to pay deposit and withdrawal fees. “As stated, these LPs are compensated for their temporary contributions with swap fees, which are dynamically affected by several factors.
 
 {% hint style="warning" %}
 Liquidity providers commit capital to pools which have exposure to underlying assets. Liquidity providers THEN gain exposure to the underlying assets in each pool. Since assets can be deposited freely, LPs will experience the volatility of those assets—whether positive or negative.
@@ -26,7 +26,7 @@ Liquidity providers are not subject to any direct penalties for misconduct.
 
 ### Process
 
-The process of providing liquidity to THORChain pools is permissionless, non-custodial, and quite simple. First, a user—anyone at all—would deposit their asset(s) to the pool. They would remain in that pool for some amount of time, entirely of their choosing. When they wish to withdraw their pool share, they simply reverse the first step.  &#x20;
+The process of providing liquidity to THORChain pools is permissionless, non-custodial, and quite simple. First, a user—anyone at all—would deposit their asset(s) to the pool. They would remain in that pool for some amount of time, entirely of their choosing. When they wish to withdraw their pool share, they simply reverse the first step.
 
 Anyone can add liquidity to existing pools; the same goes for proposing new asset pools (this is done simply by depositing it—see [asset listing/delisting](../../how-it-works/governance.md#chain-listing-delisting) for details). Once a new asset pool is listed, anybody can add liquidity to it. It is in this sense that THORChain is permissionless.
 
@@ -34,7 +34,7 @@ Liquidity can be added to existing pools at any time, increasing its depth and a
 
 ### **Depositing Assets**
 
-Liquidity providers have two modes by which they can deposit assets: symmetrically or asymmetrically.&#x20;
+Liquidity providers have two modes by which they can deposit assets: symmetrically or asymmetrically.
 
 {% hint style="info" %}
 **Symmetrical vs Asymmetrical Deposits**
@@ -52,7 +52,7 @@ Generally, LPs are encouraged to deposit symmetrically. However, if the pool is 
 
 Just as with deposits, the ability to withdraw assets is completely permissionless and non-custodial. Liquidity providers can withdraw their assets at any time. Furthermore, only the original depositor has the ability to execute the withdrawal of their pool share. The network processes their request and the liquidity provider receives their ownership percentage of the pool plus the assets they've earned. A network fee is charged whenever assets are taken out of the network. These fees go into [the network reserve](../../how-it-works/emission-schedule.md).
 
-### Security&#x20;
+### Security
 
 [Nodes ](./)are economically incentivised to never manipulate user funds (i.e. they would lose more money than they would gain by doing so); they are bound by rules of the network and have less than zero economic incentive to take control of any user-deposited assets.
 
@@ -64,8 +64,8 @@ Liquidity providers deposit their assets into liquidity pools and in return earn
 
 When liquidity providers (LPs) deposit their assets into liquidity pools, they earn rewards over time. These rewards come in two tokens: RUNE and the asset paired in the pool (e.g. BTC in the BTC/RUNE pool).
 
-* Rewards are calculated every block.
-* Rewards are paid out when you withdraw your liquidity.
+- Rewards are calculated every block.
+- Rewards are paid out when you withdraw your liquidity.
 
 How rewards are calculated depends on whether there are any swaps (trades) in that block.
 
@@ -189,11 +189,11 @@ Example: [https://midgard.ninerealms.com/v2/pools?period=100d](https://midgard.n
 
 Factors that affect LUVI:
 
-* Swap fees, block rewards, and pool donations increase LUVI and are the primary yield sources
-* An increase of the synthetic asset liability of a pool decreases LUVI
-* An increase in `ASSET Depth` or `RUNE Depth` of a pool increase LUVI
-* Changes in the ratio of `ASSET Depth` and `RUNE Depth` in a pool change LUVI
-* Changes in `ASSET Price` or `RUNE Price` do not necessarily change LUVI.
+- Swap fees, block rewards, and pool donations increase LUVI and are the primary yield sources
+- An increase of the synthetic asset liability of a pool decreases LUVI
+- An increase in `ASSET Depth` or `RUNE Depth` of a pool increase LUVI
+- Changes in the ratio of `ASSET Depth` and `RUNE Depth` in a pool change LUVI
+- Changes in `ASSET Price` or `RUNE Price` do not necessarily change LUVI.
 
 For more information, see: [Liquidity Pooling Example High Level](https://www.youtube.com/watch?v=Kzt9SAQRvUQ)
 

@@ -10,9 +10,9 @@ As new nodes join/leave the network, this triggers a “churning event”. Which
 
 Normally, a churning event happens roughly every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://thornode.ninerealms.com/thorchain/mimir)).
 
-Nodes that targged for the next churn in and out can be seen [here](https://thorchain.network/nodes). The next churn interval can be seen [here](https://thorchain.net/nodes).&#x20;
+Nodes that targged for the next churn in and out can be seen [here](https://thorchain.network/nodes). The next churn interval can be seen [here](https://thorchain.net/nodes).
 
-#### Churning Out
+### Churning Out
 
 On every churn, the network selects one or more nodes to be churned out of the network (which can be typically churned back in later). In a given churning event, multiple nodes may be selected to be churned out, but never more than 1/3rd of the current validator set. The criterion the network will take into account is the following:
 
@@ -91,7 +91,7 @@ When you run a THORNode, each THORNode will have its own node account. An exampl
 
 To get node account information, make an HTTP call to your `thornode` port which will look like the following:
 
-```
+```text
 http://<host>:1317/thorchain/nodeaccount/<node address>
 http://<host>:1317/thorchain/nodeaccounts
 ```
@@ -102,7 +102,7 @@ Most importantly, this will tell you how many slash points the node account has 
 
 ### Make Relay
 
-Make Relay can be used to send messages into the `#mainnet` channel of the Dev Discord. This allows Node Operators to communicate with Discord members without having post as a Discord user, helping to protect their identiy.&#x20;
+Make Relay can be used to send messages into the `#mainnet` channel of the Dev Discord. This allows Node Operators to communicate with Discord members without having post as a Discord user, helping to protect their identiy.
 
 Usage: `make relay "{`_`Message you want to send}`_`"`
 

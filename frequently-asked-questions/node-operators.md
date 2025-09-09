@@ -24,7 +24,7 @@ Common mistakes include not syncing to the top, going offline unexpectedly which
 
 Node income includes block rewards and swap fees. Network income sent via the Incentive Pendulum and given to Node Operators. Block Reward / Node / Month can be viewed at [https://thorchain.net/network](https://thorchain.net/network), See more under [Risks, Costs and Rewards](../thornodes/overview/risks-costs-and-rewards.md).
 
-Swap fees contribute significantly to node income. To estimate total income per node per month, consider both block rewards and swap fees. See [THORCharts](https://thorcharts.org/thorchain\_lp\_node\_earnings) to see the block reward and swap fee split.&#x20;
+Swap fees contribute significantly to node income. To estimate total income per node per month, consider both block rewards and swap fees. See [THORCharts](https://thorcharts.org/thorchain_lp_node_earnings) to see the block reward and swap fee split.
 
 ### What is Churning, and how does it affect my node?
 
@@ -44,9 +44,9 @@ Rewards for bond providers are auto-compounded back into their bond with each ch
 
 • [THORChain Dev Memo Documentation](https://dev.thorchain.org/concepts/memos.html#bond-unbond-and-leave)
 
-• [Gitlab: Leave Event Keys](https://gitlab.com/thorchain/thornode/-/blob/v1.134.0/x/thorchain/handler\_leave.go#L154-155)
+• [Gitlab: Leave Event Keys](https://gitlab.com/thorchain/thornode/-/blob/v1.134.0/x/thorchain/handler_leave.go#L154-155)
 
-• [Gitlab OperationalMimirs](https://gitlab.com/thorchain/thornode/-/blob/v1.134.0/x/thorchain/manager\_validator\_current.go#L1368-1369)
+• [Gitlab OperationalMimirs](https://gitlab.com/thorchain/thornode/-/blob/v1.134.0/x/thorchain/manager_validator_current.go#L1368-1369)
 
 ### Why are there so many slashes, and is it normal?
 
@@ -58,7 +58,7 @@ Geth is used within the [Ethereum Chain Client](https://gitlab.com/thorchain/tho
 
 ### What are the steps to Unbond or Leave a Node?
 
-You can only unbond when your node is in a [Standby state](../thornodes/overview/node-operations.md#node-statuses) and not part of a vault migration. To leave the network permanently, you must issue a LEAVE command and ensure all vaults are empty. See [Leaving ](../thornodes/leaving.md)for more information.&#x20;
+You can only unbond when your node is in a [Standby state](../thornodes/overview/node-operations.md#node-statuses) and not part of a vault migration. To leave the network permanently, you must issue a LEAVE command and ensure all vaults are empty. See [Leaving ](../thornodes/leaving.md)for more information.
 
 ### How do I safely destroy my node after leaving?
 

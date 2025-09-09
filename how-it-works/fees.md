@@ -61,4 +61,3 @@ For implementation details, see the [Outbound Fee dev docs](https://dev.thorchai
 ## Gas observation & process
 
 Mechanics for gas observation, estimation, solvency checks, and per-chain behaviors are handled by [Bifrost](https://dev.thorchain.org/bifrost/how-bifrost-works.html) and its [Chain Clients](https://dev.thorchain.org/chain-clients/index.html). Refer to those pages for internals and per-chain specifics.
-

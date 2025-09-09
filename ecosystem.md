@@ -145,11 +145,12 @@ Below is a list of active THORChain community projects. If you would like to be 
 ## Building on THORChain
 
 For developers looking to integrate THORChain or build new applications:
-* Complete integration guides and API documentation
-* Transaction memo formats and specifications
-* Smart contract deployment (CosmWasm)
-* Affiliate fee implementation
-* Testing on stagenet
+
+- Complete integration guides and API documentation
+- Transaction memo formats and specifications
+- Smart contract deployment (CosmWasm)
+- Affiliate fee implementation
+- Testing on stagenet
 
 See the [THORChain Developer Documentation](https://dev.thorchain.org/)
 

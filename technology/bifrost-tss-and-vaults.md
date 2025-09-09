@@ -44,7 +44,7 @@ All vaults use Threshold Signature Scheme (TSS) for distributed control, requiri
 
 ### Vault Sharding
 
-To support network scaling, THORChain automatically shards vaults based on the `asgardsize` parameter (default: 20 nodes per shard). With 100 active nodes, the system might operate 5 physical vault shards, each controlled by a subset of validators.
+To support network scaling, THORChain automatically shards vaults based on the `asgardsize` parameter (default: 20 nodes per shard). With 120 active nodes, the system will operate 6 physical vault shards, each controlled by a subset of validators.
 
 ### Vault Selection
 

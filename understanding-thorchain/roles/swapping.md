@@ -50,11 +50,11 @@ See [this example](swapping.md#example) for further detail and the page below fo
 
 There are two modes possible for THORChain's swap mechanism: A single swap, and a double swap.
 
-**Single Swap**&#x20;
+**Single Swap**
 
-A single swap occurs when a user swaps some native asset for an equivalent value of RUNE, or vice versa.&#x20;
+A single swap occurs when a user swaps some native asset for an equivalent value of RUNE, or vice versa.
 
-Example: RUNE<>BTC swap.&#x20;
+Example: RUNE<>BTC swap.
 
 1. User RUNE —> sent into THORChain. Inbound gas paid in RUNE
 2. BTC —> sent out from one of THORChain’s vaults to user wallet. Outbound gas is paid in BTC.

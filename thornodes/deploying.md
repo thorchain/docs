@@ -16,8 +16,8 @@ Helm charts are the defacto and currently easiest and simple way to package and 
 
 ### Requirements
 
-* Running Kubernetes cluster
-* Kubectl configured, ready and connected to running cluster
+- Running Kubernetes cluster
+- Kubectl configured, ready and connected to running cluster
 
 {% hint style="info" %}
 If you came here from the Setup page, you are already good to go.
@@ -27,7 +27,7 @@ If you came here from the Setup page, you are already good to go.
 
 Clone the `node-launcher` repo. All commands in this section are to be run inside of this repo.
 
-```
+```bash
 git clone https://gitlab.com/thorchain/devops/node-launcher
 cd node-launcher
 git checkout master
@@ -37,7 +37,7 @@ git checkout master
 
 Install Helm 3 if not already available on your current machine:
 
-```
+```bash
 make helm
 make helm-plugins
 ```
@@ -48,21 +48,23 @@ make helm-plugins
 {% tab title="Deploy" %}
 To deploy all tools, metrics, logs management, Kubernetes Dashboard, run the command below.
 
-```
+```bash
 make tools
 ```
+
 {% endtab %}
 
 {% tab title="Destroy" %}
 To destroy all those resources run the command below.
 
-```
+```bash
 make destroy-tools
 ```
+
 {% endtab %}
 {% endtabs %}
 
-You need to give the deployment a namespace name, `thorchain` is used in the example below.&#x20;
+You need to give the deployment a namespace name, `thorchain` is used in the example below.
 
 If you are successful, you will see the following message:
 
@@ -79,18 +81,18 @@ If there are any errors, they are typically fixed by running the command again.
 It is important to deploy the tools first before deploying the THORNode services as some services will have metrics configuration that would fail and stop the THORNode deployment.
 
 {% hint style="info" %}
-Testnet no longer exists, only mainnet THORNodes can be created.&#x20;
+Testnet no longer exists, only mainnet THORNodes can be created.
 {% endhint %}
 
 You have multiple commands available to deploy different configurations of THORNode. The commands deploy the umbrella chart `thornode-stack` in the background in the Kubernetes namespace `thornode` by default.
 
-```
+```bash
 NET=mainnet TYPE=<type> NAME=<namepsace name> make install e.g.
 NET=mainnet TYPE=validator NAME=thornode make install
 ```
 
 {% hint style="info" %}
-If you are intending to run all chain clients, bond in & earn rewards, you want to choose "Validator". Select FullNode if you only want to run THORNode and Midgard.&#x20;
+If you are intending to run all chain clients, bond in & earn rewards, you want to choose "Validator". Select FullNode if you only want to run THORNode and Midgard.
 {% endhint %}
 
 {% hint style="info" %}
@@ -117,7 +119,7 @@ Set `thornode` to be your default namespace so you don't need to type `-n thorno
 
 Use the following useful commands to view and debug accordingly. You should see everything running and active. Logs can be retrieved to find errors:
 
-```
+```bash
 kubectl get pods -n thornode
 kubectl get pods --all-namespaces
 kubectl logs -f <pod> -n thornode
@@ -125,7 +127,7 @@ kubectl logs -f <pod> -n thornode
 
 Kubernetes should automatically restart any service, but you can force a restart by running:
 
-```
+```bash
 kubectl delete pod <pod> -n thornode
 ```
 
@@ -134,9 +136,10 @@ Note, to expedite syncing external chains, it is feasible to continually delete 
 
 Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight, ("xxx" is your unique ID):
 
-```
+```bash
 kubectl logs -f deploy/binance-daemon -n thornode
 ```
+
 {% endhint %}
 
 {% hint style="info" %}
@@ -147,19 +150,19 @@ Get real-world blockheights of external blockchain at [https://thornode.ninereal
 
 ### THORNode full stack / chart
 
-* **thornode**: Umbrella chart packaging all services needed to run a fullnode or validator THORNode.
+- **thornode**: Umbrella chart packaging all services needed to run a fullnode or validator THORNode.
 
 This should be the only chart used to run [THORNode stack ](overview/#thornode-stack)unless you know what you are doing and want to run each chart separately (not recommended).
 
 #### THORNode services:
 
-* **thornode**: THORNode daemon
-* **gateway**: THORNode gateway proxy to get a single IP address for multiple deployments
-* **bifrost**: Bifrost service
-* **midgard**: Midgard API service
+- **thornode**: THORNode daemon
+- **gateway**: THORNode gateway proxy to get a single IP address for multiple deployments
+- **bifrost**: Bifrost service
+- **midgard**: Midgard API service
 
 ### Tools
 
-* **prometheus**: Prometheus stack for metrics
-* **loki**: Loki stack for logs
-* **kubernetes-dashboard**: Kubernetes dashboard
+- **prometheus**: Prometheus stack for metrics
+- **loki**: Loki stack for logs
+- **kubernetes-dashboard**: Kubernetes dashboard

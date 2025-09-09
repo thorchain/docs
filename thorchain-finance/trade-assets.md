@@ -49,7 +49,7 @@ Dashboards for Trade Assets continuously evolve as THORChain expands, but taking
 - Price: Current price of 1 unit of the Trade Asset
 - Balance: How many units of the Trade Asset has been minted
 - Valuation: Price \* Balance
-- Pool Ratio: How much the Trade Asset make up entire Trade Asset pool does this account for &#x20;
+- Pool Ratio: How much the Trade Asset make up entire Trade Asset pool does this account for
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-07-30 at 13.30.44 (1).png" alt=""><figcaption></figcaption></figure>
 

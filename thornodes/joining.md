@@ -18,13 +18,13 @@ There are a couple of steps to follow.
 
 The first step would be to make sure your deployment was successful and your node is running correctly. \_\*\*\_To check the current status of your node, you can run the command status from the `node-launcher`repository on your terminal:
 
-```
+```bash
 make status
 ```
 
 You will get an output along those lines, the example below is for a mainnet node:
 
-```
+```bash
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
@@ -50,7 +50,7 @@ BCH         2.293%     197,340/682,404
 
 Your node is running but as you can see in the \`Preflight\` section, your node is not yet ready to be churned in and currently is in standby [status](overview/node-operations.md#node-statuses), since your node has no IP address setup yet.
 
-Do not proceed until your node is fully synced al chains. You can see the required external chain hights [here](https://thornode.ninerealms.com/thorchain/lastblock) and the THORChain chain height [here](https://thornode.ninerealms.com/thorchain/block).  Continue to run `make status` untill all chains are synced.
+Do not proceed until your node is fully synced al chains. You can see the required external chain hights [here](https://thornode.ninerealms.com/thorchain/lastblock) and the THORChain chain height [here](https://thornode.ninerealms.com/thorchain/block). Continue to run `make status` untill all chains are synced.
 
 {% hint style="danger" %}
 Before sending the BOND, verify that your THORNode is **fully synced** with connected chains. Connected chains such as Ethereum & Bitcoin may take a day to sync. If your node is fully bonded and is selected to churn in to THORChain as ACTIVE without fully syncing all connected chains, you will immediately get slashed for missing observations, and lose money. It is normal to see Ethereum sit on 99.999% for many hours - be patient.
@@ -64,7 +64,7 @@ Only the original wallet that did the first BOND will be able to LEAVE/UNBOND. Y
 
 To be able to set up the node IP address, you first need to get it whitelisted in the chain by sending your BOND.
 
-1. &#x20;You will do a "Deposit" transaction using RUNE. This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX](https://github.com/asgardex/asgardex-desktop/releases). The Bond is locked in a module controlled by the state machine.
+1. You will do a "Deposit" transaction using RUNE. This is an internal MsgDeposit transaction (different from a MsgSend to another wallet). There is no destination address -- use an appropriate wallet such as [ASGARDEX](https://github.com/asgardex/asgardex-desktop/releases). The Bond is locked in a module controlled by the state machine.
 2. Deposit your [BOND](https://dev.thorchain.org/concepts/memos.html#bond-unbond-and-leave) using the memo `BOND:<thornode-address>` (or use an appropriate GUI that does this memo for you). Send a small amount of RUNE to whitelist the node, the bond will be picked up.
 
 {% hint style="info" %}
@@ -75,13 +75,13 @@ Some `make` commands during setup require RUNE (0.02 to 1.0) to execute into the
 
 Give the network 3-5 seconds to pick up your bond. To verify it has received your bond, run the following:
 
-```
+```bash
 curl https://thornode.ninerealms.com/thorchain/node/<node-address>
 ```
 
 If you run `make status` again, you should see this:
 
-```
+```bash
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
@@ -111,7 +111,7 @@ As you can see, it is in standby but does not have an IP registered yet. This is
 
 You must tell THORChain your IP-Address for its address book and seed-service to run properly:
 
-```
+```bash
 make set-ip-address
 ```
 
@@ -129,7 +129,7 @@ Do not import your node menonic in a wallet. Nodes will have their own address.
 
 Tell THORChain about your public keys for signing sessions:
 
-```
+```bash
 make set-node-keys
 ```
 
@@ -139,7 +139,7 @@ If you run the `make status` command again, you should now see that your node is
 
 Make sure your node broadcasts its latest version, else you won't churn in since THORChain enforces a version requirement. This version will appear in your `make status`. If you are on `0.0.0` then you haven't set your version:
 
-```
+```bash
 make set-version
 ```
 
@@ -147,15 +147,15 @@ make set-version
 
 If you followed steps 1-5 above, your preflight will be saying:
 
-```
+```bash
 PREFLIGHT   { "status": "Standby", "reason": "node account does not have minimum bond requirement: 100000000000/30000000000000, "code": 1 }
 ```
 
-To address this, send the remaining bond, that is higher than the minimum bond, currently 300K RUNE set by a network [Mimir ](https://thornode.ninerealms.com/thorchain/mimir)setting, look for `MinimumBondInRune`.  See [#bonding-the-right-amount](joining.md#bonding-the-right-amount "mention")for how much bond to send.
+To address this, send the remaining bond, that is higher than the minimum bond, currently 300K RUNE set by a network [Mimir ](https://thornode.ninerealms.com/thorchain/mimir)setting, look for `MinimumBondInRune`. See [#bonding-the-right-amount](joining.md#bonding-the-right-amount "mention")for how much bond to send.
 
 If you finally run `make status` you should see this, with keyword **"Ready":**
 
-```
+```bash
  ________ ______  ___  _  __        __
 /_  __/ // / __ \/ _ \/ |/ /__  ___/ /__
  / / / _  / /_/ / , _/    / _ \/ _  / -_)
@@ -208,7 +208,7 @@ resp:
 RUNE is always displayed in 1e8 format, 100000000 = 1 RUNE
 {% endhint %}
 
-You will need to be greater than the `minimumActiveBond.`Bonding more than `bondHardCap` will not result in more [rewards](overview/risks-costs-and-rewards.md#compensation). `medianActiveBond` is a good target to get and stay active.&#x20;
+You will need to be greater than the `minimumActiveBond.`Bonding more than `bondHardCap` will not result in more [rewards](overview/risks-costs-and-rewards.md#compensation). `medianActiveBond` is a good target to get and stay active.
 
 {% hint style="info" %}
 Some useful community sites to assist monitoring your node are [https://thorchain.network](https://thorchain.network), [https://thorchain.net](https://thorchain.net/#/nodes).
@@ -228,11 +228,11 @@ You can also [remove some of your bond](https://docs.thorchain.org/thornodes/lea
 
 ### Node Operator Fee
 
-* Setting the Node Operator fee `10000` causes all rewards to be paid back each churn.
-* Setting the Node Operator fee to `5000` causes 50% of rewards to be paid back to the Node Operator address and 50% to be accrued back to the bond.
+- Setting the Node Operator fee `10000` causes all rewards to be paid back each churn.
+- Setting the Node Operator fee to `5000` causes 50% of rewards to be paid back to the Node Operator address and 50% to be accrued back to the bond.
 
 To set a Node Operator fee, send a deposit transaction with the following [memo](pooled-thornodes.md#node-operator):
 
 `BOND:<node address>:<bond wallet address>:<operator fee in basis pts>`
 
-See [pooled-thornodes.md](pooled-thornodes.md "mention")for full information.&#x20;
+See [pooled-thornodes.md](pooled-thornodes.md "mention")for full information.

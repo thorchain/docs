@@ -11,7 +11,7 @@ The Makefile provide different commands to help you operate your THORNode.
 There are two types of make commands, READ and WRITE.
 
 {% hint style="info" %}
-Run `make help` at any stage to get an exhaustive list of help options and how to interact with the system. See [here](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/README.md?ref\_type=heads) for an overview of each command.&#x20;
+Run `make help` at any stage to get an exhaustive list of help options and how to interact with the system. See [here](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/README.md?ref_type=heads) for an overview of each command.
 {% endhint %}
 
 #### READ COMMANDS
@@ -22,25 +22,28 @@ Read commands simply read your node state and doesn't commit any transactions.
 {% tab title="STATUS" %}
 To get information about your node on how to connect to services or its IP, run the command below. You will also get your node address and the vault address where you will need to send your bond.
 
-```
+```bash
 make status
 ```
+
 {% endtab %}
 
 {% tab title="SHELL" %}
 Opens a shell into your `thor-daemon` deployment: From within that shell you have access to the `thorcli` command.
 
-```
+```bash
 make shell
 ```
+
 {% endtab %}
 
 {% tab title="LOGS" %}
 Display stream of logs of THORNode deployment:
 
-```
+```bash
 make logs
 ```
+
 {% endtab %}
 
 {% tab title="MNEMONIC" %}
@@ -48,33 +51,37 @@ This will print your node mnemonic (phrase). Use this to ever rescue your node f
 
 _Note: Your bond is held at ransom in order to prevent you from stealing funds from this vault. Your bond will always be more valuable than funds on this vault, so you have no economic reason to touch these funds._
 
-```
+```bash
 make mnemonic
 ```
+
 {% endtab %}
 
 {% tab title="PASSWORD" %}
 A keystore file that secures your private keys is also stored on the THORNode. The password that is used to decrypt it can be printed by the following command
 
-```
+```bash
 make password
 ```
+
 {% endtab %}
 
 {% tab title="RESTART" %}
 Restart a THORNode deployment service selected:
 
-```
+```bash
 make restart
 ```
+
 {% endtab %}
 
 {% tab title="RESET" %}
 Reset a THORNode deployment service selected, including deleting the persistent volume. This command is **destructive** and will reset the chain back to 0%. You would use this for unrecoverable issues that `make restart` did not solve.
 
-```
+```bash
 make reset
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -86,17 +93,19 @@ Write commands actually build and write transactions into the underlying statech
 {% tab title="NODE-KEYS" %}
 Send a `set-node-keys` to your node, which will set your node keys automatically for you by retrieving them directly from the `thor-daemon` deployment.
 
-```
+```bash
 make set-node-keys
 ```
+
 {% endtab %}
 
 {% tab title="IP ADDDRESS" %}
 Send a `set-ip-address` to your node, which will set your node ip address automatically for you by retrieving the load balancer deployed directly.
 
-```
+```bash
 make set-ip-address
 ```
+
 {% endtab %}
 
 {% tab title="VERSION" %}
@@ -106,7 +115,7 @@ For Kubernetes deployments, you can edit the deployments of the different servic
 
 To update your `thor-daemon`, `thor-api` and `bifrost` deployment images to version 0.2.0:
 
-```
+```bash
 kubectl set image deployment/thor-daemon thor-daemon=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
 kubectl set image deployment/thor-api thor-api=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
 kubectl set image deployment/bifrost bifrost=registry.gitlab.com/thorchain/thornode:mainnet-0.2.0
@@ -114,21 +123,22 @@ kubectl set image deployment/bifrost bifrost=registry.gitlab.com/thorchain/thorn
 
 To update your \`midgard\` deployment image to version 0.2.0
 
-```
+```bash
 kubectl set image deployment/midgard midgard=registry.gitlab.com/thorchain/midgard:mainnet-0.2.0
 ```
 
 You can then follow the deployments restarting status either by checking your Kubernetes dashboard or using the CLI command below:
 
-```
+```bash
 kubectl get deployment/thor-daemon
 ```
 
 Once the deployments are all in the ready state again, you need to broadcast to the network that you are running a new version using the command below:
 
-```
+```bash
 make set-version
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -148,7 +158,7 @@ It is recommended to deploy a logs management ingestor stack within Kubernetes t
 {% tab title="DEPLOY" %}
 You can deploy the log management automatically using the command below:
 
-```
+```bash
 make install-loki
 ```
 
@@ -178,9 +188,10 @@ Within the Grafana admin interface, to access the logs, find the `Explore` view 
 {% tab title="DESTROY" %}
 Destroy Loki logs management stack
 
-```
+```bash
 make destroy-loki
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -192,7 +203,7 @@ It is also recommended to deploy a Prometheus stack to monitor your cluster and 
 {% tab title="DEPLOY" %}
 You can deploy the metrics management automatically using the command below:
 
-```
+```bash
 make install-metrics
 ```
 
@@ -204,7 +215,7 @@ You can check the services being deployed in your kubernetes namespace `promethe
 {% tab title="ACCESS" %}
 We have created a make command to automate this task to access Grafana from your local workstation:
 
-```
+```bash
 make grafana
 ```
 
@@ -218,7 +229,7 @@ Login as the `admin` user. The default password should have been displayed in th
 
 We have created a make command to automate this task to access Prometheus from your local workstation:
 
-```
+```bash
 make prometheus
 ```
 
@@ -244,7 +255,8 @@ You can also deploy the Kubernetes dashboard to monitor your cluster resources.
 
 {% tabs %}
 {% tab title="DEPLOY" %}
-```
+
+```bash
 make install-dashboard
 ```
 
@@ -254,7 +266,7 @@ This command will deploy the Kubernetes dashboard chart. It can take a while to 
 {% tab title="ACCESS" %}
 We have created a make command to automate this task to access the Dashboard from your local workstation:
 
-```
+```bash
 make dashboard
 ```
 
@@ -264,7 +276,7 @@ Open [http://localhost:8000](http://localhost:8000/) in your browser.
 
 View your kubernetes dashboard by running the following:
 
-```
+```bash
 make dashboard
 ```
 
