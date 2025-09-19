@@ -200,7 +200,7 @@ If `a = 2, b = 1` then the `Y` asset will behave as though it is twice as deep a
 {% hint style="info" %}
 Virtual Depths were initially applied to Synth Swaps using a multiplier of 2. It was intended that Synth Swaps would create 50% less slip and users pay 50% less fees. However, this was disabled after discovering that this would allow front-running. The multiplier is specified on `/constants` as:
 
-```
+```text
 "VirtualMultSynths": 2,
 ```
 
@@ -244,7 +244,7 @@ Deposit values are _not_ the amounts the member deposited. They are the immediat
 
 The coverage is then adjusted for the 100 day rule.
 
-[`blocksForFullProtection`](../how-it-works/constants-and-mimir.md)`= 1440000 // 100 days`
+[`blocksForFullProtection`](../technical-deep-dive/governance.md#mimir) `= 1440000 // 100 days`
 
 $$
 \text{protectionProgress }= (currentHeight - heightLastAdded) / blocksForFullProtection

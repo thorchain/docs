@@ -41,8 +41,8 @@ THORChain contributors work towards three goals:
 
 To learn how THORChain works, feel free to jump here:&#x20;
 
-{% content-ref url="how-it-works/" %}
-[how-it-works](how-it-works/)
+{% content-ref url="technical-deep-dive/" %}
+[technical-deep-dive](technical-deep-dive/)
 {% endcontent-ref %}
 
 ## THORNodes
