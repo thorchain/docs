@@ -1,32 +1,42 @@
 ---
-description: How THORChain has configured the CosmWasm module
+description: CosmWasm smart contracts on THORChain (App Layer overview)
 ---
 
-# CosmWasm
+# CosmWasm (App Layer)
 
-CosmWasm is a smart contracting platform built for blockchains that uses the Cosmos SDK, Simply put, it's the Cosmos (Cosm) way of using WebAssembly (Wasm) hence the name.
+THORChain now supports **CosmWasm smart contracts** directly on the base chain. This is called the **App Layer** and was introduced with SDK V50 (V3.0). Contracts are written in WebAssembly (Wasm), most commonly using [Rust](https://www.rust-lang.org/).
 
-[Rust](https://www.rust-lang.org/) is currently the most used programming language for CosmWasm, in the future, it is possible to have different programming languages like [AssemblyScript](https://www.assemblyscript.org/) and Go.
+## How it works
 
-### CosmWasm Contracts on THORCHain
+- CosmWasm runs inside THORNode through the `x/wasm` module.
+- Contracts are **permissioned**: only approved code and deployers can be whitelisted for mainnet.
+- All contracts are tested on **stagenet** before release.
+- Nodes can pause contracts or the entire app layer if needed (via Mimir).
 
-There would be a module placed into TC called `x/wasm` and self-executing `.rs` contracts are placed in it. These "contracts" would be whitelisted in via developers because they would go in via the 2-weekly upgrade cycle. They would be rolled out on stagenet for testing first, then flagged on mainnet after sometime.
+## Supported assets
 
-### Tokens
+- **Native RUNE and L1 assets** (BTC, ETH, ATOM, etc.) can be used.
+- **Secured Assets** (e.g. `btc-btc`) are wrapped forms of L1s managed in THORChain’s state.
+- **TokenFactory assets** (“X assets”) can be created by contracts.
 
-All native tokens on THORChain listed [here](https://thornode.ninerealms.com/cosmos/bank/v1beta1/supply) would be supported in the Wasm TokenFactory (a wrapper that can push them into the WASM layer).
+> Trade assets (deposit slips) are not supported as contract-moved tokens.
 
-Derived assets `TOR` and L1 `RUNE` will work easily. Notably, trade assets are missing because they are not assets, they are deposit slips.
+## Security model
 
-You can find more information about CosmWasm in their official [docs](https://docs.cosmwasm.com/docs/).
+The App Layer is **sandboxed** from the base layer:
 
-## Developer Resources
+- Contracts have no special privileges beyond a normal THOR address.
+- They can send, swap, or call other contracts, but cannot touch vault logic.
+- If an app fails, the base chain remains secure.
 
-For technical implementation details on:
+## Why it matters
 
-- Deploying CosmWasm contracts on THORChain
-- Contract whitelisting process
-- TokenFactory integration
-- Testing contracts on stagenet
+- Developers can build DeFi apps directly on THORChain (orderbooks, perps, stablecoins, lending, etc.).
+- Apps can share fees with THORNodes to pay for the security they use.
+- Users interact with apps natively from L1 wallets — no wrapping or bridges.
 
-See the [THORChain Developer Documentation](https://dev.thorchain.org/)
+## Learn more
+
+- [THORChain Developer Documentation](https://dev.thorchain.org/)
+- [CosmWasm Documentation](https://docs.cosmwasm.com/docs/)
+- ADR-020: App Layer (full design and security details)

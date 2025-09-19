@@ -17,9 +17,11 @@ Building on the foundation of liquidity pools, THORChain pursues two important f
 1. Allow a user to [**Swap**](thorchain-finance/continuous-liquidity-pools.md) {_Asset X on Chain A_}, to {_Asset Y on Chain B_}.
 2. Allow a user to [**Pool**](thorchain-finance/runepool.md) RUNE across liquidity pools,
 
-Developers can create innovative products that integrate with THORChain, including wallets, exchanges, and various services, monetising these efforts via [affiliate fees](https://dev.thorchain.org/concepts/fees.html?highlight=aff#affiliate-fee) (e.g., up to 10% in affiliate fees for swaps and liquidity additions). All that is needed is a focus on creating engaging front-end interfaces and attracting users.
+## Building on THORChain
 
-Developers interested in integrating THORChain should read the [Dedicated Developer Documentation](https://dev.thorchain.org/), as well as the quick start guide for [Swapping](https://dev.thorchain.org/swap-guide/quickstart-guide.html).
+THORChain welcomes developers who want to build applications and interfaces for users. Whether you're creating wallets, exchanges, or innovative DeFi applications, THORChain provides the infrastructure for cross-chain liquidity.
+
+For technical integration guides, API documentation, and developer resources, visit the [THORChain Developer Documentation](https://dev.thorchain.org/).
 
 Created with the first principles of decentralisation, resistance to capture, and sustainability, the THORChain protocol includes several novel innovations:
 
@@ -57,12 +59,8 @@ THORChain is an open-source, public project with a vibrant and growing ecosystem
 
 Be part of the THORChain ecosystem by joining the [THORChain Community Discord](https://discord.com/invite/c4EhDZdFMA). It’s the best place to ask questions, learn how things work, and discuss all things THORChain with other users, builders, and contributors.
 
-#### 2. Build Interfaces
+#### 2. Build on THORChain
 
-Interface developers are welcome to build wallets, dashboards, exchanges, and more that integrate with THORChain. You can monetize your apps through **affiliate fees**, earning up to **10%** on swaps and liquidity actions. Focus on building great frontends and bringing in users — the protocol takes care of the rest.
+Developers can create applications and interfaces that leverage THORChain's cross-chain liquidity infrastructure. This includes wallets, exchanges, DeFi applications, and innovative financial products that benefit users across multiple blockchains.
 
-Join the [Dev Discord](https://discord.gg/u6wMSKHpD4) to collaborate with other interface developers and access tools, docs, and support. Also see our [Dedicated Developer Documentation](https://dev.thorchain.org/) and quick start guides for [Swapping](https://dev.thorchain.org/swap-guide/quickstart-guide.html).
-
-#### 3. Build Apps with Rujira
-
-For building secure and sustainable decentralized applications (dApps) and smart contracts on top of THORChain check out [Rujira](https://docs.rujira.network/developers/getting-started). You can also join the [Rujira Discord](https://discord.gg/XPvsxhWKfb) for developers to connect with core contributors and other app developers.
+For comprehensive developer resources, technical guides, and community support, visit the [THORChain Developer Documentation](https://dev.thorchain.org/).
