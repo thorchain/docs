@@ -21,7 +21,7 @@ See an [overview of Swapping in THORChain](../#how-swapping-works)
 Users can swap any assets which are on connected chains and which have been added to the network. Users can swap from any connected asset to any other connected asset. They can also swap from any connected asset to [RUNE](../rune.md).
 
 {% hint style="info" %}
-Learn more about how chains and assets get added to the network in [the Governance section](../../how-it-works/governance.md).
+Learn more about how chains and assets get added to the network in [the Governance section](../../technical-deep-dive/governance.md).
 
 To add an asset to THORChain, users simply deposit a new asset to put it in the queue for listing. Swaps can only be made on pools when they have been added to the network and have moved out of the bootstrap phase.
 {% endhint %}
@@ -107,7 +107,7 @@ The cost of a swap is made up of two parts:
 1. Outbound Fee
 2. Price Slippage
 
-All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../../how-it-works/fees.md#network-fee).
+All swaps are charged a network fee. The network fee is dynamic – it's calculated by averaging a set of recent gas prices. Learn more about [Network Fees](../../technical-deep-dive/).
 
 Note that users who force their swaps through quickly cause large slips and pay larger fees to liquidity providers.
 

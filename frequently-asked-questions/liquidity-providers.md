@@ -85,7 +85,7 @@ If you add asymmetrically with RUNE first;
 
 ### Withdrawing Liquidity
 
-Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they’ve earned. Fees do apply when withdrawing, see [Outbound Fee](../how-it-works/fees.md#outbound-fee).
+Liquidity providers can withdraw their assets at any time and without any cooldown period, aside from the confirmation time. The network processes their request and the liquidity provider receives their ownership percentage of the pool along with the assets they've earned. Fees do apply when withdrawing, see [Technical Deep Dive](../technical-deep-dive/).
 
 ### **How to track your position**
 

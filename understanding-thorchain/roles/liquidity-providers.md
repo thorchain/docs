@@ -20,7 +20,7 @@ Liquidity providers must have assets to deposit and their assets must be native 
 
 Liquidity providers must pay for security of their assets since security is not free. This "payment" is the requirement for liquidity providers to hold RUNE, which acts as a redeemable insurance policy whilst they are in the pool. Holding RUNE allows liquidity providers to retain an ability to economically leverage nodes to ensure security of assets. When the liquidity provider withdraws, they can sell their RUNE back to the asset they desire.
 
-The only direct cost to liquidity providers is the [network fee](../../how-it-works/fees.md#network-fee), charged for withdrawing assets (pays for the compute resources and gas costs in order to process outbound transactions). An indirect cost to liquidity providers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of liquidity provider purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's [slip-based fee](../../how-it-works/fees.md#slip-based-fee).
+The only direct cost to liquidity providers is the network fee, charged for withdrawing assets (pays for the compute resources and gas costs in order to process outbound transactions). An indirect cost to liquidity providers comes in the form of impermanent loss. Impermanent loss is common to Constant Function Market Makers like THORChain. It leads to potential loss of liquidity provider purchasing power as a result of price slippage in pools. However, this is minimised by THORChain's slip-based fee. See [Technical Deep Dive](../../technical-deep-dive/) for more details.
 
 Liquidity providers are not subject to any direct penalties for misconduct.
 
@@ -28,7 +28,7 @@ Liquidity providers are not subject to any direct penalties for misconduct.
 
 The process of providing liquidity to THORChain pools is permissionless, non-custodial, and quite simple. First, a user—anyone at all—would deposit their asset(s) to the pool. They would remain in that pool for some amount of time, entirely of their choosing. When they wish to withdraw their pool share, they simply reverse the first step.
 
-Anyone can add liquidity to existing pools; the same goes for proposing new asset pools (this is done simply by depositing it—see [asset listing/delisting](../../how-it-works/governance.md#chain-listing-delisting) for details). Once a new asset pool is listed, anybody can add liquidity to it. It is in this sense that THORChain is permissionless.
+Anyone can add liquidity to existing pools; the same goes for proposing new asset pools (this is done simply by depositing it—see [asset listing/delisting](../../technical-deep-dive/governance.md#asset-listing) for details). Once a new asset pool is listed, anybody can add liquidity to it. It is in this sense that THORChain is permissionless.
 
 Liquidity can be added to existing pools at any time, increasing its depth and attracting swappers with low fees, for the deeper the liquidity, the more affordable the cost of the swap. With that said, deep pools generally have higher swap volume; this in turn generates more fee revenue for LPs.
 
@@ -50,7 +50,7 @@ Generally, LPs are encouraged to deposit symmetrically. However, if the pool is 
 
 ### Withdrawing Assets
 
-Just as with deposits, the ability to withdraw assets is completely permissionless and non-custodial. Liquidity providers can withdraw their assets at any time. Furthermore, only the original depositor has the ability to execute the withdrawal of their pool share. The network processes their request and the liquidity provider receives their ownership percentage of the pool plus the assets they've earned. A network fee is charged whenever assets are taken out of the network. These fees go into [the network reserve](../../how-it-works/emission-schedule.md).
+Just as with deposits, the ability to withdraw assets is completely permissionless and non-custodial. Liquidity providers can withdraw their assets at any time. Furthermore, only the original depositor has the ability to execute the withdrawal of their pool share. The network processes their request and the liquidity provider receives their ownership percentage of the pool plus the assets they've earned. A network fee is charged whenever assets are taken out of the network. These fees go into [the network reserve](../../technical-deep-dive/economic-model.md).
 
 ### Security
 
@@ -105,9 +105,9 @@ The ratio of assets in a liquidity pool is comparable to an exchange rate.
 
 This change in the ratio of assets is called a 'slip'. A proportion of each slip is kept in the pool. This is allocated to liquidity providers and forms part of their yield. Learn more about [swapping](swapping.md).
 
-**Rewards** come from THORChain's own [reward emissions](../../how-it-works/emission-schedule.md). Reward emissions follow a predetermined schedule of release.
+**Rewards** come from THORChain's own [reward emissions](../../technical-deep-dive/economic-model.md). Reward emissions follow a predetermined schedule of release.
 
-Rewards also come from a token reserve. This token reserve is continuously filled up from[ network fees](../../how-it-works/fees.md#network-fee). Part of the token reserve is paid out to liquidity providers over the long-term. This provides continuous income even during times of low exchange volume.
+Rewards also come from a token reserve. This token reserve is continuously filled up from network fees. Part of the token reserve is paid out to liquidity providers over the long-term. This provides continuous income even during times of low exchange volume. See [Technical Deep Dive](../../technical-deep-dive/) for more details.
 
 {% hint style="info" %}
 See here for an [interactive example](https://rebase.foundation/network/thorchain/system-component/providing-liquidity) of the process.
@@ -121,7 +121,7 @@ See here for an [interactive example](https://rebase.foundation/network/thorchai
 
 **Size of Swaps** – Swappers who are in a hurry to exchange assets will tend to make larger swaps. Larger swaps lead to greater price slips and therefore higher fees.
 
-**Incentive Pendulum** – The Incentive Pendulum balances the amount of capital bonded in the network versus pooled. It does this by changing the amount of rewards given to node operators versus liquidity providers. Sometimes rewards will be higher for liquidity providers to encourage them to deposit assets; sometimes the opposite. [Learn more](../../how-it-works/incentive-pendulum.md).
+**Incentive Pendulum** – The Incentive Pendulum balances the amount of capital bonded in the network versus pooled. It does this by changing the amount of rewards given to node operators versus liquidity providers. Sometimes rewards will be higher for liquidity providers to encourage them to deposit assets; sometimes the opposite. [Learn more](../../technical-deep-dive/economic-model.md).
 
 **Change in Asset Prices --** If the price of the assets change, then liquidity providers will receive more of one and less of the other. This may change yield if yield is being priced in a third asset, ie, USD.
 
@@ -137,7 +137,7 @@ See here for an [interactive example](https://rebase.foundation/network/thorchai
 
 Depositing assets on THORChain is permissionless and non-custodial.
 
-Liquidity providers can propose new asset pools or add liquidity to existing pools. Anybody can propose a new asset by depositing it. See [asset listing/delisting](../../how-it-works/governance.md#chain-listing-delisting) for details. Once a new asset pool is listed, anybody can add liquidity to it. In this sense, THORChain is permissionless.
+Liquidity providers can propose new asset pools or add liquidity to existing pools. Anybody can propose a new asset by depositing it. See [asset listing/delisting](../../technical-deep-dive/governance.md#asset-listing) for details. Once a new asset pool is listed, anybody can add liquidity to it. In this sense, THORChain is permissionless.
 
 The ability to use and withdraw assets is completely non-custodial. Only the original depositor has the ability to withdraw them. Nodes are bound by rules of the network and cannot take control of user-deposited assets.
 
@@ -159,7 +159,7 @@ _Note: there is no difference between swapping into symmetrical shares, then dep
 
 ### Withdrawing Assets
 
-Liquidity providers can withdraw their assets at any time. The network processes their request and the liquidity provider receives their ownership % of the pool along with the assets they've earned. A network fee is taken whenever assets are taken out of the network. These are added to [the network reserve](../../how-it-works/emission-schedule.md#reserve-outflows-and-inflows).
+Liquidity providers can withdraw their assets at any time. The network processes their request and the liquidity provider receives their ownership % of the pool along with the assets they've earned. A network fee is taken whenever assets are taken out of the network. These are added to [the network reserve](../../technical-deep-dive/economic-model.md#reserve-outflows-and-inflows).
 
 ## How Yield is Calculated
 
