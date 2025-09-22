@@ -11,7 +11,6 @@ THORChain governance decides:
 - which assets are listed or delisted
 - which chains are listed or delisted
 - when the protocol is upgraded
-- the economic limit – how many nodes can participate
 
 ## Asset Listing
 
@@ -74,15 +73,6 @@ Nodes cannot directly coordinate, which makes emergency changes difficult. In cr
 2. When fewer than 4 nodes remain, Ragnarök triggers.
 3. All funds are automatically returned to users.
 4. The network shuts down safely and can be restarted later.
-
-## Economic Limit
-
-The number of active nodes is limited by the minimum bond requirement and the fixed supply of RUNE.
-
-- If the network is under-bonded, the minimum bond can be lowered.
-- If the network is over-bonded, the minimum bond can be raised.
-
-This ensures the network maintains the right level of security.
 
 ## Governance Philosophy
 

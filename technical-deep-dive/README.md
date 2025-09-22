@@ -4,9 +4,7 @@ description: Technical deep dive into THORChain's design and core mechanics
 
 # Technical Deep Dive
 
-This section explains the core technical concepts behind THORChain. It is aimed at readers who want to go beyond the user-facing features and understand how the protocol is designed.
-
-Each topic links to a dedicated page with more detail.
+This section explains the core technical concepts behind THORChain. It is aimed at readers who want to go beyond the user-facing features and understand how the protocol is designed. Each topic links to a dedicated page with more detail.
 
 ## Topics
 
