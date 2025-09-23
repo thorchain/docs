@@ -36,7 +36,7 @@ The protocol [inflation](https://docs.thorchain.org/network/emission-schedule) i
 
 ### **How are swap fees calculated?**
 
-Swap fees are dependent on the depth of liquidity pools, the deeper the pools (aka the more liquidity) the less the fee is. Swap fee also depends on the size of the deposit. Bigger deposits incur more swap fees. See [Fees](../how-it-works/fees.md#slip-based-fee).
+Swap fees are dependent on the depth of liquidity pools, the deeper the pools (aka the more liquidity) the less the fee is. Swap fee also depends on the size of the deposit. Bigger deposits incur more swap fees. See [Technical Deep Dive](../technical-deep-dive/).
 
 ### **What Interfaces / Exchanges are there? How to access THORChain?**
 
@@ -44,7 +44,7 @@ You can many interfaces to interact with THORChain. See [Exchanges](../ecosystem
 
 #### **What is Outbound Throttling?**
 
-- See [Outbound Transaction Throttling](../how-it-works/security.md#b905-1)
+- See [Outbound Transaction Throttling](../technical-deep-dive/security.md)
 - You can watch it at [https://thorchain-scheduled-tx.web.app/](https://thorchain-scheduled-tx.web.app/)
 - Since Jan 2024, [Swapper Clout](https://gitlab.com/thorchain/thornode/-/issues/1723) has been enabled to optimise the Outbound Throttling.
 
@@ -56,11 +56,11 @@ The outbound fees that THORChain levies is 1.5x t0 3x the “fast” fee recomme
 
 - See The `outbound_fee_multiplier` pararamter in the [network endpoint](https://thornode.ninerealms.com/thorchain/network)
 - See [ADR 008: Implement a Dynamic Outbound Fee Multiplier](https://dev.thorchain.org/architecture/adr-008-implement-dynamic-outbound-fee-multiplier.html)
-- See [Outbound-Fee](../how-it-works/fees.md#outbound-fee).
+- See [Technical Deep Dive](../technical-deep-dive/).
 
 The outbound fees that THORChain levies could be up to 2.5x the “fast” fee recommended for the respective blockchain.
 
-- See [Outbound-Fee](../how-it-works/fees.md#outbound-fee).
+- See [Technical Deep Dive](../technical-deep-dive/).
 - Standard Fee [inbound address](https://thornode.ninerealms.com/thorchain/inbound_addresses) endpoint.
 - [Watch Fees and Wait Times Explained](https://www.youtube.com/watch?v=XAdaEXO-Ofg) video.
 
@@ -90,7 +90,7 @@ Unbalanced pools represent a profit opportunity for arbitrage traders -- if a tr
 
 #### **Is there a liquidity cap?**
 
-The Soft Cap has been removed, so there should be no limit to the amount of liquidity entered. There is a hard cap in place to ensure the total pooled cannot exceed the total bonded, making the network unsafe however the [Incentive Pendlumn](../how-it-works/incentive-pendulum.md) makes this cap near impossible to reach.
+The Soft Cap has been removed, so there should be no limit to the amount of liquidity entered. There is a hard cap in place to ensure the total pooled cannot exceed the total bonded, making the network unsafe however the [Incentive Pendulum](../technical-deep-dive/economic-model.md) makes this cap near impossible to reach.
 
 #### Why does RUNE need to be the settlement asset in every pool?
 
@@ -123,7 +123,7 @@ Approximately every three days, the pending pool with the deepest liquidity is c
 
 This means there is an open decentralised liquidity competition where the community can vote with their liquidity. N.B. Caps will prevent voting with liquidity.
 
-There is a set max of 100 active pools, and once achieved, deeper pending pools will be able to replace shallowest active pools. See [Governance](../how-it-works/governance.md#asset-listing)for more information.
+There is a set max of 100 active pools, and once achieved, deeper pending pools will be able to replace shallowest active pools. See [Governance](../technical-deep-dive/governance.md#asset-listing) for more information.
 
 #### **What is the Contract Address of RUNE?**
 

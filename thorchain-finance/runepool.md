@@ -10,7 +10,7 @@ RUNEPool is a feature of THORChain that allows RUNE holders to join the Protocol
 
 ## How does RUNEPool work?
 
-RUNEPool dynamically matches external capital with various pools in the system. Managing 13 different pools, each on its price curve, RUNEPool aggregates and distributes RUNE across these pools. By using the [Incentive Pendulum](https://docs.thorchain.org/how-it-works/incentive-pendulum), RUNEPool smoothens out price curves, reducing volatility and making THORChain products more attractive to investors.
+RUNEPool dynamically matches external capital with various pools in the system. Managing 13 different pools, each on its price curve, RUNEPool aggregates and distributes RUNE across these pools. By using the [Incentive Pendulum](../technical-deep-dive/economic-model.md), RUNEPool smoothens out price curves, reducing volatility and making THORChain products more attractive to investors.
 
 #### Use Case
 

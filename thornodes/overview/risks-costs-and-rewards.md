@@ -41,7 +41,7 @@ Node Operators receive rewards if they are bonded and active on the network and 
 
 Node Operators earn rewards relative to their bond; the more they bond, the more they earn, up to the effective bond cap (the highest bond of the bottom 2/3rd active nodes). Over time, this incentive increases the median bonded amount, increasing the security of the network and allows the network to grow. [See Keeping Track of Rewards](risks-costs-and-rewards.md#keeping-track) below for more details.
 
-Rewards are affected by the [Emission Schedule](../../how-it-works/emission-schedule.md) and the [Incentive Pendulum](../../how-it-works/incentive-pendulum.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
+Rewards are affected by the [Emission Schedule](../../technical-deep-dive/economic-model.md) and the [Incentive Pendulum](../../technical-deep-dive/economic-model.md). Over time, the Emission Schedule decreases the amount of RUNE allocated to nodes. The Incentive Pendulum increases and decreases the amount of RUNE allocated to nodes according to the security and capital efficiency of the network.
 
 #### Keeping Track
 

@@ -22,8 +22,8 @@ Node Operators earn 67% of the system income when it is stable. You can read mor
 [overview](../../thornodes/overview/)
 {% endcontent-ref %}
 
-{% content-ref url="../../how-it-works/incentive-pendulum.md" %}
-[incentive-pendulum.md](../../how-it-works/incentive-pendulum.md)
+{% content-ref url="../../technical-deep-dive/economic-model.md" %}
+[economic-model.md](../../technical-deep-dive/economic-model.md)
 {% endcontent-ref %}
 
 ### Set up Instructions

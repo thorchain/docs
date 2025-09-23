@@ -97,8 +97,8 @@ THORNodes each occupy one of the 120 slots in the system can can vote on changin
 
 RUNE is the native currency of THORChain and is consumed as transaction fees on the network. All swaps are charged both a fixed network fee, as well as a dynamic slip-based fee. This prevents various attack paths such as denial-of-service attacks, as well as sandwich attacks on a pool. Learn more about fees here:
 
-{% content-ref url="../how-it-works/fees.md" %}
-[fees.md](../how-it-works/fees.md)
+{% content-ref url="../technical-deep-dive/" %}
+[technical-deep-dive](../technical-deep-dive/)
 {% endcontent-ref %}
 
 ### **Subsidising Gas**
@@ -113,8 +113,8 @@ This drives Nodes to bond the optimal amount, and pays Liquidity providers for t
 
 Learn about the Incentive Pendulum here:
 
-{% content-ref url="../how-it-works/incentive-pendulum.md" %}
-[incentive-pendulum.md](../how-it-works/incentive-pendulum.md)
+{% content-ref url="../technical-deep-dive/economic-model.md" %}
+[economic-model.md](../technical-deep-dive/economic-model.md)
 {% endcontent-ref %}
 
 ## Deterministic Value of RUNE

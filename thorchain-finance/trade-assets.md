@@ -55,7 +55,7 @@ Dashboards for Trade Assets continuously evolve as THORChain expands, but taking
 
 ### Economic Security
 
-Trade Assets are the first to be held outside liquidity pools on THORChain. This means that not all native assets in TSS Vaults are paired with RUNE. To maintain network economic security, the [Incentive Pendulum](../how-it-works/incentive-pendulum.md) now considers the value of all assets in the vaults, not just those in pools, when distributing rewards between Nodes and LPs. If the value of vault assets exceeds bonded value, Trade Accounts may face negative interest rates until the value ratio is balanced.
+Trade Assets are the first to be held outside liquidity pools on THORChain. This means that not all native assets in TSS Vaults are paired with RUNE. To maintain network economic security, the [Incentive Pendulum](../technical-deep-dive/economic-model.md) now considers the value of all assets in the vaults, not just those in pools, when distributing rewards between Nodes and LPs. If the value of vault assets exceeds bonded value, Trade Accounts may face negative interest rates until the value ratio is balanced.
 
 To ensure the security of the network, if the combined pool and trade account value exceeds the total bonded value, trade assets will be liquidated to buy RUNE and deposited into the bond module. This safeguard ensures liquidity redistribution to Active Node Operators and occurs only if the Incentive Pendulum is underbonded.
 
