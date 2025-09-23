@@ -23,23 +23,9 @@ THORChain welcomes developers who want to build applications and interfaces for 
 
 For technical integration guides, API documentation, and developer resources, visit the [THORChain Developer Documentation](https://dev.thorchain.org/).
 
-Created with the first principles of decentralisation, resistance to capture, and sustainability, the THORChain protocol includes several novel innovations:
+For a detailed understanding of THORChain's technical innovations, design principles, and protocol mechanics, see the Technical Deep Dive section below.
 
-1. **Capped Proof Of Bond**: Validator selection keeps the network decentralised and [Nakamoto Coefficient](https://nakaflow.io/) high
-2. **3-Day Validator Churning**: eliminates validator stagnation, proves spendability of funds, and upgrades the network—all with minimal governance
-3. **Asynchronous Network Upgrades**: allows validators to upgrade to a new protocol version in their own time; network upgrades occur without ever breaking consensus
-4. **Chain-agnostic Bifrost Protocol**: handles UTXO, EVM, BFT and Cryptonote chain connections with minimal core-logic nuances
-5. **Incentive Pendulum**: streams rewards to Validators and Liquidity Providers to target a Network Security ratio that ensures funds are always secured
-6. **Continuous Liquidity Pools**: allow single-sided liquidity provision, use liquidity-sensitive or "slip-based" fees to resist price attacks
-7. **Swap Queue**: orders swaps based on price impact in each block, stopping sandwich attacks and most other forms of Miner Extractable Value (MEV)
-
-THORChain contributors work towards three goals:
-
-1. **Security**: Perpetually improve the security of the network, via either **Functional Security—**&#x65;.g., Solvency Checker, Node Pause, TxOut Throttler; **Procedural Security**—e.g., THORSec, Stagenet testing, PR reviews; or **Economic Security**—e.g., bonded RUNE value
-2. **Liquidity**: Perpetually increase the liquidity of the network by incentivizing users to deposit into liquidity pools, thereby increasing the network's Total Value Locked (TVL)
-3. **Volume**: Improve the volume of the network via swap UX and wallet integrations (Quotes Endpoint, Dev UX, BD)
-
-To learn how THORChain works, feel free to jump here:&#x20;
+To learn how THORChain works, feel free to jump here:
 
 {% content-ref url="technical-deep-dive/" %}
 [technical-deep-dive](technical-deep-dive/)
