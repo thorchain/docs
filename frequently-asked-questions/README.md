@@ -32,7 +32,7 @@ Approx. 330M with a max of 500M. Full details at [https://ops.ninerealms.com/net
 
 ### **What is the inflation rate of RUNE?**
 
-The protocol [inflation](https://docs.thorchain.org/network/emission-schedule) is perdominally determined by the size of the reserve. The formula is: `Reserve/EmissionCurve/BlocksPerYear/`, thus gradually decreases every block. In early 2024, with an active reserve of 83m RUNE, the dailyinflation is around 28.5k RUNE. See the [THORChain Tokenomics article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260) for more information.
+Currently about 720 RUNE per year. The protocol inflation is predominantly determined by the size of the reserve. The formula is: `Reserve/EmissionCurve/BlocksPerYear/`, thus gradually decreases every block. See the [Economic Model](../technical-deep-dive/economic-model.md) for detailed information on emission schedule and reserves.
 
 ### **How are swap fees calculated?**
 
