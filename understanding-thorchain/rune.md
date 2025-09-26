@@ -4,7 +4,7 @@ description: An overview of the asset and its four key roles.
 
 # RUNE
 
-### What is RUNE?
+## What is RUNE?
 
 THORChain's native token is called [RUNE](rune.md), and it is carries a fundamental utility within each facet of THORChain's operational infrastructure, as well as the larger ecosystem. Specifically, it fills three key roles:
 
@@ -121,9 +121,7 @@ RUNE's price has two factors: a deterministic value based on the liquidity withi
 
 ## For more informaiton on RUNE see
 
-* [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
-* [Under the Hood: Rune Supply](https://thorchain-university.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
-* [Current Supply Data](https://dashboards.ninerealms.com/#lending)
-* [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
-
-[^1]: hyperlink needed
+- [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
+- [Under the Hood: Rune Supply](https://thorchain-university.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
+- [Current Supply Data](https://dashboards.ninerealms.com/#lending)
+- [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
