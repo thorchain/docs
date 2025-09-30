@@ -1,13 +1,14 @@
 # Table of contents
 
-- [What is THORChain and RUNE?](what-is-thorchain-and-rune.md)
-- [Native Cross-chain Swaps](native-cross-chain-swaps.md)
-- [How to Use THORChain](how-to-use-thorchain.md)
-- [Application Layer](application-layer.md)
-- [Liquidity](liquidity.md)
-- [Network Security and Governance](network-security-governance.md)
-- [Tokenomics of RUNE and TCY](tokenomics-rune-tcy.md)
-- [Ecosystem](ecosystem.md)
+- 📖 [Introduction](README.md)
+- ❓ [What is THORChain and RUNE?](what-is-thorchain-and-rune.md)
+- 🔄 [Native Cross-chain Swaps](native-cross-chain-swaps.md)
+- 🚀 [How to Use THORChain](how-to-use-thorchain.md)
+- 🏗️ [Application Layer](application-layer.md)
+- 💧 [Liquidity](liquidity.md)
+- 🔐 [Network Security and Governance](network-security-governance.md)
+- 🪙 [Tokenomics of RUNE and TCY](tokenomics-rune-tcy.md)
+- 🌐 [Ecosystem](ecosystem.md)
 
 ## Technical Documentation
 

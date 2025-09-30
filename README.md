@@ -2,6 +2,10 @@
 description: A high-level overview of what THORChain is, does, encourages, and pursues.
 ---
 
+{% hint style="info" %}
+**New to THORChain?** Check out [What is THORChain and RUNE?](what-is-thorchain-and-rune.md) for an easy-to-understand introduction.
+{% endhint %}
+
 # Introduction
 
 ## What is THORChain?

@@ -5,14 +5,14 @@ description: A practical walkthrough of connecting a wallet, selecting assets, e
 # How to use THORChain (step by step)
 
 1. Create a wallet on your preferred interface (e.g., Vultisig, Keystore, Ledger, etc.).
-    Go to the [Ecosystem](./ecosystem.md#integrated-wallets-and-exchanges) page to find a wallet provider.
+   Go to the [Ecosystem](./ecosystem.md#integrated-wallets-and-exchanges) page to find a wallet provider.
 
 2. Go to [THORChain's Swap website](https://swap.thorchain.org/)
 
-    <!-- trunk-ignore(markdownlint/MD033) -->
-    <img src=".gitbook/assets/swap.thorchain-screenshot.png" alt="Thorchain swap website" width="500" />
+   <!-- trunk-ignore(markdownlint/MD033) -->
+   <img src=".gitbook/assets/swap.thorchain-screenshot.png" alt="Thorchain swap website" width="500" />
 
-1. Connect your wallet
+3. Connect your wallet
    <!-- trunk-ignore(markdownlint/MD033) -->
    <img src=".gitbook/assets/swap.thorchain-connect-wallet.png" alt="Connect wallet interface" width="500" />
 
