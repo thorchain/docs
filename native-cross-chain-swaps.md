@@ -16,7 +16,9 @@ Every cryptocurrency supported by THORChain is paired with RUNE in liquidity poo
 
 Each blockchain has its own vault, operated collectively by THORChain's node network. Your funds are deposited there, and after the network confirms the transaction, they are released as the native coin on the destination chain. Thanks to threshold signatures (a type of multi-signature technology), no single node has full control over the funds.
 
+<!-- trunk-ignore(markdownlint/MD033) -->
 <div align="center">
+<!-- trunk-ignore(markdownlint/MD033) -->
   <img src=".gitbook/assets/liqudity-pools-with-rune.png" alt="Liquidity pools with RUNE showing how different cryptocurrencies connect through RUNE as the settlement asset" width="500" />
 </div>
 
@@ -28,7 +30,9 @@ Each blockchain has its own vault, operated collectively by THORChain's node net
 4. The network releases the equivalent amount of native ETH directly to your Ethereum address.
 5. In practice, you send BTC and shortly after see ETH in your wallet.
 
+<!-- trunk-ignore(markdownlint/MD033) -->
 <div align="center">
+<!-- trunk-ignore(markdownlint/MD033) -->
   <img src=".gitbook/assets/Example-Swap-BTC-ETH.png" alt="Example of BTC to ETH swap process showing the step-by-step flow through THORChain" width="500" />
 </div>
 

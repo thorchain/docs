@@ -39,9 +39,9 @@ This is how TSS works in THORChain:
 
 ## Governance – The Mimir System
 
-- **Validator voting**: Governance in THORChain is managed through Mimir. Each active validator (THORNode) has one vote to decide on network parameters
-- **2/3 supermajority**: To enact a change, about two-thirds of validators must agree. Only then does the new setting take effect
-- **Examples of changes**: Validators can vote to adjust fees, RUNE emission rates, or other economic parameters — allowing the protocol to adapt dynamically to changing conditions
+- **Validator voting**: Governance in THORChain is managed through Mimir, where active validators vote on network parameters
+- **Consensus requirements**: Operational parameters require a small number of validator votes (typically 3+), while economic parameters require supermajority consensus (approximately 2/3 of validators)
+- **Dynamic adaptation**: This allows the protocol to make quick operational adjustments while ensuring economic changes have broad validator support
 
 ## Incentive Pendulum
 
