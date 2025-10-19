@@ -45,11 +45,11 @@ Each individual THORNode is comprised of several independent servers in a cluste
 
 THORChain is an open-source, public project with a vibrant and growing ecosystem. Whether you’re a user, an interface developer, or an app builder on top of the network, there’s a way to get involved.
 
-#### 1. Join the Community
+### 1. Join the Community
 
 Be part of the THORChain ecosystem by joining the [THORChain Community Discord](https://discord.com/invite/c4EhDZdFMA). It’s the best place to ask questions, learn how things work, and discuss all things THORChain with other users, builders, and contributors.
 
-#### 2. Build on THORChain
+### 2. Build on THORChain
 
 Developers can create applications and interfaces that leverage THORChain's cross-chain liquidity infrastructure. This includes wallets, exchanges, DeFi applications, and innovative financial products that benefit users across multiple blockchains.
 

@@ -15,7 +15,10 @@ The system monitors the ratio of bonded RUNE (from node operators) to pooled ass
 - If there is too much liquidity relative to bonded security, the network is unsafe, so rewards shift toward nodes.
 - If there is too much bonded capital relative to liquidity, the network is inefficient, so rewards shift toward liquidity providers.
 
-This creates a self-balancing system that maintains the target **2:1 bond-to-stake ratio**, which is central to THORChain’s security model.
+This creates a self-balancing system that maintains the target **2:1 bond-to-stake ratio**, which is central to THORChain's security model.
+
+<!-- trunk-ignore(markdownlint/MD033) -->
+<img src="../.gitbook/assets/incentive-pendulum.png" alt="Incentive Pendulum diagram showing the balance between bonded RUNE and pooled assets" width="500" />
 
 {% hint style="success" %}
 Detailed documentation on the Incentive Pendulum can be found in the [developer documentation](https://dev.thorchain.org/concepts/incentive-pendulum.html).
@@ -36,7 +39,7 @@ There are a maximum of 500M RUNE. All supply was created at genesis and distribu
 All vesting has been completed.
 {% endhint %}
 
-The [Reserve module](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt) and other modules can be viewed [here](https://runescan.io/addresses).
+The [Reserve module](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt) and [other modules](https://runescan.io/addresses) can be viewed on RuneScan.
 
 ### Block Rewards
 
