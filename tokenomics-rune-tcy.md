@@ -59,12 +59,14 @@ The current fee distribution in THORChain is as follows:
 
 - **5%** → burned
 - **5%** → developer fund
+- **5%** → marketing
 - **10%** → TCY holders (explained below)
-- **80%** → validators (nodes) and liquidity providers (LPs)
+- **75%** → validators (nodes) and liquidity providers (LPs)
   - The exact split between them is determined by the Incentive Pendulum
 
 <!-- trunk-ignore(markdownlint/MD033) -->
 <div align="center">
+<!-- trunk-ignore(markdownlint/MD033) -->
   <img src=".gitbook/assets/swap-fee-breakdown.png" alt="Fee distribution diagram showing how revenues flow between different parts of the THORChain ecosystem" width="500" />
 </div>
 
@@ -79,6 +81,7 @@ Each $1 of debt was converted into 1 TCY. This way, creditors received tokens in
 - **TCY can be claimed** through the official interface: [tcy.thorchain.org](https://tcy.thorchain.org/)
 - A THORChain address is required to claim.
 - Claimed tokens are automatically staked and immediately start generating daily yield.
+- TCY can also be bought from the open market e.g. via swap.thorchain.org
 
 ### TCY Supply
 

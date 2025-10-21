@@ -14,6 +14,7 @@ What does this mean in practice?
 - Users can swap one token for another at any time at a price determined by the ratio of assets in the pool
 - This ensures that liquidity is always available, and swaps occur without intermediaries or centralized price oracles
 - Pools are additionally "repaired" by arbitrageurs, which keeps their prices aligned with external markets
+- Pool prices are additionally "maintained" by arbitrageurs to keep them aligned with external markets
 
 ## Slip-based Fees – liquidity-dependent fees
 
@@ -86,7 +87,7 @@ THORChain automatically splits a large swap into smaller sub-swaps executed one 
 ### Why is this better?
 
 - Slip on each part is minimal
-- Total slip fees can drop from several percent to ~0.1%
+- Total slip fees can drop from several percent to ~0.1% (or whatever minimum slip set by the protocol)
 - User pays only one network fee, not per sub-swap
 - Arbitrageurs between sub-swaps rebalance the pool, improving execution prices for later parts
 
@@ -114,7 +115,7 @@ THORChain pools derive prices solely from asset ratios. This can sometimes creat
 - If a token in a pool is overvalued, an arbitrageur sells it into the pool and buys it cheaper externally.
 - Repeated arbitrage trades propagate price information between THORChain and external markets until equilibrium is reached. This removes the need for centralized oracles – arbitrage continuously adjusts pool prices.
 
-### Arb Example
+### Arbitrage Example
 
 - ETH-RUNE pool: 1 ETH = 100 RUNE.
 - On Binance: 1 ETH = 110 RUNE.

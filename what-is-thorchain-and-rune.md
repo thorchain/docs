@@ -3,16 +3,16 @@
 THORChain is a Layer-1 blockchain that enables different cryptocurrencies to work together. It acts as a decentralized exchange (DEX) that allows you to swap coins across different blockchains in a single step.
 
 Every swap on THORChain happens directly from your wallet in a safe and permissionless way.
-THORChain never takes custody of your coins, so you always remain in control and possession of your funds.
+THORChain doesn't hold your funds—though it does retain your inbound asset briefly during the swap before immediately sending you the output asset. You never give up custody to a centralized entity.
 
 Unlike centralized exchanges:
 
-you don't need an account;
-there is no KYC or paperwork;
-you don't have to trust a company to hold your funds.
+- You don't need an account
+- There is no KYC or paperwork
+- You don't have to trust a company to hold your funds
 
 Example:
-If you own Bitcoin and want Ethereum, you just send Bitcoin from your wallet and receive Ethereum back instantly—no exchange accounts, no delays, no middlemen.
+If you own Bitcoin and want Ethereum, you just send Bitcoin from your wallet and receive Ethereum back in a single transaction, osmos Hub (ATOM)no exchange accounts, no middlemen.
 
 <!-- trunk-ignore(markdownlint/MD033) -->
 <div align="center">
@@ -34,6 +34,7 @@ THORChain enables native swaps between the following major blockchains:
 - Avalanche (AVAX)
 - Base (BASE)
 - Cosmos Hub (ATOM)
+- Tron (TRX)
 
 THORChain will continue to evolve and add more chains over time, so users will be able to swap even more popular cryptocurrencies—all without wrapped tokens or intermediaries.
 

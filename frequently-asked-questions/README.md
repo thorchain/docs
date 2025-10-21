@@ -32,7 +32,7 @@ Approx. 330M with a max of 500M. Full details at [https://ops.ninerealms.com/net
 
 ### **What is the inflation rate of RUNE?**
 
-Currently about 720 RUNE per year. The protocol inflation is predominantly determined by the size of the reserve. The formula is: `Reserve/EmissionCurve/BlocksPerYear/`, thus gradually decreases every block. See the [Economic Model](../technical-deep-dive/economic-model.md) for detailed information on emission schedule and reserves.
+Currently a nominal ~2 RUNE per day or about 720 RUNE per year. The protocol inflation is predominantly determined by the size of the reserve. The formula is: `Reserve/EmissionCurve/BlocksPerYear/`, thus gradually decreases every block. See the [Economic Model](../technical-deep-dive/economic-model.md) for detailed information on emission schedule and reserves.
 
 ### **How are swap fees calculated?**
 
