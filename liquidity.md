@@ -13,7 +13,6 @@ What does this mean in practice?
 - Each token pair (e.g., BTC-RUNE) has a shared capital pool
 - Users can swap one token for another at any time at a price determined by the ratio of assets in the pool
 - This ensures that liquidity is always available, and swaps occur without intermediaries or centralized price oracles
-- Pools are additionally "repaired" by arbitrageurs, which keeps their prices aligned with external markets
 - Pool prices are additionally "maintained" by arbitrageurs to keep them aligned with external markets
 
 ## Slip-based Fees – liquidity-dependent fees
