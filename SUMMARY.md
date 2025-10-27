@@ -1,21 +1,17 @@
 # Table of contents
 
-- [Introduction](README.md)
-- [Using THORChain](understanding-thorchain/README.md)
-  - [Roles](understanding-thorchain/roles/README.md)
-    - [Liquidity Providers (LPs)](understanding-thorchain/roles/liquidity-providers.md)
-    - [Swappers](understanding-thorchain/roles/swapping.md)
-    - [Arbitrageurs](understanding-thorchain/roles/trading.md)
-    - [Node Operators](understanding-thorchain/roles/node-operators.md)
-  - [RUNE](understanding-thorchain/rune.md)
-- [Ecosystem](ecosystem.md)
-- [Technology Overview](technology/README.md)
-  - [Bifrost, TSS and Vaults](technology/bifrost-tss-and-vaults.md)
-  - [Midgard](technology/midgard.md)
-  - [Cosmos SDK](technology/cosmos-sdk.md)
-  - [CosmWasm](technology/cosmwasm.md)
-  - [IBC](technology/ibc.md)
-  - [THORChain & Cosmos](technology/app-layer-bridge-assets.md)
+- 📖 [Introduction](README.md)
+- ❓ [What is THORChain and RUNE?](what-is-thorchain-and-rune.md)
+- 🔄 [Native Cross-chain Swaps](native-cross-chain-swaps.md)
+- 🚀 [How to Use THORChain](how-to-use-thorchain.md)
+- 🏗️ [Application Layer](application-layer.md)
+- 💧 [Liquidity](liquidity.md)
+- 🔐 [Network Security and Governance](network-security-governance.md)
+- 🪙 [Tokenomics of RUNE and TCY](tokenomics-rune-tcy.md)
+- 🌐 [Ecosystem](ecosystem.md)
+
+## Technical Documentation
+
 - [Technical Deep Dive](technical-deep-dive/README.md)
   - [Protocol Innovations](technical-deep-dive/protocol-innovations.md)
   - [Economic Model](technical-deep-dive/economic-model.md)
@@ -24,12 +20,26 @@
   - [Fees](technical-deep-dive/fees.md)
   - [THORChain Name Service](technical-deep-dive/thorchain-name-service.md)
 - [THORChain Finance](thorchain-finance/README.md)
-  - [Liquidity](thorchain-finance/continuous-liquidity-pools.md)
+  - [Continuous Liquidity Pools](thorchain-finance/continuous-liquidity-pools.md)
   - [Trade Assets](thorchain-finance/trade-assets.md)
   - [Secured Assets](thorchain-finance/secured-assets.md)
   - [TOR](thorchain-finance/tor.md)
   - [RUNEPool](thorchain-finance/runepool.md)
   - [Synthetics](thorchain-finance/synthetic-asset-model.md)
+- [Understanding THORChain](understanding-thorchain/README.md)
+  - [Roles](understanding-thorchain/roles/README.md)
+    - [Liquidity Providers (LPs)](understanding-thorchain/roles/liquidity-providers.md)
+    - [Swappers](understanding-thorchain/roles/swapping.md)
+    - [Arbitrageurs](understanding-thorchain/roles/trading.md)
+    - [Node Operators](understanding-thorchain/roles/node-operators.md)
+  - [RUNE](understanding-thorchain/rune.md)
+- [Technology Overview](technology/README.md)
+  - [Bifrost, TSS and Vaults](technology/bifrost-tss-and-vaults.md)
+  - [Midgard](technology/midgard.md)
+  - [Cosmos SDK](technology/cosmos-sdk.md)
+  - [CosmWasm](technology/cosmwasm.md)
+  - [IBC](technology/ibc.md)
+  - [THORChain & Cosmos](technology/app-layer-bridge-assets.md)
 
 ## THORNodes
 
@@ -72,8 +82,6 @@
   - [Lending (Deprecated)](archived/lending.md)
   - [Savers FAQ (Deprecated)](archived/savers-faq.md)
   - [Lending FAQ (Deprecated)](archived/lending-faq.md)
-
----
 
 - [Website](https://thorchain.org/)
 - [Community Discord](https://discord.com/invite/c4EhDZdFMA)

@@ -4,7 +4,7 @@ description: An overview of the asset and its four key roles.
 
 # RUNE
 
-### What is RUNE?
+## What is RUNE?
 
 THORChain's native token is called [RUNE](rune.md), and it is carries a fundamental utility within each facet of THORChain's operational infrastructure, as well as the larger ecosystem. Specifically, it fills three key roles:
 
@@ -73,9 +73,7 @@ THORChain is a **Proof of Bond** network instead. THORNodes commit a bond in ord
 
 ### **Underwriting Assets**
 
-The Incentive Pendulum ensures that Nodes are incentivised to continually buy and bond enough Rune each time to maximise their gains - which is a maximum when there is 67% of RUNE bonded and 33% pooled in pools. If the pools are holding $100m in capital, then the value of RUNE in the aggregate bond is $200m. Thus all assets can be underwritten.
-
-The bond is extremely liquid - any RUNE holder can immediately enter or exit their position since RUNE is the settlement asset in all pools. Thus, when a node churns in, the cost basis of their bond is known to them and not an arbitrary figure. This means a node bonding $1m in RUNE will never contemplate making a decision to steal <$1m in capital from the network, else they will lose overall.
+The Incentive Pendulum ensures that Nodes are incentivised to maintain optimal bond levels to secure the network's assets. The bond is extremely liquid since RUNE is the settlement asset in all pools. See the [Economic Model](../technical-deep-dive/economic-model.md) for detailed mechanics and calculations.
 
 ## 3. Governance
 
@@ -119,17 +117,11 @@ Learn about the Incentive Pendulum here:
 
 ## Deterministic Value of RUNE
 
-In addition to the roles mentioned above, RUNE’s price has two factors; 1 a deterministic value based on the liquidity within the network and 2; a speculative premium.
-
-This 2:1 bond:stake ratio, combined with the 1:1 pool ratio, means that the amount of RUNE needed in the network is three times the amount of the non-RUNE assets locked. Thus, if $1,000,000 worth of non-Rune tokens are staked in THORChain, the market cap of RUNE will be at least $3,000,000. And like any token, stock, or asset in the world of finance, speculation around future value encourages additional upward price pressure.
-
-The 3:1 ratio is just the minimum or the deterministic value of RUNE.
+RUNE's price has two factors: a deterministic value based on the liquidity within the network and a speculative premium. The economic security model creates a minimum value floor for RUNE based on the assets it secures. For detailed calculations and economic mechanics, see the [Economic Model](../technical-deep-dive/economic-model.md).
 
 ## For more informaiton on RUNE see
 
-* [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
-* [Under the Hood: Rune Supply](https://thorchain-university.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
-* [Current Supply Data](https://dashboards.ninerealms.com/#lending)
-* [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
-
-[^1]: hyperlink needed
+- [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
+- [Under the Hood: Rune Supply](https://thorchain-community.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
+- [Current Supply Data](https://dashboards.ninerealms.com/#lending)
+- [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)
