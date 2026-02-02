@@ -53,7 +53,7 @@ Interfaces can include an optional affiliate fee (in basis points) that’s coll
 To deliver your final asset, THORChain pays gas on the destination chain and charges an Outbound Fee from your swap output. This fee:
 
 - Covers actual L1 gas and protocol overhead.
-- Uses a dynamic Outbound Fee Multiplier (OFM) that moves between ~1× and 3× based on network and protocol factors.
+- Uses a dynamic Outbound Fee Multiplier (OFM) that moves between [`MinOutboundFeeMultiplierBasisPoints`](https://thornode.ninerealms.com/thorchain/mimir) (1%) and [`MaxOutboundFeeMultiplierBasisPoints`](https://thornode.ninerealms.com/thorchain/mimir) (300%) based on network and protocol factors.
 - Is published via THORNode endpoints so integrators can budget precisely.
 
 For implementation details, see the [Outbound Fee dev docs](https://dev.thorchain.org/concepts/fees.html#4-outbound-fee).
