@@ -17,7 +17,7 @@ See more full details [here](https://dev.thorchain.org/bifrost/how-bifrost-works
 To prevent large amounts of funds from leaving the network in an instant, large outbound transactions are throttled from immediately leaving the network. Each block has an outbound value limit (currently 1000 RUNE worth) and each outbound transaction has a maximum time limit that it can be processed. This has three effects:
 
 - Each outbound transaction to compete for the next outbound block, else, it will be processed in the following block, effectively throttling the total outbound capacity of the network. This is independent of [conf-counting](https://docs.thorchain.org/chain-clients/overview#confirmation-counting).
-- Large outbounds to spread across multiple blocks, up to 720 blocks (approx one hour).
+- Large outbounds to spread across multiple blocks, up to 17,280 blocks (approx one day).
 - Ensures one large outbound request of $1,000,000 is handled the same as one million $1 outbound requests.
 
 This feature is controlled by several [Mimir](constants-and-mimir.md#outbound-transactions) values that can be changed by Node Operators as required. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge_requests/1844).
