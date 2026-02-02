@@ -18,7 +18,7 @@ Note: Just less than 1/3 of the active network can be churned out in a single ch
 
 Incoming:
 
-1. The node(s) with the highest bond (2 or [`NUMBEROFNEWNODESPERCHURN`](https://thornode.ninerealms.com/thorchain/mimir)).
+1. The node(s) with the highest bond ([`NUMBEROFNEWNODESPERCHURN`](https://thornode.ninerealms.com/thorchain/mimir) nodes).
 
 Churned out nodes will be put in standby, but their bond will not automatically be returned. They will be credited any earned rewards in their last session. If they do nothing, but keep their cluster online and up-to-date with the latest THORNode version, they will be eventually churn back in.
 
