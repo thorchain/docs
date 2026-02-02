@@ -104,7 +104,7 @@ The dynamic synth unit accounting is to ensure that gain or loss caused by price
 
 Due to synths, Liquidity Providers are taking a leveraged position on the RUNE asset today. This can help them earn more rewards if RUNE outperforms the asset, but can also go the other way. The higher the percentage of synths that exist on the network relative to pool depth, the higher the leveraged position Liquidity Providers are taking.
 
-Due to this, the minting of synths is capped to an upper limit of the total pool depth to protect Liquidity Providers and the network. The [Mimir](../technical-deep-dive/governance.md#mimir) setting `MaxSynthPerAssetDepth` setting controls the cap which is the asset depth percentage.
+Due to this, the minting of synths is capped to an upper limit of the total pool depth to protect Liquidity Providers and the network. The [Mimir](../technical-deep-dive/governance.md#mimir) setting `MaxSynthPerPoolDepth` controls the cap which is the asset depth percentage.
 
 ### Protocol Owned Liquidity (POL)
 
