@@ -57,7 +57,7 @@ Example from [https://midgard.ninerealms.com/v2/thorname/lookup/td](https://midg
 }
 ```
 
-Currently, there are eleven (11) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance Smart Chain, Bitcoin Cash, Doge, Cosmos, Base, TRON and XRP. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
+Currently, there are eleven (11) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance Smart Chain, Bitcoin Cash, Doge, Cosmos, Avalanche, Base, TRON and XRP. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
 
 ### Query a THORName
 
@@ -85,7 +85,7 @@ There is a one-time registration fee of around 10 RUNE, with a 20 `tor` block fe
 
 - `TNSRegisterFee`: 10 RUNE
 - `TNSFeeOnSale`: 1000 Basis Points
-- `TNSBlockFee`: 20 tor per block (roughly 1 RUNE per year)
+- `TNSFeePerBlock`: 20 tor per block (roughly 1 RUNE per year)
 
 Example: a 20 Rune registration registers the THORName for 10 years. (10 RUNE Registration Fee + 1 RUNE every year).
 
