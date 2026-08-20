@@ -8,9 +8,9 @@ description: THORChain Ecosystem is community-based and anyone can join.
 
 All the following are community-run resources. There are no "official" channels.
 
-**Websites:** [**thorchain.org**](http://thorchain.org/) **|** [**thorchain.com**](https://www.thorchain.com/)
+**Website:** [**thorchain.org**](http://thorchain.org/)
 
-**Socials**: [**Telegram**](https://t.me/thorchain_org) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Medium**](https://medium.com/thorchain)
+**Socials**: [**Telegram**](https://t.me/thorchain_org) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Blog**](https://blog.thorchain.org/)
 
 **Documentation:** [**Docs**](https://docs.thorchain.org/) **|** [**Dev Docs**](https://dev.thorchain.org/) **|** [**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf) **|** [**Audits**](https://github.com/thorchain/Resources/tree/master/Audits)
 
@@ -20,7 +20,9 @@ All the following are community-run resources. There are no "official" channels.
 
 **Block Explorers**: [**RuneScan**](https://runescan.io) **|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORChain Tx Tracker**](https://track.thorchain.org/) **|** [**xScanner**](https://www.xscanner.org/)
 
-**Community:** [**Community Discord**](https://discord.com/invite/c4EhDZdFMA) **|** [**Community Telegram**](https://t.me/thorchain_org) **|** [**X**](https://x.com/thorchain)&#x20;
+## **Official Swap Interface**
+
+[**STO (swap.thorchain.org)**](https://swap.thorchain.org/)
 
 ## **Community Projects**
 
@@ -46,6 +48,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**DefiSpot**](https://www.defispot.com/trade) - Buy and Earn BTC, ETH, and More Fully Decentralized
 
+[**depouch**](https://depouch.com/) - Premier Cross-Chain DEX
+
 [**FortunaSwap**](https://fortunaswap.finance/) - Cross-Chain DEX
 
 [**Jumper Exchange**](https://jumper.exchange/) - Multi-chain Liquidity Aggregator Powered by Li.Fi
@@ -69,8 +73,6 @@ Below is a list of active THORChain community projects. If you would like to be 
 ### Integrated Wallets and Exchanges
 
 [**Cake Wallet**](https://cakewallet.com/) - Payments Made Easy
-
-[**Ctrl**](https://ctrl.xyz/) - One Wallet for All Your Crypto
 
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
 
@@ -100,13 +102,9 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**MetaMask via ShapeShift Snap**](https://shapeshift.com/snap) - Browser Extension Wallet: Multichain Snap for MetaMask
 
-[**Leap Wallet**](https://www.leapwallet.io/) - Browser Extension Wallet: The Super Wallet for Web3
-
 ### **Education**
 
 [**GrassRoots Crypto**](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
-
-[**THORChain Community**](https://discord.com/invite/c4EhDZdFMA) - Educational, Feature-based Discussions
 
 ## **Analytics**
 
@@ -122,15 +120,15 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**THORChain THOR InfoBot**](https://twitter.com/THOR_InfoBot) - Monitoring of major events in THORChain
 
-[**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core THORChain operations.
+[**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core THORChain operations
+
+[**Raynalytics**](https://raynalytics.net/) - Real-time, on-chain analytics and dashboards for THORChain
 
 ## **Infrastructure**
 
 [**THORNode Official Docs**](https://docs.thorchain.org/thornodes/overview) **|** [**THORNode Official Announcements**](https://t.me/thornode_ann)
 
 [**THORChain Network Explorer**](https://thorchain.net/) - THORChain Network Explorer
-
-[**THORmon**](https://thorchain.network/)- Detailed THORNode Dashboard
 
 [**Constants**](https://gateway.liquify.com/chain/thorchain_api/thorchain/constants)- Current THORChain Constants
 
@@ -168,11 +166,11 @@ See the [THORChain Developer Documentation](https://dev.thorchain.org/)
 
 ## Community Socials
 
-[**THORChain Dev Discord**](https://discord.gg/u6wMSKHpD4) (only for dev discussions)
+[**THORChain Community Telegram**](https://t.me/thorchain_org) - Telegram Server
+
+[**THORChain Dev Discord**](https://discord.gg/u6wMSKHpD4) - Discord Server
 
 [**Asgardex**](https://discord.gg/W9hGFBmCGp) - Discord Server
-
-[**Ctrl**](https://discord.gg/ctrlwallet) - Discord Server
 
 [**ShapeShift**](https://discord.gg/shapeshift) - Discord Server
 
