@@ -6,7 +6,7 @@ description: An overview of THORChain's cross-chain bridge protocol, vault syste
 
 ## Overview
 
-THORChain is a decentralized cross-chain liquidity protocol that enables native asset swaps across different blockchains without wrapped tokens. At its core, THORChain operates as a distributed vault manager using three key technologies:
+THORChain is a decentralized exchange (DEX) enabling native cross-chain swaps across different blockchains without wrapped assets or bridges. At its core, THORChain operates as a distributed vault manager using three key technologies:
 
 1. **Bifrost Protocol** - Cross-chain bridge for observing and processing external chain transactions
 2. **Vault System** - Two-layer architecture for secure asset custody
