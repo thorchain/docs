@@ -156,7 +156,7 @@ See the [THORChain Developer Documentation](https://dev.thorchain.org/)
 
 [**XChainJS**](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
 
-[**SwapKit**](https://docs.thorswap.finance/swapkit-docs/) - By THORSwap offers a composable, user-friendly Partner API/SDK on top of THORChain's cross-chain liquidity protocol.
+[**SwapKit**](https://docs.thorswap.finance/swapkit-docs/) - By THORSwap offers a composable, user-friendly Partner API/SDK on top of THORChain's cross-chain decentralized exchange.
 
 [**Ledger -**](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
 
