@@ -83,6 +83,5 @@
   - [Lending FAQ (Deprecated)](archived/lending-faq.md)
 
 - [Website](https://thorchain.org/)
-- [Community Discord](https://discord.com/invite/c4EhDZdFMA)
 - [Community Telegram](https://t.me/thorchain_org)
 - [Developer Discord](https://discord.gg/7RRmc35UEG)
