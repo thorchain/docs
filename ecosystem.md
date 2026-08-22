@@ -50,6 +50,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**depouch**](https://depouch.com/) - Premier Cross-Chain DEX
 
+[**EIDEX**](https://eidex.io/screener) - Non-Custodial Route Screener Comparing 33+ Swap Sources
+
 [**FortunaSwap**](https://fortunaswap.finance/) - Cross-Chain DEX
 
 [**Jumper Exchange**](https://jumper.exchange/) - Multi-chain Liquidity Aggregator Powered by Li.Fi
