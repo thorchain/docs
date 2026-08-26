@@ -82,6 +82,11 @@
   - [Savers FAQ (Deprecated)](archived/savers-faq.md)
   - [Lending FAQ (Deprecated)](archived/lending-faq.md)
 
+## Agent Access
+
+- [Authentication and Safety](auth.md)
+- [Agent Instructions](AGENTS.md)
+
 - [Website](https://thorchain.org/)
 - [Community Telegram](https://t.me/thorchain_org)
 - [Developer Discord](https://discord.gg/7RRmc35UEG)
