@@ -28,7 +28,9 @@ Detailed documentation on the Incentive Pendulum can be found in the [developer 
 
 ### Token Distribution
 
-There are a maximum of 500M RUNE. All supply was created at genesis and distributed as follows:
+There are a maximum of **~360M RUNE** (reduced from 500M per [ADR-023](https://dev.thorchain.org/architecture/adr-023-rune-supply-restructure.html)). Exact max and circulating supply change with burns — use [rune.tools/supply](https://rune.tools/supply) for live figures, or the [Economic Model](https://dev.thorchain.org/concepts/economic-model.html) for protocol detail.
+
+All supply was created at genesis and originally distributed as follows:
 
 - 5% (SEED) and 16% (IDO) sold for capital to start the network and give it value.
 - 10% allocated to early developers who worked since 2018.
@@ -36,7 +38,7 @@ There are a maximum of 500M RUNE. All supply was created at genesis and distribu
 - 44% placed in the Protocol Reserve to pay out to nodes and LPs for the next 10+ years.
 
 {% hint style="success" %}
-All vesting has been completed.
+All vesting has been completed. ADR-023 later burned most of the Reserve and capped max supply near total supply.
 {% endhint %}
 
 The [Reserve module](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt) and [other modules](https://runescan.io/addresses) can be viewed on RuneScan.
@@ -46,9 +48,9 @@ The [Reserve module](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4
 Block rewards are calculated as:
 
 $$
-blockReward = \frac{ \frac{reserve}{emissionCurve}}{blocksPerYear} = \frac{ \frac{180,000,000}{8}}{5256000} = 4.28
+blockReward = \frac{ \frac{reserve}{emissionCurve}}{blocksPerYear}
 $$
 
 {% hint style="info" %}
-The [emission curve](https://dev.thorchain.org/mimir.html#economics) is currently set to 100,000, meaning block rewards are minimal, approx. 720 RUNE per year.
+The [emission curve](https://dev.thorchain.org/mimir.html#economics) is currently set to 100,000, so block rewards are minimal (on the order of hundreds of RUNE per year). Live values: [Mimir](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir).
 {% endhint %}
