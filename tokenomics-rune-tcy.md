@@ -8,10 +8,10 @@ RUNE is the native utility token of the THORChain ecosystem, and it sits at the 
 
 ## RUNE Tokenomics
 
-- **Total Supply:** ~425M RUNE (reduced daily through the burn mechanism)
-- **Circulating Supply:** ~350M RUNE
-- **Reserve:** ~75M RUNE
-- **Latest numbers:** [rune.tools/supply](https://rune.tools/supply)
+- **Maximum supply:** ~360M RUNE ([ADR-023](https://dev.thorchain.org/architecture/adr-023-rune-supply-restructure.html))
+- **Circulating / total supply:** decreases with burns — see [rune.tools/supply](https://rune.tools/supply) for exact figures
+- **Reserve:** reduced under ADR-023; current balance on [RuneScan](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt)
+- **Protocol detail:** [Economic Model](technical-deep-dive/economic-model.md)
 
 All RUNE tokens have been released – there are no vesting schedules or locked allocations.
 

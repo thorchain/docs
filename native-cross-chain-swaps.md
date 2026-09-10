@@ -19,7 +19,7 @@ Each blockchain has its own vault, operated collectively by THORChain's node net
 <!-- trunk-ignore(markdownlint/MD033) -->
 <div align="center">
 <!-- trunk-ignore(markdownlint/MD033) -->
-  <img src=".gitbook/assets/liqudity-pools-with-rune.png" alt="Liquidity pools with RUNE showing how different cryptocurrencies connect through RUNE as the settlement asset" width="500" />
+  <img src=".gitbook/assets/liquidity-pools-with-rune.png" alt="Liquidity pools with RUNE showing how different cryptocurrencies connect through RUNE as the settlement asset" width="500" />
 </div>
 
 ## Example: Swapping BTC to ETH
