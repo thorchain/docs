@@ -93,7 +93,6 @@ Each $1 of debt was converted into 1 TCY. This way, creditors received tokens in
 ### How does TCY work?
 
 - **TCY holders receive 10% of all network revenue** (paid in RUNE).
-- A RUNE/TCY liquidity pool was created, so the token can be freely traded.
-- Stakers retain their yield, while the yield from unclaimed or unstaked TCY is forfeited and redirected to grow protocol-owned reserves.
-- Fees from this pool are used to buy back TCY into the THORChain treasury.
+- Stakers retain their yield, while the yield from unclaimed or unstaked TCY is forfeited and redirected to buyback TCY back into the TCY Staking Module (i.e protocol-owned TCY).
+- A RUNE/TCY liquidity pool was created, so the token can be freely traded. Fees from this pool are also used to buy back as protocol-owned TCY.
 - ⚠️ **TCY does not provide voting rights** or influence in the governance of the THORChain network – it is solely an income-generating economic token.
