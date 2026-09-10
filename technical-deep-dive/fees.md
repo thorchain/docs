@@ -16,7 +16,7 @@ Fees in THORChain serve three purposes:
 
 - Spam/dust resistance: minimums and slip floors make abuse economically costly.
 - Stable UX expectations: users see predictable fee components rather than raw external gas volatility.
-- Long-term sustainability: fee design reduces reliance on emissions alone. See [Incentive Pendulum](economic-model.md#incentive-pendulum) for how fees and rewards adjust to balance liquidity and security.
+- Long-term sustainability: see [Incentive Pendulum](economic-model.md#incentive-pendulum) for how fees distribution adjust to balance liquidity and security.
 
 ## Fee overview
 
@@ -28,7 +28,7 @@ Fees in THORChain serve three purposes:
 | Outbound Fee  | Destination-chain gas × dynamic multiplier (OFM ~1–3×), which also covers protocol overhead | Deducted from the swap output; includes the THORChain network component                   |
 
 {% hint style="info" %}
-Transactions on the THORChain chain itself (e.g., native RUNE or trade-asset transfers) incur the Native Transaction Fee of 0.02 RUNE. See [Fees dev docs](https://dev.thorchain.org/concepts/fees.html).
+Transactions on the THORChain chain itself (e.g., native RUNE, trade-asset and secured-asset transfers) incur the Native Transaction Fee of 0.02 RUNE. See [Fees dev docs](https://dev.thorchain.org/concepts/fees.html).
 {% endhint %}
 
 ## Inbound Fee
