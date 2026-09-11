@@ -57,18 +57,13 @@ These fees are the foundation of real yield in the ecosystem.
 
 The current fee distribution in THORChain is as follows:
 
-- **5%** → burned
+- **1%** → burned
 - **5%** → developer fund
 - **5%** → marketing
 - **10%** → TCY holders (explained below)
-- **75%** → validators (nodes) and liquidity providers (LPs)
+- **20%** → protocol-owned-liquidity liquidity pool (POL-LP) position 
+- **59%** → validators (nodes) and liquidity providers (LPs)
   - The exact split between them is determined by the Incentive Pendulum
-
-<!-- trunk-ignore(markdownlint/MD033) -->
-<div align="center">
-<!-- trunk-ignore(markdownlint/MD033) -->
-  <img src=".gitbook/assets/swap-fee-breakdown.png" alt="Fee distribution diagram showing how revenues flow between different parts of the THORChain ecosystem" width="500" />
-</div>
 
 ## TCY Token
 
