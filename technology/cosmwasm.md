@@ -39,4 +39,4 @@ The App Layer is **sandboxed** from the base layer:
 
 - [THORChain Developer Documentation](https://dev.thorchain.org/)
 - [CosmWasm Documentation](https://docs.cosmwasm.com/docs/)
-- ADR-020: App Layer (full design and security details)
+- [ADR-020: App Layer](https://dev.thorchain.org/architecture/adr-020-app-layer.html)

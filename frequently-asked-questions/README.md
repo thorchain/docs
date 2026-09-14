@@ -28,7 +28,7 @@ Directly on THORChain by swapping any supported asset for RUNE or exchanges like
 
 ### **What is the circulating supply of RUNE?**
 
-Approx. 330M with a max of 500M. Full details at [https://ops.ninerealms.com/network](https://ops.ninerealms.com/network) or [hhttps://runescan.io/addresses](https://runescan.io/addresses/) for a breakdown of the RUNE supply.
+Approx. 360M. See [https://runescan.io/addresses](https://runescan.io/addresses/) for a breakdown of the RUNE supply.
 
 ### **What is the inflation rate of RUNE?**
 
@@ -54,14 +54,14 @@ Yes, there is a fee for every on-chain withdrawal from THORChain, whether it is 
 
 The outbound fees that THORChain levies is 1.5x t0 3x the “fast” fee recommended for the respective blockchain, depending on network load.
 
-- See The `outbound_fee_multiplier` pararamter in the [network endpoint](https://thornode.ninerealms.com/thorchain/network)
+- See the `outbound_fee_multiplier` parameter in the [network endpoint](https://gateway.liquify.com/chain/thorchain_api/thorchain/network)
 - See [ADR 008: Implement a Dynamic Outbound Fee Multiplier](https://dev.thorchain.org/architecture/adr-008-implement-dynamic-outbound-fee-multiplier.html)
 - See [Technical Deep Dive](../technical-deep-dive/).
 
-The outbound fees that THORChain levies could be up to 2.5x the “fast” fee recommended for the respective blockchain.
+The outbound fees that THORChain levies could be up to 3x the "fast" fee recommended for the respective blockchain.
 
 - See [Technical Deep Dive](../technical-deep-dive/).
-- Standard Fee [inbound address](https://thornode.ninerealms.com/thorchain/inbound_addresses) endpoint.
+- Standard Fee [inbound address](https://gateway.liquify.com/chain/thorchain_api/thorchain/inbound_addresses) endpoint.
 - [Watch Fees and Wait Times Explained](https://www.youtube.com/watch?v=XAdaEXO-Ofg) video.
 
 #### Is there a place where I can see the THORChain Ecosystem?
@@ -72,7 +72,7 @@ Yes, the [website](https://thorchain.org/ecosystem) or the [Ecosystem](../ecosys
 
 **How fast is THORChain?**
 
-Transactions Per Second (TPS), can go up to 5000 TPS, but are rarely seen. The highest number of swaps in one day was 100k swaps. Current transaction data can be seen at [https://runescan.io/](https://runescan.io/) and [https://midgard.ninerealms.com/v2/stats](https://midgard.ninerealms.com/v2/stats)
+Transactions Per Second (TPS), can go up to 5000 TPS, but are rarely seen. The highest number of swaps in one day was 100k swaps. Current transaction data can be seen at [https://runescan.io/](https://runescan.io/) and [https://gateway.liquify.com/chain/thorchain_midgard/v2/stats](https://gateway.liquify.com/chain/thorchain_midgard/v2/stats)
 
 #### Why use BFT Tendermint?
 
@@ -135,7 +135,7 @@ There is no contract address for RUNE, as it is the native asset on its own bloc
 
 Make sure you have a sufficient amount of RUNE to process transactions. Also be sure to check if the liquidity caps are full. If so, you will not be able to add liquidity at that time. If you see errors like “No UTXOs to send” or “Need to wait for more UTXO confirmation”; likely you are trying to spend UTXO assets (BTC, LTC, BCH) that you have just transferred into your wallet. Please wait for more blockchain confirmations, and try again later!
 
-➜ [Check Stuck transactions](https://track.ninerealms.com/)
+➜ [Check Stuck transactions](https://track.thorchain.org/)
 
 ### THORYield is displaying incorrect information?
 

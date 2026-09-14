@@ -96,7 +96,7 @@ Collateral was not returned until the loan was fully repaid. The user always had
 
 ### Dashboard
 
-* [Lending Health Dashboard by NineRealms](https://dashboards.ninerealms.com/#lending)
+* [Lending Health Dashboard](https://dashboards.thorchain.org/#lending)
 * [Lending Dashboard by banbannard](https://flipsidecrypto.xyz/banbannard/thorchain-lending-fOAKej)
 
 ### Design Documents

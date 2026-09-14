@@ -107,7 +107,7 @@ Withdraw 0.1 BTC from the Trade Account and send to the specified address.
 Balances can be verified using the Owner's THORChain Address via the `trade/account/` endpoint. Example:
 
 ```url
-https://thornode.ninerealms.com/thorchain/trade/account/thor1g6pnmnyeg48yc3lg796plt0uw50qpp7humfggz
+https://gateway.liquify.com/chain/thorchain_api/thorchain/trade/account/thor1g6pnmnyeg48yc3lg796plt0uw50qpp7humfggz
 ```
 
 ### Future Opportunities

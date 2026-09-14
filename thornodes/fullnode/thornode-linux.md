@@ -62,11 +62,9 @@ $HOME/go/bin/thornode init thornode --overwrite --chain-id thorchain-1
 
 Seeds provide a list of active thorchain nodes, which are needed to join the network.
 
-As `thornode` user run:
-
-```sh
-sed -i 's/^seeds = ""/seeds = "c3613862c2608b3e861406ad02146f41cf5124e6@statesync-seed.ninerealms.com:27146,dbd1730bff1e8a21aad93bc6083209904d483185@statesync-seed-2.ninerealms.com:27146"/' $HOME/.thornode/config/config.toml
-```
+{% hint style="warning" %}
+Nine Realms infrastructure has been decommissioned. Refer to the upstream [node-launcher documentation](https://gitlab.com/thorchain/devops/node-launcher/-/tree/master/docs) for the current seed list.
+{% endhint %}
 
 ### Ports
 
@@ -80,36 +78,19 @@ sed -ri 's/:2665([0-9])/:2714\1/g' $HOME/.thornode/config/config.toml
 
 ### Genesis
 
-For joining the network, the correct genesis file is required
+For joining the network, the correct genesis file is required.
 
-As `thornode` user run:
-
-```sh
-curl https://storage.googleapis.com/public-snapshots-ninerealms/genesis/17562000.json -o $HOME/.thornode/config/genesis.json
-```
+{% hint style="warning" %}
+Nine Realms infrastructure has been decommissioned. Refer to the upstream [node-launcher documentation](https://gitlab.com/thorchain/devops/node-launcher/-/tree/master/docs) for the current genesis file source.
+{% endhint %}
 
 ### Sync
 
-The fastest way to join the network is by downloading a current snapshot and sync from it.
+The fastest way to join the network is by downloading a current snapshot and syncing from it.
 
-As `thornode` user run:
-
-```sh
-# get latest snapshot
-FILENAME=$(curl -s "https://snapshots.ninerealms.com/snapshots?prefix=thornode" | grep -Eo "thornode/[0-9]+.tar.gz" | sort -n | tail -n 1 | cut -d "/" -f 2)
-
-# download snapshot
-aria2c --split=16 --max-concurrent-downloads=16 --max-connection-per-server=16 --continue --min-split-size=100M -d $HOME/.thornode -o $FILENAME "https://snapshots.ninerealms.com/snapshots/thornode/${FILENAME}"
-
-# ensure no chain data exists
-rm -rf $HOME/.thornode/data/{*.db,snapshot,cs.wal}
-
-# extract snapshot
-pv $HOME/.thornode/$FILENAME | tar -xzf - -C $HOME/.thornode --exclude "*_state.json"
-
-# cleanup snapshot
-rm -rf $HOME/.thornode/$FILENAME
-```
+{% hint style="warning" %}
+Nine Realms infrastructure has been decommissioned. Refer to the upstream [Thornode Snapshot Recovery and Storage Management](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Thornode-Snapshot-Recovery-and-Storage-Management.md) doc for the current snapshot source and recovery procedure.
+{% endhint %}
 
 ## Systemd
 

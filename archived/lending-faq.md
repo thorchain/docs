@@ -15,7 +15,7 @@ Lending allowed users to deposit native collateral, and then create a debt at a 
 - [More information](lending.md)
 - [Launch Article](https://medium.com/thorchain/lending-on-thorchain-646bbf2e6e1b)
 - [Explanation Video](https://youtu.be/AaqHG00RJks)
-- [Health Dashboard](https://dashboards.ninerealms.com/#lending)
+- [Health Dashboard](https://dashboards.thorchain.org/#lending)
 
 ### What was TOR?
 

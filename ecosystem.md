@@ -8,9 +8,9 @@ description: THORChain Ecosystem is community-based and anyone can join.
 
 All the following are community-run resources. There are no "official" channels.
 
-**Websites:** [**thorchain.org**](http://thorchain.org/) **|** [**thorchain.com**](https://www.thorchain.com/)
+**Website:** [**thorchain.org**](http://thorchain.org/)
 
-**Socials**: [**Telegram**](https://t.me/thorchain_org) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Medium**](https://medium.com/thorchain)
+**Socials**: [**Telegram**](https://t.me/thorchain_org) **|** [**Dev Discord**](https://discord.gg/u6wMSKHpD4) **|** [**Twitter**](https://twitter.com/THORchain) **|** [**Blog**](https://blog.thorchain.org/)
 
 **Documentation:** [**Docs**](https://docs.thorchain.org/) **|** [**Dev Docs**](https://dev.thorchain.org/) **|** [**White Paper**](https://github.com/thorchain/Resources/blob/master/Whitepapers/THORChain-Whitepaper-May2020.pdf) **|** [**Audits**](https://github.com/thorchain/Resources/tree/master/Audits)
 
@@ -18,9 +18,11 @@ All the following are community-run resources. There are no "official" channels.
 
 **Security:** [**Layers of Security**](https://medium.com/thorchain/thorchains-layers-of-security-e308d537acf1) **|** [**Hardening the Protocol**](https://medium.com/thorchain/hardening-the-thorchain-protocol-f80164de7685)**|** [**Halt Controls**](https://dev.thorchain.org/concepts/network-halts.html)
 
-**Block Explorers**: [**RuneScan**](https://runescan.io) **|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORChain Tx Tracker**](https://track.ninerealms.com/) **|** [**xScanner**](https://www.xscanner.org/)
+**Block Explorers**: [**RuneScan**](https://runescan.io) **|** [**THORChain.net**](https://thorchain.net/#/txs) **|** [**THORChain Tx Tracker**](https://track.thorchain.org/) **|** [**xScanner**](https://www.xscanner.org/)
 
-**Community:** [**Community Discord**](https://discord.com/invite/c4EhDZdFMA) **|** [**Community Telegram**](https://t.me/thorchain_org) **|** [**X**](https://x.com/thorchain)&#x20;
+## **Official Swap Interface**
+
+[**STO (swap.thorchain.org)**](https://swap.thorchain.org/)
 
 ## **Community Projects**
 
@@ -46,6 +48,10 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**DefiSpot**](https://www.defispot.com/trade) - Buy and Earn BTC, ETH, and More Fully Decentralized
 
+[**depouch**](https://depouch.com/) - Premier Cross-Chain DEX
+
+[**EIDEX**](https://eidex.io/screener) - Non-Custodial Route Screener Comparing 33+ Swap Sources
+
 [**FortunaSwap**](https://fortunaswap.finance/) - Cross-Chain DEX
 
 [**Jumper Exchange**](https://jumper.exchange/) - Multi-chain Liquidity Aggregator Powered by Li.Fi
@@ -69,8 +75,6 @@ Below is a list of active THORChain community projects. If you would like to be 
 ### Integrated Wallets and Exchanges
 
 [**Cake Wallet**](https://cakewallet.com/) - Payments Made Easy
-
-[**Ctrl**](https://ctrl.xyz/) - One Wallet for All Your Crypto
 
 [**Edge Wallet**](https://edge.app/) - Cross-platform Mobile Application
 
@@ -100,19 +104,15 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**MetaMask via ShapeShift Snap**](https://shapeshift.com/snap) - Browser Extension Wallet: Multichain Snap for MetaMask
 
-[**Leap Wallet**](https://www.leapwallet.io/) - Browser Extension Wallet: The Super Wallet for Web3
-
 ### **Education**
 
 [**GrassRoots Crypto**](https://www.youtube.com/c/GrassRootsCrypto/) - Educational videos
-
-[**THORChain Community**](https://discord.com/invite/c4EhDZdFMA) - Educational, Feature-based Discussions
 
 ## **Analytics**
 
 [**THORCharts**](https://thorcharts.org/) - Key stats and figures related to core THORChain operations
 
-[**Nine Realms Dashboard**](https://dashboards.ninerealms.com/)
+[**THORChain Dashboard**](https://dashboards.thorchain.org/)
 
 [**THORYield**](https://thoryield.com/) - View your added liquidity on THORChain
 
@@ -122,7 +122,9 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**THORChain THOR InfoBot**](https://twitter.com/THOR_InfoBot) - Monitoring of major events in THORChain
 
-[**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core THORChain operations.
+[**THORChain Vision**](https://thorchain.vision/console) - Contains key stats and figures related to core THORChain operations
+
+[**Raynalytics**](https://raynalytics.net/) - Real-time, on-chain analytics and dashboards for THORChain
 
 ## **Infrastructure**
 
@@ -130,15 +132,13 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**THORChain Network Explorer**](https://thorchain.net/) - THORChain Network Explorer
 
-[**THORmon**](https://thorchain.network/)- Detailed THORNode Dashboard
+[**Constants**](https://gateway.liquify.com/chain/thorchain_api/thorchain/constants)- Current THORChain Constants
 
-[**Constants**](https://thornode.ninerealms.com/thorchain/constants)- Current THORChain Constants
+[**Mimir**](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir) - Overrides for Constants
 
-[**Mimir**](https://thornode.ninerealms.com/thorchain/mimir) - Overrides for Constants
+[**Midgard Docs**](https://gateway.liquify.com/chain/thorchain_midgard/v2/doc) - Documentation for Midgard API to query THORChain.
 
-[**Midgard Docs**](https://midgard.ninerealms.com/v2/doc) - Documentation for Midgard API to query THORChain.
-
-[**Thornode Docs**](https://thornode.ninerealms.com/thorchain/doc/) - Documentation for Thornode API to query Thornode.
+[**Thornode Docs**](https://gateway.liquify.com/chain/thorchain_api/thorchain/doc/) - Documentation for Thornode API to query Thornode.
 
 [**RuneScan Explorer**](https://runescan.io)- THORChain Block Explorer
 
@@ -158,7 +158,7 @@ See the [THORChain Developer Documentation](https://dev.thorchain.org/)
 
 [**XChainJS**](https://xchainjs.org)- A library with a common interface for multiple blockchains, built for simple and fast integration for wallets and more, in JS. [Docs link](http://docs.xchainjs.org/).
 
-[**SwapKit**](https://docs.thorswap.finance/swapkit-docs/) - By THORSwap offers a composable, user-friendly Partner API/SDK on top of THORChain's cross-chain liquidity protocol.
+[**SwapKit**](https://docs.thorswap.finance/swapkit-docs/) - By THORSwap offers a composable, user-friendly Partner API/SDK on top of THORChain's cross-chain decentralized exchange.
 
 [**Ledger -**](https://www.npmjs.com/package/@thorchain/ledger-thorchain)Client library to communicate with a THORChain App running in a Ledger.
 
@@ -168,11 +168,11 @@ See the [THORChain Developer Documentation](https://dev.thorchain.org/)
 
 ## Community Socials
 
-[**THORChain Dev Discord**](https://discord.gg/u6wMSKHpD4) (only for dev discussions)
+[**THORChain Community Telegram**](https://t.me/thorchain_org) - Telegram Server
+
+[**THORChain Dev Discord**](https://discord.gg/u6wMSKHpD4) - Discord Server
 
 [**Asgardex**](https://discord.gg/W9hGFBmCGp) - Discord Server
-
-[**Ctrl**](https://discord.gg/ctrlwallet) - Discord Server
 
 [**ShapeShift**](https://discord.gg/shapeshift) - Discord Server
 
@@ -188,7 +188,7 @@ Russian: [https://t.me/ThorchainRussian](https://t.me/ThorchainRussian)
 
 Chinese: [https://t.me/thorchain_chinese](https://t.me/thorchain_chinese)
 
-Italian: [https://t.me/+2h7NgzNJ4KIxNzFk](https://t.me/+2h7NgzNJ4KIxNzFk)
+Italian: [https://t.me/THORChain_Italy](https://t.me/THORChain_Italy)
 
 Portuguese: [https://t.me/thorchainportuguese](https://t.me/thorchainportuguese)
 

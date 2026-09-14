@@ -31,14 +31,17 @@ mkdir -p /opt/midgard/{config,blockstore}
 
 ### Genesis
 
-Download genesis file
+Download the genesis file.
 
-```sh
-# get genesis.json
-curl https://storage.googleapis.com/public-snapshots-ninerealms/genesis/17562000.json -o /opt/midgard/config/genesis.json
-```
+{% hint style="warning" %}
+Nine Realms infrastructure has been decommissioned. Refer to the upstream [node-launcher documentation](https://gitlab.com/thorchain/devops/node-launcher/-/tree/master/docs) for the current genesis file source.
+{% endhint %}
 
-Add midgard config
+Add midgard config.
+
+{% hint style="warning" %}
+Nine Realms infrastructure has been decommissioned. The `blockstore.remote` field below is left empty — refer to the upstream [Thornode Snapshot Recovery and Storage Management](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/docs/Thornode-Snapshot-Recovery-and-Storage-Management.md) doc for the current value.
+{% endhint %}
 
 {% code title="/opt/midgard/config/config.json" overflow="wrap" %}
 
@@ -52,8 +55,8 @@ Add midgard config
     "fetch_batch_size": 100,
     "parallelism": 4,
     "read_timeout": "60s",
-    "tendermint_url": "https://rpc.ninerealms.com/websocket",
-    "thornode_url": "https://thornode.ninerealms.com/thorchain",
+    "tendermint_url": "https://gateway.liquify.com/chain/thorchain_rpc/websocket",
+    "thornode_url": "https://gateway.liquify.com/chain/thorchain_api/thorchain",
     "fork_infos": [
       {
         "chain_id": "thorchain-1",
@@ -93,7 +96,7 @@ Add midgard config
   },
   "blockstore": {
     "local": "/blockstore",
-    "remote": "https://snapshots.ninerealms.com/snapshots/midgard-blockstore/"
+    "remote": ""
   }
 }
 ```

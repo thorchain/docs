@@ -12,7 +12,7 @@ Unlike centralized exchanges:
 - You don't have to trust a company to hold your funds
 
 Example:
-If you own Bitcoin and want Ethereum, you just send Bitcoin from your wallet and receive Ethereum back in a single transaction, osmos Hub (ATOM)no exchange accounts, no middlemen.
+If you own Bitcoin and want Ethereum, you just send Bitcoin from your wallet and receive Ethereum back in a single transaction — no exchange accounts, no middlemen.
 
 <!-- trunk-ignore(markdownlint/MD033) -->
 <div align="center">

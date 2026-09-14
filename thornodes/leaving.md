@@ -6,7 +6,7 @@ description: How to leave THORChain
 
 ## Overview
 
-Approximately every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://thornode.ninerealms.com/thorchain/mimir)) the system will churn its vaults and nodes.
+Approximately every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir)) the system will churn its vaults and nodes.
 
 Outgoing nodes consist of:
 
@@ -81,7 +81,7 @@ To leave the system, send the following transaction from your original bond addr
 ⏱ _Wait a few minutes, verify you have received your bond back_ 👀 - `make status` should show `BOND 0.00` and your wallet should get the full Bond back.
 
 {% hint style="info" %}
-View your node's status on [Runescan](https://runescan.io) or the [THORNode API](https://thornode.thorchain.info/thorchain/nodes).
+View your node's status on [Runescan](https://runescan.io) or the [THORNode API](https://gateway.liquify.com/chain/thorchain_api/thorchain/nodes).
 {% endhint %}
 
 _🔥 Commence destroying your node 🔥_

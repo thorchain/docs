@@ -6,7 +6,7 @@ description: Overview of the ecosystem of apps, wallets, and interfaces built on
 
 ## Introduction
 
-The App Layer transforms THORChain from being just a cross-chain liquidity protocol into a full ecosystem of financial applications.
+The App Layer transforms THORChain from being just a cross-chain decentralized exchange into a full ecosystem of financial applications.
 It provides an environment for developers to build and deploy decentralized applications (dApps) and financial services, leveraging the security and liquidity of the THORChain base layer.
 
 The **THORChain Base** Layer serves as the foundation – it is responsible for:

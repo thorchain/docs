@@ -50,7 +50,7 @@ BCH         2.293%     197,340/682,404
 
 Your node is running but as you can see in the \`Preflight\` section, your node is not yet ready to be churned in and currently is in standby [status](overview/node-operations.md#node-statuses), since your node has no IP address setup yet.
 
-Do not proceed until your node is fully synced al chains. You can see the required external chain hights [here](https://thornode.ninerealms.com/thorchain/lastblock) and the THORChain chain height [here](https://thornode.ninerealms.com/thorchain/block). Continue to run `make status` untill all chains are synced.
+Do not proceed until your node is fully synced across all chains. You can see the required external chain heights [here](https://gateway.liquify.com/chain/thorchain_api/thorchain/lastblock) and the THORChain chain height [here](https://gateway.liquify.com/chain/thorchain_api/thorchain/block). Continue to run `make status` until all chains are synced.
 
 {% hint style="danger" %}
 Before sending the BOND, verify that your THORNode is **fully synced** with connected chains. Connected chains such as Ethereum & Bitcoin may take a day to sync. If your node is fully bonded and is selected to churn in to THORChain as ACTIVE without fully syncing all connected chains, you will immediately get slashed for missing observations, and lose money. It is normal to see Ethereum sit on 99.999% for many hours - be patient.
@@ -76,7 +76,7 @@ Some `make` commands during setup require RUNE (0.02 to 1.0) to execute into the
 Give the network 3-5 seconds to pick up your bond. To verify it has received your bond, run the following:
 
 ```bash
-curl https://thornode.ninerealms.com/thorchain/node/<node-address>
+curl https://gateway.liquify.com/chain/thorchain_api/thorchain/node/<node-address>
 ```
 
 If you run `make status` again, you should see this:
@@ -151,7 +151,7 @@ If you followed steps 1-5 above, your preflight will be saying:
 PREFLIGHT   { "status": "Standby", "reason": "node account does not have minimum bond requirement: 100000000000/30000000000000, "code": 1 }
 ```
 
-To address this, send the remaining bond, that is higher than the minimum bond, currently 300K RUNE set by a network [Mimir ](https://thornode.ninerealms.com/thorchain/mimir)setting, look for `MinimumBondInRune`. See [#bonding-the-right-amount](joining.md#bonding-the-right-amount "mention")for how much bond to send.
+To address this, send the remaining bond, that is higher than the minimum bond, currently 300K RUNE set by a network [Mimir ](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir)setting, look for `MinimumBondInRune`. See [#bonding-the-right-amount](joining.md#bonding-the-right-amount "mention")for how much bond to send.
 
 If you finally run `make status` you should see this, with keyword **"Ready":**
 
@@ -186,7 +186,7 @@ Although your node is ready to be churned in, it doesn’t mean it will be the n
 This endpoint will show data on average, median, total, minimum and maximum bond amounts. For fastest entry, bond higher than the current active median.
 
 ```json
-curl -s https://midgard.ninerealms.com/v2/network | jq '.bondMetrics'
+curl -s https://gateway.liquify.com/chain/thorchain_midgard/v2/network | jq '.bondMetrics'
 
 resp:
  "bondMetrics" : {

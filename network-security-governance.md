@@ -12,7 +12,7 @@ The network relies on several mechanisms to ensure security, decentralization, a
 - **Securing liquidity pools**: Bonded RUNE secures the assets held in liquidity pools and acts as an economic deposit. If a validator attempts to steal funds, their bond is slashed - making dishonest behavior highly unprofitable
 - **Economic target**: The network aims to maintain a ratio where the total bonded RUNE is approximately twice the value of all non-RUNE assets in the liquidity pools. This makes attacks extremely costly and impractical
 
-Note: Network paramaters can override this ratio and is controlled by the nodes. See the [Technical Documentation](https://dev.thorchain.org) for more information.
+Note: Network parameters can override this ratio and are controlled by the nodes. See the [Technical Documentation](https://dev.thorchain.org) for more information.
 
 ## TSS – Threshold Signature Scheme
 

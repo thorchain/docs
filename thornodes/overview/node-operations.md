@@ -8,7 +8,7 @@ description: Running a THORNode
 
 As new nodes join/leave the network, this triggers a “churning event”. Which means the list of validators that can commit blocks to the chain changes, and also creates a new Asgard vault, while retiring an old one. All funds in this retiring vault are moved to the new Asgard vault.
 
-Normally, a churning event happens roughly every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://thornode.ninerealms.com/thorchain/mimir)).
+Normally, a churning event happens roughly every 2 1/2 days (43,200 blocks or [`CHURNINTERVAL`](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir)).
 
 Nodes that targged for the next churn in and out can be seen [here](https://thorchain.network/nodes). The next churn interval can be seen [here](https://thorchain.net/nodes).
 
@@ -20,7 +20,7 @@ On every churn, the network selects one or more nodes to be churned out of the n
 2. Banned by other nodes (network-removal)
 3. How long an active nodes has been committing blocks (oldest gets removed)
 4. Bad behavior (accrued slash points for poor node operation)
-5. Nodes that do not meet the minimum version requirement (capped by [`MAXNODETOCHURNOUTFORLOWVERSION`](https://thornode.ninerealms.com/thorchain/mimir))
+5. Nodes that do not meet the minimum version requirement (capped by [`MAXNODETOCHURNOUTFORLOWVERSION`](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir))
 
 #### Churning In
 
@@ -96,7 +96,7 @@ http://<host>:1317/thorchain/nodeaccount/<node address>
 http://<host>:1317/thorchain/nodeaccounts
 ```
 
-Or use `https://thornode.ninerealms.com/thorchain/node/<node address>.`
+Or use `https://gateway.liquify.com/chain/thorchain_api/thorchain/node/<node address>.`
 
 Most importantly, this will tell you how many slash points the node account has accrued, their status, and the size of their bond (which is in 1e8 notation, 1 Rune == 100000000).
 

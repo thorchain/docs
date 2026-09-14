@@ -24,7 +24,7 @@ The depth of the TOR pool is calculated as the sum of all TOR pools. However, it
 
 ### TOR Anchor
 
-You can find the addresses for various stablecoins on specific networks (TORANCHOR) that make up TOR pools on [Mimir](https://thornode.ninerealms.com/thorchain/mimir):
+You can find the addresses for various stablecoins on specific networks (TORANCHOR) that make up TOR pools on [Mimir](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir):
 
 ```json
 "TORANCHOR-AVAX-USDC-0XB97EF9EF8734C71904D8002F8B6BC66DD9C48A6E": 1,

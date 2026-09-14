@@ -119,9 +119,9 @@ Learn about the Incentive Pendulum here:
 
 RUNE's price has two factors: a deterministic value based on the liquidity within the network and a speculative premium. The economic security model creates a minimum value floor for RUNE based on the assets it secures. For detailed calculations and economic mechanics, see the [Economic Model](../technical-deep-dive/economic-model.md).
 
-## For more informaiton on RUNE see
+## For more information on RUNE see
 
 - [THORChain Tokenomics Article](https://medium.com/thorchain/thorchain-tokenomics-what-is-rune-52d339633260)
 - [Under the Hood: Rune Supply](https://thorchain-community.medium.com/under-the-hood-rune-supply-d30772fdfbaf)
-- [Current Supply Data](https://dashboards.ninerealms.com/#lending)
+- [Current Supply Data](https://dashboards.thorchain.org/)
 - [THORChain Tokenomics Dashboard](https://flipsidecrypto.xyz/BlockTracker/thorchain-tokenomics-g7ZOP_)

@@ -17,14 +17,14 @@ Endpoints can be accessed at [Connecting to THORChain in the developer docs](htt
 
 ## THORNode Endpoints
 
-The THORNode daemon contains three endpoints that run on port `1317` or can be access via the public URL [https://thornode.ninerealms.com/](https://thornode.ninerealms.com/).
+The THORNode daemon contains three endpoints that run on port `1317` or can be access via the public URL [https://gateway.liquify.com/chain/thorchain_api/](https://gateway.liquify.com/chain/thorchain_api/).
 
 - **`<tc:1317>/thorchain`**:
-  - This endpoint deals specifically with THORChain's native modules and functionality. It provides access to THORChain-specific data such as liquidity pools, nodes, and network configurations. This is where you'll find THORChain-specific operations and data that aren't part of the underlying Cosmos SDK but are unique to THORChain. [`thorchain/doc/`](https://thornode.ninerealms.com/thorchain/doc/) contains Swagger documentation for the `thorchain` endpont.
+  - This endpoint deals specifically with THORChain's native modules and functionality. It provides access to THORChain-specific data such as liquidity pools, nodes, and network configurations. This is where you'll find THORChain-specific operations and data that aren't part of the underlying Cosmos SDK but are unique to THORChain. [`thorchain/doc/`](https://gateway.liquify.com/chain/thorchain_api/thorchain/doc/) contains Swagger documentation for the `thorchain` endpont.
 - **`<tc:1317>/cosmos`**:
-  - This endpoint interfaces with the [Cosmos SDK](../../technology/cosmos-sdk.md). It provides access to Cosmos SDK endpoints that THORChain inherits by being built on the Cosmos SDK. The endpoints are version specific and the CosmosSDK version THORChain uses can be found at [here](https://gitlab.com/thorchain/thornode/-/blob/develop/go.mod?ref_type=heads#L17). Tendermint informaiton can also be accessed via `cosmos/base/tendermint` - [`node_info` example](https://thornode.ninerealms.com/cosmos/base/tendermint/v1beta1/node_info).
+  - This endpoint interfaces with the [Cosmos SDK](../../technology/cosmos-sdk.md). It provides access to Cosmos SDK endpoints that THORChain inherits by being built on the Cosmos SDK. The endpoints are version specific and the CosmosSDK version THORChain uses can be found at [here](https://gitlab.com/thorchain/thornode/-/blob/develop/go.mod?ref_type=heads#L17). Tendermint informaiton can also be accessed via `cosmos/base/tendermint` - [`node_info` example](https://gateway.liquify.com/chain/thorchain_api/cosmos/base/tendermint/v1beta1/node_info).
 - **`<tc:1317>/bank`**:
-  - The `bank` module in Cosmos SDK handles token transfers and balances. The `<tc:1317>/bank` endpoint allows you to interact with accounts, check balances, and transfer assets. See example [here](https://thornode.ninerealms.com/bank/balances/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt).
+  - The `bank` module in Cosmos SDK handles token transfers and balances. The `<tc:1317>/bank` endpoint allows you to interact with accounts, check balances, and transfer assets. See example [here](https://gateway.liquify.com/chain/thorchain_api/bank/balances/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt).
 
 ## THORNode Keys
 
@@ -52,7 +52,7 @@ It is critical backups are created matinaned, if there are any questions, reach 
 
 Every few years, THORChain conducts a hardfork. During a hardfork, THORChain's data is moved to an archive, and the chain begins running on a new chain ID. This process ensures that the blockchain continues to operate efficiently and scales with the network's growth.
 
-- **Chain ID**: The current `chainid` can be accessed via [`https://rpc.ninerealms.com/status`](https://rpc.ninerealms.com/status) or by querying the `<tc:26657>/status` endpoint on a specific node.
+- **Chain ID**: The current `chainid` can be accessed via [`https://gateway.liquify.com/chain/thorchain_rpc/status`](https://gateway.liquify.com/chain/thorchain_rpc/status) or by querying the `<tc:26657>/status` endpoint on a specific node.
 
 **Hardfork History**:
 

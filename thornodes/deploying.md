@@ -143,7 +143,7 @@ kubectl logs -f deploy/binance-daemon -n thornode
 {% endhint %}
 
 {% hint style="info" %}
-Get real-world blockheights of external blockchain at [https://thornode.ninerealms.com/thorchain/lastblock](https://thornode.ninerealms.com/thorchain/lastblock) or a block explorer like mempool.space.
+Get real-world blockheights of external blockchain at [https://gateway.liquify.com/chain/thorchain_api/thorchain/lastblock](https://gateway.liquify.com/chain/thorchain_api/thorchain/lastblock) or a block explorer like mempool.space.
 {% endhint %}
 
 ## CHART SUMMARY

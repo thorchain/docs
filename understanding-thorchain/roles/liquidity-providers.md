@@ -163,7 +163,7 @@ Liquidity providers can withdraw their assets at any time. The network processes
 
 ## How Yield is Calculated
 
-The yield of a pool on THORChain is calculated using a metric called **Liquidity Unit Value Index** (LUVI) which can be viewed on [Midgard](https://midgard.ninerealms.com/v2/pools).
+The yield of a pool on THORChain is calculated using a metric called **Liquidity Unit Value Index** (LUVI) which can be viewed on [Midgard](https://gateway.liquify.com/chain/thorchain_midgard/v2/pools).
 
 When a user deposits assets into a liquidity pool, they are given ownership of Liquidity Units which represent a percentage of ownership of the pool. LUVI is a measure of the relative value of each liquidity unit and is independent of price.
 
@@ -184,7 +184,7 @@ Learn more about [Liquidity Units](https://docs.thorchain.org/thorchain-finance/
 The yield of a pool uses LUVI value data from the previous 30 days and extrapolates an APR if that performance is repeated over the course of a year. A `period` parameter may be used to change the number of days of data that are taken into consideration.
 
 {% hint style="info" %}
-Example: [https://midgard.ninerealms.com/v2/pools?period=100d](https://midgard.ninerealms.com/v2/pools?period=100d) calculates the APR of a pool with the previous 100 days of data rather than the default of 30 days.
+Example: [https://gateway.liquify.com/chain/thorchain_midgard/v2/pools?period=100d](https://gateway.liquify.com/chain/thorchain_midgard/v2/pools?period=100d) calculates the APR of a pool with the previous 100 days of data rather than the default of 30 days.
 {% endhint %}
 
 Factors that affect LUVI:

@@ -8,10 +8,10 @@ RUNE is the native utility token of the THORChain ecosystem, and it sits at the 
 
 ## RUNE Tokenomics
 
-- **Total Supply:** ~425M RUNE (reduced daily through the burn mechanism)
-- **Circulating Supply:** ~350M RUNE
-- **Reserve:** ~75M RUNE
-- **Latest numbers:** [rune.tools/supply](https://rune.tools/supply)
+- **Maximum supply:** ~360M RUNE ([ADR-023](https://dev.thorchain.org/architecture/adr-023-rune-supply-restructure.html))
+- **Circulating / total supply:** decreases with burns — see [rune.tools/supply](https://rune.tools/supply) for exact figures
+- **Reserve:** reduced under ADR-023; current balance on [RuneScan](https://runescan.io/address/thor1dheycdevq39qlkxs2a6wuuzyn4aqxhve4qxtxt)
+- **Protocol detail:** [Economic Model](technical-deep-dive/economic-model.md)
 
 All RUNE tokens have been released – there are no vesting schedules or locked allocations.
 
@@ -57,18 +57,13 @@ These fees are the foundation of real yield in the ecosystem.
 
 The current fee distribution in THORChain is as follows:
 
-- **5%** → burned
+- **1%** → burned
 - **5%** → developer fund
 - **5%** → marketing
 - **10%** → TCY holders (explained below)
-- **75%** → validators (nodes) and liquidity providers (LPs)
+- **20%** → protocol-owned-liquidity liquidity pool (POL-LP) position 
+- **59%** → validators (nodes) and liquidity providers (LPs)
   - The exact split between them is determined by the Incentive Pendulum
-
-<!-- trunk-ignore(markdownlint/MD033) -->
-<div align="center">
-<!-- trunk-ignore(markdownlint/MD033) -->
-  <img src=".gitbook/assets/swap-fee-breakdown.png" alt="Fee distribution diagram showing how revenues flow between different parts of the THORChain ecosystem" width="500" />
-</div>
 
 ## TCY Token
 

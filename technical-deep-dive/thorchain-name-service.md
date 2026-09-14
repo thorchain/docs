@@ -4,7 +4,7 @@ description: How THORNames (TNS) work
 
 # THORChain Name Service
 
-Website: [https://thorname.com/](https://thorname.com/)
+Website: [https://thorname.thorchain.org/](https://thorname.thorchain.org/)
 
 ## Overview
 
@@ -14,7 +14,7 @@ Users use a special memo and a THORChain `MsgDeposit` transaction to register th
 
 A THORChain address can be assigned one (1) THORName to manage the other addresses associated. For example: the THORName chris can receive $BTC to the chris.btc address, chris.eth to receive $ETH and so forth. Wallet providers will easily be able to integrate to resolve cross-chain addresses for a user.
 
-Example from [https://midgard.ninerealms.com/v2/thorname/lookup/td](https://midgard.ninerealms.com/v2/thorname/lookup/td)
+Example from [https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/lookup/td](https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/lookup/td)
 
 ```json
 {
@@ -64,19 +64,19 @@ Currently, there are eleven (11) native L1 chains available on THORChain: Bitcoi
 A THORName can be queried by going to `/thorname/{thorname}`
 
 {% hint style="info" %}
-[https://midgard.ninerealms.com/v2/thorname/lookup/orion](https://midgard.ninerealms.com/v2/thorname/lookup/orion)
+[https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/lookup/orion](https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/lookup/orion)
 {% endhint %}
 
 A THORName can be checked using `/thorname/lookup/{thorname}`
 
 {% hint style="info" %}
-[https://midgard.ninerealms.com/v2/thorname/lookup/orion](https://midgard.ninerealms.com/v2/thorname/lookup/orion)
+[https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/lookup/orion](https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/lookup/orion)
 {% endhint %}
 
 While there is no reverse on-chain reverse lookup, a reverse lookup is possible within THORChain via using a given THORName `/thorname/lookup/{address}.`
 
 {% hint style="info" %}
-Example using a THOR address: [https://midgard.ninerealms.com/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd](https://midgard.ninerealms.com/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd)
+Example using a THOR address: [https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd](https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/rlookup/thor15r77zzt7n6kyydw7ajkefdrrv6n0dpplvm83pd)
 {% endhint %}
 
 ## Fees

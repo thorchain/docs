@@ -45,8 +45,8 @@ THORChain operates with a set of constants that define fees, limits and security
 
 Live values:
 
-- [Network Constants](https://thornode.ninerealms.com/thorchain/constants)
-- [Mimir Settings](https://thornode.ninerealms.com/thorchain/mimir)
+- [Network Constants](https://gateway.liquify.com/chain/thorchain_api/thorchain/constants)
+- [Mimir Settings](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir)
 
 See [Constants and Mimir](https://dev.thorchain.org/mimir.html) within the developer documentation for a description of each one.
 
