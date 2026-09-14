@@ -1,0 +1,11 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: THORChain Docs
+  structure:
+    - type: space
+      key: thorchain-docs
+      title: THORChain Docs
+      path: /
+      default: true
+      content:
+        directory: ./
