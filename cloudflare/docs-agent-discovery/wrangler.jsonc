@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developers.cloudflare.com/schema/wrangler.json",
+  "name": "docs-thorchain-agent-discovery",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-26",
+  "workers_dev": false,
+  "preview_urls": true,
+  "routes": [
+    {
+      "pattern": "docs.thorchain.org",
+      "zone_name": "thorchain.org"
+    },
+    {
+      "pattern": "docs.thorchain.org/.well-known/*",
+      "zone_name": "thorchain.org"
+    },
+    {
+      "pattern": "docs.thorchain.org/auth.md",
+      "zone_name": "thorchain.org"
+    },
+    {
+      "pattern": "docs.thorchain.org/AGENTS.md",
+      "zone_name": "thorchain.org"
+    }
+  ]
+}

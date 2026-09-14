@@ -1,0 +1,12 @@
+{
+  "type": "SVCB",
+  "name": "_mcp._agents.docs.thorchain.org",
+  "ttl": 300,
+  "data": {
+    "priority": 1,
+    "target": "docs.thorchain.org.",
+    "value": "mandatory=\"alpn,port\" alpn=\"mcp\" port=\"443\""
+  },
+  "proxied": false,
+  "comment": "DNS-AID discovery for the public THORChain documentation MCP endpoint"
+}
