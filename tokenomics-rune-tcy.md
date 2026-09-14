@@ -51,7 +51,7 @@ The network processes thousands of cross-chain swaps and transfers daily, produc
 
 These fees are the foundation of real yield in the ecosystem.
 
-🔗 **Latest revenue data:** [raynalytics.net/dashboards/system-income](https://raynalytics.net/dashboards/system-income)
+🔗 **Latest revenue data:** [raynalytics.net/analytics/thorchain/financials](https://raynalytics.net/analytics/thorchain/financials)
 
 ## Revenue Distribution
 
@@ -83,7 +83,7 @@ Each $1 of debt was converted into 1 TCY. This way, creditors received tokens in
 - **Total Supply:** 210M
 - **Circulating Supply:** 176M
 
-🔗 **Latest numbers:** [raynalytics.net/analytics/tcy](https://raynalytics.net/analytics/tcy)
+🔗 **Latest numbers:** [raynalytics.net/analytics/thorchain/tcy](https://raynalytics.net/analytics/thorchain/tcy)
 
 ### How does TCY work?
 
