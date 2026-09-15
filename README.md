@@ -2,9 +2,8 @@
 description: A high-level overview of what THORChain is, does, encourages, and pursues.
 ---
 
-{% hint style="info" %}
-**New to THORChain?** Check out [What is THORChain and RUNE?](what-is-thorchain-and-rune.md) for an easy-to-understand introduction.
-{% endhint %}
+> [!NOTE]
+> **New to THORChain?** Check out [What is THORChain and RUNE?](what-is-thorchain-and-rune.md) for an easy-to-understand introduction.
 
 # Introduction
 
@@ -31,9 +30,7 @@ For a detailed understanding of THORChain's technical innovations, design princi
 
 To learn how THORChain works, feel free to jump here:
 
-{% content-ref url="technical-deep-dive/" %}
-[technical-deep-dive](technical-deep-dive/)
-{% endcontent-ref %}
+* [**Technical Deep Dive**](technical-deep-dive/)
 
 ## THORNodes
 
