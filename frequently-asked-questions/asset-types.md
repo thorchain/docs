@@ -4,7 +4,7 @@ description: Asset Notation within THORChain
 
 # Asset Types
 
-THORChain is a liquidity protocol that is made up of multiple types of assets to provide the best experience for all types of users - from retail investors to professional traders to institutional investors.
+THORChain is a cross-chain decentralized exchange (DEX) that can swap tokens between multiple different blockchains. It provides the best experience for all types of people - from retail users to professional traders to institutional investors.
 
 To serve everyone, THORChain:
 
