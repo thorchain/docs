@@ -93,7 +93,7 @@ You can see your position if you connect to THORChain via an Interface you can u
 
 ➜ [THORYield Guide](https://thorswap.medium.com/introducing-thoryield-v2-%EF%B8%8F-a6618c1cfcdb)
 
-**There are four factors affecting returns:**
+**There are three factors affecting returns:**
 
 - **Proportion of transaction volume to pool depth** — If there is high volume compared to the depth of the pool then there will be higher rewards available to liquidity providers. If there is low volume compared to the depth of the pool then there will be lower rewards available.
 - **Share of the pool** — If you have a large share of the pool, you’ll earn higher returns. If a liquidity provider has 1% of a pool they receive 1% of the rewards for that pool.
