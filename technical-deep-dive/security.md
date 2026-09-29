@@ -20,7 +20,7 @@ To prevent large amounts of funds from leaving the network in an instant, large 
 - Large outbounds to spread across multiple blocks, up to 720 blocks (approx one hour).
 - Ensures one large outbound request of $1,000,000 is handled the same as one million $1 outbound requests.
 
-This feature is controlled by several [Mimir](constants-and-mimir.md#outbound-transactions) values that can be changed by Node Operators as required. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge_requests/1844).
+This feature is controlled by several [Mimir](https://dev.thorchain.org/mimir.html#outbound-transactions) values that can be changed by Node Operators as required. [Relevant PR](https://gitlab.com/thorchain/thornode/-/merge_requests/1844).
 
 This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, but it is necessary in ensuring the protection of liquidity provider funds.
 
@@ -41,7 +41,6 @@ The halts that can affect an individual chain are:
 3. Halt Trading - no trading allows
 4. Halt Chain - nodes stop observing that chain
 
-There are also network level halts for trading, synths and lending. To get more information see [here](https://dev.thorchain.org/concepts/network-halts.html).
 
 ## Automatic Solvency Checker
 
