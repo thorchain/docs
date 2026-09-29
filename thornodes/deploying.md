@@ -132,12 +132,12 @@ kubectl delete pod <pod> -n thornode
 ```
 
 {% hint style="warning" %}
-Note, to expedite syncing external chains, it is feasible to continually delete the pod that has the slow-syncing chain daemon (eg, binance-daemon-xxx).
+Note, to expedite syncing external chains, it is feasible to continually delete the pod for a slow-syncing chain daemon (for example, `bitcoin-daemon`). The old Binance Chain `binance-daemon` chart is no longer in node-launcher.
 
-Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the client to find the synced chain tip and comparing it with the real-world blockheight, ("xxx" is your unique ID):
+Killing it will automatically restart it with free resources and syncing is notably faster. You can check sync status by viewing logs for the daemon to find the synced chain tip and comparing it with the real-world blockheight:
 
 ```bash
-kubectl logs -f deploy/binance-daemon -n thornode
+kubectl logs -f deploy/bitcoin-daemon -n thornode
 ```
 
 {% endhint %}
