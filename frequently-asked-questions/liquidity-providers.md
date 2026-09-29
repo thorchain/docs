@@ -93,10 +93,11 @@ You can see your position if you connect to THORChain via an Interface you can u
 
 ➜ [THORYield Guide](https://thorswap.medium.com/introducing-thoryield-v2-%EF%B8%8F-a6618c1cfcdb)
 
-**There are three factors affecting returns:**
+**There are four factors affecting returns:**
 
 - **Proportion of transaction volume to pool depth** — If there is high volume compared to the depth of the pool then there will be higher rewards available to liquidity providers. If there is low volume compared to the depth of the pool then there will be lower rewards available.
 - **Share of the pool** — If you have a large share of the pool, you’ll earn higher returns. If a liquidity provider has 1% of a pool they receive 1% of the rewards for that pool.
 - **Fee size** — fees are determined by the underlying blockchain and the rewards from fees are proportional to the fees charged. A chain with higher fees will generate higher rewards for liquidity providers.
+- **Synth leverage** — With the introduction of [Synths](../thorchain-finance/synthetic-asset-model.md) and [Savers (Deprecated)](../archived/savers.md), Liquidity Pool providers underwrite the Synths' share of the pools. Thus Liquidity Pool providers has a leverage effect based on the RUNE:Asset price ratio changes and Synth utilization level
 
 \*Of significant note is that this mechanism of providing liquidity into the protocol; creates an opportunity for holders of non-yield generating assets (e.g. BTC, ETH) to earn a return on their investments.
