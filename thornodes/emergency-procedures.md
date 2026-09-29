@@ -4,7 +4,7 @@ description: This page describes how to react in a network-wide emergency (funds
 
 # 🛑 Emergency Procedures
 
-This document outlines the procedures for Node Operators to respond to network-wide emergencies, such as funds-at-risk scenarios or critical network attacks, on THORChain’s Mainnet. THORChain is a decentralized, permissionless cross-chain liquidity protocol, and Node Operators play a critical role in maintaining network security and integrity. These procedures ensure rapid, coordinated, and secure responses while preserving the network’s impartiality and resistance to capture.
+This document outlines the procedures for Node Operators to respond to network-wide emergencies, such as funds-at-risk scenarios or critical network attacks, on THORChain’s Mainnet. THORChain is a cross-chain decentralized exchange (DEX), and Node Operators play a critical role in maintaining network security and integrity. These procedures ensure rapid, coordinated, and secure responses while preserving the network’s impartiality and resistance to capture.
 
 The overarching ethos for THORChain's security posture is "an abundance of caution". **Halt Earn, Halt Often!**
 
