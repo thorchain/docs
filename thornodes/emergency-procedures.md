@@ -39,8 +39,8 @@ Emergencies are classified based on severity, with corresponding actions for Nod
 
 - **Description**: A vulnerability or attack threatens the security of funds in liquidity pools/vaults or anything that poses an existential risk to the protocol.
 - **Actions**:
-  1. **Initiate Network Halt**: If a critical threat is confirmed, a Node Operator must issue the `make pause` command to halt the entire network. This pauses the entire network for 720 blocks (~1hr) to allow time for investigation and corrective actions such as voting to pause specific chain operations (e.g., [halting signing](https://dev.thorchain.org/concepts/network-halts.html)). `make resume` will reduce the pause period by 720 blocks & another `make pause` will increase the pause by another 720 blocks. Once the first `make pause` is dispatched, the issue is not time critical as the entire network is paused and this paus period can and should be increased as appropriate.
-  2. **Node Voting**: Propose and vote on emergency actions, such as Mimir overrides, to adjust network parameters. This will be discussed in the Dev Discord `#mainnet channel` channel. Voting requires consensus among active nodes.
+  1. **Initiate Network Halt**: If a critical threat is confirmed, a Node Operator must issue the `make pause` to halt the entire network. This pauses the entire network for 720 blocks (~1.5 hrs) to allow time for investigation and corrective actions such as voting to pause specific chain operations (e.g., [halting signing](https://dev.thorchain.org/concepts/network-halts.html)). `make resume` will reduce the pause period by 720 blocks & another `make pause` will increase the pause by another 720 blocks. Once the first `make pause` is dispatched, the issue is not time critical as the entire network is paused and this pause period can and should be increased as appropriate.
+  2. **Node Voting**: Propose and vote on actions through [Node Voting](overview/#node-voting) such as Mimir overrides, to adjust network parameters. This will be discussed in the Dev Discord `#mainnet channel`.
      - Use `thornode tx thorchain mimir <key> <value> --from <node-address>` to submit Mimir changes.
   3. **Monitor and Communicate**: Use monitoring tools like [Vǫrðr](https://github.com/sourcapital/vordr) to check chain health and sync status. Relay critical updates anonymously via `make relay` to the Dev Discord `#mainnet channel`.
   4. **Coordinate with Team**: Work with the core team and other operators to verify the threat and deploy patches. Avoid premature public disclosure to prevent panic or exploitation.
@@ -60,14 +60,28 @@ Emergencies are classified based on severity, with corresponding actions for Nod
 - **Actions**:
   1. **Diagnose Locally**: Check your node’s metrics (CPU, memory, disk) using Prometheus or Kubernetes dashboards.
   2. **Apply Updates**: Deploy patches or updates to your THORNode services using Helm charts from the node-launcher repository.
-  3. **Report**: Inform the team via Discord or the Bounty Program for tracking and future improvements. Alternatively, raise an issue within the THORChain [Thornode ](https://gitlab.com/thorchain/thornode) or [NodeLauncher ](https://gitlab.com/thorchain/devops/node-launcher)repositories.
+  3. **Report**: Inform the team via Discord or the Bounty Program for tracking and future improvements. Alternatively, raise an issue within the THORChain [Thornode ](https://gitlab.com/thorchain/thornode) or [NodeLauncher ](https://gitlab.com/thorchain/devops/node-launcher) repositories.
 
 ## Network Halts
 
-In addition to the network wide pausing via the `make pause` command, THORChain supports blockchain specitic halts to pause operations during critical emergencies:
+### Make Pause and Make Resume
+
+These commands are in the Makefile of the [node-launcher](https://gitlab.com/thorchain/devops/node-launcher/-/blob/master/Makefile?ref_type=heads#L161) repository and have specific rules.
+
+1. A pause sent by one node lasts 720 blocks. It sets `NodePauseChainGlobal` to the current block height plus `NodePauseChainBlocks`, the network constant of 720. Trading starts again when the current block is higher than `NodePauseChainGlobal`.
+1. A pause effectively sets `IsChainHalted` to true. Observations, swaps, and signing of outbound transactions stop. The THORChain blockchain continues to produce blocks. The process is: `IsChainHalted` reads `NodePauseChainGlobal` and the halt Mimirs, and reports the chain halted while `NodePauseChainGlobal` is at or above the current block.
+1. Another node can send a pause command to extend the pause, this will increment `NodePauseChainGlobal` by 720 only while the pause is active, else it acts the same as point 1 and 2.
+1. When several pauses are stacked, one resume reduces `NodePauseChainGlobal` by 720 and the network stays paused until the block height to the `NodePauseChainGlobal`. When only one node has paused, one resume from a different node ends it. If that subtraction lands on the current block, the pause still holds for that block.
+
+#### Usage
+
+1. Every effective pause and resume command (that changes `NodePauseChainGlobal`) sent by a node is recorded by the network.
+1. Only one pause or resume command can be used by a node between churns. A subsequent pause or resume from a node that has already used this between churn will be rejected by the network with the message 'node has already chosen pause/resume since the last churn'.
+
+In addition to the network wide pausing via the `make pause` command, THORChain supports blockchain specific halts to pause operations during critical emergencies:
 
 - **Initiating a Halt**: [Node voting](overview/#node-voting) to pause signing for a specific chain (e.g., BTC, ETH). This prevents outbound transactions until the issue is resolved. All Halt controls are [listed here](https://dev.thorchain.org/concepts/network-halts.html).
-- **Voting on Halts**: Nodes can vote to approve or extend halts via the node voting mechanism. A supermajority is required for consensus.
+- **Voting on Halts**: Nodes can vote to approve or extend halts via the node voting mechanism. How many votes are needed is in [Mimir - Network Settings](../technical-deep-dive/governance.md#mimir---network-settings).
 - **Resuming Operations**: Once the threat is mitigated, nodes vote to lift the halt using Mimir overrides or resume normal operations.
 
 ## Monitoring and Recovery
@@ -109,4 +123,4 @@ Network upgrades are critical for patching vulnerabilities, addition capabilitie
 - [THORNode Stack](overview/thornode-stack.md)
 - [Vǫrðr Monitoring](https://github.com/sourcapital/vordr)
 - [Node Launcher Repository](https://gitlab.com/thorchain/devops/node-launcher) (For THORNode deployment)
-- [THORNode Repository](https://gitlab.com/thorchain/thornode) (For THORNode Sofware)
+- [THORNode Repository](https://gitlab.com/thorchain/thornode) (For THORNode Software)

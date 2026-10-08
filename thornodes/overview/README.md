@@ -68,9 +68,13 @@ Once created, follow the [Deploying](../deploying.md), [Joining](../joining.md) 
 
 ## Node Voting
 
-THORNodes have the ability to vote on [Mimir](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir) settings. This is important when voting for [ADRs](https://dev.thorchain.org/architecture/index.html) and important network changes.
+THORNodes have the ability to vote on [Mimir](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir) settings. This is important when voting for [ADRs](https://dev.thorchain.org/architecture/index.html) and for [network goverence](../../technical-deep-dive/governance.md#mimir---network-settings).
 
-Mimir settings have specific [abilities](https://gitlab.com/thorchain/thornode/-/blob/develop/docs/mimir.md). The process for voting from a node is:
+Mimir settings have specific [abilities](https://dev.thorchain.org/mimir.html).
+
+Mimir keys and values are listed in the [Mimir endpoint](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir).
+
+The process for voting from a node is:
 
 ```cmd
 Make mimir
@@ -78,11 +82,14 @@ Make mimir
 => Enter THORNode Mimir value: <value>
 ```
 
-1. Mimir keys and values are listed in the [Mimir endpoint](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir).
-2. A node can vote at any time on any key value.
-3. A node's vote is valid as long as they are active (and removed if they are not).
-4. 2/3rds of active nodes need to agree for the change to happen
-5. If 2/3rds consensus is not reached, Mimir admin takes priority, or a constant if present.
-6. A node can change their vote anytime.
-7. A node can delete their vote by using -1 value
-8. Voting costs one native transaction fee, which is deducted from their bond.
+1. Only an active node can vote, and each active node has one vote on a Mimir.
+2. A node can vote at any time on any key, and can change that vote at any time.
+3. A node's vote counts only while that node is active.
+4. The number of votes needed depends on the Mimir type, described in [Mimir Types](../../technical-deep-dive/governance.md#mimir-types).
+5. If that count is not reached, the stored value stays as it is. Where no Mimir value is set, the constant applies.
+6. A node can delete their vote by using a -1 value. That removes the node's vote and leaves the stored value as it is.
+7. Voting costs one native transaction fee, which is deducted from their bond. The fee is taken even when the stored value does not change.
+
+An Operational Mimir vote stays until that node changes it, deletes it with -1, or the active set gains or loses a node. When the active set changes, those votes are deleted and the stored value stays. A churn that does not change the active set leaves the votes in place. An economic vote stays through that change, and it counts only while that node is active.
+
+With `OperationalVotesMin` at 3, three active nodes voting the same value, since the last chrun, set an Operational Mimir. 

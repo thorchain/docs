@@ -39,9 +39,9 @@ To add a new chain:
 
 To delist a chain, nodes stop watching it. Once 67% of nodes are no longer watching, the chain is removed and assets are returned to users.
 
-## Mimir
+## Mimir - Network Settings
 
-THORChain operates with a set of constants that define fees, limits and security thresholds. These values can be overridden through Mimir.
+THORChain operates with a set of constants that define fees, limits and security thresholds. Constants are set within the network however some can be overridden through Mimir. Some other Network settings are Mimir only. 
 
 Live values:
 
@@ -49,6 +49,17 @@ Live values:
 - [Mimir Settings](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir)
 
 See [Constants and Mimir](https://dev.thorchain.org/mimir.html) within the developer documentation for a description of each one.
+
+### Mimir Types
+
+Mimir values can be changed by Node operators voting and the amount of votes required to change a Mimir value depends on its type. 
+
+Operational Mimirs are the network controls a few active nodes can change without a supermajority. Examples are [halts](https://dev.thorchain.org/concepts/network-halts.html) and the 'REVSHARE' Mimirs.
+The value with more votes than any other wins, and only with at least `OperationalVotesMin` votes. A tie, or votes below `OperationalVotesMin`, leaves the stored value as it is. The node vote is still recorded. `OperationalVotesMin` is a network constant set to 3 but see the live values for the latest values. Changing it takes the economic vote.
+
+Economic Mimirs are network controls that have a significant impact on the network or its economics. They generally are fees, economic management, node management, and limits. A change needs a 2/3 supermajority of the active nodes on the same value, rounded up (`signers >= ceil(2N/3)`), e.g. 66 of 99 or 67 of 100 nodes. Economic Mimirs generally override network constants set in the code.
+
+How a node votes is in [Node Voting](../thornodes/overview/#node-voting).
 
 ## Change Management
 
@@ -73,6 +84,8 @@ Nodes cannot directly coordinate, which makes emergency changes difficult. In cr
 2. When fewer than 4 nodes remain, Ragnarök triggers.
 3. All funds are automatically returned to users.
 4. The network shuts down safely and can be restarted later.
+
+Halt and pause steps are in [Emergency Procedures](../thornodes/emergency-procedures.md), and what a halt stops is in [Network Halts](https://dev.thorchain.org/concepts/network-halts.html).
 
 ## Governance Philosophy
 
