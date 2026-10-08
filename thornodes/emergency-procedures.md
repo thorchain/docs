@@ -81,7 +81,7 @@ These commands are in the Makefile of the [node-launcher](https://gitlab.com/tho
 In addition to the network wide pausing via the `make pause` command, THORChain supports blockchain specific halts to pause operations during critical emergencies:
 
 - **Initiating a Halt**: [Node voting](overview/#node-voting) to pause signing for a specific chain (e.g., BTC, ETH). This prevents outbound transactions until the issue is resolved. All Halt controls are [listed here](https://dev.thorchain.org/concepts/network-halts.html).
-- **Voting on Halts**: Nodes can vote to approve or extend halts via the node voting mechanism. How many votes are needed is in [Mimir - Network Settings](../technical-deep-dive/governance.md#mimir---network-settings).
+- **Voting on Halts**: Nodes can vote to approve or extend halts via the node voting mechanism. How many votes are needed is in [Mimir - Network Settings](../technical-deep-dive/governance.md#mimir-network-settings).
 - **Resuming Operations**: Once the threat is mitigated, nodes vote to lift the halt using Mimir overrides or resume normal operations.
 
 ## Monitoring and Recovery

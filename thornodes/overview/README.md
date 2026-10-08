@@ -68,7 +68,7 @@ Once created, follow the [Deploying](../deploying.md), [Joining](../joining.md) 
 
 ## Node Voting
 
-THORNodes have the ability to vote on [Mimir](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir) settings. This is important when voting for [ADRs](https://dev.thorchain.org/architecture/index.html) and for [network goverence](../../technical-deep-dive/governance.md#mimir---network-settings).
+THORNodes have the ability to vote on [Mimir](https://gateway.liquify.com/chain/thorchain_api/thorchain/mimir) settings. This is important when voting for [ADRs](https://dev.thorchain.org/architecture/index.html) and for [network governance](../../technical-deep-dive/governance.md#mimir-network-settings).
 
 Mimir settings have specific [abilities](https://dev.thorchain.org/mimir.html).
 
