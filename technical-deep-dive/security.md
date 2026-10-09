@@ -26,7 +26,7 @@ This serves as a defensive layer buying time and allowing a vigilant node operat
 
 The feature is designed to grow as the network grows and is controlled by several Mimir values that can be changed by Node Operators as required. Additionally, the feature is designed to promote bug disclosure instead of directly attacking the network as a bug disclosure is likely more profitable.
 
-The [THORSwap](http://thorswap.finance/) team has created a dashboard to view delayed outbound transfers which is available [here](https://thorchain-scheduled-tx.web.app/).
+The [THORSwap](https://thorswap.finance/) team has created a dashboard to view delayed outbound transfers which is available [here](https://thorchain-scheduled-tx.web.app/).
 
 ![THORSwap Transaction Tracker — by THORSwap to track large outbound transactions](https://miro.medium.com/max/1400/0*utXfzXDUatdMtdij)
 
