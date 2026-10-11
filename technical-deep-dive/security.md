@@ -22,13 +22,11 @@ To prevent large amounts of funds from leaving the network in an instant, large 
 
 This feature is controlled by several [Mimir](https://dev.thorchain.org/mimir.html#outbound-transactions) values that can be changed by Node Operators as required.
 
-This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, it is necessary in ensuring the protection of liquidity provider funds.
+This serves as a defensive layer buying time and allowing a vigilant node operator to pause trading or automatically halt checks to engage before the large malicious outbound transaction is irreversibly executed and funds are lost. While the feature negatively impacts the user experience of THORChain, it is necessary in ensuring the protection of liquidity provider and protocol funds.
 
 The feature is designed to grow as the network grows and is controlled by several Mimir values that can be changed by Node Operators as required. Additionally, the feature is designed to promote bug disclosure instead of directly attacking the network as a bug disclosure is likely more profitable.
 
-The [THORSwap](https://thorswap.finance/) team has created a dashboard to view delayed outbound transfers which is available [here](https://thorchain-scheduled-tx.web.app/).
-
-![THORSwap Transaction Tracker — by THORSwap to track large outbound transactions](https://miro.medium.com/max/1400/0*utXfzXDUatdMtdij)
+Delayed outbound transfers can be viewed on the [THORChain Tracker](https://track.thorchain.org/).
 
 ## Granular Halting Controls via Node Mimir
 
@@ -45,17 +43,17 @@ All halt controls, and what each one stops, are listed in [Network Halts](https:
 
 ## Automatic Solvency Checker
 
-The solvency checker of the network’s primary vault was introduced to catch issues early. Detected issues can trigger an automatic trading halt on a specific chain.
+The solvency checker of the network’s Asgard vault was introduced to catch issues early. Detected issues can trigger an automatic [trading halt](https://dev.thorchain.org/concepts/network-halts.html#halt-pause-management) on a specific chain.
 
-The network continually compares the assets the network believes it has in its primary vault (Asgard Vault) to what assets are actually stored in the network’s chain wallets. For every connected chain, each node compares the stored Asgard vault value to each chain Asgard Wallet amount. If the Asgard Vault value is more than the wallet value by over [$500](https://dev.thorchain.org/mimir.html) for any asset, the node reports insolvency for that chain.
+THORChain’s Asgard vault is made up of several [physical vaults](../technology/bifrost-tss-and-vaults.md#two-layer-vault-design), each with its own address on every connected chain. For each physical vault, each node compares the balance THORChain has recorded with the balance actually held at that vault’s address. If the recorded balance is more than the on-chain balance by over [$500](https://dev.thorchain.org/mimir.html#solvency-checker) (controlled by `PermittedSolvencyGapUSD`) for any asset, the node reports that vault as insolvent for that chain.
 
 ### Automatic Trading Halting
 
-If at least 1/3 of the active nodes, rounded up (`signers >= ceil(N/3)`), report an insolvency with a chain, that chain is automatically halted (`SolvencyHalt{Chain}Chain`). Swaps and adding or removing liquidity stop, outbounds are held until the halt lifts, and the affected vault is no longer used for new deposits. The halt is recorded on-chain as a Mimir change, which monitoring alerts on. The halt lifts automatically once the vault is solvent again.
+If at least 1/3 of the active nodes, rounded up (`signers >= ceil(N/3)`), report the same vault as insolvent on a chain, that chain is automatically halted (`SolvencyHalt{Chain}Chain`). Swaps and adding or removing liquidity stop, outbounds are held until the halt lifts, and the affected vault is no longer used for new deposits. The halt is recorded on-chain as a Mimir change, which monitoring alerts on. The halt lifts automatically once the vault is solvent again.
 
 ### Why is a difference allowed?
 
-THORChain builds an awareness of balances purely by adding the incoming funds, then subtracting the outgoings. Thus the expected balance is the aggregate of the ins and outs. Divergences can occur when actual on-chain balances start to diverge, for example while outbounds are in flight or when the gas paid differs from the estimate. The allowance is a fixed amount per asset rather than a percentage, and only a shortfall counts, so extra funds in a wallet never triggers a halt.
+THORChain builds an awareness of balances purely by adding the incoming funds, then subtracting the outgoings. Thus the recorded balance is the aggregate of the ins and outs. Divergences can occur when actual on-chain balances start to diverge, for example while outbounds are in flight or when the gas paid differs from the estimate. The allowance is a fixed amount per asset rather than a percentage, and only a shortfall counts, so extra funds at a vault address never triggers a halt.
 
 ### Node Operator Triggered Halts
 
