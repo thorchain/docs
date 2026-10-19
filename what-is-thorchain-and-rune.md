@@ -86,5 +86,5 @@ A RUNE/TCY liquidity pool was created, so the token can be freely traded. Fees f
 
 The yield from protocol-owned TCY is used to buy more TCY and held within the protocol, further compounding the TCY held and locked within the protocol.
 
-TCY does not provide voting rights or influence in the governance of the THORChain network – it is solely an income-generating economic token.
+⚠️ TCY does not provide voting rights or influence in the governance of the THORChain network – it is solely an income-generating economic token.
 
