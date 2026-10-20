@@ -1,7 +1,7 @@
 # Table of contents
 
 - 📖 [Introduction](README.md)
-- ❓ [What is THORChain and RUNE?](what-is-thorchain-and-rune.md)
+- ❓ [What is THORChain, RUNE, and TCY?](what-is-thorchain-and-rune.md)
 - 🔄 [Native Cross-chain Swaps](native-cross-chain-swaps.md)
 - 🚀 [How to Use THORChain](how-to-use-thorchain.md)
 - 🏗️ [Application Layer](application-layer.md)

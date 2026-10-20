@@ -1,5 +1,5 @@
 ---
-description: RUNE's supply, utility, and fee distribution, plus TCY's role in sharing protocol revenue
+description: RUNE's supply, utility, and fee distribution, plus TCY supply and how to claim or buy it
 ---
 
 # Tokenomics of RUNE and TCY
@@ -55,20 +55,19 @@ These fees are the foundation of real yield in the ecosystem.
 
 ## Revenue Distribution
 
-The current fee distribution in THORChain is as follows:
+THORChain's system income (block rewards plus liquidity fees) is currently distributed as follows:
 
 - **1%** → burned
 - **5%** → developer fund
 - **5%** → marketing
-- **10%** → TCY holders (explained below)
-- **20%** → protocol-owned-liquidity liquidity pool (POL-LP) position 
+- **10%** → TCY stakers ([what is TCY?](what-is-thorchain-and-rune.md#what-is-tcy))
+- **20%** → protocol-owned liquidity (POL) position
 - **59%** → validators (nodes) and liquidity providers (LPs)
-  - The exact split between them is determined by the Incentive Pendulum
+  - The exact split between them is determined by the [Incentive Pendulum](https://dev.thorchain.org/concepts/incentive-pendulum.html)
 
 ## TCY Tokenomics
 
 - **Total Supply:** 210M
-- **Circulating Supply:** 176M
 
 🔗 **Latest numbers:** [raynalytics.net/analytics/thorchain/tcy](https://raynalytics.net/analytics/thorchain/tcy)
 
