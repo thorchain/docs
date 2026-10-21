@@ -8,7 +8,7 @@ On THORChain, users can swap their digital assets for other digital assets. The 
 
 - A large variety of assets through cross-chain compatibility and simple asset listing
 - Superior user experience through open finance protocols and permissionless access
-- 1-transaction access to fast chains (Binance Smart Chain), smart chains (Ethereum) and censorship-resistant chains (Bitcoin).
+- 1-transaction access to fast chains (BNB Smart Chain), smart chains (Ethereum) and censorship-resistant chains (Bitcoin).
 
 {% hint style="info" %}
 See an [overview of Swapping in THORChain](../#how-swapping-works)

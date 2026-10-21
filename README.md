@@ -13,8 +13,3 @@ These docs are a high level overview of what THORChain is, how it works, a break
 For developers that want a free and easy to use API to integrate THORChain into a wallet, aggregator, and any other interface or DeFi application, please refer to [affiliate.thorchain.org](https://affiliate.thorchain.org/).
 
 For developers that want to integrate and interact directly with the THORChain protocol in a permissionless manner, please refer to the developer documents at [dev.thorchain.org](https://dev.thorchain.org/).
-
-For developers that want a free and easy to use API to integrate THORChain into a wallet, aggregator, and any other interface or DeFi application, please refer to [affiliate.thorchain.org](https://affiliate.thorchain.org/).
-
-
-For developers that want to integrate and interact directly with the THORChain protocol in a permissionless manner, please refer to the developer documents at [dev.thorchain.org](https://dev.thorchain.org/).

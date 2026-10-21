@@ -7,7 +7,7 @@ Each THORNode is comprised of 4 major components.
 1. **`thornode`** - this is a daemon that runs the THORChain chain itself and a HTTP server, that gives a RESTful API to the chain.
 2. **`bifrost`** - this daemon creates connections to remote chains (like Bitcoin, Ethereum, Binance, etc) to both observe activity on those chains (incoming/outgoing transactions), and also sign/broadcast outgoing transactions (moving funds on remote chains).
 3. **`gateway`**: THORNode gateway proxy to get a single IP address for multiple deployments.
-4. **Full nodes** - for every chain that is supported by the network, each THORNode operator will run their own full node of each chain (Bitcoin, Ethereum, Binance Smart Chain, Avalanche, etc).
+4. **Full nodes** - for every chain that is supported by the network, each THORNode operator will run their own full node of each chain (Bitcoin, Ethereum, BNB Smart Chain, Avalanche, etc).
 
 THORNode operators may choose to run the following service:
 

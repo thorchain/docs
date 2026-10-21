@@ -32,7 +32,7 @@ THORChain enables native swaps between the following major blockchains:
 - Tron (TRX)
 - Zcash (ZEC)
 - Dogecoin (DOGE)
-- Monero (XMR) — integrated, not yet active
+- Monero (XMR) — coming soon
 - Bitcoin Cash (BCH)
 - Litecoin (LTC)
 - Avalanche (AVAX)
