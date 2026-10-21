@@ -1,4 +1,4 @@
-# What is THORChain? ⚡
+# What is THORChain, RUNE, and TCY?
 
 THORChain is a Layer-1 blockchain that enables different cryptocurrencies to work together. It acts as a decentralized exchange (DEX) that allows you to swap coins across different blockchains in a single step.
 
@@ -26,17 +26,37 @@ THORChain enables native swaps between the following major blockchains:
 
 - Bitcoin (BTC)
 - Ethereum (ETH)
-- Ripple (XRP)
-- BNB Smart Chain (BNB)
+- BNB Smart Chain (BSC)
+- XRP Ledger (XRP)
+- Solana (SOL)
+- Tron (TRX)
+- Zcash (ZEC)
+- Dogecoin (DOGE)
+- Monero (XMR) — coming soon
 - Bitcoin Cash (BCH)
 - Litecoin (LTC)
-- Dogecoin (DOGE)
 - Avalanche (AVAX)
 - Base (BASE)
 - Cosmos Hub (ATOM)
-- Tron (TRX)
 
-THORChain will continue to evolve and add more chains over time, so users will be able to swap even more popular cryptocurrencies—all without wrapped tokens or intermediaries.
+{% hint style="info" %}
+Chain availability can change, and individual chains are sometimes paused. Check the live [inbound addresses](https://gateway.liquify.com/chain/thorchain_api/thorchain/inbound_addresses) endpoint for current status.
+{% endhint %}
+
+## Supported Stablecoins
+
+Stablecoins are swapped natively on the chains that issue them. THORChain currently has pools for:
+
+- Tether (USDT) — Ethereum, BNB Smart Chain, Avalanche, Tron
+- USD Coin (USDC) — Ethereum, BNB Smart Chain, Avalanche, Base
+- Dai (DAI) — Ethereum
+- Gemini Dollar (GUSD) — Ethereum
+- Liquity USD (LUSD) — Ethereum
+- Pax Dollar (USDP) — Ethereum
+
+The live [pools](https://gateway.liquify.com/chain/thorchain_api/thorchain/pools) endpoint shows every available asset.
+
+THORChain will continue to evolve and add more chains over time, so users will be able to swap even more popular cryptocurrencies, all without wrapped tokens or intermediaries.
 
 THORChain is a full blockchain (like Ethereum or Solana). This means that, in addition to swapping, developers can build smart contracts and decentralized apps (dApps) on top of it. This makes THORChain not only a trading tool but also a foundation for the next generation of DeFi projects.
 
@@ -64,14 +84,22 @@ RUNE is the native utility token of THORChain that serves four critical function
 
 - Validators and liquidity providers earn rewards in RUNE
 - These rewards come from real network fees, not token inflation
-- RUNE holders participate in network governance through validator delegation
+- Active node operators vote on network parameters via [Mimir](technical-deep-dive/governance.md#mimir-types)
 
----
+## What is TCY?
 
-## Next Steps
+The TCY (THORChain Yield) token was created to resolve THORChain's debt issue (~$210M) after the THORFi crisis in January 2025.
 
-Now that you understand what THORChain and RUNE are, explore how it works:
+Each $1 of debt was converted into 1 TCY. This way, creditors received tokens instead of a total loss, giving them the right to a share of the network's future revenue. This helped stabilize the ecosystem and align the creditors' interests with the protocol.
 
-- **[Native Cross-chain Swaps](native-cross-chain-swaps.md)** - Learn how THORChain enables direct swaps between different blockchains
-- **[How to Use THORChain](how-to-use-thorchain.md)** - Step-by-step guide to start swapping
-- **[Tokenomics](tokenomics-rune-tcy.md)** - Deep dive into RUNE's economics and revenue model
+### How does TCY work?
+
+TCY stakers receive 10% of THORChain's system income (block rewards plus liquidity fees), paid in RUNE.
+
+Stakers retain their yield, while the yield from unclaimed or unstaked TCY is forfeited and redirected to buy TCY, and held by the protocol (protocol owned TCY).
+
+A RUNE/TCY liquidity pool was created, so the token can be freely traded. Fees from this pool are used to buy TCY and held as protocol-owned TCY.
+
+The yield from protocol-owned TCY is used to buy more TCY and held within the protocol, further compounding the TCY held and locked within the protocol.
+
+⚠️ TCY does not provide voting rights or influence in the governance of the THORChain network – it is solely an income-generating economic token.

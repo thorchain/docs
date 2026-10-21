@@ -39,11 +39,7 @@ Vǫrðr is a community developed monitoring app for THORNodes. It's fully open-s
 
 ## Supported Chains
 
-| Client   | Chain                                                              |
-| -------- | ------------------------------------------------------------------ |
-| Bitcoin  | Bitcoin (BTC), Litecoin (LTC), Bitcoin Cash (BCH), Dogecoin (DOGE) |
-| Ethereum | Ethereum (ETH), Avalanche (AVAX)                                   |
-| Cosmos   | Cosmos (ATOM), Binance (BSC), THORChain (RUNE)                     |
+See [Supported Blockchains](../what-is-thorchain-and-rune.md#supported-blockchains) for the chains THORChain supports. Vǫrðr is third-party software, so check its [README](https://github.com/sourcapital/vordr) for which of those chains it currently monitors.
 
 {% hint style="info" %}
 See [https://github.com/sourcapital/vordr#kubernetes](https://github.com/sourcapital/vordr#kubernetes) on how to run Vǫrðr in the Kubernetes cluster.

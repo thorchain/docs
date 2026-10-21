@@ -24,10 +24,12 @@ When a new version of the protocol is released, validators upgrade at their own 
 
 Bifrost is THORChain’s chain-agnostic client framework. It connects THORChain to different types of blockchains through a common interface:
 
-- **UTXO chains** (Bitcoin, Litecoin, Dogecoin, Bitcoin Cash)
-- **EVM chains** (Ethereum, Avalanche, BSC)
-- **BFT chains** (Cosmos SDK)  
-  This standardisation allows THORChain to add support for very different chains without changing its core logic.
+- **UTXO chains**, such as Bitcoin
+- **EVM chains**, such as Ethereum
+- **Cosmos SDK (BFT) chains**, such as Cosmos Hub
+- **Standalone clients** for chains that fit none of these models, such as Solana, XRP and Tron
+
+This standardisation allows THORChain to add support for very different chains without changing its core logic. See [Supported Blockchains](../what-is-thorchain-and-rune.md#supported-blockchains) for the current list, and the developer documentation on [chain clients](https://dev.thorchain.org/chain-clients/index.html) for how each type works.
 
 ### Incentive Pendulum
 

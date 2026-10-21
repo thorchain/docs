@@ -1,5 +1,5 @@
 ---
-description: RUNE's supply, utility, and fee distribution, plus TCY's role in sharing protocol revenue
+description: RUNE's supply, utility, and fee distribution, plus TCY supply and how to claim or buy it
 ---
 
 # Tokenomics of RUNE and TCY
@@ -55,39 +55,29 @@ These fees are the foundation of real yield in the ecosystem.
 
 ## Revenue Distribution
 
-The current fee distribution in THORChain is as follows:
+THORChain's system income (block rewards plus liquidity fees) is currently distributed as follows:
 
 - **1%** → burned
 - **5%** → developer fund
 - **5%** → marketing
-- **10%** → TCY holders (explained below)
-- **20%** → protocol-owned-liquidity liquidity pool (POL-LP) position 
+- **10%** → TCY stakers ([what is TCY?](what-is-thorchain-and-rune.md#what-is-tcy))
+- **20%** → protocol-owned liquidity (POL) position
 - **59%** → validators (nodes) and liquidity providers (LPs)
-  - The exact split between them is determined by the Incentive Pendulum
+  - The exact split between them is determined by the [Incentive Pendulum](https://dev.thorchain.org/concepts/incentive-pendulum.html)
 
-## TCY Token
-
-TCY was created to resolve THORChain's debt issue (~$210M after the ThorFi crisis).
-
-Each $1 of debt was converted into 1 TCY. This way, creditors received tokens instead of a total loss, giving them the right to a share of the network's future revenue. This helps stabilize the ecosystem and align the community's interests with the protocol.
-
-### How to Get TCY
-
-- **TCY can be claimed** through the official interface: [tcy.thorchain.org](https://tcy.thorchain.org/)
-- A THORChain address is required to claim.
-- Claimed tokens are automatically staked and immediately start generating daily yield.
-- TCY can also be bought from the open market e.g. via swap.thorchain.org
-
-### TCY Supply
+## TCY Tokenomics
 
 - **Total Supply:** 210M
-- **Circulating Supply:** 176M
 
 🔗 **Latest numbers:** [raynalytics.net/analytics/thorchain/tcy](https://raynalytics.net/analytics/thorchain/tcy)
 
-### How does TCY work?
+### How to Claim TCY
 
-- **TCY holders receive 10% of all network revenue** (paid in RUNE).
-- Stakers retain their yield, while the yield from unclaimed or unstaked TCY is forfeited and redirected to buyback TCY back into the TCY Staking Module (i.e protocol-owned TCY).
-- A RUNE/TCY liquidity pool was created, so the token can be freely traded. Fees from this pool are also used to buy back as protocol-owned TCY.
-- ⚠️ **TCY does not provide voting rights** or influence in the governance of the THORChain network – it is solely an income-generating economic token.
+- **TCY can be claimed** through the official interface: [tcy.thorchain.org](https://tcy.thorchain.org/).
+- A THORChain address is required to claim.
+- Claimed tokens are automatically staked and immediately start generating daily yield.
+
+### How to Buy TCY
+
+- TCY can be bought from the open market at [swap.thorchain.org](https://swap.thorchain.org/sell-BTC-buy-THOR.TCY).
+- Buying TCY tokens on the open market does not automatically stake them. If you want to collect the yield on your TCY tokens, you need to stake them at [tcy.thorchain.org](https://tcy.thorchain.org/).

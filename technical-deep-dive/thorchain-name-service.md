@@ -57,7 +57,7 @@ Example from [https://gateway.liquify.com/chain/thorchain_midgard/v2/thorname/lo
 }
 ```
 
-Currently, there are eleven (11) native L1 chains available on THORChain: Bitcoin, Ethereum, Litecoin, Binance Smart Chain, Bitcoin Cash, Doge, Cosmos, Avalanche, Base, TRON and XRP. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
+A THORName can hold an address for any native L1 chain on THORChain; see [Supported Blockchains](../what-is-thorchain-and-rune.md#supported-blockchains) for the current list. THORNames are limited to 30 characters, including `^[a-zA-Z0-9+_-]+$`.
 
 ### Query a THORName
 
