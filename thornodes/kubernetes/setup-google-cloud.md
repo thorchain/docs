@@ -73,6 +73,69 @@ You will be asked for you Personal Access Token with read/write priveleges \(ret
 Make sure you handle your secrets securely!
 {% endhint %}
 
+#### **kubectl plugin “gke-gcloud-auth-plugin”**
+
+[gke-gcloud-auth-plugin](https://cloud.google.com/sdk/docs/install) is needed for kubectl’s authentication starting with `GKE v1.26`. See [Important changes to Kubectl authentication are coming in GKE v1.26](https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke?hl=en).
+
+##### Installation
+
+{% tabs %}
+{% tab title="Windows/MAC" %}
+```bash
+gcloud components install gke-gcloud-auth-plugin
+```
+{% endtab %}
+{% tab title="Linux" %}
+```bash
+sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+```
+{% endtab %}
+{% endtabs %}
+
+##### Verify installation
+
+{% tabs %}
+{% tab title="Linux/MAC" %}
+```bash
+gke-gcloud-auth-plugin --version
+```
+{% endtab %}
+{% tab title="Windows" %}
+```bash
+gke-gcloud-auth-plugin.exe --version
+```
+{% endtab %}
+{% endtabs %}
+
+##### Run kubectl with `gke-gcloud-auth-plugin` prior GKE v1.26
+
+1. Add to your `~/.bashrc` or `./zshrc`
+
+```bash
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+```
+
+2. Update gcloud to the latest version
+
+```bash
+gcloud components update
+```
+
+3. Update `kubeconfig` file with appropriate credentials and endpoint information to point `kubectl` at a specific cluster in Google Kubernetes Engine
+
+```bash
+# Replace CLUSTER_NAME with the name and REGION with the region of the cluster
+gcloud container clusters get-credentials CLUSTER-NAME --region REGION
+```
+
+Example:
+
+```bash
+gcloud container clusters get-credentials thornode-cluster --zone=us-central1-f
+```
+
+See: Google Cloud CLI Reference [`gcloud container clusters get-credentials`](https://cloud.google.com/sdk/gcloud/reference/container/clusters/get-credentials)
+
 #### Kubernetes Control Tool
 
 You must install and configure the Kubernetes CLI tool \(**kubectl**\). **\*\*To install** kubectl\*\* , follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/), or choose a package manager based on your operating system.
@@ -150,4 +213,3 @@ kubectl get nodes
 ```
 
 You are now ready to deploy a THORNode.
-
