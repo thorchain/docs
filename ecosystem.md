@@ -66,6 +66,8 @@ Below is a list of active THORChain community projects. If you would like to be 
 
 [**RocketX**](https://app.rocketx.exchange/) - Advanced, Hybrid CEX and DEX Aggregator
 
+[**Shieldz Swap**](https://swap.shieldz.cash/) - Non-Custodial Cross-Chain Swaps Comparing THORChain, Maya, NEAR Intents and Chainflip Routes
+
 [**Symbiosis Finance**](https://symbiosis.finance/) - A Multi-chain Liquidity Protocol
 
 [**THORSwap**](https://thorswap.finance/) - World's First Multi-chain Dex Powered by THORChain
